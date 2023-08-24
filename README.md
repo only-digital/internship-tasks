@@ -1,4 +1,4 @@
-# Задание 1
+# Задание 2
 
 Необходимо реализовать верстку нескольких UI-элементов с проработкой всех предусмотренных состояний. Смена состояний должна производиться плавно с использованием css-правила [transition](https://developer.mozilla.org/ru/docs/Web/CSS/transition)   
 Также, используя [@keyframes](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes) создать анимацию в соответствии с [видео-примером](#todo)
