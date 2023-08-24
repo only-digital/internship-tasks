@@ -97,7 +97,7 @@ module.exports = {
                     options: {
                         name: '[name].[ext]',
                         outputPath: 'assets/fonts',
-                        publicPath: path.join(__dirname, '..', 'assets', 'fonts')
+                        publicPath: path.join(__dirname, '..', 'src', 'assets', 'fonts')
                     },
                 },
             },
@@ -109,7 +109,7 @@ module.exports = {
                         name: 'assets/images/[name].[hash:8].[ext]',
                     },
                 },
-                include: path.join(__dirname, '..', 'assets', 'images'),
+                include: path.join(__dirname, '..', 'src', 'assets', 'images'),
             },
             {
                 test: /\.(mp4|avi)$/i,
@@ -119,7 +119,7 @@ module.exports = {
                         name: 'assets/videos/[name].[ext]',
                     },
                 },
-                include: path.join(__dirname, '..', 'assets', 'videos'),
+                include: path.join(__dirname, '..', 'src', 'assets', 'videos'),
             },
             {
                 test: /\.svg$/,
@@ -132,7 +132,7 @@ module.exports = {
                     },
                     'svg-transform-loader',
                 ],
-                include: path.join(__dirname, '..', 'assets', 'icons'),
+                include: path.join(__dirname, '..', 'src', 'assets', 'icons'),
             }
         ]
     },
