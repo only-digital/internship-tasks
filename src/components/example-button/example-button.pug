@@ -1,0 +1,5 @@
+mixin example-button(props)
+	button.example-button&attributes(attributes)
+		span.example-button__text!= props.text
+		span.example-button__circle
+			+svg('example-svg').example-button__svg
