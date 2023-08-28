@@ -16,7 +16,6 @@ const allComponents = {
 try {
     const existedComponents = Array.from(document.querySelectorAll('[data-component]'));
 
-    debugger
     const components = existedComponents.map((component) => {
         try {
             return new allComponents[component.dataset.component]({
@@ -27,7 +26,6 @@ try {
             console.error(`Ошибка во время инициализации компонента: ${component.dataset.component}\n\n${e}`);
         }
     });
-    console.log(components)
 } catch (e) {
     console.error(e);
 }
