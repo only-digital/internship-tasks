@@ -1,7 +1,8 @@
 # Задание 2
 
-Необходимо реализовать верстку нескольких UI-элементов с проработкой всех предусмотренных состояний. Смена состояний должна производиться плавно с использованием css-правила [transition](https://developer.mozilla.org/ru/docs/Web/CSS/transition)   
-Также, используя [@keyframes](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes) создать анимацию в соответствии с [видео-примером](#todo)
+Необходимо реализовать верстку нескольких UI-элементов с проработкой всех предусмотренных состояний. Смена состояний должна производиться плавно с использованием css-правила [transition](https://developer.mozilla.org/ru/docs/Web/CSS/transition)
+
+[Ссылка на макет](https://www.figma.com/file/1Nz8LZpBOSUTQaBC9Ny1ze/%D0%A1%D1%82%D0%B0%D0%B6%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0---%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-2?type=design&node-id=0%3A1&mode=design&t=9QDbdhUzQ3vLDlpX-1)
 
 > Дополнительно:
 > 
