@@ -2,7 +2,8 @@
 
 Необходимо реализовать верстку двух блоков используя правила `display: flex` и `display: grid`
 
-[Ссылка на макет](https://www.figma.com/file/wIih8te6eJFzPHdT4gQGcY/%D0%A1%D1%82%D0%B0%D0%B6%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0---%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-1?type=design&node-id=0%3A1&mode=design&t=qvLoXgcG4Es1pYGj-1)
+[Ссылка на макет](https://www.figma.com/file/wIih8te6eJFzPHdT4gQGcY/%D0%A1%D1%82%D0%B0%D0%B6%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0---%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-1?type=design&node-id=0%3A1&mode=design&t=qvLoXgcG4Es1pYGj-1)   
+**Срок выполнения: 1 неделя**
 
 Для выполнения задания потребуется изучить основы препроцессоров [Pug](https://pugjs.org/language/tags.html) и [Sass](https://sass-lang.com/)
 - [Туториал по HTML препроцессору Pug](https://gist.github.com/neretin-trike/53aff5afb76153f050c958b82abd9228)
