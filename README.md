@@ -1,7 +1,9 @@
 # Задание 5
 
-Выполнить верстку формы обратной связи   
-[Ссылка на макет](https://www.figma.com/file/MXoXPNr0r5FkoyaKfuyzOV/%D0%A1%D1%82%D0%B0%D0%B6%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0---%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-5?type=design&node-id=0%3A1&mode=design&t=EYvB2ppl20dh9qJf-1)
+Выполнить верстку формы обратной связи
+
+[Ссылка на макет](https://www.figma.com/file/MXoXPNr0r5FkoyaKfuyzOV/%D0%A1%D1%82%D0%B0%D0%B6%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0---%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-5?type=design&node-id=0%3A1&mode=design&t=EYvB2ppl20dh9qJf-1)  
+**Срок выполнения: 2 недели**
 
 Реализовать валидацию полей формы с помощью JavaScript по следующим правилам:
 - Все текстовые поля формы являются обязательными для заполнения
