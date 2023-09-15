@@ -1,7 +1,9 @@
 # Задание 4
 
-Выполнить верстку страницы вакансии  
-[Ссылка на макет](https://www.figma.com/file/AyVCs1fzbJhhBsy4L8mKBa/%D0%A1%D1%82%D0%B0%D0%B6%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0---%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-4?type=design&node-id=0%3A1&mode=design&t=olJFS2i67ctGl2jE-1)
+Выполнить верстку страницы вакансии
+
+[Ссылка на макет](https://www.figma.com/file/AyVCs1fzbJhhBsy4L8mKBa/%D0%A1%D1%82%D0%B0%D0%B6%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B0---%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-4?type=design&node-id=0%3A1&mode=design&t=olJFS2i67ctGl2jE-1)  
+**Срок выполнения: 1 неделя**
 
 1) С помощью [fetch API](https://developer.mozilla.org/ru/docs/Web/API/Fetch_API/Using_Fetch) получить информацию о текущем количестве просмотров и откликов на вакансию  
 Для этого необходимо выполнить GET запрос по адресу `/stats` и значения из полученного объекта вставить в соответствующие элементы верстки
