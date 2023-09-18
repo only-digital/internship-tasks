@@ -1,3 +1,11 @@
+$colorGray: #F4F4F4;
+$colorWhite: #FFFFFF;
+$colorBlue: #0041A0;
+$colorBlueDark: #04306A;
+$colorRed: #FC0D1B;
+
+
 .flex-container {
-    // Your code here
+    display: flex;
+    flex-wrap: wrap;
 }
