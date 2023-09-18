@@ -1,3 +1,18 @@
+- 
+  const items = [ 
+    { value: "Мостовая сталь/Стальные конструкции мостов", color: "grey", area: "block0" },
+    { value: "Железобетонные конструкции мостов", color: "grey", area: "block1" },
+    { value: "Дорожные ограждения барьерного типа", color: "grey", area: "block2" },
+    { value: "Шпунтовой замок", color: "blue", area: "block3" },
+    { value: "Мостовой крепеж", color: "grey", area: "block4" },
+    { value: "Профили для деформационных швов", color: "lightBlue", area: "block5" },
+    { value: "Плетеные габионы", color: "grey", area: "block6" },
+    { value: "Модульные мосты", color: "grey", area: "block7" },
+  ];
+
 mixin grid-container()
     section.grid-container
-        // Your code here
+        h1.grid-container__title <span>Комплексные</span> предложения для мостостроения
+        .grid-container__items
+            each item in items
+                a.grid-container__item(class=item.color class=item.area href="/")=item.value

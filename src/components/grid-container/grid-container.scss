@@ -1,3 +1,112 @@
+$colorBlue: #04306A;
+$colorLightBlue: #0041A0;
+$colorRed: #FC0D1B;
+$colorGray: #F4F4F4;
+$colorWhite: #FFFFFF;
+
 .grid-container {
-    // Your code here
+    font-family: Arial;
+    margin: 7.62rem 5.93rem 7.5rem 6.08rem;
+    
+    &__title {
+        grid-template-columns: 320px 1fr;
+        font-size: 2.875rem;
+        font-weight: bold;
+        color: $colorBlue;
+        
+        & span {
+            color: $colorRed;
+        }
+    }
+
+    &__items {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-top: 5rem;
+        
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 26.25rem 26.25rem 30rem 26.25rem;
+        
+        grid-template-areas: 
+        'block0 block0 block0 block1 block1 block1'
+        'block0 block0 block0 block2 block2 block2'
+        'block3 block3 block4 block4 block5 block5'
+        'block6 block6 block6 block7 block7 block7';
+
+        row-gap: 18px;
+        column-gap: 16px;
+    }
+    
+    &__item {
+        padding: 1.5rem 2.25rem;
+        color: $colorBlue;
+        position: relative;
+        
+        &::after {
+            content: "";
+            width: 4rem;
+            height: 2.25rem;
+            position: absolute;
+            bottom: 1.56rem;
+            right: 2.33rem;
+            background-image: url(/src/assets/blue_arrow.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        &.grey {
+            background-color: $colorGray;
+        }
+
+        &.blue {
+            background-color: $colorBlue;
+            color: $colorWhite;
+
+            &::after {
+                background-image: url(/src/assets/white_arrow.svg);
+            }
+        }
+        
+        &.lightBlue {
+            background-color: $colorLightBlue;
+            color: $colorWhite;
+            
+            &::after {
+                background-image: url(/src/assets/white_arrow.svg);
+            }
+        }
+
+        &.block0 {
+            grid-area: block0;
+        }
+
+        &.block1 {
+            grid-area: block1;
+        }
+
+        &.block2 {
+            grid-area: block2;
+        }
+
+        &.block3 {
+            grid-area: block3;
+        }
+
+        &.block4 {
+            grid-area: block4;
+        }
+
+        &.block5 {
+            grid-area: block5;
+        }
+
+        &.block6 {
+            grid-area: block6;
+        }
+
+        &.block7 {
+            grid-area: block7;
+        }
+    }
 }
