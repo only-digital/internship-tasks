@@ -82,12 +82,20 @@ $colorRed: #FC0D1B;
     &.dark{
       background-color: $colorBlueDark;
       color: $colorWhite;
+
+    }
+
+    &.dark::after {
       background-image: url(/src/assets/icons/arrow-white.svg);
     }
 
     &.blue {
       background-color: $colorBlue;
       color: $colorWhite;
+
+    }
+
+    &.blue::after{
       background-image: url(/src/assets/icons/arrow-white.svg);
     }
     
