@@ -1,3 +1,23 @@
+- let blockLabels = ["Шпунтовой замок","Мостовой крепеж","Профили для деформационных швов","Плетеные габионы","Модульные мосты"]
+
+mixin svgIcon()
+    span.flex-container__item-icon
+        svg(width="65px", height="36px", xmlns="http://www.w3.org/2000/svg", viewBox="0 0 65 36", fill="none")
+            path(d="M58.4384 19.4L0 19.4L0 16.6L58.4384 16.6L58.4384 19.4ZM36.5378 36L34.8869 33.6L61.685 20L61.685 16L34.8869 2.4L36.5378 0L64.9316 14.4V21.6L36.5378 36Z" fill="#04306A")
+
+mixin renderFlexContent()
+    each val,index in blockLabels
+        if (index === 0 || index === 2)
+            .flex-container__item.blue
+                p.flex-container__item-label= val
+                +svgIcon
+        else
+            .flex-container__item
+                p.flex-container__item-label= val
+                +svgIcon
+
+
 mixin flex-container()
-    section.flex-container
-        // Your code here
+    section.flex-container.container
+        +renderFlexContent()
+
