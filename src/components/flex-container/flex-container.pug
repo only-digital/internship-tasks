@@ -1,17 +1,14 @@
-- 
-  const items = [ 
-    { value: "Мостовая сталь/Стальные конструкции мостов", width: "half", height: "doubled", color: "grey" },
-    { value: "Железобетонные конструкции мостов", width: "half",  color: "grey" },
-    { value: "Дорожные ограждения барьерного типа", width: "half",  color: "grey" },
-    { value: "Шпунтовой замок", width: "third", color: "dark" },
-    { value: "Мостовой крепеж", width: "third", color: "grey" },
-    { value: "Профили для деформационных швов", width: "third",  color: "blue" },
-    { value: "Плетеные габионы", width: "half", color: "grey" },
-    { value: "Модульные мосты", width: "half", color: "grey" },
-  ];
+
 mixin flex-container()
   section.flex-container
-    h1.flex-container__title Комплексные предложения для мостостроения  
+    h1.flex-container__title <span>Комплексные</span> предложения для мостостроения  
     .flex-container__items 
-      each elem in items
-        .flex-container__item(class=elem.color class=elem.width class=elem.height)=elem.value
+      .flex-container-item(class="gray doubled") Мостовая сталь/Стальные конструкции мостов
+      .flex-container__column
+        .flex-container-item(class="gray") Железобетонные конструкции мостов
+        .flex-container-item(class="gray") Дорожные ограждения барьерного типа
+      .flex-container-item(class="dark third") Шпунтовой замок
+      .flex-container-item(class="gray third") Мостовой крепеж
+      .flex-container-item(class="blue third") Профили для деформационных швов
+      .flex-container-item(class="gray") Плетеные габионы
+      .flex-container-item(class="gray") Модульные мосты
