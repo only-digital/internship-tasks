@@ -1,3 +1,20 @@
+include ../product-card/product-card
+
+
 mixin flex-container()
+    include ../../components/header/header
     section.flex-container
-        // Your code here
+
+        div.flex-container__wrapper.flex-container__wrapper_type_square
+            +product-card('Мостовая сталь/Стальные конструкции мостов')
+        div.flex-container__wrapper.flex-container__wrapper_type_square
+            +product-card('Железобетонные конструкции мостов')
+            +product-card('Дорожные ограждения барьерного типа')
+        div.flex-container__wrapper.flex-container__wrapper_type_rectangle
+            +product-card('Шпунтовой замок')
+            +product-card('Мостовой крепеж')
+            +product-card('Профили для деформационных швов')
+            +product-card('Плетеные габионы')
+            +product-card('Модульные мосты')
+
+

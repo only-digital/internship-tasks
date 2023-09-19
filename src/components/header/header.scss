@@ -1,0 +1,23 @@
+.header {
+  width: 100%;
+  border: 1px solid red;
+  &_position {
+    margin-top: 122px;
+    margin-bottom: 80px;
+  }
+
+  &__title {
+    color: var(--blue, #04306A);
+    font-family: Arial;
+    font-size: 46px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: -0.92px;
+
+    &_accent {
+      color: var(--Red, #FC0D1B);
+    }
+  }
+}
+

@@ -1,0 +1,20 @@
+.header {
+  width: 100%;
+  border: 1px solid red;
+}
+.header_position {
+  margin-top: 122px;
+  margin-bottom: 80px;
+}
+.header__title {
+  color: var(--blue, #04306A);
+  font-family: Arial;
+  font-size: 46px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -0.92px;
+}
+.header__title_accent {
+  color: var(--Red, #FC0D1B);
+}

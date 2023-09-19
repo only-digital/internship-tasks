@@ -1,0 +1,28 @@
+.product-card {
+  position: relative;
+  min-width: 564px;
+  height: 100%;
+  background: #F4F4F4;
+  //flex-grow: 1;
+  &_background-color {
+    &_dark {
+      background: var(--blue, #04306A);
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+    color: green;
+  }
+
+
+  &__button-view {
+    content: 'sds';
+    position: absolute;
+    display: block;
+    bottom: 30px;
+    right: 30px;
+
+  }
+}
+

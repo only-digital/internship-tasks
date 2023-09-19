@@ -1,0 +1,12 @@
+.body {
+  margin: 0 auto;
+  border: 1px solid red;
+  max-width: 1920px;
+}
+
+.main {
+  padding: 0 30px;
+  margin: 0 auto;
+  width: 100%;
+  background-repeat: repeat;
+}
