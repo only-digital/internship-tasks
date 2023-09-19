@@ -1,3 +1,16 @@
 .flex-container {
-    // Your code here
+	max-width: 1724px;
+	margin: 0 auto;
+	padding: 122px 0 80px 0;
+
+	&__title {
+		font-family: Arial, Helvetica, sans-serif;
+		font-weight: 700;
+		font-size: 46px;
+		color: #04306A;
+	}
+
+	span {
+		color: red;
+	}
 }

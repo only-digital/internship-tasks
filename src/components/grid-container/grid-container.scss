@@ -1,3 +1,71 @@
 .grid-container {
-    // Your code here
+	max-width: 1724px;
+	margin: 0 auto;
+	gap: 16px;
+	padding-bottom: 120px;
+
+	.grid-row {
+		gap: 18px;
+		grid-template-columns: 1fr 1fr;
+		min-height: 420px;
+
+		.grid-item__text {
+			max-width: 760px;
+		}
+	}
+
+	.grid-row-2 {
+		height: 480px;
+		grid-template-columns: 1fr 1fr 1fr;
+
+		.grid-item__text {
+			max-width: 420px;
+		}
+	}
+
+	.grid-item {
+		font-family: Arial, Helvetica, sans-serif;
+		font-weight: 700;
+		font-size: 32px;
+		color: #04306A;
+		background-color: #F4F4F4;
+		padding: 24px 0 0 36px;
+		height: 100%; 
+		position: relative;
+		cursor: pointer;
+
+		&:after {
+			content: '';
+			width: 65px;
+			height: 36px;
+			background-image: url('/src/assets/icons/arrow-blue.png');
+			position: absolute;
+			bottom: 25px;
+			right: 37px;
+		}
+	}
+
+	.grid-item-1 {
+		padding: 49px 0 0 49px;
+		grid-row: 1 / 3;
+		height: 856px;
+	}
+
+	.grid-item-4 {
+		background-color: #04306A;
+		color: #fff;
+
+		&:after {
+			background-image: url('/src/assets/icons/arrow-white.png');
+		}
+	}
+
+	.grid-item-6 {
+		background-color: #0041A0;
+		color: #fff;
+
+		&:after {
+			background-image: url('/src/assets/icons/arrow-white.png');
+		}
+	}
 }
