@@ -1,3 +1,36 @@
-.grid-container {
-    // Your code here
+@import '../style.scss';
+
+.grid-container__wrapper {
+	display: grid;
+	grid-template: 
+	'a a b b' 445px
+	'a a c c' 445px
+	'd e e f' 480px
+	'g g h h' 420px
+	/ 33% 17% 17% 33%
+}
+
+.container__ceil:nth-child(1) {
+	grid-area: a;
+}
+.container__ceil:nth-child(2) {
+	grid-area: b;
+}
+.container__ceil:nth-child(3) {
+	grid-area: c;
+}
+.container__ceil:nth-child(4) {
+	grid-area: d;
+}
+.container__ceil:nth-child(5) {
+	grid-area: e;
+}
+.container__ceil:nth-child(6) {
+	grid-area: f;
+}
+.container__ceil:nth-child(7) {
+	grid-area: g;
+}
+.container__ceil:nth-child(8) {
+	grid-area: h;
 }

@@ -1,3 +1,41 @@
+- var Btn = '<svg width="66" height="36" viewBox="0 0 66 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M58.6341 19.4L0.277649 19.4L0.277649 16.6L58.6341 16.6L58.6341 19.4ZM36.7642 36L35.1156 33.6L61.8761 20L61.8761 16L35.1156 2.4L36.7642 0L65.1182 14.4V21.6L36.7642 36Z" fill="currentColor"/></svg>'
+
+
 mixin grid-container()
-    section.grid-container
-        // Your code here
+		section.container
+			h1.container__title
+				span Комплексные
+				|	предложения для мостостроения
+			.container__wrapper.grid-container__wrapper
+				.container__ceil
+					.container__ceil__title Мостовая сталь/Стальные конструкции мостов
+					.container__ceil__button
+						#{Btn}
+				.container__ceil 
+					.container__ceil__title Железобетонные конструкции мостов
+					.container__ceil__button
+						#{Btn}
+				.container__ceil 
+					.container__ceil__title Дорожные ограждения барьерного типа
+					.container__ceil__button
+						#{Btn}
+				.container__ceil.container__ceil__secondary
+					.container__ceil__title Шпунтовой замок
+					.container__ceil__button
+						#{Btn}
+				.container__ceil
+					.container__ceil__title Мостовой крепеж
+					.container__ceil__button
+						#{Btn}
+				.container__ceil.container__ceil__secondary
+					.container__ceil__title Профили для деформационных швов
+					.container__ceil__button
+						#{Btn}
+				.container__ceil
+					.container__ceil__title Плетеные габионы
+					.container__ceil__button
+						#{Btn}
+				.container__ceil
+					.container__ceil__title Модульные мосты
+					.container__ceil__button
+						#{Btn}

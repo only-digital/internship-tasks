@@ -1,3 +1,32 @@
-.flex-container {
-    // Your code here
+@import '../style.scss';
+
+.row_1_2__lg, .row_1_2__md, .row_1_3 {
+	display: flex;
+	gap: $container-gap;
+}
+
+.row_1_2__lg {
+	height: 856px;
+	& > * {
+		flex-basis: calc(50% - $container-gap / 2);
+	}
+}
+.row_1_2__md {
+	height: 420px;
+	& > * {
+		flex-basis: calc(50% - $container-gap / 2);
+	}
+}
+
+.row_1_3 {
+	height: 480px;
+	& > * {
+		flex-basis: calc(33% - $container-gap / 2);
+	}
+}
+
+.col {
+	display: flex;
+	gap: $container-gap;
+	flex-direction: column;
 }
