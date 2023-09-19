@@ -1,3 +1,102 @@
 .flex-container {
-    // Your code here
+    max-width: 1920px;
+    gap: 16px;
+    flex-direction: column;
+    font-family: Arial;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+
+    h1{
+        font-size: 46px;
+        font-weight: 700;
+        line-height: 100%;
+        color: #04306A;
+
+        span{
+            color: #FC0D1B;
+        }
+    }
+    .wrapper-row-1{
+        height: 850px;
+
+        .div_1{
+            width: 50%;
+        }
+    }
+
+    .wrapper-col{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 50%;
+
+        .div_2{
+            height: 50%;
+        }
+        .div_3{
+            height: 50%;
+        }
+    }
+
+    .wrapper-row-2{
+        height: 480px;
+
+        .div_4{
+            width: 33.333%;
+        }
+        .div_5{
+            width: 33.333%;
+        }
+        .div_6{
+            width: 33.333%;
+        }
+    }
+
+    .wrapper-row-3{
+        height: 420px;
+
+        .div_7{
+            width: 50%;
+        }
+        .div_8{
+            width: 50%;
+        }
+    }
+
+    p{
+        margin: 50px;
+        color: #04306A;
+    }
+    img{
+        width: 65px;
+        height: 36px;
+        align-self: end;
+        margin: 26px 36px;
+    }
+    .item-flex{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: #F4F4F4;
+    }
+    .blue{
+        background: #04306A;
+        p{
+            color: #FFF;
+        }
+    }
+    .blue-light{
+        background: #0041A0;
+        p{
+            color: #FFF;
+        }
+    }
+    .flex{
+        display: flex;
+        gap: 20px;
+        width: 100%;
+    }
 }
+
