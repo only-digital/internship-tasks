@@ -58,7 +58,7 @@ $colorRed: #FC0D1B;
         right: 36px;
         width: 65px;
         height: 36px;
-        background-image: url(/src/assets/icons/arrow-dark.svg);
+        background-image: url(/src/assets/icons/arrow-dark.png);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -70,17 +70,13 @@ $colorRed: #FC0D1B;
         color: $colorWhite;
       }
 
-      &.dark::after{
-        background-image: url(/src/assets/icons/arrow-white.svg);
+      &.dark::after, &.blue::after{
+        background-image: url(/src/assets/icons/arrow-white.png);
       }
       
       &.blue {
         background-color: $colorBlue;
         color: $colorWhite;
-      }
-
-      &.blue::after{
-        background-image: url(/src/assets/icons/arrow-white.svg);
       }
 
       &.doubled{
