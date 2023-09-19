@@ -1,3 +1,116 @@
+$colorBlue: #04306A;
+$colorLightBlue: #0041A0;
+$colorRed: #FC0D1B;
+$colorGray: #F4F4F4;
+$colorWhite: #FFFFFF;
+
 .flex-container {
-    // Your code here
+    font-family: Arial;
+    margin: 7.62rem 5.93rem 7.5rem 6.08rem;
+    flex-wrap: wrap;
+    font-weight: bold;
+    
+    &__title {
+        font-size: 2.875rem;
+        color: $colorBlue;
+        gap: 10px;
+        flex: 0 1 100%;
+        margin-bottom: 5rem;
+        
+        & span {
+            color: $colorRed;
+        }
+    }
+    
+    &__items {
+        font-size: 2rem;
+        flex-wrap: wrap;
+        column-gap: 1.13rem;
+        row-gap: 1rem;
+    }
+
+    &__column-direction {
+        flex-direction: column;
+        flex: 0 1 49.1%;
+        row-gap: 1rem;
+    }
+
+    &__item {
+        padding: 1.5rem 2.25rem;
+        color: $colorBlue;
+        position: relative;
+
+        &::after {
+            content: "";
+            width: 4rem;
+            height: 2.25rem;
+            position: absolute;
+            bottom: 1.56rem;
+            right: 2.33rem;
+            background-image: url(/src/assets/blue_arrow.svg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        &.gray {
+            background-color: $colorGray;
+        }
+
+        &.blue {
+            background-color: $colorBlue;
+            color: $colorWhite;
+
+            &::after {
+                background-image: url(/src/assets/white_arrow.svg);
+            }
+        }
+        
+        &.lightBlue {
+            background-color: $colorLightBlue;
+            color: $colorWhite;
+
+            &::after {
+                background-image: url(/src/assets/white_arrow.svg);
+            }
+        }
+
+        &.block0 {
+            height: 53.5rem;
+            flex: 0 1 49.25%;
+        }
+
+        &.block1 {
+            flex: 0 1 50%;
+        }
+
+        &.block2 {
+            flex: 0 1 50%;
+        }
+
+        &.block3 {
+            height: 30rem;
+            flex: 0 1 32.2%;
+        }
+
+        &.block4 {
+            height: 30rem;
+            flex: 0 1 32.2%;
+        }
+
+        &.block5 {
+            height: 30rem;
+            flex: 0 1 32.2%;
+        }
+
+        &.block6 {
+            height: 26.25rem;
+            flex: 0 1 49.1%;
+        }
+
+        &.block7 {
+            height: 26.25rem;
+            flex: 0 1 49.1%;
+        }
+    }
 }
