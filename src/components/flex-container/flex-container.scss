@@ -1,3 +1,24 @@
 .flex-container {
-    // Your code here
+    display: flex;
+    font-family: Arial;
+    font-size: 46px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%; 
+    letter-spacing: -0.92px;
+    margin: 0 auto;
+    width: 70%;
+    margin-top: 122px;
+    margin-bottom: 80px;
+   
+
+    .title__color__red{
+        color:#FC0D1B;
+        margin-left: 9px;
+    }
+    .title__color__blue{
+        color:#04306A;
+        margin-left: 11px;
+    }
+  
 }

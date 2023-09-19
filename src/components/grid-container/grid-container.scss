@@ -1,3 +1,68 @@
 .grid-container {
-    // Your code here
+    margin-bottom: 120px;
+    .wrapper{
+        display: grid;       
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 480px;
+        width: 70%;
+        margin: 0 auto;       
+    }
+    .block-of-grid__location__box1{
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    .section-of-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+    .block-of-grid__title__color_gray{
+        background-color: #F4F4F4;
+        margin: 9px;
+        position: relative;
+        color: #04306A;
+        font-family: Arial;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%; /* 38.4px */
+        letter-spacing: -0.64px;
+    }
+
+    .block-of-grid__title__color__blue{
+        background-color: #04306A; 
+        margin: 9px;
+        position:relative;
+       
+    }
+    .block-of-grid__title__color_light-blue{
+        background-color: #0041A0;
+        margin: 9px;
+        position:relative;
+    }
+
+    .block-of-grid__title__color__blue, .block-of-grid__title__color_light-blue {       
+        color: #FFF;
+        font-family: Arial;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%; 
+        letter-spacing: -0.64px;       
+    }
+
+    .block-of-grid__title{
+        margin-top: 24px;
+        margin-left: 36px;
+        margin-right: 50px;
+        white-space: normal;        
+    }
+
+    .container-for-arrow{
+        position: absolute;
+        bottom: 30px;
+        right: 36px;
+    }
+
 }

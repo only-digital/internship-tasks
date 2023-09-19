@@ -1,3 +1,65 @@
 mixin grid-container()
     section.grid-container
-        // Your code here
+        .wrapper
+            mixin icon(color)
+                .container-for-arrow         
+                    svg(
+                        width="66" height="36" viewBox="0 0 66 36" fill="none" xmlns="http://www.w3.org/2000/svg")
+                        path(id="Vector" 
+                        d="M58.6342 19.4L0.27771 19.4L0.27771 16.6L58.6342 16.6L58.6342 19.4ZM36.7643 36L35.1157 33.6L61.8762 20L61.8762 16L35.1157 2.4L36.7643 0L65.1182 14.4V21.6L36.7643 36Z" 
+                        fill=color
+                        )
+            mixin block-of-grid (classBlokOfGrid, location, title, color) 
+                div(class=classBlokOfGrid class=location)
+                    .block-of-grid__title=title
+                    +icon(color)
+            +block-of-grid(
+                'block-of-grid__title__color_gray',
+                'block-of-grid__location__box1',
+                'Мостовая сталь/Стальные конструкции мостов',               
+                '#04306A'
+                )
+            +block-of-grid(
+                'block-of-grid__title__color_gray',
+                'block-of-grid__location__box2',
+                'Железобетонные конструкции мостов',                
+                '#04306A'
+                )
+            +block-of-grid(
+                'block-of-grid__title__color_gray',
+                'block-of-grid__location__box3',
+                'Дорожные ограждения барьерного типа',                
+                '#04306A'
+                )
+            .section-of-grid    
+                +block-of-grid(
+                    'block-of-grid__title__color__blue',
+                    'block-of-grid__location__box4',
+                    'Шпунтовой замок',                
+                    '#FFFFFF'
+                    )
+                +block-of-grid(
+                    'block-of-grid__title__color_gray',
+                    'block-of-grid__location__box5',
+                    'Мостовой крепеж',                
+                    '#04306A'
+                    )
+                +block-of-grid(
+                    'block-of-grid__title__color_light-blue',
+                    'block-of-grid__location__box6',
+                    'Профили для деформационных швов',                
+                    '#FFFFFF'
+                    )
+            +block-of-grid(
+                'block-of-grid__title__color_gray',
+                'block-of-grid__location__box7',
+                'Плетеные габионы',                
+                '#04306A'
+                )
+            +block-of-grid(
+                'block-of-grid__title__color_gray',
+                'block-of-grid__location__box8',
+                'Модульные мосты',                
+                '#04306A'
+                )
+         
