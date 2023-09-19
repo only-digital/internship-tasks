@@ -1,3 +1,123 @@
+$white: #ffffff;
+$gray: #f4f4f4;
+$dark-blue: #04306a;
+$light-blue: #0041a0;
+$red: #fc0d1b;
+
 .grid-container {
-    // Your code here
+	width: 1920px;
+	height: 2156px;
+
+	padding: 122px 96px 120px;
+
+	grid-template-rows: 110px repeat(2, 420px) 480px 420px;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 16px 18px;
+
+	&__header {
+		grid-column: 1/-1;
+
+		grid-template-columns: repeat(2, -webkit-max-content);
+		grid-template-columns: repeat(2, max-content);
+
+		margin-bottom: 80px;
+
+		color: $dark-blue;
+		font-family: Arial;
+		font-size: 46px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 100%;
+		letter-spacing: -0.92px;
+	}
+
+	&__header span {
+		margin-right: 12px;
+		color: $red;
+	}
+
+	&__tab {
+		position: relative;
+		grid-column: span 2;
+		grid-row: span 1;
+
+		font-family: Arial;
+		font-size: 32px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 120%;
+		letter-spacing: -0.64px;
+
+		span {
+			margin-top: 22.86px;
+			margin-left: 36.02px;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 30px;
+			right: 36px;
+
+			background-image: url("/src/assets/vectors/arrow-white.svg");
+			width: 64.932px;
+			height: 36px;
+		}
+
+		&_large {
+			grid-column: span 3;
+			grid-row: span 2;
+
+			span {
+				margin-top: 48.91px;
+				margin-left: 49.23px;
+			}
+		}
+
+		&_mid {
+			grid-column: span 3;
+
+			span {
+				margin-top: 24px;
+				margin-left: 36.02px;
+			}
+		}
+
+		&_gray {
+			background: $gray;
+
+			color: $dark-blue;
+		}
+
+		&_blue {
+			background: $light-blue;
+
+			color: $white;
+		}
+
+		&_dark {
+			background: $dark-blue;
+
+			color: $white;
+		}
+
+		&:nth-child(8) {
+			span {
+				margin-left: 49.23px;
+			}
+		}
+	}
+}
+
+.grid-container__tab.grid-container__tab_gray::before {
+	background-image: url("/src/assets/vectors/arrow-blue.svg");
+}
+
+.grid-container__tab.grid-container__tab_large::before {
+	bottom: 25px;
+	right: 37.3px;
+}
+
+.grid-container__tab.grid-container__tab_mid::before {
+	bottom: 33px;
 }
