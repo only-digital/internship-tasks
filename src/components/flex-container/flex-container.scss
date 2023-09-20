@@ -1,3 +1,100 @@
+$font-stack: Arial, Helvetica, sans-serif;
+$font-size-title: 46px;
+$font-size-subtitle:32px;
+
+$x-gap: 18px;
+$y-gap: 16px;
+
+$color-grey: #F4F4F4;
+$color-white: #FFF;
+$color-blue: #04306A;
+$color-light-blue: #0041A0;
+$color-red: #FC0D1B;
+
+$icon-blue: 'data:image/svg+xml,\
+            <svg width="66" height="36" viewBox="0 0 66 36" fill="none" xmlns="http://www.w3.org/2000/svg">\
+            <path d="M59.2702 19.4L0.913696 19.4L0.913696 16.6L59.2702 16.6L59.2702 19.4ZM37.4003 36L35.7517 33.6L62.5122 20L62.5122 16L35.7517 2.4L37.4003 0L65.7542 14.4V21.6L37.4003 36Z" fill="%2304306A"/>\
+            </svg>';
+$icon-white: 'data:image/svg+xml,\
+            <svg width="66" height="36" viewBox="0 0 66 36" fill="none" xmlns="http://www.w3.org/2000/svg">\
+            <path d="M59.2702 19.4L0.913696 19.4L0.913696 16.6L59.2702 16.6L59.2702 19.4ZM37.4003 36L35.7517 33.6L62.5122 20L62.5122 16L35.7517 2.4L37.4003 0L65.7542 14.4V21.6L37.4003 36Z" fill="white"/>\
+            </svg>';
+
 .flex-container {
-    // Your code here
+    font-family: $font-stack;
+    margin: 0 auto;
+    padding: 122px 96px 120px;
+    flex-direction: column;
+    width: 100vw;
+    max-width: 1920px;
+    gap: $x-gap;
+
+    &__title {
+        margin-bottom: calc(80px - $y-gap);
+        font-size: $font-size-title;
+        font-weight: 700;
+        letter-spacing: calc(-.02 * $font-size-title);
+        color: $color-blue;
+        width: 80%;
+
+        &_accent {
+            color: $color-red;
+        }
+    }
+
+    &__subtitle {
+        font-size: $font-size-subtitle;
+        letter-spacing: calc(-.02 * $font-size-title);
+        font-weight: 700;
+    }
+
+    &__flex-row {
+        width: 100%;
+        min-height: 480px;
+        justify-content: space-between;
+        gap: $x-gap;
+    }
+
+    &__flex-column {
+        flex-direction: column;
+        height: 856px;
+        flex-basis: calc(100% / 2);
+        gap: $y-gap;
+    }
+
+    &__flex-item {
+        position: relative;
+        padding: 23px 36px 30px;
+        flex-basis: calc(100% / 2);
+        background-color: $color-grey;
+        color: $color-blue;
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 65px;
+            height: 36px;
+            bottom: 30px;
+            right: 36px;
+            background-image: url($icon-blue);
+        }
+
+        &_type_blue {
+            background-color: $color-blue;
+            color: $color-white;
+
+            &::after {
+                background-image: url($icon-white);
+            }
+        }
+        
+        &_type_light-blue {
+            background-color: $color-light-blue;
+            color: $color-white;
+
+            &::after {
+                background-image: url($icon-white);
+            }
+        }
+    }
 }
