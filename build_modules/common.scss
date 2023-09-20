@@ -1,3 +1,4 @@
+@import '../src/components/colored-button/colored-button';
 @import '../src/components/button-with-border/button-with-border';
 @import "./fonts";
 
@@ -11,6 +12,8 @@ html {
 
 * {
     box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
 }
 
 body {
