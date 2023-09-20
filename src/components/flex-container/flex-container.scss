@@ -1,3 +1,98 @@
+$dark-blue: #04306a;
+$light-blue: #0041a0;
+$light: #f4f4f4;
+$txt-light: #fff;
+
 .flex-container {
-    // Your code here
+    padding: 122px 96px 120px;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial;
+    gap: 19px;
+    min-width: 1280px;
+
+    .title {
+        font-size: 46px;
+        font-weight: 700;
+        line-height: 46px;
+        letter-spacing: -0.02em;
+        text-align: left;
+        margin-bottom: 80px;
+        color: $dark-blue;
+    }
+
+    .card {
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+        padding: 24px 34px 30px 36px;
+
+        &__title {
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 120%;
+            letter-spacing: -0.64px;
+        }
+        &__icon {
+            justify-content: flex-end;
+        }
+        &__link {
+            svg:hover {
+                opacity: 0.5;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .first__row {
+        height: 856px;
+        width: 100%;
+        gap: 19px;
+    }
+
+    .one-block {
+        width: 100%;
+        .card__title {
+            margin: 24px 13px;
+        }
+    }
+
+    .two-block {
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 19px;
+        width: 100%;
+    }
+
+    .second__row {
+        height: 480px;
+        width: 100%;
+        gap: 19px;
+    }
+
+    .third__row {
+        height: 420px;
+        width: 100%;
+        gap: 19px;
+    }
+}
+
+.light {
+    fill: $dark-blue;
+    color: $dark-blue;
+    background: $light;
+}
+
+.dark-blue {
+    fill: $txt-light;
+    color: $txt-light;
+    background: $dark-blue;
+}
+
+.light-blue {
+    fill: $txt-light;
+    color: $txt-light;
+    background: $light-blue;
 }

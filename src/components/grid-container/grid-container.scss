@@ -1,3 +1,65 @@
 .grid-container {
-    // Your code here
+    min-width: 1280px;
+    padding: 122px 96px 120px;
+    font-family: Arial;
+    color: #04306a;
+    gap: 19px;
+
+    &__title {
+        font-size: 46px;
+        font-weight: 700;
+        line-height: 46px;
+        letter-spacing: -0.02em;
+        text-align: left;
+        margin-bottom: 80px;
+    }
+
+    .card {
+        height: 100%;
+        width: 100%;
+        padding: 24px 34px 30px 36px;
+
+        &__title {
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 120%;
+            letter-spacing: -0.64px;
+        }
+        &__icon {
+            justify-content: flex-end;
+            align-items: end;
+        }
+        &__link {
+            svg:hover {
+                opacity: 0.5;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .first__row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 19px;
+        height: 856px;
+
+        .one-block {
+            grid-row: span 2;
+            .card__title {
+                margin: 24px 13px;
+            }
+        }
+    }
+
+    .second__row {
+        grid-template-columns: repeat(3, 1fr);
+        height: 480px;
+        gap: 19px;
+    }
+
+    .third__row {
+        grid-template-columns: repeat(2, 1fr);
+        height: 420px;
+        gap: 19px;
+    }
 }

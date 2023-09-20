@@ -1,3 +1,27 @@
+mixin card(title, cardType)
+    .card(class=cardType)
+        h2.card__title= title
+        span.card__icon
+           a(href="#").card__link
+                include ../../assets/icons/arrow.svg
+
 mixin flex-container()
     section.flex-container
-        // Your code here
+        h1.title
+            font(color="red") Комплексные
+            | &nbsp;предложения для мостостроения
+        block
+        .first__row
+            .one-block
+                +card('Мостовая сталь/Стальные конструкции мостов', 'light')
+            .two-block
+                +card('Железобетонные конструкции мостов', 'light')
+                +card('Дорожные ограждения барьерного типа', 'light')
+        .second__row
+            +card('Шпунтовой замок', 'dark-blue')
+            +card('Мостовой крепеж',  'light')
+            +card('Профили для деформационных швов', 'light-blue')
+
+        .third__row
+            +card('Плетеные габионы', 'light')
+            +card('Модульные мосты',  'light')
