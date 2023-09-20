@@ -1,16 +1,20 @@
 .flex-container {
-    display: flex;
-    font-family: Arial;
-    font-size: 46px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 100%; 
-    letter-spacing: -0.92px;
+    width: 70vw;
+    flex-wrap: wrap;
     margin: 0 auto;
-    width: 70%;
-    margin-top: 122px;
-    margin-bottom: 80px;
-   
+
+    .title{
+        font-family: Arial;
+        font-size: 46px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 100%; 
+        letter-spacing: -0.92px;
+        margin: 0 auto;
+        width: 100%;
+        margin-top: 122px;
+        margin-bottom: 80px;
+    }
 
     .title__color__red{
         color:#FC0D1B;
@@ -20,5 +24,90 @@
         color:#04306A;
         margin-left: 11px;
     }
-  
+    .block-of-grid__title__color_gray{
+        background-color: #F4F4F4;             
+        position: relative;
+        color: #04306A;
+        font-family: Arial;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%; 
+        letter-spacing: -0.64px;       
+    }
+
+    .block-of-grid__title__color__blue{
+        background-color: #04306A;         
+        position:relative;       
+    }
+    .block-of-grid__title__color_light-blue{
+        background-color: #0041A0;      
+        position:relative;
+    }
+
+    .block-of-grid__title__color__blue, .block-of-grid__title__color_light-blue {       
+        color: #FFF;
+        font-family: Arial;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%; 
+        letter-spacing: -0.64px;               
+    }
+
+    .block-of-grid__title{
+        margin-top: 24px;
+        margin-left: 36px;
+        margin-right: 50px;             
+    }
+
+    .container-for-arrow{
+        position: absolute;
+        bottom: 30px;
+        right: 36px;        
+    }
+
+    .block-of-grid__location__box1{
+        flex-basis: 48.5%;
+        height: 858px;
+        margin: 9px;
+    }
+    .block__first-row__right{
+        display: flex;
+        flex-direction: column;
+        flex-basis: 48.5%;
+        margin: 9px;
+    }
+    .block-of-grid__location__box2{       
+        height: 420px;
+        margin-bottom: 18px;
+    }
+    .block-of-grid__location__box3{       
+        height: 420px;
+    }
+    .block-of-grid__location__box4{
+        flex-basis: 31.85%;
+        height: 420px;
+        margin: 9px;
+    }
+    .block-of-grid__location__box5{
+        flex-basis: 31.85%;
+        height: 420px;
+        margin: 9px;
+    }
+    .block-of-grid__location__box6{
+        flex-basis: 31.85%;
+        height: 420px;
+        margin: 9px;
+    }
+    .block-of-grid__location__box7{
+        flex-basis: 48.5%;
+        height: 420px;
+        margin: 9px;
+    }
+    .block-of-grid__location__box8{
+        flex-basis: 48.5%;
+        height: 420px;
+        margin: 9px;
+    }  
 }

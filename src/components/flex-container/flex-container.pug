@@ -1,5 +1,54 @@
 mixin flex-container()
     section.flex-container
-        .title__color__red Комплексные              
-        .title__color__blue предложения для мостостроения
-       
+            .title 
+                .title__color__red Комплексные              
+                .title__color__blue предложения для мостостроения           
+            +block-of-grid(
+                'block-of-grid__title__color_gray',
+                'block-of-grid__location__box1',
+                'Мостовая сталь/Стальные конструкции мостов',               
+                '#04306A'
+                )
+            .block__first-row__right
+                +block-of-grid(
+                    'block-of-grid__title__color_gray',
+                    'block-of-grid__location__box2',
+                    'Железобетонные конструкции мостов',                
+                    '#04306A'
+                    )
+                +block-of-grid(
+                    'block-of-grid__title__color_gray',
+                    'block-of-grid__location__box3',
+                    'Дорожные ограждения барьерного типа',                
+                    '#04306A'
+                    )
+            +block-of-grid(
+                'block-of-grid__title__color__blue',
+                'block-of-grid__location__box4',
+                'Шпунтовой замок',                
+                '#FFFFFF'
+                )
+            +block-of-grid(
+                'block-of-grid__title__color_gray',
+                'block-of-grid__location__box5',
+                'Мостовой крепеж',                
+                '#04306A'
+                )
+            +block-of-grid(
+                'block-of-grid__title__color_light-blue',
+                'block-of-grid__location__box6',
+                'Профили для деформационных швов',                
+                '#FFFFFF'
+                )
+            +block-of-grid(
+                'block-of-grid__title__color_gray',
+                'block-of-grid__location__box7',
+                'Плетеные габионы',                
+                '#04306A'
+                )
+            +block-of-grid(
+                'block-of-grid__title__color_gray',
+                'block-of-grid__location__box8',
+                'Модульные мосты',                
+                '#04306A'
+                )

@@ -1,5 +1,7 @@
 include ../components/flex-container/flex-container
 include ../components/grid-container/grid-container
+include ../components/mixins/block-of-grid
+include ../components/mixins/icon
 
 
 <!DOCTYPE html>
@@ -10,7 +12,9 @@ html(lang="ru")
         title Задание 1
 
     body
-        main           
-            +flex-container     
+        main 
+            h2 flex          
+            +flex-container
+            h2 grid     
             +grid-container   
           

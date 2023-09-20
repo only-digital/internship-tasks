@@ -3,13 +3,13 @@
     .wrapper{
         display: grid;       
         grid-template-columns: 1fr 1fr;
-        grid-auto-rows: 480px;
+        grid-template-rows: auto 480px 480px 480px 480px;
         width: 70%;
         margin: 0 auto;       
     }
     .block-of-grid__location__box1{
-        grid-row-start: 1;
-        grid-row-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 4;
     }
     .section-of-grid{
         display: grid;
@@ -63,6 +63,30 @@
         position: absolute;
         bottom: 30px;
         right: 36px;
+    }
+
+    .title {
+        display: flex !important;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        font-family: Arial;
+        font-size: 46px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 100%; 
+        letter-spacing: -0.92px;
+        margin-top: 122px;
+        margin-bottom: 80px;       
+    
+        .title__color__red{
+            color:#FC0D1B;
+            margin-left: 9px;           
+        }
+        .title__color__blue{
+            color:#04306A;
+            margin-left: 11px;
+        }
+      
     }
 
 }
