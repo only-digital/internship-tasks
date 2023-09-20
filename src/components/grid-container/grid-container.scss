@@ -1,11 +1,43 @@
+@import '/src/pages/style.scss';
+
 .grid-container {
-	max-width: 1724px;
+	max-width: $max-width;
 	margin: 0 auto;
-	gap: 16px;
-	padding-bottom: 120px;
+	padding: 122px 0 120px 0;
+	gap: $horizontal-gap;
+
+	.grid-title {
+		@include text-styles($font-family, 700, 46px, $darkBlue);
+		display: flex !important;
+		padding: 0 0 64px 0;
+		cursor: default;
+
+		span {
+			color: $red;
+		}
+	}
+
+	.grid-item {
+		@include text-styles($font-family, 700, 32px, $darkBlue);
+		background-color: $grey;
+		padding: 24px 0 0 36px;
+		height: 100%; 
+		position: relative;
+		cursor: pointer;
+
+		&:after {
+			content: '';
+			width: 65px;
+			height: 36px;
+			background-image: url('/src/assets/icons/arrow-blue.png');
+			position: absolute;
+			bottom: 25px;
+			right: 37px;
+		}
+	}
 
 	.grid-row {
-		gap: 18px;
+		gap: $vertical-gap;
 		grid-template-columns: 1fr 1fr;
 		min-height: 420px;
 
@@ -23,28 +55,6 @@
 		}
 	}
 
-	.grid-item {
-		font-family: Arial, Helvetica, sans-serif;
-		font-weight: 700;
-		font-size: 32px;
-		color: #04306A;
-		background-color: #F4F4F4;
-		padding: 24px 0 0 36px;
-		height: 100%; 
-		position: relative;
-		cursor: pointer;
-
-		&:after {
-			content: '';
-			width: 65px;
-			height: 36px;
-			background-image: url('/src/assets/icons/arrow-blue.png');
-			position: absolute;
-			bottom: 25px;
-			right: 37px;
-		}
-	}
-
 	.grid-item-1 {
 		padding: 49px 0 0 49px;
 		grid-row: 1 / 3;
@@ -52,8 +62,8 @@
 	}
 
 	.grid-item-4 {
-		background-color: #04306A;
-		color: #fff;
+		background-color: $darkBlue;
+		color: $white;
 
 		&:after {
 			background-image: url('/src/assets/icons/arrow-white.png');
@@ -61,8 +71,8 @@
 	}
 
 	.grid-item-6 {
-		background-color: #0041A0;
-		color: #fff;
+		background-color: $blue;
+		color: $white;
 
 		&:after {
 			background-image: url('/src/assets/icons/arrow-white.png');

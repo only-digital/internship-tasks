@@ -1,0 +1,17 @@
+$white: #fff;
+$grey: #F4F4F4;
+$darkBlue: #04306A;
+$blue: #0041A0;
+$red: #FC0D1B;
+$font-family: Arial, Helvetica, sans-serif;
+$max-width: 1724px;
+$vertical-gap: 18px;
+$horizontal-gap: 16px;
+$gap:16px;
+
+@mixin text-styles($font-family, $font-weight, $font-size, $color) {
+	font-family: $font-family;
+	font-weight: $font-weight;
+	font-size: $font-size;
+	color: $color;
+}
