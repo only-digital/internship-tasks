@@ -1,0 +1,9 @@
+mixin buttons-slider(props)
+	div.buttons-slider-wrapper
+		div.btn-wrapper
+			button.buttons-slider&attributes(attributes)
+				+svg('arrow').buttons-slider__svg
+			button.buttons-slider&attributes(attributes)
+				+svg('arrow').buttons-slider__svg_right
+		div.number-page-wrapper
+			span 01/04
