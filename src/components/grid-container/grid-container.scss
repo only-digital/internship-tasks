@@ -1,3 +1,77 @@
+$blue: #04306a;
+$light-blue: #0041a0;
+$grey: #f4f4f4;
+
 .grid-container {
-    // Your code here
+	margin-top: 20px;
+	padding: 0 96px 120px 96px;
+
+	gap: 18px;
+
+	grid-template-areas:
+		"block1 block1 block1 block2 block2 block2"
+		"block1 block1 block1 block3 block3 block3"
+		"block4 block4 block5 block5 block6 block6"
+		"block7 block7 block7 block8 block8 block8";
+
+	grid-template-columns: repeat(6, 1fr);
+	.block {
+		padding: 0 36.02px;
+		height: 480px;
+		max-height: 100%;
+		color: #fff;
+		position: relative;
+
+		.block__title {
+			margin-top: 23px;
+			font-family: Arial, sans-serif;
+			font-size: 32px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 120%;
+			letter-spacing: -0.64px;
+		}
+
+		.block__icon {
+			position: absolute;
+			bottom: 30px;
+			right: 36px;
+		}
+	}
+	.block--1 {
+		grid-area: block1;
+		height: 100%;
+
+		.block__title {
+			margin-top: 49px;
+		}
+	}
+
+	.block--2 {
+		grid-area: block2;
+	}
+
+	.block--3 {
+		grid-area: block3;
+	}
+
+	.block--4 {
+		grid-area: block4;
+	}
+
+	.block--5 {
+		grid-area: block5;
+	}
+
+	.block--6 {
+		grid-area: block6;
+	}
+
+	.block--7 {
+		grid-area: block7;
+	}
+
+	.block--8 {
+		grid-area: block8;
+	}
 }

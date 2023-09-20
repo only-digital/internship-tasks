@@ -1,20 +1,45 @@
 include ../components/flex-container/flex-container
 include ../components/grid-container/grid-container
+include ../components/block/block
+
+- const blueColor = "#04306A"
+- const lightBlueColor = "#0041A0"
+- const greyColor = "#F4F4F4" 
+- const whiteColor = "#FFFFFF"
+- const redColor = "#FC0D1B"
+
+- const textContent1 = "Мостовая сталь/Стальные конструкции мостов"
+- const textContent2 = "Железобетонные конструкции мостов"
+- const textContent3 = "Дорожные ограждения барьерного типа"
+- const textContent4 = "Шпунтовой замок"
+- const textContent5 = "Мостовой крепеж"
+- const textContent6 = "Профили для деформационных швов"
+- const textContent7 = "Плетеные габионы"
+- const textContent8 = "Модульные мосты"
+
 
 
 <!DOCTYPE html>
 html(lang="ru")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Задание 1
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title Задание 1
 
-    body
-        main
-            h2 FlexBox
-            +flex-container
+	body
+		main
+			h2 FlexBox
+			p(style=`color: ${blueColor}; font-family: Arial; font-size: 46px; font-weight: 700; 
+			line-height: 100%; letter-spacing: -0.92px; margin: 122px 0 80px 0; padding-left: 96px;`)
+				span(style=`color: ${redColor}`) Комплексные
+				span  предложения для мостостроения  
+			+flex-container
 
-            hr
+			hr
 
-            h2 Grid layout
-            +grid-container
+			h2 Grid layout
+			p(style=`color: ${blueColor}; font-family: Arial; font-size: 46px; font-weight: 700; 
+			line-height: 100%; letter-spacing: -0.92px; margin: 122px 0 80px 0; padding-left: 96px;`)
+				span(style=`color: ${redColor}`) Комплексные
+				span  предложения для мостостроения
+			+grid-container

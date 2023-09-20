@@ -1,3 +1,75 @@
+$blue: #04306a;
+$light-blue: #0041a0;
+$grey: #f4f4f4;
+
 .flex-container {
-    // Your code here
+	margin-top: 20px;
+	padding: 0 96px 120px 96px;
+
+	flex-wrap: wrap;
+	gap: 18px;
+
+	.block {
+		padding: 0 36.02px;
+		height: 480px;
+		max-height: 100%;
+		color: #fff;
+		position: relative;
+
+		.block__title {
+			margin-top: 23px;
+			font-family: Arial, sans-serif;
+			font-size: 32px;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 120%;
+			letter-spacing: -0.64px;
+		}
+
+		.block__icon {
+			position: absolute;
+			bottom: 30px;
+			right: 36px;
+		}
+	}
+
+	.block--1 {
+		flex-basis: calc(50% - 18px);
+		flex-grow: 1;
+		height: 980px;
+
+		flex-direction: column;
+		row-gap: 18px;
+
+		.block__title {
+			margin-top: 49px;
+		}
+	}
+
+	.block--2,
+	.block--3 {
+		flex-basis: calc(50% - 18px);
+		flex-grow: 1;
+
+		.block__title {
+			margin-top: 23px;
+		}
+	}
+
+	.block3 {
+		align-self: flex-start;
+	}
+
+	.block--4,
+	.block--5,
+	.block--6 {
+		flex-basis: calc(33% - 18px);
+		flex-grow: 1;
+	}
+
+	.block--7,
+	.block--8 {
+		flex-basis: calc(50% - 18px);
+		flex-grow: 1;
+	}
 }

@@ -1,3 +1,11 @@
 mixin flex-container()
-    section.flex-container
-        // Your code here
+	section.flex-container
+		+block(1, greyColor, blueColor, textContent1)
+		div.block--1
+			+block(2, greyColor, blueColor, textContent2)
+			+block(3, greyColor, blueColor, textContent3)
+		+block(4, blueColor, whiteColor, textContent4)
+		+block(5, greyColor, blueColor, textContent5)
+		+block(6, lightBlueColor, whiteColor, textContent6)
+		+block(7, greyColor, blueColor, textContent7)
+		+block(8, greyColor, blueColor, textContent8)
