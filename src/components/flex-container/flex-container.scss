@@ -22,7 +22,7 @@ $icon-white: 'data:image/svg+xml,\
 
 .flex-container {
     font-family: $font-stack;
-    margin: 0 auto;
+    font-weight: 700;
     padding: 122px 96px 120px;
     flex-direction: column;
     width: 100vw;
@@ -32,7 +32,6 @@ $icon-white: 'data:image/svg+xml,\
     &__title {
         margin-bottom: calc(80px - $y-gap);
         font-size: $font-size-title;
-        font-weight: 700;
         letter-spacing: calc(-.02 * $font-size-title);
         color: $color-blue;
         width: 80%;
@@ -43,21 +42,31 @@ $icon-white: 'data:image/svg+xml,\
     }
 
     &__subtitle {
+        width: 80%;
         font-size: $font-size-subtitle;
         letter-spacing: calc(-.02 * $font-size-title);
-        font-weight: 700;
     }
 
     &__flex-row {
         width: 100%;
-        min-height: 480px;
         justify-content: space-between;
         gap: $x-gap;
+
+        &_size_s {
+            min-height: 420px;
+        }
+
+        &_size_m {
+            min-height: 480px;
+        }
+
+        &_size_l {
+            min-height: 856px;
+        }
     }
 
     &__flex-column {
         flex-direction: column;
-        height: 856px;
         flex-basis: calc(100% / 2);
         gap: $y-gap;
     }

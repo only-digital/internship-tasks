@@ -43,6 +43,7 @@ $icon-white: 'data:image/svg+xml,\
     }
 
     &__subtitle {
+        width: 80%;
         font-size: $font-size-subtitle;
         letter-spacing: calc(-.02 * $font-size-title);
     }
