@@ -1,3 +1,30 @@
+$primary-bg-color: #f4f4f4;
+$text-color: #04306a;
+
 .flex-container {
-    // Your code here
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding-left: 96px;
+  padding-right: 96px;
+  height: 856px;
+}
+.flex-container__item {
+  padding-top: 24px;
+  padding-left: 36px;
+  padding-right: 36px;
+  background-color: $primary-bg-color;
+  color: $text-color;
+  font-family: 'Arial';
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 120%;
+  flex-grow: 1;
+  margin-bottom: 16px;
+  word-break: break-all;
+}
+.flex-container__item:first-child {
+  padding-top: 49px;
+  padding-left: 49px;
+  height: 100%;
+  margin-right: 18px;
 }
