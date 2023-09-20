@@ -1,0 +1,126 @@
+.container {
+	max-width: 500px;
+	margin: auto;
+	padding: 20px;
+}
+.button-name {
+	margin-bottom: 20px;
+}
+.button-with-border {
+	$root: &;
+	padding: 0 14px 0 18px;
+	display: flex;
+	align-items: center;
+	column-gap: 14px;
+	border-radius: 24px;
+	border: 1px solid #BCBCBC;
+	transition: all 0.5s ease-out 0s;
+	margin-bottom: 20px;
+	&__icon {
+		max-width: 32px;
+		height: auto;
+		& svg {
+			width: 100%;
+			height: auto;
+			vertical-align: middle;
+		}
+		@media screen and (max-width: 1280px) {
+			max-width: 24px;
+			max-height: 24px;
+		}
+	}
+	&__text {
+		color: #111111;
+		font: 400 normal 16px/100% 'Grtsk Peta', sans-serif;
+		letter-spacing: -0.32px;
+		@media screen and (max-width: 1280px) {
+			font-size: 14px;
+		}
+		@media screen and (max-width: 768px) {
+			font-size: 16px;
+		}
+	}
+	&:hover {
+		transition: all 0.5s ease-in 0s;
+		background-color: #0041A0;
+		border-color: #0041A0;
+		#{$root}__text {
+			transition: all 0.5s ease-in 0s;
+			color: #ffffff;
+		}
+		#{$root}__icon path {
+			transition: all 0.5s ease-in 0s;
+			fill: #ffffff;
+		}
+		@media screen and (max-width: 768px) {
+			background-color: #ffffff;
+			border-color: #BCBCBC;
+			#{$root}__text {
+				color: #111111;
+			}
+			#{$root}__icon path {
+				fill: #111111;
+			}
+		}
+	}
+
+	&:focus {
+		border-radius: 24px;
+		border: 3px solid #99B3D8;
+		background-color: #ffffff;
+		#{$root}__text {
+			transition: all 0.5s ease-in 0s;
+			color: #0041A0;
+		}
+		#{$root}__icon path {
+			transition: all 0.5s ease-in 0s;
+			fill: #0041A0;
+		}
+		@media screen and (max-width: 768px) {
+			border: 1px solid #BCBCBC;
+			#{$root}__text {
+				color: #111111;
+			}
+			#{$root}__icon path {
+				fill: #111111;
+			}
+		}
+	}
+	&:active {
+		transition: all 0.3s ease-in-out 0s;
+		background-color: #002F6C;
+		border-color: #002F6C;
+		#{$root}__text {
+			transition: all 0.5s ease-in 0s;
+			color: #ffffff;
+		}
+		#{$root}__icon path {
+			transition: all 0.5s ease-in 0s;
+			fill: #ffffff;
+		}
+	}
+	&:disabled {
+		pointer-events: none;
+		border-color: #BCBCBC;
+		#{$root}__text {
+			color: #909090;
+		}
+		#{$root}__icon path {
+			fill: #909090;
+		}
+	}
+	@media screen and (max-width: 1280px) {
+		padding: 8px 14px 8px 16px;
+		column-gap: 12px;
+	}
+	@media screen and (max-width: 768px) {
+		column-gap: 14px;
+		padding: 8px 14px 8px 18px;
+	}
+	@media screen and (max-width: 375px) {
+		width: 100%;
+		justify-content: center;
+		padding: 8px 14px;
+		column-gap: 12px;
+	}
+}
