@@ -2,6 +2,11 @@ extends ../../build_modules/common
 
 
 block body
-    +example-button({text: 'example text'})
-    +example-button({text: 'disabled'})(disabled='')
-    //Your code here
+	+example-button({text: 'example text'})
+	+example-button({text: 'disabled'})(disabled='')
+
+	+button({ text: 'Кнопка с обводкой' })
+	+button({ text: 'Кнопка с обводкой (состояние disabled)' })(disabled="disabled")
+
+	+alt-button({ text: 'Кнопка с альтернативной заливкой' })
+	+alt-button({ text: 'Кнопка с альтернативной заливкой (состояние disabled)' })(disabled="disabled")

@@ -1,0 +1,41 @@
+@import '/src/pages/style.scss';
+
+.button {
+	$root: &;
+	@include button-styles($grey);
+	@include text-styles($font-family, 400, 16px, $black, 16px);
+
+	&:hover {
+		background-color: $blue;
+		color: $white;
+		border: 1px solid $blue;
+
+		svg > path {
+			fill: $white;
+		}
+	}
+
+	&:active {
+		background-color: $darkBlue;
+		border: 1px solid $darkBlue;
+	}
+
+	&:focus-visible {
+		border: 3px solid $lightBlue;
+		color: $blue;
+
+		svg > path {
+			fill: $blue;
+		}
+	}
+
+	&:disabled {
+		border: 1px solid $grey;
+		color: $grey;
+		pointer-events: none;
+		
+		svg > path {
+			fill: $grey;
+		}
+	}
+}

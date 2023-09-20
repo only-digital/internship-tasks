@@ -1,0 +1,44 @@
+@import '/src/pages/style.scss';
+
+.alt-button {
+	$root: &;
+	@include button-styles($red);
+	@include text-styles($font-family, 400, 16px, $white, 16px);
+	background-color: $red;
+
+	&:hover {
+		background-color: $mediumRed;
+		border: 1px solid $mediumRed;
+
+		svg > path {
+			fill: $white;
+		}
+	}
+
+	&:active {
+		background-color: $darkRed;
+		border: 1px solid $darkRed;
+	}
+
+	&:focus-visible {
+		border: 3px solid $lightBlue;
+		color: $white;
+
+		svg > path {
+			fill: $white;
+		}
+	}
+
+	&:disabled {
+		border: none;
+		background-color: $lightGrey;
+		color: $steel;
+		pointer-events: none;
+		
+		svg > path {
+			fill: $steel;
+		}
+	}
+
+
+}
