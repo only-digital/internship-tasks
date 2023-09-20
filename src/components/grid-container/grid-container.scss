@@ -1,3 +1,129 @@
 .grid-container {
-    // Your code here
+    
+    width: 1920px;
+    height: 2156px;
+    padding-top: 122px;
+    padding-left: 97px;
+    align-items: start;
+
+    h2 {
+        grid-template-rows: min-content;
+        grid-template-columns: max-content max-content;
+        color: var(--blue, #04306A);
+        font-family: Arial;
+        font-size: 46px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 100%;
+        letter-spacing: -0.92px;
+
+        margin-bottom: 80px;
+        height: fit-content;
+
+        span {
+            color: var(--Red, #FC0D1B);
+            font-family: Arial;
+            font-size: 46px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 100%;
+            letter-spacing: -0.92px;
+        }
+    }   
+    
+    .items {
+
+        grid-template-columns: repeat(6, 1fr);
+        gap: 18px;
+        
+        %item-template-first-last-row {
+            min-height: 420px;
+        }
+        
+        %item-template-second-row {
+            min-height: 480px;
+        }
+
+        $background-main-color: #F4F4F4;
+        $font-bright-color: #fff;
+
+        .items__item {
+            grid-template-rows: 1fr;
+
+            p {
+                color: var(--blue, #04306A);
+                font-family: Arial;
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 120%;
+
+                margin-top: 49px;
+                margin-left: 49px;
+            }
+
+            img {
+                width: 64.932px;
+                height: 36px;
+                margin-right: 36px;
+                margin-left: auto;
+                margin-bottom: 25px;
+            }
+        }
+
+        .item-1 {
+            grid-column: 1/4;
+            grid-row: 1/3;
+            min-height: 856px;
+            background: $background-main-color;
+        }
+
+        .item-2 {
+            grid-column: -1/-4;
+            @extend %item-template-first-last-row;
+            background-color: $background-main-color;
+        }
+
+        .item-3 {
+            grid-column: -1/-4;
+            @extend %item-template-first-last-row;
+            background-color: $background-main-color;
+        }
+
+        .item-4 {
+            grid-column: 1/3;
+            @extend %item-template-second-row;
+            background: #04306A;
+            p {
+                color: $font-bright-color;
+            }
+        }
+
+        .item-5 {
+            grid-column: 3/5;
+            @extend %item-template-second-row;
+            background-color: $background-main-color;
+        }
+
+        .item-6 {
+            grid-column: 5/7;
+            @extend %item-template-second-row;
+            background-color: #0041A0;
+            p {
+                color: $font-bright-color;
+            }
+        }
+
+        .item-7 {
+            grid-column: 1/4;
+            @extend %item-template-first-last-row;
+            background-color: $background-main-color;
+        }
+
+        .item-8 {
+            grid-column: 4/7;
+            @extend %item-template-first-last-row;
+            background-color: $background-main-color;
+        }
+    }
 }
