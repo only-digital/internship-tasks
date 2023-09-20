@@ -1,3 +1,10 @@
+$main-text-color: #04306A;
+$secondary-text-color: #FC0D1B;
+$default-white-color: #fff;
+$default-black-color: #000;
+$main-background-color: #F4F4F4;
+$secondary-background-color: #0041A0;
+
 .flex-container {
     color: #04306A;
     font-family: Arial, sans-serif;
@@ -11,4 +18,110 @@
     max-width: 1920px;
     margin: 0 auto;
     padding: 122px 96.06px 122px 97.26px;
+
+    &__title-container {
+        margin-bottom: 63px;
+    }
+
+    &__title {
+        font-size: 46px;
+        line-height: 100%;
+        letter-spacing: -0.92px;
+
+        &--red {
+            color: $secondary-text-color;
+            margin-right: 12px;
+        }
+    }
+
+    &__inner {
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: $main-background-color;
+        min-height: 420px;
+        padding: 23px 32px 30px 35px;
+
+        &--blue {
+            background-color: $main-text-color;
+            color: $default-white-color;
+        }
+
+        &--light-blue {
+            background-color: $secondary-background-color;
+            color: $default-white-color;
+        }
+
+        &--height {
+            min-height: 480px;
+        }
+
+        &--1 {
+            padding: 49px 30px 30px 49px;
+            width: 50%;
+        }
+
+        &--7 {
+            padding: 23px 30px 30px 47px;
+        }
+
+        &--4,
+        &--5,
+        &--6 {
+            width: 33.33%;
+        }
+
+        &--7,
+        &--8 {
+            width: 50%;
+        }
+
+    }
+
+    &__inner-extra {
+        width: 50%;
+        flex-direction: column;
+        column-gap: 16px;
+        row-gap: 16px;
+    }
+
+    &__inner-wrapper {
+
+        &--2 {
+            column-gap: 18.1px;
+        }
+
+        &--3,
+        &--1 {
+            column-gap: 19.21px;
+        }
+    }
+
+    &__inner-link {
+        width: 65px;
+        height: 36px;
+        align-self: end;
+        justify-self: end;
+        margin-left: auto;
+
+        &:hover svg,
+        &:focus-visible svg {
+            color: $default-black-color;
+        }
+
+        &:active svg {
+            color: $default-black-color;
+            opacity: 0.5;
+        }
+
+        svg {
+            color: $main-text-color;
+        }
+
+        &--white {
+            svg {
+                color: $default-white-color;
+            }
+
+        }
+    }
 }

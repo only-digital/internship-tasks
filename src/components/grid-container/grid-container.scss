@@ -1,6 +1,7 @@
 $main-text-color: #04306A;
 $secondary-text-color: #FC0D1B;
 $default-white-color: #fff;
+$default-black-color: #000;
 $main-background-color: #F4F4F4;
 $secondary-background-color: #0041A0;
 
@@ -104,15 +105,25 @@ $secondary-background-color: #0041A0;
         height: 36px;
         align-self: end;
         justify-self: end;
-        background-image: url("/src/assets/icons/arrow.svg");
 
-        &:hover,
-        &:focus-visible {
-            opacity: 0.7;
+        &:hover svg,
+        &:focus-visible svg {
+            color: $default-black-color;
         }
 
-        &:active {
+        &:active svg {
+            color: $default-black-color;
             opacity: 0.5;
+        }
+
+        svg {
+            color: $main-text-color;
+        }
+
+        &--white {
+            svg {
+                color: $default-white-color;
+            }
         }
     }
 }
