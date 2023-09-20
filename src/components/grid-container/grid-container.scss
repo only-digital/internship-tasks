@@ -1,5 +1,13 @@
+$main-text-color: #04306A;
+$secondary-text-color: #FC0D1B;
+$default-white-color: #fff;
+$main-background-color: #F4F4F4;
+$secondary-background-color: #0041A0;
+
+
+
 .grid-container {
-    color: #04306A;
+    color: $main-text-color;
     font-family: Arial, sans-serif;
     font-size: 32px;
     font-style: normal;
@@ -26,23 +34,23 @@
         grid-template-columns: 313px 1fr;
 
         &--red {
-            color: #FC0D1B;
+            color: $secondary-text-color;
         }
     }
 
     &__inner {
-        background-color: #F4F4F4;
+        background-color: $main-background-color;
         min-height: 420px;
         padding: 23px 30px 30px 35px;
 
         &--blue {
-            background-color: #04306A;
-            color: #fff;
+            background-color: $main-text-color;
+            color: $default-white-color;
         }
 
         &--light-blue {
-            background-color: #0041A0;
-            color: #fff;
+            background-color: $secondary-background-color;
+            color: $default-white-color;
         }
 
         &--height {
@@ -98,25 +106,16 @@
         height: 36px;
         align-self: end;
         justify-self: end;
+        background-image: url("/src/assets/icons/arrow.svg");
 
-        &:hover svg,
-        &:focus-visible svg {
-            color: #000;
+
+        &:hover,
+        &:focus-visible {
+            opacity: 0.7;
         }
 
-        &:active svg {
-            color: #000;
+        &:active {
             opacity: 0.5;
-        }
-
-        svg {
-            color: #04306A;
-        }
-
-        &--white {
-            svg {
-                color: #fff;
-            }
         }
     }
 }
