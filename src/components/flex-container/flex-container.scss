@@ -1,3 +1,87 @@
+$color_red:  #FC0D1B;
+$color_blue:  #04306A;
+$color_white:  #fff;
+$font_family:  Arial;
+$block_bg:#F4F4F4;
+$blockTwo_bg:#04306A;
+$blockThree_bg:#0041A0;
+$row_gap: 16px;
+$column_gap: 20px;
+
+// commot.scss:69
+// main>section.flex-container * {    display: flex!important; }
+// а зачем все вложенные флексом ?
+
 .flex-container {
-    // Your code here
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    column-gap: $column_gap;
+    row-gap: $row_gap;
+
+    max-width: 1750px; // ~
+    padding: 0 15px;
+    font-style: normal;
+    font-weight: 700;
+    font-family: $font_family;
+    & > .flex-container__item:nth-child(1) {
+        width: 50%;
+        max-width: 50%;
+    }
+}
+
+.flex-container__head{
+    color: $color_blue;
+    font-size: 46px;
+    margin: 110px 0 80px;
+    line-height: 1;
+    width: 100%;
+    // letter-spacing: -0.92px;
+    & span {
+        color: $color_red;
+    }
+}
+
+.flex-container__wrapV{
+    flex-direction: column;
+    row-gap: $row_gap;
+    max-width: 50%;
+    width: 50%;
+}
+.flex-container__wrapH{
+    display: flex;
+    column-gap: $column_gap;
+    row-gap: 30px;
+    width: 100%;
+    & > .flex-container__item{
+        width: calc(100% / 3);
+    }
+}
+.flex-container__item{
+    background-color: $block_bg;
+    color: $color_blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 22px 36px 30px;
+    min-height: 480px;
+    flex: 1;
+    &--two{
+        background-color: $blockTwo_bg;
+        color: $color_white;
+    }
+    &--three{
+        background-color: $blockThree_bg;
+        color: $color_white;
+    }
+}
+.flex-container__item-title{
+    font-size: 32px;
+    line-height: 1.2; 
+    // letter-spacing: -0.64px;
+}
+
+.flex-container__item-icon{
+    color: currentColor;
+    align-self: flex-end;
 }

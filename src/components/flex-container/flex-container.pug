@@ -1,3 +1,27 @@
+
+mixin blockItem(title='заголовок')
+    .flex-container__item(class!=attributes.class) 
+        .flex-container__item-title= title
+        span.flex-container__item-icon
+            svg(width="65px", height="36px", xmlns="http://www.w3.org/2000/svg", viewBox="0 0 65 36", fill="none")
+                path(d="M58.4384 19.4L0 19.4L0 16.6L58.4384 16.6L58.4384 19.4ZM36.5378 36L34.8869 33.6L61.685 20L61.685 16L34.8869 2.4L36.5378 0L64.9316 14.4V21.6L36.5378 36Z" fill="currentColor")
+
 mixin flex-container()
     section.flex-container
-        // Your code here
+        
+        h3.flex-container__head #[span Комплексные]&nbsp;предложения для мостостроения
+
+        +blockItem('Мостовая сталь/Стальные конструкции мостов')
+
+        .flex-container__wrapV
+            +blockItem('Железобетонные конструкции мостов')
+            +blockItem('Дорожные ограждения барьерного типа')
+
+        .flex-container__wrapH
+            +blockItem('Шпунтовой замок')(class='flex-container__item--two')
+            +blockItem('Мостовой крепеж')
+            +blockItem('Профили для деформационных швов')(class='flex-container__item--three')
+
+        +blockItem('Профили для деформационных швов')
+        +blockItem('Модульные мосты')
+                    
