@@ -1,16 +1,29 @@
+
+- var darkBlue = '#04306A';
+mixin svg(colorArrow)
+    svg.flex-container__img(xmlns="http://www.w3.org/2000/svg" width="65" height="36" viewBox="0 0 65 36" fill="none")
+                        path(d="M58.4384 19.4L0 19.4L0 16.6L58.4384 16.6L58.4384 19.4ZM36.5378 36L34.8869 33.6L61.685 20L61.685 16L34.8869 2.4L36.5378 0L64.9316 14.4V21.6L36.5378 36Z" fill=colorArrow)
 mixin flex-container()
     section.flex-container.container
         h1.flex-container__title <span>Комплексные&nbsp</span> предложения для мостостроения
         div.flex-container__wrapper 
             div.flex-container__row-1.flex-container__row
                 div.flex-container__item Мостовая сталь/Стальные конструкции мостов
+                    +svg(darkBlue)
                 div.flex-container__union-items
                     div.flex-container__item Железобетонные конструкции мостов
+                        +svg(darkBlue)
                     div.flex-container__item Дорожные ограждения барьерного типа
+                        +svg(darkBlue)
             div.flex-container__row-2.flex-container__row
                 div.flex-container__item Шпунтовой замок
+                    +svg('#fff')
                 div.flex-container__item Мостовой крепеж
+                    +svg(darkBlue)
                 div.flex-container__item Профили для деформационных швов
+                    +svg('#fff')
             div.flex-container__row-3.flex-container__row
                 div.flex-container__item Плетеные габионы
+                    +svg(darkBlue)
                 div.flex-container__item Модульные мосты
+                    +svg(darkBlue)
