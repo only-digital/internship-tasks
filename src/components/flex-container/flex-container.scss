@@ -1,3 +1,113 @@
 .flex-container {
-    // Your code here
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 122px 98px;
+
+  .flex-container__title {
+    gap: 12px;
+    margin-bottom: 80px;
+    font-family: Arial;
+    font-size: 46px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: -0.92px;
+    color: #04306a;
+
+    & span {
+      color: #fc0d1b;
+    }
+  }
+}
+
+.flex-container__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.flex-container__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: Arial;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: -0.64px;
+}
+
+.flex-container__item_gray {
+  background-color: #f4f4f4;
+  color: #04306a;
+}
+
+.flex-container__item_blue {
+  background-color: #0041a0;
+  color: #fff;
+}
+
+.flex-container__item__title {
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  & .flex-container__link {
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-right: 35px;
+    margin-bottom: 35px;
+  }
+}
+
+.wrapper__row1,
+.wrapper__row2,
+.wrapper__row3 {
+  gap: 16px;
+}
+
+.wrapper__row1,
+.wrapper__row3 {
+  display: flex;
+  & > div {
+    width: 50%;
+  }
+}
+
+.wrapper__row1 {
+  height: 856px;
+
+  & > div:first-child {
+    padding: 49px;
+  }
+}
+
+.wrapper__row2 {
+  height: 480px;
+}
+
+.wrapper__row3 {
+  height: 420px;
+}
+
+.flex-container__column {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  height: 100%;
+
+  & > div {
+    height: 50%;
+  }
+}
+
+.wrapper__row2 {
+  & > div {
+    width: calc(100% / 3);
+  }
+}
+
+.flex-container__item {
+  padding: 24px 36px;
 }

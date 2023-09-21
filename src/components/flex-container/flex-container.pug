@@ -1,28 +1,32 @@
 mixin flex-container()
     section.flex-container
         h1.flex-container__title <span>Комплексные</span> предложения для мостостроения
-        .flex-container__wrapper
-            .flex-container__item.flex-container__item_gray
-                .flex-container__item__title Мостовая сталь/Стальные конструкции мостов
-                a.flex-container__link(href="#") link
-            .flex-container__item.flex-container__item_gray
-                .flex-container__item__title Железобетонные конструкции мостов
-                a.flex-container__link(href="#") link
-            .flex-container__item.flex-container__item_gray
-                .flex-container__item__title Дорожные ограждения барьерного типа
-                a.flex-container__link(href="#") link
-            .flex-container__item.flex-container__item_blue
-                .flex-container__item__title Шпунтовой замок
-                a.flex-container__link(href="#") link
-            .flex-container__item.flex-container__item_gray
-                .flex-container__item__title Мостовой крепеж
-                a.flex-container__link(href="#") link
-            .flex-container__item.flex-container__item_blue
-                .flex-container__item__title Профили для деформационных швов
-                a.flex-container__link(href="#") link
-            .flex-container__item.flex-container__item_gray
-                .flex-container__item__title Плетеные габионы
-                a.flex-container__link(href="#") link
-            .flex-container__item.flex-container__item_gray
-                .flex-container__item__title Модульные мосты
-                   a.flex-container__link(href="#") link
+        .flex-container__wrapper.wrapper
+            .wrapper__row1
+                .flex-container__item.flex-container__item_gray
+                    .flex-container__item__title Мостовая сталь/Стальные конструкции мостов
+                        a.flex-container__link(href="#") link
+                .flex-container__column
+                    .flex-container__item.flex-container__item_gray
+                        .flex-container__item__title Железобетонные конструкции мостов
+                            a.flex-container__link(href="#") link
+                    .flex-container__item.flex-container__item_gray
+                        .flex-container__item__title Дорожные ограждения барьерного типа
+                            a.flex-container__link(href="#") link
+            .wrapper__row2               
+                .flex-container__item.flex-container__item_blue
+                    .flex-container__item__title Шпунтовой замок
+                        a.flex-container__link(href="#") link
+                .flex-container__item.flex-container__item_gray
+                    .flex-container__item__title Мостовой крепеж
+                        a.flex-container__link(href="#") link
+                .flex-container__item.flex-container__item_blue
+                    .flex-container__item__title Профили для деформационных швов
+                        a.flex-container__link(href="#") link
+            .wrapper__row3
+                .flex-container__item.flex-container__item_gray
+                    .flex-container__item__title Плетеные габионы
+                        a.flex-container__link(href="#") link
+                .flex-container__item.flex-container__item_gray
+                    .flex-container__item__title Модульные мосты
+                        a.flex-container__link(href="#") link
