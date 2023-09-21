@@ -1,0 +1,88 @@
+@import '/src/pages/style.scss';
+
+.form {
+	position: relative;
+}
+
+.input {
+	$root: &;
+	position: relative;
+	margin: 0;
+
+	&:focus-visible {
+		width: 56px;
+		height: 28px;
+		border: 3px solid #C2DAFF;
+		border-radius: 14px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		padding: 0;
+	}
+}
+
+.label {
+	position: relative;
+	cursor: pointer;
+
+	.input:checked + &:hover {
+		&:after {
+			background-color: $darkBlue;
+		}
+	}
+
+	&:after {
+		content: '';
+		display: block;
+		width: 56px;
+		height: 28px;
+		background-color: $mediumGrey;
+		border: 0px solid $mediumGrey;
+		border-radius: 14px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition-duration: 300ms;
+	}
+
+	&:before {
+		content: '';
+		display: block;
+		width: 16px;
+		height: 16px;
+		background-color: $white;
+		border-radius: 50%;
+		position: absolute;
+		top: 6px;
+		left: 6px;
+		z-index: 1;
+		transition-duration: 300ms;
+	}
+
+	@media (max-width: 375px) and (max-height: 812px) {
+		&:after {
+			width: 40px;
+			height: 20px;
+		}
+
+		&:before {
+			width: 12px;
+			height: 12px;
+			top: 4px;
+			left: 4px;
+		}
+	}
+}
+
+.input:checked + .label:after {
+	background-color: $blue;
+}
+
+.input:checked + .label:before {
+	left: 34px;
+
+	@media (max-width: 375px) and (max-height: 812px) {
+		left: 24px;
+	}
+}

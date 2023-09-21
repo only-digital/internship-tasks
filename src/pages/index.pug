@@ -16,7 +16,7 @@ block body
 
 	+link({ text: 'Sustainalytics.com', icon: true })(href='#')
 	+link({ text: 'Sustainalytics.com', icon: true, disabled: true })(disabled="disabled")
-
+	
 	p.text
 		| Для подключения сервиса добавьте номер&nbsp;
 		block content
@@ -28,3 +28,5 @@ block body
 		block content
 			+link({ text: 'дополнительных сервисов', icon: false })(href='#')
 		| &nbsp;и устранение «проблемных точек» наших клиентов
+
+	+toggle({ text: 'Переключатель' })(type='checkbox', id='toggle')
