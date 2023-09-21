@@ -18,7 +18,7 @@ $red: #FF0000;
 $mediumRed: #BF1D26;
 $darkRed: #81080F;
 
-$font-family: 'Grtska Peta, sans-serif';
+$font-family: 'Grtsk Peta', sans-serif;
 
 @mixin text-styles($font-family, $font-weight, $font-size, $color, $line-height) {
 	font-family: $font-family;
