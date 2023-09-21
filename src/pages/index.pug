@@ -13,3 +13,18 @@ block body
 
 	+slider({ text: 'Кнопки слайдера' })
 	+slider({ text: 'Кнопки слайдера (состояние disabled)' })(disabled="disabled")
+
+	+link({ text: 'Sustainalytics.com', icon: true })(href='#')
+	+link({ text: 'Sustainalytics.com', icon: true, disabled: true })(disabled="disabled")
+
+	p.text
+		| Для подключения сервиса добавьте номер&nbsp;
+		block content
+			+link({ text: '+7(921)058-57-19', icon: false })(href='#')
+		| &nbsp;в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже	
+
+	p.text
+		| Цифровые продукты, направленные на создание&nbsp;
+		block content
+			+link({ text: 'дополнительных сервисов', icon: false })(href='#')
+		| &nbsp;и устранение «проблемных точек» наших клиентов

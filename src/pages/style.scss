@@ -77,3 +77,13 @@ $font-family: 'Grtsk Peta', sans-serif;
 		}
 	}
 }
+
+.text {
+	@include text-styles($font-family, 400, 16px, $black, 24px);
+	margin-bottom: 20px;
+	cursor: default;
+
+	@media (max-width: 768px) and (max-height: 1024px) {
+		@include text-styles($font-family, 400, 14px, $black, 21px);
+	}
+}
