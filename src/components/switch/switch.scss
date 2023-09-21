@@ -1,0 +1,73 @@
+$color-cobalt: #0041A0;
+$color-blue: #002F6C;
+$color-grey: #DEDEDE;
+$color-white: #FFFFFF;
+$color-blue-light: #C2DAFF;
+
+.switch {
+	$root: &;
+
+	&__input{
+    position: relative;
+    width: 56px;
+    height: 28px;
+    border-radius: 14px;
+    background-color: $color-grey;
+    transition: all .2s ease-in;
+    cursor: pointer;
+
+
+    &::after{
+      position: absolute;
+      margin: 0 6px;
+      content: "";
+      width: 16px;
+      height: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      border-radius: 50%;
+      background-color: $color-white;
+      transition: all .2s ease-in;
+    }
+
+    &:checked{
+      background-color: $color-cobalt;
+    }
+
+    &:checked::after{
+      transform: translateY(-50%) translateX(28px);
+      transition: all .2s ease-in;
+    }
+
+    &:focus{
+      outline: auto;
+      outline-width: 3px;
+      outline-color: $color-blue-light;
+    }
+
+    &:hover{
+      background-color: $color-blue;
+    }
+
+    &[disabled]{
+      pointer-events: none;
+      cursor: default;
+    }
+
+    @media screen and (max-width: 375px) {
+      width: 40px;
+      height: 20px;
+      
+      &::after{
+        width: 12px;
+        height: 12px;
+        margin: 0 4px;
+      }
+
+      &:checked::after{
+        transform: translateY(-50%) translateX(20px);
+      }
+    }
+  }
+
+}
