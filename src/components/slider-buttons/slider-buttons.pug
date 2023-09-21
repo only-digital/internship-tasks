@@ -1,0 +1,9 @@
+mixin slider-buttons(props)
+  .slider-buttons&attributes(attributes)
+    .slider-buttons__buttons-container
+      button.slider-buttons__buttons-container__button&attributes(attributes)
+        +svg('slider-buttons-arrow').slider-buttons__buttons-container__button__image
+      button.slider-buttons__buttons-container__button.right&attributes(attributes)
+        +svg('slider-buttons-arrow').slider-buttons__buttons-container__button__image
+    .slider-buttons__pages-info #{props.current} / #{props.pages}
+
