@@ -1,0 +1,53 @@
+$colorBlue: #002F6C;
+$colorCobolt: #0041A0;
+$colorRed: #FF0000;
+$colorDarkRed: #BF1D26;
+$colorExtraGray1: #BCBCBC;
+
+.link-container {
+	$root: &;
+
+	font-family: 'Grtsk Peta', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	color: $colorCobolt;
+	transition: all 0.3s ease-in-out;
+	
+	&__link {
+		display: inline-flex;
+		align-items: center;
+		column-gap: 10px;
+		transition: all 0.3s ease-in-out;
+	}
+
+	&__svg {
+		width: 24px;
+		height: 24px;
+	}
+
+	&:hover {
+		color: $colorRed;
+	}
+
+	&:active {
+		color: $colorDarkRed;
+	}
+
+	&:focus {
+		#{$root}__link {
+			background-color: rgba(0, 65, 160, 0.15);
+		}
+	}
+
+	&.disabled {
+		pointer-events: none;
+		color: $colorExtraGray1;
+	}
+
+	@media screen and (max-width: 768px) and (min-width: 375px) {
+		font-size: 14px;
+		&:hover {
+			color: $colorCobolt;
+		}
+	}
+}

@@ -1,0 +1,138 @@
+$colorCobolt: #0041A0;
+$colorBlue: #002F6C;
+$colorWhite: #FFFFFF;
+$colorBlack: #111111;
+$colorExtraGray: #BCBCBC;
+$colorSteel: #909090;
+$colorLightBlue: #99B3D8;
+
+.button-with-outline {
+	$root: &;
+	
+	display: flex;
+	width: 138px;
+	height: 48px;
+	align-items: center;
+	justify-content: center;
+	padding: 0 14px 0 18px;
+	column-gap: 14px;
+	border-radius: 24px;
+	border: 1px solid $colorExtraGray;
+	margin: 10px;
+	transition: all 0.3s ease-in-out;
+
+	&__text {
+		font-family: 'Grtsk Peta';
+		font-size: 16px;
+
+		@media screen and (max-width: 1280px) and (min-width: 768px) {
+			font-size: 14px;
+		}
+		@media screen {
+			
+		}
+	}
+
+	&__circle {
+		display: flex;
+
+		& svg {
+			width: 32px;
+			height: 32px;
+		}
+	}
+
+	&:hover {
+		color: $colorWhite;
+		background-color: $colorCobolt;
+		border-color: $colorCobolt;
+
+		#{$root}__circle svg path {
+			fill: $colorWhite;
+		}
+	}
+	
+	&:active {
+		color: $colorWhite;
+		background-color: $colorBlue;
+		border-color: $colorBlue;
+		
+		#{$root}__circle svg path {
+			fill: $colorWhite;
+		}
+	}
+	
+	&:focus {
+		color: $colorCobolt;
+		background-color: $colorWhite;
+		border: 3px solid $colorLightBlue;
+		
+		#{$root}__circle svg path {
+			fill: $colorCobolt;
+		}
+	}
+
+	&:disabled {
+		color: $colorSteel;
+		background-color: $colorWhite;
+		border-color: $colorExtraGray;
+		pointer-events: none;
+
+		#{$root}__circle svg path {
+			fill: $colorSteel;
+		}
+	}
+
+	@media screen and (max-width: 1280px) {
+		width: 119px;
+		height: 42px;
+		padding: 0 14px 0 16px;
+		column-gap: 12px;
+
+		#{$root}__circle svg {
+			width: 24px;
+			height: 24px;
+		}
+	}
+	
+	@media screen and (max-width: 768px) {
+		width: 130px;
+		height: 42px;
+		padding: 0 14px 0 18px;
+		column-gap: 14px;
+
+		&:hover {
+			background-color: $colorWhite;
+			border-color: $colorExtraGray;
+			transition: all 0s ease-in-out;
+
+			#{$root}__text {
+				color: $colorBlack;
+			}
+			#{$root}__circle svg path {
+				fill: $colorBlue;
+			}
+		}
+
+		&:focus {
+			border: 1px solid $colorExtraGray;
+
+			#{$root}__text {
+				color: $colorBlack;
+			}
+			#{$root}__circle svg path {
+				fill: $colorBlue;
+			}
+		}
+	}
+
+	@media screen and (max-width: 375px) {
+		display: flex;
+		width: 327px;
+		height: 42px;
+		align-items: center;
+		padding: 0 14px;
+		column-gap: 12px;
+		flex: 1 0 0;
+	}
+}

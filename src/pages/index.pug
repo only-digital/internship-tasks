@@ -4,4 +4,30 @@ extends ../../build_modules/common
 block body
     +example-button({text: 'example text'})
     +example-button({text: 'disabled'})(disabled='')
-    //Your code here
+    
+    p Кнопка с обводкой
+    +button-with-outline({text: 'Кнопка'})
+    +button-with-outline({text: 'Кнопка'})(disabled='')
+
+    p Кнопка с заливкой
+    +fill-button({text: 'Кнопка'})
+    +fill-button({text: 'Кнопка'})(disabled='')
+
+    p Кнопка слайдер
+    +button-slider({text: '01/04'})
+    +button-slider({text: '01/04'})(class="disabled")
+
+    p Ссылки
+    +link({text: 'Sustainalytics.com', href: 'https://www.sustainalytics.com/'})
+    br
+    +link({text: 'Sustainalytics.com', href: 'https://www.sustainalytics.com/'})(class="disabled")
+
+    p Ссылки в тексте
+    p
+        | Для подключения сервиса добавьте номер 
+        +link({text: '+7(921)058-57-19', href: 'tel:+79210585719', inText: true})
+        |  в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже
+    p
+        | Цифровые продукты, направленные на создание 
+        +link({text: 'дополнительных сервисов', href: '/', inText: true})
+        |  и устранение «проблемных точек» наших клиентов

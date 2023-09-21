@@ -1,0 +1,86 @@
+$colorSteel: #909090;
+$colorExtraGray1: #BCBCBC;
+$colorExtraGray2: #DEDEDE;
+$colorExtraGray3: #F4F4F4;
+$colorLightBlue: #99B3D8;
+$colorWhite: #FFFFFF;
+
+.button-slider {
+	$root: &;
+
+	display: flex;
+	margin: 10px;
+	align-items: center;
+	
+	&__button {
+		display: flex;
+		align-items: center;
+		width: 80px;
+		height: 80px;
+		border: 1px solid $colorExtraGray2;
+		border-radius: 50%;
+		transition: all 0.3s ease-in-out;
+		
+		&:nth-child(2) {
+			margin: 0 40px 0 10px;
+			& svg {
+				transform: rotate(180deg);
+			}
+		}
+		
+		&:hover {
+			background-color: $colorExtraGray3;
+			border-color: $colorExtraGray3;
+		}
+		
+		&:active {
+			background-color: $colorExtraGray2;
+			border-color: $colorExtraGray2;
+		}
+
+		&:focus {
+			border: 3px solid $colorLightBlue;
+		}
+		
+		@media screen and (max-width: 768px) {
+			&:hover {
+				background-color: $colorWhite;
+			}
+
+			&:focus {
+				border: 1px solid $colorExtraGray2;
+			}
+		}
+
+		@media screen and (max-width: 1280px) {
+			width: 60px;
+			height: 60px;
+		}
+	}
+	
+	&__text {
+		font-family: 'Grtsk Peta';
+		font-size: 16px;
+		font-weight: 600;
+		color: $colorSteel;
+
+		@media screen and (max-width: 375px) {
+			display: none;
+		}
+	}
+
+	&.disabled {
+		pointer-events: none;
+
+		#{$root}__text {
+			color: $colorExtraGray1;
+		}
+
+		#{$root}__button {
+			pointer-events: none;
+			& svg path {
+				fill: $colorExtraGray1;
+			}
+		}
+	}
+}
