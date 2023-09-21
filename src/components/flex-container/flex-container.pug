@@ -1,3 +1,25 @@
+mixin flexItem(title, className='')
+    div(class = 'flex-item '+ className)
+        h2.item-title= title
+        button.item-btn
+            include ../../assets/images/arrow.svg
 mixin flex-container()
     section.flex-container
-        // Your code here
+        h1.flex-title
+            span Комплексные
+            | &nbsp;предложения для мостостроения
+        section.flex-items
+            .flex-top
+                .flex-left
+                    +flexItem('Мостовая сталь/Стальные конструкции мостов')
+                .flex-right
+                    +flexItem('Железобетонные конструкции мостов')
+                    +flexItem('Дорожные ограждения барьерного типа')
+            .flex-bottom
+                +flexItem('Шпунтовой замок', 'dark-blue')
+                +flexItem('Мостовой крепеж')
+                +flexItem('Профили для деформационных швов', 'light-blue')
+                +flexItem('Плетеные габионы')
+                +flexItem('Модульные мосты')
+
+

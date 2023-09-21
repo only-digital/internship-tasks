@@ -1,3 +1,80 @@
+$grey: #F4F4F4;
+$main-color: #04306A;
+$light-blue: #0041A0;
+$red: #FC0D1B;
 .grid-container {
-    // Your code here
+  max-width: 1700px;
+  margin: 0 auto;
+  font-family: Arial;
+  gap: 1rem;
+  .grid-title{
+    grid-template-columns: auto auto;
+    justify-content: start;
+    color: $main-color;
+    font-size: 2.875rem;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: -0.0575rem;
+    span{
+      color: $red;
+    }
+  }
+  .grid-item{
+    background: $grey;
+    padding: 3rem;
+    align-content: space-between;
+    color: $main-color;
+    .item-btn{
+      justify-items: end;
+      svg{
+        width: 4rem;
+        height: 2.25rem;
+        fill:#04306A;
+      }
+    }
+    .item-title{
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 2.4rem;
+      letter-spacing: -0.04rem;
+    }
+  }
+  .dark-blue{
+    background: $main-color;
+    color: #fff;
+    .item-btn{
+      svg{
+        fill:#fff;
+      }
+    }
+  }
+  .light-blue{
+    background: $light-blue;
+    color: #fff;
+    .item-btn{
+      svg{
+        fill:#fff;
+      }
+    }
+  }
+  .grid-top{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 44vh);
+    gap: 1rem;
+    .grid-item:nth-child(1){
+      grid-row-start: 1;
+      grid-row-end: 3;
+    }
+  }
+  .grid-middle{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 30rem;
+    gap: 1rem;
+  }
+  .grid-bottom{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 26.25rem;
+    gap: 1rem;
+  }
+
 }
