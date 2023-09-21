@@ -35,6 +35,7 @@
 
 	&:focus {
 		border: 3px solid #99B3D8;
+		background: #FFF;
 
 		#{$root}__svg {
 			fill: #0041A0;

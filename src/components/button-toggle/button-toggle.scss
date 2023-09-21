@@ -1,0 +1,75 @@
+.button-toggle {
+	$root: &;
+	position: relative;
+	display: inline-block;
+	width: 56px;
+	height: 28px;
+
+	@media (max-width: 375px) {
+		width: 40px;
+		height: 20px;
+	}
+
+	&__input{
+		opacity: 0;
+		width: 0;
+		height: 0;
+	}
+
+	&__span{
+		position: absolute;
+		cursor: pointer;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #0041A0;
+		border-radius: 14px;
+		transition: 0.4s;
+
+		&:hover {
+			background: #002F6C;
+		}
+	}
+
+	&__span:before{
+		position: absolute;
+		content: "";
+		height: 16px;
+		width: 16px;
+		top: calc(50% - 8px);
+		left: 4px;
+		transition: 0.4s;
+		background: #FFF;
+		border-radius: 50%;
+
+		@media (max-width: 375px) {
+			width: 10px;
+			height: 10px;
+			top: calc(50% - 6px);
+			left: 4px;
+		}
+	}
+
+	&__input:checked + &__span:before{
+		transform: translateX(calc(100% + 10px));
+
+		@media (max-width: 375px) {
+			transform: translateX(calc(100% + 7px));
+		}
+	}
+
+	&__input:focus + &__span{
+			border: 3px solid #99B3D8;
+			background: #DEDEDE;
+	}
+}
+
+.disabled {
+	opacity: 0.5;
+	pointer-events: none;
+
+	.button-toggle__span{
+		background: #DEDEDE;
+	}
+}

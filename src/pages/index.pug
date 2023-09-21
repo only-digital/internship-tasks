@@ -2,9 +2,19 @@ extends ../../build_modules/common
 
 
 block body
-    +example-button({text: 'example text'})
-    +example-button({text: 'disabled'})(disabled='')
+    +button-toggle
+    br
+    +button-toggle(class='disabled')
+    br
+    +link({text: 'Sustainalytics.com', isIcon: true})
+    br
+    +link({text: 'Sustainalytics.com', isIcon: false})(href='#' class='disabled')
+    p Цифровые продукты, направленные на создание
+        +link({text: 'дополнительных сервисов', isIcon: false})
+        | и устранение «проблемных точек» наших клиентов
+    br
     +button-border({text: 'Кнопка'})
     +button-border({text: 'Кнопка'})(disabled='')
+    br
     +buttons-slider
     +buttons-slider(disabled='')
