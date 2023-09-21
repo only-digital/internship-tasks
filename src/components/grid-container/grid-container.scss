@@ -42,12 +42,20 @@ $light-blue: #0041A0;
     padding: 5%;
 }
 
+
 .grid-container {
+    &__title {
+        grid-template-columns: max-content 1fr;
+        grid-auto-flow: column;
+        justify-items: start;
+        margin-bottom: 64px;
+    }
     .grid {
-        padding: 80px 96px 120px;
-        grid-template-rows: 856px 480px 420px;
+        padding: 120px 96px;
+        grid-template-rows: auto 856px 480px 420px;
         gap: 16px;
         margin: auto;
+        
     }
 
     .row {
