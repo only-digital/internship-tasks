@@ -12,6 +12,12 @@ block body
         p.button-name Кнопки слайдера
         +slider-buttons({count: "01 / 04"})
         +slider-buttons({count: "01 / 04"})(class="disabled")
-    //+example-button({text: 'example text'})
-    //+example-button({text: 'disabled'})(disabled='')
-    //Your code here
+        p.button-name Ссылки
+        +links({text: "Sustainalytics.com", link: "https://www.sustainalytics.com/"})
+        +links({text: "Sustainalytics.com", link: "https://www.sustainalytics.com/"})(class="disabled")
+        p.button-name Ссылки в тексте
+        +linksText({text: "+7(921)058-57-19", link: "tel:+79210585719", inside:true, textBeforeLink: "Для подключения сервиса добавьте номер", textAfterLink: "в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже"})
+        +linksText({text: "дополнительных сервисов", link: "#", inside:true, textBeforeLink: "Цифровые продукты, направленные на создание", textAfterLink: "и устранение «проблемных точек» наших клиентов"})
+
+
+
