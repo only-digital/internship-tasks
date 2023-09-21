@@ -2,31 +2,33 @@ extends ../../build_modules/common
 
 
 block body
-	+example-button({text: 'example text'})
-	+example-button({text: 'disabled'})(disabled='')
+	.container
+		.element
+			+button
+			+button(disabled="disabled")
 
-	+button({ text: 'Кнопка с обводкой' })
-	+button({ text: 'Кнопка с обводкой (состояние disabled)' })(disabled="disabled")
+		.element
+			+alt-button
+			+alt-button(disabled="disabled")
 
-	+alt-button({ text: 'Кнопка с альтернативной заливкой' })
-	+alt-button({ text: 'Кнопка с альтернативной заливкой (состояние disabled)' })(disabled="disabled")
+		.element
+			+slider
+			+slider(disabled="disabled")
 
-	+slider({ text: 'Кнопки слайдера' })
-	+slider({ text: 'Кнопки слайдера (состояние disabled)' })(disabled="disabled")
+		.element
+			+toggle(type='checkbox', id='toggle')
 
-	+link({ text: 'Sustainalytics.com', icon: true })(href='#')
-	+link({ text: 'Sustainalytics.com', icon: true, disabled: true })(disabled="disabled")
-	
-	p.text
-		| Для подключения сервиса добавьте номер&nbsp;
-		block content
-			+link({ text: '+7(921)058-57-19', icon: false })(href='#')
-		| &nbsp;в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже	
+		.element
+			+link({ text: 'Sustainalytics.com', icon: true })(href='#')
+			+link({ text: 'Sustainalytics.com', icon: true, disabled: true })(disabled="disabled")
+			p.text
+				| Для подключения сервиса добавьте номер&nbsp;
+				block content
+					+link({ text: '+7(921)058-57-19', icon: false })(href='#')
+				| &nbsp;в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже	
 
-	p.text
-		| Цифровые продукты, направленные на создание&nbsp;
-		block content
-			+link({ text: 'дополнительных сервисов', icon: false })(href='#')
-		| &nbsp;и устранение «проблемных точек» наших клиентов
-
-	+toggle({ text: 'Переключатель' })(type='checkbox', id='toggle')
+			p.text
+				| Цифровые продукты, направленные на создание&nbsp;
+				block content
+					+link({ text: 'дополнительных сервисов', icon: false })(href='#')
+				| &nbsp;и устранение «проблемных точек» наших клиентов

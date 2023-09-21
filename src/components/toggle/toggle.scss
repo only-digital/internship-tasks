@@ -1,7 +1,8 @@
-@import '/src/pages/style.scss';
+@import '/src/pages/index.scss';
 
 .form {
 	position: relative;
+	height: 28px;
 }
 
 .input {
@@ -12,13 +13,16 @@
 	&:focus-visible {
 		width: 56px;
 		height: 28px;
-		border: 3px solid #C2DAFF;
+		border: 3px solid $mediumBlue;
 		border-radius: 14px;
 		position: absolute;
 		top: 0;
 		left: 0;
 		z-index: 1;
-		padding: 0;
+		
+		@media (max-width: 768px) and (max-height: 1024px) {
+			display: none;
+		}
 	}
 }
 
