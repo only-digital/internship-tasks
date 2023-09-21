@@ -2,6 +2,7 @@ $color-white: #FFFFFF;
 $color-grey: #F4F4F4;
 $color-grey-dark: #DEDEDE;
 $color-blue-light: #99B3D8;
+$color-gray-extra: #BCBCBC;
 $color-steel: #909090;
 $color-blue: #002F6C;
 
@@ -57,7 +58,6 @@ $color-blue: #002F6C;
       }
 
       &:disabled {
-        color: $color-steel;
         background-color: $color-white;
         border-color: $color-grey-dark;
         cursor: default;
@@ -80,6 +80,10 @@ $color-blue: #002F6C;
     line-height: 150%;
     letter-spacing: -0.32px;
     opacity: 0.4;
+  }
+
+  &[disabled] &__pages-info {
+    color:$color-gray-extra;
   }
 
 
