@@ -1,0 +1,55 @@
+.spoiler {
+  $root: &;
+  font-family: "Roboto", sans-serif;
+
+  &__list-item {
+    padding: 30px 0;
+    border-top: 1px solid #e6e6e6;
+
+    &:last-child {
+      border-bottom: 1px solid #e6e6e6;
+    }
+
+    &__title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 36px;
+      line-height: 43.2px;
+      color: #012b34;
+    }
+
+    &__toggler {
+      font-size: inherit;
+      display: inline-flex;
+      transition: rotate 0.3s;
+      margin-right: 15px;
+
+      & > * {
+        pointer-events: none;
+      }
+
+      &.opened {
+        rotate: 45deg;
+      }
+    }
+
+    &:has(button.opened) &__content-wrapper {
+      grid-template-rows: 1fr;
+    }
+
+    &__content-wrapper {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.3s;
+    }
+
+    &__content {
+			height: 100%;
+      font-size: 20px;
+      line-height: 30px;
+      color: #000402;
+			overflow: hidden;
+    }
+  }
+}

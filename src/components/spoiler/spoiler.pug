@@ -1,0 +1,14 @@
+- var plusSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 68 68" fill="none"><path d="M48.2828 34.073L34.1407 34.073L34.1407 19.9919" stroke="#114C9A" stroke-width="2"/><path d="M20.0016 34.073H34.1437L34.1437 48.1542" stroke="#114C9A" stroke-width="2"/></svg>'
+
+mixin spoiler(props)
+	.spoiler&attributes(attributes)(data-component='spoiler')
+		ol.spoiler__list
+			each item in props.items
+				li.spoiler__list-item
+					div.spoiler__list-item__title
+						h2= item.title
+						button.spoiler__list-item__toggler!= plusSvg
+					div.spoiler__list-item__content-wrapper
+						p.spoiler__list-item__content!= item.content
+
+
