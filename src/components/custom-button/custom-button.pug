@@ -1,0 +1,4 @@
+mixin custom-button(props)
+  button.custom-button&attributes(attributes)
+    span.custom-button__text!= props.text
+    +svg('custom-button-arrow').custom-button__arrow

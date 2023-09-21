@@ -2,6 +2,12 @@ extends ../../build_modules/common
 
 
 block body
-    +example-button({text: 'example text'})
-    +example-button({text: 'disabled'})(disabled='')
-    //Your code here
+  +custom-button({text: 'Кнопка'})
+  +custom-button({text: 'Кнопка'})(disabled='')
+  +custom-button({text: 'Кнопка'})(class="alternative")
+  +custom-button({text: 'Кнопка'})(disabled='' class="alternative")
+
+
+
+
+

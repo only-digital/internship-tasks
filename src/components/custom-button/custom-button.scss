@@ -1,0 +1,153 @@
+$color-gray: #BCBCBC;
+$color-steel: #909090;
+$color-black: #111111;
+$color-cobalt: #0041A0;
+$color-blue: #002F6C;
+$color-blue-light: #99B3D8;
+$color-white: #FFFFFF;
+$color-red: #F00;
+$color-red-light: #BF1D26;
+$color-red-dark: #81080F;
+
+
+.custom-button {
+	$root: &;
+
+  margin: 10px;
+  display: flex;
+  height: 48px;
+  padding: 0px 14px 0px 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  border-radius: 25px;
+  border: 1px solid $color-gray;
+  background-color: $color-white;
+  color: $color-black;
+  transition: all .2s ease ;
+  
+  &.alternative{
+    border-color: $color-red;
+    background-color: $color-red;
+    color: $color-white;
+  }
+  
+  &.alternative &__arrow {
+    color: $color-white;
+  }
+
+  &.alternative:focus {
+    border-color: $color-red;
+    background-color: $color-red;
+    color: $color-white;
+  }
+
+  &.alternative:hover {
+    border-color: $color-red-light;
+    background-color: $color-red-light;
+  }
+
+   &.alternative:active {
+    border-color: $color-red-dark;
+    background-color: $color-red-dark;
+  }
+
+  &:focus {
+    color: $color-cobalt;
+    background-color: $color-white;
+    border-color: $color-gray;
+
+    outline: auto;
+    outline-width: 3px;
+    outline-color: $color-blue-light;
+  }
+
+ 
+  &:hover{
+    color: $color-white;
+    background-color: $color-cobalt;
+    border-color: $color-cobalt;
+  }
+
+
+  &:hover &__arrow, 
+  &:active &__arrow {
+    color: $color-white;
+  }
+
+  &:active {
+    color: $color-white;
+    background-color: $color-blue;
+    border-color: $color-blue;
+  }
+
+ 
+  &:disabled,
+  &.alternative:disabled {
+    color: $color-steel;
+    background-color: $color-white;
+    border-color: $color-gray;
+    cursor: default;
+  }
+
+  &:disabled  &__arrow,
+  &.alternative:disabled &__arrow {
+    color: $color-steel
+  }
+
+  &__text {
+    color:inherit;
+    font-family: "Arial";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -0.32px;
+  }
+
+
+
+  &__arrow {
+    width: 32px;
+    height: 32px;
+    color: $color-blue;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  @media screen and (max-width: 1280px) {
+    height: 42px;
+    padding: 0px 14px 0px 16px;
+    gap: 12px;
+
+    &__text {
+      font-size: 14px;
+      letter-spacing: -0.28px;
+    }
+
+    &__arrow {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 42px;
+    padding: 0px 14px 0px 18px;
+    gap: 14px;
+
+    &__text {
+      font-size: 16px;
+      letter-spacing: -0.32px;
+
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    width: 327px;
+    height: 42px;
+    padding: 0px 14px;
+    gap: 12px;
+  }
+}
