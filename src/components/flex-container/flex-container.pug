@@ -1,3 +1,20 @@
+include ../banner/banner
+include ../pageTitle/pageTitle
+
+
 mixin flex-container()
+    +pageTitle("flex-container")
     section.flex-container
+        .flex-container__first-row
+            +banner("flex-container", bannerList[0].title,bannerList[0].color)
+            .flex-container__first-row-second-container
+                +banner("flex-container",bannerList[1].title,bannerList[1].color)
+                +banner("flex-container",bannerList[2].title,bannerList[2].color)
+        .flex-container__second-row
+            +banner("flex-container",bannerList[3].title,bannerList[3].color)
+            +banner("flex-container",bannerList[4].title,bannerList[4].color)
+            +banner("flex-container",bannerList[5].title,bannerList[5].color)
+        .flex-container__third-row
+            +banner("flex-container",bannerList[6].title,bannerList[6].color)
+            +banner("flex-container",bannerList[7].title,bannerList[7].color)
         // Your code here

@@ -1,3 +1,48 @@
+$gap: 16px;
+
 .flex-container {
-    // Your code here
+  flex-direction: column;
+  padding: 0 97px 120px 97px;
+  gap: $gap;
+  &__layout-title {
+    margin: 112px auto 80px 97px;
+  }
+  &__banner {
+    flex-direction: column;
+  }
+  &__first-row {
+    gap: $gap;
+    .flex-container__banner {
+      flex: 1 0;
+      .title {
+        margin-left: 49px;
+      }
+    }
+    &-second-container {
+      flex-direction: column;
+      gap: $gap;
+      flex: 1 0;
+      aspect-ratio: 1;
+    }
+  }
+  &__second-row {
+    gap: $gap;
+    .flex-container__banner {
+      flex: 1 0;
+      aspect-ratio: 1.17639;
+    }
+    .banner:last-of-type .banner__title {
+      max-width: 423px;
+    }
+  }
+  &__third-row {
+    gap: $gap;
+    .flex-container__banner {
+      flex: 1 0;
+      aspect-ratio: 2.0357;
+      &:nth-child(1) .title {
+        margin-left: 49px;
+      }
+    }
+  }
 }

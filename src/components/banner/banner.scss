@@ -1,0 +1,35 @@
+$white: #fff;
+$dark-blue: #04306a;
+$blue: #0041a0;
+$grey: #f4f4f4;
+
+.banner {
+  &_color {
+    &_grey {
+      background-color: $grey;
+    }
+    &_blue {
+      background-color: $blue;
+    }
+    &_dark-blue {
+      background-color: $dark-blue;
+    }
+  }
+  &__title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 23px 0 0 36px;
+    &_color_white {
+      color: $white;
+    }
+    &_color_dark-blue {
+      color: $dark-blue;
+    }
+  }
+
+  &__link {
+    margin: auto 36px 30px auto;
+    justify-self: end;
+  }
+}

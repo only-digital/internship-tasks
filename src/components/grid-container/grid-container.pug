@@ -1,3 +1,12 @@
+include ../banner/banner
+include ../pageTitle/pageTitle
+
+
+
 mixin grid-container()
+    +pageTitle('grid-container')
     section.grid-container
-        // Your code here
+        each banner, index in bannerList
+        
+            +banner('grid-container', banner.title, banner.color, index + 1)
+
