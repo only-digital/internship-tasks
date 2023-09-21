@@ -9,6 +9,9 @@ block body
         p.button-name Кнопка с заливкой
         +colored-button({text: 'Кнопка'})
         +colored-button({text: 'Кнопка'})(disabled='')
+        p.button-name Кнопки слайдера
+        +slider-buttons({count: "01 / 04"})
+        +slider-buttons({count: "01 / 04"})(class="disabled")
     //+example-button({text: 'example text'})
     //+example-button({text: 'disabled'})(disabled='')
     //Your code here

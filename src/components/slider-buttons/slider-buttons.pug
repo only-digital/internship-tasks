@@ -1,0 +1,20 @@
+mixin svgArrow(path1,path2)
+	svg(xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 80 80" fill="none")
+		a(xlink:href="#0")
+			circle(cx="40" cy="40" r="39.5" transform="matrix(-1 0 0 1 80 0)" stroke="#DEDEDE" stroke-width="1px")
+		path(d=path1 fill="#002F6C")
+		path(d=path2 fill="#002F6C")
+
+mixin button-prev
+	.slider-buttons__icon.prev
+		+svgArrow("M50 57.3333L48.4614 60L22 44L22 36L25.0256 34.1705L25.0256 42.2222L50 57.3333Z", "M48.4614 20L50 22.6667L27.9638 36V32.394L48.4614 20Z")
+
+mixin button-next
+	.slider-buttons__icon.next
+		+svgArrow("M30 22.6667L31.5386 20L58 36L58 44L54.9744 45.8295L54.9744 37.7778L30 22.6667Z", "M31.5386 60L30 57.3333L52.0362 44L52.0362 47.606L31.5386 60Z")
+
+mixin slider-buttons(props)
+	.slider-buttons&attributes(attributes)
+		+button-prev
+		+button-next
+		span.slider-buttons__count!=props.count
