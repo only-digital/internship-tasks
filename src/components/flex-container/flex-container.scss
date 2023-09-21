@@ -1,20 +1,71 @@
 @import 'src/pages/style';
 
 .container {
-    margin: 0 auto;
-    width: 1920px;
+    font-family: Arial Bold, Helvetica, sans-serif;
+    font-weight: 700;
+
+    margin-top: 97px;
+    margin-left: 122px;
+    margin-right: 122px;
 }
 
 .flex-container {
     flex-direction: column;
 }
 
+.flex-container__wrapper  {
+    flex-direction: column;
+    row-gap: 16px;
+}
+
 .flex-container__title {
     @include title;
 }
-.flex-container__row-1 {
 
+.flex-container__row {
+    div {
+        flex-basis: 50%;
+    }
+
+    column-gap: 18px;
 }
+
+.flex-container__row-1 {
+    height: 856px;
+    width: 100%;  
+}
+
+.flex-container__row-2 {
+    height: 480px;
+    width: 100%;
+
+    .flex-container__item {
+        &:first-child {
+            background-color: $darkBlue;
+            color: #fff;
+        }
+        &:last-child {
+            background-color: $blue;
+            color: #fff;
+        }
+    }
+}
+
+.flex-container__row-3 {
+    height: 420px;
+    width: 100%;
+}
+
 .flex-container__item {
-    border-color: aqua;
+    background-color: $gray;
+
+    padding-left: 36px;
+    padding-top: 24px;
+}
+
+.flex-container__union-items {
+    flex-direction: column;
+    flex-basis: 50%;
+
+    row-gap: 16px;
 }

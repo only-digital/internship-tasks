@@ -1,21 +1,27 @@
+
 $darkBlue: #04306A;
 $blue: #0041A0;
 $gray: #F4F4F4;
 $red: #FC0D1B;
 
-html {
-    font-family: Arial, Helvetica, sans-serif;
+@font-face {
+    font-family: Arial Bold, Helvetica, sans-serif;
     font-weight: 700;
+    src: url('/src/assets/fonts/ArialBold.ttf');
+}
+
+html {
     letter-spacing: -0.64px;
     font-size: 32px;
     line-height: 1.2;
     
     color: $darkBlue;
+
+    width: 1920px;
 }
 
 @mixin title {
     font-size: 46px;
-    font-weight: 700;
     letter-spacing: -0.92px;
     line-height: 1;
 
@@ -23,6 +29,5 @@ html {
         color: $red;
     }
 
-    margin-top: 122px;
     margin-bottom: 80px;
 }
