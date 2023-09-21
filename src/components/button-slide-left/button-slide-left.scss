@@ -1,0 +1,47 @@
+.button-slide-left {
+	$root: &;
+
+	display: flex;
+	margin: 10px;
+	width: 80px;
+	height: 80px;	
+	justify-content: center;
+	align-items: center;	
+	border-radius: 50%;
+	border: 1px solid #BCBCBC;	
+	transition: all .3s;
+
+	    &:disabled {
+		    opacity: 0.5;
+		    pointer-events: none;
+	    }
+
+        @media (max-width: 1280px) {
+            width: 60px;
+	        height: 60px;
+        }     
+
+	    @media (hover: hover) {
+		    &:hover {
+			    background-color: #F4F4F4;			  
+	        }
+	    }
+	    
+		&:active {
+			background-color: #DEDEDE;
+	    }
+
+        &:focus {
+            border: 3px solid #99B3D8;;			
+        }
+
+	    &__svg {
+		    width: 80px;
+		    fill: #002F6C;
+		    transition: all .3s;	
+            
+            @media (max-width: 1280px) {
+			    width: 66px;
+		    }
+	    }
+}
