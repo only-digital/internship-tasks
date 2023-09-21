@@ -8,6 +8,7 @@ $color-white: #FFFFFF;
 $color-red: #F00;
 $color-red-light: #BF1D26;
 $color-red-dark: #81080F;
+$color-gray-extra: #F4F4F4;
 
 
 .custom-button {
@@ -82,11 +83,17 @@ $color-red-dark: #81080F;
   }
 
  
-  &:disabled,
-  &.alternative:disabled {
+  &:disabled {
     color: $color-steel;
     background-color: $color-white;
     border-color: $color-gray;
+    cursor: default;
+  }
+
+  &.alternative:disabled {
+    color: $color-steel;
+    background-color: $color-gray-extra;
+    border-color: $color-gray-extra;
     cursor: default;
   }
 
