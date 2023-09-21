@@ -1,3 +1,20 @@
+@import 'src/pages/style';
+
+.container {
+    margin: 0 auto;
+    width: 1920px;
+}
+
 .flex-container {
-    // Your code here
+    flex-direction: column;
+}
+
+.flex-container__title {
+    @include title;
+}
+.flex-container__row-1 {
+
+}
+.flex-container__item {
+    border-color: aqua;
 }
