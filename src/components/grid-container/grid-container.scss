@@ -1,3 +1,80 @@
+$white: #FFFFFF;
+$grey: #F4F4F4;
+$dark-blue: #04306A;
+$light-blue: #0041A0;
+
+.white {
+    color: $white;
+}
+.grey {
+    background-color: $grey;
+}
+.light-blue {
+    background-color: $light-blue;
+}
+.dark-blue {
+    background-color: $dark-blue;
+}
+.blue {
+    color: $dark-blue;
+}
+.red {
+    color: red;
+}
+
+.title {
+    font-size: 46px;
+    line-height: 46px;
+    letter-spacing: -2%;
+}
+.subtitle {
+    font-size: 32px;
+    line-height: 38.4px;
+    letter-spacing: -2%;
+}
+.btn {
+    justify-items: end;
+    align-items: end;
+}
+
+.btn,
+.subtitle {
+    padding: 5%;
+}
+
 .grid-container {
-    // Your code here
+    .grid {
+        padding: 80px 96px 120px;
+        grid-template-rows: 856px 480px 420px;
+        gap: 16px;
+        margin: auto;
+    }
+
+    .row {
+        gap: 18px;
+    }
+
+    .row-1 {
+        grid-template-columns: 856px 856px;
+
+        &__inner {
+            grid-template-columns: 856px;
+            grid-template-rows: 420px 420px;
+            gap: 16px;
+        }
+
+    }
+
+    .row-2 {
+        grid-template-columns: repeat(3, 1fr);
+
+        &__subtitle:first-child {
+            grid-template-columns: minmax(auto, .8fr);
+        }
+    }
+    
+    .row-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 }
