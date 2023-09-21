@@ -1,3 +1,113 @@
+$blue: #04306a;
+$light_blue: #0041a0;
+$red: #fc0d1b;
+$grey: #f4f4f4;
+$white: #fff;
+
 .flex-container {
-    // Your code here
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 120px 97px;
+  &__title {
+    color: $blue;
+    font-family: Arial;
+    font-size: clamp(30px, 2.4vw, 48px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: -0.92px;
+    padding-bottom: 80px;
+  }
+  &__title span {
+    color: $red;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  &__item {
+    background: $grey;
+    width: 100%;
+    padding: 24px 36px 30px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &_blue-light {
+      background: $light_blue;
+    }
+    &_blue {
+      background: $blue;
+    }
+    &_div-1 {
+      height: 856px;
+      padding: 49px 36px 30px 49px;
+    }
+
+    &_div-2 {
+      height: 100%;
+    }
+
+    &_div-3 {
+      height: 100%;
+    }
+
+    &_div-4 {
+      height: 480px;
+    }
+
+    &_div-5 {
+      height: 480px;
+    }
+
+    &_div-6 {
+      height: 480px;
+    }
+
+    &_div-7 {
+      height: 420px;
+    }
+
+    &_div-8 {
+      height: 420px;
+    }
+  }
+
+  &__item-title {
+    color: $blue;
+    font-family: Arial;
+    font-size: clamp(25px, 1.7vw, 32px);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -0.64px;
+    &_white {
+      color: $white;
+    }
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+  }
+
+  &__arrow {
+    height: 36px;
+    align-self: end;
+  }
+}
+main > section.flex-container h1.flex-container__title {
+  display: inline !important;
+}
+
+main > section.flex-container h1.flex-container__title span {
+  display: inline !important;
 }

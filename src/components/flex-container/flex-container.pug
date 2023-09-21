@@ -1,3 +1,54 @@
+mixin imageArrow(imageName)
+  - var imagePath = '../assets/images/' + imageName + '.svg'
+  img(class='flex-container__arrow' src=imagePath)
+  
+
 mixin flex-container()
-    section.flex-container
-        // Your code here
+  section.flex-container
+    h1.flex-container__title
+      span Комплексные&nbsp;
+      |  предложения для мостостроения
+
+    .flex-container__row
+      .flex-container__item.flex-container__item_div-1
+        p.flex-container__item-title
+          | Мостовая сталь/Стальные конструкции мостов
+        +imageArrow('arrow')
+
+      .flex-container__col
+        .flex-container__item.flex-container__item_div-2
+          p.flex-container__item-title
+            | Железобетонные конструкции мостов
+          +imageArrow('arrow')
+
+        .flex-container__item.flex-container__item_div-3
+          p.flex-container__item-title
+            | Дорожные ограждения барьерного типа
+          +imageArrow('arrow')
+
+    .flex-container__row
+      .flex-container__item.flex-container__item_div-4.flex-container__item_blue
+        p.flex-container__item-title.flex-container__item-title_white
+          | Шпунтовой замок
+        +imageArrow('arrow_white')
+
+      .flex-container__item.flex-container__item_div-5
+        p.flex-container__item-title
+          | Мостовой крепеж
+        +imageArrow('arrow')
+
+      .flex-container__item.flex-container__item_div-6.flex-container__item_blue-light
+        p.flex-container__item-title.flex-container__item-title_white
+          | Профили для деформационных швов
+        +imageArrow('arrow_white')
+
+    .flex-container__row
+      .flex-container__item.flex-container__item_div-7
+        p.flex-container__item-title
+          | Плетеные габионы
+        +imageArrow('arrow')
+
+      .flex-container__item.flex-container__item_div-8
+        p.flex-container__item-title
+          | Модульные мосты
+        +imageArrow('arrow')
