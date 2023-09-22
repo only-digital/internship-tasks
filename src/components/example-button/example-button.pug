@@ -1,5 +1,5 @@
 mixin example-button(props)
-	button.example-button&attributes(attributes)(data-component='example-button')
-		span.example-button__text Clicked 0 times
+	button.example-button&attributes(attributes)(data-component='example-button')= props.title
+		span.example-button__text
 		span.example-button__circle
 			+svg('example-svg').example-button__svg

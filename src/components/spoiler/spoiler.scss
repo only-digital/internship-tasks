@@ -1,0 +1,64 @@
+.spoiler {
+	$root: &;
+	max-width: 1600px;
+
+	border-bottom: 1px solid #E6E6E6;
+	margin-left: 30px;
+	font-weight: 400;
+	line-height: 120%;
+	font-family: Roboto;
+
+	&:last-child{
+		border-bottom: 1px solid #E6E6E6;
+	}
+
+	&__title{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: 36px;
+		padding: 30px 0;
+		color: #012B34;
+		cursor: pointer;
+
+		svg{
+			width: 20px;
+			height: 20px;
+			transition: all 0.6s;
+
+			&.open{
+				transform: rotate(135deg);
+			}
+	}
+	}
+
+	&__text{
+		overflow: hidden;
+		font-size: 20px;
+		max-width: 942px;
+		color: #000402;
+		opacity: 0.8;
+		max-height: 0;
+		//transition: height 0ms 400ms;
+		transition: max-height 0.5s ease-out, padding-bottom 0.6s;
+		//transition: all .5s ease;
+		@keyframes spoiler {
+			0%   {max-height: 0;
+					padding-bottom: 0;
+			}
+			30% {padding-bottom: 40px;}
+			100% {max-height: 1000px;
+			}
+		}
+
+		&.open{
+			//animation: spoiler 4s;
+			padding-bottom: 40px;
+			max-height: 700px;
+			//transition: max-height 3s ease-out;
+			//padding-bottom: 40px;
+			//transition: height 0ms 600ms;
+			//display: block;
+		}
+	}
+}

@@ -1,0 +1,5 @@
+mixin spoiler(props)
+	div.spoiler&attributes(attributes)(data-component='spoiler')
+		div.spoiler__title= props.title
+			+svg('collapse-btn').spoiler__svg
+		div.spoiler__text= props.text
