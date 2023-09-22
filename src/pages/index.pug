@@ -2,6 +2,16 @@ extends ../../build_modules/common
 
 
 block body
-    +example-button({text: 'example text'})
-    +example-button({text: 'disabled'})(disabled='')
-    //Your code here
+    +button-primary({text: 'Кнопка'})
+    +button-primary({text: 'Кнопка'})(disabled='')
+    +button-secondary({text: 'Кнопка'})
+    +button-secondary({text: 'Кнопка'})(disabled='')
+    +slider-navigation({text: '01/04'})    
+    +slider-navigation({text: '01/04'})(disabled='')
+    +link({text: 'Ссылка', href:'#'})    
+    +link({text: 'Ссылка', href:'#'})(disabled='')
+    p.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit
+      #[+link-in-text({text: 'Ссылка в тексте', href:'#'})] possimus ab natus dicta repellat harum ipsam rerum perspi
+    +switch-button
+    +switch-button(disabled='')

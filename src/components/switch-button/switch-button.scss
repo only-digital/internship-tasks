@@ -1,0 +1,41 @@
+.switch-button {
+  $root: &;
+  margin: 10px;
+  &[disabled] {
+    pointer-events: none;
+  }
+  & input {
+    position: relative;
+    height: 28px;
+    width: 56px;
+    background-color: #dedede;
+    border-radius: 14px;
+    transition: 0.3s;
+    &:checked {
+      background-color: #0041a0;
+      &::before {
+        left: 34px;
+      }
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      top: 6px;
+      left: 6px;
+      background-color: white;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+    &:focus {
+      outline: 3px solid #99b3d8;
+    }
+    @media (hover: hover) {
+      &:hover {
+        background-color: #002f6c;
+      }
+    }
+  }
+  //Your code here
+}

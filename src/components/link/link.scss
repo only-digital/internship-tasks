@@ -1,0 +1,47 @@
+.link {
+  $root: &;
+  margin: 10px;
+  display: flex;
+  width: max-content;
+  align-items: center;
+
+  &:hover {
+    #{$root}__text {
+      color: #ff0000;
+    }
+  }
+  &:focus {
+    background: rgba(0, 65, 160, 0.15);
+    outline: none;
+  }
+  &:active {
+    #{$root}__text {
+      color: #bf1d26;
+    }
+  }
+  &[disabled] {
+    #{$root}__text {
+      color: #bcbcbc;
+    }
+    pointer-events: none;
+  }
+  &__text {
+    color: #0041a0;
+    font-family: 'Arial';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.32px;
+    margin-right: 12px;
+    transition: 0.3s;
+    @media (max-width: 768px) {
+      font-size: 14px;
+      letter-spacing: -0.28px;
+    }
+  }
+  &__svg {
+    width: 24px;
+    height: 24px;
+  }
+  //Your code here
+}

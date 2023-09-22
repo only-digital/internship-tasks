@@ -1,0 +1,4 @@
+mixin button-primary(props)
+	button.button-primary&attributes(attributes)
+		span.button-primary__text!= props.text
+		+svg('button-primary').button-primary__svg

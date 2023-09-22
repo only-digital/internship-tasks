@@ -1,0 +1,8 @@
+mixin slider-navigation(props)
+	.slider-navigation&attributes(attributes)
+		button.slider-navigation__button.slider-navigation__button-prev
+			+svg('pagination-prev').slider-navigation__button__svg
+		button.slider-navigation__button.slider-navigation__button-next
+			+svg('pagination-next').slider-navigation__button__svg
+		span.slider-navigation__pagination!= props.text
+

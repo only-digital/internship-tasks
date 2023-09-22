@@ -1,0 +1,8 @@
+mixin link(props)
+	a.link&attributes(attributes)(href=props.href)
+		span.link__text
+			if props.text
+				| #{props.text}
+			else 
+				| #{props.href}
+		+svg('icon-link').link__svg

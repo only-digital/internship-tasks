@@ -1,0 +1,4 @@
+mixin button-secondary(props)
+	button.button-secondary&attributes(attributes)
+		span.button-secondary__text!= props.text
+		+svg('button-primary').button-secondary__svg

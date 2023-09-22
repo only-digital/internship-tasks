@@ -1,0 +1,41 @@
+.link-in-text {
+  $root: &;
+  display: inline-block;
+  @media (hover: hover) {
+    &:hover {
+      #{$root}__text {
+        color: #ff0000;
+      }
+    }
+  }
+
+  &:focus {
+    background: rgba(0, 65, 160, 0.15);
+    outline: none;
+  }
+
+  &:active {
+    #{$root}__text {
+      color: #bf1d26;
+    }
+  }
+
+  &[disabled] {
+    #{$root}__text {
+      color: #bcbcbc;
+    }
+    pointer-events: none;
+  }
+  &__text {
+    color: #0041a0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.32px;
+    transition: 0.3s;
+    @media (max-width: 768px) {
+      font-size: 14px;
+      letter-spacing: -0.28px;
+    }
+  }
+}
