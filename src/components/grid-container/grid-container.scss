@@ -1,3 +1,147 @@
 .grid-container {
-    // Your code here
+    margin: 122px 97px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 126px 420px 420px 480px 420px;
+    gap: 16px;
+
+    .item-grid {
+        background: #f4f4f4;
+    }
+
+    .grid-item-span {
+        font-family: Arial;
+        font-weight: 700;
+        color: #04306A;
+        font-size: 32px;
+        line-height: 120%;
+        letter-spacing: -0.64px;
+        }
+
+    .grid-header-span {
+        font-size: 46px;
+        line-height: 100%;
+        letter-spacing: -0.92px;
+        grid-area: 1 / 1 / 1 / 7;
+        position: relative;
+        padding-left: 315px;
+        /* Это какой-то ужасный костыль, но я правда не понимаю, почему span в grid верстке резко стал блочным внутри
+        ячейки сетки, мне даже немного за это стыдно */
+        .red-text {
+            color: #FC0D1B;
+            position: absolute;
+        }
+    }
+
+    .first-grid-item {
+        grid-area: 2 / 1 / 4 / 4;
+        padding: 49px 49px;
+        position: relative;
+
+        .image__blue-arrow {
+            position: absolute;
+            top: 91%;
+            left: 88%;
+        }
+    }
+
+    .second-grid-item {
+        grid-area: 2 / 4 / 2 / 7;
+        position: relative;
+
+        .image__blue-arrow {
+            position: absolute;
+            top: 84%;
+            left: 88%;
+        }
+
+        .grid-item-span {
+            padding: 24px 36px;
+        }
+    }
+
+    .third-grid-item {
+        grid-area: 3 / 4 / 3 / 7;
+        position: relative;
+
+        .image__blue-arrow {
+            position: absolute;
+            top: 84%;
+            left: 88%;
+        }
+        
+        .grid-item-span {
+            padding: 24px 36px;
+        }
+    }
+
+    .first-blue-block {
+        background: #04306A;
+        grid-area: 4 / 1 / 4 / 3;
+        position: relative;
+        padding: 23px 36px;
+
+        .grid-item-span__white-text {
+            color: #fff;
+        }
+
+        .image__white-arrow {
+            position:absolute;
+            height: 36px;
+            top: 86%;
+            left: 82%;
+        }
+    }
+
+    .grey-block-after-blue {
+        grid-area: 4 / 3 / 4 / 5;
+        position: relative;
+        padding: 23px 36px;
+
+        .image__blue-arrow {
+            position: absolute;
+            top: 86%;
+            left: 82%;
+        }
+    }
+
+    .second-blue-block {
+        grid-area: 4 / 5 / 4 / 7;
+        position: relative;
+        padding: 23px 36px;
+        background: #0041A0;
+
+        .grid-item-span__white-text {
+            color: #fff;
+        }
+
+        .image__white-arrow {
+            position: absolute;
+            top: 86%;
+            left: 82%;
+        }
+    }
+
+    .first-bottom-block {
+        grid-area: 5 / 1 / 5 / 4;
+        position: relative;
+        padding: 24px 49px;
+
+        .image__blue-arrow {
+            position: absolute;
+            top: 84%;
+            left: 88%;
+        }
+    }
+
+    .second-bottom-block {
+        grid-area: 5 / 4 / 5 / 7;
+        position: relative;
+        padding: 24px 49px;
+
+        .image__blue-arrow {
+            position: absolute;
+            top: 84%;
+            left: 88%;
+        }
+    }
 }

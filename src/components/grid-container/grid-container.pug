@@ -1,3 +1,48 @@
 mixin grid-container()
     section.grid-container
-        // Your code here
+        span.grid-item-span.grid-header-span
+            | #[span.red-text Комплексные] предложения для мостостроения
+        div.item-grid.first-grid-item
+            span.grid-item-span
+                | Мостовая сталь/Стальные конструкции мостов
+            div.image__blue-arrow
+                include ../../assets/icons/blue_arrow.svg
+        div.item-grid.second-grid-item
+            span.grid-item-span
+                | Железобетонные конструкции мостов
+            div.image__blue-arrow
+                include ../../assets/icons/blue_arrow.svg
+        div.item-grid.third-grid-item
+            span.grid-item-span
+                | Дорожные ограждения барьерного типа
+            div.image__blue-arrow
+                include ../../assets/icons/blue_arrow.svg
+        div.item-grid.first-blue-block
+            span.grid-item-span.grid-item-span__white-text 
+                | Шпунтовой замок
+            div.image__white-arrow
+                include ../../assets/icons/white_arrow.svg
+        div.item-grid.grey-block-after-blue
+            span.grid-item-span 
+                | Мостовой крепеж
+            div.image__blue-arrow
+                include ../../assets/icons/blue_arrow.svg
+        div.item-grid.second-blue-block 
+            span.grid-item-span.grid-item-span__white-text 
+                | Профили для деформационных швов
+            div.image__white-arrow
+                include ../../assets/icons/white_arrow.svg
+        div.item-grid.first-bottom-block
+            span.grid-item-span 
+                | Плетеные габионы
+            div.image__blue-arrow
+                include ../../assets/icons/blue_arrow.svg
+        div.item-grid.second-bottom-block
+            span.grid-item-span 
+                | Модульные мосты
+            div.image__blue-arrow
+                include ../../assets/icons/blue_arrow.svg
+        
+        
+            
+
