@@ -1,3 +1,167 @@
 .grid-container {
-    // Your code here
+	$dark-blu: #04306A;
+	$blue: #0041A0;
+	$card-background: #F4F4F4;
+	$base-background: #FFF;
+	$base-red: red;
+	$base-white: white;
+
+	.grid-container {
+		display: grid;
+		color: $dark-blu;
+		margin: 122px auto 120px auto;
+		width: 1724px;
+		font-family: Arial;
+		font-size: 46px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 100%;
+		letter-spacing: -0.92px;
+
+		svg {
+			width: 66px;
+			height: 36px;
+			position: absolute;
+			right: 36px;
+			bottom: 25px;
+		}
+
+		.title {
+			display: grid;
+			font-size: 46px;
+			grid-template-columns: min-content auto;
+		}
+
+		.title_content-red {
+			color: $base-red;
+		}
+
+		.main-block {
+			display: grid;
+			grid-template-columns: repeat(6, 1fr);
+			grid-template-rows: 420px 420px 480px 420px;
+			column-gap: 18px;
+			row-gap: 16px;
+			margin-top: 78px;
+			font-size: 32px;
+			font-family: Arial;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 120%;
+			letter-spacing: -0.64px;
+
+			.elem {
+				position: relative;
+				background: $card-background;
+			}
+
+			.elem1 {
+				grid-column: 1 / span 3;
+				grid-row: 1 / span 2;
+
+				h1 {
+					padding: 48.91px 0 0 50px;
+				}
+			}
+
+			.elem2 {
+				grid-column: 4 / span 3;
+
+				h1 {
+					padding: 25px 0 0 35px;
+				}
+
+				svg {
+					right: 35px;
+					bottom: 33px;
+				}
+			}
+
+			.elem3 {
+				grid-column: 4 / span 3;
+
+				h1 {
+					padding: 25px 0 0 35px;
+				}
+
+				svg {
+					right: 35px;
+					bottom: 33px;
+				}
+			}
+
+			.elem4 {
+				grid-column: 1 / span 2;
+				background-color: $dark-blu;
+				color: $base-white;
+
+				h1 {
+					padding: 23px 0 0 36px;
+				}
+
+				svg {
+					right: 36px;
+					bottom: 30px;
+					fill: $base-white;
+				}
+			}
+
+			.elem5 {
+				grid-column: 3 / span 2;
+
+				h1 {
+					padding: 23px 0 0 36px;
+				}
+
+				svg {
+					right: 36px;
+					bottom: 30px;
+				}
+			}
+
+			.elem6 {
+				grid-column: 5 / span 2;
+				background-color: $blue;
+				color: $base-white;
+
+				h1 {
+					padding: 23px 0 0 36px;
+				}
+
+				svg {
+					right: 36px;
+					bottom: 30px;
+					fill: $base-white;
+				}
+			}
+
+			.elem7 {
+				grid-column: 1/ span 3;
+
+				.block-bottom_item_title-left {
+					margin: 24px 0 0 50px;
+				}
+
+				svg {
+					right: 36px;
+					bottom: 33px;
+
+				}
+			}
+
+			.elem8 {
+				grid-column: 4/ span 3;
+
+				.block-bottom_item_title-right {
+					margin: 24px 0 0 37px;
+				}
+
+				svg {
+					right: 36px;
+					bottom: 33px;
+
+				}
+			}
+		}
+	}
 }
