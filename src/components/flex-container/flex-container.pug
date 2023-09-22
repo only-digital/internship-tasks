@@ -1,3 +1,44 @@
 mixin flex-container()
+    h1.title <span class="title__accent">Комплексные</span>&nbsp;предложения для мостостроения
     section.flex-container
-        // Your code here
+
+        div(class="card flex-container__item flex-container__item_1") 
+            a(class='card__title' href='/') Мостовая сталь/Стальные конструкции мостов
+            div.card__icon
+                include ../../assets/icons/arrow.svg
+ 
+        div.wrapper
+            div(class="card flex-container__item flex-container__item_2")
+                a(class='card__title' href='/') Железобетонные конструкции мостов
+                div.card__icon
+                    include ../../assets/icons/arrow.svg
+
+            div(class="card flex-container__item flex-container__item_3")
+                a(class='card__title' href='/') Дорожные ограждения барьерного типа
+                div.card__icon
+                    include ../../assets/icons/arrow.svg
+
+        div(class="card card--accent_blue flex-container__item flex-container__item_4")
+            a(class="card__title card__title--accent" href='/') Шпунтовой замок
+            div.card__icon
+                include ../../assets/icons/arrow-white.svg
+
+        div(class="card flex-container__item flex-container__item_5")
+            a(class="card__title" href='/') Мостовой крепеж
+            div.card__icon
+                include ../../assets/icons/arrow.svg
+
+        div(class="card card card--accent_blue-light flex-container__item flex-container__item_6")
+            a(class="card__title card__title--accent" href='/') Профили для деформационных швов
+            div.card__icon
+                include ../../assets/icons/arrow-white.svg
+
+        div(class="card flex-container__item flex-container__item_7")
+            a(class="card__title" href='/') Плетеные габионы
+            div.card__icon
+                include ../../assets/icons/arrow.svg
+                
+        div(class="card flex-container__item flex-container__item_8")
+            a(class="card__title" href='/') Модульные мосты
+            div.card__icon
+                include ../../assets/icons/arrow.svg

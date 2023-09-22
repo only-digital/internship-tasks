@@ -1,3 +1,136 @@
+$blue: #04306A;
+$blue-light: #0041A0;
+$red: #FC0D1B;
+$white: #fff;
+$grey: #f4f4f4;
+
 .flex-container {
-    // Your code here
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 18px;   
+    max-width: 1760px;
+    padding: 0 15px;
+    margin: 0 auto;
+
+    &__item{
+
+        &_1{
+            width: 49.5%;
+            height: 856px;
+            padding: 48px 36px 25px 50px;
+            margin-bottom: 16px;    
+        }
+        
+        &_2{
+            width: 100%;
+            padding: 24px 36px 33px;
+            margin-bottom: 16px;
+        }
+
+        &_3{
+            width: 100%;
+            padding: 24px 36px 33px;
+            margin-bottom: 16px;
+        }
+        
+        &_4{
+            width: 32.63%;
+            height: 480px;
+            padding: 23px 36px 30px;
+            margin-bottom: 16px;
+        }
+        
+        &_5{
+            width: 32.63%;
+            height: 480px;
+            padding: 23px 36px 30px;
+            margin-bottom: 16px;
+        }
+        
+        &_6{
+            width: 32.63%;
+            height: 480px;
+            padding: 23px 36px 30px;
+            margin-bottom: 16px;
+        }
+        
+        &_7{
+            width: 49.5%;
+            padding: 24px 36px 33px 49px;
+            margin-bottom: 16px;
+        }
+        
+        &_8{
+            width: 49.4%;
+            padding: 24px 36px 33px 49px;
+            margin-bottom: 16px;
+        }
+    }
+}
+
+.title {
+    font-family: Arial;
+    font-size: 46px;
+    font-weight: 700;
+    color: $blue;
+    max-width: 1760px;
+    margin: 0 auto;
+    padding: 122px 15px 80px 15px;
+}
+
+.title__accent{
+    color: $red;
+}
+
+.card__title{
+    font-family: Arial;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -0.64px;
+    color: $blue;
+
+&--accent{
+    color: $white;
+}
+
+&::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 49.4%;
+}
+
+.card{
+    position: relative;
+    flex-direction: column;
+    min-height: 420px;
+    padding: 24px 36px 33px;
+    background-color: $grey;
+
+    &--accent_blue{
+        background-color: $blue;
+    }
+
+    &--accent_blue-light{
+        background-color: $blue-light;
+    }
+
+    &:hover{
+        opacity: 0.7;
+}
+}
+
+.card__icon{
+    margin-left: auto;
+    margin-top: auto;
 }
