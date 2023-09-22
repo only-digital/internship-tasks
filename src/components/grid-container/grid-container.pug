@@ -1,3 +1,17 @@
 mixin grid-container()
     section.grid-container
-        // Your code here
+        h2.grid-container__title
+            span.grid-container__title_accent Комплексные предложения&nbsp;
+            |  для мостостроения
+
+        +content-block('grey', 'big', 'Мостовая сталь/Стальные конструкции мостов')
+
+        +content-block('grey', 'small', 'Железобетонные конструкции мостов')
+        +content-block('grey', 'small', 'Дорожные ограждения барьерного типа')
+
+        +content-block('dark-blue', 'middle', 'Шпунтовой замок')
+        +content-block('grey', 'middle', 'Мостовой крепеж')
+        +content-block('blue', 'middle', 'Профили для деформационных швов')
+
+        +content-block('grey', 'small', 'Плетеные габионы')
+        +content-block('grey', 'small', 'Модульные мосты')

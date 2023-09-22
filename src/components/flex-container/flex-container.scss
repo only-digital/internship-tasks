@@ -1,3 +1,37 @@
+@import '../content-block/content-block';
+
 .flex-container {
-    // Your code here
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1920px;
+  width: 100%;
+  padding: 120px 97px;
+
+  &__title {
+    margin-bottom: 60px;
+    font-family: Arial;
+    font-size: 46px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: -0.92px;
+    color: #04306A;
+
+    &_accent {
+      color: #FC0D1B;
+    }
+  }
+
+  &__horizontal-wrapper {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+  }
 }

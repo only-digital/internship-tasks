@@ -1,0 +1,17 @@
+mixin content-block(color, height, title)
+    div(class=[
+      'content-block',
+      `content-block_color_${color}`,
+      `content-block_height_${height}`,
+    ])
+        p.content-block__title= title
+        button.content-block__btn
+            svg(width='65px' height='36px')
+                case color
+                    when 'grey'
+                        include ../../assets/icons/arrow_blue.svg
+                    when 'blue'
+                    when 'dark-blue'
+                        include ../../assets/icons/arrow_white.svg
+                    default
+                        include ../../assets/icons/arrow_blue.svg
