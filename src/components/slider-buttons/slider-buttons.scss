@@ -1,0 +1,61 @@
+@import "../../global.scss";
+
+.slider-buttons {
+  $root: &;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  button {
+    display: flex;
+		align-items: center;
+		justify-content: center;
+    border: 1px solid #dedede;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+
+    @include hover-style {
+      background-color: #f4f4f4;
+    }
+
+    &:active {
+      background-color: #dedede;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+
+  @include media-tablet-md {
+    button {
+      width: 60px;
+      height: 60px;
+
+      svg {
+        width: 21px;
+        height: 30px;
+      }
+    }
+  }
+
+  @include media-mobile {
+    &__pages {
+      display: none;
+    }
+  }
+
+  &__pages {
+    color: #909090;
+    font-weight: 600;
+    margin-left: 30px;
+    opacity: 0.4;
+  }
+
+  &__button-right {
+    rotate: 180deg;
+  }
+}

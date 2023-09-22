@@ -2,6 +2,13 @@ extends ../../build_modules/common
 
 
 block body
-    +example-button({text: 'example text'})
-    +example-button({text: 'disabled'})(disabled='')
-    //Your code here
+	+button({text: "Кнопка", variant: 'outlined'})
+	+button({text: "Кнопка", variant: 'outlined'})(disabled=true)
+	+button({text: "Кнопка", variant: "filled"})
+	+button({text: "Кнопка", variant: "filled"})(disabled=true)
+	+slider-buttons({currentPage: 1, totalPages: 4})
+	+slider-buttons({currentPage: 1, totalPages: 4})(disabled=true)
+	+link({text: "Sustainalytics.com"})(href="")
+	+link({text: "Sustainalytics.com", disabled: true})
+	+toggle_button()
+	+toggle_button()(disabled=true)

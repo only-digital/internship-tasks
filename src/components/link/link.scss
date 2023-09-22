@@ -1,0 +1,45 @@
+@import "../../global.scss";
+
+.link {
+  $root: &;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: Grtsk Peta;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+  outline: none;
+
+  * {
+    transition: color 0.3s;
+  }
+
+  &__text {
+    color: #0041a0;
+  }
+
+  &:focus-visible {
+    background-color: rgba(0, 65, 160, 0.2);
+  }
+
+  @include hover-style {
+    .link__text {
+      color: #ff0000;
+    }
+  }
+
+  &:active {
+    .link__text {
+      color: #bf1d26;
+    }
+  }
+
+  &.disabled {
+    .link__text {
+      opacity: 0.5;
+    }
+  }
+}

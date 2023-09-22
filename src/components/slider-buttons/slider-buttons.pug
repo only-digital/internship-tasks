@@ -1,0 +1,8 @@
+mixin slider-buttons(props = {})
+	.slider-buttons&attributes(attributes)
+		button(disabled=attributes.disabled || false).slider-buttons__button-left
+			include ../../assets/icons/arrow-left.svg
+		button(disabled=attributes.disabled || false).slider-buttons__button-right
+			include ../../assets/icons/arrow-left.svg
+		span.slider-buttons__pages= `${props.currentPage} / ${props.totalPages}`
+			

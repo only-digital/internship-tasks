@@ -1,0 +1,41 @@
+body {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+@mixin hover-style {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+
+@mixin media-mobile {
+	@media screen and (width <= 375px) and (height <= 812px) {
+		@content;
+	}
+}
+@mixin media-tablet-sm {
+	@media screen and (width <= 768px) and (height <= 1024px) {
+		@content;
+	}
+}
+@mixin media-tablet-md {
+	@media screen and (width <= 1280px) and (height <= 720px) {
+		@content;
+	}
+}
+
+
+button:not([disabled]):focus-visible {
+  outline: 3px solid #99b3d8;
+  color: #0041a0;
+}
+
+.disabled, button:disabled {
+	pointer-events: none;
+	cursor: default;
+}

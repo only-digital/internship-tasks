@@ -1,0 +1,5 @@
+mixin link(props)
+	- var classes = [props.disabled ? 'disabled' : ''].filter(Boolean)
+	a.link(class=classes.join(' '))&attributes(attributes)
+		span.link__text!= props.text
+		include ../../assets/icons/link.svg

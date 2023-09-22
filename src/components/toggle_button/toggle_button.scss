@@ -1,0 +1,40 @@
+@import '../../global.scss';
+
+.toggle_button {
+	$root: &;
+
+	width: 56px;
+	height: 28px;
+	border-radius: 14px;
+	background-color: #0041A0;
+	display: flex;
+	padding: 0 6px;
+	transition: background-color 0.3s;
+
+	&::after {
+		content: '';
+		width: 16px;
+		height: 16px;
+		margin: auto 0;
+		background-color: white;
+		border-radius: 50%;
+	};
+
+	@include media-mobile {
+		width: 40px;
+		height: 20px;
+
+		&::after {
+			width: 12px;
+			height: 12px;
+		}
+	}
+
+	@include hover-style {
+		background-color: #002F6C;
+	};
+
+	&:is(:focus-visible, :disabled) {
+		background-color: #DEDEDE;
+	}
+}
