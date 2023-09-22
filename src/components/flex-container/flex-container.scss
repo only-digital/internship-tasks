@@ -1,10 +1,10 @@
 $color_red:  #FC0D1B;
 $color_blue:  #04306A;
 $color_white:  #fff;
-$font_family:  Arial;
-$block_bg:#F4F4F4;
-$blockTwo_bg:#04306A;
-$blockThree_bg:#0041A0;
+$font_family:  Arial, sans-serif;
+$bg_block: #F4F4F4;
+$bg_block_blue: #04306A;
+$bg_block_lightblue: #0041A0;
 $row_gap: 16px;
 $column_gap: 20px;
 
@@ -53,25 +53,26 @@ $column_gap: 20px;
     column-gap: $column_gap;
     row-gap: 30px;
     width: 100%;
-    & > .flex-container__item{
+    & .flex-container__item{
         width: calc(100% / 3);
+        min-height: 480px;
     }
 }
 .flex-container__item{
-    background-color: $block_bg;
+    background-color: $bg_block;
     color: $color_blue;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 22px 36px 30px;
-    min-height: 480px;
+    min-height: 420px;
     flex: 1;
-    &--two{
-        background-color: $blockTwo_bg;
+    &--blue{
+        background-color: $bg_block_blue;
         color: $color_white;
     }
-    &--three{
-        background-color: $blockThree_bg;
+    &--lightblue{
+        background-color: $bg_block_lightblue;
         color: $color_white;
     }
 }
@@ -84,4 +85,7 @@ $column_gap: 20px;
 .flex-container__item-icon{
     color: currentColor;
     align-self: flex-end;
+    &:hover{
+        color: $color_red;
+    }
 }

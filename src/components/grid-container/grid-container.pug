@@ -1,3 +1,30 @@
+-
+    var listTitle = [
+        "Мостовая сталь/Стальные конструкции мостов",
+        "Железобетонные конструкции мостов",
+        "Дорожные ограждения барьерного типа",
+        "Шпунтовой замок",
+        "Мостовой крепеж",
+        "Профили для деформационных швов",
+        "Профили для деформационных швов",
+        "Модульные мосты"
+    ]
+
+mixin gridItem(title)
+    .grid-container__item(class!=attributes.class) 
+        .grid-container__title #{title}
+        a.grid-container__link(href="javascript:void(0);" title="more")
+            svg(width="65px", height="36px", xmlns="http://www.w3.org/2000/svg", viewBox="0 0 65 36", fill="none")
+                path(d="M58.4384 19.4L0 19.4L0 16.6L58.4384 16.6L58.4384 19.4ZM36.5378 36L34.8869 33.6L61.685 20L61.685 16L34.8869 2.4L36.5378 0L64.9316 14.4V21.6L36.5378 36Z" fill="currentColor")
+ 
+
 mixin grid-container()
     section.grid-container
-        // Your code here
+        h3.grid-container__head #[span Комплексные]&nbsp;предложения для мостостроения
+        each title, index in listTitle
+            if(index == 3)
+                +gridItem(title, index)(class='grid-container__item--blue')
+            else if(index == 5)
+                +gridItem(title, index)(class='grid-container__item--lightblue')
+            else
+                +gridItem(title, index)
