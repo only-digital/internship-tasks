@@ -53,16 +53,18 @@
         justify-content: center;
         align-items: center;
     }
-
-    padding: 120px 96px;
-    max-width: 1730px;
-    min-width: 1730px;
+    
     margin: auto;
-
+    padding: 120px 96px;
     .content {
+        max-width: 1730px;
+        min-width: 1730px;
         justify-content: center;
         flex-direction: column;
         gap: 16px;
+        margin: auto;
+        
+
 
         .btn-container {
             flex-grow: 1;
