@@ -11,7 +11,7 @@
     }
   }
   &:focus {
-    background: rgba(0, 65, 160, 0.15);
+    background-color: rgba(0, 65, 160, 0.15);
     outline: none;
   }
   &:active {
@@ -33,7 +33,7 @@
     line-height: 150%;
     letter-spacing: -0.32px;
     margin-right: 12px;
-    transition: 0.3s;
+    transition: background-color 0.3s, color 0.3s, opacity 0.3s;
     @media (max-width: 768px) {
       font-size: 14px;
       letter-spacing: -0.28px;

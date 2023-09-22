@@ -21,7 +21,7 @@
     height: 60px;
     border-radius: 50%;
     border: 1px solid #dedede;
-    transition: 0.3s;
+    transition: background-color 0.3s, outline 0.3s;
     &:focus {
       outline: 3px solid #99b3d8;
     }

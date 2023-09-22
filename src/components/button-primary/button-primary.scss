@@ -9,7 +9,7 @@
   border-radius: 25px;
   border: 1px solid var(--extra-grey-1, #bcbcbc);
   color: black;
-  transition: 0.3s;
+  transition: background-color 0.3s, color 0.3s, opacity 0.3s, outline 0.3s;
 
   &:disabled {
     color: #909090;
