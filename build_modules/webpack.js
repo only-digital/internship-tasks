@@ -1,5 +1,4 @@
 const path  = require('path');
-console.log(path.resolve(__dirname))
 const SpriteLoaderPlugin = require("svg-sprite-loader/plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
