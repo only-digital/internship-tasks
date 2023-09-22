@@ -1,0 +1,6 @@
+mixin box(width, height, title)
+    div(class=`box box--w${width} box--h${height} ${attributes.class || ''}`)
+        .box__content
+            span
+                =title
+            a.arrow(href="#")

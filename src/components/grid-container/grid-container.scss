@@ -1,3 +1,29 @@
+@import "../flex-container/flex-container";
+
 .grid-container {
-    // Your code here
+  width: 100%;
+  max-width: 1920px;
+  height: 100%;
+  padding: 0 94px 120px 96px;
+  grid-row-gap: 18px;
+  // явное указание что в 1 колонку
+  grid-template-columns: 1fr;
+  margin: 0 auto;
+
+  &__content {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-row-gap: 24px;
+    grid-column-gap: 18px;
+    grid-auto-rows: auto;
+
+    &-col {
+      grid-template-columns: 1fr;
+      grid-row-gap: 18px;
+
+    }
+  }
+
+  .box {
+    width: 100%;
+  }
 }

@@ -1,5 +1,6 @@
 include ../components/flex-container/flex-container
 include ../components/grid-container/grid-container
+include ../components/box/box
 
 
 <!DOCTYPE html>
@@ -11,10 +12,10 @@ html(lang="ru")
 
     body
         main
-            h2 FlexBox
+            h2(class="title") <span class="title-red">Комплексные</span> предложения для мотостроения
             +flex-container
 
             hr
 
-            h2 Grid layout
+            h2(class="title") <span class="title-red">Комплексные</span> предложения для мотостроения
             +grid-container

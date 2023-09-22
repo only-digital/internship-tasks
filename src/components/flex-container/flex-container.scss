@@ -1,3 +1,60 @@
+@mixin box-title() {
+  font-family: Arial, serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  padding: 20px;
+  color: #04306A;
+}
+
 .flex-container {
-    // Your code here
+  width: 100%;
+  max-width: 1920px;
+  height: 100%;
+  padding: 0 94px 0 96px;
+  flex-direction: column;
+  row-gap: 15px;
+  margin: 0 auto;
+
+  &__content {
+    column-gap: 18px;
+  }
+
+  &__content-col {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+
+    .box--wm + .box--wm {
+      margin-top: 16px;
+    }
+  }
+}
+
+.title {
+  font-family: Arial, serif;
+  font-weight: 700;
+  font-size: 46px;
+  line-height: 1;
+  color: #04306A;
+  max-width: 1920px;
+  margin: 0 auto;
+  margin-top: 122px;
+  margin-bottom: 120px;
+  padding-left: 94px;
+  padding-right: 96px;
+
+  &-red {
+    color: #FC0D1B;
+  }
+}
+
+.arrow {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg width='65' height='36' viewBox='0 0 65 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M58.4384 19.4L0 19.4L0 16.6L58.4384 16.6L58.4384 19.4ZM36.5378 36L34.8869 33.6L61.685 20L61.685 16L34.8869 2.4L36.5378 0L64.9316 14.4V21.6L36.5378 36Z' fill='%2304306A'/%3E%3C/svg%3E%0A");
+  width: 65px;
+  height: 36px;
+  position: absolute;
+  right: 37px;
+  bottom: 25px;
 }
