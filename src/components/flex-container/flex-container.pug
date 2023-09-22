@@ -1,3 +1,21 @@
 mixin flex-container()
+    - var cardsContentTop = ['Мостовая сталь/Стальные конструкции мостов','Железобетонные конструкции мостов','Дорожные ограждения барьерного типа']
+    - var cardsContentBottom = ['Шпунтовой замок', 'Мостовой крепеж','Профили для деформационных швов','Плетеные габионы','Модульные мосты']
     section.flex-container
-        // Your code here
+        .flex-container__wrapper
+            h3.flex-container__title.title
+                span.highlighted Комплексные&nbsp;
+                | предложения для мостостроения
+            .flex-container__cards.cards
+                .cards__container
+                    each text, index in cardsContentTop
+                        .card
+                            p.card__text= text
+                            a(href="#", class="icon")
+                                include ../../assets/icons/arrow.svg
+                .cards__container
+                    each text, index in cardsContentBottom
+                        .card(class=index === 0 ? 'card_colored' : index === 2 ? 'card_highlighted' : '')
+                            p.card__text= text
+                            a(href="#", class=index === 0 ? 'icon_colored' : index === 2 ? 'icon_colored' : '').icon
+                                include ../../assets/icons/arrow.svg

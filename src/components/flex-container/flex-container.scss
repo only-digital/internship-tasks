@@ -1,3 +1,95 @@
+@import "../colors.scss";
+
 .flex-container {
-    // Your code here
+    color: $primary;
+    font-family: Arial;
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: -2%;
+
+    &__wrapper {
+        max-width: 1729px;
+        margin: auto;
+        flex-direction: column;
+    }
+
+    &__title {
+        margin-bottom: 80px;
+    }
+
+    &__cards {
+        height: 1788px;
+    }
+}
+
+.highlighted {
+    color: $highlighted-word;
+}
+
+.icon {
+    align-self: flex-end;
+
+    &_colored path {
+        fill: $light;
+    }
+}
+
+.card {
+    padding: 24px 36px 30px;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $card-bg;
+    font-size: 32px;
+    line-height: 120%;
+
+    &_colored {
+        background-color: $primary;
+        color: $light;
+    }
+
+    &_highlighted {
+        background-color: $card-colored;
+        color: $light;
+    }
+}
+
+.cards {
+    gap: 16px 18px;
+    flex-direction: column;
+
+    &__container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &:first-child {
+            min-height: 856px;
+            column-gap: 18px;
+            flex-direction: column;
+
+            .card {
+                width: calc(50% - 9px);
+                height: calc(50% - 8px);
+
+                &:first-child {
+                    height: 100%;
+                }
+            }
+        }
+
+        &:last-child {
+            min-height: 916px;
+            row-gap: 16px;
+
+            .card {
+                width: calc((100% / 3) - 12px);
+                height: calc(50% - 8px);
+
+                &:nth-child(4),
+                &:last-child {
+                    width: calc(50% - 8px);
+                }
+            }
+        }
+    }
 }
