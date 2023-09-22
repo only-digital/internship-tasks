@@ -1,3 +1,35 @@
+@use '../style.scss' as *;
+
 .flex-container {
-    // Your code here
+    flex-direction: column;
+    padding: 122px 96px 120px;
+    
+    &__title {
+        font-family: Arial, sans-serif;
+        font-weight: 700;
+        font-size: clamp(10px, 5vw, 46px);
+        line-height: 1;
+        color: $dark-blue;
+        margin-bottom: 80px;
+        & > span {
+            color: $red;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 16px 18px;
+    }
+    
+    &__row {
+        display: flex;
+        gap: 16px 18px;
+    }
+
+    &__col {
+        flex-direction: column;
+        gap: 16px 18px;
+    }
+
 }

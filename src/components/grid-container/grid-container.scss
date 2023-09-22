@@ -1,3 +1,56 @@
+@use '../style.scss' as *;
+
 .grid-container {
-    // Your code here
+	padding: 122px 96px 120px;
+
+	&__title {
+		font-family: Arial, sans-serif;
+        font-weight: 700;
+        font-size: clamp(10px, 5vw, 46px);
+        line-height: 1;
+        color: $dark-blue;
+        margin-bottom: 80px;
+        & > span {
+            color: $red;
+        }
+	}
+
+	&__content {
+		gap: 16px 18px;
+	}
+
+	&__wrapper {
+		display: grid;
+		grid-template: 
+		'a a b b' 445px
+		'a a c c' 445px
+		'd e e f' 480px
+		'g g h h' 420px
+		/ 33% 17% 17% 33%
+	}
+}
+
+.block:nth-child(1) {
+	grid-area: a;
+}
+.block:nth-child(2) {
+	grid-area: b;
+}
+.block:nth-child(3) {
+	grid-area: c;
+}
+.block:nth-child(4) {
+	grid-area: d;
+}
+.block:nth-child(5) {
+	grid-area: e;
+}
+.block:nth-child(6) {
+	grid-area: f;
+}
+.block:nth-child(7) {
+	grid-area: g;
+}
+.block:nth-child(8) {
+	grid-area: h;
 }

@@ -1,0 +1,51 @@
+$red: #FC0D1B;
+$white: #FFFFFF;
+$light-gray: #F3F3F3;
+$blue: #0041A0;
+$dark-blue: #04306A;
+
+
+.block {
+    background-color: $light-gray;
+    color: $dark-blue;
+    padding: 30px;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    font-size: clamp(10px, 5vw, 32px);
+	line-height: 1;
+    position: relative;
+
+    &_dark-blue {
+        background-color: $dark-blue;
+        color: $white;
+    }
+
+    &_blue {
+        background-color: $blue;
+        color: $white;
+    }
+
+    &_lg {
+        width: 856px;
+        height: 856px;
+    }
+
+    &_md {
+        width: 100%;
+        height: 420px;
+    }
+    
+    &_sm {
+        width: 100%;
+        height: 480px;
+    }
+
+    &__button {
+        position: absolute;
+		bottom: 30px;
+		right: 30px;
+        svg:hover {
+            cursor: pointer;
+        }
+    }
+}
