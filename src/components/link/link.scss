@@ -8,6 +8,12 @@
 	transition: color 0.3s, opacity 0.3s;
 	cursor: pointer;
 
+	&.disabled {
+		pointer-events: none;
+		cursor: default;
+		color: #BCBCBC;
+	}
+
 	&:hover {
 		color: #FF0000;
 	}
@@ -31,9 +37,4 @@
 		fill: #002F6C;
 		margin-left: 10px;
 	}
-}
-.disabled {
-	pointer-events: none;
-	cursor: default;
-	color: #BCBCBC;
 }
