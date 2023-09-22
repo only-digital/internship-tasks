@@ -19,7 +19,11 @@ $colorLightBlue: #99B3D8;
 	border-radius: 24px;
 	border: 1px solid $colorExtraGray;
 	margin: 10px;
-	transition: all 0.3s ease-in-out;
+	transition: 
+		border .3s ease-in-out,
+		color .3s ease-in-out,
+		background-color .3s ease-in-out,
+		width .3s ease-in-out;
 
 	&__text {
 		font-family: 'Grtsk Peta';
@@ -28,58 +32,57 @@ $colorLightBlue: #99B3D8;
 		@media screen and (max-width: 1280px) and (min-width: 768px) {
 			font-size: 14px;
 		}
-		@media screen {
-			
-		}
 	}
 
 	&__circle {
 		display: flex;
-
-		& svg {
+		
+		& path {
 			width: 32px;
 			height: 32px;
+			transition: fill .3s ease-in-out;
 		}
 	}
 
-	&:hover {
-		color: $colorWhite;
-		background-color: $colorCobolt;
-		border-color: $colorCobolt;
-
-		#{$root}__circle svg path {
-			fill: $colorWhite;
-		}
-	}
-	
 	&:active {
 		color: $colorWhite;
 		background-color: $colorBlue;
 		border-color: $colorBlue;
 		
-		#{$root}__circle svg path {
+		#{$root}__circle path {
 			fill: $colorWhite;
 		}
 	}
 	
-	&:focus {
-		color: $colorCobolt;
-		background-color: $colorWhite;
-		border: 3px solid $colorLightBlue;
-		
-		#{$root}__circle svg path {
-			fill: $colorCobolt;
-		}
-	}
-
 	&:disabled {
 		color: $colorSteel;
 		background-color: $colorWhite;
 		border-color: $colorExtraGray;
 		pointer-events: none;
 
-		#{$root}__circle svg path {
+		#{$root}__circle path {
 			fill: $colorSteel;
+		}
+	}
+	
+	@media screen and (min-width: 1280px) {
+		&:hover {
+			color: $colorWhite;
+			background-color: $colorCobolt;
+			border-color: $colorCobolt;
+	
+			#{$root}__circle path {
+				fill: $colorWhite;
+			}
+		}
+		&:focus {
+			color: $colorCobolt;
+			background-color: $colorWhite;
+			border: 3px solid $colorLightBlue;
+			
+			#{$root}__circle path {
+				fill: $colorCobolt;
+			}
 		}
 	}
 
@@ -88,8 +91,8 @@ $colorLightBlue: #99B3D8;
 		height: 42px;
 		padding: 0 14px 0 16px;
 		column-gap: 12px;
-
-		#{$root}__circle svg {
+		
+		#{$root}__circle path {
 			width: 24px;
 			height: 24px;
 		}
@@ -100,30 +103,6 @@ $colorLightBlue: #99B3D8;
 		height: 42px;
 		padding: 0 14px 0 18px;
 		column-gap: 14px;
-
-		&:hover {
-			background-color: $colorWhite;
-			border-color: $colorExtraGray;
-			transition: all 0s ease-in-out;
-
-			#{$root}__text {
-				color: $colorBlack;
-			}
-			#{$root}__circle svg path {
-				fill: $colorBlue;
-			}
-		}
-
-		&:focus {
-			border: 1px solid $colorExtraGray;
-
-			#{$root}__text {
-				color: $colorBlack;
-			}
-			#{$root}__circle svg path {
-				fill: $colorBlue;
-			}
-		}
 	}
 
 	@media screen and (max-width: 375px) {

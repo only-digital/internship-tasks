@@ -3,7 +3,6 @@ $colorExtraGray1: #BCBCBC;
 $colorExtraGray2: #DEDEDE;
 $colorExtraGray3: #F4F4F4;
 $colorLightBlue: #99B3D8;
-$colorWhite: #FFFFFF;
 
 .button-slider {
 	$root: &;
@@ -19,7 +18,12 @@ $colorWhite: #FFFFFF;
 		height: 80px;
 		border: 1px solid $colorExtraGray2;
 		border-radius: 50%;
-		transition: all 0.3s ease-in-out;
+		transition: 
+			border-color .3s ease-in-out, 
+			border-width .3s ease-in-out, 
+			background-color .3s ease-in-out,
+			width .3s ease-in-out,
+			height .3s ease-in-out;
 		
 		&:nth-child(2) {
 			margin: 0 40px 0 10px;
@@ -28,27 +32,19 @@ $colorWhite: #FFFFFF;
 			}
 		}
 		
-		&:hover {
-			background-color: $colorExtraGray3;
-			border-color: $colorExtraGray3;
-		}
-		
 		&:active {
 			background-color: $colorExtraGray2;
 			border-color: $colorExtraGray2;
 		}
-
-		&:focus {
-			border: 3px solid $colorLightBlue;
-		}
 		
-		@media screen and (max-width: 768px) {
+		@media screen and (min-width: 1280px) {
 			&:hover {
-				background-color: $colorWhite;
+				background-color: $colorExtraGray3;
+				border-color: $colorExtraGray3;
 			}
-
 			&:focus {
-				border: 1px solid $colorExtraGray2;
+				border-color: $colorLightBlue;
+				border-width: 3px;
 			}
 		}
 

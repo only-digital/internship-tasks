@@ -19,7 +19,10 @@ $colorLightBlue: #99B3D8;
 	border-radius: 24px;
 	background-color: $colorRed;
 	margin: 10px;
-	transition: all 0.3s ease-in-out;
+	transition: 
+		background-color .3s ease-in-out, 
+		border .3s ease-in-out, 
+		width .3s ease-in-out;
 
 	&__text {
 		font-family: 'Grtsk Peta' sans-serif;
@@ -44,20 +47,11 @@ $colorLightBlue: #99B3D8;
 		}
 	}
 
-	&:hover {
-		background-color: $colorPaleRed;
-		border-color: $colorPaleRed;
-	}
-	
 	&:active {
 		background-color: $colorBard;
 		border-color: $colorBard;
 	}
 	
-	&:focus {
-		border: 3px solid $colorLightBlue;
-	}
-
 	&:disabled {
 		background-color: $colorExtraGray;
 		border-color: $colorExtraGray;
@@ -71,7 +65,17 @@ $colorLightBlue: #99B3D8;
 			color: $colorSteel;
 		}
 	}
-
+	
+	@media screen and (min-width: 1280px) {
+		&:hover {
+			background-color: $colorPaleRed;
+			border-color: $colorPaleRed;
+		}
+		&:focus {
+			border: 3px solid $colorLightBlue;
+		}
+	}
+	
 	@media screen and (max-width: 1280px) {
 		width: 119px;
 		height: 42px;
@@ -89,30 +93,6 @@ $colorLightBlue: #99B3D8;
 		height: 42px;
 		padding: 0 14px 0 18px;
 		column-gap: 14px;
-
-		&:hover {
-			background-color: $colorRed;
-			border-color: $colorRed;
-
-			#{$root}__text {
-				color: $colorWhite;
-			}
-			#{$root}__svg svg path {
-				fill: $colorWhite;
-			}
-		}
-
-		&:focus {
-			border: 1px solid $colorRed;
-			background-color: $colorRed;
-
-			#{$root}__text {
-				color: $colorWhite;
-			}
-			#{$root}__svg svg path {
-				fill: $colorWhite;
-			}
-		}
 	}
 
 	@media screen and (max-width: 375px) {
