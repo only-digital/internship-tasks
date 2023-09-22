@@ -2,7 +2,7 @@
 	$root: &;
 	display: flex;
 	align-items: center;
-	transition: all 0.5s ease-out 0s;
+	transition: 0.5s;
 	margin-bottom: 20px;
 	&.disabled {
 		pointer-events: none;
@@ -24,7 +24,7 @@
 	}
 	&__icon {
 		cursor: pointer;
-		transition: all 0.5s ease-out 0s;
+		transition: 0.5s;
 		max-width: 80px;
 		max-height: 80px;
 		& svg {
@@ -34,9 +34,6 @@
 		@media screen and (max-width: 1280px) {
 			max-width: 60px;
 			max-height: 60px;
-		}
-		& svg {
-
 		}
 		&.prev {
 			margin-right: 10px;
@@ -51,7 +48,7 @@
 			&:hover {
 				@media screen and (min-width: 769px) {
 					& circle {
-						transition: all 0.5s ease-out 0s;
+						transition: fill 0.5s ease-in-out 0s, stroke 0.5s ease-in-out 0s;
 						fill: #F4F4F4;
 						stroke: #F4F4F4;
 					}
@@ -74,7 +71,7 @@
 			}
 			& a:active {
 				& circle {
-					transition: all 0.5s ease-out 0s;
+					transition: fill 0.5s ease-out 0s, stroke 0.5s ease-out 0s;
 					fill: #DEDEDE;
 					stroke: #DEDEDE;
 				}

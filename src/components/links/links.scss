@@ -18,23 +18,20 @@
 		font: 400 normal 16px/24px 'Grtsk Peta', sans-serif;
 		letter-spacing: -0.32px;
 		color: #0041A0;
-		transition: all 0.5s ease-out 0s;
+		transition: color 0.5s ease-out 0s, background-color 0.5s ease-in 0s;
 		cursor: pointer;
 		&:hover {
 			@media screen and (min-width: 769px) {
 				color: #FF0000;
-				transition: all 0.5s ease-in 0s;
 			}
 		}
 		&:focus {
 			@media screen and (min-width: 769px) {
 				background-color: #0041A026;
-				transition: all 0.5s ease-in 0s;
 			}
 		}
 		&:active {
 			color: #BF1D26;
-			transition: all 0.5s ease-in 0s;
 		}
 	}
 

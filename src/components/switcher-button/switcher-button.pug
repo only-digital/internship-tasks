@@ -1,11 +1,6 @@
-mixin svgButton()
-	span.switcher-button__icon
-		svg(xmlns="http://www.w3.org/2000/svg" width="62px" height="34px" fill="none" )
-			a(xlink:href="#0")
-				rect(width="56px" height="28px" rx="14" fill="#0041A0")
-				circle(cx="42" cy="14" r="8.00003" fill="white")
-				rect(x="1.5" y="1.5" width="59" height="31" rx="15.5" stroke="transparent" stroke-width="3px")
-
 mixin switcher-button(props)
 	.switcher-button&attributes(attributes)
-		+svgButton
+		label.switcher-button__icon
+			input(type="checkbox")
+			span.switcher-button__slider
+

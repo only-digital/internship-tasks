@@ -1,81 +1,87 @@
 .switcher-button {
 	$root: &;
+	width: 62px;
+	height: 34px;
+	position: relative;
 	margin-bottom: 20px;
+	@media screen and (max-width: 375px) {
+		width: 40px;
+		height: 20px;
+	}
 	&.disabled {
 		pointer-events: none;
-		& rect:first-of-type {
-			fill: #DEDEDE;
-		}
-		& circle {
-			cx: 14;
-			cy: 14;
-		}
-		@media screen and (max-width: 375px) {
-			& svg {
-				width: 40px;
-				height: 20px;
-				background-size: 40px 20px;
-			}
-			& rect {
-				width: 40px;
-				height: 20px;
-				rx: 10;
-			}
-			& circle {
-				cx: 10;
-				cy: 10;
-				r: 6;
+		#{$root}__slider {
+			background-color: #DEDEDE;
+			&:before {
+				transform: translateX(-26px);
+				bottom: 6px;
+				@media screen and (max-width: 375px) {
+					transform: translateX(-20px);
+					bottom: 4px;
+				}
 			}
 		}
 	}
-	&__icon {
-		display: inline-block;
-		transition: all 0.5s ease-in-out 0s;
+
+	& input {
+		display: none;
 		&:hover {
 			@media screen and (min-width: 769px) {
-				& rect:first-of-type {
-					transition: all 0.5s ease-in-out 0s;
-					fill: #002F6C;
+				& + #{$root}__slider {
+					background-color: #002F6C;
+					transition: .5s;
 				}
 			}
 		}
-		& a:focus {
+		&:checked {
 			@media screen and (min-width: 769px) {
-				& rect:first-of-type {
-					transition: all 0.3s ease-in-out 0s;
-					fill: #DEDEDE;
-					width: 59px;
-					height: 31px;
-					rx: 15.5;
-					x: 1.5;
-					y: 1.5;
+				& + #{$root}__slider {
+					border-color: #C2DAFF;
+					transition: .5s;
 				}
-				& circle {
-					transition: all 0.3s ease-in-out 0s;
-					cx: 17;
-					cy: 17;
-				}
-				& rect:last-of-type {
-					transition: all 0.3s ease-in-out 0s;
-					stroke: #C2DAFF;
+			}
+			& + #{$root}__slider {
+				background-color: #DEDEDE;
+				transition: .5s;
+				&:before {
+					transform: translateX(-26px);
+					transition: .5s;
+					@media screen and (max-width: 375px) {
+						transform: translateX(-20px);
+					}
 				}
 			}
 		}
+	}
+	&__slider {
+		position: absolute;
+		cursor: pointer;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #0041A0;
+		transition: .5s;
+		border-radius: 24px;
+		border: 3px solid #ffffff;
 		@media screen and (max-width: 375px) {
-			& svg {
-				width: 40px;
-				height: 20px;
-				background-size: 40px 20px;
-			}
-			& rect {
-				width: 40px;
-				height: 20px;
-				rx: 10;
-			}
-			& circle {
-				cx: 30;
-				cy: 10;
-				r: 6;
+			border: none;
+		}
+		&:before {
+			position: absolute;
+			content: "";
+			height: 16px;
+			width: 16px;
+			right: 6px;
+			bottom: 6px;
+			background-color: #ffffff;
+			transition: .5s;
+			border-radius: 50%;
+			@media screen and (max-width: 375px) {
+				height: 12px;
+				width: 12px;
+				right: 4px;
+				bottom: 4px;
 			}
 		}
 	}
