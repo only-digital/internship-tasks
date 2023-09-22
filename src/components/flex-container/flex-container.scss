@@ -1,3 +1,169 @@
 .flex-container {
-    // Your code here
+	$dark-blu: #04306A;
+	$blue: #0041A0;
+	$card-background: #F4F4F4;
+	$base-background: #FFF;
+	$base-red: red;
+	$base-white: white;
+	$font: Arial, Helvetica, sans-serif;
+
+	.flex-container {
+		font-family: $font;
+		box-sizing: border-box;
+		display: flex;
+		color: $dark-blu;
+		flex-direction: column;
+		margin: 122px auto 120px auto;
+		width: 1727px;
+		font-family: Arial;
+		font-size: 46px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 100%;
+		letter-spacing: -0.92px;
+
+		svg {
+			width: 66px;
+			height: 36px;
+			position: absolute;
+			right: 36px;
+			bottom: 25px;
+		}
+
+		.title {
+			display: flex;
+			font-size: 46px;
+		}
+
+		.title_content-red {
+			color: $base-red;
+		}
+
+		.main-block {
+			display: flex;
+			margin-top: 80px;
+			width: 1727px;
+			font-size: 32px;
+			font-style: normal;
+			line-height: 120%;
+			letter-spacing: -0.64px;
+
+			.main-block_left {
+				position: relative;
+				display: flex;
+				background-color: $card-background;
+				width: 858px;
+				height: 856px;
+
+				h1 {
+					padding: 48.91px 0 0 50px;
+				}
+			}
+
+			.main-block_right {
+				display: flex;
+				flex-direction: column;
+				padding-left: 19px;
+				gap: 16px;
+
+				.main-block_right_item {
+					position: relative;
+					display: flex;
+					background-color: $card-background;
+					width: 854px;
+					height: 420px;
+
+					h1 {
+						padding: 25px 0 0 35px;
+					}
+
+					svg {
+						right: 35px;
+						bottom: 33px;
+
+					}
+				}
+			}
+		}
+
+		.block {
+			display: flex;
+			flex-direction: column;
+			width: 1728px;
+			margin-top: 16px;
+			font-size: 32px;
+			font-family: Arial;
+			font-style: normal;
+			font-weight: 700;
+			line-height: 120%;
+			letter-spacing: -0.64px;
+
+			.block-top {
+				flex-wrap: wrap;
+				flex-direction: row;
+				justify-content: space-between;
+
+				.block-top_item {
+					position: relative;
+					width: 564.353px;
+					height: 480px;
+					background-color: $card-background;
+
+					h1 {
+						padding: 23px 0 0 36px;
+					}
+
+					svg {
+						right: 36px;
+						bottom: 30px;
+					}
+				}
+			}
+
+			.block-top .block-top_item-dark-blue {
+				background-color: $dark-blu;
+				color: $base-white;
+
+				svg {
+					fill: $base-white;
+				}
+			}
+
+			.block-top .block-top_item-blue {
+				background-color: $blue;
+				color: $base-white;
+
+				svg {
+					fill: $base-white;
+				}
+			}
+
+			.block-bottom {
+				justify-content: space-between;
+				margin-top: 16px;
+
+				.block-bottom_item {
+					position: relative;
+					width: 856.135px;
+					height: 420px;
+					background-color: $card-background;
+
+					.block-bottom_item_title-left {
+						margin: 24px 0 0 50px;
+					}
+
+					.block-bottom_item_title-right {
+						margin: 24px 0 0 37px;
+					}
+
+					svg {
+						right: 36px;
+						bottom: 33px;
+
+					}
+				}
+			}
+
+		}
+	}
 }
