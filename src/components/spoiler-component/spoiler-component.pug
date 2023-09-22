@@ -1,0 +1,8 @@
+mixin spoiler-component(props)
+	.spoiler-component&attributes(attributes)(data-component='spoiler-component')
+		.spoiler-component__title
+			span.spoiler-component__title-text
+				span.spoiler-component__title-number!=props.number + '. '
+				span.spoiler-component__title-label!=props.title
+			span.spoiler-component__title-button
+		p.spoiler-component__desc!=props.desc
