@@ -1,57 +1,56 @@
 mixin flex-container()
     section.flex-container
         div.flex-container__content.content
-            h1.flex-container__title <span class='flex-container__span'>Комплексные</span>&nbspпредложения для мостостроения
-            div.flex-container__title-container
-            div.content__row.row.row_big
-                div.row__block.content__block_grey
-                    h2.row__title.content__title_blue Мостовая сталь/Стальные конструкции мостов
-                    div.content__arrow-container
-                        button.content__btn
-                            a(href='#')
-                                img.content__arrow_blue(src='../assets/images/arrow-blue.png')
-                div.row__block.row__block_nested
-                    div.row__nested-block.content__block_grey
-                        h2.row__title.content__title_blue Железобетонные конструкции мостов
-                        div.content__arrow-container
-                            button.content__btn
-                                a(href='#')
-                                    img.content__arrow_blue(src='../assets/images/arrow-blue.png')
-                    div.row__nested-block.content__block_grey
-                        h2.row__title.content__title_blue Дорожные ограждения барьерного типа
-                        div.content__arrow-container
-                            button.content__btn
-                                a(href='#')
-                                    img.content__arrow_blue(src='../assets/images/arrow-blue.png')
-            div.content__row.row.row_md
-                div.row__block.content__block_dark-blue
-                    h2.row__title.content__title_white Шпунтовой замок
-                    div.content__arrow-container
-                        button.content__btn
-                            a(href='#')                            
-                                img.content__arrow_blue(src='../assets/images/arrow-white.png')
-                div.row__block.content__block_grey 
-                    h2.row__title.content__title_blue Мостовой крепеж
-                    div.content__arrow-container
-                            button.content__btn
-                                a(href='#')
-                                    img.content__arrow_blue(src='../assets/images/arrow-blue.png')
-                div.row__block.content__block_light-blue 
-                    h2.row__title.content__title_white Профили для деформационных швов
-                    div.content__arrow-container
-                        button.content__btn
-                            a(href='#')
-                                img.content__arrow_blue(src='../assets/images/arrow-white.png')
-            div.content__row.row.row_small
-                div.row__block.content__block_grey
-                    h2.row__title.content__title_blue Плетеные габионы
-                    div.content__arrow-container
-                        button.content__btn                            
-                            a(href='#')
-                                img.content__arrow_blue(src='../assets/images/arrow-blue.png')
-                div.row__block.content__block_grey
-                    h2.row__title.content__title_blue Модульные мосты
-                    div.content__arrow-container
-                        button.content__btn
-                            a(href='#')
-                                img.content__arrow_blue(src='../assets/images/arrow-blue.png')
+            h1.flex-container__title.title.blue <span class='flex-container__span red'>Комплексные</span>&nbspпредложения для мостостроения
+            div.content__row.row.row-1
+                div.row-1__block.grey
+                    h2.row-1__subtitle.subtitle.blue Мостовая сталь/Стальные конструкции мостов
+                    div.row-1__btn-container.btn-container
+                        button.row-1__btn.btn
+                            a.row-1__link(href='#')
+                                img.row-1__img(src='../assets/images/arrow-blue.png')
+                div.row-1__nested.nested
+                    div.nested__block.nested.grey
+                        h2.nested__subtitle.subtitle.blue Железобетонные конструкции мостов
+                        div.nested__btn-container.btn-container
+                            button.nested__btn.btn
+                                a.nested__link(href='#')
+                                    img.nested__img(src='../assets/images/arrow-blue.png')
+                    div.nested__block.nested.grey
+                        h2.nested__subtitle.subtitle.blue Дорожные ограждения барьерного типа
+                        div.nested__btn-container.btn-container
+                            button.nested__btn.btn
+                                a.nested__link(href='#')
+                                    img.nested__img(src='../assets/images/arrow-blue.png')
+            div.content__row.row.row-2
+                div.row-2__block.dark-blue
+                    h2.row-2__subtitle.subtitle.white Шпунтовой замок
+                    div.row-2__btn-container.btn-container
+                        button.row-2__btn.btn
+                            a.row-2__link(href='#')                            
+                                img.row-2__img(src='../assets/images/arrow-white.png')
+                div.row-2__block.grey
+                    h2.row-2__subtitle.subtitle.blue Мостовой крепеж
+                    div.row-2__btn-container.btn-container
+                            button.row-2__btn.btn
+                                a.row-2__link(href='#')
+                                    img.row-2__img(src='../assets/images/arrow-blue.png')
+                div.row-2__block.light-blue
+                    h2.row-2__subtitile.subtitle.white Профили для деформационных швов
+                    div.row-2__btn-container.btn-container
+                        button.row-2__btn.btn
+                            a.row-2__link(href='#')
+                                img.row-2__img(src='../assets/images/arrow-white.png')
+            div.content__row.row.row-3
+                div.row-3__block.grey
+                    h2.row-3__subtitle.subtitle.blue Плетеные габионы
+                    div.row-3__btn-container.btn-container
+                        button.row-3__btn             
+                            a.row-3__link(href='#')
+                                img.row-3__img(src='../assets/images/arrow-blue.png')
+                div.row-3__block.grey
+                    h2.row-3__subtitle.subtitle.blue Модульные мосты
+                    div.row-3__btn-container.btn-container
+                        button.row-3__btn
+                            a.row-3__link(href='#')
+                                img.row-3__img(src='../assets/images/arrow-blue.png')
