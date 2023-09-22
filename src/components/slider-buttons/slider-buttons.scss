@@ -35,6 +35,9 @@
 			max-width: 60px;
 			max-height: 60px;
 		}
+		& svg {
+
+		}
 		&.prev {
 			margin-right: 10px;
 		}
@@ -46,18 +49,27 @@
 		}
 		&.prev, &.next {
 			&:hover {
-				& circle {
-					transition: all 0.5s ease-out 0s;
-					fill: #F4F4F4;
-					stroke: #F4F4F4;
+				@media screen and (min-width: 769px) {
+					& circle {
+						transition: all 0.5s ease-out 0s;
+						fill: #F4F4F4;
+						stroke: #F4F4F4;
+					}
 				}
 			}
 			& a:focus {
-				& circle {
-					transition: all 0.5s ease-out 0s;
-					fill: #ffffff;
-					stroke-width: 3px;
-					stroke: #99B3D8;
+				@media screen and (min-width: 769px) {
+					& circle {
+						transition: all 0.5s ease-out 0s;
+						fill: #ffffff;
+						stroke-width: 3px;
+						stroke: #99B3D8;
+						r: 38.7;
+					}
+					& svg {
+						width: 85px;
+						height: 85px;
+					}
 				}
 			}
 			& a:active {
@@ -65,21 +77,6 @@
 					transition: all 0.5s ease-out 0s;
 					fill: #DEDEDE;
 					stroke: #DEDEDE;
-				}
-			}
-			@media screen and (max-width: 768px) {
-				&:hover {
-					& circle {
-						fill: #ffffff;
-						stroke: #DEDEDE;
-					}
-				}
-				a:focus {
-					& circle {
-						stroke-width: 1px;
-						fill: #ffffff;
-						stroke: #DEDEDE;
-					}
 				}
 			}
 		}

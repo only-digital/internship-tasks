@@ -5,6 +5,8 @@
 }
 .button-name {
 	margin-bottom: 20px;
+	color: #81080F;
+	font: 600 normal 20px/20px 'Grtsk Peta'
 }
 .button-with-border {
 	$root: &;
@@ -13,10 +15,15 @@
 	align-items: center;
 	column-gap: 14px;
 	border-radius: 24px;
-	border: 1px solid #BCBCBC;
+	border: 3px solid transparent;
 	transition: all 0.5s ease-out 0s;
-	margin-bottom: 20px;
-	box-sizing: border-box;
+	&__container {
+		border: 1px solid #BCBCBC;
+		border-radius: 24px;
+		width: fit-content;
+		height: fit-content;
+		margin-bottom: 20px;
+	}
 	&__icon {
 		max-width: 32px;
 		height: auto;
@@ -42,48 +49,41 @@
 		}
 	}
 	&:hover {
-		transition: all 0.5s ease-in 0s;
-		background-color: #0041A0;
-		border-color: #0041A0;
-		#{$root}__text {
+		@media screen and (min-width: 769px) {
 			transition: all 0.5s ease-in 0s;
-			color: #ffffff;
-		}
-		#{$root}__icon path {
-			transition: all 0.5s ease-in 0s;
-			fill: #ffffff;
-		}
-		@media screen and (max-width: 768px) {
-			background-color: #ffffff;
-			border-color: #BCBCBC;
+			background-color: #0041A0;
+			border-color: #0041A0;
 			#{$root}__text {
-				color: #111111;
+				transition: all 0.5s ease-in 0s;
+				color: #ffffff;
 			}
 			#{$root}__icon path {
-				fill: #111111;
+				transition: all 0.5s ease-in 0s;
+				fill: #ffffff;
 			}
 		}
 	}
-
 	&:focus {
-		border-radius: 24px;
-		border: 3px solid #99B3D8;
-		background-color: #ffffff;
-		#{$root}__text {
-			transition: all 0.5s ease-in 0s;
-			color: #0041A0;
-		}
-		#{$root}__icon path {
-			transition: all 0.5s ease-in 0s;
-			fill: #0041A0;
-		}
-		@media screen and (max-width: 768px) {
-			border: 1px solid #BCBCBC;
+		@media screen and (min-width: 769px) {
+			border-radius: 24px;
+			border: 3px solid #99B3D8;
+			background-color: #ffffff;
 			#{$root}__text {
-				color: #111111;
+				transition: all 0.5s ease-in 0s;
+				color: #0041A0;
 			}
 			#{$root}__icon path {
-				fill: #111111;
+				transition: all 0.5s ease-in 0s;
+				fill: #0041A0;
+			}
+			@media screen and (max-width: 768px) {
+				border: 1px solid #BCBCBC;
+				#{$root}__text {
+					color: #111111;
+				}
+				#{$root}__icon path {
+					fill: #111111;
+				}
 			}
 		}
 	}
@@ -102,7 +102,6 @@
 	}
 	&:disabled {
 		pointer-events: none;
-		border-color: #BCBCBC;
 		#{$root}__text {
 			color: #909090;
 		}

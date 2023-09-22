@@ -1,0 +1,82 @@
+.switcher-button {
+	$root: &;
+	margin-bottom: 20px;
+	&.disabled {
+		pointer-events: none;
+		& rect:first-of-type {
+			fill: #DEDEDE;
+		}
+		& circle {
+			cx: 14;
+			cy: 14;
+		}
+		@media screen and (max-width: 375px) {
+			& svg {
+				width: 40px;
+				height: 20px;
+				background-size: 40px 20px;
+			}
+			& rect {
+				width: 40px;
+				height: 20px;
+				rx: 10;
+			}
+			& circle {
+				cx: 10;
+				cy: 10;
+				r: 6;
+			}
+		}
+	}
+	&__icon {
+		display: inline-block;
+		transition: all 0.5s ease-in-out 0s;
+		&:hover {
+			@media screen and (min-width: 769px) {
+				& rect:first-of-type {
+					transition: all 0.5s ease-in-out 0s;
+					fill: #002F6C;
+				}
+			}
+		}
+		& a:focus {
+			@media screen and (min-width: 769px) {
+				& rect:first-of-type {
+					transition: all 0.3s ease-in-out 0s;
+					fill: #DEDEDE;
+					width: 59px;
+					height: 31px;
+					rx: 15.5;
+					x: 1.5;
+					y: 1.5;
+				}
+				& circle {
+					transition: all 0.3s ease-in-out 0s;
+					cx: 17;
+					cy: 17;
+				}
+				& rect:last-of-type {
+					transition: all 0.3s ease-in-out 0s;
+					stroke: #C2DAFF;
+				}
+			}
+		}
+		@media screen and (max-width: 375px) {
+			& svg {
+				width: 40px;
+				height: 20px;
+				background-size: 40px 20px;
+			}
+			& rect {
+				width: 40px;
+				height: 20px;
+				rx: 10;
+			}
+			& circle {
+				cx: 30;
+				cy: 10;
+				r: 6;
+			}
+		}
+	}
+}

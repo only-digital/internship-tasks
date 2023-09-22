@@ -6,18 +6,26 @@ block body
         p.button-name Кнопка с обводкой
         +button-with-border({text: 'Кнопка'})
         +button-with-border({text: 'Кнопка'})(disabled='')
+
         p.button-name Кнопка с заливкой
         +colored-button({text: 'Кнопка'})
         +colored-button({text: 'Кнопка'})(disabled='')
+
         p.button-name Кнопки слайдера
         +slider-buttons({count: "01 / 04"})
         +slider-buttons({count: "01 / 04"})(class="disabled")
+
         p.button-name Ссылки
         +links({text: "Sustainalytics.com", link: "https://www.sustainalytics.com/"})
         +links({text: "Sustainalytics.com", link: "https://www.sustainalytics.com/"})(class="disabled")
+
         p.button-name Ссылки в тексте
         +linksText({text: "+7(921)058-57-19", link: "tel:+79210585719", inside:true, textBeforeLink: "Для подключения сервиса добавьте номер", textAfterLink: "в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже"})
         +linksText({text: "дополнительных сервисов", link: "#", inside:true, textBeforeLink: "Цифровые продукты, направленные на создание", textAfterLink: "и устранение «проблемных точек» наших клиентов"})
+
+        p.button-name Переключатель
+        +switcher-button()
+        +switcher-button()(class="disabled")
 
 
 

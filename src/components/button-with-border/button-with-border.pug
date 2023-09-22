@@ -8,7 +8,8 @@ mixin svgIcon()
 				rect(width="32px" height="32px" fill="white")
 
 mixin button-with-border(props)
-	button.button-with-border&attributes(attributes)
-		span.button-with-border__text!=props.text
-		span.button-with-border__icon
-			+svgIcon
+	.button-with-border__container
+		button.button-with-border&attributes(attributes)
+			span.button-with-border__text!=props.text
+			span.button-with-border__icon
+				+svgIcon

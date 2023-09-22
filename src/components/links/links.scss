@@ -21,29 +21,23 @@
 		transition: all 0.5s ease-out 0s;
 		cursor: pointer;
 		&:hover {
-			color: #FF0000;
-			transition: all 0.5s ease-in 0s;
+			@media screen and (min-width: 769px) {
+				color: #FF0000;
+				transition: all 0.5s ease-in 0s;
+			}
 		}
 		&:focus {
-			background-color: #0041A026;
-			transition: all 0.5s ease-in 0s;
+			@media screen and (min-width: 769px) {
+				background-color: #0041A026;
+				transition: all 0.5s ease-in 0s;
+			}
 		}
 		&:active {
 			color: #BF1D26;
 			transition: all 0.5s ease-in 0s;
 		}
-		@media screen and (max-width: 768px) {
-			font-size: 14px;
-			line-height: 21px;
-			letter-spacing: -0.28px;
-			&:hover {
-				color: #0041A0;
-			}
-			&:focus {
-				background-color: #ffffff;
-			}
-		}
 	}
+
 	&.text-block {
 		display: block;
 	}
