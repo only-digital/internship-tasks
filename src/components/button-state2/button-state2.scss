@@ -11,7 +11,7 @@
 	gap: 14px;
 	border-radius: 25px;	
     background-color: #F00;
-	transition: all .3s;
+	transition: width .3s, height .3s, background-color .3s;
 
 	    &:disabled {
 		    opacity: 0.5;
@@ -42,7 +42,7 @@
 	    }
 
         &:focus {
-           border: 3px solid #99B3D8;			
+			outline: 3px solid #99B3D8;			
         }
         
 
@@ -54,8 +54,7 @@
             font-weight: 400;
             line-height: 100%; 
             letter-spacing: -0.32px;
-            transition: all .3s;
-
+            transition: font-size .3, color .3s;
 		    @media (max-width: 1280px) {
 			    font-size: 14px;
 		    }
@@ -67,7 +66,7 @@
 	    &__svg {
 		    width: 32px;
 		    fill: #fff;
-		    transition: all .3s;	
+		    transition: width .3s, fill .3s;	
             
             @media (max-width: 1280px) {
 			    width: 24px;

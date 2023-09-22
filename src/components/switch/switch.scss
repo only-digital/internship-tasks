@@ -1,0 +1,76 @@
+.conteiner-switch{
+    $root: &;
+
+    &__label{
+        display: block;
+        margin: 10px;
+        width: 56px;
+        height: 28px;
+        background-color: #DEDEDE;  
+        border-radius: 14px; 
+        position: relative; 
+        transition: background-color .3s;
+    
+        @media (max-width: 375px) {
+            width: 40px;
+            height: 20px;
+        }
+    }
+
+    &__switch:disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    &__switch:disabled + &__label:hover{
+        background-color: #DEDEDE;  
+    }
+
+    &__label::before{
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        background-color: #fff;
+        border-radius: 50%;
+        top: 6px;
+        left: 6px;
+        transition: width .3s, height .3s, top .3s, left .3s;
+    
+        @media (max-width: 375px) {
+            width: 12px;
+            height: 12px;
+            top: 4px;
+            left: 4px;
+        }
+    }
+
+    &__label:hover{
+        background-color: #002F6C; 
+    }
+    
+    &__switch:focus + &__label  {
+       outline: 3px solid #C2DAFF;
+    }
+    
+
+    &__switch:checked + &__label  {
+        background-color: #0041A0;
+    }
+
+    &__switch:checked + &__label:hover  {
+        background-color: #002F6C;
+    }
+
+    &__switch:checked + &__label::before  {
+        left: 34px;
+        @media (max-width: 375px) {
+            left: 24px;
+        }
+    }
+
+
+}
+
+
+

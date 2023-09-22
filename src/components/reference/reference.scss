@@ -1,0 +1,48 @@
+.container-referens{
+    $root: &;
+
+    display: flex;
+	margin: 10px;
+	align-items: center;     
+   
+   &:hover &__href{
+        color: #FF0000;
+   }
+    
+    &:active &__href{
+        color: #BF1D26;
+    }
+
+    &__href:focus {
+        background: rgba(0, 65, 160, 0.15);
+    }       
+    &__href:focus + &__svg {
+        background: rgba(0, 65, 160, 0.15);
+    }          
+
+    &__href{
+        color: #0041A0;
+        font-family: Grtsk Peta;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; 
+        letter-spacing: -0.32px;
+        padding-right: 12px;  
+        transition: font-size .3s;
+        
+        @media (max-width: 768px) {
+            font-size: 14px;
+            padding-top: 2px;
+            padding-bottom: 1px;
+        }
+    }
+
+    &__svg{
+        width: 24px;
+        height: 24px;
+        fill: #002F6C;
+    }    
+}
+
+

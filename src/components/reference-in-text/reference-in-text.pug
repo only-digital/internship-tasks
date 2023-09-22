@@ -1,0 +1,6 @@
+mixin referenseInText(text, href, textBefore, textAfter)
+    p.reference-in-text__content
+        | !{textBefore}
+        a.reference-in-text__href(href=href)=text
+        | !{textAfter}
+    

@@ -9,7 +9,7 @@
 	align-items: center;	
 	border-radius: 50%;
 	border: 1px solid #BCBCBC;	
-	transition: all .3s;
+	transition: width .3s, height .3s, background-color .3s;
 
 	    &:disabled {
 		    opacity: 0.5;
@@ -32,13 +32,13 @@
 	    }
 
         &:focus {
-            border: 3px solid #99B3D8;;			
+            outline: 3px solid #99B3D8;;			
         }
 
 	    &__svg {
 		    width: 80px;
 		    fill: #002F6C;
-		    transition: all .3s;	
+		    transition: width .3s;	
             
             @media (max-width: 1280px) {
 			    width: 66px;
