@@ -1,3 +1,15 @@
-mixin grid-container()
+mixin grid-container
     section.grid-container
-        // Your code here
+        .grid-container__up-row
+            .grid-container__up-row_left
+                +card({title:'Мостовая сталь/Стальные конструкции мостов',colored:false,styles:'padding:48px 36px 25px 36px;'})
+            .grid-container__up-row_right
+                +card({title:'Железобетонные конструкции мостов',colored:false,styles:'padding:24px 36px 25px 36px;'})
+                +card({title:'Дорожные ограждения барьерного типа',colored:false,styles:'padding:24px 36px 25px 36px;'})
+        .grid-container__middle-row
+            +card({title:'Шпунтовой замок',colored:true,styles:'padding:24px 36px 25px 36px;'})
+            +card({title:'Мостовой крепеж',colored:false,styles:'padding:24px 36px 25px 36px;'})
+            +card({title:'Профили для деформационных швов',colored:true,styles:'padding:24px 36px 25px 36px;'})
+        .grid-container__bottom-row
+            +card({title:'Плетеные габионы',colored:false,styles:'padding:24px 36px 25px 36px;'})
+            +card({title:'Модульные мосты',colored:false,styles:'padding:24px 36px 25px 36px;'})

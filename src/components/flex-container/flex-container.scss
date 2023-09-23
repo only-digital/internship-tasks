@@ -1,3 +1,31 @@
 .flex-container {
-    // Your code here
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 97px;
+
+    &__up-row {
+        height: 856px;
+        justify-content: space-between;
+        &_right {
+            flex-direction: column;
+            gap: 16px;
+            justify-content: space-between;
+            width: 100%;
+        }
+        &_left {
+            width: 100%;
+        }
+    }
+    &__up-row,
+    &__middle-row,
+    &__bottom-row {
+        gap: 19px;
+    }
+    &__middle-row,&__bottom-row {
+        height: 480px;
+    }
 }

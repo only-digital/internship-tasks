@@ -1,3 +1,43 @@
 .grid-container {
-    // Your code here
+    display: grid;
+    column-gap: 18px;
+    row-gap: 16px;
+    grid-template-rows: 856px 480px 480px;
+    grid-template-columns: 1fr;
+    max-width: 1920px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 97px;
+
+    &__up-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 18px;
+        row-gap: 16px;
+    }
+    &__up-row_right {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+        column-gap: 18px;
+        row-gap: 16px;
+    }
+
+    &__middle-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        column-gap: 18px;
+        row-gap: 16px;
+    }
+
+    &__bottom-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 18px;
+        row-gap: 16px;
+    }
+    &__middle-row,&__bottom-row {
+        height: 480px;
+    }
 }

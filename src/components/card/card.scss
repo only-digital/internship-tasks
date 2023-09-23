@@ -1,0 +1,34 @@
+.card {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    border: 3px solid green;
+    height: 100%;
+
+    &__title {
+        font-family: Arial;
+        font-size: calc(16px + 16 * (100vw / 1920));
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%; 
+        letter-spacing: -0.64px; 
+        color: #04306A;
+        text-align: left;
+        width: 100%;
+        &_colored {
+            color: white;
+        }
+    }
+    
+    &_colored{
+        background-color: #04306A;
+    }
+
+    &__link {
+        width: 64.932px;
+        height: 36px;
+        align-self: end;
+        justify-self: end;
+    }
+}
