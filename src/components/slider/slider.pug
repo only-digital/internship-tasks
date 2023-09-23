@@ -1,0 +1,14 @@
+mixin slider(props)
+	.slider
+
+		button.slider__btn.prev&attributes(attributes)
+			+svg('slider-btn')
+
+		div.slider__content
+
+		button.slider__btn.next&attributes(attributes)
+			+svg('slider-btn')
+
+		if (props.current && props.total)
+			.slider-indicator&attributes(attributes)
+				span.slider-indicator-text= `${props.current} / ${props.total}`

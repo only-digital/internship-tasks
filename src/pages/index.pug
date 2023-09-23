@@ -16,8 +16,27 @@ block body
 		//- +btn({text: 'Кнопка'})(type='button-alt')
 		//- br
 		//- +btn({text: 'Кнопка'})(type='button-alt')(disabled)
-		
+
 		//- Вариант через миксин btn-alt
 		+btn-alt({text: 'Кнопка'})
 		br
 		+btn-alt({text: 'Кнопка'})(disabled)
+		br
+		h1 Кнопки слайдера
+		br 
+		+slider({current: "01", total: "04"})
+		br
+		+slider({current: "01", total: "04"})(disabled)
+		br
+		h1 Ссылки
+		br 
+		+link({text: "Sustainalytics.com", url: 'https://google.com', icon: true})
+		br
+		br
+		+link({text: "Sustainalytics.com", url: 'https://google.com', icon: true, disabled: true})
+		br
+		br
+		p 
+		| Для подключения сервиса добавьте номер 
+		+link({text:'+7(921)058-57-19', url: 'https://google.com', icon: false})
+		|  в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже

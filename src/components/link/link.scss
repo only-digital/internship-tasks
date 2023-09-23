@@ -1,5 +1,55 @@
-.link {
-	$root: &;
+$grey: #bcbcbc;
 
-	//Your code here
+$light-blue: #0041a026;
+
+$blue: #0041a0;
+$dark-blue: #002f6c;
+
+$light-red: #ff0000;
+$red: #bf1d26;
+
+button:disabled {
+  pointer-events: none;
+  tab-size: -1;
+
+  .link {
+    color: $grey;
+    background-color: transparent;
+  }
+}
+
+.link {
+  $root: &;
+  color: $blue;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -0.32px;
+
+  outline: none;
+
+  padding: 0 1px;
+
+  height: 24px;
+
+  display: flex;
+  align-items: center;
+
+  &:focus {
+    background-color: $light-blue;
+  }
+  &:hover {
+    color: $light-red;
+  }
+  &:active {
+    color: $red;
+  }
+
+  & svg {
+    width: 24px;
+    height: 24px;
+    fill: $dark-blue;
+
+    margin-left: 10px;
+  }
 }
