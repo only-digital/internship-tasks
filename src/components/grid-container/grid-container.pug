@@ -1,3 +1,14 @@
 mixin grid-container()
+    - var cardsContent = ['Мостовая сталь/Стальные конструкции мостов','Железобетонные конструкции мостов','Дорожные ограждения барьерного типа','Шпунтовой замок','Мостовой крепеж','Профили для деформационных швов','Плетеные габионы','Модульные мосты']
     section.grid-container
-        // Your code here
+        .grid-container__wrapper
+            h3.grid-container__title.title
+                span.highlighted Комплексные
+                | предложения для мостостроения
+            .grid-container__cards.cards
+                .cards__container
+                    each text, index in cardsContent
+                        .card(class=index === 3 ? 'card_colored' : index === 5 ? 'card_highlighted' : '')
+                            p.card__text= text
+                            a(href="#", class=index === 3 ? 'icon_colored' : index === 5 ? 'icon_colored' : '').icon
+                                include ../../assets/icons/arrow.svg

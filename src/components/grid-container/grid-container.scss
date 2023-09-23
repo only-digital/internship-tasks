@@ -1,3 +1,45 @@
+@import "../colors.scss";
+
 .grid-container {
-    // Your code here
+    color: $primary;
+    font-family: Arial;
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: -1px;
+
+    &__wrapper {
+        max-width: 1729px;
+        margin: auto auto 25px;
+    }
+
+    &__title {
+        margin-bottom: 80px;
+        grid-template-columns: 18% auto;
+    }
+
+    &__cards {
+        height: 1788px;
+    }
+
+    .cards {
+        &__container {
+            grid-gap: 16px 18px;
+            grid-template: repeat(4, 1fr) / repeat(6, 1fr);
+        }
+    }
+
+    .card {
+        grid-row: span 1;
+        grid-column: span 3;
+        justify-content: stretch;
+
+        &:first-child {
+            grid-row: span 2;
+        }
+
+        &:nth-child(n+4):nth-child(-n+6) {
+            grid-column: span 2;
+        }
+    }
 }
