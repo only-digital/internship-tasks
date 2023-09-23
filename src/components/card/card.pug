@@ -1,5 +1,7 @@
-mixin card({ title='', colored=true, ref='http://mock-address-change-me', styles }={})
-    article.card(class=colored ? 'card_colored' : '' style=styles&&`${styles}`)
+mixin card({ title='', colored=true, ref='http://mock-address-change-me', styles,smallIndentation=true }={})
+    - const extraClassIndentation = smallIndentation && ' card_with_small_indentation '
+    - const extraClassColor = colored && ' card_colored ' 
+    article.card(class=extraClassIndentation + extraClassColor style=styles&&`${styles}`)
         h3.card__title(class=colored ? 'card__title_colored' : '')=title
         a.card__link(href=ref) 
             img.card__img(src=colored?'../assets/images/white-arrow.svg':'../assets/images/blue-arrow.svg', alt="arrow image")

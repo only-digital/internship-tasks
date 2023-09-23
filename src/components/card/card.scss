@@ -5,6 +5,11 @@
     grid-template-rows: 1fr 1fr;
     border: 3px solid green;
     height: 100%;
+    padding:48px 36px 25px 36px;
+    
+    &_with_small_indentation {
+        padding:24px 36px 25px 36px;
+    }
 
     &__title {
         font-family: Arial;
