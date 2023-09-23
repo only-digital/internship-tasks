@@ -68,7 +68,8 @@
 }
 
 .icon {
-    align-self: flex-end;
+    align-self: end;
+    justify-self: end;
 
     &_colored path {
         fill: $light;
