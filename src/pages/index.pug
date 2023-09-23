@@ -2,6 +2,22 @@ extends ../../build_modules/common
 
 
 block body
-    +example-button({text: 'example text'})
-    +example-button({text: 'disabled'})(disabled='')
-    //Your code here
+	.wrapper
+		h1 Кнопки
+		br
+		+btn({text: 'Кнопка'})
+		br
+		+btn({text: 'Кнопка'})(disabled)
+		br
+		br
+		h1 Кнопки - альтернативный вариант
+		br
+		//- Вариант через атрибут type
+		//- +btn({text: 'Кнопка'})(type='button-alt')
+		//- br
+		//- +btn({text: 'Кнопка'})(type='button-alt')(disabled)
+		
+		//- Вариант через миксин btn-alt
+		+btn-alt({text: 'Кнопка'})
+		br
+		+btn-alt({text: 'Кнопка'})(disabled)

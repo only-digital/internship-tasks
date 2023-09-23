@@ -1,3 +1,8 @@
+@import '../src/components/switch/switch';
+@import '../src/components/link/link';
+@import '../src/components/btn-alt/btn-alt';
+@import '../src/components/slider-btn/slider-btn';
+@import '../src/components/btn/btn';
 @import '../src/components/example-button/example-button';
 
 html {
@@ -17,6 +22,10 @@ body {
     padding: 0;
     margin: 0;
     -webkit-tap-highlight-color: transparent;
+
+	 .wrapper {
+		padding: 30px 15px 0 15px;
+	 }
 }
 
 h1, h2, h3, h4, h5, p, a {

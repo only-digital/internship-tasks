@@ -1,0 +1,101 @@
+$light-grey: #F4F4F4;
+$grey: #BCBCBC;
+$dark-grey: #909090;
+
+
+$white: #FFFFFF;
+
+$light-blue: #99B3D8;
+
+$light-red: #FF0000;
+$red: #BF1D26;
+$dark-red: #81080F;
+
+.btn-alt {
+	$root: &;
+	height: 48px;
+
+	box-sizing: border-box;
+
+	display: flex;
+	align-items: center;
+
+	padding: 0 14px 0 18px;
+
+	border-radius: 25px;
+	background-color: $light-red;
+	color: $white;
+	
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+
+	.btn-alt__text {
+		font-family: Arial, sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		letter-spacing: -0.32px;
+		margin-right: 14px;
+	}
+
+	svg {
+		width: 32px;
+		height: 32px;
+		fill: $white;
+
+		transition: fill 0.15s ease-in-out;
+	}
+	
+	&:focus {
+		border: 3px solid $light-blue;
+	}
+
+	&:hover {
+		background-color: $red;
+	}
+	
+	&:active {
+		background-color: $dark-red;
+	}
+
+	&:disabled {
+		color: $dark-grey;
+		background-color: $light-grey;
+		pointer-events: none;
+
+		svg {
+			fill: $dark-grey;
+		}
+	}
+
+	@media (max-width: 1280px) {
+		& {
+			height: 42px;
+
+			& .btn-alt__text {
+			font-size: 14px;
+			}
+
+			svg {
+				width: 24px;
+				height: 24px;
+			}
+		}
+	}
+
+	@media (max-width: 768px) {
+		&  .btn-alt__text {
+			font-size: 16px;
+		}
+	}
+	@media (max-width: 375px) {
+		& {
+			width: 100%;
+			justify-content: center;
+			padding: 0 14px;
+
+			& .btn-alt__text {
+				margin-right: 12px;
+			}
+		}
+		
+	}
+}
