@@ -1,0 +1,18 @@
+mixin spoiler(props)
+	.spoiler-block__item&attributes(attributes)(data-component='spoiler')
+		button.spoiler-block__item__title
+			span.spoiler-block__item__title__text!= props.title
+			+svg('spoiler-svg').spoiler-block__item__title__svg
+		.spoiler-block__item__content 
+			p!= props.content
+
+
+
+mixin spoiler-block(props)
+	.spoiler-block&attributes(attributes)(data-component='spoiler-block')
+		.spoiler-block__title Lorem ipsum dolor
+		+spoiler({title: "1. Nullam tincidunt vestibulum porttitor", content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae doloribus voluptate hic consequatur, nobis, facilis quod maxime repellendus vel repellat a obcaecati dolore! Quisquam dicta quibusdam provident, ullam in dolor eveniet quod tempora ipsa tempore quos ipsum voluptatibus! Unde libero incidunt eligendi, nihil ullam, tenetur repudiandae omnis sed necessitatibus cupiditate doloribus voluptatem corporis. Quod sed consectetur iste voluptates non repudiandae explicabo reprehenderit eius nesciunt dignissimos quis ab quasi voluptate, veniam aperiam tempora officia expedita, porro, sapiente temporibus commodi. Ad et nihil incidunt iusto ducimus numquam quibusdam? Voluptates repellat fugiat ex impedit mollitia fuga perferendis explicabo reprehenderit, voluptate quas et harum?"})
+		+spoiler({title: "2. Class aptent taciti sociosqu ad litora", content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet, expedita!"})
+		+spoiler({title: "3. Nulla fringilla ligula elit, non laoreet ipsum rutrum eget", content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet, expedita!"})
+		+spoiler({title: "4. Mauris ut suscipit tellus", content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet, expedita!"})
+		+spoiler({title: "5. Nullam placerat porta libero, vel maximus augue euismod eget", content: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet, expedita!"})
