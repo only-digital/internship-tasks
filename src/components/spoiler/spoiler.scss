@@ -1,0 +1,7 @@
+@import '/src/pages/index.scss';
+
+.spoiler {
+	$root: &;
+
+	margin-top: $largeMargin;
+}

@@ -1,0 +1,8 @@
+@import '/src/pages/index.scss';
+
+.title {
+	$root: &;
+
+	@include text-style($font-family, 400, 64px, $darkTeal, 64px);
+	cursor: default;
+}

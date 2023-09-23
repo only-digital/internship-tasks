@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+$darkTeal: #012B34;
+$blue: #114C9A;
+$black: #000402;
+$grey: #E6E6E6;
+
+$largeMargin: 80px;
+$mediumMargin: 40px;
+$smallMargin: 30px;
+
+$font-family: 'Roboto', sans-serif;
+
+@mixin text-style($font-family, $font-weight, $font-size, $color, $line-height) {
+	font-family: $font-family;
+	font-weight: $font-weight;
+	font-size: $font-size;
+	color: $color;
+	line-height: $line-height;
+}
+
+@mixin pseudo-element($height, $color, $rotateDeg)  {
+	content: '';
+	position: absolute;
+	width: 100%;
+	left: 0;
+	height: $height;
+	background-color: $color;
+	transform: rotate($rotateDeg);
+}
+
+.container {
+	max-width: 1618px;
+	margin: 0 auto;
+	padding: 183px 0 183px 0;
+}

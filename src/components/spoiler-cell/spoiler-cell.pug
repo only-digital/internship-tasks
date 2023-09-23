@@ -1,0 +1,7 @@
+mixin spoiler-cell(props)
+	li.spoiler-cell.cell&attributes(attributes)(data-component='spoiler-cell')
+		.cell-block-top.top
+			h2.top__title #{props.index}. #{props.title}
+			span.top__cross
+		.cell-block-bottom.bottom 
+			p.bottom__text= props.text	

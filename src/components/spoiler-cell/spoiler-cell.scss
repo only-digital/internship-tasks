@@ -1,0 +1,60 @@
+@import '/src/pages/index.scss';
+
+.spoiler-cell {
+	$root: &;
+	position: relative;
+	padding: $smallMargin 0 $smallMargin 0;
+
+	.top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		cursor: pointer;
+
+		&__title {
+			@include text-style($font-family, 400, 36px, $darkTeal, 43.2px);
+
+			&.active {
+				@include text-style($font-family, 400, 36px, $blue, 43.2px);
+			}
+		}
+
+		&__cross {
+			position: relative;
+			width: 29px;
+
+			&:before {
+				@include pseudo-element(2px, $blue, 0deg);
+				top: 0;
+			}
+
+			&:after {
+				@include pseudo-element(2px, $blue, 90deg);
+				top: 0;
+			}
+		}
+	}
+
+	.bottom {
+		&__text {
+			@include text-style($font-family, 400, 20px, $black, 30px);
+			display: none;
+			max-width: 942px;
+			margin: $smallMargin 0 10px 0;
+
+			&.active {
+				display: block;
+			}
+		}
+	}
+
+	&:before {
+		@include pseudo-element(1px, $grey, 0deg);
+		top: 0;
+	}
+
+	&:last-child:after {
+		@include pseudo-element(1px, $grey, 0deg);
+		bottom: 0;
+	}
+}
