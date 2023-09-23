@@ -4,4 +4,8 @@ extends ../../build_modules/common
 block body
     +example-button({text: 'example text'})
     +example-button({text: 'disabled'})(disabled='')
-    //Your code here
+    +button-1({text: 'Кнопка'})
+    +button-1({text: 'Кнопка'})(disabled='')
+    +button-1({text: 'Кнопка'})(class="button-1--red")
+    +button-1({text: 'Кнопка'})(disabled='' class="button-1--red")
+   
