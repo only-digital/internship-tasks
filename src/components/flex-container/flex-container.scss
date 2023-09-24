@@ -1,5 +1,7 @@
 .flex-container {
   max-width: 1920px;
+  padding: 96px;
+  padding-top: 122px;
   font-family: "arial" sans-serif;
   flex-direction: column;
   gap: 18px;
@@ -8,14 +10,8 @@
     font-size: 46px;
     line-height: 46px;
     font-weight: 700;
-    padding-bottom: 80px;
-    padding-top: 120px;
+    margin-bottom: 80px;
   }
-}
-
-.upper,
-.lower {
-  display: flex;
 }
 
 .upper {
@@ -82,6 +78,7 @@
 .arrow {
   margin: 25px;
   align-self: flex-end;
+  cursor: pointer;
 }
 
 strong {
