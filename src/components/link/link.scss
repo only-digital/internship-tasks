@@ -1,0 +1,74 @@
+$main-color: #002F6C;
+$secondary-color: #BCBCBC;
+$third-color: #0041A0;
+$main-red: #F00;
+$secondary-red: #BF1D26;
+$background-color: rgba(0, 65, 160, 0.15);
+
+.link {
+	$root: &;
+
+	display: inline-block;
+	transition: color 0.3s ease,
+		background-color 0.3s ease;
+	color: $third-color;
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 150%;
+	letter-spacing: -0.32px;
+	margin: 30px 20px;
+	cursor: pointer;
+
+	@media (max-width: 768px) {
+		font-size: 14px;
+		letter-spacing: -0.28px;
+	}
+
+	&.disabled {
+		pointer-events: none;
+		color: $secondary-color;
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			color: $main-red;
+		}
+	}
+
+	&:focus-visible {
+		background-color: $background-color;
+		outline: none;
+	}
+
+	&:active {
+		color: $secondary-red;
+	}
+
+	svg {
+		width: 24px;
+		height: 24px;
+		color: $main-color;
+		vertical-align: middle;
+		transition: color 0.3s ease;
+	}
+
+	&__text {
+		display: inline-block;
+		margin-right: 10px;
+	}
+
+	&--in-text {
+		display: inline;
+		margin: 0;
+
+		svg {
+			display: none;
+		}
+
+		span {
+			margin-right: 0;
+		}
+	}
+}
