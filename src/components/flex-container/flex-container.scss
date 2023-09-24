@@ -1,3 +1,6 @@
+$dark-blue-color: #04306a;
+$blue-color: #0041a0;
+
 .flex-container {
   max-width: 1920px;
   padding: 96px;
@@ -25,7 +28,7 @@
     height: 480px;
   }
   .card:first-child {
-    background-color: #04306a;
+    background-color: $dark-blue-color;
     h2 {
       color: white;
     }
@@ -35,7 +38,7 @@
   }
 
   .card:last-child {
-    background-color: #0041a0;
+    background-color: $blue-color;
     h2 {
       color: white;
     }
