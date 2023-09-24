@@ -1,3 +1,75 @@
 .flex-container {
-    // Your code here
+  max-width: 1920px;
+  font-family: "arial" sans-serif;
+  flex-direction: column;
+  gap: 10px;
+  margin: auto;
+}
+
+.upper,
+.lower {
+  display: flex;
+}
+
+.upper {
+  height: 856px;
+  gap: 10px;
+}
+
+.middle {
+  gap: 10px;
+  .card {
+    height: 480px;
+  }
+  .card:first-child {
+    background-color: #04306a;
+		h2 {
+			color: white;
+		}
+  }
+
+  .card:last-child {
+    background-color: #0041a0;
+		h2 {
+			color: white;
+		}
+  }
+}
+
+.lower {
+  gap: 10px;
+  .card {
+    height: 420px;
+  }
+}
+
+.vertical {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card {
+  background: #d8d8d8;
+  width: 100%;
+  flex-grow: 1;
+
+  h2 {
+    font-weight: 700;
+    color: #04306a;
+    padding: 20px;
+  }
+}
+
+strong {
+  color: #fc0d1b;
+}
+
+h1 {
+  font-size: 46px;
+  line-height: 46px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: left;
 }
