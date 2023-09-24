@@ -1,3 +1,88 @@
+@mixin colored-text($color) {
+  color: $color;
+}
+
+@mixin colored-bg($color) {
+  background-color: $color;
+}
+
 .flex-container {
-    // Your code here
+  display: flex;
+  flex-direction: column;
+  padding: 120px 95px;
+
+  &__title {
+    font-size: 46px;
+    color: blue;
+    margin-bottom: 80px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__row-1 {
+    height: 856px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    .item {
+      flex: 1 1 calc((100% / 2) - 2rem);
+    }
+  }
+
+  &__row-2 {
+    height: 916px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    .item {
+      flex: 1 1 calc((100% / 3) - 2rem);
+    }
+  }
+}
+
+.item {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1rem;
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 24px 36px 33px 36px;
+    &.gray {
+      color: #04306a;
+      @include colored-bg(#f4f4f4);
+    }
+    &.blue {
+      color: white;
+      @include colored-bg(#04306a);
+    }
+    &.light-blue {
+      color: white;
+      @include colored-bg(#0041a0);
+    }
+  }
+}
+
+.card {
+  &__title {
+    font-size: 32px;
+  }
+
+  &__arrow {
+    align-self: flex-end;
+    cursor: pointer;
+  }
+}
+
+p.colored {
+  @include colored-text(red);
 }
