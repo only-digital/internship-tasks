@@ -1,0 +1,50 @@
+.main-slider-button {
+	$root: &;
+
+	width: 80px;
+	height: 80px;
+	border: 1px solid #DEDEDE;
+	border-radius: 50%;
+	transition: background .3s, box-shadow .2s;
+
+	&__svg {
+		width: 80px;
+		height: 80px;
+		fill: #002F6C;
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			background: #F4F4F4;
+			border-color: #F4F4F4;
+		}
+	}
+
+	&:active {
+		background: #DEDEDE;
+	}
+
+	&:focus {
+		box-shadow: 0 0 0 3px #99B3D8;
+	}
+
+	&:disabled {
+		pointer-events: none;
+
+		#{$root}__svg {
+			fill: #BCBCBC;
+		}
+	}
+	
+	@media screen and (max-width: 1280px) {
+		display: flex;
+		align-items: center;
+		width: 60px;
+		height: 60px;
+		
+		&__svg {
+			width: 60px;
+			height: 60px;
+		}
+	}
+}

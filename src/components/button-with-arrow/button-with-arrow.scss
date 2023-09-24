@@ -9,6 +9,7 @@
 	height: 48px;
 	padding: 0 14px 0 18px;
 	border-radius: 25px;
+	transition: background .3s, box-shadow .2s, color .3s;
 
 	&__text {
 		font-family: Arial;
@@ -22,6 +23,7 @@
 	&__svg {
 		width: 32px;
 		height: 32px;
+		transition: fill .3s;
 	}
 
 	&_style_withBorder {

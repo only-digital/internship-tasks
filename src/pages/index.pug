@@ -13,3 +13,12 @@ block body
     +space-container('Кнопка с заливкой (альтернативный вариант)')
         +button-with-arrow({text: 'Кнопка', style: 'withBackground'})
         +button-with-arrow({text: 'Кнопка', style: 'withBackground'})(disabled='')
+
+    +space-container('Кнопка слайдера главной')
+        div(style={display: 'flex', gap: '10px'})
+            +main-slider-button({direction: 'left'})
+            +main-slider-button({direction: 'right'})
+
+        div(style={display: 'flex', gap: '10px'})
+            +main-slider-button({direction: 'left'})(disabled='')
+            +main-slider-button({direction: 'right'})(disabled='')
