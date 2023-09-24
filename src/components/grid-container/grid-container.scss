@@ -1,19 +1,7 @@
 @use '../style.scss' as *;
 
 .grid-container {
-	padding: 122px 96px 120px;
-
-	&__title {
-		font-family: Arial, sans-serif;
-        font-weight: 700;
-        font-size: clamp(10px, 5vw, 46px);
-        line-height: 1;
-        color: $dark-blue;
-        margin-bottom: 80px;
-        & > span {
-            color: $red;
-        }
-	}
+	padding: 80px 96px 120px;
 
 	&__content {
 		gap: 16px 18px;

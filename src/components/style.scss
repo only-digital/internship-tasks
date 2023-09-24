@@ -4,11 +4,26 @@ $light-gray: #F3F3F3;
 $blue: #0041A0;
 $dark-blue: #04306A;
 
+  
+.title {
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    font-size: clamp(10px, 5vw, 46px);
+    line-height: 1;
+    color: $dark-blue;
+    margin: 122px auto 0;
+    padding-left: 94px;
+    padding-right: 96px;
+  
+    & > span {
+      color: #FC0D1B;
+    }
+}
 
 .block {
     background-color: $light-gray;
     color: $dark-blue;
-    padding: 30px;
+    padding: 24px;
     font-family: Arial, sans-serif;
     font-weight: 700;
     font-size: clamp(10px, 5vw, 32px);
@@ -45,6 +60,7 @@ $dark-blue: #04306A;
 		bottom: 30px;
 		right: 30px;
         svg:hover {
+            color: rgb(2, 238, 255);
             cursor: pointer;
         }
     }
