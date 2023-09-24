@@ -1,3 +1,15 @@
 mixin grid-container()
+    +main-title("Комплексные предложения для мостостроения")
     section.grid-container
-        // Your code here
+        div.grid-container__top-block
+            div.grid-container__left-block
+            div.grid-container__right-block
+                +mid-block
+                +mid-block
+        div.grid-container__mid-block
+            +small-block(['small-block_dark-blue'])
+            +small-block
+            +small-block(['small-block_light-blue'])  
+        div.grid-container__bottom-block
+            +mid-block 
+            +mid-block

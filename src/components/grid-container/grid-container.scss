@@ -1,3 +1,41 @@
 .grid-container {
-    // Your code here
+  display: grid;
+  grid-template-columns: 1708px;
+  grid-template-rows: repeat(4, 420px);
+  justify-content: center;
+  gap: 19px;
+}
+
+.grid-container__top-block {
+  display: grid;
+  grid-template-columns: 854px 854px;
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  gap: 19px;
+}
+
+.grid-container__left-block {
+  grid-column: 1 / 2;
+  background: #f4f4f4;
+}
+
+.grid-container__right-block {
+  grid-column: 2 / 3;
+  gap: 19px;
+}
+
+.grid-container__mid-block {
+  display: grid;
+  grid-template-columns: repeat(3, 562px);
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+  gap: 19px;
+}
+
+.grid-container__bottom-block {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+  gap: 19px;
 }
