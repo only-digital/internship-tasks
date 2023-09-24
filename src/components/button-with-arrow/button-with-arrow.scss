@@ -2,8 +2,10 @@
 	$root: &;
 
 	display: flex;
+	justify-content: center;
 	align-items: center;
 	gap: 14px;
+	width: fit-content;
 	height: 48px;
 	padding: 0 14px 0 18px;
 	border-radius: 25px;
@@ -83,6 +85,32 @@
 	}
 
 	&:focus {
-		border: 3px solid #99B3D8;
+		box-shadow: 0 0 0 3px #99B3D8;
+	}
+
+	@media screen and (max-width: 1919px) {
+		height: 42px;
+
+		&__svg {
+			width: 24px;
+			height: 24px;
+		}
+	}
+
+	@media screen and (min-width: 1280px) and (max-width: 1919px) {
+		gap: 12px;
+		padding: 0 14px 0 16px;
+
+		&__text {
+			font-size: 14px;
+			letter-spacing: -0.28px;
+		}
+	}
+
+	@media screen and (max-width: 767px) {
+		max-width: 375px;
+		width: 100%;
+		gap: 12px;
+		padding: 0 14px 0 14px;
 	}
 }
