@@ -1,3 +1,19 @@
+include ../small-block/small-block
+include ../main-title/main-title
+include ../mid-block/mid-block
+
 mixin flex-container()
+    +main-title("Комплексные предложения для мостостроения")
     section.flex-container
-        // Your code here
+        div.flex-container__top-block
+            div.flex-container__left-block
+            div.flex-container__right-block
+                +mid-block
+                +mid-block
+        div.flex-container__mid-block
+            +small-block(['small-block_dark-blue'])
+            +small-block
+            +small-block(['small-block_light-blue'])      
+        div.flex-container__bottom-block
+            +mid-block 
+            +mid-block

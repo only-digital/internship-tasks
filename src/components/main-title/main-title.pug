@@ -1,0 +1,7 @@
+style
+    include main-title.scss
+mixin main-title(title)
+    - var words = title.split(" ")
+    - words[0] = `<span>${words[0]}</span>`
+    - title = words.join(" ")   
+    h1.main-title!=title
