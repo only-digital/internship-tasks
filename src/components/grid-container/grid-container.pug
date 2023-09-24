@@ -1,3 +1,58 @@
 mixin grid-container()
     section.grid-container
-        // Your code here
+
+        .grid-container__header
+            span.grid-container__header-span(class='grid-container_text-color_red') Комплексные&nbsp 
+            span.grid-container__header-span(class='grid-container_text-color_blue') предложения для мостостроения 
+        
+        mixin grid-block(cols,rows)
+            .grid-container__grid-block(style=`grid-template-columns:repeat(${cols},1fr); grid-template-rows:repeat(${rows},minmax(420px,1fr))`)
+                if block
+                    block
+
+        mixin block-elem(title,background_color,text_color,arrow_color)
+            .grid-container__elem(class=background_color)
+                .grid-container__elem-header(class=text_color)= title
+                .grid-container__elem-arrow
+                    case arrow_color
+                        when 'blue'
+                            include ../../assets/icons/blue_arrow.svg
+                        when 'white'
+         
+                            include ../../assets/icons/white_arrow.svg
+            
+        +grid-block(2,1)
+            +block-elem('Мостовая сталь/Стальные конструкции мостов','grid-container_background-color_grey','grid-container_text-color_blue','blue')
+            +grid-block(1,2)
+                +block-elem('Железобетонные конструкции мостов','grid-container_background-color_grey','grid-container_text-color_blue','blue')
+                +block-elem('Дорожные ограждения барьерного типа','grid-container_background-color_grey','grid-container_text-color_blue','blue')
+
+        +grid-block(3,1)
+            +block-elem('Шпунтовой замок','grid-container_background-color_blue','grid-container_text-color_white','white')
+            +block-elem('Мостовой крепеж','grid-container_background-color_grey','grid-container_text-color_blue','blue')
+            +block-elem('Профили для деформационных швов','flex-container_background-color_light-blue','flex-container_text-color_white','white')
+
+        +grid-block(2,1)
+            +block-elem('Плетеные габионы','grid-container_background-color_grey','grid-container_text-color_blue','blue')
+            +block-elem('Модульные мосты','grid-container_background-color_grey','grid-container_text-color_blue','blue')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

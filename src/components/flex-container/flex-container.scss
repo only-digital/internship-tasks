@@ -1,3 +1,82 @@
+$Red-color:#FC0D1B;
+$Blue-color:#04306A;
+$Main-font-family:"Arial";
+$Light_blue-color:#0041A0;
+$Grey-color:#F4F4F4;
+$White-color:#FFFFFF;
+$Column-gap:18px;
+$Row-gap:16px;
+
+
 .flex-container {
-    // Your code here
+    margin: 0 auto;
+    padding: 122px 97px 122px;
+    flex-direction: column;
+    row-gap: $Row-gap;
+    flex-wrap: wrap;
+    background-color: $White-color;
+    font-family: $Main-font-family;
+    font-style: normal;
+    font-weight: 700;
+   
+    &__header {
+        margin: 0px 0px 64px 0px;
+        width: 100%;
+        
+        &-span{
+            font-size: 46px;
+            line-height: 100%;
+            letter-spacing: -0.92px;
+        };
+    };
+
+    &__elem{
+        width: 100%;
+        flex: 1;
+        min-height: 420px;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 36px 36px 36px 22px;
+        
+        :hover{cursor: pointer;}
+
+        &-header{
+            width: 100%;
+            font-size: 32px;
+            line-height: 120%
+        }
+
+        &-arrow{justify-content: end;}
+        
+    };
+
+    &__horizontal{
+        width: 100%;
+        min-height: 480px;
+        flex-direction: row;
+        column-gap: $Column-gap;
+    }
+
+    &__vertical{
+        width: 50%;
+        max-width: 50%;
+        flex-direction: column;
+        row-gap: $Row-gap;
+    }
+
+    &_text-color{
+        &_red{color: $Red-color;}
+        &_blue{color: $Blue-color}
+        &_white{color: $White-color}
+    };
+
+    &_background-color{
+        &_blue{background-color: $Blue-color}
+        &_light-blue{background-color: $Light_blue-color}
+        &_grey{background-color: $Grey-color}
+    };
+
 }
+
+
+

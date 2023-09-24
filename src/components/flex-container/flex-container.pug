@@ -1,3 +1,31 @@
 mixin flex-container()
     section.flex-container
-        // Your code here
+
+        .flex-container__header
+            span.flex-container__header-span(class='flex-container_text-color_red') Комплексные&nbsp 
+            span.flex-container__header-span(class='flex-container_text-color_blue') предложения для мостостроения  
+
+        mixin elem(title,background_color,text_color,arrow_color)
+            .flex-container__elem(class=background_color)
+                .flex-container__elem-header(class=text_color)= title
+                .flex-container__elem-arrow
+                    case arrow_color
+                        when 'blue'
+                            include ../../assets/icons/blue_arrow.svg
+                        when 'white'
+                            include ../../assets/icons/white_arrow.svg
+
+        .flex-container__horizontal 
+            +elem('Мостовая сталь/Стальные конструкции мостов','flex-container_background-color_grey','flex-container_text-color_blue','blue')
+            .flex-container__vertical
+                +elem('Железобетонные конструкции мостов','flex-container_background-color_grey','flex-container_text-color_blue','blue')
+                +elem('Дорожные ограждения барьерного типа','flex-container_background-color_grey','flex-container_text-color_blue','blue')
+        
+        .flex-container__horizontal 
+            +elem('Шпунтовой замок','flex-container_background-color_blue','flex-container_text-color_white','white')
+            +elem('Мостовой крепеж','flex-container_background-color_grey','flex-container_text-color_blue','blue')
+            +elem('Профили для деформационных швов','flex-container_background-color_light-blue','flex-container_text-color_white','white')
+
+        .flex-container__horizontal
+            +elem('Плетеные габионы','flex-container_background-color_grey','flex-container_text-color_blue','blue')
+            +elem('Модульные мосты','flex-container_background-color_grey','flex-container_text-color_blue','blue')

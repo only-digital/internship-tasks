@@ -1,3 +1,63 @@
+$Red-color:#FC0D1B;
+$Blue-color:#04306A;
+$Main-font-family:"Arial";
+$Light_blue-color:#0041A0;
+$Grey-color:#F4F4F4F4;
+$White-color:#FFFFFF;
+$Column-gap:18px;
+$Row-gap:16px;
+
 .grid-container {
-    // Your code here
+   
+    margin: 122px 97px ;
+    grid-row-gap: $Row-gap;
+    background-color: $White-color;
+    font-family: $Main-font-family;
+    font-style: normal;
+    font-weight: 700;
+    height: 100%;
+    
+    &__header{
+        margin: 0 0 64px 0px;
+        grid-template-columns:min-content auto ;
+        
+        &-span{
+            font-size: 46px;
+            line-height: 100%;
+            letter-spacing: -0.92px;
+        };
+    }
+
+    &__grid-block{
+        grid-gap:$Column-gap $Row-gap;
+        min-height: 480px;
+    }
+
+    &__elem{
+
+        align-content: space-between;
+        padding: 36px 36px 36px 22px;
+        min-height: 420px;
+        &-header{
+            font-size: 32px;
+            line-height: 120%
+        }
+
+        &-arrow{justify-content: end;}
+        
+        &:hover{cursor: pointer;}
+
+    }
+
+    &_text-color{
+        &_red{color: $Red-color;}
+        &_blue{color: $Blue-color}
+        &_white{color: $White-color}
+    };
+
+    &_background-color{
+        &_blue{background-color: $Blue-color}
+        &_light-blue{background-color: $Light_blue-color}
+        &_grey{background-color: $Grey-color}
+    };
 }
