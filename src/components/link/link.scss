@@ -21,6 +21,7 @@ $extra-grey-3: #f4f4f4;
   text-align: left;
   color: $extra-cobolt;
   text-decoration: none;
+  transition: color 0.3s, background-color 0.3s;
 
   @media (max-width: 768px) {
     font-size: 14px;

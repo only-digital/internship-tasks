@@ -24,8 +24,9 @@ $extra-grey-2: #dedede;
     width: 56px;
     height: 28px;
     border-radius: 14px;
-    background: $extra-cobolt;
+    background-color: $extra-cobolt;
     position: relative;
+    transition: background-color 0.3s;
     &::after {
       content: "";
       position: absolute;
@@ -35,7 +36,7 @@ $extra-grey-2: #dedede;
       left: 6px;
       top: 6px;
       transition: 0.3s;
-      background: $main-white;
+      background-color: $main-white;
     }
     @media (min-width: 768px) and (hover: hover) {
       &:hover {
@@ -45,7 +46,7 @@ $extra-grey-2: #dedede;
     @media (min-width: 768px) {
       &:focus {
         outline: 3px solid $light-blue;
-        background: $extra-grey-2;
+        background-color: $extra-grey-2;
       }
     }
     @media (max-width: 375px) {
@@ -62,7 +63,7 @@ $extra-grey-2: #dedede;
         left: 4px;
         top: 4px;
         transition: 0.3s;
-        background: $main-white;
+        background-color: $main-white;
       }
     }
   }
@@ -75,6 +76,6 @@ $extra-grey-2: #dedede;
   }
   input:disabled + &__item {
     pointer-events: none;
-    background: $extra-grey-2;
+    background-color: $extra-grey-2;
   }
 }

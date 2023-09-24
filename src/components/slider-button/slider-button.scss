@@ -37,7 +37,7 @@ $extra-grey-2: #dedede;
     height: 80px;
     border-radius: 80px;
     border: 1px solid $extra-grey-2;
-    transition: color 0.3s, opacity 0.3s;
+    transition: color 0.3s, background-color 0.3s;
     &_left svg {
       position: relative;
       left: -4px;
