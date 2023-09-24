@@ -1,11 +1,4 @@
 mixin link(props)
-	if (props.disabled)
-		button(disabled="")&attributes(attributes)
-			a(class="link" href=props.url)=props.text
-				if props.icon
-					+svg('link')
-	else 
-		button&attributes(attributes)
-			a(class="link" href=props.url)=props.text
-				if props.icon
-					+svg('link')
+		a(class=`link ${props.disabled ? 'disabled' : ''}` href=props.url)=props.text
+			if props.icon
+				+svg('link')

@@ -6,87 +6,96 @@ $dark-grey: #909090;
 $light-blue: #99b3d8;
 $blue: #002f6c;
 
+$tablet: 768px;
+$desktop: 1280px;
+
 .slider {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 
-  .slider__btn {
-    $root: &;
+	.slider__btn {
+		$root: &;
 
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 1px solid $grey;
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		border: 1px solid $grey;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 
-    transition: background-color 0.15s ease-in-out;
+		transition: background-color 0.15s ease-in-out;
 
-    &:focus {
-      border: none;
-      outline: 3px solid $light-blue;
-    }
+		&:active {
+			border: none;
+			background-color: $grey;
+		}
 
-    &:hover {
-      border: none;
-      background-color: $light-grey;
-    }
+		&:disabled {
+			border: 1px solid $light-grey;
+			pointer-events: none;
 
-    &:active {
-      border: none;
-      background-color: $grey;
-    }
+			svg {
+				fill: $medium-grey;
+			}
 
-    &:disabled {
-      border: 1px solid $light-grey;
-      pointer-events: none;
+			& ~ .slider-indicator {
+				color: $medium-grey;
+			}
+		}
 
-      svg {
-        fill: $medium-grey;
-      }
+		&.prev {
+			transform: rotate(180deg);
+			margin-right: 5px;
+		}
 
-      & ~ .slider-indicator {
-        color: $medium-grey;
-      }
-    }
+		&.next {
+			margin-left: 5px;
+		}
 
-    &.prev {
-      transform: rotate(180deg);
-      margin-right: 5px;
-    }
+		& svg {
+			width: 21px;
+			height: 30px;
+			fill: $blue;
+		}
 
-    &.next {
-      margin-left: 5px;
-    }
+		@media (min-width: $tablet) {
+			& {
+				width: 80px;
+				height: 80px;
+			}
 
-    & svg {
-      width: 28px;
-      height: 40px;
-      fill: $blue;
-    }
+			& svg {
+				width: 28px;
+				height: 40px;
+			}
 
-    @media (max-width: 1280px) {
-      & {
-        width: 60px;
-        height: 60px;
-      }
-      & svg {
-        width: 21px;
-        height: 30px;
-      }
-    }
-  }
+			&:hover {
+				border: none;
+				background-color: $light-grey;
+			}
 
-  .slider-indicator {
-    margin-left: 40px;
+			&:focus {
+				border: none;
+				outline: 3px solid $light-blue;
+			}
 
-    color: $dark-grey;
-    opacity: 0.4;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 150%;
-    letter-spacing: -0.32px;
-  }
+			&:active {
+				border: none;
+				background-color: $grey;
+			}
+		}
+	}
+
+	.slider-indicator {
+		margin-left: 40px;
+
+		color: $dark-grey;
+		opacity: 0.4;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 150%;
+		letter-spacing: -0.32px;
+	}
 }

@@ -10,92 +10,99 @@ $light-red: #ff0000;
 $red: #bf1d26;
 $dark-red: #81080f;
 
+$desktop: 1280px;
+$tablet: 768px;
+$mobile: 375px;
+
 .btn-alt {
-  $root: &;
-  height: 48px;
+	$root: &;
+	height: 48px;
 
-  box-sizing: border-box;
+	box-sizing: border-box;
 
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 
-  padding: 0 14px 0 18px;
+	padding: 0 14px 0 18px;
 
-  border-radius: 25px;
-  background-color: $light-red;
-  color: $white;
+	border-radius: 25px;
+	background-color: $light-red;
+	color: $white;
 
-  transition:
-    color 0.15s ease-in-out,
-    background-color 0.15s ease-in-out;
+	transition:
+		color 0.15s ease-in-out,
+		background-color 0.15s ease-in-out;
 
-  .btn-alt__text {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    letter-spacing: -0.32px;
-    margin-right: 14px;
-  }
+	.btn-alt__text {
+		font-family: Arial, sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		letter-spacing: -0.32px;
+		margin-right: 14px;
+	}
 
-  svg {
-    width: 32px;
-    height: 32px;
-    fill: $white;
+	svg {
+		width: 32px;
+		height: 32px;
+		fill: $white;
 
-    transition: fill 0.15s ease-in-out;
-  }
+		transition: fill 0.15s ease-in-out;
+	}
 
-  &:focus {
-    outline: 3px solid $light-blue;
-  }
+	&:active {
+		background-color: $dark-red;
+	}
 
-  &:hover {
-    background-color: $red;
-  }
+	&:disabled {
+		color: $dark-grey;
+		background-color: $light-grey;
+		pointer-events: none;
 
-  &:active {
-    background-color: $dark-red;
-  }
+		svg {
+			fill: $dark-grey;
+		}
+	}
 
-  &:disabled {
-    color: $dark-grey;
-    background-color: $light-grey;
-    pointer-events: none;
+	@media (max-width: $desktop) {
+		& {
+			height: 42px;
 
-    svg {
-      fill: $dark-grey;
-    }
-  }
+			.btn-alt__text {
+				font-size: 14px;
+			}
 
-  @media (max-width: 1280px) {
-    & {
-      height: 42px;
+			svg {
+				width: 24px;
+				height: 24px;
+			}
+		}
+	}
 
-      & .btn-alt__text {
-        font-size: 14px;
-      }
+	@media (min-width: $tablet) {
+		&:focus {
+			outline: 3px solid $light-blue;
+		}
 
-      svg {
-        width: 24px;
-        height: 24px;
-      }
-    }
-  }
+		&:hover {
+			background-color: $red;
+		}
+	}
 
-  @media (max-width: 768px) {
-    & .btn-alt__text {
-      font-size: 16px;
-    }
-  }
-  @media (max-width: 375px) {
-    & {
-      width: 100%;
-      justify-content: center;
-      padding: 0 14px;
+	@media (max-width: $tablet) {
+		& .btn-alt__text {
+			font-size: 16px;
+		}
+	}
 
-      & .btn-alt__text {
-        margin-right: 12px;
-      }
-    }
-  }
+	@media (max-width: $mobile) {
+		& {
+			width: 100%;
+			justify-content: center;
+			padding: 0 14px;
+
+			& .btn-alt__text {
+				margin-right: 12px;
+			}
+		}
+	}
 }

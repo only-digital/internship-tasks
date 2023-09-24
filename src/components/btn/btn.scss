@@ -14,138 +14,144 @@ $light-red: #ff0000;
 $red: #bf1d26;
 $dark-red: #81080f;
 
+$desktop: 1280px;
+$tablet: 768px;
+$mobile: 375px;
+
 .btn {
-  $root: &;
+	$root: &;
 
-  height: 48px;
+	height: 48px;
 
-  box-sizing: border-box;
+	box-sizing: border-box;
 
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 
-  padding: 0 14px 0 18px;
+	padding: 0 14px 0 18px;
 
-  border-radius: 25px;
-  border: 1px solid $grey;
+	border-radius: 25px;
+	border: 1px solid $grey;
 
-  color: $black;
+	color: $black;
 
-  transition:
-    color 0.15s ease-in-out,
-    background-color 0.15s ease-in-out;
+	transition:
+		color 0.15s ease-in-out,
+		background-color 0.15s ease-in-out;
 
-  .btn__text {
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    letter-spacing: -0.32px;
-    margin-right: 14px;
-  }
+	.btn__text {
+		font-family: Arial, sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		letter-spacing: -0.32px;
+		margin-right: 14px;
+	}
 
-  svg {
-    width: 32px;
-    height: 32px;
-    fill: $dark-blue;
+	svg {
+		width: 32px;
+		height: 32px;
+		fill: $dark-blue;
 
-    transition: fill 0.15s ease-in-out;
-  }
+		transition: fill 0.15s ease-in-out;
+	}
 
-  &:focus {
-    background-color: $white;
-    outline: 3px solid $light-blue;
-    color: $blue;
+	&:active {
+		background-color: $dark-blue;
+		color: $white;
 
-    svg {
-      fill: $blue;
-    }
-  }
+		svg {
+			fill: $white;
+		}
+	}
 
-  &:hover {
-    color: $white;
-    background-color: $blue;
+	&:disabled {
+		color: $dark-grey;
+		background-color: $white;
+		pointer-events: none;
 
-    svg {
-      fill: $white;
-    }
-  }
+		svg {
+			fill: $dark-grey;
+		}
+	}
 
-  &:active {
-    background-color: $dark-blue;
-    color: $white;
+	@media (max-width: $desktop) {
+		& {
+			height: 42px;
 
-    svg {
-      fill: $white;
-    }
-  }
+			& .btn__text {
+				font-size: 14px;
+			}
 
-  &:disabled {
-    color: $dark-grey;
-    background-color: $white;
-    pointer-events: none;
+			svg {
+				width: 24px;
+				height: 24px;
+			}
+		}
+	}
 
-    svg {
-      fill: $dark-grey;
-    }
-  }
+	@media (min-width: $tablet) {
+		&:focus {
+			background-color: $white;
+			outline: 3px solid $light-blue;
+			color: $blue;
 
-  @media (max-width: 1280px) {
-    & {
-      height: 42px;
+			svg {
+				fill: $blue;
+			}
+		}
 
-      & .btn__text {
-        font-size: 14px;
-      }
+		&:hover {
+			color: $white;
+			background-color: $blue;
 
-      svg {
-        width: 24px;
-        height: 24px;
-      }
-    }
-  }
+			svg {
+				fill: $white;
+			}
+		}
+	}
 
-  @media (max-width: 768px) {
-    & .btn__text {
-      font-size: 16px;
-    }
-  }
-  @media (max-width: 375px) {
-    & {
-      width: 100%;
-      justify-content: center;
-      padding: 0 14px;
+	@media (max-width: $tablet) {
+		& .btn__text {
+			font-size: 16px;
+		}
+	}
+	@media (max-width: $mobile) {
+		& {
+			width: 100%;
+			justify-content: center;
+			padding: 0 14px;
 
-      & .btn__text {
-        margin-right: 12px;
-      }
-    }
-  }
+			& .btn__text {
+				margin-right: 12px;
+			}
+		}
+	}
 }
 
 .btn[type="button-alt"] {
-  background-color: $light-red;
-  border: none;
-  color: $white;
+	background-color: $light-red;
+	border: none;
+	color: $white;
 
-  svg {
-    fill: $white;
-  }
+	svg {
+		fill: $white;
+	}
 
-  &:disabled {
-    color: $dark-grey;
-    background-color: $light-grey;
-    border: none;
+	&:disabled {
+		color: $dark-grey;
+		background-color: $light-grey;
+		border: none;
 
-    svg {
-      fill: $dark-grey;
-    }
-  }
+		svg {
+			fill: $dark-grey;
+		}
+	}
 
-  &:hover {
-    background-color: $red;
-  }
+	&:hover {
+		background-color: $red;
+	}
 
-  &:active {
-    background-color: $dark-red;
-  }
+	&:active {
+		background-color: $dark-red;
+	}
 }

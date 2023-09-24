@@ -1,5 +1,90 @@
+$light-blue: #c2daff;
+$blue: #0041a0;
+$dark-blue: #002f6c;
+
+$grey: #dedede;
+
+$white: #ffffff;
+
+$mobile: 375px;
+$tablet: 768px;
+
 .switch {
 	$root: &;
+	display: inline-block;
+	width: 56px;
+	height: 28px;
+	border-radius: 14px;
+	overflow: hidden;
+	user-select: none;
 
-	//Your code here
+	& input {
+		display: none;
+	}
+
+	& input:checked ~ span {
+		& {
+			background-color: $blue;
+		}
+		&::before {
+			left: calc(100% - 16px - 6px);
+		}
+	}
+	& span {
+		width: 100%;
+		height: 100%;
+
+		background-color: $grey;
+		cursor: pointer;
+
+		position: relative;
+
+		transition: background-color 0.15s ease-in-out;
+
+		&:before {
+			content: "";
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			background-color: $white;
+
+			position: absolute;
+			left: 6px;
+			bottom: 6px;
+
+			transition: left 0.15s ease-in-out;
+		}
+	}
+
+	@media (min-width: $tablet) {
+		&:focus-within {
+			outline: 3px solid $light-blue;
+		}
+
+		& span:hover {
+			background-color: $dark-blue;
+		}
+	}
+
+	@media (max-width: $mobile) {
+		width: 40px;
+		height: 20px;
+
+		& span:before {
+			width: 10px;
+			height: 10px;
+			left: 4px;
+			bottom: 5px;
+		}
+
+		& input:checked ~ span {
+			&::before {
+				left: calc(100% - 10px - 4px);
+			}
+		}
+	}
+}
+
+.switch.disabled {
+	pointer-events: none;
 }

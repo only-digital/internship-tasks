@@ -1,3 +1,4 @@
 mixin switch(props)
-	.switch&attributes(attributes)
-		//Your code here
+	label(class=`switch ${props.disabled ? 'disabled' : ''}` tabindex="0")&attributes(attributes)
+		input(type="checkbox")
+		span.slider.round

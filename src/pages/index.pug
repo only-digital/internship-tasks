@@ -30,13 +30,20 @@ block body
 		br
 		h1 Ссылки
 		br 
-		+link({text: "Sustainalytics.com", url: 'https://google.com', icon: true})
+		+link({text: "Sustainalytics.com", url: '#', icon: true})
 		br
 		br
-		+link({text: "Sustainalytics.com", url: 'https://google.com', icon: true, disabled: true})
+		+link({text: "Sustainalytics.com", url: '#', icon: true, disabled: true})
 		br
 		br
-		p 
-		| Для подключения сервиса добавьте номер 
-		+link({text:'+7(921)058-57-19', url: 'https://google.com', icon: false})
-		|  в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже
+		p(style="font-size: 16px; font-family: 'Arial';")
+			| Для подключения сервиса добавьте номер 
+			+link({text:'+7(921)058-57-19', url: '#', icon: false})
+			|  в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже
+		br
+		h1 Переключатель
+		br
+		+switch({})
+		br
+		br
+		+switch({disabled: true})
