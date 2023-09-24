@@ -1,0 +1,6 @@
+mixin space-container(title)
+	.space-container&attributes(attributes)
+		h2.space-container__title= title
+		.space-container__wrapper
+			if block
+				block

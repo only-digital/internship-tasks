@@ -2,6 +2,14 @@ extends ../../build_modules/common
 
 
 block body
-    +example-button({text: 'example text'})
-    +example-button({text: 'disabled'})(disabled='')
-    //Your code here
+    +space-container('Пример')
+        +example-button({text: 'example text'})
+        +example-button({text: 'disabled'})(disabled='')
+
+    +space-container('Кнопка с обводкой')
+        +button-with-arrow({text: 'Кнопка', style: 'withBorder'})
+        +button-with-arrow({text: 'Кнопка', style: 'withBorder'})(disabled='')
+
+    +space-container('Кнопка с заливкой (альтернативный вариант)')
+        +button-with-arrow({text: 'Кнопка', style: 'withBackground'})
+        +button-with-arrow({text: 'Кнопка', style: 'withBackground'})(disabled='')

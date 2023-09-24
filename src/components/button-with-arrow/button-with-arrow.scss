@@ -1,0 +1,88 @@
+.button-with-arrow {
+	$root: &;
+
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	height: 48px;
+	padding: 0 14px 0 18px;
+	border-radius: 25px;
+
+	&__text {
+		font-family: Arial;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 100%;
+		letter-spacing: -0.32px;
+	}
+
+	&__svg {
+		width: 32px;
+		height: 32px;
+	}
+
+	&_style_withBorder {
+		border: 1px solid #BCBCBC;
+		background: #fff;
+		color: #111;
+
+		#{$root}__svg {
+			fill: #002F6C;
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				color: #fff;
+				background: #0041A0;
+				border-color: #0041A0;
+
+				#{$root}__svg {
+					fill: #fff;
+				}
+			}
+		}
+
+		&:active {
+			background: #002F6C;
+			border-color: #002F6C;
+		}
+	}
+
+	&_style_withBackground {
+		background: #FF0000;
+		color: #fff;
+
+		#{$root}__svg {
+			fill: #fff;
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				background: #BF1D26;
+			}
+		}
+
+		&:disabled {
+			background: #F4F4F4;
+		}
+
+		&:active {
+			background: #81080F;
+		}
+
+	}
+
+	&:disabled {
+		color: #BCBCBC;
+		pointer-events: none;
+
+		#{$root}__svg {
+			fill: #909090;
+		}
+	}
+
+	&:focus {
+		border: 3px solid #99B3D8;
+	}
+}

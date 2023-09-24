@@ -1,0 +1,4 @@
+mixin button-with-arrow(props)
+	button(class=['button-with-arrow', `button-with-arrow_style_${props.style}`])&attributes(attributes)
+		span.button-with-arrow__text= props.text
+		+svg('button-with-arrow').button-with-arrow__svg

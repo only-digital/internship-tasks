@@ -1,0 +1,22 @@
+.space-container {
+	$root: &;
+
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 20px;
+
+	&__title {
+		font-family: Arial;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 150%;
+		letter-spacing: -0.32px;
+	}
+
+	&__wrapper {
+		display: flex;
+		gap: 20px;
+	}
+}
