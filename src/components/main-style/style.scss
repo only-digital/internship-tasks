@@ -20,7 +20,7 @@ html {
     width: 1920px;
 }
 
-@mixin title {
+.container__title {
     font-size: 46px;
     letter-spacing: -0.92px;
     line-height: 1;
@@ -39,4 +39,14 @@ html {
     margin-top: 97px;
     margin-left: 122px;
     margin-right: 122px;
+}
+
+.container__item {
+    position: relative;
+    
+    background-color: $gray;
+
+    padding-left: 36px;
+    padding-top: 24px;
+
 }

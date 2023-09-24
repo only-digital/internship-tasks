@@ -1,13 +1,26 @@
+- var darkBlue = '#04306A';
+mixin svg(colorArrow)
+    svg.flex-container__img(xmlns="http://www.w3.org/2000/svg" width="65" height="36" viewBox="0 0 65 36" fill="none")
+                        path(d="M58.4384 19.4L0 19.4L0 16.6L58.4384 16.6L58.4384 19.4ZM36.5378 36L34.8869 33.6L61.685 20L61.685 16L34.8869 2.4L36.5378 0L64.9316 14.4V21.6L36.5378 36Z" fill=colorArrow)
+
 mixin grid-container()
     section.grid-container.container 
-        h1.grid-container__title <span>Комплексные&nbsp</span> предложения для мостостроения
+        h1.grid-container__title.container__title <span>Комплексные&nbsp</span> предложения для мостостроения
         div.grid-container__wrapper
-            div.grid-container__item.grid-container__item_1 
-            div.grid-container__item.grid-container__item_2
-            div.grid-container__item.grid-container__item_3 
-            div.grid-container__item.grid-container__item_4-5-6 
-                div.grid-container__item.grid-container__item_4 
-                div.grid-container__item.grid-container__item_5 
-                div.grid-container__item.grid-container__item_6 
-            div.grid-container__item.grid-container__item_7 
-            div.grid-container__item.grid-container__item_8 
+            div.container__item.grid-container__item_1 Мостовая сталь/Стальные конструкции мостов
+                +svg(darkBlue)
+            div.container__item.grid-container__item_2 Железобетонные конструкции мостов
+                +svg(darkBlue)
+            div.container__item.grid-container__item_3 Дорожные ограждения барьерного типа
+                +svg(darkBlue)
+            div.grid-container__item_4-5-6 
+                div.container__item.grid-container__item_4 Шпунтовой замок
+                    +svg('#fff')
+                div.container__item.grid-container__item_5 Мостовой крепеж
+                    +svg(darkBlue)
+                div.container__item.grid-container__item_6 Профили для деформационных швов
+                    +svg('#fff')
+            div.container__item.grid-container__item_7 Плетеные габионы
+                +svg(darkBlue)
+            div.container__item.grid-container__item_8 Модульные мосты
+                +svg(darkBlue)

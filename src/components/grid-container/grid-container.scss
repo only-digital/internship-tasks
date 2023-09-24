@@ -5,13 +5,12 @@
 }
 .grid-container__wrapper {
     display: grid;
+    width: 1728px;
+
     grid-template-rows: 420px 420px 480px 420px;
     grid-template-columns: repeat(2,1fr);
     gap: 16px 18px;
 
-}
-.grid-container__item  {
-    background-color: $gray;
 }
 .grid-container__item_1 {
     grid-row-start: span 2;
@@ -26,4 +25,19 @@
     gap: 0px 18px;
 
     background-color: #fff;
+
+    .container__item {
+        &:first-child {
+            background-color: $darkBlue;
+            color: #fff;
+        }
+        &:last-child {
+            background-color: $blue;
+            color: #fff;
+        }
+    }
+}
+.grid-container__title {
+    grid-template-columns: 320px auto;
+    gap: 0;
 }

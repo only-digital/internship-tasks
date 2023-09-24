@@ -7,10 +7,7 @@
 .flex-container__wrapper  {
     flex-direction: column;
     row-gap: 16px;
-}
-
-.flex-container__title {
-    @include title;
+    width: 1728px;
 }
 
 .flex-container__row {
@@ -30,7 +27,7 @@
     height: 480px;
     width: 100%;
 
-    .flex-container__item {
+    .container__item {
         &:first-child {
             background-color: $darkBlue;
             color: #fff;
@@ -45,16 +42,6 @@
 .flex-container__row-3 {
     height: 420px;
     width: 100%;
-}
-
-.flex-container__item {
-    position: relative;
-    
-    background-color: $gray;
-
-    padding-left: 36px;
-    padding-top: 24px;
-
 }
 
 .flex-container__union-items {
