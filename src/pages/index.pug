@@ -2,9 +2,10 @@ extends ../../build_modules/common
 
 
 block body
-    -let content = [{title: "Nullam tincidunt vestibulum porttitor", desc: "Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit. "}, {title: "Class aptent taciti sociosqu ad litora", desc: "some other text"}]
-    for i, index in content
-        +spoiler-component({number: index, title: i.title, desc: i.desc})
-    //+example-button()
-    //+example-button()
-    //Your code here
+    .container
+        h1.spoiler-component__header Lorem ipsum dolor
+        +spoiler-component({number: 1, title: "Nullam tincidunt vestibulum porttitor", desc: "Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit. "})
+        +spoiler-component({number: 2, title: "Class aptent taciti sociosqu ad litora", desc: "block 2. some other text"})
+        +spoiler-component({number: 3, title: "Nulla fringilla ligula elit, non laoreet ipsum rutrum eget", desc: "block 3. Nulla fringilla ligula elit, non laoreet ipsum rutrum egetNulla fringilla ligula elit, non laoreet ipsum rutrum egetNulla fringilla ligula elit, non laoreet ipsum rutrum egetNulla fringilla ligula elit, non laoreet ipsum rutrum eget"})
+        +spoiler-component({number: 4, title: "Mauris ut suscipit tellus", desc: "block 4. Mauris ut suscipit tellus Mauris ut suscipit tellus"})
+        +spoiler-component({number: 5, title: "Nullam placerat porta libero, vel maximus augue euismod eget", desc: "block 5. Nullam placerat porta libero, vel maximus augue euismod egetNullam placerat porta libero, vel maximus augue euismod egetNullam placerat porta libero, vel maximus augue euismod egetNullam placerat porta libero, vel maximus augue euismod egetNullam placerat porta libero, vel maximus augue euismod eget"})

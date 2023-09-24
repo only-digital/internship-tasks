@@ -11,6 +11,7 @@ class Component {
         this.root = component;
         this.rootName = name;
 
+
         this.destroy = this.destroy.bind(this);
     }
 

@@ -1,5 +1,179 @@
+.container {
+	max-width: 1649px;
+	padding: 183px 15px 138px;
+	margin: auto;
+	@media screen and (max-width: 1440px) {
+		max-width: 1230px;
+	}
+	@media screen and (max-width: 1280px) {
+		max-width: 1096px;
+	}
+	@media screen and (max-width: 768px) {
+		max-width: 718px;
+	}
+	@media screen and (max-width: 375px) {
+		max-width: 357px;
+	}
+}
+
 .spoiler-component {
 	$root: &;
+	border-bottom: 1px solid #E6E6E6;
+	margin-bottom: 30px;
+	&__header {
+		font: 400 normal 64px/64px 'Roboto', sans-serif;
+		letter-spacing: -1.28px;
+		color: #012B34;
+		&:after {
+			content: "";
+			width: 100%;
+			display: block;
+			height: 1px;
+			background-color: #E6E6E6;
+			margin: 80px 0 30px 0;
+			@media screen and (max-width: 1440px) {
+				margin: 60px 0 24px 0;
+			}
+			@media screen and (max-width: 1280px) {
+				margin: 56px 0 20px 0;
+			}
+			@media screen and (max-width: 768px) {
+				margin: 50px 0 24px 0;
+			}
+			@media screen and (max-width: 375px) {
+				margin: 40px 0 20px 0;
+			}
+		}
+		@media screen and (max-width: 1440px) {
+			font-size: 48px;
+			line-height: 48px;
+			letter-spacing: -0.96px;
+		}
+		@media screen and (max-width: 1280px) {
+			font-size: 42px;
+			line-height: 42px;
+			letter-spacing: -0.84px;
+		}
+		@media screen and (max-width: 375px) {
+			font-size: 30px;
+			line-height: 30px;
+			letter-spacing: -0.6px;
+		}
+	}
+		&__desc-block {
+			transition: opacity 0.6s ease-in-out 0s, max-height 0.6s ease-in-out 0s;
+			max-width: 942px;
+			width: 100%;
+			max-height: 0;
+			overflow: hidden;
+			&.show {
+				#{$root}__desc-text {
+					opacity: 0.8;
+				}
+			}
+			@media screen and (max-width: 1440px) {
+				max-width: 840px;
+			}
+			@media screen and (max-width: 1280px) {
+				max-width: 640px;
+			}
+			@media screen and (max-width: 768px) {
+				max-width: 612px;
+			}
+		}
+		&__desc-text {
+			font: 400 normal 20px/150% 'Roboto', sans-serif;
+			color: #000402;
+			opacity: 0;
+			margin-bottom: 40px;
+			@media screen and (max-width: 1440px) {
+				font-size: 15px;
+				line-height: 22.5px;
+				margin-bottom: 30px;
+			}
+			@media screen and (max-width: 1280px) {
+				font-size: 14px;
+				line-height: 21px;
+				margin-bottom: 24px;
+			}
+			@media screen and (max-width: 768px) {
+				font-size: 15px;
+				line-height: 22.5px;
+			}
+			@media screen and (max-width: 375px) {
+				margin-bottom: 20px;
+			}
+		}
+		&__title {
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+			margin-bottom: 30px;
+			&-label, &-number {
+				font: 400 normal 36px/120% 'Roboto', sans-serif;
+				color: #012B34;
+				&.blue {
+					color: #114C9A;
+				}
+				@media screen and (max-width: 1440px) {
+					font-size: 27px;
+					line-height: 32.4px;
+				}
+				@media screen and (max-width: 1280px) {
+					font-size: 24px;
+					line-height: 28.8px;
+				}
+				@media screen and (max-width: 768px) {
+					font-size: 27px;
+					line-height: 32.4px;
+				}
+				@media screen and (max-width: 375px) {
+					font-size: 24px;
+					line-height: 28.8px;
+				}
+			}
+			@media screen and (max-width: 1440px) {
+				margin-bottom: 20px;
+			}
+			@media screen and (max-width: 1280px) {
+				margin-bottom: 16px;
+			}
+			&-button {
+				transition: transform 0.6s ease 0s;
+				&.rotate {
+					transition: transform 0.6s ease 0s;
+					transform: rotate(45deg);
+				}
+				&.normal {
+					transform: rotate(0deg);
+				}
+				@media screen and (max-width: 1440px) {
+					& svg {
+						width: 46px;
+						height: 21px;
+					}
+				}
+				@media screen and (max-width: 1280px) {
+					& svg {
+						width: 17px;
+						height: 17px;
+					}
+				}
+				@media screen and (max-width: 768px) {
+					& svg {
+						width: 21px;
+						height: 20px;
+					}
+				}
+				@media screen and (max-width: 375px) {
+					& svg {
+						width: 17px;
+						height: 17px;
+					}
+				}
+			}
+		}
+	}
 
-	//Your code here
-}
+
+
