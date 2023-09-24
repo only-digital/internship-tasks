@@ -2,6 +2,10 @@ mixin spoiler-cell(props)
 	li.spoiler-cell.cell&attributes(attributes)(data-component='spoiler-cell')
 		.cell-block-top.top
 			h2.top__title #{props.index}. #{props.title}
-			span.top__cross
+			span.top__cross 
+				<svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M8.00061 16.8125L8.00567 8.81284L16.0051 8.80778" stroke="#114C9A" stroke-width="2"/>
+					<path d="M8.00842 0.8125L8.00335 8.81213L0.00395508 8.8172" stroke="#114C9A" stroke-width="2"/>
+				</svg>
 		.cell-block-bottom.bottom 
 			p.bottom__text= props.text	
