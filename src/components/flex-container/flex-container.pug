@@ -1,3 +1,27 @@
+mixin block-content( text, size, color)
+    div(class=`block block_size_${size} block_color_${color}`)
+        p.block__title= text 
+        button.block__btn
+            include ../../assets/icons/arrow.svg
+
 mixin flex-container()
     section.flex-container
-        // Your code here
+        h2.flex-container__title
+            strong.flex-container__title_accent Комплексные&nbsp;
+            | предложения для мостостроения
+
+        .flex-container__row
+            +block-content('Мостовая сталь/Стальные конструкции мостов', 'big', 'grey')
+
+            .flex-container__col
+                +block-content('Железобетонные конструкции мостов', 'small', 'grey')
+                +block-content('Дорожные ограждения барьерного типа', 'small', 'grey')
+
+        .flex-container__row
+            +block-content('Шпунтовой замок', 'medium', 'dark-blue')
+            +block-content('Мостовой крепеж', 'medium', 'grey')
+            +block-content('Профили для деформационных швов', 'medium', 'blue')
+
+        .flex-container__row
+            +block-content('Плетеные габионы', 'small', 'grey')
+            +block-content('Модульные мосты', 'small', 'grey')

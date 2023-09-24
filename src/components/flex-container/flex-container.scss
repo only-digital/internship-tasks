@@ -1,3 +1,100 @@
+$color-red: #fc0d1b;
+$color-dark-blue: #04306a;
+$color-blue: #0041a0;
+$color-grey: #f4f4f4;
+
 .flex-container {
-    // Your code here
+  // Your code here
+  flex-direction: column;
+  padding: 122px 97px;
+  gap: 16px;
+
+  &__title {
+    color: $color-dark-blue;
+    font-family: Arial, sans-serif;
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 100%;
+    letter-spacing: -0.92px;
+    margin-bottom: 60px;
+
+    &_accent {
+      color: $color-red;
+    }
+  }
+
+  &__row {
+    display: flex;
+    column-gap: 19px;
+    width: 100%;
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+
+    &__title {
+      align-self: flex-start;
+      font-family: Arial, sans-serif;
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 120%; /* 38.4px */
+      letter-spacing: -0.64px;
+      padding: 36px 24px;
+    }
+
+    &__btn {
+      align-self: flex-end;
+      margin: 34px 36px;
+    }
+
+    &_size_big {
+      height: 856px;
+    }
+
+    &_size_medium {
+      height: 480px;
+    }
+
+    &_size_small {
+      height: 420px;
+    }
+
+    &_color_grey {
+      background-color: $color-grey;
+      color: $color-dark-blue;
+
+      & svg path {
+        fill: $color-dark-blue;
+      }
+    }
+
+    &_color_blue {
+      background-color: $color-blue;
+      color: $color-grey;
+
+      & svg path {
+        fill: $color-grey;
+      }
+    }
+
+    &_color_dark-blue {
+      background-color: $color-dark-blue;
+      color: $color-grey;
+
+      & svg path {
+        fill: $color-grey;
+      }
+    }
+  }
 }
