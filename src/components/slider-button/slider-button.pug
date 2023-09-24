@@ -1,0 +1,7 @@
+mixin slider-button(props)
+	.slider-button
+		button.slider-button__arrow.slider-button__arrow_left&attributes(attributes)
+			include ../../assets/icons/slider-left.svg
+		button.slider-button__arrow.slider-button__arrow_right&attributes(attributes)
+			include ../../assets/icons/slider-right.svg
+		.slider-button__pages #{props.currentPage}/#{props.pages}

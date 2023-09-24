@@ -1,0 +1,85 @@
+$extra-grey-1: #bcbcbc;
+$main-blue: #002f6c;
+$extra-cobolt: #0041a0;
+$main-white: #ffffff;
+$main-steel: #909090;
+$system-text: #111;
+$light-blue: #99b3d8;
+$main-red: #f00;
+$medium-red: #bf1d26;
+$dark-red: #81080f;
+$extra-grey-3: #f4f4f4;
+$extra-grey-2: #dedede;
+
+.slider-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &__pages {
+    color: $main-steel;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: -0.32px;
+    padding-left: 30px;
+    @media (max-width: 1280px) {
+      padding-left: 14px;
+    }
+    @media (max-width: 375px) {
+      display: none;
+    }
+  }
+
+  &__arrow {
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    border: 1px solid $extra-grey-2;
+    transition: color 0.3s, opacity 0.3s;
+    &_left svg {
+      position: relative;
+      left: -4px;
+      top: 1.5px;
+    }
+    &_right svg {
+      position: relative;
+      left: 4px;
+      top: 1.5px;
+    }
+
+    &:disabled {
+      pointer-events: none;
+      & ~ .slider-button__pages {
+        color: $extra-grey-1;
+      }
+      & svg path {
+        fill: $extra-grey-1;
+      }
+    }
+    @media (max-width: 1280px) {
+      transform: scale(0.75);
+      margin: -10px;
+    }
+
+    @media (min-width: 768px) and (hover: hover) {
+      &:hover {
+        border: none;
+        background-color: $extra-grey-3;
+      }
+    }
+
+    &:active {
+      border: none;
+      background-color: $extra-grey-2;
+    }
+
+    @media (min-width: 768px) {
+      &:focus {
+        outline: 3px solid $light-blue;
+        background-color: none;
+      }
+    }
+  }
+}

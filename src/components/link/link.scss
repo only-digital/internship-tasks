@@ -1,0 +1,44 @@
+$extra-grey-1: #bcbcbc;
+$main-blue: #002f6c;
+$extra-cobolt: #0041a0;
+$main-white: #ffffff;
+$main-steel: #909090;
+$system-text: #111;
+$light-blue: #99b3d8;
+$main-red: #f00;
+$medium-red: #bf1d26;
+$dark-red: #81080f;
+$extra-grey-3: #f4f4f4;
+
+.link {
+  $root: &;
+
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  text-align: left;
+  color: $extra-cobolt;
+  text-decoration: none;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  @media (min-width: 768px) and (hover: hover) {
+    &:hover {
+      color: $main-red;
+    }
+  }
+  &:active {
+    color: $medium-red;
+  }
+  @media (min-width: 768px) {
+    &:focus {
+      background-color: rgba(0, 65, 160, 0.15);
+      outline: none;
+    }
+  }
+}

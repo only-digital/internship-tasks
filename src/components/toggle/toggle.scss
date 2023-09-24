@@ -1,0 +1,80 @@
+$extra-grey-1: #bcbcbc;
+$main-blue: #002f6c;
+$extra-cobolt: #0041a0;
+$main-white: #ffffff;
+$main-steel: #909090;
+$system-text: #111;
+$light-blue: #99b3d8;
+$main-red: #f00;
+$medium-red: #bf1d26;
+$dark-red: #81080f;
+$extra-grey-3: #f4f4f4;
+$extra-grey-2: #dedede;
+
+.toggle {
+  $root: &;
+  &__switch {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+  &__item {
+    display: block;
+    cursor: pointer;
+    width: 56px;
+    height: 28px;
+    border-radius: 14px;
+    background: $extra-cobolt;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 8px;
+      left: 6px;
+      top: 6px;
+      transition: 0.3s;
+      background: $main-white;
+    }
+    @media (min-width: 768px) and (hover: hover) {
+      &:hover {
+        background-color: $main-blue;
+      }
+    }
+    @media (min-width: 768px) {
+      &:focus {
+        outline: 3px solid $light-blue;
+        background: $extra-grey-2;
+      }
+    }
+    @media (max-width: 375px) {
+      width: 40px;
+      height: 20px;
+      border-radius: 10px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-radius: 6px;
+        left: 4px;
+        top: 4px;
+        transition: 0.3s;
+        background: $main-white;
+      }
+    }
+  }
+  input:checked + &__item:after {
+    left: calc(100% - 6px);
+    transform: translateX(-100%);
+    @media (max-width: 375px) {
+      left: calc(100% - 4px);
+    }
+  }
+  input:disabled + &__item {
+    pointer-events: none;
+    background: $extra-grey-2;
+  }
+}

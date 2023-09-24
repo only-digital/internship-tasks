@@ -2,6 +2,38 @@ extends ../../build_modules/common
 
 
 block body
-    +example-button({text: 'example text'})
-    +example-button({text: 'disabled'})(disabled='')
-    //Your code here
+  //- +example-button({text: 'example text'})
+  //- +example-button({text: 'disabled'})(disabled='')
+  //- p
+  //-   br
+  +button-border({text: 'Кнопка'})
+  p
+    br
+  +button-border({text: 'Кнопка'})(disabled='')
+  p
+    br
+  +button-border({text: 'Кнопка', color: 'red'})
+  p
+    br
+  +button-border({text: 'Кнопка', color: 'red'})(disabled='')
+  p
+    br
+  +slider-button({currentPage: '01', pages: '04'})
+  p
+    br
+  +slider-button({currentPage: '01', pages: '04'})(disabled='')
+  p
+  br
+  +toggle
+  p
+  br
+  +toggle
+  p
+  br
+  +toggle(disabled='')
+  br
+  +link({text: 'Ссылка', href: 'https://only.digital/'})
+  p
+  | Для подключения сервиса добавьте  номер 
+  +link({text: '+7(921)058-57-19', href: '#'}) 
+  |&nbsp;в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже

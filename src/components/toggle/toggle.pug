@@ -1,0 +1,7 @@
+- var toggleCounter = 1
+
+mixin toggle(props)
+	- const uniqueId = `switch-${toggleCounter++}`
+	.toggle
+		input(type="checkbox" id=uniqueId).toggle__switch&attributes(attributes)
+		label.toggle__item(for=uniqueId)
