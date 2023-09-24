@@ -10,6 +10,7 @@ $blue-color: #0041a0;
   gap: 18px;
   margin: auto;
   h1 {
+	color: $dark-blue-color;
     font-size: 46px;
     line-height: 46px;
     font-weight: 700;
@@ -73,7 +74,7 @@ $blue-color: #0041a0;
   h2 {
     font-size: 32px;
     font-weight: 700;
-    color: #04306a;
+    color: $dark-blue-color;
     padding: 24px 36px;
   }
 }
