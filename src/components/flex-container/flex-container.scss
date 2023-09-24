@@ -4,13 +4,13 @@
   flex-direction: column;
   gap: 18px;
   margin: auto;
-	h1 {
-		font-size: 46px;
-		line-height: 46px;
-		font-weight: 700;
-		padding-bottom: 80px;
-		padding-top: 120px;
-	}
+  h1 {
+    font-size: 46px;
+    line-height: 46px;
+    font-weight: 700;
+    padding-bottom: 80px;
+    padding-top: 120px;
+  }
 }
 
 .upper,
@@ -30,16 +30,16 @@
   }
   .card:first-child {
     background-color: #04306a;
-		h2 {
-			color: white;
-		}
+    h2 {
+      color: white;
+    }
   }
 
   .card:last-child {
     background-color: #0041a0;
-		h2 {
-			color: white;
-		}
+    h2 {
+      color: white;
+    }
   }
 }
 
@@ -58,12 +58,14 @@
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
   background: #d8d8d8;
   width: 100%;
   flex-grow: 1;
 
   h2 {
-		font-size: 32px;
+    font-size: 32px;
     font-weight: 700;
     color: #04306a;
     padding: 24px 36px;
