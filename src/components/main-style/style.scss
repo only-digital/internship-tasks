@@ -20,6 +20,15 @@ html {
     width: 1920px;
 }
 
+.container {
+    font-family: Arial Bold, Helvetica, sans-serif;
+    font-weight: 700;
+
+    margin: 97px auto;
+
+    width: 1728px;
+}
+
 .container__title {
     font-size: 46px;
     letter-spacing: -0.92px;
@@ -30,15 +39,6 @@ html {
     }
 
     margin-bottom: 80px;
-}
-
-.container {
-    font-family: Arial Bold, Helvetica, sans-serif;
-    font-weight: 700;
-
-    margin-top: 97px;
-    margin-left: 122px;
-    margin-right: 122px;
 }
 
 .container__item {
