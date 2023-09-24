@@ -33,12 +33,18 @@
     h2 {
       color: white;
     }
+    svg {
+      fill: white;
+    }
   }
 
   .card:last-child {
     background-color: #0041a0;
     h2 {
       color: white;
+    }
+    svg {
+      fill: white;
     }
   }
 }
@@ -60,6 +66,7 @@
 .card {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   background: #d8d8d8;
   width: 100%;
   flex-grow: 1;
@@ -70,6 +77,11 @@
     color: #04306a;
     padding: 24px 36px;
   }
+}
+
+.arrow {
+  margin: 25px;
+  align-self: flex-end;
 }
 
 strong {
