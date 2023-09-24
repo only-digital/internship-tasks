@@ -86,6 +86,9 @@ $mobile: 375px;
 		&:hover {
 			background-color: $red;
 		}
+		&:active {
+			background-color: $dark-red;
+		}
 	}
 
 	@media (max-width: $tablet) {

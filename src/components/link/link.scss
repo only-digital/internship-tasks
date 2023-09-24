@@ -55,5 +55,8 @@ $tablet: 768px;
 		&:hover {
 			color: $light-red;
 		}
+		&:active {
+			color: $red;
+		}
 	}
 }

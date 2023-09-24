@@ -108,6 +108,15 @@ $mobile: 375px;
 				fill: $white;
 			}
 		}
+
+		&:active {
+			background-color: $dark-blue;
+			color: $white;
+
+			svg {
+				fill: $white;
+			}
+		}
 	}
 
 	@media (max-width: $tablet) {
@@ -147,11 +156,16 @@ $mobile: 375px;
 		}
 	}
 
-	&:hover {
-		background-color: $red;
-	}
-
 	&:active {
 		background-color: $dark-red;
+	}
+
+	@media (min-width: $tablet) {
+		&:hover {
+			background-color: $red;
+		}
+		&:active {
+			background-color: $dark-red;
+		}
 	}
 }
