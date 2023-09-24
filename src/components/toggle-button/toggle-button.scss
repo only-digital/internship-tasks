@@ -1,0 +1,99 @@
+$main-color: #002F6C;
+$third-color: #0041A0;
+$white-color: white;
+$disabled-color: #DEDEDE;
+$border-color: #C2DAFF;
+
+.toggle-button {
+	$root: &;
+
+	display: flex;
+	align-items: center;
+	margin: 30px 20px;
+	width: 56px;
+	height: 28px;
+	border-radius: 25px;
+
+	@media (max-width: 375px) {
+		width: 40px;
+		height: 20px;
+	}
+
+	&__input {
+		&.visually-hidden {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			margin: -1px;
+			padding: 0;
+			border: 0;
+			clip: rect(0 0 0 0);
+			overflow: hidden;
+		}
+
+		&:disabled {
+			+#{$root}__control-mark {
+				background-color: $disabled-color;
+				pointer-events: none;
+			}
+		}
+
+		@media (hover: hover) {
+			&:not([disabled]):hover {
+				+#{$root}__control-mark {
+					background-color: $main-color;
+				}
+			}
+		}
+
+		&:focus-visible {
+			+#{$root}__control-mark {
+				background-color: $disabled-color;
+				outline: 3px solid $border-color;
+			}
+		}
+
+		&:checked+.toggle-button__control-mark::before {
+			right: auto;
+			left: 6px;
+
+			@media (max-width: 375px) {
+				left: 4px;
+			}
+		}
+	}
+
+	&__control-mark {
+		position: relative;
+		width: 56px;
+		height: 28px;
+		background-color: $third-color;
+		border-radius: 25px;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+
+		&::before {
+			position: absolute;
+			content: "";
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			background-color: $white-color;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			right: 6px;
+		}
+
+		@media (max-width: 375px) {
+			width: 40px;
+			height: 20px;
+
+			&::before {
+				width: 12px;
+				height: 12px;
+				right: 4px;
+			}
+		}
+	}
+}

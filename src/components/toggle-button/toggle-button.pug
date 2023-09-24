@@ -1,0 +1,5 @@
+mixin toggle-button(props)
+	label.toggle-button&attributes(attributes)
+		input.toggle-button__input.visually-hidden&attributes(attributes)(type="checkbox" name!=props.name value!=props.value)
+		span.toggle-button__control-mark
+		
