@@ -1,3 +1,22 @@
+mixin card(title, className)
+    .card(class=className)
+        h2= title
+        .arrow
+            svg(width="65" height="36" viewBox="0 0 65 36" fill="#04306A" xmlns="http://www.w3.org/2000/svg")
+                path(d="M58.4384 19.4L0 19.4L0 16.6L58.4384 16.6L58.4384 19.4ZM36.5378 36L34.8869 33.6L61.685 20L61.685 16L34.8869 2.4L36.5378 0L64.9316 14.4V21.6L36.5378 36Z")
+
 mixin grid-container()
     section.grid-container
         // Your code here
+        h1
+            strong Комплексные&nbsp;
+            | предложения для мостостроения
+        .grid-wrapper
+            +card('Мостовая сталь/Стальные конструкции мостов', 'card--big')
+            +card('Железобетонные конструкции мостов', 'card--span-3')
+            +card('Дорожные ограждения барьерного типа', 'card--span-3')
+            +card('Шпунтовой замок', 'card--span-2 card--dark-blue')
+            +card('Мостовой крепеж', 'card--span-2')
+            +card('Профили для деформационных швов', 'card--span-2 card--blue')
+            +card('Плетеные габионы', 'card--span-3')
+            +card('Модульные мосты', 'card--span-3')
