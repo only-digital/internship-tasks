@@ -18,7 +18,9 @@ $disabled-grey-color: #F4F4F4;
 	justify-content: center;
 	align-items: center;
 	gap: 14px;
-	transition: all 0.3s ease;
+	transition: color 0.3s ease,
+		background-color 0.3s ease,
+		border 0.3s ease;
 	color: $text-color;
 	margin: 30px 20px;
 	height: 48px;

@@ -1,0 +1,7 @@
+mixin slider-button(props)
+	.slider-button&attributes(attributes)
+		button&attributes(attributes).slider-button__inner.slider-button__inner--prev
+			+svg('slider-buttons-icon').slider-button__inner-svg.slider-button__inner-svg--prev
+		button&attributes(attributes).slider-button__inner
+			+svg('slider-buttons-icon').slider-button__inner-svg
+		span.slider-button__counter #{props.current_slide} / #{props.total_slides}
