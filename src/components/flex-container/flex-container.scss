@@ -2,8 +2,15 @@
   max-width: 1920px;
   font-family: "arial" sans-serif;
   flex-direction: column;
-  gap: 10px;
+  gap: 18px;
   margin: auto;
+	h1 {
+		font-size: 46px;
+		line-height: 46px;
+		font-weight: 700;
+		padding-bottom: 80px;
+		padding-top: 120px;
+	}
 }
 
 .upper,
@@ -13,11 +20,11 @@
 
 .upper {
   height: 856px;
-  gap: 10px;
+  gap: 18px;
 }
 
 .middle {
-  gap: 10px;
+  gap: 18px;
   .card {
     height: 480px;
   }
@@ -37,7 +44,7 @@
 }
 
 .lower {
-  gap: 10px;
+  gap: 18px;
   .card {
     height: 420px;
   }
@@ -47,7 +54,7 @@
   display: flex;
   width: 100%;
   flex-direction: column;
-  gap: 10px;
+  gap: 18px;
 }
 
 .card {
@@ -56,20 +63,13 @@
   flex-grow: 1;
 
   h2 {
+		font-size: 32px;
     font-weight: 700;
     color: #04306a;
-    padding: 20px;
+    padding: 24px 36px;
   }
 }
 
 strong {
   color: #fc0d1b;
-}
-
-h1 {
-  font-size: 46px;
-  line-height: 46px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  text-align: left;
 }
