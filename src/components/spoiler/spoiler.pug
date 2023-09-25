@@ -1,6 +1,7 @@
 
 mixin spoiler(props)
 	.spoiler&attributes(attributes)(data-component='spoiler')
+		h1.spoiler__title!= props.title
 		ol.spoiler__list
 			each item in props.items
 				li.spoiler__list-item
