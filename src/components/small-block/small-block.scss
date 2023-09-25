@@ -1,13 +1,40 @@
 .small-block {
+  position: relative;
   width: 564px;
   height: 420px;
+  padding-left: 36px;
+  padding-top: 24px;
   background: #f4f4f4;
 }
 
 .small-block_dark-blue {
   background: #04306a;
+
+  .card-title {
+    color: #fff;
+  }
+
+  .button path {
+    fill: #fff;
+  }
 }
 
 .small-block_light-blue {
   background: #0041a0;
+
+  .card-title {
+    color: #fff;
+  }
+
+  .button path {
+    fill: #fff;
+  }
+}
+
+.card-title {
+  color: #04306a;
+  font-family: Arial;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
 }

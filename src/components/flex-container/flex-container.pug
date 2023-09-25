@@ -1,19 +1,22 @@
 include ../small-block/small-block
-include ../main-title/main-title
 include ../mid-block/mid-block
+include ../main-title/main-title
+include ../button/button
 
 mixin flex-container()
     +main-title("Комплексные предложения для мостостроения")
     section.flex-container
         div.flex-container__top-block
             div.flex-container__left-block
+                h2.card-title Мостовая сталь/Стальные конструкции мостов
+                +button
             div.flex-container__right-block
-                +mid-block
-                +mid-block
+                +mid-block("Железобетонные конструкции мостов")
+                +mid-block("Дорожные ограждения барьерного типа")
         div.flex-container__mid-block
-            +small-block(['small-block_dark-blue'])
-            +small-block
-            +small-block(['small-block_light-blue'])      
+            +small-block("Шпунтовой замок", ['small-block_dark-blue'])
+            +small-block("Мостовой крепеж")
+            +small-block("Профили для деформационных швов", ['small-block_light-blue'])      
         div.flex-container__bottom-block
-            +mid-block 
-            +mid-block
+            +mid-block("Плетеные габионы") 
+            +mid-block("Модульные мосты")

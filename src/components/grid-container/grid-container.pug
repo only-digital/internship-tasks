@@ -3,13 +3,15 @@ mixin grid-container()
     section.grid-container
         div.grid-container__top-block
             div.grid-container__left-block
+                h2.card-title Мостовая сталь/Стальные конструкции мостов
+                +button
             div.grid-container__right-block
-                +mid-block
-                +mid-block
+                +mid-block("Железобетонные конструкции мостов")
+                +mid-block("Дорожные ограждения барьерного типа")
         div.grid-container__mid-block
-            +small-block(['small-block_dark-blue'])
-            +small-block
-            +small-block(['small-block_light-blue'])  
+            +small-block("Шпунтовой замок", ['small-block_dark-blue'])
+            +small-block("Мостовой крепеж")
+            +small-block("Профили для деформационных швов", ['small-block_light-blue'])  
         div.grid-container__bottom-block
-            +mid-block 
-            +mid-block
+            +mid-block("Плетеные габионы")  
+            +mid-block("Модульные мосты")

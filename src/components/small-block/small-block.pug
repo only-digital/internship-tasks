@@ -1,4 +1,8 @@
+include ../button/button 
+
 style
     include small-block.scss
-mixin small-block(classes)
+mixin small-block(title, classes)
     div.small-block(class=classes)
+        h2.card-title=title
+        +button

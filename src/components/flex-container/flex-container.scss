@@ -1,4 +1,5 @@
 .flex-container {
+  min-width: 1920px;
   display: flex;
   flex-direction: column;
   gap: 19px;
@@ -12,8 +13,11 @@
 }
 
 .flex-container__left-block {
+  position: relative;
   width: 856px;
   background: #f4f4f4;
+  padding-top: 49px;
+  padding-left: 49px;
 }
 
 .flex-container__right-block {
@@ -30,4 +34,12 @@
 .flex-container__bottom-block {
   display: flex;
   gap: 19px;
+}
+
+.card-title {
+  color: #04306a;
+  font-family: Arial;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
 }

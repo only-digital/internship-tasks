@@ -1,5 +1,6 @@
 .grid-container {
   display: grid;
+  min-width: 1920px;
   grid-template-columns: 1708px;
   grid-template-rows: repeat(4, 420px);
   justify-content: center;
@@ -15,8 +16,11 @@
 }
 
 .grid-container__left-block {
+  position: relative;
   grid-column: 1 / 2;
   background: #f4f4f4;
+  padding-top: 49px;
+  padding-left: 49px;
 }
 
 .grid-container__right-block {
@@ -38,4 +42,12 @@
   grid-column: 1 / 2;
   grid-row: 4 / 5;
   gap: 19px;
+}
+
+.card-title {
+  color: #04306a;
+  font-family: Arial;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
 }

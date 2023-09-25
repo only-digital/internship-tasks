@@ -1,5 +1,16 @@
 .mid-block {
+  position: relative;
   width: 854px;
   height: 420px;
+  padding-left: 36px;
+  padding-top: 24px;
   background: #f4f4f4;
+}
+
+.card-title {
+  color: #04306a;
+  font-family: Arial;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
 }

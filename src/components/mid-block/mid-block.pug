@@ -1,4 +1,8 @@
+include ../button/button
+
 style 
     include mid-block.scss
-mixin mid-block(classes)
+mixin mid-block(title, classes)
     div.mid-block(class=classes)
+      h2.card-title=title
+      +button
