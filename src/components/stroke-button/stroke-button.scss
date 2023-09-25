@@ -1,0 +1,144 @@
+$font-stack: Arial, Helvetica, sans-serif;
+
+$color-system-text: #111;
+$color-main-blue: #002F6C;
+$color-main-steel: #909090;
+$color-main-white: #fff;
+$color-extra-cobolt: #0041A0;
+$color-extra-blue: #99B3D8;
+$color-extra-grey: #BCBCBC;
+
+
+.stroke-button {
+	$root: &;
+
+	font-family: $font-stack;
+	height: 42px;
+	width: 100%;
+	justify-content: center;
+	padding-left: 14px;
+	padding-right: 14px;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	border: 1px solid $color-extra-grey;
+	border-radius: 25px;
+	transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+
+	@media (min-width: 1280px) {
+		&:focus-visible {
+			border: 3px solid $color-extra-blue;
+			border-radius: 24px;
+	
+			#{$root}__text {
+				color: $color-extra-cobolt;
+			}
+	
+			#{$root}__svg {
+				fill: $color-extra-cobolt;
+			}
+		}
+	}
+	
+	@media (hover: hover) and (min-width: 1280px) {
+		&:hover {
+			background-color: $color-extra-cobolt;
+			border-color: $color-extra-cobolt;
+
+			#{$root}__text {
+				color: $color-main-white;
+			}
+
+			#{$root}__svg {
+				fill: $color-main-white;
+			}
+		}
+	}
+
+	&:active {
+		background-color: $color-main-blue;
+		border-color: $color-main-blue;
+
+		#{$root}__text {
+			color: $color-main-white;
+		}
+
+		#{$root}__svg {
+			fill: $color-main-white;
+		}
+	}
+
+	&:disabled {
+		border-color: $color-extra-grey;
+		pointer-events: none;
+
+		#{$root}__text {
+			color: $color-main-steel;
+		}
+
+		#{$root}__svg {
+			fill: $color-main-steel;
+		}
+	}
+
+	&__text {
+		font-size: 16px;
+		font-weight: 400;
+		letter-spacing: calc(-.02 * 16px);
+		user-select: none;
+		color: $color-system-text;
+		transition: color .3s ease-in-out;
+
+		@media (min-width: 1280px) {
+			font-size: 14px;
+		}
+
+		@media (min-width: 1920px) {
+			font-size: 16px;
+		}
+	}
+
+	svg {
+		width: 24px;
+		height: 100%;
+		fill: $color-main-blue;
+		transition: fill 0.3s ease-in-out;
+
+		@media (min-width: 1280px) {
+			width: 24px;
+			height: 24px;
+		}
+
+		@media (min-width: 1920px) {
+			width: 32px;
+			height: 32px;
+		}
+	}
+
+
+
+	@media (min-width: 375px) {
+		max-width: 375px;
+		padding-left: 14px;
+		gap: 12px;
+	}
+
+	@media (min-width: 768px) {
+		max-width: 121px;
+		padding-left: 18px;
+		gap: 14px;
+	}
+
+	@media (min-width: 1280px) {
+		max-width: 111px;
+		padding-left: 16px;
+		gap: 12px;
+	}
+
+	@media (min-width: 1920px) {
+		max-width: 129px;
+		height: 48px;
+		padding-left: 18px;
+		gap: 14px;
+	}
+}

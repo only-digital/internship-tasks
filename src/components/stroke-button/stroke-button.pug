@@ -1,0 +1,4 @@
+mixin stroke-button(props)
+	button.stroke-button&attributes(attributes)
+		span.stroke-button__text!= props.text
+		+svg('button-arrow').stroke-button__svg
