@@ -1,0 +1,111 @@
+$font-stack: Arial, Helvetica, sans-serif;
+
+$color-system-text: #111;
+$color-main-blue: #002F6C;
+$color-main-steel: #909090;
+$color-main-light: #F4F4F4;
+$color-main-grey: #BCBCBC;
+$color-main-white: #fff;
+$color-extra-blue: #99B3D8;
+$color-extra-grey: #DEDEDE;
+
+
+.slider {
+	$root: &;
+
+	font-family: $font-stack;
+	height: 60px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+
+	&__text {
+		margin-left: 24px;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 1.5;
+		letter-spacing: calc(-.02 * 16px);
+		user-select: none;
+		color: $color-main-steel;
+		transition: color .3s ease-in-out;
+
+		&_disabled {
+			color: $color-main-grey;
+		}
+
+		@media (max-width: 375px) {
+			display: none;
+		}
+	}
+
+	&__button {
+		display: flex;
+		align-items: center;
+		height: 60px;
+		width: 60px;
+		border: 1px solid $color-extra-grey;
+		border-radius: 50%;
+		transition: background-color .3s ease-in-out, border-color .3s ease-in-out;
+
+		&_step_back {
+			margin-right: 10px;
+		}
+
+		&_step_forward {
+			& svg {
+				transform: rotate(180deg);
+			}
+		}
+
+		@media (min-width: 1280px) {
+			&:focus-visible {
+				border: 3px solid $color-extra-blue;
+			}
+		}
+
+		@media (hover: hover) and (min-width: 1280px) {
+			&:hover {
+				background-color: $color-main-light;
+				border-color: $color-main-light;
+			}
+		}
+
+		&:active {
+			background-color: $color-extra-grey;
+			border-color: $color-extra-grey;
+	
+			#{$root}__text {
+				color: $color-main-white;
+			}
+		}
+
+
+		&:disabled {
+			border-color: $color-extra-grey;
+			pointer-events: none;
+	
+			+ #{$root}__text {
+				color: $color-main-grey;
+			}
+
+			#{$root}__svg {
+				fill: $color-main-grey;
+			}
+		}
+	}
+
+	svg {
+		width: 60px;
+		height: 60px;
+		fill: $color-main-blue;
+
+		@media (min-width: 1920px) {
+			width: 80px;
+			height: 80px;
+		}
+	}
+
+	@media (min-width: 1920px) {
+		height: 80px;
+	}
+}

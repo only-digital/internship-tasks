@@ -1,0 +1,7 @@
+mixin slider(props)
+	div.slider
+		button.slider__button.slider__button_step_back&attributes(attributes)
+			+svg('slider-arrow').slider__svg
+		button.slider__button.slider__button_step_forward&attributes(attributes)
+			+svg('slider-arrow').slider__svg
+		span.slider__text!= `${props.currPage} / ${props.numOfPages}`
