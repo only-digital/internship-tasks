@@ -108,6 +108,7 @@ module.exports = {
                     loader: 'file-loader',
                     options: {
                         name: 'assets/images/[name].[hash:8].[ext]',
+
                     },
                 },
                 include: path.join(__dirname, '..', 'src', 'assets', 'images'),

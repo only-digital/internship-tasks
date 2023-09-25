@@ -1,0 +1,65 @@
+.header-component {
+	$root: &;
+
+	&__data {
+		color: #8F8F8F;
+		font: 400 normal 20px/140% 'Arial', sans-serif;
+		letter-spacing: -0.4px;
+		margin-bottom: 20px;
+	}
+	&__title {
+		color: #04306A;
+		font: 400 normal 64px/100% 'Arial', sans-serif;
+		letter-spacing: -1.28px;
+		margin-bottom: 45px;
+	}
+	&__statistic {
+		display: none;
+		align-items: center;
+		justify-content: flex-start;
+		column-gap: 36px;
+		margin-bottom: 144px;
+		&-views, &-responses {
+			color: #8F8F8F;
+			font: 400 normal 16px/130% 'Arial', sans-serif;
+			letter-spacing: -0.32px;
+		}
+		&.show {
+			display: flex;
+		}
+	}
+	&__loader {
+		width : 50px;
+		height: 50px;
+		border: 3px solid #0041A0;
+		border-bottom-color: transparent;
+		border-radius: 50%;
+		display: inline-block;
+		position: relative;
+		animation: spin 2s linear infinite;
+		opacity: 0.5;
+		margin-bottom: 110px;
+		margin-left: 50px;
+		&:after {
+			content: '';
+			position: absolute;
+			left: 21px;
+			top: 34px;
+			border: 10px solid transparent;
+			border-right-color: #0041A0;
+			transform: rotate(-40deg);
+			opacity: 0.8;
+		}
+		&.loading {
+			display: none;
+		}
+	}
+}
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

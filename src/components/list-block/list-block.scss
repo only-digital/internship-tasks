@@ -1,0 +1,36 @@
+.container {
+	padding: 115px 0 45px 80px;
+}
+.list-block {
+	$root: &;
+	margin-bottom: 130px;
+	&.last {
+		margin-bottom: 109px;
+	}
+	&__label {
+		color:#04306A;
+		font: 400 normal 46px/120% 'Arial', sans-serif;
+		letter-spacing: -0.92px;
+		margin-bottom: 35px;
+	}
+	&__list {
+		list-style: inside;
+		& li {
+			color: #012B34;
+			font: 400 normal 24px/140% 'Arial', sans-serif;
+			max-width: 960px;
+			&:before {
+				content: '';
+				display: inline-block;
+				vertical-align: middle;
+				width: 20px;
+				height: 2px;
+				margin-right: 8px;
+				background-color: #0DB274;
+			}
+			&:not(:last-of-type) {
+				margin-bottom: 12px;
+			}
+		}
+	}
+}

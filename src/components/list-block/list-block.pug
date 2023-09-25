@@ -1,0 +1,15 @@
+mixin listElements(list)
+	ul.list-block__list
+		for val in list
+			li= val
+
+mixin list-block(props)
+	.list-block&attributes(attributes)(data-component='list-block')
+		h2.list-block__label=props.label
+		if props.responsibilities
+			+listElements(props.responsibilities)
+		else if props.requirements
+			+listElements(props.requirements)
+		else
+			+listElements(props.offer)
+

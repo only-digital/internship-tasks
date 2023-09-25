@@ -1,4 +1,6 @@
-import ExampleButton from "../../components/example-button/example-button";
+import FeedbackForm from "../../components/feedback-form/feedback-form";
+import ListBlock from "../../components/list-block/list-block";
+import HeaderComponent from "../../components/header-component/header-component";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -6,7 +8,10 @@ import ExampleButton from "../../components/example-button/example-button";
  * Значение - JS-класс компонента (Импорт добавляется вручную)
  */
 const allComponents = {
-    'example-button': ExampleButton,
+    'header-component': HeaderComponent,
+    'list-block': ListBlock,
+    'feedback-form': FeedbackForm,
+
 }
 
 /**

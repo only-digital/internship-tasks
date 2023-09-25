@@ -1,0 +1,30 @@
+mixin svgArrow()
+	svg(xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none")
+		g(clip-path="url(#clip0_201_12)")
+			path(d="M29.9059 14.9678L29.9059 17.0322L16.859 25.1208L17.9172 27L32 18.2751L32 13.7249L17.9172 5L16.859 6.87919L29.9059 14.9678Z" fill="white")
+			path(d="M27 17.0926L27 14.9074L1.05717e-06 14.9074L8.66136e-07 17.0926L27 17.0926Z" fill="white")
+
+mixin svgMark()
+	svg(xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none")
+		circle(cx="26" cy="26" r="25" stroke="#DEDEDE" stroke-width="2")
+		path(fill-rule="evenodd" clip-rule="evenodd" d="M36.503 19.4099L35.3267 18.2337L23.3798 30.1806L24.556 31.3569L36.503 19.4099ZM16.6457 26.1695L15.4695 27.3458L21.9503 33.8267L23.1266 32.6504L16.6457 26.1695Z" fill="#27AE60")
+
+mixin feedback-form(props)
+	.feedback-form&attributes(attributes)(data-component='feedback-form')
+		h2.feedback-form__label Форма обратной связи
+		form.feedback-form__form
+			label(for='email-field').feedback-form__name E-mail
+			input#email-field.feedback-form__field(type='email')
+			span.feedback-form__message
+			.feedback-form__checkbox
+				input#checkbox-field.feedback-form__checkbox-item(type='checkbox')
+				label(for='checkbox-field').feedback-form__checkbox-name Вы подтверждаете, что ознакомились c <a href="#" class="link">политикой обработки персональных данных</a>
+					span.feedback-form__checkbox-checkmark(style="display:none")
+			button.feedback-form__button(type='submit')
+				span.feedback-form__button-text Отправить
+				span.feedback-form__button-icon
+					+svgArrow
+			span.feedback-form__loader.loading
+			.hidden.feedback-form__button-successful(type='button')
+				+svgMark
+				span.feedback-form__button-successful-text Форма успешно отправлена
