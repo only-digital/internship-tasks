@@ -1,0 +1,10 @@
+mixin slider-button(props)
+	.slider-button&attributes(attributes)
+		.slider-button__buttons-container.buttons-container
+			button.buttons-container__button&attributes(attributes)
+				+svg('slider-arrow-left').slider-button__svg
+			button.buttons-container__button&attributes(attributes)
+				+svg('slider-arrow-left').slider-button__svg
+		.buttons-container__pages-info 
+				span #{props.currentPage} / #{props.totalPages}
+
