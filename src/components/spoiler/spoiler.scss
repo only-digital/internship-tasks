@@ -1,0 +1,120 @@
+.spoiler {
+	$root: &;
+
+	width: 70%;
+	margin: 0 auto;	
+
+	&__title{
+		color:  #012B34;
+		font-family: Roboto;
+		font-size: 64px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 100%;
+		letter-spacing: -1.28px;
+		margin-bottom: 100px;
+		transition: font-size .3s;
+
+		@media (max-width: 1440px) {
+			font-size: 48px;
+        }	
+
+		@media (max-width: 1280px) {
+			font-size: 42px;
+        }	
+
+		@media (max-width: 375px) {
+			font-size: 30px;
+        }		
+	}
+
+	&__row{
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		padding-top: 30px;
+		padding-bottom: 30px; 
+		border-top: 1px solid #E6E6E6;
+		border-bottom: 1px solid #E6E6E6;
+		
+	}
+
+	&__row__title{
+		color: #012B34;
+		font-family: Roboto;
+		font-size: 36px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 120%;
+		flex-basis: 95%;
+		transition: color .3s, font-size .3s;
+
+		@media (max-width: 1440px) {
+			font-size: 27px;
+        }	
+
+		@media (max-width: 1280px) {
+			font-size: 24px;
+        }
+
+		@media (max-width: 768px) {
+			font-size: 27px;
+        }	
+
+		@media (max-width: 375px) {
+			font-size: 24px;
+        }			
+	}
+
+	&__row__cotent{
+		color:  #000402;
+		font-family: Roboto;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 150%;
+		flex-basis: 60%;
+		height: 0;
+		position: relative;				
+		opacity: 0;
+		transition: height .3s, margin .3s, opacity .3s;
+
+		@media (max-width: 1440px) {
+			font-size: 15px;
+        }	
+
+		@media (max-width: 1280px) {
+			font-size: 14px;
+        }
+
+		@media (max-width: 768px) {
+			font-size: 15px;
+        }
+	}	
+
+	&__row__svg{
+		width: 22px;
+		height: 22px;	
+		flex-basis: 5%;
+		transform: rotate(45deg);
+		transition: transform .3s, width .3s, height .3s ;
+
+		@media (max-width: 1440px) {
+			width: 16px;
+			height: 16px;
+        }
+	}
+
+	&__row__cotent.active{
+		margin-top: 30px;				
+		opacity: 1;
+	}
+	
+	&__row__title.active{
+		color: #114C9A
+	}
+
+	&__row__svg.active{
+		transform: rotate(0deg);
+	}
+}
