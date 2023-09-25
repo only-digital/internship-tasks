@@ -1,0 +1,6 @@
+mixin spoiler(props)
+	.spoiler&attributes(attributes)(data-component='spoiler')
+		.spoiler__title!= props.title
+			+svg('icon-btn').spoiler__svg
+		.spoiler__text-container
+			p.spoiler__text!= props.text
