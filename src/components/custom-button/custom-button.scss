@@ -1,0 +1,127 @@
+.custom-button {
+  $root: &;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  padding: 0px 14px 0px 18px;
+  gap: 14px;
+  border-radius: 25px;
+  border: 1px solid #bcbcbc;
+  color: #111;
+  background-color: white;
+  transition: all 0.3s ease;
+  margin-top: 5px;
+
+  &.alternative {
+    background-color: #f00;
+    border: 1px solid #f00;
+    color: white;
+
+    &:disabled {
+      color: #909090;
+      background-color: #f4f4f4;
+      border: 1px solid #f4f4f4;
+    }
+  }
+
+  &__svg {
+    width: 32px;
+    height: 32px;
+    transition: fill 0.3s;
+  }
+
+  &__text {
+    font-family: Arial;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    user-select: none;
+    line-height: 100%;
+    letter-spacing: -0.32px;
+  }
+
+  &:hover {
+    background: #0041a0;
+    color: #fff;
+    border: 1px solid #0041a0;
+
+    &.alternative {
+      background: #bf1d26;
+      border: 1px solid #bf1d26;
+    }
+  }
+
+  &:active {
+    background: #002f6c;
+    color: #fff;
+    border: 1px solid #002f6c;
+
+    &.alternative {
+      background: #81080f;
+      border: 1px solid #81080f;
+    }
+  }
+
+  &:focus {
+    border-radius: 24px;
+    border: 3px solid #99b3d8;
+    background-color: white;
+    color: #0041a0;
+
+    #{$root}__svg {
+      fill: white;
+    }
+
+    &.alternative {
+      border: 3px solid #99b3d8;
+      background-color: #ff0000;
+      color: #fff;
+    }
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  @media (max-width: 1280px) {
+    height: 42px;
+    padding: 0px 14px 0px 16px;
+    gap: 12px;
+
+    &__text {
+      font-size: 14px;
+      letter-spacing: -0.28px;
+    }
+
+    &__svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    height: 42px;
+    padding: 0px 14px 0px 18px;
+    gap: 14px;
+
+    &__text {
+      font-size: 16px;
+      letter-spacing: -0.32px;
+    }
+
+    &__svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    width: 327px;
+    height: 42px;
+    padding: 0px 14px;
+    gap: 12px;
+  }
+}
