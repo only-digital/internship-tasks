@@ -3,6 +3,7 @@ import Component from '../../app/js/base/Component';
 class Spoiler extends Component {
     iconElement;
     textElement;
+    isOpen = true;
 
     constructor(element) {
         super(element);
@@ -14,8 +15,20 @@ class Spoiler extends Component {
     }
 
     onButtonClick = () => {
-        this.textElement.classList.toggle('open')
-        this.iconElement.classList.toggle('open')
+
+        if (this.isOpen){
+            const scrollHeight = this.textElement.scrollHeight
+            this.textElement.classList.toggle('open')
+            this.iconElement.classList.toggle('open')
+            this.textElement.style.height = `${scrollHeight}px`
+            this.isOpen = !this.isOpen
+        }else{
+            this.textElement.classList.toggle('open')
+            this.iconElement.classList.toggle('open')
+            this.textElement.style.height = '0'
+            this.isOpen = !this.isOpen
+        }
+
     }
 }
 
