@@ -1,3 +1,110 @@
 .flex-container {
-    // Your code here
+    body {
+        box-sizing: border-box;
+    }
+
+    // Классы размеров блоков
+    .big {
+        height: 856px;
+    }
+
+    .medium {
+        height: 480px;
+    }
+
+    .small {
+        height: 420px;
+    }
+
+    //Классы цветов текста и фона
+
+    .grey {
+        background-color: #F4F4F4;
+        color: #04306A;
+    }
+
+    .blue {
+        background-color: blue;
+        color: #fff;
+    }
+
+    .light-blue {
+        background-color: #0041A0;
+        color: #fff;
+    }
+
+    // Column
+    .column {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    // Item
+    .item {
+        width: 100%;
+        position: relative;
+    }
+
+    .item__title {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 700;
+        font-size: 32px;
+        padding: 40px;
+    }
+
+    .item__btn {
+        position: absolute;
+        right: 33px;
+        bottom: 33px;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+
+    // Wrapper
+    .wrapper {
+        width: 1730px;
+        margin: 122px auto 120px;
+        flex-direction: column;
+    }
+
+    // Heading
+    .heading {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 700;
+        font-size: 46px;
+        color: blue;
+        margin-bottom: 80px;
+        line-height: 1;
+    }
+
+    .heading__text {
+        color: red;
+        padding-right: 12px;
+    }
+
+    // Container
+    .container {
+        min-height: 1788px;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    // Block
+    .double__block {
+        justify-content: space-between;
+    }
+
+    .double__block__elem {
+        width: 49.5%;
+    }
+
+    .triple__block {
+        justify-content: space-between;
+    }
+
+    .triple__block__elem {
+        width: 32.7%;
+    }
 }

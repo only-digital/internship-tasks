@@ -1,3 +1,34 @@
 mixin flex-container()
     section.flex-container
-        // Your code here
+        mixin item(title, size, color)
+            .item(class="" + size + ' ' + color)
+                p(class='item__title')= title
+                button(class="item__btn" type="button")
+                    if color === 'grey'
+                        img(class='white' src='../assets/images/Vector.png')
+                    else
+                        img(class='white' src='../assets/images/Vector__white.png')
+
+        div(class='wrapper')
+            div(class='heading')
+                span(class='heading__text') Комплексные
+                span предложения для мостостроения
+            div(class='container')
+                div(class='double__block')
+                    div(class='double__block__elem')
+                        +item('Мостовая сталь/Стальные конструкции мостов', 'big', 'grey')
+                    div(class='double__block__elem column')
+                        +item('Железобетонные конструкции мостов', 'small', 'grey')
+                        +item('Дорожные ограждения барьерного типа', 'small', 'grey')
+                div(class='triple__block')
+                    div(class='triple__block__elem')
+                        +item('Шпунтовой замок', 'medium', 'blue')
+                    div(class='triple__block__elem')
+                        +item('Мостовой крепеж', 'medium', 'grey')
+                    div(class='triple__block__elem')
+                        +item('Профили для деформационных швов', 'medium', 'light-blue')
+                div(class='double__block')
+                    div(class='double__block__elem')
+                        +item('Плетеные габионы', 'small', 'grey')
+                    div(class='double__block__elem')
+                        +item('Модульные мосты', 'small', 'grey')  
