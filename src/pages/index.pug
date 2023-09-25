@@ -1,20 +1,17 @@
-include ../components/flex-container/flex-container
-include ../components/grid-container/grid-container
-
+include ../components/flex-box/flex-box
+include ../components/grid-box/grid-box
 
 <!DOCTYPE html>
 html(lang="ru")
     head
+        script(src="https://kit.fontawesome.com/2d2208bf3d.js" crossorigin="anonymous")
         meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Задание 1
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
 
+        title Задание 1
     body
         main
-            h2 FlexBox
-            +flex-container
-
+            +grid-box
             hr
+            +flex-box
 
-            h2 Grid layout
-            +grid-container

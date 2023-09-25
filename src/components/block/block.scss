@@ -1,0 +1,33 @@
+.block {
+    width: 100%;
+    background-color: rgb(241, 241, 241);
+    height: 100%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: #04306A;
+
+    &__text {
+        font-size: 20px;
+        width: 100%;
+    }
+
+    &__icon {
+        cursor: pointer;
+        font-size: 26px;
+    }
+
+    &_bg {
+        &_blue {
+            background-color: #04306A;
+            color: white;
+        }
+        &_aqua{
+            background-color: #0041A0;
+            color: white;
+        }
+    }
+
+}

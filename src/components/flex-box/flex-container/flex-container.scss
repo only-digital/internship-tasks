@@ -1,0 +1,41 @@
+.flex-ct {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    --flex-ct_gap: 8px;
+    & > *{
+        margin-top: calc(var(--flex-ct_gap) * 2);
+    }
+        
+    &__box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 100%;
+
+        &_width {
+            &_s {
+                width: calc(33% - var(--flex-ct_gap));
+            }
+
+            &_n {
+                width: calc(50% - var(--flex-ct_gap));
+            }
+        }
+
+        &_height {
+            &_s {
+                height: 306px;
+            }
+
+            &_n {
+                height: 390px;
+            }
+
+            &_g {
+                flex-direction: column;
+                height: 628px;
+            }
+        }
+    }
+}

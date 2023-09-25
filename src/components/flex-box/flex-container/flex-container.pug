@@ -1,0 +1,42 @@
+include ../../block/block
+
+mixin flex-container()
+    section.flex-ct                         
+        .flex-ct__box
+            .flex-ct__box(class="flex-ct__box_width_n flex-ct__box_height_g")
+                +block({
+                    text:"Мостовая сталь/Стальные конструкции мостов",
+                })
+            .flex-ct__box(class="flex-ct__box_width_n flex-ct__box_height_g")
+                .flex-ct__box(class="flex-ct__box_height_s")
+                    +block({
+                        text:"Железобетонные конструкции мостов"
+                    })
+                .flex-ct__box(class="flex-ct__box_height_s")
+                    +block({
+                        text:"Дорожные ограждения барьерного типа"
+                    })
+        .flex-ct__box
+            .flex-ct__box(class="flex-ct__box_width_s flex-ct__box_height_n")      
+                +block({
+                    text:"Шпунтовой замок",
+                    class:"block_bg_blue"
+                })
+            .flex-ct__box(class="flex-ct__box_width_s flex-ct__box_height_n")
+                +block({
+                    text:"Мостовой крепеж",
+                })
+            .flex-ct__box(class="flex-ct__box_width_s flex-ct__box_height_n")
+                +block({
+                    text:"Профили для деформационных швов",
+                    class:"block_bg_aqua"
+                })
+        .flex-ct__box   
+            .flex-ct__box(class="flex-ct__box_width_n flex-ct__box_height_s")
+                +block({
+                    text:"Плетеные габионы"
+                })
+            .flex-ct__box(class="flex-ct__box_width_n flex-ct__box_height_s")
+                +block({
+                    text:"Модульные мосты"
+                })

@@ -1,0 +1,14 @@
+.title{
+    &__text{
+        font-size: 23px;
+        &_color{
+            &_red{
+                color:#FC0D1B;
+            }
+            &_blue{
+                color: #04306A;
+            }
+
+        }
+    }
+}

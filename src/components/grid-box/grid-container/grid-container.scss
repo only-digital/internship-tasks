@@ -1,0 +1,18 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 306px 306px 390px 306px;
+    grid-gap: 16px;
+    grid-template-areas:
+        "area1 area1 area1 area2 area2 area2"
+        "area1 area1 area1 area3 area3 area3"
+        "area4 area4 area5 area5 area6 area6"
+        "area7 area7 area7 area8 area8 area8"
+        "area7 area7 area7 area8 area8 area8"
+    ;
+    @for $i from 1 through 8{
+        .block:nth-child(#{$i}){
+            grid-area: area#{$i};
+        }
+    }
+}
