@@ -1,0 +1,108 @@
+@import '../styles/root/root.scss';
+
+@mixin blockContain {
+   width: 96%;
+   justify-content: space-between;
+}
+
+.flex-container {
+   @include containerPadding();
+   display: flex;
+   flex-direction: column;
+
+
+   &_title {
+      @include h2Style();
+   }
+
+   &_title span {
+      color: red
+   }
+
+   .card {
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px 0 37px 36px;
+      background: $greyF4;
+   }
+
+   .vectorBox {
+      justify-content: flex-end;
+      margin-right: 37px;
+   }
+
+   .card_title {
+      @include h3Style();
+   }
+
+   .first-block {
+      width: 100%;
+      margin-bottom: 16px;
+
+      &_left {
+         margin-right: 1%;
+         padding: 1.4% 0 0 .7%;
+         width: 47.9%;
+         height: 856px;
+         background: $greyF4;
+
+         .card {
+            width: 100%;
+         }
+      }
+
+      &_right {
+         width: 47.1%;
+         flex-direction: column;
+         justify-content: space-between;
+
+         .card {
+            height: 49%;
+         }
+
+      }
+
+
+   }
+
+   .second-block {
+      @include blockContain();
+      height: 30rem;
+      margin-bottom: 16px;
+
+      .card {
+         width: 32.5%;
+         background: $darkBlue;
+
+         .card_title {
+            color: $white;
+         }
+
+      }
+
+      .card:nth-child(2) {
+         background: $greyF4;
+
+         .card_title {
+            color: $darkBlue;
+         }
+
+         .vectorBox path {
+            fill: $darkBlue;
+         }
+      }
+
+      .card:last-child {
+         background: $lightBlue;
+      }
+   }
+
+   .third-block {
+      @include blockContain();
+      height: 26.3rem;
+
+      .card {
+         width: 49.5%;
+      }
+   }
+}

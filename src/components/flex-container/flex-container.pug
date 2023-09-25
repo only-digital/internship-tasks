@@ -1,0 +1,37 @@
+mixin flex-container()
+    section.flex-container
+      h2.flex-container_title <span>Комплексные&nbsp</span> предложения для мостостроения
+        -let titlesSecondBlock = ['Шпунтовой замок','Мостовой крепеж','Профили для деформационных швов'];
+        -let titlesThirdBlock = ['Плетеные габионы','Модульные мосты'];
+      .first-block
+         .first-block_left
+           .card
+              h3.card_title Мостовая сталь/Стальные конструкции мостов
+              .vectorBox
+               svg(width="66" height="36" viewBox="0 0 66 36" fill="none" xmlns="http://www.w3.org/2000/svg")
+                path(d="M58.6341 19.4L0.277588 19.4L0.277588 16.6L58.6341 16.6L58.6341 19.4ZM36.7642 36L35.1156 33.6L61.8761 20L61.8761 16L35.1156 2.4L36.7642 0L65.1181 14.4V21.6L36.7642 36Z" fill="#04306A")
+         .first-block_right
+            .card
+                 h3.card_title Железобетонные конструкции мостов
+                 .vectorBox
+                  svg(width="66" height="36" viewBox="0 0 66 36" fill="none" xmlns="http://www.w3.org/2000/svg")
+                   path(d="M58.6341 19.4L0.277588 19.4L0.277588 16.6L58.6341 16.6L58.6341 19.4ZM36.7642 36L35.1156 33.6L61.8761 20L61.8761 16L35.1156 2.4L36.7642 0L65.1181 14.4V21.6L36.7642 36Z" fill="#04306A")
+            .card
+                 h3.card_title Дорожные ограждения барьерного типа
+                 .vectorBox
+                   svg(width="66" height="36" viewBox="0 0 66 36" fill="none" xmlns="http://www.w3.org/2000/svg")
+                    path(d="M58.6341 19.4L0.277588 19.4L0.277588 16.6L58.6341 16.6L58.6341 19.4ZM36.7642 36L35.1156 33.6L61.8761 20L61.8761 16L35.1156 2.4L36.7642 0L65.1181 14.4V21.6L36.7642 36Z" fill="#04306A")
+      .second-block  
+       each elSecond in titlesSecondBlock
+        .card
+          h3.card_title= elSecond
+          .vectorBox
+            svg(width="66" height="36" viewBox="0 0 66 36" fill="none" xmlns="http://www.w3.org/2000/svg")
+             path(d="M58.6341 19.4L0.277588 19.4L0.277588 16.6L58.6341 16.6L58.6341 19.4ZM36.7642 36L35.1156 33.6L61.8761 20L61.8761 16L35.1156 2.4L36.7642 0L65.1181 14.4V21.6L36.7642 36Z" fill="#FFF")
+      .third-block 
+       each elThird in titlesThirdBlock
+        .card 
+          h3.card_title= elThird
+          .vectorBox
+           svg(width="66" height="36" viewBox="0 0 66 36" fill="none" xmlns="http://www.w3.org/2000/svg")
+            path(d="M58.6341 19.4L0.277588 19.4L0.277588 16.6L58.6341 16.6L58.6341 19.4ZM36.7642 36L35.1156 33.6L61.8761 20L61.8761 16L35.1156 2.4L36.7642 0L65.1181 14.4V21.6L36.7642 36Z" fill="#04306A") 

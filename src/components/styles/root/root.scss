@@ -1,0 +1,27 @@
+$darkBlue: #04306A;
+$lightBlue: #0041A0;
+$greyF4: #F4F4F4;
+$white: #FFF;
+
+@mixin containerPadding{
+    margin: 0 auto;
+    padding: 3% 0 0 5.5%;
+}
+
+@mixin h2Style {
+    margin-bottom: 80px;
+    font-family: 'Arial';
+    font-weight: 700;
+    font-size: 46px;
+    line-height: 1;
+    color: $darkBlue;
+}
+
+@mixin h3Style {
+    width: 95%;
+    font-family: 'Arial';
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38.4px;
+    color: $darkBlue;
+}
