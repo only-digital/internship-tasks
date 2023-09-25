@@ -1,3 +1,97 @@
+@mixin colored-bg($color) {
+  background-color: $color;
+}
+
 .grid-container {
-    // Your code here
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  gap: 16px 16px;
+  grid-auto-flow: row;
+  justify-items: stretch;
+  padding: 120px 95px;
+  &__title {
+    grid-template-columns: max-content max-content;
+    grid-template-rows: auto;
+    font-size: 46px;
+    color: blue;
+    margin-bottom: 80px;
+  }
+  &__content {
+    display: grid;
+    grid-template-rows: 856px 916px;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    justify-items: stretch;
+  }
+
+  &__row-1 {
+    grid-template-areas:
+      "A A A B B B"
+      "A A A C C C"
+      "D D E E F F"
+      "G G G H H H";
+    grid-template-rows: 420px 420px 480px 420px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-auto-flow: row;
+    gap: 1rem;
+    #cell-1 {
+      grid-area: A;
+    }
+    #cell-2 {
+      grid-area: B;
+    }
+    #cell-3 {
+      grid-area: C;
+    }
+    #cell-4 {
+      grid-area: D;
+    }
+    #cell-5 {
+      grid-area: E;
+    }
+    #cell-6 {
+      grid-area: F;
+    }
+    #cell-7 {
+      grid-area: G;
+    }
+    #cell-8 {
+      grid-area: H;
+    }
+  }
+}
+
+.item {
+  &__card {
+    padding: 24px 36px 33px 36px;
+    text-wrap: balance;
+    &.gray {
+      color: #04306a;
+      @include colored-bg(#f4f4f4);
+    }
+    &.blue {
+      color: white;
+      @include colored-bg(#04306a);
+    }
+    &.light-blue {
+      color: white;
+      @include colored-bg(#0041a0);
+    }
+  }
+}
+
+.card {
+  &__title {
+    font-size: 32px;
+  }
+
+  &__arrow {
+    cursor: pointer;
+    align-self: end;
+    justify-self: end;
+  }
+}
+
+span.colored {
+  @include colored-text(red);
 }

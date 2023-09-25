@@ -29,7 +29,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    .item {
+    .flex-item {
       flex: 1 1 calc((100% / 2) - 2rem);
     }
   }
@@ -40,13 +40,13 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    .item {
+    .flex-item {
       flex: 1 1 calc((100% / 3) - 2rem);
     }
   }
 }
 
-.item {
+.flex-item {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -56,6 +56,7 @@
     flex-direction: column;
     justify-content: space-between;
     flex-grow: 1;
+    text-wrap: balance;
     padding: 24px 36px 33px 36px;
     &.gray {
       color: #04306a;
@@ -72,7 +73,7 @@
   }
 }
 
-.card {
+.flex-card {
   &__title {
     font-size: 32px;
   }

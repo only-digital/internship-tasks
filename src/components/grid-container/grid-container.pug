@@ -1,3 +1,49 @@
+- var arrowBlue = '../assets/images/arrowBlue.svg'
+- var arrowGray = '../assets/images/arrowGray.svg'
+
 mixin grid-container()
     section.grid-container
-        // Your code here
+        h2.grid-container__title.
+            #[span.colored Комплексные] &#160;предложения для мостостроения
+        .grid-container__content
+            .grid-container__row-1
+                .item#cell-1
+                    .item__card.gray 
+                        .card__title Мостовая сталь/Стальные конструкции мостов
+                        .card__arrow
+                            img(src=arrowBlue, alt="arrowRight")
+                .item#cell-2
+                    .item__card.gray 
+                        .card__title Железобетонные конструкции мостов
+                        .card__arrow
+                            img(src=arrowBlue, alt="arrowRight")
+                .item#cell-3
+                    .item__card.gray 
+                        .card__title Дорожные ограждения барьерного типа
+                        .card__arrow
+                            img(src=arrowBlue, alt="arrowRight")
+                .item#cell-4 
+                    .item__card.blue 
+                        .card__title Шпунтовой замок
+                        .card__arrow
+                            img(src=arrowGray, alt="arrowRight") 
+                .item#cell-5 
+                    .item__card.gray 
+                        .card__title Мостовой крепеж
+                        .card__arrow
+                            img(src=arrowBlue, alt="arrowRight")
+                .item#cell-6 
+                    .item__card.light-blue
+                        .card__title Профили для деформационных швов
+                        .card__arrow
+                            img(src=arrowGray, alt="arrowRight")
+                .item#cell-7
+                    .item__card.gray
+                        .card__title Плетеные габионы
+                        .card__arrow
+                            img(src=arrowBlue, alt="arrowBlue")
+                .item#cell-8
+                    .item__card.gray
+                        .card__title Модульные мосты
+                        .card__arrow
+                            img(src=arrowBlue, alt="arrowBlue")
