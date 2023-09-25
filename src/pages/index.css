@@ -1,0 +1,10 @@
+.body {
+  margin: 0 auto;
+}
+
+.main {
+  min-width: 1920px;
+  max-width: 1920px;
+  padding: 0 96px;
+  margin: 0 auto;
+}
