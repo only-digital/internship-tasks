@@ -1,3 +1,5 @@
+@import '../../pages/index';
+
 .button-with-arrow {
 	$root: &;
 
@@ -12,7 +14,7 @@
 	transition: background .3s, box-shadow .2s, color .3s;
 
 	&__text {
-		font-family: Arial;
+		font-family: $arial-font;
 		font-size: 16px;
 		font-style: normal;
 		font-weight: 400;
@@ -27,67 +29,67 @@
 	}
 
 	&_style_withBorder {
-		border: 1px solid #BCBCBC;
-		background: #fff;
-		color: #111;
+		border: 1px solid $grey-1-color;
+		background: $white-color;
+		color: $black-color;
 
 		#{$root}__svg {
-			fill: #002F6C;
+			fill: $blue-color;
 		}
 
 		@media (hover: hover) {
 			&:hover {
-				color: #fff;
-				background: #0041A0;
-				border-color: #0041A0;
+				color: $white-color;
+				background: $cobolt-color;
+				border-color: $cobolt-color;
 
 				#{$root}__svg {
-					fill: #fff;
+					fill: $white-color;
 				}
 			}
 		}
 
 		&:active {
-			background: #002F6C;
-			border-color: #002F6C;
+			background: $blue-color;
+			border-color: $blue-color;
 		}
 	}
 
 	&_style_withBackground {
-		background: #FF0000;
-		color: #fff;
+		background: $red-color;
+		color: $white-color;
 
 		#{$root}__svg {
-			fill: #fff;
+			fill: $white-color;
 		}
 
 		@media (hover: hover) {
 			&:hover {
-				background: #BF1D26;
+				background: $dark-red-color;
 			}
 		}
 
 		&:disabled {
-			background: #F4F4F4;
+			background: $grey-3-color;
 		}
 
 		&:active {
-			background: #81080F;
+			background: $dark-red-2-color;
 		}
 
 	}
 
 	&:disabled {
-		color: #BCBCBC;
+		color: $grey-1-color;
 		pointer-events: none;
 
 		#{$root}__svg {
-			fill: #909090;
+			fill: $steel-color;
 		}
 	}
 
 	&:focus {
-		box-shadow: 0 0 0 3px #99B3D8;
+		box-shadow: 0 0 0 3px $focus-border-color;
 	}
 
 	@media screen and (max-width: 1919px) {
