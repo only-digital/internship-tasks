@@ -1,0 +1,7 @@
+mixin spoiler(props)
+  .spoiler&attributes(attributes)(data-component='spoiler')
+    .spoiler__title= props.title
+      +svg('spoiler-cross').spoiler__action
+    p.spoiler__text= props.text
+
+
