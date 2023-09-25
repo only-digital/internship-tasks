@@ -1,0 +1,94 @@
+@import "../../pages/variables";
+
+.toggle-button {
+	$root: &;
+
+	position: relative;
+	display: flex;
+
+	input {
+		opacity: 0;
+		width: 0;
+		height: 0;
+	}
+
+	@media (hover: hover) and (min-width: 1280px) {
+		&:hover {
+			input:checked + #{$root}__slider {
+				background-color: $blue;
+			}
+		}
+	}
+
+	@media screen and (min-width: 375px) {
+		width: 40px;
+		height: 20px;
+
+		&__slider {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+
+			border-radius: 14px;
+
+			background: $cloud-gray;
+			transition: background-color 0.3s;
+
+			cursor: pointer;
+
+			&:before {
+				content: "";
+				position: absolute;
+				left: 4px;
+				bottom: 4px;
+
+				width: 12px;
+				height: 12px;
+
+				border-radius: 50%;
+
+				background: $white;
+				transition: transform 0.3s;
+			}
+		}
+
+		input:checked + #{$root}__slider {
+			background-color: $cobolt;
+		}
+
+		input:checked + #{$root}__slider:before {
+			transform: translateX(20px);
+		}
+	}
+
+	@media screen and (min-width: 768px) {
+		width: 56px;
+		height: 28px;
+
+		&__slider {
+			&:before {
+				left: 6px;
+				bottom: 6px;
+
+				width: 16px;
+				height: 16px;
+			}
+		}
+
+		input:checked + #{$root}__slider:before {
+			transform: translateX(28px);
+		}
+	}
+
+	@media screen and (min-width: 1280px) {
+		& input:focus-visible + &__slider {
+			outline: $hawkes-blue solid 3px;
+		}
+	}
+}
+
+.disabled {
+	pointer-events: none;
+}

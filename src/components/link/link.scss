@@ -1,0 +1,68 @@
+@import "../../pages/variables";
+
+.link {
+	$root: &;
+
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+
+	cursor: pointer;
+
+	&:active {
+		#{$root}__text {
+			color: $dark-red;
+		}
+	}
+
+	@media screen and (min-width: 1280px) {
+		&:focus-visible {
+			background: rgba(0, 65, 160, 0.2);
+		}
+	}
+
+	@media (hover: hover) and (min-width: 1280px) {
+		&:hover {
+			#{$root}__text {
+				color: $red;
+			}
+		}
+	}
+	@media screen and (min-width: 375px) {
+		&__text {
+			font-family: "Arial", sans-serif;
+			font-size: 14px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 150%;
+			letter-spacing: -0.28px;
+
+			color: $cobolt;
+
+			&:active {
+				color: $dark-red;
+			}
+		}
+
+		@media screen and (min-width: 1280px) {
+			&__text {
+				font-size: 16px;
+				letter-spacing: -0.32px;
+			}
+		}
+	}
+
+	svg {
+		width: 24px;
+		height: 24px;
+	}
+}
+
+.disabled {
+	pointer-events: none;
+
+	.link__text {
+		color: $gray;
+	}
+}

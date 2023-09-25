@@ -1,0 +1,123 @@
+@import "../../pages/variables";
+
+.slider-buttons {
+	$root: &;
+
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	button:disabled {
+		opacity: 0.5;
+
+		pointer-events: none;
+
+		svg {
+			-webkit-filter: invert(0.5);
+			filter: invert(0.5) opacity(0.5);
+		}
+	}
+
+	@media screen and (min-width: 375px) {
+		gap: 24px;
+	}
+
+	@media screen and (min-width: 1920px) {
+		gap: 40px;
+	}
+
+	@media (hover: hover) and (min-width: 1280px) {
+		#{$root}__controls_left:hover > svg,
+		#{$root}__controls_right:hover > svg {
+			background: $light-gray;
+
+			border-color: $light-gray;
+		}
+	}
+
+	&__controls {
+		display: flex;
+
+		gap: 10px;
+
+		&_left > svg,
+		&_right > svg {
+			transition: background-color 0.3s;
+		}
+
+		&_left:active > svg,
+		&_right:active > svg {
+			background: $cloud-gray !important;
+		}
+
+		&_right > svg {
+			transform: rotate(180deg);
+		}
+
+		svg {
+			border: 1px solid $cloud-gray;
+			border-radius: 50%;
+
+			transition: border-color 0.3s;
+		}
+
+		@media screen and (min-width: 375px) {
+			&_left,
+			&_right {
+				width: 60px;
+				height: 60px;
+
+				svg {
+					width: 60px;
+					height: 60px;
+				}
+			}
+		}
+
+		@media screen and (min-width: 1280px) {
+			&_left:focus-visible > svg,
+			&_right:focus-visible > svg {
+				outline: $soft-blue solid 3px;
+			}
+		}
+
+		@media screen and (min-width: 1920px) {
+			&_left,
+			&_right {
+				width: 80px;
+				height: 80px;
+
+				svg {
+					width: 80px;
+					height: 80px;
+				}
+			}
+		}
+	}
+
+	&__text {
+		width: 54px;
+		height: 24px;
+
+		margin-right: 1px;
+
+		color: $steel-gray;
+
+		font-family: "Arial", sans-serif;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 150%;
+		letter-spacing: -0.32px;
+
+		opacity: 0.4;
+
+		@media screen and (max-width: 767px) {
+			display: none;
+		}
+	}
+}

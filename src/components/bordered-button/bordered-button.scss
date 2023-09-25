@@ -1,0 +1,126 @@
+@import "../../pages/variables";
+
+.bordered-button {
+	$root: &;
+
+	width: auto;
+
+	font-family: "Arial", sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	border-radius: 25px;
+	border: 1px solid $gray;
+
+	background: $white;
+
+	transition: background-color 0.3s;
+
+	&:disabled {
+		opacity: 0.5;
+
+		pointer-events: none;
+	}
+
+	@media screen and (min-width: 375px) {
+		width: 100%;
+		height: 42px;
+
+		padding: 0px 14px;
+		gap: 12px;
+
+		flex: 1 0 0;
+	}
+
+	@media screen and (min-width: 768px) {
+		width: -webkit-fit-content;
+		width: -moz-fit-content;
+		width: fit-content;
+
+		padding-left: 18px;
+		gap: 14px;
+	}
+
+	@media screen and (min-width: 1280px) and (max-width: 1919px) {
+		padding-left: 16px;
+		gap: 12px;
+	}
+
+	@media screen and (min-width: 1920px) {
+		height: 48px;
+	}
+
+	@media (hover: hover) and (min-width: 1280px) {
+		&:hover {
+			background: $cobolt;
+
+			#{$root}__text {
+				color: $white;
+			}
+
+			#{$root}__svg {
+				fill: $white;
+			}
+		}
+	}
+
+	&:active {
+		background: $blue;
+
+		#{$root}__text {
+			color: $white;
+		}
+	}
+
+	@media screen and (min-width: 1280px) {
+		&:focus-visible {
+			outline: $soft-blue solid 3px;
+
+			#{$root}__text {
+				color: $cobolt;
+			}
+
+			#{$root}__svg {
+				fill: $cobolt;
+			}
+		}
+	}
+
+	&__text {
+		color: $black;
+
+		font-style: normal;
+		font-weight: 400;
+		line-height: 100%;
+
+		transition: color 0.3s;
+
+		@media screen and (min-width: 375px) {
+			font-size: 16px;
+
+			letter-spacing: -0.32px;
+		}
+
+		@media screen and (min-width: 1280px) and (max-width: 1919px) {
+			font-size: 14px;
+
+			letter-spacing: -0.28px;
+		}
+	}
+
+	svg {
+		fill: $blue;
+		transition: fill 0.3s;
+
+		@media screen and (min-width: 375px) {
+			width: 24px;
+			height: 24px;
+		}
+
+		@media screen and (min-width: 1920px) {
+			width: 32px;
+			height: 32px;
+		}
+	}
+}

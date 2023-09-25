@@ -1,0 +1,4 @@
+mixin bordered-button(props)
+	button.bordered-button&attributes(attributes)
+		span.bordered-button__text!=props.text
+		+svg('arrow-icon').bordered-button__svg

@@ -2,6 +2,23 @@ extends ../../build_modules/common
 
 
 block body
-    +example-button({text: 'example text'})
-    +example-button({text: 'disabled'})(disabled='')
+    +bordered-button({text: 'Кнопка'})
+    br
+    +bordered-button({text: 'Кнопка'})(disabled=true)
+    br
+    +filled-button({text: 'Кнопка'})
+    br
+    +filled-button({text: 'Кнопка'})(disabled=true)
+    br
+    +slider-buttons({page: 1, total: 4})
+    br
+    +slider-buttons({page: 1, total: 4})(disabled=true)
+    br
+    +link({text: 'Sustainalytics.com'})(href='')
+    br
+    +link({text: 'Sustainalytics.com'})(class='disabled')
+    br
+    +toggle-button()
+    br
+    +toggle-button()(class='disabled')
     //Your code here

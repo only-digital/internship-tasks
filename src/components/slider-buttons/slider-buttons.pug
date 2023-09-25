@@ -1,0 +1,8 @@
+mixin slider-buttons(props = {})
+	div.slider-buttons&attributes(attributes)
+		div.slider-buttons__controls
+			button(disabled=attributes.disabled).slider-buttons__controls_left
+				+svg('left-arrow')
+			button(disabled=attributes.disabled).slider-buttons__controls_right
+				+svg('left-arrow')
+		span.slider-buttons__text= `${props.page} / ${props.total}`
