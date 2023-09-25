@@ -3,13 +3,35 @@
   min-width: 564px;
   height: 100%;
   background: #F4F4F4;
+  flex-grow: 1;
 }
 .product-card_background-color_dark {
   background: var(--blue, #04306A);
 }
+.product-card_style_bg {
+  background: #0041A0;
+}
+.product-card_style_bg .product-card__title {
+  color: #F4F4F4;
+}
+.product-card_style_bg-dark {
+  background-color: #04306A;
+}
+.product-card_style_bg-dark .product-card__title {
+  color: #F4F4F4;
+}
 .product-card__title {
-  font-size: 20px;
-  color: green;
+  position: absolute;
+  padding: 24px 36px 0;
+  max-height: 155px;
+  overflow: hidden;
+  color: var(--blue, #04306A);
+  font-family: Arial, sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: -0.64px;
 }
 .product-card__button-view {
   content: "sds";
@@ -17,19 +39,45 @@
   display: block;
   bottom: 30px;
   right: 30px;
+}
+
+._temp {
+  background-color: #04306A;
 }
 </style><style>.product-card {
   position: relative;
   min-width: 564px;
   height: 100%;
   background: #F4F4F4;
+  flex-grow: 1;
 }
 .product-card_background-color_dark {
   background: var(--blue, #04306A);
 }
+.product-card_style_bg {
+  background: #0041A0;
+}
+.product-card_style_bg .product-card__title {
+  color: #F4F4F4;
+}
+.product-card_style_bg-dark {
+  background-color: #04306A;
+}
+.product-card_style_bg-dark .product-card__title {
+  color: #F4F4F4;
+}
 .product-card__title {
-  font-size: 20px;
-  color: green;
+  position: absolute;
+  padding: 24px 36px 0;
+  max-height: 155px;
+  overflow: hidden;
+  color: var(--blue, #04306A);
+  font-family: Arial, sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: -0.64px;
 }
 .product-card__button-view {
   content: "sds";
@@ -38,21 +86,22 @@
   bottom: 30px;
   right: 30px;
 }
+
+._temp {
+  background-color: #04306A;
+}
 </style><!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Задание 1</title><style>.body {
   margin: 0 auto;
-  border: 1px solid red;
-  max-width: 1920px;
 }
 
 .main {
-  padding: 0 30px;
+  min-width: 1920px;
+  max-width: 1920px;
+  padding: 0 96px;
   margin: 0 auto;
-  width: 100%;
-  background-repeat: repeat;
 }
 </style></head><body class="body"><main class="main"><h2>FlexBox</h2><style>.header {
   width: 100%;
-  border: 1px solid red;
 }
 .header_position {
   margin-top: 122px;
@@ -60,7 +109,7 @@
 }
 .header__title {
   color: var(--blue, #04306A);
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   font-size: 46px;
   font-style: normal;
   font-weight: 700;
@@ -70,25 +119,8 @@
 .header__title_accent {
   color: var(--Red, #FC0D1B);
 }
-</style><header class="header header_position"><h1 class="header__title"><span class="header__title_accent">Комплексные</span> предложения для мостостроения</h1></header><section class="flex-container"><div class="flex-container__wrapper flex-container__wrapper_type_square"><div class="product-card"><h4 class="product-card__title">Мостовая сталь/Стальные конструкции мостов</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none">
-<path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/>
-</svg></button></div></div><div class="flex-container__wrapper flex-container__wrapper_type_square"><div class="product-card"><h4 class="product-card__title">Железобетонные конструкции мостов</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none">
-<path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/>
-</svg></button></div><div class="product-card"><h4 class="product-card__title">Дорожные ограждения барьерного типа</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none">
-<path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/>
-</svg></button></div></div><div class="flex-container__wrapper flex-container__wrapper_type_rectangle"><div class="product-card"><h4 class="product-card__title">Шпунтовой замок</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none">
-<path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/>
-</svg></button></div><div class="product-card"><h4 class="product-card__title">Мостовой крепеж</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none">
-<path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/>
-</svg></button></div><div class="product-card"><h4 class="product-card__title">Профили для деформационных швов</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none">
-<path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/>
-</svg></button></div><div class="product-card"><h4 class="product-card__title">Плетеные габионы</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none">
-<path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/>
-</svg></button></div><div class="product-card"><h4 class="product-card__title">Модульные мосты</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none">
-<path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/>
-</svg></button></div></div></section><img src="/../assets/images/temp.png"/><hr/><h2>Grid layout</h2><style>.header {
+</style><header class="header header_position"><h1 class="header__title"><span class="header__title_accent">Комплексные</span> предложения для мостостроения</h1></header><section class="flex-container"><div class="flex-container__wrapper flex-container__wrapper_type_square"><div class="product-card"><h4 class="product-card__title">Мостовая сталь/Стальные конструкции мостов</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none"><path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/></svg></button></div></div><div class="flex-container__wrapper flex-container__wrapper_type_square"><div class="product-card"><h4 class="product-card__title">Железобетонные конструкции мостов</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none"><path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/></svg></button></div><div class="product-card"><h4 class="product-card__title">Дорожные ограждения барьерного типа</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none"><path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/></svg></button></div></div><div class="flex-container__wrapper flex-container__wrapper_type_rectangle"><div class="product-card product-card_style_bg-dark"><h4 class="product-card__title">Шпунтовой замок</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none"><path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#FFFFFF"/></svg></button></div><div class="product-card"><h4 class="product-card__title">Мостовой крепеж</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none"><path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/></svg></button></div><div class="product-card product-card_style_bg"><h4 class="product-card__title">Профили для деформационных швов</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none"><path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#FFFFFF"/></svg></button></div></div><div class="flex-container__wrapper flex-container__wrapper_type_rectangle"><div class="product-card"><h4 class="product-card__title">Плетеные габионы</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none"><path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/></svg></button></div><div class="product-card"><h4 class="product-card__title">Модульные мосты</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none"><path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/></svg></button></div></div></section><hr/><h2>Grid layout</h2><style>.header {
   width: 100%;
-  border: 1px solid red;
 }
 .header_position {
   margin-top: 122px;
@@ -96,7 +128,7 @@
 }
 .header__title {
   color: var(--blue, #04306A);
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   font-size: 46px;
   font-style: normal;
   font-weight: 700;
@@ -106,20 +138,4 @@
 .header__title_accent {
   color: var(--Red, #FC0D1B);
 }
-</style><header class="header header_position"><h1 class="header__title"><span class="header__title_accent">Комплексные</span> предложения для мостостроения</h1></header><section class="grid-container"><div class="card_position_1"><div class="product-card"><h4 class="product-card__title">Мостовая сталь/Стальные конструкции мостов</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none">
-<path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/>
-</svg></button></div></div><div class="card_position_2"><div class="product-card"><h4 class="product-card__title">Железобетонные конструкции мостов</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none">
-<path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/>
-</svg></button></div></div><div class="card_position_3"><div class="product-card"><h4 class="product-card__title">Дорожные ограждения барьерного типа</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none">
-<path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/>
-</svg></button></div></div><div class="card_position_4"><div class="product-card"><h4 class="product-card__title">Шпунтовой замок</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none">
-<path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/>
-</svg></button></div></div><div class="card_position_5"><div class="product-card"><h4 class="product-card__title">Мостовой крепеж</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none">
-<path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/>
-</svg></button></div></div><div class="card_position_6"><div class="product-card"><h4 class="product-card__title">Профили для деформационных швов</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none">
-<path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/>
-</svg></button></div></div><div class="card_position_7"><div class="product-card"><h4 class="product-card__title">Плетеные габионы</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none">
-<path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/>
-</svg></button></div></div><div class="card_position_8"><div class="product-card"><h4 class="product-card__title">Модульные мосты</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none">
-<path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/>
-</svg></button></div></div></section></main></body></html>
+</style><header class="header header_position"><h1 class="header__title"><span class="header__title_accent">Комплексные</span> предложения для мостостроения</h1></header><section class="grid-container"><div class="card_position_1"><div class="product-card"><h4 class="product-card__title">Мостовая сталь/Стальные конструкции мостов</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none"><path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/></svg></button></div></div><div class="card_position_2"><div class="product-card"><h4 class="product-card__title">Железобетонные конструкции мостов</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none"><path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/></svg></button></div></div><div class="card_position_3"><div class="product-card"><h4 class="product-card__title">Дорожные ограждения барьерного типа</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none"><path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/></svg></button></div></div><div class="card_position_4"><div class="product-card product-card_style_bg-dark"><h4 class="product-card__title">Шпунтовой замок</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none"><path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#FFFFFF"/></svg></button></div></div><div class="card_position_5"><div class="product-card"><h4 class="product-card__title">Мостовой крепеж</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none"><path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/></svg></button></div></div><div class="card_position_6"><div class="product-card product-card_style_bg"><h4 class="product-card__title">Профили для деформационных швов</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none"><path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#FFFFFF"/></svg></button></div></div><div class="card_position_7"><div class="product-card"><h4 class="product-card__title">Плетеные габионы</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none"><path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/></svg></button></div></div><div class="card_position_8"><div class="product-card"><h4 class="product-card__title">Модульные мосты</h4><button class="product-card__button-view"><svg xmlns="http://www.w3.org/2000/svg" width="66" height="36" viewBox="0 0 66 36" fill="none"><path d="M59.4243 19.4L0.98584 19.4L0.98584 16.6L59.4243 16.6L59.4243 19.4ZM37.5237 36L35.8728 33.6L62.6709 20L62.6709 16L35.8728 2.4L37.5237 0L65.9174 14.4V21.6L37.5237 36Z" fill="#04306A"/></svg></button></div></div></section></main></body></html>

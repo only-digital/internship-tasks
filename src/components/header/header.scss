@@ -1,6 +1,6 @@
 .header {
   width: 100%;
-  border: 1px solid red;
+
   &_position {
     margin-top: 122px;
     margin-bottom: 80px;
@@ -8,7 +8,7 @@
 
   &__title {
     color: var(--blue, #04306A);
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     font-size: 46px;
     font-style: normal;
     font-weight: 700;
