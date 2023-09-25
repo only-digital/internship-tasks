@@ -1,0 +1,57 @@
+@import '../../pages/index';
+
+.link {
+	$root: &;
+
+	display: inline-flex;
+	align-items: center;
+	width: fit-content;
+	color: $cobolt-color;
+	transition: background .3s, color .3s;
+
+	&__text {
+		font-family: $arial-font;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 150%;
+		letter-spacing: -0.32px;
+	}
+
+	&__svg {
+		width: 24px;
+		height: 24px;
+		margin-left: 12px;
+		fill: $blue-color;
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			color: $red-color;
+		}
+	}
+
+	&:active {
+		color: $dark-red-color;
+	}
+
+	&:focus {
+		background: rgba(0, 65, 160, 0.15);
+	}
+
+	&_disabled {
+		pointer-events: none;
+		color: $grey-1-color;
+	}
+
+	@media screen and (max-width: 768px) {
+		&__text {
+			font-size: 14px;
+			letter-spacing: -0.28px;
+		}
+
+		&__svg {
+			margin-left: 10px;
+		}
+	}
+}

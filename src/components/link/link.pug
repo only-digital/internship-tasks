@@ -1,0 +1,7 @@
+mixin link(props)
+	a(class=['link', attributes.href ? '' : 'link_disabled'])&attributes(attributes)(tabindex='1')
+		| &nbsp;
+		span.link__text= props.text
+		if (!props.hiddenIcon)
+			+svg('link-icon').link__svg
+		| &nbsp;

@@ -22,3 +22,18 @@ block body
         div(style={display: 'flex', gap: '10px'})
             +main-slider-button({direction: 'left'})(disabled='')
             +main-slider-button({direction: 'right'})(disabled='')
+
+    +space-container('Ссылки')
+        +link({text: 'Sustainalytics.com'})(href='#')
+        +link({text: 'Sustainalytics.com'})
+
+    +space-container('Ссылки в тексте')
+        p.text Для подключения сервиса добавьте  номер
+            +link({text: '+7(921)058-57-19', hiddenIcon: true })(href='#')
+            | в ваши контакты
+            | и напишите любое сообщение, или перейдите по ссылке ниже
+
+        p.text Цифровые продукты, направленные на создание
+            +link({text: 'дополнительных сервисов', hiddenIcon: true})(href='#')
+            | и устранение «проблемных точек» наших клиентов
+
