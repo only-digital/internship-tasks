@@ -1,3 +1,25 @@
 mixin grid-container()
     section.grid-container
-        // Your code here
+        mixin item(title, color, number)
+            .item(class="" + color + ' ' + number)
+                p(class='item__title')= title
+                button(class="item__btn" type="button")
+                    if color === 'grey'
+                        img(class='white' src='../assets/images/Vector.png')
+                    else
+                        img(class='white' src='../assets/images/Vector__white.png')
+        
+        div(class='wrapper')
+            div(class='heading')
+                span(class='heading__text') Комплексные
+                span предложения для мостостроения
+            div(class='container')
+                +item('Мостовая сталь/Стальные конструкции мостов', 'grey', 'item_1')
+                +item('Железобетонные конструкции мостов', 'grey', 'item_2')
+                +item('Дорожные ограждения барьерного типа', 'grey', 'item_3')
+                +item('Шпунтовой замок', 'blue', 'item_4')
+                +item('Мостовой крепеж', 'grey', 'item_5')
+                +item('Профили для деформационных швов', 'light-blue', 'item_6')
+                +item('Плетеные габионы', 'grey', 'item_7')
+                +item('Модульные мосты', 'grey', 'item_8')
+            
