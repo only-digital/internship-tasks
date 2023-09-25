@@ -5,6 +5,7 @@
 
     &_title {
         @include h2Style();
+<<<<<<< HEAD
         grid-template-columns:  max-content max-content;
     }
 
@@ -12,6 +13,13 @@
         color: red;
         margin-right: 10px;
         
+=======
+        display: flex !important;
+    }
+
+    &_title span {
+        color: red
+>>>>>>> 4e82480eaa3aa1d415538c8c7fab826d284e797e
     }
 
     &_box {
