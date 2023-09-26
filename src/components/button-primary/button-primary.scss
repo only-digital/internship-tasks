@@ -11,12 +11,25 @@
   color: black;
   transition: background-color 0.3s, color 0.3s, opacity 0.3s, outline 0.3s;
 
+  &[color='red'] {
+    color: white;
+    background-color: #ff0000;
+    border: none;
+    #{$root}__svg {
+      fill: white;
+    }
+  }
+
   &:disabled {
     color: #909090;
     pointer-events: none;
     #{$root}__svg {
       fill: #bcbcbc;
     }
+  }
+  &:disabled[color='red'] {
+    border: none;
+    background-color: #f4f4f4;
   }
   &:focus {
     outline: 3px solid #99b3d8;
@@ -26,6 +39,9 @@
     &:hover {
       background-color: #0041a0;
       color: white;
+      &[color='red'] {
+        background-color: #bf1d26;
+      }
 
       #{$root}__svg {
         fill: white;
@@ -34,6 +50,9 @@
   }
   &:active {
     background-color: #002f6c;
+    &[color='red'] {
+      background-color: #81080f;
+    }
   }
 
   @media (min-width: 1280px) {
@@ -41,7 +60,7 @@
   }
 
   @media (max-width: 375px) {
-    width: 100%;
+    width: 327px;
   }
 
   &__text {

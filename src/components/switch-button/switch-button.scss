@@ -17,6 +17,14 @@
         left: 34px;
       }
     }
+    @media (max-width: 375px) {
+      height: 20px;
+      width: 40px;
+      border-radius: 10px;
+      &:checked::before {
+        left: 24px;
+      }
+    }
     &::before {
       content: '';
       position: absolute;
@@ -27,6 +35,12 @@
       background-color: white;
       border-radius: 50%;
       transition: left 0.3s;
+      @media (max-width: 375px) {
+        width: 12px;
+        height: 12px;
+        top: 4px;
+        left: 4px;
+      }
     }
     &:focus {
       outline: 3px solid #99b3d8;
@@ -37,5 +51,4 @@
       }
     }
   }
-  //Your code here
 }

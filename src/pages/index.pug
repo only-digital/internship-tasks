@@ -4,8 +4,8 @@ extends ../../build_modules/common
 block body
     +button-primary({text: 'Кнопка'})
     +button-primary({text: 'Кнопка'})(disabled='')
-    +button-secondary({text: 'Кнопка'})
-    +button-secondary({text: 'Кнопка'})(disabled='')
+    +button-primary({text: 'Кнопка'})(color='red')
+    +button-primary({text: 'Кнопка'})(disabled='')(color='red')
     +slider-navigation({text: '01/04'})    
     +slider-navigation({text: '01/04'})(disabled='')
     +link({text: 'Ссылка', href:'#'})    
