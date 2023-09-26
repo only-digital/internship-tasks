@@ -5,11 +5,13 @@
 
     &_title {
         @include h2Style();
-        display: flex !important;
+        grid-template-columns:  max-content max-content;
     }
 
     &_title span {
-        color: red
+        color: red;
+        margin-right: 10px;
+        
     }
 
     &_box {

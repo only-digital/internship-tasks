@@ -1,6 +1,6 @@
 @import '../src/components/flex-container/flex-container';
 @import '../src/components/grid-container/grid-container' ;
-@import '../src/components/styles/fonts-sass/arial.css';
+
 
 
 html {
@@ -68,4 +68,4 @@ button {
 }
 
 
-main>{hr{margin:60px 0!important;}h2,hr{pointer-events:none!important;}section.flex-container{&,& *{display:flex!important;}}section.grid-container{&,& *{display:grid;}}h2{font-size:calc(40px + (65 - 40) * (100vw - 1280px) / (1920 - 1280))!important;}}
+main>{hr{margin:60px 0!important;}h2,hr{pointer-events:none!important;}section.flex-container{&,& *{display:flex!important;}}section.grid-container{&,& *{display:grid!important;}}h2{font-size:calc(40px + (65 - 40) * (100vw - 1280px) / (1920 - 1280))!important;}}
