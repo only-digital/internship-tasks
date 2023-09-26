@@ -5,8 +5,7 @@
   flex-direction: column;
   width: 90%;
   gap: 80px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 122px auto 120px;
 
   h2 {
     font-size: 46px;
@@ -22,6 +21,13 @@
   flex-direction: column;
 }
 
+.block {
+  background-color: #F4F4F4;
+  padding: 24px 36px 36px;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
 .containers-wrapper {
   width: 100%;
   @extend %column-flex;
@@ -30,14 +36,20 @@
 .bridges-constructions {
   height: 856px;
   gap: 18px;
+
   .block {
     flex: 0 50%;
+  }
+
+  .block.large {
+    padding: 49px 37px 25px 49px;
   }
 }
 
 .blocks-wrapper {
   @extend %column-flex;
   flex: 0 50%;
+
   .block {
     height: 420px;
   }
@@ -46,19 +58,25 @@
 .fasteners {
   height: 480px;
   gap: 18px;
-  div {
+
+  .block {
     flex: 0 33%;
+    padding-top: 23px;
+    padding-bottom: 30px;
   }
 }
 
 .modules {
   height: 420px;
   gap: 18px;
+
   .block {
     flex: 0 50%;
   }
 }
 
-.block {
-  background-color: #F4F4F4;
+.vector {
+  width: 65px;
+  height: 36px;
+  align-self: end;
 }

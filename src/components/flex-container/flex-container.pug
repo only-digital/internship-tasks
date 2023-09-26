@@ -1,26 +1,39 @@
 mixin flex-container()
+    - var blueVector = '../assets/images/Vector-blue.png'
+    - var whiteVector = '../assets/images/Vector-white.png'
     section.flex-container
         h2
             span(style='color: #FC0D1B') Комплексные&nbsp
             | предложения для мостостроения
         div.containers-wrapper
             div.bridges-constructions
-                div.block
+                div.block.large
                     h4 Мостовая сталь/Стальные конструкции мостов
+                    img.vector(src=blueVector)
                 div.blocks-wrapper
                     div.block
                         h4 Железобетонные конструкции мостов
+                        img.vector(src=blueVector)
                     div.block
                         h4 Дорожные ограждения барьерного типа
+                        img.vector(src=blueVector)
             div.fasteners
-                div.block
+                div.block(style={color: '#FFFFFF', background: '#04306A'})
                     h4 Шпунтовой замок
+                    img.vector(src=whiteVector)
                 div.block
                     h4 Мостовой крепеж
-                div.block
-                    h4 Профили для деформационных швов
+                    img.vector(src=blueVector)
+                div.block(style={color: '#FFFFFF', background: '#0041A0'})
+                    h4 Профили для #[br] деформационных швов
+                    img.vector(src=whiteVector)
             div.modules
                 div.block
                     h4 Плетеные габионы
+                    img.vector(src=blueVector)
                 div.block
                     h4 Модульные мосты
+                    img.vector(src=blueVector)
+
+
+
