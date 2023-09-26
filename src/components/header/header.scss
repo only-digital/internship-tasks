@@ -1,0 +1,60 @@
+.header {
+	$root: &;
+
+	&__date{
+		margin-left: 90px;
+		color: #8F8F8F;
+		font-size: 20px;
+		line-height: 140%;
+	}
+	&__title{
+		color: #04306A;
+		font-size: 64px;
+		margin: 20px 0 45px 80px;
+	}
+
+	&__loader {
+		display: none;
+		width: 30px;
+		height: 30px;
+
+		&.active{
+			display: inline-block;
+
+			&:after {
+				content: " ";
+				display: block;
+				width: 64px;
+				height: 64px;
+				margin: 8px;
+				border-radius: 50%;
+				border: 6px solid black;
+				border-color: blue transparent blue transparent;
+				animation: lds-dual-ring 1.2s linear infinite;
+			}
+			@keyframes lds-dual-ring {
+				0% {
+					transform: rotate(0deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+		}
+
+	}
+
+	&__info{
+		color: #8F8F8F;
+		font-size: 16px;
+		line-height: 130%;
+		display: flex;
+		gap: 36px;
+		margin: 0 0 144px 80px;
+
+		&.hidden{
+			display: none;
+		}
+	}
+
+}
