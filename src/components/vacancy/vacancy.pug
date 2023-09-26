@@ -1,0 +1,18 @@
+mixin vacancy({date="18 декабря 2020", title="Vacancy Title", content=[{title: "Block title 1", text: ["Text 1", "Text 2"]}, {title: "Block title 2", text: ["Text 1", "Text 2"]}]})
+	.vacancy(data-component="vacancy", attributes=attributes)
+		.vacancy__head
+			p.vacancy__head--date= date
+			h1.vacancy__head--title= title
+			div.vacancy__head--stats.stats
+				div.stats__views.preloader
+				div.stats__responses.preloader
+		.vacancy__main
+			each item in content
+				section.vacancy__main--item.item
+					h2.item__title= item.title
+					ul.item__list
+						each text in item.text
+							li.item__list--el= text
+		.vacancy__footer
+			+form
+

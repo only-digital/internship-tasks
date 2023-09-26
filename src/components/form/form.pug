@@ -1,3 +1,13 @@
 mixin form(props)
-	.form&attributes(attributes)(data-component='form')
-		//Your code here
+	form.form&attributes(attributes)(data-component='form')
+		h2.form__title Форма обратной связи
+		.form__content 
+			label(class="email__label" for="email") Email
+			input(class="form__content--email email" type="email" name="email" id="email")
+			div.checkbox
+				input(class="form__content--checkbox checkbox" type="checkbox" name="checkbox" id="checkbox")
+				label(class="checkbox__label" for="checkbox")
+					| Вы подтверждаете, что ознакомились с 
+					a(href="#") политикой обработки персональных данных
+			button(class="form__content--btn" type="submit") Отправить
+				+svg('arrow-svg')

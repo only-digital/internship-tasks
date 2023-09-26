@@ -1,5 +1,131 @@
+$white: #FFF;
+$blue: #0041A0;
+$dark-blue: #002F6C;
+$grey: #909090;
+
 .form {
 	$root: &;
+	font-family: Arial, sans-serif;
 
-	//Your code here
+	display: flex;
+	justify-content: space-between;
+
+	
+	label {
+		color: $grey;
+
+		& > a {
+			color: $blue;
+
+			&:active {
+				color: $dark-blue;
+			}
+		}
+	}
+
+	&__title {
+		color: $dark-blue;
+		height: 100%;
+		font-size: 32px;
+		line-height: 120%; 
+		letter-spacing: -0.6px;
+
+	}
+
+	&__content {
+
+		&--email {
+			display: block;
+			width: 100%;
+			border-radius: 24px;
+			border: 1px solid $blue;
+			height: 48px;
+			padding: 8px 20px;
+
+		}
+
+		.email__label {
+			padding-left: 20px;
+			font-size: 12px;
+			line-height: 150%;
+			letter-spacing: -0.2px;
+		}
+		
+		.checkbox {
+			margin-top: 60px;
+
+			input[type="checkbox"] {
+			  position: absolute;
+			  opacity: 0;
+			  cursor: pointer;
+			}
+		  
+			.checkbox__label {
+			  position: relative;
+			  padding-left: calc(25px + 18px);
+			  cursor: pointer;
+		  
+			  &:before {
+				content: "";
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 18px;
+				height: 18px;
+				border: 1px solid #ccc;
+				background-color: #fff;
+			  }
+			}
+		  
+			input[type="checkbox"]:checked + .checkbox__label:before {
+			  background-color: #007bff;
+			}
+		  
+			.checkbox__label:after {
+			  content: "";
+			  position: absolute;
+			  left: 6px;
+			  top: 3px;
+			  width: 5px;
+			  height: 10px;
+			  border: solid #fff;
+			  border-width: 0 2px 2px 0;
+			  transform: rotate(45deg);
+			  display: none;
+			}
+		  
+			input[type="checkbox"]:checked + .checkbox__label:after {
+			  display: block;
+			}
+		  }
+		
+
+		&--btn {
+			margin-top: 30px;
+
+			background-color: $blue;
+
+			color: $white;
+			font-size: 16px;
+			letter-spacing: -0.3px;
+			
+			padding: 0px 14px 0px 18px;
+			height: 48px;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			border-radius: 25px;
+			svg {
+				margin-left: 14px;
+				width: 32px;
+				height: 32px;
+			}
+
+			&:active {
+				background-color: $dark-blue;
+			}
+		}
+	}
 }
