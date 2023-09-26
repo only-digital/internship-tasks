@@ -5,13 +5,10 @@ class Spoiler extends Component {
   constructor(element) {
     super(element);
 
-    this.root.addEventListener("click", (e) => {
-      if (e.target.classList.contains("spoiler__list-item__toggler")) {
-        e.target.classList.toggle("opened");
-      }
-    });
+    this.root.addEventListener("click", this.onClick);
   }
-  // Your code here
+
+  onClick = (e) => e.currentTarget.classList.toggle("opened");
 }
 
 export default Spoiler;

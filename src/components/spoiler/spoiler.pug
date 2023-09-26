@@ -1,15 +1,13 @@
 
 mixin spoiler(props)
 	.spoiler&attributes(attributes)(data-component='spoiler')
-		h1.spoiler__title!= props.title
-		ol.spoiler__list
-			each item in props.items
-				li.spoiler__list-item
-					div.spoiler__list-item__title
-						h2= item.title
-						button.spoiler__list-item__toggler 
-							include ../../assets/icons/plus.svg
-					div.spoiler__list-item__content-wrapper
-						p.spoiler__list-item__content!= item.content
+		div.spoiler__title
+			span.spoiler__count!= props.count
+			h2!= props.title
+			button.spoiler__toggler 
+				include ../../assets/icons/plus.svg
+		div.spoiler__content-wrapper
+			p.spoiler__content!= props.content
+
 
 
