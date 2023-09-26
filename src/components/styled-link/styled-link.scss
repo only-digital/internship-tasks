@@ -33,7 +33,7 @@ $color-extra-red: #BF1D26;
 	letter-spacing: calc(-.02 * 16px);
 	color: $color-extra-cobolt;
 	transition: color .3s ease-in-out;
-
+	outline: none;
 
 	@media (hover: hover) and (min-width: 1280px) {
 		&:hover {
@@ -44,7 +44,6 @@ $color-extra-red: #BF1D26;
 	@media (min-width: 1280px) {
 		&:focus-visible {
 			background-color: rgba($color-extra-blue, .15);
-			outline: none;
 		}
 	}
 
@@ -55,10 +54,6 @@ $color-extra-red: #BF1D26;
 	&_disabled {
 		pointer-events: none;
 		color: $color-main-grey;
-
-		&:focus-visible {
-			outline: none;
-		}
 	}
 
 	svg {
