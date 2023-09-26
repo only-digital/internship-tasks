@@ -1,0 +1,37 @@
+.block {
+   flex-direction: column;
+
+   padding: 5%;
+
+   background-color: #f4f4f4;
+   color: #04306a;
+
+   font-family: Arial;
+   font-size: 32px;
+   font-weight: 700;
+   line-height: 120%;
+   letter-spacing: -0.64px;
+
+   &_light-gray {
+      background-color: #f4f4f4;
+      color: #0041a0;
+   }
+
+   &_light-blue {
+      background-color: #0041a0;
+      color: #fff;
+   }
+
+   &_dark-blue {
+      background-color: #04306a;
+      color: #fff;
+   }
+
+   &__arrow {
+      display: block;
+      margin: auto 0 0 auto;
+      width: 66px;
+      height: 36px;
+      flex: 0 0 auto;
+   }
+}

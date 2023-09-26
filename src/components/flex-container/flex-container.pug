@@ -1,3 +1,32 @@
+include ../block/block
+
+
 mixin flex-container()
     section.flex-container
-        // Your code here
+        h1.title
+            span.title_red Комплексные 
+            | предложения для мостостроения
+        .column.column_main
+            .row.row_first
+                .item
+                    +block('light-grey', 'Мостовая сталь/Стальные конструкции мостов')
+                .column.column_inner
+                    .item
+                        +block('light-grey', 'Железобетонные конструкции мостов')
+                    .item
+                        +block('light-grey', 'Дорожные ограждения барьерного типа')
+
+            .row.row_second
+                .item
+                    +block('dark-blue', 'Шпунтовой замок')
+                .item
+                    +block('light-grey', 'Мостовой крепеж')
+                .item
+                    +block('light-blue', 'Профили для <br> деформационных швов')
+
+            .row.row_third
+                .item
+                    +block('light-grey', 'Плетеные габионы')
+                .item
+                    +block('light-grey', 'Модульные мосты')
+

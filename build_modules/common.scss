@@ -1,5 +1,6 @@
-@import '../src/components/flex-container/flex-container';
-@import '../src/components/grid-container/grid-container' ;
+@import "../src/components/flex-container/flex-container";
+@import "../src/components/grid-container/grid-container";
+@import "../src/components/block/block";
 
 html {
     font-weight: normal;
@@ -20,7 +21,13 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
-h1, h2, h3, h4, h5, p, a {
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a {
     color: inherit;
     font-size: inherit;
     font-weight: inherit;
@@ -31,7 +38,8 @@ h1, h2, h3, h4, h5, p, a {
     word-wrap: break-word;
 }
 
-ul, li {
+ul,
+li {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -65,5 +73,27 @@ button {
     }
 }
 
-
-main>{hr{margin:60px 0!important;}h2,hr{pointer-events:none!important;}section.flex-container{&,& *{display:flex!important;}}section.grid-container{&,& *{display:grid!important;}}h2{font-size:calc(40px + (65 - 40) * (100vw - 1280px) / (1920 - 1280))!important;}}
+main > {
+    hr {
+        margin: 60px 0 !important;
+    }
+    h2,
+    hr {
+        pointer-events: none !important;
+    }
+    section.flex-container {
+        &,
+        & * {
+            display: flex !important;
+        }
+    }
+    section.grid-container {
+        &,
+        & * {
+            display: grid !important;
+        }
+    }
+    h2 {
+        font-size: calc(40px + (65 - 40) * (100vw - 1280px) / (1920 - 1280)) !important;
+    }
+}
