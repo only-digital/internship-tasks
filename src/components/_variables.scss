@@ -1,0 +1,45 @@
+//theme colors
+$dark-blue: #04306A;
+$blue: #0041A0;
+$gray: #F4F4F4;
+$red: #FC0D1B;
+$white: #FFF;
+
+// color palette
+$colors: (
+    "primary": $dark-blue,
+    "secondary": $blue,
+    "attention": $red,
+    "light": $gray,
+    "white": $white,
+);
+//text and background colors generator: 
+
+@each $key, $val in $colors {
+    .text-#{$key} {
+      color: $val;
+    }
+    .text-hover-#{$key} {
+      &:hover {
+        color: $val;
+      }
+    }
+    .bg-#{$key} {
+      background-color: $val;
+    }
+}
+
+// spacing
+$base-padding: 24px 36px;
+$base-margin: 0.75rem !default;
+$base-gap: 16px;
+
+// font sizes
+$base-font-size: 32px;
+$base-title-font-size: 46px;
+
+// font size options
+$font-size-sm: $base-font-size * 0.75;
+$font-size-lg: $base-font-size * 1.5;
+$font-size-xl: $base-font-size * 2;
+$font-size-xxl: $base-font-size * 3;

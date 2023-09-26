@@ -1,3 +1,7 @@
+@import '../variables';
+@import '../boxes';
+//I would rather import into common.scss, but since it's not allowed to change, all styles imports are here
+
 .grid-container {
-    // Your code here
+ 
 }

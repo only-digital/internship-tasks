@@ -1,0 +1,24 @@
+main {
+    min-width: 1920px;
+}
+.box {
+    flex-flow: column nowrap;
+    padding: 30px 36px;
+    justify-content: space-between;
+
+    &-big {
+    @extend .box;
+    width: 856px;
+    height: 856px;
+}
+    &-long {
+    @extend .box;
+    width: 856px;
+    height: 420px;
+}
+    &-small {
+    @extend .box;
+    width: 565.33px;
+    height: 480px;
+}
+}

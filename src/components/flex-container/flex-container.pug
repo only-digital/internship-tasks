@@ -1,8 +1,35 @@
+include ../arrows
+
 mixin flex-container()
     section.flex-container
-        // Your code here
-        h1 Комплексные предложения для мостостроения
-        .wrapper
-            .top-half
-                .top-half.squer
-                    h2 Мостовая сталь/Стальные конструкции мостов
+        .flex-container__title
+            h3.text-attention Комплексные&nbsp; 
+                span.text-primary  предложения для мостостроения
+        .flex-container__top
+            .box-big.bg-light
+                h3.text-primary Мостовая сталь/Стальные конструкции мостов
+                +blue-arrow
+            .box-long.bg-light 
+                h3.text-primary Железобетонные конструкции мостов
+                +blue-arrow
+            .box-long.bg-light
+                h3.text-primary Дорожные ограждения барьерного типа
+                +blue-arrow
+        .flex-container__bottom
+            .box-small.bg-primary 
+                h3.text-white Шпунтовой замок
+                +white-arrow
+            .box-small.bg-light
+                h3.text-primary Мостовой крепеж
+                +blue-arrow
+            .box-small.bg-secondary
+                h3.text-white Профили для деформационных швов
+                +white-arrow
+            .box-long.bg-light 
+                h3.text-primary Плетеные габионы
+                +blue-arrow
+            .box-long.bg-light
+                h3.text-primary Модульные мосты
+                +blue-arrow
+        
+                     
