@@ -1,0 +1,74 @@
+$font-stack: Arial, Helvetica, sans-serif;
+
+$color-system-text: #111;
+$color-main-blue: #002F6C;
+$color-extra-cobolt: #0041A0;
+$color-main-red: #F00;
+$color-main-grey: #BCBCBC;
+$color-extra-blue: #99B3D8;
+$color-extra-red: #BF1D26;
+
+.outer-text {
+	font-family: $font-stack;
+	font-size: 14px;
+	color: $color-system-text;
+
+	@media (min-width: 1280px) {
+		font-size: 16px;
+	}
+}
+
+.styled-link {
+	$root: &;
+
+	font-family: $font-stack;
+	height: 24px;
+	width: fit-content;
+	display: inline-flex;
+	gap: 10px;
+	align-items: center;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.5;
+	letter-spacing: calc(-.02 * 16px);
+	color: $color-extra-cobolt;
+	transition: color .3s ease-in-out;
+
+
+	@media (hover: hover) and (min-width: 1280px) {
+		&:hover {
+			color: $color-main-red;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		&:focus-visible {
+			background-color: rgba($color-extra-blue, .15);
+			outline: none;
+		}
+	}
+
+	&:active {	
+		color: $color-extra-red;
+	}
+
+	&_disabled {
+		pointer-events: none;
+		color: $color-main-grey;
+
+		&:focus-visible {
+			outline: none;
+		}
+	}
+
+	svg {
+		width: 24px;
+		height: 24px;
+		fill: $color-main-blue;
+	}
+
+	@media (min-width: 1280px) {
+		font-size: 16px;
+		gap: 12px;
+	}
+}

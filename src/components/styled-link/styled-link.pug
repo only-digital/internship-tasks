@@ -1,0 +1,4 @@
+mixin styled-link(props)
+		a.styled-link(href!=props.url target='_blank')(class=`${props.disabled ? 'styled-link_disabled' : ''}`)&attributes(attributes)!=props.text
+			if props.hasIcon
+				+svg('link-arrow').styled-link__svg
