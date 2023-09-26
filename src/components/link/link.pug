@@ -1,9 +1,9 @@
 mixin link(props)
 	if props.disabled
-		.link-wrapper.link
-			a.link__item.link__item_disabled&attributes(attributes)= props.text 
+		.link-wrapper
+			a.link.disabled&attributes(attributes)= props.text 
 				+svg('link-icon')(width='20px' height='20px')
 	else 
-		.link-wrapper.link
-			a.link__item&attributes(attributes)= props.text 
+		.link-wrapper&attributes(attributes)
+			a.link&attributes(attributes)= props.text 
 				+svg('link-icon')(width='20px' height='20px')

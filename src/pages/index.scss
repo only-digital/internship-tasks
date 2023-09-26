@@ -140,6 +140,15 @@ $dark-red: #81080F;
     }
 }
 
+.link-wrapper {
+	display: flex;
+	align-items: flex-start;
+	
+	.disabled {
+		color: $grey;
+		pointer-events: none;
+	}
+}
 .link {
 	font-family: Arial;
 	font-size: 16px;
@@ -169,5 +178,6 @@ $dark-red: #81080F;
 			display: none;
 		}
 	}
+
 }
 
