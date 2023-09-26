@@ -1,0 +1,8 @@
+mixin slider(props)
+	div.slider&attributes(attributes)
+		div.slider__box
+			button.slider__btn&attributes(attributes)
+				+svg('arrow-slider').slider__svg(width='28px' height='40px')
+			button.slider__btn&attributes(attributes)
+				+svg('arrow-slider')(width='28px' height='40px').slider__svg.slider__svg_rotated
+		p.slider__counter 01/04

@@ -1,0 +1,38 @@
+@import '/src/pages/index.scss';
+
+.slider {
+	$root: &;
+
+	&__btn {
+		border: 1px solid $medium-grey;
+		transition: .3s linear;
+
+		&:hover {
+			background-color: $light-grey;
+			border-color: $light-grey;
+		}
+
+		&:active {
+			background-color: $medium-grey;
+		}
+
+		&:focus-visible {
+			outline: 3px solid $light-blue;
+			transition: none;
+		}
+
+		@media (max-width: 768px) and (max-height: 1024px) {
+			&:focus-visible {
+				outline: none;
+			}
+			&:hover {
+				background-color: white;
+				border-color: $medium-grey;
+			}
+			&:hover:active {
+				background-color: $medium-grey;
+			}
+		}
+		
+	}	
+}

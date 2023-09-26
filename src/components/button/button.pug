@@ -1,0 +1,11 @@
+mixin button(props)
+	if props.alt
+		button.button.red&attributes(attributes)
+			span.button__text.text= props.text
+			span.button__box.box
+				+svg('arrow-button').button__svg.svg
+	else
+		button.button.blue&attributes(attributes)
+			span.button__text.text= props.text
+			span.button__box.box
+				+svg('arrow-button').button__svg.svg

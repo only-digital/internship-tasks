@@ -1,0 +1,122 @@
+@import '/src/pages/index.scss';
+
+
+.blue {
+	border: 1px solid $grey;
+	border-radius: 25px;
+	background-color: white;
+	transition: .4s ease-out;
+
+	svg {
+        fill: $blue;
+		transition: .4s;
+    }
+
+	.text {
+		color: black;
+		transition: .4s;
+	}
+
+	&:disabled {
+		opacity: 0.5;
+		pointer-events: none;
+
+		svg {
+			fill: $steel;
+		}
+	}
+
+	&:hover {
+		@media (min-width: 1280px) and (min-height: 720px) {
+			background-color: $blue;
+			border-color: $blue;
+			transition: .4s linear;
+
+			.svg {
+				fill: white;
+				transition: .4s linear;
+			}
+			.text {
+				color: white;
+				transition: .4s linear;
+			}
+		}
+		
+	}
+
+	&:active {
+		background-color: $dark-blue;
+		border-color: $dark-blue;
+		
+		svg {
+			fill: white;
+		}
+		.text {
+			color: white;
+		}
+	}
+	
+	&:focus-visible {
+		@media (min-width: 1280px) and (min-height: 720px) {
+			outline: 3px solid $light-blue;
+			transition: none;
+			.text {
+				color: $blue;
+			}
+			svg {
+				fill: $blue;
+			}
+		}
+	}
+
+}
+
+.red {
+	border: 1px solid $red;
+	border-radius: 25px;
+	background-color: $red;
+	transition: .4s ease-out;
+	
+	svg {
+        fill: white;
+		transition: .4s;
+    }
+	.text {
+		color: white;
+	}
+
+	&:disabled {
+		opacity: 0.5;
+		pointer-events: none;
+		background-color: $light-grey;
+		border-color: $light-grey;
+		
+		.text {
+			color: $steel;
+		}
+		svg {
+			fill: $steel;
+		}
+	}
+
+	&:hover {
+		@media (min-width: 1280px) and (min-height: 720px) {
+			background-color: $medium-red;
+			border-color: $medium-red;
+			transition: .4s linear;
+		}
+	}
+	
+	&:active {
+		background-color: $dark-red;
+		border-color: $dark-red;
+	}
+
+	&:focus-visible {
+		@media (min-width: 1280px) and (min-height: 720px) {
+			outline: 3px solid $light-blue;
+			transition: none;
+		}
+	}
+	
+}
