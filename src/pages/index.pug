@@ -2,21 +2,39 @@ extends ../../build_modules/common
 
 
 block body
-	+stroke-button({text: 'Кнопка'})
-	+stroke-button({text: 'Кнопка'})(disabled='')
-	+filled-button({text: 'Кнопка'})
-	+filled-button({text: 'Кнопка'})(disabled='')
-	+slider({currPage: '01', numOfPages: '04'})
-	+slider({currPage: '01', numOfPages: '04'})(disabled='')
-	+styled-link({text: 'Sustainalytics.com', url: "https://www.sustainalytics.com/", hasIcon: true})
-	+styled-link({text: 'Sustainalytics.com', url: "https://www.sustainalytics.com/", hasIcon: true, disabled: true})(tabindex='-1')
-	p.outer-text 
-		| Для подключения сервиса добавьте номер  
-		+styled-link({text: '+7(921)058-57-19', url: "tel:+79210585719", hasIcon: false})
-		|  в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже
-	p.outer-text 
-		| Цифровые продукты, направленные на создание 
-		+styled-link({text: 'дополнительных сервисов', url: "https://www.sustainalytics.com/", hasIcon: false})
-		|  и устранение «проблемных точек» наших клиентов
-	+switcher
-	+switcher(disabled='')
+	div(style='padding: 10px')
+		h2(style='font-family: Arial, Helvetica, sans-serif; font-size: 20px; margin-bottom: 10px;') Кнопка с обводкой 
+		+stroke-button({text: 'Кнопка'})
+		br
+		+stroke-button({text: 'Кнопка'})(disabled='')
+		br
+		h2(style='font-family: Arial, Helvetica, sans-serif; font-size: 20px; margin-bottom: 10px;') Кнопка с заливкой 
+		+filled-button({text: 'Кнопка'})
+		br
+		+filled-button({text: 'Кнопка'})(disabled='')
+		br
+		h2(style='font-family: Arial, Helvetica, sans-serif; font-size: 20px; margin-bottom: 10px;') Слайдер
+		+slider({currPage: '01', numOfPages: '04'})
+		br
+		+slider({currPage: '01', numOfPages: '04'})(disabled='')
+		br
+		h2(style='font-family: Arial, Helvetica, sans-serif; font-size: 20px; margin-bottom: 10px;') Ссылки
+		+styled-link({text: 'Sustainalytics.com', url: "https://www.sustainalytics.com/", hasIcon: true})
+		br
+		br
+		+styled-link({text: 'Sustainalytics.com', url: "https://www.sustainalytics.com/", hasIcon: true, disabled: true})(tabindex='-1')
+		br
+		br
+		p.outer-text 
+			| Для подключения сервиса добавьте номер  
+			+styled-link({text: '+7(921)058-57-19', url: "tel:+79210585719", hasIcon: false})
+			|  в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже
+		p.outer-text 
+			| Цифровые продукты, направленные на создание 
+			+styled-link({text: 'дополнительных сервисов', url: "https://www.sustainalytics.com/", hasIcon: false})
+			|  и устранение «проблемных точек» наших клиентов
+		br
+		h2(style='font-family: Arial, Helvetica, sans-serif; font-size: 20px; margin-bottom: 10px;') Переключатель
+		+switcher 
+		br
+		+switcher(disabled='')
