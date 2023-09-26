@@ -24,35 +24,27 @@ $mobile: 375px;
 	}
 
 	@media (max-width: $desktop-m) {
-		& {
-			padding: 179px 120px 0 120px;
-		}
+		padding: 179px 120px 0 120px;
 
 		&__title {
 			font-size: 48px;
 		}
 	}
 	@media (max-width: $desktop-s) {
-		& {
-			padding: 167px 107px 0 107px;
-		}
+		padding: 167px 107px 0 107px;
 
 		&__title {
 			font-size: 42px;
 		}
 	}
 	@media (max-width: $tablet) {
-		& {
-			padding: 174px 40px 0 40px;
-		}
+		padding: 174px 40px 0 40px;
 
 		&__title {
 			font-size: 42px;
 		}
 	}
 	@media (max-width: $mobile) {
-		& {
-			padding: 152px 24px 0 24px;
-		}
+		padding: 152px 24px 0 24px;
 	}
 }
