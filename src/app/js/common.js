@@ -1,6 +1,5 @@
 import ExampleButton from "../../components/example-button/example-button";
-import SpoilerCell from "../../components/spoiler-cell/spoiler-cell";
-
+import Spoiler from "../../components/spoiler/spoiler";
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
  * Ключ объекта - Название компонента, которое было указано во время его создания (совпадает с именем файлов)
@@ -8,7 +7,7 @@ import SpoilerCell from "../../components/spoiler-cell/spoiler-cell";
  */
 const allComponents = {
     'example-button': ExampleButton,
-	'spoiler-cell': SpoilerCell
+	'spoiler': Spoiler
 }
 
 

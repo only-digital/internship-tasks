@@ -1,23 +1,93 @@
-@import '/src/pages/index.scss';
+@import '../../pages/index.scss';
 
 .spoiler {
 	$root: &;
+	border-top: 1px solid $grey;
+	padding: 30px 0 30px 0;
+	overflow: hidden;
+	height: auto;
+	max-height: 104px;
+	transition: max-height 0.5s ease;
+	cursor: default;
+	position: relative;
+	z-index: 4;
 
-	margin-top: $largeMargin;
-
-	@include media(1440px, 900px) {
-		margin-top: 60px;
+	&:last-child {
+		border-bottom: 1px solid $grey;
 	}
 
-	@include media(1280px, 720px) {
-		margin-top: 56px;
+	&:after {
+		content: '';
+		position: absolute;
+		z-index: 2;
+		width: 100%;
+		height: 102px;
+		background-color: #fff;
+		top: 0;
+		left: 0;
 	}
 
-	@include media(768px, 1024px) {
-		margin-top: 50px;
+	&.active {
+		max-height: 100vh;
+		transition: max-height 0.5s ease;
 	}
 
-	@include media(375px, 812px) {
-		margin-top: 40px;
+	&__title {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		position: relative;
+		z-index: 3;
+		cursor: pointer;
+		transition: color 0.5s ease;
+
+		@include text-style($font-family, 400, 36px, $darkTeal, 36px);
+
+		&:before,
+		&:after {
+			content: '';
+			width: 20px;
+			height: 2px;
+			background-color: $blue;
+			position: absolute;
+			top: 15px;
+			right: 0;
+			transition: transform 0.5s ease;
+		}
+
+		&:after {
+			transform: rotate(90deg);
+		}
+
+		&.active {
+			color: $blue;
+
+			&:before {
+				transform: rotate(45deg);
+			}
+
+			&:after {
+				transform: rotate(135deg);
+			}
+		}
+	}
+
+	&__text {
+		max-width: 942px;
+		transform: translateY(-100%);
+		margin-top: 30px;
+		visibility: hidden;
+		height: 0;
+		transition: transform 0.5s ease, height 0.5s ease, visibility 0.5s ease;
+		position: relative;
+		z-index: 1;
+
+		@include text-style($font-family, 400, 20px, $black, 30px);
+
+		&.active {
+			visibility: visible;
+			transform: translateY(0);
+			height: 100%;
+		}
 	}
 }

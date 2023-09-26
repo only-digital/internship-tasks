@@ -1,9 +1,14 @@
 extends ../../build_modules/common
 
 
+
 block body
 	.container
-		+title('How can we help?')
+		h1.title How can we help you?
 
-		+spoiler
-
+		ul.spoiler-wrapper
+			+spoiler({ index: 1, title:  "I'm having trouble paying for my application – what should I do?", text: "To be able to pay and send your application, every section must be ticked as complete. If you're applying independently, that includes your referee submitting their reference online. If the payment isn't going through, please double check all details have been entered correctly, you have funds available, and the card has been registered for online payments. If you're outside of the UK, you may need to let your bank know you're trying to make the payment as well." })
+			+spoiler({ index: 2, title:  "How do I apply for deferred entry?", text: "You can select a deferred start date for your chosen course when you apply, but its important to contact the uni or college before submitting your application to make sure they are happy to accept a deferred application." })
+			+spoiler({ index: 3, title:  "Lost or forgotten your UCAS password?", text: "If you've lost or forgotten you password, reset your UCAS Undergraduate or UCAS Conservatoires password here." })
+			+spoiler({ index: 4, title: "What are entry requirements?", text: "Entry requirements vary between universities and colleges – a full list of universities and colleges and their minimum entry criteria can be found in our search tool. If you are unsure you meet a university/college's criteria, it is best to contact their admissions team for further guidance." })
+			+spoiler({ index: 5, title: "When can I start my application to go to university in 2024?", text: "2024 entry applications opened on 16 May 2023, and applicants can submit them to UCAS from 5 September 2023." })

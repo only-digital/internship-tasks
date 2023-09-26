@@ -4,10 +4,17 @@ class Spoiler extends Component {
     constructor(element) {
         super(element);
 
-        // Your code here
-    }
+		this.item = element.component;
+		this.title = this.getElement('title');
+		this.text = this.getElement('text');
 
-    // Your code here
+		this.root.addEventListener('click', this.onClick);
+    }
+	onClick = (e) => {
+		this.item.classList.toggle('active');
+		this.title.classList.toggle('active');
+		this.text.classList.toggle('active');
+	}
 }
 
 export default Spoiler
