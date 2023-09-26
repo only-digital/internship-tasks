@@ -1,3 +1,80 @@
+/*grid-container*/
 .grid-container {
     // Your code here
+    display: grid;
+    grid-template-rows: auto calc(420px*100vw/1920px) calc(420px*100vw/1920px) calc(480px*100vw/1920px) calc(420px*100vw/1920px);
+    grid-template-areas:
+        "T0 T0 T0 T0 T0 T0"
+        "B1 B1 B1 B2 B2 B2"
+        "B1 B1 B1 B3 B3 B3"
+        "B4 B4 B5 B5 B6 B6"
+        "B7 B7 B7 B8 B8 B8";
+    justify-content: stretch;
+    justify-items: stretch;
+    align-items: stretch;
+    column-gap:10px;
+    row-gap: 10px;
+    padding: 10px;
+    font-size: 2vw;
+    font-weight: bold;
+}
+
+.grig-container__title {
+    grid-area: T0;
+    display: block;
+    display: grid;
+    grid-template-areas: "A B";
+    justify-content: start;
+    padding: 20px 0;
+}
+
+.grig-container__span {
+    display: inline;
+}
+
+.grig-container__span_red {
+    color: red;
+    grid-area: A;
+    padding-right: 3px;
+}
+
+.grig-container__span_blue {
+    color: blue;
+    grid-area: B;
+}
+
+.grig-container__block {
+    background-color: #F4F4F4;
+    color: #04306A;
+}
+.grig-container__block_blue {
+    background-color: #0041A0;
+    color: #fff;
+}
+.grig-container__block_blue-dark {
+    background-color: #04306A;
+    color: #fff;
+}
+
+
+/*elem-from-table*/
+.elem-from-table {
+    padding: 10px;
+    display: grid;
+    grid-template-areas:
+        "title title"
+        "title link";
+    justify-content: space-between;
+}
+
+elem-from-table__title {
+    grid-area: title;
+    align-self: start;
+    justify-self: start;
+}
+
+.elem-from-table__link {
+    grid-area: link;
+    align-self: end;
+    justify-self: end;
 }

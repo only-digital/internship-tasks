@@ -27,7 +27,7 @@
     "devDependencies": {
         "@types/webpack": "^5.28.2",
         "@types/webpack-dev-server": "^4.7.2",
-        "autoprefixer": "^10.4.15",
+        "autoprefixer": "10.4.5",
         "clean-webpack-plugin": "^4.0.0",
         "colors": "^1.4.0",
         "css-loader": "^6.8.1",
@@ -50,5 +50,8 @@
         "webpack": "^5.88.2",
         "webpack-cli": "^5.1.4",
         "webpack-dev-server": "^4.15.1"
+    },
+    "dependencies": {
+        "install": "0.13.0"
     }
 }
