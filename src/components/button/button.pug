@@ -1,0 +1,5 @@
+mixin button(props)
+  -m = props.mod || ''
+    button(class=`button + ${props.mod === 'red' && 'button_red'}`)&attributes(attributes)
+        span.button__text!= props.text
+        +svg('icon-button').button__icon

@@ -1,0 +1,260 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 131px;
+  height: 50px;
+  border: 1px solid var(--extra-grey-1, #BCBCBC);
+  border-radius: 25px;
+  color: white;
+  transition: background-color 0.3s;
+}
+.button_red {
+  background-color: var(--main-red, #F00);
+  border: none;
+}
+.button_red .button__text {
+  color: white;
+}
+.button_red .button__icon {
+  fill: white;
+}
+@media (hover: hover) and (min-width: 768px) {
+  .button_red:hover {
+    background-color: #BF1D26 !important;
+    border: none;
+  }
+}
+.button_red:active {
+  background-color: #81080F !important;
+}
+@media (min-width: 768px) {
+  .button_red:focus-visible:not(:hover) {
+    background-color: var(--main-red, #F00) !important;
+    border: none !important;
+    outline: 3px solid #99B3D8;
+    transition: outline-color 0.3s;
+  }
+  .button_red:focus-visible:not(:hover) .button__text {
+    color: white !important;
+  }
+  .button_red:focus-visible:not(:hover) .button__icon {
+    fill: white;
+  }
+}
+.button_red:disabled {
+  background-color: var(--extra-grey-3, #F4F4F4);
+  border: none !important;
+}
+@media (hover: hover) and (min-width: 768px) {
+  .button:hover {
+    background-color: var(--extra-cobolt, #0041A0);
+    border: none;
+  }
+  .button:hover .button__icon {
+    fill: white;
+  }
+  .button:hover .button__text {
+    color: white;
+  }
+}
+.button:active {
+  background-color: var(--main-blue, #002F6C);
+  border: none;
+  transition: background-color 0.1s;
+}
+.button:active .button__text {
+  color: white;
+}
+@media (min-width: 768px) {
+  .button:focus-visible:not(:hover) {
+    background-color: inherit;
+    border: 1px solid var(--extra-grey-1, #BCBCBC);
+    outline: 3px solid #99B3D8;
+    transition: outline-color 0.3s;
+  }
+  .button:focus-visible:not(:hover) .button__text {
+    color: #0041A0;
+  }
+}
+.button:disabled {
+  border: 1px solid var(--extra-grey-1, #BCBCBC);
+  pointer-events: none;
+}
+.button:disabled .button__icon {
+  fill: #909090;
+}
+.button:disabled .button__text {
+  color: #909090;
+}
+.button__text {
+  color: var(--system-text, #111);
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+}
+.button__icon {
+  width: 32px;
+  aspect-ratio: 1/1;
+  fill: #002F6C;
+}
+@media (max-width: 1280px) {
+  .button {
+    width: 111px;
+    height: 42px;
+  }
+  .button .button__text {
+    font-size: 14px;
+  }
+  .button__icon {
+    width: 24px;
+  }
+}
+@media (max-width: 768px) {
+  .button {
+    width: 121px;
+  }
+  .button .button__text {
+    font-size: 16px;
+  }
+}
+@media (max-width: 375px) {
+  .button {
+    width: 327px;
+  }
+  .button .button__text {
+    font-size: 16px;
+  }
+}
+
+.example-button {
+  display: flex;
+  align-items: center;
+  color: white;
+  transition: color 0.3s, opacity 0.3s;
+}
+.example-button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+@media (hover: hover) {
+  .example-button:hover {
+    color: black;
+  }
+  .example-button:hover .example-button__svg {
+    fill: white;
+  }
+}
+.example-button__text {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-right: 25px;
+  user-select: none;
+  color: black;
+}
+@media (min-width: 1280px) {
+  .example-button__text {
+    font-size: 16px;
+  }
+}
+.example-button__circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background: currentColor;
+  border-radius: 50%;
+  border: 1px solid rgba(35, 35, 35, 0.5);
+}
+@media (min-width: 1280px) {
+  .example-button__circle {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media (min-width: 1920px) {
+  .example-button__circle {
+    width: 100px;
+    height: 100px;
+  }
+}
+.example-button__circle svg {
+  width: 14px;
+  height: 14px;
+  fill: black;
+  transition: fill 0.3s;
+}
+@media (min-width: 1280px) {
+  .example-button__circle svg {
+    width: 19px;
+    height: 18px;
+  }
+}
+@media (min-width: 1920px) {
+  .example-button__circle svg {
+    width: 24px;
+    height: 23px;
+  }
+}
+
+html {
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, h4, h5, p, a {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-decoration: inherit;
+  padding: 0;
+  margin: 0;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+input {
+  border: none;
+  background: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  -webkit-appearance: none;
+  color: inherit;
+}
+input:hover, input:active, input:focus {
+  outline: none;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+button:hover, button:active, button:focus {
+  outline: none;
+}
