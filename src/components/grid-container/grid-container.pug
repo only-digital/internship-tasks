@@ -3,13 +3,12 @@
         {name:"Мостовая сталь/Стальные конструкции мостов", width:"855px", height:"855px", className:""}, 
         {name:"Железобетонные конструкции мостов", width:"855px", height:"420px", className:""},
         {name:"Дорожные ограждения барьерного типа", width:"855px", height:"420px", className:""},
-        {name:"Шпунтовой замок", width:"564px", height:"480px", className:"grig-container__block_blue"},
+        {name:"Шпунтовой замок", width:"564px", height:"480px", className:"grig-container__block_blue-dark"},
         {name:"Мостовой крепеж", width:"564px", height:"480px", className:""},
-        {name:"Профили для деформационных швов", width:"564px", height:"480px", className:"grig-container__block_blue-dark"},
+        {name:"Профили для деформационных швов", width:"564px", height:"480px", className:"grig-container__block_blue"},
         {name:"Плетеные габионы", width:"855px", height:"420px", className:""},
         {name:"Модульные мосты", width:"855px", height:"420px", className:""}
         ]
-
 
 mixin grid-container()
     section.grid-container
@@ -21,7 +20,7 @@ mixin grid-container()
             +elem-from-table(mas[i], "grig-container__block " + mas[i].className, 'B' + (i + 1), "#")
 
 mixin elem-from-table(value = "нет данных", className = "", grinAreaName = '', link = "#")
-    div(class=className class="elem-from-table" style="grid-area:"+grinAreaName+";")
+    a(class=className class="elem-from-table" style="grid-area:"+grinAreaName+";" href=link)
         h3(class="elem-from-table__title") #{value.name}
-        a(href=link class="elem-from-table__link") ➔
+        p(class="elem-from-table__link") ➔
 

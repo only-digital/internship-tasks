@@ -67,12 +67,6 @@
     justify-content: space-between;
 }
 
-elem-from-table__title {
-    grid-area: title;
-    align-self: start;
-    justify-self: start;
-}
-
 .elem-from-table__link {
     grid-area: link;
     align-self: end;

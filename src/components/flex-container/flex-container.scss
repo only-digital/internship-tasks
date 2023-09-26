@@ -1,3 +1,98 @@
+/*flex-container*/
 .flex-container {
     // Your code here
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: stretch;
+    column-gap:10px;
+    row-gap: 10px;
+    padding: 10px;
+    font-size: 2vw;
+    font-weight: bold;
+}
+.flex-container__div_colomn {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    column-gap:10px;
+    row-gap: 10px;
+    align-content:stretch;
+    width: 100%;
+    height:calc(420px*100vw/1920px * 2 + 10px);// calc(855px*100vw/1920px + 10px);
+}
+.flex-container__div_row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap:10px;
+    row-gap: 10px;
+}
+.flex-container__title {
+    display: flex;
+    padding: 20px 0;
+}
+.flex-container__span_red {
+    color: red;
+    padding-right: 3px;
+}
+
+.flex-container__span_blue {
+    color: blue;
+}
+.flex-container__block {
+    background-color: #F4F4F4;
+    color: #04306A;
+    flex-grow: 1;
+}
+.flex-container__block_blue {
+    background-color: #0041A0;
+    color: #fff;
+}
+.flex-container__block_blue-dark {
+    background-color: #04306A;
+    color: #fff;
+}
+.flex-container__block1 {
+    height: calc(855px*100vw/1920px);
+}
+.flex-container__block2 {
+    height: calc(420px*100vw/1920px);
+}
+.flex-container__block3 {
+    height: calc(420px*100vw/1920px);
+}
+.flex-container__block4 {
+    height: calc(480px*100vw/1920px);
+    width: calc(564px*100vw/1920px);
+}
+.flex-container__block5 {
+    height: calc(480px*100vw/1920px);
+    width: calc(564px*100vw/1920px);
+}
+.flex-container__block6 {
+    height: calc(480px*100vw/1920px);
+    width: calc(564px*100vw/1920px);
+}
+.flex-container__block7 {
+    height: calc(420px*100vw/1920px);
+}
+.flex-container__block8 {
+    height: calc(420px*100vw/1920px);
+}
+
+/*elem-from-table*/
+.elem-from-table {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.elem-from-table__title {
+    align-self: start;
+    justify-self: start;
+}
+
+.elem-from-table__link {
+    align-self: end;
+    justify-self: end;
 }

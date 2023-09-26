@@ -1,3 +1,27 @@
+- 
+    var mas = [
+        {name:"Мостовая сталь/Стальные конструкции мостов", width:"855px", height:"855px", className:""}, 
+        {name:"Железобетонные конструкции мостов", width:"855px", height:"420px", className:""},
+        {name:"Дорожные ограждения барьерного типа", width:"855px", height:"420px", className:""},
+        {name:"Шпунтовой замок", width:"564px", height:"480px", className:"flex-container__block_blue-dark"},
+        {name:"Мостовой крепеж", width:"564px", height:"480px", className:""},
+        {name:"Профили для деформационных швов", width:"564px", height:"480px", className:"flex-container__block_blue"},
+        {name:"Плетеные габионы", width:"855px", height:"420px", className:""},
+        {name:"Модульные мосты", width:"855px", height:"420px", className:""}
+        ]
 mixin flex-container()
     section.flex-container
         // Your code here
+        h2.flex-container__title  
+            span(class='flex-container__span flex-container__span_red') Комплексные 
+            span(class='flex-container__span flex-container__span_blue') предложения для мостостроения
+        div.flex-container__div_colomn
+            - for (i=0; i<3; i++)
+                +elem-from-table(mas[i], "flex-container__block flex-container__block" + (i+1) + " " + mas[i].className, 'B' + (i + 1), "#")
+        div.flex-container__div_row
+            - for (i=3; i<mas.length; i++)
+                +elem-from-table(mas[i], "flex-container__block flex-container__block" + (i+1) + " " + mas[i].className, 'B' + (i + 1), "#")
+mixin elem-from-table(value = "нет данных", className = "", link = "#")
+    div(class=className class="elem-from-table")
+        h3(class="elem-from-table__title") #{value.name}
+        a(href=link class="elem-from-table__link") ➔
