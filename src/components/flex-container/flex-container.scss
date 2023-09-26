@@ -1,6 +1,5 @@
 @use "sass:math";
 @import '../variables';
-@import '../boxes';
 //I would rather import into common.scss, but since it's not allowed to change, all styles imports are here
 
 
@@ -16,7 +15,7 @@
         height: 110px;
         h3 {
             font-family: Arial;
-            font-size: 46px;
+            font-size: $base-title-font-size;
             font-style: normal;
             font-weight: 700;
             line-height: 100%;
@@ -49,4 +48,29 @@
         justify-self: end;
         align-self: flex-end;
     }
+}
+
+.box {
+    flex-flow: column nowrap;
+    padding: 30px 36px;
+    justify-content: space-between;
+
+    &-big {
+    @extend .box;
+    width: 856px;
+    height: 856px;
+}
+    &-long {
+    @extend .box;
+    width: 856px;
+    height: 420px;
+}
+    &-small {
+    @extend .box;
+    width: 565.33px;
+    height: 480px;
+}
+}
+main {
+    min-width: 1920px;
 }

@@ -1,7 +1,69 @@
 @import '../variables';
-@import '../boxes';
+
 //I would rather import into common.scss, but since it's not allowed to change, all styles imports are here
 
 .grid-container {
- 
+    
+    margin: 80px auto 120px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 110px 420px 420px 480px 420px; /* Define rows with different heights */
+    grid-gap: $base-gap;
+    width: 856px + $base-gap + 856px; 
+
+    & > * h3 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: $base-font-size;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 120%; /* 38.4px */
+        letter-spacing: -0.64px;
+        margin: 30px;
+    }
+    & > * svg {
+        justify-self: end;
+        align-self: flex-end;
+        margin: 30px;
+    } 
+
+    &__item {
+        padding: 30px 36px;
+        &1 {
+            grid-column: span 6; 
+            grid-row: span 1;  
+            h3 {
+                font-size: $base-title-font-size;
+                line-height: 100%;
+                letter-spacing: -0.92px;
+                margin: 0;
+                grid-column: span 1;
+                grid-auto-flow: column;
+                // &::after {
+                    // content: 'предложения для мостостроения';
+                    // color: $dark-blue;
+                    // grid-column: span 2;
+                // }
+                span {
+                    margin-left: -675px;
+                }
+                
+            }
+        }
+        &2 {
+            grid-column: span 3; 
+            grid-row: span 2;    
+        }
+        &3, &4, &8, &9 {
+            grid-column: span 3;
+            grid-row: span 1;   
+        }
+        &5, &6, &7 {
+            grid-column: span 2; 
+            grid-row: span 1;  
+        }   
+        
+    }    
+  
 }
+      
+    
