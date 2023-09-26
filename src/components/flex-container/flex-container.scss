@@ -1,3 +1,92 @@
+$blue: #04306A;
+$light-blue: #0041A0;
+$red: #FC0D1B;
+$grey: #f4f4f4;
+
 .flex-container {
-    // Your code here
+
+    width: 1730px;
+
+    .grey {
+        background-color: $grey;
+    }
+
+    .blue {
+        background-color: $blue;
+    }
+
+    .light-blue {
+        background-color: $light-blue;
+    }
+
+    margin: 120px 94px;
+    display: flex;
+    flex-direction: column;
+
+    p {
+        color: $blue;
+        font-family: Arial;
+        font-size: 46px;
+        font-weight: 700;
+        line-height: 100%;
+        letter-spacing: -0.92px;
+    }
+
+    span {
+        color: $red;
+        white-space: pre;
+    }
+
+    .title {
+        margin-bottom: 80px;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+
+        &__first {
+            gap: 18px;
+            height: 856px;
+
+            &__bridge-steel {
+                width: 50%;
+                height: 100%;
+            }
+
+            &__constructions-fences {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+
+                .constructions,
+                .fences {
+                    width: 854.934px;
+                    height: 50%;
+                }
+            }
+        }
+
+        &__second {
+            height: 480px;
+            gap: 18px;
+            margin: 16px 0;
+
+            &__tongue-and-groove-lock,
+            &__bridge-fasteners,
+            &__expansion-joints {
+                width: 564.353px;
+            }
+        }
+
+        &__third {
+            height: 420px;
+            gap: 18px;
+
+            &__braided-gabions,
+            &__modular-bridges {
+                width: 50%;
+            }
+        }
+    }
 }
