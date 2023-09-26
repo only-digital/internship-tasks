@@ -1,3 +1,64 @@
 .flex-container {
-    // Your code here
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  color: #04306A;
+  flex-direction: column;
+  width: 90%;
+  gap: 80px;
+  margin-left: auto;
+  margin-right: auto;
+
+  h2 {
+    font-size: 46px;
+  }
+
+  h4 {
+    font-size: 32px;
+  }
+}
+
+%column-flex {
+  gap: 16px;
+  flex-direction: column;
+}
+
+.containers-wrapper {
+  width: 100%;
+  @extend %column-flex;
+}
+
+.bridges-constructions {
+  height: 856px;
+  gap: 18px;
+  .block {
+    flex: 0 50%;
+  }
+}
+
+.blocks-wrapper {
+  @extend %column-flex;
+  flex: 0 50%;
+  .block {
+    height: 420px;
+  }
+}
+
+.fasteners {
+  height: 480px;
+  gap: 18px;
+  div {
+    flex: 0 33%;
+  }
+}
+
+.modules {
+  height: 420px;
+  gap: 18px;
+  .block {
+    flex: 0 50%;
+  }
+}
+
+.block {
+  background-color: #F4F4F4;
 }
