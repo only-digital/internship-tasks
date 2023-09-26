@@ -33,8 +33,7 @@
 
   svg {
     width: 100%;
-    height: 100%;
-    // fill: #002f6c;
+    height: 40px;
   }
 
   &:hover {
@@ -42,7 +41,8 @@
   }
 
   &:focus {
-    border: 3px solid #99b3d8;
+    outline: 3px solid #99b3d8;
+    border: 1px solid #dedede;
     background-color: white;
   }
 
@@ -56,6 +56,10 @@
   @media (max-width: 1280px) {
     width: 60px;
     height: 60px;
+
+    svg {
+      height: 30px;
+    }
   }
 }
 

@@ -1,0 +1,4 @@
+mixin custom-link(props)
+	a.custom-link&attributes(attributes)(href=props.href)!=props.text
+		if props.isIcon
+			+svg('link').custom-link__svg

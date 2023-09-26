@@ -10,3 +10,9 @@ block body
     +custom-button({text: 'Кнопка'})(class="alternative" disabled='')
     +slider-button({currentPage: '01', totalPages: '04'})
     +slider-button({currentPage: '01', totalPages: '04'})(disabled='')
+    +custom-link({text: 'Sustainalytics.com', isIcon: true})(href='#' class="__with-svg")
+    +custom-link({text: 'Sustainalytics.com', isIcon: true})(href='#' disabled='' class="custom-link__with-svg")
+    p
+        | Цифровые продукты, направленные на создание
+        +custom-link({text: 'дополнительных сервисов', isIcon: false})(href='#' class="custom-link__in-text")
+        | и устранение «проблемных точек» наших клиентов

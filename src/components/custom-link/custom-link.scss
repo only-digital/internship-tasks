@@ -1,0 +1,52 @@
+.custom-link {
+  $root: &;
+
+  font-family: Grtsk Peta;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -0.32px;
+  color: #0041a0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &__with-svg {
+    display: flex;
+    align-items: center;
+    width: max-content;
+  }
+
+  &__in-text {
+    display: inline-block;
+  }
+
+  & svg {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+  }
+
+  &:hover {
+    color: #f00;
+  }
+
+  &:active {
+    color: #bf1d26;
+  }
+
+  &:focus {
+    color: #0041a0;
+    background: rgba(0, 65, 160, 0.15);
+  }
+
+  &[disabled] {
+    color: #bcbcbc;
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+    letter-spacing: -0.28px;
+  }
+}
