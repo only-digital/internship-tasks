@@ -1,20 +1,16 @@
 include ../components/flex-container/flex-container
 include ../components/grid-container/grid-container
 
-
 <!DOCTYPE html>
 html(lang="ru")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Задание 1
-
+        style
+            include main.scss
     body
-        main
-            h2 FlexBox
-            +flex-container
-
-            hr
-
-            h2 Grid layout
-            +grid-container
+            main
+                div.container
+                    +flex-container
+                    +grid-container
