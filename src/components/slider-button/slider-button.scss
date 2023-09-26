@@ -1,0 +1,76 @@
+$light-grey: #f4f4f4;
+$dark-grey: #dedede;
+$darker-grey: #bcbcbc;
+$light-blue: #99b3d8;
+$dark-blue: #002f6c;
+$white: #fff;
+
+.slider-button {
+    $root: &;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+
+    &__circle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: $white;
+        border: 1px solid $dark-grey;
+
+        transition:
+            width 0.3s,
+            height 0.3s,
+            background-color 0.3s;
+
+        @media (hover: hover) {
+            &:hover {
+                background-color: $light-grey;
+                cursor: pointer;
+                border-color: $light-grey;
+            }
+        }
+
+        &:active {
+            background-color: $dark-grey;
+            border-color: $dark-grey;
+        }
+
+        &:focus {
+            outline: 3px solid $light-blue;
+            border-color: $dark-grey;
+            &:hover {
+                background-color: $white;
+            }
+        }
+
+        &:disabled {
+            pointer-events: none;
+
+            #{$root}__icon {
+                fill: $darker-grey;
+            }
+        }
+
+        @media (min-width: 1920px) {
+            width: 80px;
+            height: 80px;
+        }
+    }
+
+    #{$root}__icon {
+        fill: $dark-blue;
+        width: 21px;
+        height: 30px;
+
+        @media (min-width: 1920px) {
+            width: 28px;
+            height: 40px;
+        }
+    }
+}

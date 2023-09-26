@@ -1,0 +1,137 @@
+[theme="primary"] {
+    --border-color-default: #bcbcbc;
+    --text-color-default: #111;
+    --bg-color-default: #fff;
+    --fill-color-default: #002f6c;
+    --outline-color: #99b3d8;
+
+    --bg-color-hover: #0041a0;
+
+    --bg-color-active: #002f6c;
+
+    --bg-color-disabled: #fff;
+    --text-color-disable: #909090;
+
+    --text-color-focus: #0041a0;
+
+    --text-color-white: #fff;
+}
+
+[theme="red"] {
+    --border-color-default: #ff0000;
+    --text-color-default: #fff;
+    --bg-color-default: #ff0000;
+    --fill-color-default: #fff;
+    --outline-color: #99b3d8;
+
+    --bg-color-hover: #bf1d26;
+
+    --bg-color-active: #81080f;
+
+    --text-color-disable: #909090;
+    --bg-color-disabled: #f4f4f4;
+    --text-color-white: #fff;
+
+    --text-color-focus: #fff;
+}
+
+.button {
+    $root: &;
+
+    font: 400 normal 16px "Grtsk Peta";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 24px;
+    border: 1px solid var(--border-color-default);
+    color: var(--text-color-default);
+    background-color: var(--bg-color-default);
+    padding: 8px 18px 8px 14px;
+    gap: 12px;
+    width: 327px;
+    margin: 10px 0;
+    transition:
+        width 0.3s,
+        color 0.3s,
+        background-color 0.3s,
+        border 0.3s,
+        height 0.3s;
+
+    #{$root}__svg {
+        fill: var(--fill-color-default);
+        transition: fill 0.3s;
+        width: 24px;
+        height: 24px;
+
+        @media (min-width: 1920px) {
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    &:hover {
+        background-color: var(--bg-color-hover);
+        color: var(--text-color-white);
+        border-color: var(--bg-color-hover);
+
+        #{$root}__svg {
+            fill: var(--text-color-white);
+        }
+    }
+
+    &:disabled {
+        pointer-events: none;
+        border-color: var(--bg-color-disabled);
+        background-color: var(--bg-color-disabled);
+        color: var(--text-color-disable);
+
+        #{$root}__svg {
+            fill: var(--text-color-disable);
+        }
+    }
+
+    &:active {
+        background-color: var(--bg-color-active);
+        color: var(--text-color-white);
+        border-color: var(--bg-color-active);
+
+        #{$root}__svg {
+            fill: var(--text-color-white);
+        }
+    }
+
+    &:focus {
+        outline: 3px solid var(--outline-color);
+        color: var(--text-color-focus);
+
+        &:hover {
+            border-color: var(--border-color-default);
+            background-color: var(--bg-color-default);
+        }
+
+        #{$root}__svg {
+            fill: var(--text-color-focus);
+        }
+    }
+
+    @media (min-width: 376px) {
+        width: 130px;
+        gap: 14px;
+    }
+
+    @media (min-width: 768px) {
+        width: 119px;
+        gap: 14px;
+    }
+
+    @media (min-width: 1280px) {
+        font-size: 14px;
+        padding: 7px 18px 7px 14px;
+        width: 138px;
+        gap: 12px;
+    }
+
+    &__icon {
+        display: flex;
+    }
+}

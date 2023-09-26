@@ -27,6 +27,7 @@
         }
     },
     "devDependencies": {
+        "@prettier/plugin-pug": "^3.0.0",
         "@types/webpack": "^5.28.2",
         "@types/webpack-dev-server": "^4.7.2",
         "autoprefixer": "^10.4.15",
@@ -42,6 +43,7 @@
         "postcss": "^8.4.28",
         "postcss-loader": "^7.3.3",
         "postcss-nested": "^6.0.1",
+        "prettier": "^3.0.3",
         "pug": "^3.0.2",
         "pug-html-loader": "^1.1.5",
         "rimraf": "^3.0.2",

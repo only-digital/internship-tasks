@@ -1,0 +1,75 @@
+$grey: #dedede;
+$light-blue: #c2daff;
+$blue: #0041a0;
+$dark-blue: #002f6c;
+$white: #fff;
+
+.toggle {
+    margin: 5px;
+    display: block;
+}
+
+.toggle__input {
+    margin: 0;
+    position: absolute;
+
+    &:active + .toggle-track,
+    &:focus + .toggle-track {
+        outline: 3px solid $light-blue;
+    }
+
+    &:disabled + .toggle-track {
+        cursor: auto;
+        outline: none;
+    }
+
+    &:checked + .toggle-track .toggle-indicator {
+        transform: translateX(20px);
+        @media (min-width: 768px) {
+            transform: translateX(26px);
+        }
+    }
+    &:checked + .toggle-track {
+        background: $blue;
+        &:hover {
+            background: $dark-blue;
+        }
+    }
+}
+
+.toggle-track {
+    background: $grey;
+    border-radius: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 40px;
+    height: 20px;
+
+    @media (min-width: 768px) {
+        width: 56px;
+        height: 28px;
+    }
+}
+
+.toggle-indicator {
+    align-items: center;
+    background: $white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    transition: 0.2s;
+    width: 12px;
+    height: 12px;
+
+    @media (min-width: 768px) {
+        width: 16px;
+        height: 16px;
+        bottom: 6px;
+        left: 6px;
+    }
+}
