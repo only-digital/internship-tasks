@@ -10,10 +10,25 @@ class Spoiler extends Component {
 
 		this.root.addEventListener('click', this.onClick);
     }
+
 	onClick = (e) => {
-		this.item.classList.toggle('active');
-		this.title.classList.toggle('active');
-		this.text.classList.toggle('active');
+		const textHeight = this.text.scrollHeight;
+
+		if (this.item.classList.contains('active')) {
+			this.remove('active', this.item, this.title, this.text);
+			this.text.style.height = '0';
+		} else {
+			this.add('active', this.item, this.title, this.text);
+			this.text.style.height = `${textHeight}px`;
+		}
+	}
+
+	add(className, ...elems) {
+		return elems.forEach(elem => elem.classList.add(className));
+	}
+
+	remove(className, ...elems) {
+		return elems.forEach(elem => elem.classList.remove(className));
 	}
 }
 
