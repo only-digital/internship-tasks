@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+$desktop-m: 1440px;
+$desktop-s: 1280px;
+$tablet: 768px;
+$mobile: 375px;
+
+.faq {
+	font-family: Roboto;
+
+	padding: 183px 142px 0 160px;
+
+	$root: &;
+
+	&__title {
+		font-size: 48px;
+		letter-spacing: -1px;
+		color: #012B34;
+	}
+
+	&__wrapper {
+		margin-top: 60px;
+		width: 100%;
+	}
+
+	@media (max-width: $desktop-m) {
+		& {
+			padding: 179px 120px 0 120px;
+		}
+
+		&__title {
+			font-size: 48px;
+		}
+	}
+	@media (max-width: $desktop-s) {
+		& {
+			padding: 167px 107px 0 107px;
+		}
+
+		&__title {
+			font-size: 42px;
+		}
+	}
+	@media (max-width: $tablet) {
+		& {
+			padding: 174px 40px 0 40px;
+		}
+
+		&__title {
+			font-size: 42px;
+		}
+	}
+	@media (max-width: $mobile) {
+		& {
+			padding: 152px 24px 0 24px;
+		}
+	}
+}

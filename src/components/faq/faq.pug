@@ -1,0 +1,7 @@
+mixin faq(faqTitle="faq Title", items=[{title:"Title 1", content:"Some text..."}, {title:"Title 2", content:"Some text..."}])    
+	section.faq&attributes(attributes)(data-component='faq')       
+		h2.faq__title=faqTitle  
+		.faq__wrapper     
+			each item, index in items 
+				div         
+					+spoiler(item.title, item.content)

@@ -1,10 +1,6 @@
-mixin spoiler(spoilerTitle="Spoiler Title", items=[{title:"Title 1", content:"Some text..."}, {title:"Title 2", content:"Some text..."}])    
-	section.spoiler&attributes(attributes)(data-component='spoiler')       
-		h2.spoiler__title=spoilerTitle  
-		.spoiler__wrapper     
-			each item, index in items          
-				.spoiler__item
-					.spoiler__item__header             
-						p.spoiler__item__header--title=item.title
-						button.spoiler__item__header--btn
-					p.spoiler__item__content=item.content
+mixin spoiler(title="Spoiler Title", content="Some text...")           
+				.spoiler&attributes(attributes)(data-component='spoiler') 
+					.spoiler__header             
+						p.spoiler__header--title=title
+						button.spoiler__header--btn
+					p.spoiler__content=content
