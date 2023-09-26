@@ -14,10 +14,9 @@ $toggle-knob: 16px;
 		position: relative;
 		width: $toggle-width;
 		height: $toggle-height;
-		outline: none;
 		background-color: #c6c6c6;
 		border-radius: 20px;
-		transition: .7s;
+		transition: 0.7s;
 	}
 
 	@media (max-width: 375px) and (max-height: 812px) {
@@ -27,12 +26,15 @@ $toggle-knob: 16px;
 		}
 	}
 
-	&__toggle:hover {
+	&__toggle:hover,
+	&__toggle:checked:hover {
 		background-color: $dark-blue;
 	}
 
 	&__toggle:focus-visible {
 		outline: 3px solid $light-blue;
+		outline-offset: 0;
+		transition: none;
 	}
 
 	&__toggle:disabled {
@@ -47,41 +49,42 @@ $toggle-knob: 16px;
 			background-color: $blue;
 		}
 	}
-}
 
-input:checked {
-	background: $blue;
-}
-
-input:before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	margin-left: calc(($toggle-height - $toggle-knob) / 2);
-	margin-top: calc(($toggle-height - $toggle-knob) / 2);
-	width: $toggle-knob;
-	height: $toggle-knob;
-	border-radius: 20px;
-	background: #fff;
-	transition: .7s;
-
-}
-
-input:checked:before {
-	left: calc($toggle-width / 2);
-}
-
-
-@media (max-width: 375px) and (max-height: 812px) {
+	input:checked {
+		background: $blue;
+	}
+	
 	input:before {
-		width: 12px;
-		height: 12px;
-		margin-left: 4px;
-		margin-top: 4px;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		margin-left: calc(($toggle-height - $toggle-knob) / 2);
+		margin-top: calc(($toggle-height - $toggle-knob) / 2);
+		width: $toggle-knob;
+		height: $toggle-knob;
+		border-radius: 20px;
+		background: #fff;
+		transition: .7s;
 	}
-
+	
 	input:checked:before {
-		left: 20px;
+		left: calc($toggle-width / 2);
 	}
+	
+	
+	@media (max-width: 375px) and (max-height: 812px) {
+		input:before {
+			width: 12px;
+			height: 12px;
+			margin-left: 4px;
+			margin-top: 4px;
+		}
+	
+		input:checked:before {
+			left: 20px;
+		}
+	}
+	
 }
+
