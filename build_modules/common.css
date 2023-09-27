@@ -1,3 +1,97 @@
+.section {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-top: 1px solid lightgray;
+}
+
+.slider {
+  margin: 3px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 265px;
+  height: 80px;
+}
+.slider__buttons-container {
+  display: flex;
+  gap: 10px;
+  height: 100%;
+}
+.slider__value {
+  color: var(--main-steel, #909090);
+  opacity: 0.4;
+  font-family: "Grtsk Peta", serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: -0.32px;
+}
+@media (max-width: 1280px) {
+  .slider {
+    width: 209px;
+    height: 60px;
+  }
+}
+@media (max-width: 375px) {
+  .slider {
+    width: fit-content;
+  }
+  .slider .slider__value {
+    display: none;
+  }
+}
+
+.slider-button {
+  position: relative;
+  height: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50px;
+  border: 1px solid #DEDEDE;
+  outline: transparent;
+  transition: background-color 0.3s;
+}
+.slider-button__icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  fill: #002F6C;
+  border-radius: 50px;
+}
+.slider-button:nth-child(2) .slider-button__icon {
+  transform: rotate(180deg);
+}
+@media (hover: hover) and (min-width: 768px) {
+  .slider-button:hover {
+    background-color: #F4F4F4;
+    border: none;
+  }
+}
+@media (min-width: 768px) {
+  .slider-button:focus-visible:not(:hover) {
+    background-color: inherit;
+    border: 1px solid #DEDEDE;
+    outline: 3px solid #99B3D8;
+    transition: outline-color 0.3s;
+  }
+}
+.slider-button:active {
+  background-color: #DEDEDE;
+  border: none;
+  transition: background-color 0.1s;
+}
+.slider-button:disabled {
+  border-color: #DEDEDE !important;
+  pointer-events: none;
+}
+.slider-button:disabled .slider-button__icon {
+  fill: #BCBCBC;
+}
+
 .button {
   display: flex;
   align-items: center;

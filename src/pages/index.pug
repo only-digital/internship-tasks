@@ -1,11 +1,16 @@
 extends ../../build_modules/common
 
-
 block body
+    style
+        include ../assets/fonts/fonts.css
     +example-button({text: 'example text'})
     +example-button({text: 'disabled'})(disabled='')
-    +button({text: 'Кнопка'})
-    +button({text: 'Кнопка'})(disabled='')
-
-    +button({ text: 'Кнопка', mod: 'red' })
-    +button({ text: 'Кнопка', mod: 'red' })(disabled='')
+    +section Кнопка с обводкой
+        +button({text: 'Кнопка'})
+        +button({text: 'Кнопка'})(disabled='')
+    +section Кнопка с заливкой (альтернативный вариант)
+        +button({ text: 'Кнопка', mod: 'red' })
+        +button({ text: 'Кнопка', mod: 'red' })(disabled='')
+    +section Кнопка слайдера главной
+        +slider({value: '01 / 04'})
+        +slider({value: '01 / 04'})(disabled='')
