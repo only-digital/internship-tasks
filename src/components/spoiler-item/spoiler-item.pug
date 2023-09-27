@@ -1,0 +1,7 @@
+mixin spoiler-item(props)
+	.spoiler-item&attributes(attributes)(data-component='spoiler-item')
+		button.spoiler-item__title 
+			span.spoiler-item__title__text!= props.title
+			+svg('spoiler-svg').spoiler-item__title__svg
+		.spoiler-item__content
+			p!= props.content

@@ -1,0 +1,101 @@
+$font-family: 'Roboto';
+.spoiler-item {
+  $root: &;
+  padding-top: 30px;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+
+  @media (max-width: 1440px) {
+    padding-top: 24px;
+  }
+  @media (max-width: 1280px) {
+    padding-top: 20px;
+  }
+  @media (max-width: 768px) {
+    padding-top: 24px;
+  }
+  @media (max-width: 375px) {
+    padding-top: 20px;
+  }
+  &__title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #012b34;
+    font-family: $font-family;
+    font-size: 36px;
+    line-height: 120%;
+    @media (max-width: 1440px) {
+      font-size: 27px;
+    }
+    @media (max-width: 1280px) {
+      font-size: 24px;
+    }
+    @media (max-width: 768px) {
+      font-size: 27px;
+    }
+    @media (max-width: 375px) {
+      font-size: 24px;
+    }
+    &__text {
+      text-align: left;
+    }
+    &__svg {
+      width: 20px;
+      height: 20px;
+      transition: transform 0.3s;
+      transform: rotate(45deg);
+      margin-left: 20px;
+      @media (max-width: 1440px) {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
+
+  &__content {
+    color: #000402;
+    font-family: $font-family;
+    font-size: 20px;
+    line-height: 150%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    margin-top: 30px;
+
+    @media (max-width: 1440px) {
+      font-size: 15px;
+      margin-top: 20px;
+    }
+    @media (max-width: 1280px) {
+      font-size: 14px;
+      margin-top: 16px;
+    }
+    @media (max-width: 768px) {
+      font-size: 15px;
+    }
+  }
+  &.active .spoiler-item__title {
+    color: #114c9a;
+    &__svg {
+      transform: rotate(90deg);
+    }
+  }
+
+  &.active .spoiler-item__content {
+    margin-bottom: 30px;
+    @media (max-width: 1440px) {
+      margin-bottom: 24px;
+    }
+    @media (max-width: 1280px) {
+      margin-bottom: 20px;
+    }
+    @media (max-width: 768px) {
+      margin-bottom: 24px;
+    }
+    @media (max-width: 375px) {
+      margin-bottom: 20px;
+    }
+  }
+}
