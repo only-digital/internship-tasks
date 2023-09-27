@@ -1,3 +1,104 @@
+$red: #fc0d1b;
+$grey: #f4f4f4;
+$blue: #04306a;
+$white: #fff;
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
 .grid-container {
-    // Your code here
+	grid-template-rows: auto;
+	padding: 20px 97px;
+	margin: 0 auto;
+	max-width: 1920px;
+}
+
+.title {
+	margin-bottom: 82px;
+	color: $blue;
+	font-size: 46px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 100%;
+	letter-spacing: -0.92px;
+	&::first-word {
+		color: $red;
+	}
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: 422px 409px 481px 396px;
+	gap: 20px;
+	&__item {
+		padding: 24px;
+		min-width: 564px;
+		max-width: 853px;
+		font-size: 32px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 120%;
+		letter-spacing: -0.64px;
+		color: $blue;
+		background-color: $grey;
+
+		svg {
+			margin-left: auto;
+			align-self: end;
+		}
+
+		svg path {
+			fill: $blue;
+		}
+	}
+}
+
+.item-1 {
+	grid-row: 1 / span 2;
+	grid-column: 1 / span 3;
+	text-align: center;
+}
+
+.item-2,
+.item-3 {
+	grid-column: 4 / span 5;
+}
+
+.item-4 {
+	grid-row: 3;
+	grid-column: 1 / span 2;
+	background-color: $blue;
+	color: $white;
+
+	svg path {
+		fill: $white;
+	}
+}
+
+.item-5 {
+	grid-row: 3;
+	grid-column: 3 / span 2;
+}
+
+.item-6 {
+	grid-row: 3;
+	grid-column: 5 / span 2;
+	background-color: #0041a0;
+	color: $white;
+
+	svg path {
+		fill: $white;
+	}
+}
+
+.item-7 {
+	grid-row: 4 / span 2;
+	grid-column: 1 / span 3;
+}
+
+.item-8 {
+	grid-row: 4 / span 2;
+	grid-column: 4 / span 3;
 }
