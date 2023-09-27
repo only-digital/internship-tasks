@@ -1,0 +1,78 @@
+@import '/src/pages/style.scss';
+
+.button {
+	$root: &;
+
+	max-width: 129px;
+	max-height: 48px;
+
+	border: 1px solid $gray;
+	border-radius: 25px;
+
+	font-size: 16px;
+
+	display: flex;
+	align-items: center;
+	gap: 14px;
+
+	padding: 14px 14px 14px 18px;
+	margin-bottom: 10px;
+
+	transition: color 0.5s, background-color 0.5s, border 0.5s;
+
+
+	&:hover {
+		background-color: $blue;
+		border: 0;
+
+		color: white;
+		
+		#{$root}__svg {
+			fill: white;
+		}
+
+	}
+	
+	&:active{
+		background-color: $darkBlue;
+		border: 0;
+		
+		color: white;		
+
+		#{$root}__svg {
+			fill: white;
+		}
+	}
+
+	&:focus{
+		background-color: transparent;
+		border: 3px solid #99B3D8;
+		
+		color: $blue;
+
+		#{$root}__svg {
+			fill: $blue;
+		}
+	}
+
+	&:disabled {
+		border: 1px solid $gray;
+		color: $gray;
+		pointer-events: none;
+		
+		#{$root}__svg {
+			fill: $darkGray;
+		}
+
+	}
+	
+	&__svg {
+		max-width: 23px;
+		max-height: 32px; 
+
+		fill: $darkBlue;
+
+		transition: fill 0.5s;
+	}
+
+}
