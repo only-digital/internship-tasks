@@ -20,7 +20,7 @@ $grey-3-color: #F4F4F4;
   border-radius: 25px;
   border: 1px solid $grey-1-color;
 
-  transition: color 0.3s, opacity 0.3s;
+  transition: color 0.3s, opacity 0.3s, background-color 0.3s;
 
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
@@ -34,7 +34,7 @@ $grey-3-color: #F4F4F4;
   &:active {
     background-color: $blue-color;
     color: white;
-    border: none;
+    border: transparent;
 
     #{$root}__svg {
       fill: white;
@@ -58,7 +58,7 @@ $grey-3-color: #F4F4F4;
     &:hover {
       background-color: $cobolt-color;
       color: white;
-      border: none;
+      border: transparent;
 
       #{$root}__svg {
         fill: white;
@@ -107,7 +107,7 @@ $grey-3-color: #F4F4F4;
   &_alt {
 	 background-color: red;
 	 color: white;
-	 border: none;
+	 border: transparent;
 
 	 svg {
 		fill: white;
