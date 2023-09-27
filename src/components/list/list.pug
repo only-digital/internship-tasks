@@ -1,0 +1,6 @@
+mixin list(props)
+	div.list&attributes(attributes)(data-component='list')
+		h2.list__title= props.title
+		ul
+			each item in props.list
+				li.list__item= item

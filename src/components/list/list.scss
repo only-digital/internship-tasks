@@ -1,0 +1,28 @@
+.list {
+	$root: &;
+	margin: 0 0 109px 80px;
+
+	&__title{
+		color: #04306A;
+		font-size: 46px;
+		line-height: 120%;
+		margin-bottom: 35px;
+	}
+	&__item{
+		color: #012B34;
+		font-size: 24px;
+		line-height: 140%;
+		margin-bottom: 12px;
+		padding-left: 28px;
+		position: relative;
+
+		&:after{
+			content: "";
+			width: 20px;
+			position: absolute;
+			border: 1px solid #0DB274;
+			top: 50%;
+			left: 0;
+		}
+	}
+}

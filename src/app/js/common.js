@@ -1,7 +1,7 @@
 import ExampleButton from "../../components/example-button/example-button";
 import Header from "../../components/header/header";
 import FormFeedback from "../../components/form-feedback/form-feedback";
-
+import List from "../../components/list/list";
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
  * Ключ объекта - Название компонента, которое было указано во время его создания (совпадает с именем файлов)
@@ -11,6 +11,7 @@ const allComponents = {
     'example-button': ExampleButton,
     'header': Header,
     'form-feedback': FormFeedback,
+    'list': List,
 }
 
 /**

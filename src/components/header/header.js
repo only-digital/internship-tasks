@@ -29,19 +29,17 @@ class Header extends Component {
                 this.views.textContent = info.views
                 this.response.textContent = info.responses
             })
-            .then(() => {
+            .finally(() => {
                 this.stopLoader()
             });
     }
 
     startLoader(){
-        this.info.classList.add('hidden')
         this.loader.classList.add('active')
     }
 
     stopLoader(){
         this.loader.classList.remove('active')
-        this.info.classList.remove('hidden')
     }
 }
 

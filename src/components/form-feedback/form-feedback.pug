@@ -8,7 +8,7 @@ mixin form-feedback(props)
 				input#approval.form-feedback__checkbox(type='checkbox')
 				label(for='approval').form-feedback__security-policy Вы подтверждаете, что ознакомились
 					a(href='#') c политикой обработки персональных данных
-			span.form-feedback__loader
+			+loader.form-feedback__loader
 			button(type='submit').form-feedback__button Отправить
 				+svg('arrow').form-feedback__svg
 			p.form-feedback__message

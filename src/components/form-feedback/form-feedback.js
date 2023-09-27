@@ -50,6 +50,8 @@ class FormFeedback extends Component {
             })
             .finally(() => {
                 this.stopLoader()
+                this.inputEmail.value = ''
+                this.confirm.checked = false
             })
     }
 
@@ -72,8 +74,6 @@ class FormFeedback extends Component {
         this.sendButton.disabled = ''
         this.loader.classList.remove('active')
     }
-    setChecked
-
 }
 
 export default FormFeedback

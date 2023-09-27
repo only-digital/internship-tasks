@@ -2,8 +2,8 @@ mixin header(props)
 	header.header&attributes(attributes)(data-component='header')
 		time.header__date 18 декабря 2020
 		h1.header__title Консультант SAP PO
-		span.header__loader
 		p.header__info
+			+loader.header__loader
 			span Просмотров:&nbsp;
 				span.header__views
 			span Откликов:&nbsp;
