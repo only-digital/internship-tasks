@@ -9,8 +9,12 @@ block body
         +button({text: 'Кнопка'})(theme="red",disabled)
         +slider-button
         +slider-button()(disabled)
-        +link({text: 'Sustainalytics.com', icon:'icon-link'})(href='#' )
-        +link({text: 'Sustainalytics.com', icon:'icon-link'})(href='#', class=['disabled'] )
-        +link({text: '+7(921)058-57-19'})(href='#' )
+        p
+            +link({text: 'Sustainalytics.com', icon:'icon-link'})(href='#' )
+            +link({text: 'Sustainalytics.com', icon:'icon-link'})(href='#', class=['disabled'] )
+            +link({text: '+7(921)058-57-19'})(href='#' )
+        p Цифровые продукты, направленные на создание
+            +link({text: 'дополнительных сервисов'})(href='#' )
+            | и устранение «проблемных точек» наших клиентов.
         +toggle-button()
         +toggle-button()(disabled)

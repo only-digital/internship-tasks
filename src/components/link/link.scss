@@ -16,10 +16,10 @@ $grey: #bcbcbc;
     letter-spacing: -0.32px;
     color: $dark-blue;
 
-    display: flex;
-    margin: 10px 0;
-    width: fit-content;
+    display: inline-flex;
     align-items: center;
+
+    margin: 0 5px;
 
     @media (min-width: 1280px) {
         &:focus {

@@ -1,6 +1,6 @@
 mixin link(props)
 	a.link&attributes(attributes)!= props.text
-		span.link__icon
-			block
-			if (props.icon)
+		block
+		if (props.icon)
+			span.link__icon
 				+svg(props.icon).link__svg
