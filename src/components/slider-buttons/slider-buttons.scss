@@ -1,5 +1,103 @@
-.slider-buttons {
-	$root: &;
+$grey-1-color: #bcbcbc;
+$grey-2-color: #dedede;
+$grey-3-color: #f4f4f4;
+$blue-color: #002f6c;
+$steel-color: #909090;
+$outline-color: #99b3d8;
 
-	//Your code here
+.slider-buttons {
+  $root: &;
+
+  display: flex;
+  width: fit-content;
+  gap: 24px;
+
+  @media (min-width: 1920px) {
+    gap: 40px;
+  }
+
+  &__arrows {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border: 1px solid $grey-2-color;
+    border-radius: 100%;
+
+    @media (min-width: 1920px) {
+      height: 80px;
+      width: 80px;
+    }
+
+    &:disabled {
+      pointer-events: none;
+
+      svg {
+        fill: $grey-1-color;
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: $grey-3-color;
+        border: none;
+      }
+    }
+
+    &:active {
+      background-color: $grey-2-color;
+    }
+
+    &:focus {
+      outline: 3px solid $outline-color;
+    }
+  }
+
+  &__svg {
+    width: 21px;
+    height: 30px;
+    fill: $blue-color;
+
+    &_reverse {
+      transform: rotate(-180deg);
+    }
+
+    @media (min-width: 1920px) {
+      width: 28px;
+      height: 40px;
+    }
+  }
+
+  &__counter {
+    display: none;
+	justify-content: center;
+    align-items: center;
+    width: 55px;
+    color: $steel-color;
+
+    @media (min-width: 768px) {
+      display: flex;
+    }
+
+    &__text {
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 600;
+      color: $steel-color;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -2%;
+      user-select: none;
+      opacity: 0.4;
+
+      &[disabled] {
+        color: $grey-1-color;
+      }
+    }
+  }
 }

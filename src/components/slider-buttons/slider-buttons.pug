@@ -1,3 +1,10 @@
 mixin slider-buttons(props)
 	.slider-buttons&attributes(attributes)
-		//Your code here
+		.slider-buttons__arrows
+			button&attributes(attributes).slider-buttons__arrow
+				+svg('chevron-svg').slider-buttons__svg.slider-buttons__svg_reverse
+			button&attributes(attributes).slider-buttons__arrow
+				+svg('chevron-svg').slider-buttons__svg
+		.slider-buttons__counter
+			div&attributes(attributes).slider-buttons__counter__text!=props.counter
+			
