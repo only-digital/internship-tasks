@@ -68,7 +68,7 @@
 @media (hover: hover) and (min-width: 768px) {
   .slider-button:hover {
     background-color: #F4F4F4;
-    border: none;
+    border-color: transparent;
   }
 }
 @media (min-width: 768px) {
