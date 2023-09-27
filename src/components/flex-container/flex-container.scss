@@ -3,9 +3,19 @@ $light-blue: #0041A0;
 $red: #FC0D1B;
 $grey: #f4f4f4;
 
+@mixin text($fs) {
+    color: $blue;
+    font-family: Arial;
+    font-weight: 700;
+    font-size: $fs;
+}
+
 .flex-container {
 
-    width: 1730px;
+    width: 1920px - 95px * 2;
+    margin: 120px 94px;
+    display: flex;
+    flex-direction: column;
 
     .grey {
         background-color: $grey;
@@ -19,17 +29,19 @@ $grey: #f4f4f4;
         background-color: $light-blue;
     }
 
-    margin: 120px 94px;
-    display: flex;
-    flex-direction: column;
+    .white {
+        color: white;
+    }
 
-    p {
-        color: $blue;
-        font-family: Arial;
-        font-size: 46px;
-        font-weight: 700;
+    h1 {
+        @include text(46px);
         line-height: 100%;
         letter-spacing: -0.92px;
+    }
+
+    p {
+        @include text(32px);
+        line-height: 38px;
     }
 
     span {
@@ -52,17 +64,25 @@ $grey: #f4f4f4;
             &__bridge-steel {
                 width: 50%;
                 height: 100%;
+
+                p {
+                    margin: 49px;
+                }
             }
 
             &__constructions-fences {
                 display: flex;
                 flex-direction: column;
+                width: 50%;
                 gap: 16px;
 
                 .constructions,
                 .fences {
-                    width: 854.934px;
                     height: 50%;
+
+                    p {
+                        margin: 24px 36px;
+                    }
                 }
             }
         }
@@ -75,7 +95,11 @@ $grey: #f4f4f4;
             &__tongue-and-groove-lock,
             &__bridge-fasteners,
             &__expansion-joints {
-                width: 564.353px;
+                width: 33%;
+
+                p {
+                    margin: 24px 36px;
+                }
             }
         }
 
@@ -86,6 +110,10 @@ $grey: #f4f4f4;
             &__braided-gabions,
             &__modular-bridges {
                 width: 50%;
+
+                p {
+                    margin: 24px 49px;
+                }
             }
         }
     }
