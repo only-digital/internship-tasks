@@ -1,3 +1,79 @@
 .flex-container {
     // Your code here
+    display: flex;
+    width: 1920px;   
+    height: 2156px;
+    flex-wrap: wrap;
+    padding-left: 95px;
+    padding-right: 10px; 
+    padding-top: 122px;
+    gap: 16px;
+    color: #04306A;
+    font-size: 30px;
+    font-weight: bold;
+    align-content: flex-start;
+    font-family: Arial, Helvetica, sans-serif;
+
+    .title {
+        background-color: #F4F4F4;
+        padding-left: 49px;
+        padding-right: 26px;
+        padding-top: 49px;
+        padding-bottom: 25px;
+        justify-content: space-between;
+        
+        .title__text {
+            display: block;
+        }
+
+        .title__img {
+            width: 65px;
+            height: 36px;
+            align-self: flex-end;
+        }    
+    }
+
+    .main-title {
+        width: 100%;
+        margin-bottom: 64px;
+        font-size: 40px;
+        display: block;     
+    }
+
+    .title__1 {
+        width: 855px;
+        height: 856px;
+    }
+
+    .merged-block {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 856px;
+    }
+
+    .title__2, .title__3 {
+        width: 855px;
+        height: 420px;     
+    }
+
+    .title__4, .title__5, .title__6 {
+        width: 565px;
+        height: 480px;
+    }  
+
+    .title__7, .title__8 {
+        width: 855px;
+        height: 420px;
+    }
+
+    .title_color {
+        color: white;
+        background-color: #04306A;
+    }
+
+    span {
+        color: red;
+    }
+
 }
