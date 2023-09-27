@@ -1,0 +1,4 @@
+mixin colored-button(props)
+	button.colored-button&attributes(attributes)
+		span.colored-button__text!= props.text
+		+svg('button').colored-button__svg
