@@ -5,6 +5,10 @@ $text-color: #111111;
 $pale-blue-color: #99B3D8;
 $steel-color: #909090;
 
+$alt-hover-color: #BF1D26;
+$alt-active-color: #81080F;
+$grey-3-color: #F4F4F4;
+
 .button-outline {
   $root: &;
 
@@ -96,4 +100,32 @@ $steel-color: #909090;
       height: 34px;
     }
   }
+
+  
+  // Alternate styles
+
+  &__alt {
+	 background-color: red;
+	 color: white;
+	 border: none;
+
+	 svg {
+		fill: white;
+	 }
+
+	 &:active {
+		background-color: $alt-active-color;	
+	  }
+	
+	  &:disabled {
+		background-color: $grey-3-color;
+	  }
+	
+	  @media (hover: hover) {
+		&:hover {
+		  background-color: $alt-hover-color;
+		}
+	  }
+  }
+  
 }
