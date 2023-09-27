@@ -27,17 +27,31 @@
   background-color: #F4F4F4;
   align-content: space-between;
   grid-column-start: span 3;
-  padding: 24px 36px 36px;
-}
-
-.grid-block:nth-child(1) {
-  grid-row-start: span 2;
-}
-
-.grid-block:nth-child(n+4):nth-child(-n+6) {
-  grid-column-start: span 2;
+  padding: 24px 36px 33px;
 }
 
 .vector {
   justify-self: end;
 }
+
+.grid-block:nth-child(1) {
+  grid-row-start: span 2;
+  padding: 49px 37px 25px 49px;
+}
+
+.grid-block:nth-child(n+4):nth-child(-n+6) {
+  grid-column-start: span 2;
+  padding: 23px 36px 30px;
+}
+
+.grid-block:nth-child(4) {
+  background-color: #04306A;
+  color: #FFFFFF;
+}
+
+.grid-block:nth-child(6) {
+  background-color: #0041A0;
+  color: #FFFFFF;
+}
+
+
