@@ -4,6 +4,7 @@ mixin form-feedback(props)
 		form.form-feedback__form
 			label.form-feedback__label-email E-mail
 			input(type='email').form-feedback__input-email
+			p.form-feedback__message
 			div.wrapper
 				input#approval.form-feedback__checkbox(type='checkbox')
 				label(for='approval').form-feedback__security-policy Вы подтверждаете, что ознакомились
@@ -11,4 +12,6 @@ mixin form-feedback(props)
 			+loader.form-feedback__loader
 			button(type='submit').form-feedback__button Отправить
 				+svg('arrow').form-feedback__svg
-			p.form-feedback__message
+			div.success-block
+				div
+				span Форма успешно отправлена

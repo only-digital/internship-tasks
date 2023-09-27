@@ -50,19 +50,20 @@ class FormFeedback extends Component {
             })
             .finally(() => {
                 this.stopLoader()
-                this.inputEmail.value = ''
-                this.confirm.checked = false
+
             })
     }
 
     renderError(message){
         this.message.textContent = message
-        this.message.className= 'form-feedback__message-red'
+        this.message.classList.add('error')
+        this.inputEmail.classList.add('error')
     }
 
-    renderSuccess(message){
-        this.message.textContent = message
-        this.message.className = 'form-feedback__message-green'
+    renderSuccess(){
+        this.message.classList.remove('error')
+        this.form.classList.add('success')
+
     }
 
     startLoader(){

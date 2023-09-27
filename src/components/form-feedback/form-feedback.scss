@@ -4,6 +4,7 @@
 	grid-template-columns: 360px auto;
 	gap: 80px;
 
+
 	&__title{
 		color: #002F6C;
 		font-size: 32px;
@@ -15,6 +16,50 @@
 		flex-direction: column;
 		margin-top: 20px;
 		position: relative;
+
+		.success-block{
+			display: none;
+		}
+		&.success{
+			input{
+				opacity: 0.3;
+				pointer-events: none;
+			}
+			label{
+				opacity: 0.3;
+				pointer-events: none;
+			}
+			button{
+				display: none;
+			}
+			.success-block{
+				display: flex;
+				gap: 21px;
+				align-items: center;
+				div{
+					width: 48px;
+					height: 48px;
+					border-radius: 50%;
+					border: 1px solid #DEDEDE;
+					position: relative;
+				}
+				div:before {
+					border-color: #27ae60;
+					border-style: solid;
+					border-width: 0 2px 2px 0;
+					content: "";
+					display: block;
+					height: 17px;
+					left: 18px;
+					opacity: 1;
+					position: absolute;
+					top: 11px;
+					transform: rotate(45deg);
+					width: 10px;
+				}
+			}
+		}
+
 	}
 
 	&__label-email{
@@ -33,6 +78,9 @@
 		color: #909090;
 		font-size: 18px;
 		padding: 10px;
+		&.error{
+			margin-bottom: 10px;
+		}
 	}
 
 	.wrapper{
@@ -55,20 +103,20 @@
 			position: absolute;
 			content: '';
 			display: block;
-			top: 0;
-			left: 3px;
+			top: 2px;
+			left: 4px;
 			width: 5px;
 			height: 7px;
 			border-style: solid;
-			border-color: #33475B;
+			border-color: white;
 			border-width: 0 2px 2px 0;
 			transform: rotate(45deg);
 			opacity: 0;
 		}
 
 		&:checked {
-			background: #EAF0F6;
-			border: 2px solid #33475B;
+			background: #acb1b7;
+			border: none;
 			&::before {
 				opacity: 1;
 			}
@@ -105,12 +153,10 @@
 
 	&__message{
 		display: none;
-		&-green{
+		&.error
+		{
 			display: block;
-			color: green;
-		}
-		&-red{
-			display: block;
+			margin-bottom: 110px;
 			color: red;
 		}
 	}
