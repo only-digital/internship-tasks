@@ -1,3 +1,7 @@
+//* {
+//	border: 1px solid red;
+//}
+
 .feedback-form {
 	$root: &;
 	padding: 44px 217px 45px 23px;
@@ -5,6 +9,9 @@
 	justify-content: space-between;
 	align-items: flex-start;
 	&__label {
+		width: 40%;
+		max-width: 273px;
+		overflow: hidden;
 		color: #002F6C;
 		font: 400 normal 32px/120% 'Arial', sans-serif;
 		letter-spacing: -0.64px;
@@ -38,7 +45,6 @@
 			}
 		}
 	}
-
 	&__textarea {
 		padding-top: 30px;
 		position: relative;
@@ -79,8 +85,87 @@
 				display: none;
 			}
 	}
-	&__message {
-		display: none;
+	&__file {
+		//cursor: pointer;
+		margin-bottom: 57px;
+		//max-width: fit-content;
+		width: 100%;
+		position: relative;
+		display: flex;
+		//justify-content: space-between;
+		column-gap: 32px;
+		align-items: flex-end;
+		&-button {
+			//margin-left: 31px;
+			max-width: 190px;
+			padding-left: 8px;
+			padding-bottom: 12px;
+			//visibility: hidden;
+			opacity: 0;
+			&.hidden {
+				display: none;
+				//pointer-events: none;
+				//-webkit-appearance: none;
+				& ~ #{$root}__file-uploads.elem-1 {
+					margin-left: 222px;
+				}
+			}
+		}
+
+		&-label {
+			cursor: pointer;
+			position: absolute;
+			top: -8px;
+			left: 0;
+
+			border-radius: 25px;
+			border: 1px solid #BCBCBC;
+			padding: 15px 16px 15px 16px;
+			display: flex;
+			align-items: center;
+			column-gap: 16px;
+			&-text {
+				//pointer-events: none;
+				cursor: pointer;
+				color: #909090;
+				font: 400 normal 16px/100% 'Arial', sans-serif;
+				letter-spacing: -0.32px;
+			}
+			&-icon {
+				cursor: pointer;
+				//pointer-events: none;
+			}
+		}
+		&-uploads {
+			//position: absolute;
+			//top: -3px;
+			//right: 165px;
+			display: inline-flex;
+			align-items: center;
+			column-gap: 4px;
+			border-radius: 27px;
+			background: #F4F4F4;
+			padding: 10px 13px 10px 18px;
+			max-width: fit-content;
+			font: 400 normal 16px/124% 'Arial', sans-serif;
+			letter-spacing: -0.32px;
+			&-name {
+				color: #111;
+			}
+			&-type, &-size {
+				color: #909090;
+			}
+			&-icon {
+				cursor: pointer;
+				transform: rotate(45deg);
+			}
+			&.hidden {
+				display: none;
+			}
+		}
+	}
+	&__message-file, &__message-input, &__message-textarea, &__message-checkbox {
+		//display: none;
 		color: #EF1C1C;
 		font: 400 normal 14px/150% 'Arial', sans-serif;
 		margin-bottom: 14px;
@@ -90,6 +175,7 @@
 		}
 	}
 	&__form {
+		width: 60%;
 		padding-top: 24px;
 	}
 	&__checkbox {
@@ -166,8 +252,19 @@
 		padding: 7px 14px 7px 18px;
 		align-items: center;
 		column-gap: 14px;
+		pointer-events: initial;
 		&.hidden {
 			display: none;
+		}
+		&.not-active {
+			pointer-events: none;
+			background-color: #F4F4F4;
+			#{$root}__button-text {
+				color: #909090;
+			}
+			#{$root}__button-icon path {
+				fill: #909090;
+			}
 		}
 		&-text {
 			color: #FFF;
