@@ -21,3 +21,19 @@ $grey: #f4f4f4;
 .light-blue {
   background-color: $light-blue;
 }
+
+@mixin img($buttom, $right) {
+  width: 65px;
+  height: 36px;
+  position: absolute;
+  right: $right;
+  bottom: $buttom;
+}
+
+.blue-arrow {
+  background-image: url(/src/components/assets/image/blue-arrow.png);
+}
+
+.white-arrow {
+  background-image: url(/src/components/assets/image/white-arrow.png);
+}

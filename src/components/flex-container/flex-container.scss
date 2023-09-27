@@ -31,13 +31,6 @@
         margin-bottom: 80px;
     }
 
-    .img {
-        background-image: url(/src/components/assets/image/Vector.png);
-        width: 65px;
-        height: 36px;
-        margin: 25px 37px;
-    }
-
     .box {
         display: flex;
         flex-direction: column;
@@ -49,13 +42,14 @@
             &__bridge-steel {
                 width: 50%;
                 height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                align-items: flex-end;
+                position: relative;
 
                 p {
                     margin: 49px;
+                }
+
+                .img {
+                    @include img(25px, 37px)
                 }
             }
 
@@ -68,9 +62,14 @@
                 .constructions,
                 .fences {
                     height: 50%;
+                    position: relative;
 
                     p {
                         margin: 24px 36px;
+                    }
+
+                    .img {
+                        @include img(33px, 36px);
                     }
                 }
             }
@@ -85,9 +84,14 @@
             &__bridge-fasteners,
             &__expansion-joints {
                 width: 33%;
+                position: relative;
 
                 p {
                     margin: 24px 36px;
+                }
+
+                .img {
+                    @include img(30px, 36px);
                 }
             }
         }
@@ -99,9 +103,14 @@
             &__braided-gabions,
             &__modular-bridges {
                 width: 50%;
+                position: relative;
 
                 p {
                     margin: 24px 49px;
+                }
+
+                .img {
+                    @include img(33px, 36px);
                 }
             }
         }
