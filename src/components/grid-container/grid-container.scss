@@ -1,3 +1,43 @@
 .grid-container {
-    // Your code here
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  color: #04306A;
+  width: 90%;
+  margin: 122px auto 120px;
+
+  h2 {
+    font-size: 46px;
+    grid-auto-flow: column;
+    justify-content: start;
+    margin-bottom: 80px;
+  }
+
+  h4 {
+    font-size: 32px;
+  }
+}
+
+.grid-blocks-wrapper {
+  grid-template-rows: 420px 420px 480px 420px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px 18px;
+}
+
+.grid-block {
+  background-color: #F4F4F4;
+  align-content: space-between;
+  grid-column-start: span 3;
+  padding: 24px 36px 36px;
+}
+
+.grid-block:nth-child(1) {
+  grid-row-start: span 2;
+}
+
+.grid-block:nth-child(n+4):nth-child(-n+6) {
+  grid-column-start: span 2;
+}
+
+.vector {
+  justify-self: end;
 }
