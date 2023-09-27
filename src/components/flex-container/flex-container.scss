@@ -31,6 +31,13 @@
         margin-bottom: 80px;
     }
 
+    .img {
+        background-image: url(/src/components/assets/image/Vector.png);
+        width: 65px;
+        height: 36px;
+        margin: 25px 37px;
+    }
+
     .box {
         display: flex;
         flex-direction: column;
@@ -42,6 +49,10 @@
             &__bridge-steel {
                 width: 50%;
                 height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: flex-end;
 
                 p {
                     margin: 49px;
