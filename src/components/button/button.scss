@@ -108,5 +108,48 @@
 		gap: 12px;
 	}
 
+}
+
+.alt-btn {
+	background-color: $red;
+	border: 0;
+
+	color: white;
+
+	.button__svg {
+		fill: white;
+	}
+
+	&:hover {
+		background-color: $darkRed;
+	}
+
+	&:active {
+		background-color: $blackRed;
+	}
+
+	&:focus {
+		background-color: $red;
+
+		color: white;
+
+		.button__svg {
+			fill: white;
+		}
+	}
+
+	&:disabled {
+		border: 0;
+
+		color: $darkGray;
+		background-color: #F4F4F4;
+
+		pointer-events: none;
+		
+		.button__svg {
+			fill: $darkGray;
+		}
+
+	}
 
 }
