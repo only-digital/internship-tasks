@@ -1,3 +1,64 @@
+$blue: #04306A;
+$red: #FC0D1B;
+
 .grid-container {
-    // Your code here
+	padding: 120px 90px;
+	max-width: 1920px;
+	margin: 0 auto;
+	.solutions-card__grid {
+		width: 100%;
+	}
+}
+.solutions-caption__grid {
+	grid-template-columns: auto 1fr;
+	margin-right: auto;
+	margin-bottom: 80px;
+	color: $blue;
+	font-weight: 700;
+	font-size: 2.875rem;
+	span {
+		color: $red;
+	}
+}
+.solutions-cards__grid {
+	display: grid;
+	justify-items: stretch;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-areas:
+    "first first first  second second second" 
+    "first first first  third third third" 
+    "forth forth  fifth fifth  sixth sixth" 
+    "seventh seventh seventh  eighth eighth eighth";
+	gap: 16px 18px;
+}
+.solutions-card__grid {
+	padding: 44px;
+	font-size: 2rem;
+	line-height: 2.4rem;
+	height: 417px;
+	&:nth-child(1) {
+		grid-area: first;
+		height: 850px;
+	}
+	&:nth-child(2) {
+		grid-area: second;
+	}
+	&:nth-child(3) {
+		grid-area: third;
+	}
+	&:nth-child(4) {
+		grid-area: forth;
+	}
+	&:nth-child(5) {
+		grid-area: fifth;
+	}
+	&:nth-child(6) {
+		grid-area: sixth;
+	}
+	&:nth-child(7) {
+		grid-area: seventh;
+	}
+	&:nth-child(8) {
+		grid-area: eighth;
+	}
 }

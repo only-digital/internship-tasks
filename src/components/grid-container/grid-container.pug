@@ -1,3 +1,12 @@
-mixin grid-container()
+mixin grid-container(names)
     section.grid-container
-        // Your code here
+        h1.solutions-caption__grid <span>Комплексные</span>&nbsp предложения для мостостроения
+        .solutions-cards__grid 
+            each name, index in names 
+                if index === 3 || index === 5
+                    .solutions-card__grid.blue
+                        h3.solutions-card__title-grid=name
+                else 
+                    .solutions-card__grid.gray
+                        h3.solutions-card__title-grid=name 
+

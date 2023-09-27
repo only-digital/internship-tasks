@@ -1,3 +1,71 @@
+$blue: #04306A;
+$red: #FC0D1B;
+$white: #FFFFFF;
+$gray: #F4F4F4;
+
+.solutions-caption {
+	margin-bottom: 80px;
+	color: $blue;
+	font-weight: 700;
+	font-size: 2.875rem;
+	span {
+		color: $red;
+	}
+}
 .flex-container {
-    // Your code here
+	padding: 120px 90px;
+	max-width: 1920px;
+	margin: 0 auto;
+	flex-direction: column;
+}
+.solutions-cards {
+	flex-wrap: wrap;
+	gap: 16px 18px;
+}
+.solutions-card {
+	padding: 44px;
+	font-size: 2rem;
+	line-height: 2.4rem;
+	max-width: 850px;
+	height: 480px;
+	&:nth-child(1) {
+		height: 850px;
+		width: 48.8%;
+	}
+	&:nth-child(3) {
+		width: 32.2%;
+	}
+	&:nth-child(4) {
+		width: 32.2%;
+	}
+	&:nth-child(5) {
+		width: 32.2%;
+	}
+	&:nth-child(6) {
+		width: 48.8%;
+		height: 420px;
+	}
+	&:nth-child(7) {
+		width: 48.8%;
+		height: 420px;
+	}
+}
+.solutions-card__wrapper {
+	gap: 16px 18px;
+	height: 850px;
+	width: 48.8%;
+	display: flex;
+	flex-direction: column;
+	>.solutions-card {
+		width: 100%;
+		height: 50%;
+	}
+}
+.blue {
+	background-color: $blue;
+	color: $white;
+}
+.gray {
+	background-color: $gray;
+	color: $blue;
 }
