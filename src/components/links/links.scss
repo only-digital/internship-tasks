@@ -1,0 +1,66 @@
+* {
+	font-family: Arial, Helvetica, sans-serif;
+	line-height: 150%;
+	letter-spacing: -0.32px;
+	font-weight: 400;
+}
+
+.container-links {
+	width: 350px;
+	margin: 50px auto;
+
+	.links {
+		$root: &;
+		display: inline-flex;
+		align-items: center;
+
+		&:visited {
+			color: #0041A0;
+		}
+		
+		@media (min-width: 375px) {
+			font-size: 14px;
+			letter-spacing: -0.28px;
+			color: #0041A0;
+
+			svg {
+				margin-left: 10px;
+				width: 19px;
+				height: 19px;
+			}
+
+			&:active {
+				color: #BF1D26;
+			}
+		}
+
+		@media (min-width: 1280px) {
+			font-size: 16px;
+			letter-spacing: -0.32px;
+			
+			&:hover {
+				color: #FF0000;
+			}
+
+			&:focus {
+				background: #0041A026;
+
+				&:hover {
+					background: transparent;
+					color: #FF0000;
+				}
+
+				&:active {
+					background: transparent;
+					color: #BF1D26;
+				}
+			}
+		}
+
+		&:not([href]) {
+			color: #BCBCBC;
+			pointer-events: none;
+		}
+		
+	}
+}

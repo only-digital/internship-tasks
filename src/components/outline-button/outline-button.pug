@@ -1,0 +1,9 @@
+mixin outline-button(props)
+	div.container
+		span.header!= props.text
+		button.outline-button&attributes(attributes)
+			span.outline-button__text Кнопка
+			span.outline-button__arrow
+				+svg('arrow-svg').outline-button__svg
+
+	

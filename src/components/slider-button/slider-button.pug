@@ -1,0 +1,11 @@
+mixin slider-button(props)
+	div.container-slider
+		span.header!= props.text
+		div.container-slider__buttons
+			button.slider-button__left&attributes(attributes)
+				span.slider-button__arrow
+					+svg('slider-arrow').slider-button__svg
+			button.slider-button__right&attributes(attributes)
+				span.slider-button__arrow
+					+svg('slider-arrow').slider-button__svg
+			span.slider-counter 01/04

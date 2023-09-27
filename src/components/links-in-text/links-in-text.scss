@@ -1,0 +1,48 @@
+.links-in-text {
+	$root: &;
+	width: 400px;
+	margin: 25px auto;
+
+	.links {
+		$root: &;
+		display: inline-flex;
+		align-items: center;
+
+		&:visited {
+			color: #0041A0;
+		}
+		
+		@media (min-width: 375px) {
+			font-size: 14px;
+			letter-spacing: -0.28px;
+			color: #0041A0;
+
+			&:active {
+				color: #BF1D26;
+			}
+		}
+
+		@media (min-width: 1280px) {
+			font-size: 16px;
+			letter-spacing: -0.32px;
+			
+			&:hover {
+				color: #FF0000;
+			}
+
+			&:focus {
+				background: #0041A026;
+
+				&:hover {
+					background: transparent;
+					color: #FF0000;
+				}
+
+				&:active {
+					background: transparent;
+					color: #BF1D26;
+				}
+			}
+		}
+}
+}

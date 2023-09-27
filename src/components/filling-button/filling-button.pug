@@ -1,0 +1,7 @@
+mixin filling-button(props)
+	div.container
+		span.header!= props.text 
+		button.filling-button&attributes(attributes)
+			span.filling-button__text Кнопка
+			span.filling-button__arrow 
+				+svg('arrow-svg').filling-button__svg

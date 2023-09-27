@@ -2,6 +2,29 @@ extends ../../build_modules/common
 
 
 block body
-    +example-button({text: 'example text'})
-    +example-button({text: 'disabled'})(disabled='')
+    //+example-button({text: 'example text'})
+    //+example-button({text: 'disabled'})(disabled='')
     //Your code here
+    div(style="width: 150px; margin: 25px auto; text-align: center;")
+        span Кнопка с обводкой
+    +outline-button({text: 'Обычное состояние'})
+    +outline-button({text: 'Неактивная кнопка'})(disabled='')
+    div(style="width: 350px; margin: 10px auto; text-align: center;")
+        span Кнопка с заливкой (альтернативный вариант)
+    +filling-button({text: 'Обычное состояние'})
+    +filling-button({text: 'Неактивная кнопка'})(disabled='')
+    div(style="width: 350px; margin: 10px auto; text-align: center;")
+        span Кнопка слайдера главной
+    +slider-button({text: 'Обычное состояние'})
+    +slider-button({text: 'Неактивная кнопка'})(disabled='')
+    div(style="width: 350px; margin: 10px auto; text-align: center;")
+        span Ссылки отдельно
+    +links({text: 'Обычное состояние &nbsp;'})(href='https://www.sustainalytics.com/')
+    +links({text: 'Неактивная ссылка &nbsp;'})
+    div(style="width: 350px; margin: 10px auto; text-align: center;")
+        span Ссылки в тексте
+    +links-in-text(href='https://www.google.com')
+    div(style="width: 350px; margin: 10px auto; text-align: center;")
+        span Переключатель
+    +switch({text: 'Активный (кликабелен)'})
+    +switch({text: 'Неактивный (не кликабелен)'})(disabled)

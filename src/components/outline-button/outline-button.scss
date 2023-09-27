@@ -1,0 +1,284 @@
+* {
+	font-family: Arial, Helvetica, sans-serif;
+	letter-spacing: -0.32px;
+	font-weight: 400;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: repeat(1fr 2);
+	grid-template-rows: 1fr;
+	align-items: center;
+	justify-items: center;
+	width: 350px;
+	margin: 50px auto;
+
+	@media (min-width: 375px) and (max-width: 767px) {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.header {
+		grid-area: 1 / 1 / 1 / 1 ;
+		font-size: 16px;
+		color: #111;
+		opacity: 0.8;
+	}
+
+	.outline-button {
+		$root: &;
+
+		grid-area: 1 / 2 / 1 / 2;
+		display: flex;
+		gap: 14px;
+		justify-content: center;
+		align-items: center;
+		border: 1px solid #BCBCBC;
+		transition: 300ms ease-in-out;
+
+		&:active {
+			background: #002F6C;
+			color: #fff;
+			border: none;
+			transition: 300ms ease-in-out;
+
+			svg {
+				fill: #fff;
+			}
+		}
+
+		&:disabled {
+			color: #909090;
+			pointer-events: none;
+
+			svg {
+				fill: #909090;
+			}
+		}
+
+		@media (min-width: 375px) {
+			width: 327px;
+			height: 42px;
+			border-radius: 25px;
+
+			svg {
+				width: 24px;
+				height: 17px;
+			}
+
+			&__text {
+				user-select: none;
+				font-size: 16px;
+			}
+		}
+
+		@media (min-width: 768px) {
+			width: 121px;
+			height: 42px;
+			border-radius: 25px;
+
+			svg {
+				width: 24px;
+				height: 17px;
+			}
+
+			&__text {
+				user-select: none;
+				font-size: 16px;
+			}
+		}
+
+		@media (min-width: 1280px) {
+			width: 111px;
+			height: 42px;
+			border-radius: 25px;
+
+			svg {
+				width: 24px;
+				height: 17px;
+			}
+
+			&__text {
+				user-select: none;
+				font-size: 14px;
+			}
+
+			@media (hover: hover) {
+				&:hover {
+					background: #0041A0;
+					color: #fff;
+					border: none;
+					transition: 300ms ease-in-out;
+
+					svg {
+						fill: #fff;
+					}
+				}
+
+				&:focus {
+					border: 3px solid #99B3D8;
+					color: #0041A0;
+					transition: 300ms ease-in-out;
+
+					&:hover {
+						background: #0041A0;
+						color: #fff;
+						border: none;
+						transition: 300ms ease-in-out;
+	
+						svg {
+							fill: #fff;
+						}
+					}
+	
+					&:active {
+						background: #002F6C;
+						color: #fff;
+						border: none;
+						transition: 300ms ease-in-out;
+	
+						svg {
+							fill: #fff;
+						}
+					}
+
+					svg {
+						fill: #0041A0;
+					}
+				}
+
+				&:focus:not(:focus-visible) {
+					&:hover {
+						background: #0041A0;
+						color: #fff;
+						border: none;
+						transition: 300ms ease-in-out;
+
+						svg {
+							fill: #fff;
+						}
+					}
+
+					&:active {
+						background: #002F6C;
+						color: #fff;
+						border: none;
+						transition: 300ms ease-in-out;
+
+						svg {
+							fill: #fff;
+						}
+					}
+
+					border: 3px solid #99B3D8;
+					color: #0041A0;
+					transition: 300ms ease-in-out;
+
+					svg {
+						fill: #0041A0;
+					}
+
+				}
+			}
+		}
+
+		@media (min-width: 1920px) {
+			width: 129px;
+			height: 48px;
+			border-radius: 24px;
+
+			svg {
+				width: 32px;
+				height: 22px;
+			}
+
+			&__text {
+				user-select: none;
+				font-size: 16px;
+			}
+
+			@media (hover: hover) {
+				&:hover {
+					background: #0041A0;
+					color: #fff;
+					border: none;
+					transition: 300ms ease-in-out;
+
+					svg {
+						fill: #fff;
+					}
+				}
+			}
+
+			&:focus {
+				border: 3px solid #99B3D8;
+				color: #0041A0;
+				transition: 300ms ease-in-out;
+
+				&:hover {
+					background: #0041A0;
+					color: #fff;
+					border: none;
+					transition: 300ms ease-in-out;
+
+					svg {
+						fill: #fff;
+					}
+				}
+
+				&:active {
+					background: #002F6C;
+					color: #fff;
+					border: none;
+					transition: 300ms ease-in-out;
+
+					svg {
+						fill: #fff;
+					}
+				}
+	
+				svg {
+					fill: #0041A0;
+				}
+			}
+	
+			&:focus:not(:focus-visible) {
+				&:hover {
+					background: #0041A0;
+					color: #fff;
+					border: none;
+					transition: 300ms ease-in-out;
+
+					svg {
+						fill: #fff;
+					}
+				}
+
+				&:active {
+					background: #002F6C;
+					color: #fff;
+					border: none;
+					transition: 300ms ease-in-out;
+
+					svg {
+						fill: #fff;
+					}
+				}
+
+				border: 3px solid #99B3D8;
+				color: #0041A0;
+				transition: 300ms ease-in-out;
+
+				svg {
+					fill: #0041A0;
+				}
+
+			}
+		}
+
+		svg {
+			fill: #002F6C;
+			transition: fill 0.3s;
+		}
+	}
+}

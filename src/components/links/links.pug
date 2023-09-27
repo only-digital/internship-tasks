@@ -1,0 +1,6 @@
+mixin links(props)
+	div.container-links
+		span.header!= props.text
+		a.links&attributes(attributes)
+			| Sustainalytics.com
+			+svg('link-icon').links__svg
