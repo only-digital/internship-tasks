@@ -3,8 +3,8 @@
 .button {
 	$root: &;
 
-	max-width: 129px;
-	max-height: 48px;
+	width: 129px;
+	height: 48px;
 
 	border: 1px solid $gray;
 	border-radius: 25px;
@@ -67,12 +67,46 @@
 	}
 	
 	&__svg {
-		max-width: 23px;
-		max-height: 32px; 
+		width: 32px;
+		height: 32px; 
 
 		fill: $darkBlue;
 
 		transition: fill 0.5s;
 	}
+
+	@media (max-width: 1280px) {
+		width: 111px;
+
+		gap: 12px;
+
+		font-size: 14px;
+
+		padding: 16px 14px 16px 16px;
+
+		&__svg {
+			width: 24px;
+			height: 24px; 
+		}
+	}
+
+	@media (max-width: 768px) {
+		width: 121px;
+
+		gap: 14px;
+
+		font-size: 16px;
+
+		padding: 11px 14px 11px 18px;
+	}
+
+	@media (max-width: 375px) {
+		width: 327px;
+
+		padding: 14px 120px;
+
+		gap: 12px;
+	}
+
 
 }
