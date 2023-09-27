@@ -1,3 +1,91 @@
 .grid-container {
     // Your code here
+    display: grid;
+    width: 1920px;   //
+    height: 2156px;
+    padding-top: 122px;
+    padding-left: 97px;
+    padding-right: 97px;
+    padding-bottom: 120px;
+    grid-template-areas: 
+    "maintitle maintitle maintitle maintitle maintitle maintitle"
+    "title1 title1 title1 title2 title2 title2"
+    "title1 title1 title1 title3 title3 title3"
+    "title4 title4 title5 title5 title6 title6"
+    "title7 title7 title7 title8 title8 title8";
+    grid-template-columns: repeat(6, 274.5px);
+    grid-template-rows: 110px 1fr 1fr 480px 420px;
+    gap: 16px;
+    color: #04306A;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    
+    .main-title {
+        grid-area: maintitle;
+        display: block;
+        font-size: 40px;
+        
+        .main-title__text {
+            display: inline!important;
+
+            .main-title__text_color {
+                color: red;
+                display: inline!important;  
+            }
+
+            .main-title__text_not-color {
+                display: inline!important; 
+            }
+        }
+    }
+
+    .title__img {
+        align-items: end; 
+        justify-items: end;     
+    }
+
+    .title {
+        background-color: #F4F4F4;
+        padding-left: 49px;
+        padding-right: 26px;
+        padding-top: 49px;
+        padding-bottom: 25px;
+                
+        .title__text {
+            display: block;
+        }      
+    }
+
+    .title_color {
+        color: white;
+        background-color: #04306A;
+    }
+    
+    .title__1 {
+        grid-area: title1;        
+    }
+
+    .title__2 {
+        grid-area: title2;
+    }
+    .title__3 {
+        grid-area: title3;
+    }
+    .title__4 {
+        grid-area: title4;
+    }
+    .title__5 {
+        grid-area: title5;
+    }
+    .title__6 {
+        grid-area: title6;
+    }
+    .title__7 {
+        grid-area: title7;
+    }
+    .title__8 {
+        grid-area: title8;
+    }
+
 }
