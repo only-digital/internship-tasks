@@ -1,5 +1,56 @@
+@import '/src/pages/style.scss';
+
 .slider {
 	$root: &;
 
-	//Your code here
+	width: 80px;
+	height: 80px;
+
+	border: solid 2px #DEDEDE;
+	border-radius: 50px;
+
+	transition: background-color 0.5s, border 0.5s;
+
+	&_left {
+		padding: 18px 28px 18px 20px;
+
+		#{$root}__svg {
+			transform: rotate(180deg);
+		}
+	}
+
+	&_right {
+		padding: 18px 20px 18px 28px;
+	}
+
+	&__svg {
+		width: 28px;
+		height: 40px;
+	}
+
+	&:not(:last-child){
+		margin-right: 15px;
+	}
+
+	&:hover {
+		background-color: $extraGray;
+		border: 0;
+	}
+
+	&:active {
+		background-color: #DEDEDE;
+		border: 0;
+	}
+
+	&:focus {
+		outline: 3px #99B3D8 solid;
+	}
+
+	&:disabled {
+		pointer-events: none;
+
+		#{$root}__svg {
+			fill: $gray;
+		}
+	}
 }

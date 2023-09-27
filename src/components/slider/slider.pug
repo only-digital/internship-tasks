@@ -1,3 +1,9 @@
 mixin slider(props)
-	.slider&attributes(attributes)
-		//Your code here
+	button.slider.slider_left
+		+svg('svg-left').slider__svg
+	button.slider.slider_right
+		+svg('svg-left').slider__svg
+	button.slider.slider_left(disabled='')
+		+svg('svg-left').slider__svg
+	button.slider.slider_right(disabled='')
+		+svg('svg-left').slider__svg
