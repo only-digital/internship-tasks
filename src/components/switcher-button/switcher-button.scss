@@ -1,0 +1,78 @@
+.switcher-button {
+  $root: &;
+  position: relative;
+  display: inline-block;
+  width: 56px;
+  height: 28px;
+
+  &[disabled] {
+    pointer-events: none;
+
+    .switcher-button__switcher {
+      background: #dedede;
+    }
+  }
+
+  @media (max-width: 375px) {
+    width: 40px;
+    height: 20px;
+  }
+}
+
+.switcher-button__input {
+  width: 0;
+  height: 0;
+  opacity: 0;
+
+  &:checked + .switcher-button__switcher::after {
+    transform: translateX(28px);
+
+    @media (max-width: 375px) {
+      transform: translateX(20px);
+    }
+  }
+}
+
+.switcher-button__switcher {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border-radius: 14px;
+  background-color: #0041a0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #002f6c;
+  }
+
+  &:focus {
+    outline: 3px solid #99b3d8;
+    background-color: #dedede;
+  }
+
+  &:disabled {
+    background-color: #dedede;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 6px;
+    left: 6px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+
+    @media (max-width: 375px) {
+      height: 12px;
+      width: 12px;
+      left: 4px;
+      top: 4px;
+    }
+  }
+}
