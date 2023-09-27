@@ -1,0 +1,11 @@
+$blue: #04306A;
+$light-blue: #0041A0;
+$red: #FC0D1B;
+$grey: #f4f4f4;
+
+@mixin text($fs) {
+  color: $blue;
+  font-family: Arial;
+  font-weight: 700;
+  font-size: $fs;
+}
