@@ -1,16 +1,22 @@
 extends ../../build_modules/common
 
+mixin wrapper
+    .wrapper(style='margin-bottom: 10px')
+        block
+
 block body
     .container(style='padding: 20px')
-        .wrapper(style='margin-bottom: 10px')
+        +wrapper
             +example-button({text: 'example text'})
-        .wrapper(style='margin-bottom: 10px')
+        +wrapper
             +example-button({text: 'disabled'})(disabled='')
-        .wrapper(style='margin-bottom: 10px')
+        +wrapper
             +button-outline({text: 'Outline'})
-        .wrapper(style='margin-bottom: 10px')
+        +wrapper
             +button-outline({text: 'Outline'})(disabled='')
-        .wrapper(style='margin-bottom: 10px')
+        +wrapper
             +button-outline({text: 'Alternate'})(class='button-outline_alt')
-        .wrapper(style='margin-bottom: 10px')
+        +wrapper
             +button-outline({text: 'Alternate'})(disabled='' class='button-outline_alt')
+        +wrapper 
+            
