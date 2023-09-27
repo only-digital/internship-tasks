@@ -3,11 +3,22 @@ mixin form(props)
 		h2.form__title Форма обратной связи
 		.form__content 
 			label(class="email__label" for="email") Email
-			input(class="form__content--email email" type="email" name="email" id="email")
+			input(class="form__content--email" type="email" name="email" id="email")
+			label(class="validate__label validate__label--email" for="email")
 			div.checkbox
-				input(class="form__content--checkbox checkbox" type="checkbox" name="checkbox" id="checkbox")
+				input(class="form__content--checkbox" type="checkbox" name="checkbox" id="checkbox")
 				label(class="checkbox__label" for="checkbox")
 					| Вы подтверждаете, что ознакомились с 
 					a(href="#") политикой обработки персональных данных
+				label(class="validate__label validate__label--checkbox" for="checkbox")
 			button(class="form__content--btn" type="submit") Отправить
 				+svg('arrow-svg')
+			.form--preloader
+
+			.success
+				+svg('success-svg')
+				| Форма успешно отправлена
+
+			.error
+				+svg('error-svg')
+				| Ошибка отправки формы
