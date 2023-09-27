@@ -29,16 +29,6 @@
 		gap: 14px;
 	}
 
-	&:active {
-		color: #FFF;
-		background-color: #002F6C;
-		border-color: #002F6C;
-
-		#{$root}__svg {
-			fill: #FFF;
-		}
-	}
-
 	@media (min-width: 1280px) and (hover:hover) {
 		&:hover {
 			color: #FFF;
@@ -64,6 +54,16 @@
 			#{$root}__svg {
 				fill: #0041A0;
 			}
+		}
+	}
+
+	&:active {
+		color: #FFF;
+		background-color: #002F6C;
+		border-color: #002F6C;
+
+		#{$root}__svg {
+			fill: #FFF;
 		}
 	}
 
