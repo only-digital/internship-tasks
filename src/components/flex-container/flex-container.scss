@@ -34,6 +34,7 @@
     .box {
         display: flex;
         flex-direction: column;
+        gap: 16px;
 
         &__first {
             gap: 18px;
@@ -78,7 +79,6 @@
         &__second {
             height: 480px;
             gap: 18px;
-            margin: 16px 0;
 
             &__tongue-and-groove-lock,
             &__bridge-fasteners,
