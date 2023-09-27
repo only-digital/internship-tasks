@@ -10,7 +10,8 @@
     --bg-color-active: #002f6c;
 
     --bg-color-disabled: #fff;
-    --text-color-disable: #909090;
+    --text-color-disabled: #909090;
+    --border-color-disabled: #bcbcbc;
 
     --text-color-focus: #0041a0;
 
@@ -28,8 +29,9 @@
 
     --bg-color-active: #81080f;
 
-    --text-color-disable: #909090;
+    --text-color-disabled: #909090;
     --bg-color-disabled: #f4f4f4;
+    --border-color-disabled: #f4f4f4;
     --text-color-white: #fff;
 
     --text-color-focus: #fff;
@@ -69,51 +71,6 @@
         }
     }
 
-    &:hover {
-        background-color: var(--bg-color-hover);
-        color: var(--text-color-white);
-        border-color: var(--bg-color-hover);
-
-        #{$root}__svg {
-            fill: var(--text-color-white);
-        }
-    }
-
-    &:disabled {
-        pointer-events: none;
-        border-color: var(--bg-color-disabled);
-        background-color: var(--bg-color-disabled);
-        color: var(--text-color-disable);
-
-        #{$root}__svg {
-            fill: var(--text-color-disable);
-        }
-    }
-
-    &:active {
-        background-color: var(--bg-color-active);
-        color: var(--text-color-white);
-        border-color: var(--bg-color-active);
-
-        #{$root}__svg {
-            fill: var(--text-color-white);
-        }
-    }
-
-    &:focus {
-        outline: 3px solid var(--outline-color);
-        color: var(--text-color-focus);
-
-        &:hover {
-            border-color: var(--border-color-default);
-            background-color: var(--bg-color-default);
-        }
-
-        #{$root}__svg {
-            fill: var(--text-color-focus);
-        }
-    }
-
     @media (min-width: 376px) {
         width: 130px;
         gap: 14px;
@@ -129,6 +86,53 @@
         padding: 7px 18px 7px 14px;
         width: 138px;
         gap: 12px;
+
+        &:hover {
+            background-color: var(--bg-color-hover);
+            color: var(--text-color-white);
+            border-color: var(--bg-color-hover);
+
+            #{$root}__svg {
+                fill: var(--text-color-white);
+            }
+        }
+
+        &:focus {
+            outline: 3px solid var(--outline-color);
+            //color: var(--text-color-focus);
+
+            &:hover {
+                color: var(--text-color-white);
+                #{$root}__svg {
+                    fill: var(--text-color-white);
+                }
+            }
+
+            #{$root}__svg {
+                fill: var(--text-color-focus);
+            }
+        }
+    }
+
+    &:disabled {
+        pointer-events: none;
+        border-color: var(--border-color-disabled);
+        background-color: var(--bg-color-disabled);
+        color: var(--text-color-disabled);
+
+        #{$root}__svg {
+            fill: var(--text-color-disabled);
+        }
+    }
+
+    &:active {
+        background-color: var(--bg-color-active);
+        color: var(--text-color-white);
+        border-color: var(--bg-color-active);
+
+        #{$root}__svg {
+            fill: var(--text-color-white);
+        }
     }
 
     &__icon {

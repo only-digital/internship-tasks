@@ -18,9 +18,14 @@ $white: #fff;
         outline: 3px solid $light-blue;
     }
 
+    &:hover + .toggle-track {
+        background: $dark-blue;
+    }
+
     &:disabled + .toggle-track {
         cursor: auto;
         outline: none;
+        background: $grey;
     }
 
     &:checked + .toggle-track .toggle-indicator {

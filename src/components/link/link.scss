@@ -21,32 +21,27 @@ $grey: #bcbcbc;
     width: fit-content;
     align-items: center;
 
-    &:focus {
-        background-color: $light-blue;
-        transition: background 0.2s ease-in;
-    }
+    @media (min-width: 1280px) {
+        &:focus {
+            background-color: $light-blue;
+            transition: background 0.2s ease-in;
+            &:hover {
+                cursor: pointer;
+                color: $red;
+            }
+            &:active {
+                color: $dark-red;
+            }
+        }
 
-    &:hover {
-        cursor: pointer;
-        color: $red;
+        &:hover {
+            cursor: pointer;
+            color: $red;
+        }
     }
 
     &:active {
         color: $dark-red;
-    }
-
-    &:focus {
-        &:hover {
-            cursor: pointer;
-            color: $dark-blue;
-        }
-    }
-
-    [disabled="disabled"] {
-        pointer-events: none;
-        cursor: default;
-        text-decoration: none;
-        color: $grey;
     }
 
     @media (min-width: 768px) {
@@ -64,4 +59,11 @@ $grey: #bcbcbc;
         height: 24px;
         margin-left: 10px;
     }
+}
+
+.disabled {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+    color: $grey;
 }
