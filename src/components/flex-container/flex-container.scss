@@ -50,6 +50,8 @@ $gray: #F4F4F4;
 		height: 420px;
 	}
 }
+
+
 .solutions-card__wrapper {
 	gap: 16px 18px;
 	height: 850px;
@@ -61,11 +63,16 @@ $gray: #F4F4F4;
 		height: 50%;
 	}
 }
+
 .blue {
+    background:  url(https://res.cloudinary.com/dyvmnrk8q/image/upload/v1695838508/whiteArrow_uryw5a.svg)  no-repeat 95% center;
+    background-position: bottom 25px right 37px;
 	background-color: $blue;
 	color: $white;
 }
 .gray {
+    background:  url(https://res.cloudinary.com/dyvmnrk8q/image/upload/v1695838504/blueArrow_pptppu.svg)  no-repeat 95% center;
+    background-position: bottom 25px right 37px;
 	background-color: $gray;
 	color: $blue;
 }

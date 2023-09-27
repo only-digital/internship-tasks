@@ -62,3 +62,16 @@ $red: #FC0D1B;
 		grid-area: eighth;
 	}
 }
+
+.blue {
+    background:  url(https://res.cloudinary.com/dyvmnrk8q/image/upload/v1695838508/whiteArrow_uryw5a.svg)  no-repeat 95% center;
+    background-position: bottom 25px right 37px;
+	background-color: $blue;
+	color: $white;
+}
+.gray {
+    background:  url(https://res.cloudinary.com/dyvmnrk8q/image/upload/v1695838504/blueArrow_pptppu.svg)  no-repeat 95% center;
+    background-position: bottom 25px right 37px;
+	background-color: $gray;
+	color: $blue;
+}
