@@ -1,0 +1,17 @@
+mixin btn__icon()
+	<svg class="btn__icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<g clip-path="url(#clip0_687_12)">
+			<path d="M29.9059 14.9678L29.9059 17.0322L16.859 25.1208L17.9172 27L32 18.2751L32 13.7249L17.9172 5L16.859 6.87919L29.9059 14.9678Z" fill="currentColor"/>
+			<path d="M27 17.0926L27 14.9074L1.05717e-06 14.9074L8.66136e-07 17.0926L27 17.0926Z" fill="currentColor"/>
+		</g>
+		<defs>
+			<clipPath id="clip0_687_12">
+				<rect width="32" height="32" fill="white"/>
+			</clipPath>
+		</defs>
+	</svg>
+
+mixin btn(text)
+	button.btn&attributes(attributes)
+		span.btn__text= text
+		+btn__icon()

@@ -1,0 +1,7 @@
+
+mixin switch(props)
+	.switch&attributes(attributes)(class=`${props.disabled ? 'disabled' : ''}`) 
+		input(type="checkbox" id= props.id name= props.name checked= props.checked)&attributes(props.disabled && {'disabled': ''})
+		label(for= props.id) #{props.label}
+
+

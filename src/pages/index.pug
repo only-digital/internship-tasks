@@ -2,6 +2,37 @@ extends ../../build_modules/common
 
 
 block body
-    +example-button({text: 'example text'})
-    +example-button({text: 'disabled'})(disabled='')
-    //Your code here
+    .row
+        +example-button({text: 'example text'})
+        +example-button({text: 'disabled'})(disabled='')
+        br
+        +btn('Кнопка')
+        br
+        +btn('Кнопка')(disabled="")
+        br
+        +btn('Кнопка')(class="btn__danger")
+        br
+        +btn('Кнопка')(class="btn__danger" disabled="")
+        br
+        +slider-btns({current: "01", pages: "04"})
+        br
+        +link({text: 'Sustainalytics.com', icon: true})(href="https://sustainalytics.com" target="_blank")
+        br
+        +link({text: 'Sustainalytics.com', icon: true})(href="" tabindex = "-1" class="disabled")
+        br
+        p
+            | Для подключения сервиса добавьте  номер  
+            +link({text: '+7(921)058-57-19', icon: false})(href="tel:+79210585719") 
+            |
+            | в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже
+        p
+            | Цифровые продукты, направленные на создание 
+            +link({text: 'дополнительных сервисов', icon: false})(href="https://sustainalytics.com" target="_blank")
+            | 
+            | и устранение «проблемных точек» наших клиентов  
+        br
+        +switch({id: 'sw01', label: 'text', name: 'checkname'})(tabindex= 2)
+        br
+        +switch({id: 'sw02', name: 'checkname02', checked: true})(tabindex= 3)
+        br
+        +switch({id: 'sw03', disabled: true})
