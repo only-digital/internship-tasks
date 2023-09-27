@@ -25,13 +25,6 @@ $grey: #bcbcbc;
         &:focus {
             background-color: $light-blue;
             transition: background 0.2s ease-in;
-            &:hover {
-                cursor: pointer;
-                color: $red;
-            }
-            &:active {
-                color: $dark-red;
-            }
         }
 
         &:hover {

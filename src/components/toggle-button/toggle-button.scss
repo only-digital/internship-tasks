@@ -13,13 +13,13 @@ $white: #fff;
     margin: 0;
     position: absolute;
 
-    &:active + .toggle-track,
-    &:focus + .toggle-track {
-        outline: 3px solid $light-blue;
-    }
-
-    &:hover + .toggle-track {
-        background: $dark-blue;
+    @media (min-width: 1280px) {
+        &:focus + .toggle-track {
+            outline: 3px solid $light-blue;
+        }
+        &:hover + .toggle-track {
+            background: $dark-blue;
+        }
     }
 
     &:disabled + .toggle-track {
@@ -36,8 +36,10 @@ $white: #fff;
     }
     &:checked + .toggle-track {
         background: $blue;
-        &:hover {
-            background: $dark-blue;
+        @media (min-width: 1280px) {
+            &:hover {
+                background: $dark-blue;
+            }
         }
     }
 }
