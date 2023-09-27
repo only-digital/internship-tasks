@@ -1,0 +1,4 @@
+mixin button-outline(props)
+	button.button-outline&attributes(attributes)
+		span.button-outline__text!= props.text
+		+svg('arrow-svg').button-outline__svg

@@ -1,0 +1,99 @@
+$blue-color: #002f6c;
+$cobolt-color: #0041a0;
+$grey-1-color: #bcbcbc;
+$text-color: #111111;
+$pale-blue-color: #99B3D8;
+$steel-color: #909090;
+
+.button-outline {
+  $root: &;
+
+  //Your code here
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  border: 1px solid $grey-1-color;
+
+  transition: color 0.3s, opacity 0.3s;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: -0.02em;
+
+  height: 42px;
+  width: 100%;
+  padding: 0 14px;
+
+  &:active {
+    background-color: $blue-color;
+    color: white;
+    border: none;
+
+    #{$root}__svg {
+      fill: white;
+    }
+  }
+
+  &:focus {
+	outline: 3px solid $pale-blue-color;
+  }
+
+  &:disabled {
+    pointer-events: none;
+	color: $steel-color;
+
+	#{$root}__svg {
+        fill: $steel-color;
+      }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $cobolt-color;
+      color: white;
+      border: none;
+
+      #{$root}__svg {
+        fill: white;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    width: auto;
+    gap: 14px;
+    padding-right: 14px;
+    padding-left: 18px;
+  }
+
+  @media (min-width: 1280px) {
+    padding-right: 14px;
+    padding-left: 16px;
+    gap: 12px;
+
+    line-height: 14px;
+    font-size: 14px;
+  }
+
+  @media (min-width: 1920px) {
+    padding-right: 14px;
+    padding-left: 18px;
+    gap: 14px;
+    height: 48px;
+  }
+
+  svg {
+    width: 24px;
+    height: 26px;
+    fill: $blue-color;
+    transition: fill 0.3s;
+
+    @media (min-width: 1920px) {
+      width: 32px;
+      height: 34px;
+    }
+  }
+}
