@@ -32,11 +32,12 @@ $red: #FC0D1B;
 	gap: 16px 18px;
 }
 .solutions-card__grid {
-	padding: 44px;
+	padding: 24px 36px;
 	font-size: 2rem;
 	line-height: 2.4rem;
 	height: 417px;
 	&:nth-child(1) {
+	    padding: 50px;
 		grid-area: first;
 		height: 850px;
 	}
