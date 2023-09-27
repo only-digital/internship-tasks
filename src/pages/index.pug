@@ -1,8 +1,12 @@
 extends ../../build_modules/common
 
-
 block body
-    .wrapper(style='padding: 20px')
-        +example-button({text: 'example text'})
-        +example-button({text: 'disabled'})(disabled='')
-        //Your code here
+    .container(style='padding: 20px')
+        .wrapper(style='margin-bottom: 10px')
+            +example-button({text: 'example text'})
+        .wrapper(style='margin-bottom: 10px')
+            +example-button({text: 'disabled'})(disabled='')
+        .wrapper(style='margin-bottom: 10px')
+            +button-outline({text: 'Outline'})
+        .wrapper(style='margin-bottom: 10px')
+            +button-outline({text: 'Outline-disabled'})(disabled='')
