@@ -1,0 +1,26 @@
+$slider-button-basic-size: 60px;
+$slider-button-1920-size: 80px;
+
+[data-direction='right'] {
+  --degree: 180deg;
+}
+
+@mixin slider-button-size-mixin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $slider-button-basic-size;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transform: rotate(var(--degree));
+  svg {
+    width: $slider-button-basic-size;
+    aspect-ratio: 1;
+  }
+  @media screen and (min-width: 1920px) {
+    width: $slider-button-1920-size;
+    svg {
+      width: $slider-button-1920-size;
+    }
+  }
+}

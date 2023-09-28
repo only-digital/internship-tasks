@@ -1,0 +1,6 @@
+include ./slider-button/slider-button.pug
+mixin slider()
+	.slider
+		+slider-button()&attributes(attributes)
+		+slider-button()&attributes(attributes)(data-direction='right')
+		//Your code here

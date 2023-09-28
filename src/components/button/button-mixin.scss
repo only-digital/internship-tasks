@@ -1,0 +1,48 @@
+$button-1920-width: 129px;
+$button-1280-width: 111px;
+$button-768-width: 121px;
+$button-375-width: 327px;
+$button-1920-height: 48px;
+$button-basic-height: 42px;
+$button-basic-text-size: 16px;
+$button-1280-text-size: 14px;
+$button-basic-arrow-size: 24px;
+$button-arrow-1920-size: 32px;
+$button-basic-icon-margin: 12px;
+$button-icon-margin-1920: 14px;
+
+@mixin button-size {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  border: 1px solid #bcbcbc;
+  width: $button-1920-width;
+  height: $button-1920-height;
+  font-size: $button-basic-text-size;
+  &__icon {
+    margin-left: $button-icon-margin-1920;
+  }
+  svg {
+    width: $button-arrow-1920-size;
+    aspect-ratio: 1;
+  }
+  @media screen and (max-width: 1280px) {
+    width: $button-1280-width;
+    height: $button-basic-height;
+    font-size: $button-1280-text-size;
+    &__icon {
+      margin-left: $button-basic-icon-margin;
+    }
+    svg {
+      width: $button-basic-arrow-size;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    width: $button-768-width;
+    font-size: $button-basic-text-size;
+  }
+  @media screen and (max-width: 375px) {
+    width: $button-375-width;
+  }
+}

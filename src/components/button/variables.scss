@@ -1,0 +1,45 @@
+[data-color='blue'] {
+  --basic-text-color: rgb(17, 17, 17);
+  --basic-background-color: white;
+  --basic-arrow-color: rgb(0, 47, 108);
+
+  --hover-text-color: white;
+  --hover-background-color: rgb(0, 65, 160);
+  --hover-arrow-color: white;
+
+  --focus-text-color: rgb(0, 65, 160);
+  --focus-border-color: rgb(153, 179, 216);
+  --focus-background-color: white;
+  --focus-arrow-color: rgb(0, 65, 160);
+
+  --active-text-color: white;
+  --active-background-color: rgb(0, 47, 108);
+  --active-arrow-color: white;
+
+  --disable-text-color: rgb(144, 144, 144);
+  --disable-background-color: white;
+  --disable-arrow-color: rgba(144, 144, 144, 1);
+}
+
+[data-color='red'] {
+  --basic-text-color: white;
+  --basic-background-color: rgb(255, 0, 0);
+  --basic-arrow-color: white;
+
+  --hover-text-color: white;
+  --hover-background-color: rgba(191, 29, 38, 1);
+  --hover-arrow-color: white;
+
+  --focus-text-color: white;
+  --focus-border-color: rgba(153, 179, 216, 1);
+  --focus-background-color: rgb(255, 0, 0);
+  --focus-arrow-color: white;
+
+  --active-text-color: white;
+  --active-background-color: rgba(129, 8, 15, 1);
+  --active-arrow-color: white;
+
+  --disable-text-color: rgb(144, 144, 144);
+  --disable-background-color: rgba(244, 244, 244, 1);
+  --disable-arrow-color: rgba(144, 144, 144, 1);
+}

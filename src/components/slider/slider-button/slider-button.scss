@@ -1,0 +1,49 @@
+$basic-slider-icon-color: rgb(0, 47, 108);
+$basic-slider-border-color: rgb(222, 222, 222);
+$basic-slider-background-color: white;
+
+$hover-slider-border-color: rgb(244, 244, 244);
+$hover-slider-background-color: rgb(244, 244, 244);
+
+$active-slider-border-color: rgb(222, 222, 222);
+$active-slider-background-color: rgb(222, 222, 222);
+
+$focus-slider-border-color: rgb(153, 179, 216);
+$focus-slider-background-color: white;
+
+$disable-slider-icon-color: rgb(188, 188, 188);
+$disable-slider-border-color: rgb(222, 222, 222);
+$disable-slider-background-color: white;
+
+@import './slider-button-size-mixin.scss';
+.slider-button {
+  @include slider-button-size-mixin;
+  border: 1px solid $basic-slider-border-color;
+  transition: background-color 0.3s, border 0.3s;
+  svg {
+    fill: $basic-slider-icon-color;
+  }
+  &:focus {
+    @media screen and (min-width: 769px) {
+      background-color: $focus-slider-background-color;
+      border: 3px solid $focus-slider-border-color;
+    }
+  }
+  &:hover {
+    @media screen and (min-width: 769px) {
+      background-color: $hover-slider-background-color;
+      border-color: $hover-slider-border-color;
+    }
+  }
+  &:active {
+    background-color: $active-slider-background-color;
+    border-color: $active-slider-border-color;
+  }
+  &:disabled {
+    border-color: $disable-slider-border-color;
+    background-color: $disable-slider-background-color;
+    svg {
+      fill: $disable-slider-icon-color;
+    }
+  }
+}

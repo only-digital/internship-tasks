@@ -1,0 +1,5 @@
+@font-face {
+  font-family: 'Grtsk-Peta';
+  src: url('./GrtskPeta-Regular.woff') format('woff2'),
+    url('./GrtskPeta-Regular.woff') format('woff');
+}

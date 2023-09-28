@@ -1,0 +1,5 @@
+mixin link(props)
+	a.link&attributes(attributes)(target='blank', tabindex=0)=` ${props.text} `
+		+svg('link_icon').link__icon
+		
+		//Your code here

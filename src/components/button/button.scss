@@ -1,0 +1,46 @@
+@import '../../pages/index.scss';
+@import './button-mixin.scss';
+@import './variables.scss';
+.button {
+  @include button-size;
+  background-color: var(--basic-background-color);
+  color: var(--basic-text-color);
+  transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+  &:focus {
+    @media screen and (min-width: 769px) {
+      background-color: var(--focus-background-color);
+      outline: 3px solid var(--focus-border-color);
+      color: var(--focus-text-color);
+      svg {
+        fill: var(--focus-arrow-color);
+      }
+    }
+  }
+  &:hover {
+    @media screen and (min-width: 769px) {
+      background-color: var(--hover-background-color);
+      color: var(--hover-text-color);
+      svg {
+        fill: var(--hover-arrow-color);
+      }
+    }
+  }
+  &:active {
+    background-color: var(--active-background-color);
+    color: var(--active-text-color);
+    svg {
+      fill: var(--active-arrow-color);
+    }
+  }
+  &:disabled {
+    background-color: var(--disable-background-color);
+    color: var(--disable-text-color);
+    svg {
+      fill: var(--disable-arrow-color);
+    }
+  }
+  svg {
+    fill: var(--basic-arrow-color);
+    transition: fill 0.3s;
+  }
+}

@@ -1,0 +1,53 @@
+$basic-link-color: rgb(0, 65, 160);
+$hover-link-color: rgb(255, 0, 0);
+$active-link-color: rgb(191, 29, 38);
+$disable-link-color: rgba(188, 188, 188, 1);
+$focus-link-background-color: rgba(0, 65, 160, 0.15);
+.link {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  white-space: pre;
+  vertical-align: middle;
+  font-family: Grtsk-Peta;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.32px;
+  text-decoration: none;
+  color: $basic-link-color;
+  cursor: pointer;
+  &:focus {
+    @media screen and (min-width: 769px) {
+      background-color: $focus-link-background-color;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+    letter-spacing: -0.28px;
+  }
+  svg {
+    width: 24px;
+    aspect-ratio: 1;
+  }
+  &:hover {
+    @media screen and (min-width: 769px) {
+      color: $hover-link-color;
+    }
+  }
+  &:active {
+    color: $active-link-color;
+  }
+
+  &_type_inside-text {
+    svg {
+      display: none;
+    }
+  }
+  &_disabled {
+    color: $disable-link-color;
+    pointer-events: none;
+  }
+}
+
+//Your code here
