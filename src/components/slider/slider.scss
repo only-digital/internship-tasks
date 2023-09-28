@@ -6,7 +6,7 @@
 	width: 80px;
 	height: 80px;
 
-	border: solid 2px #DEDEDE;
+	border: solid 1px #DEDEDE;
 	border-radius: 50px;
 
 	transition: background-color 0.5s, border 0.5s;
@@ -26,6 +26,8 @@
 	&__svg {
 		width: 28px;
 		height: 40px;
+
+		fill: $darkBlue;
 	}
 
 	&:not(:last-child){
@@ -51,6 +53,42 @@
 
 		#{$root}__svg {
 			fill: $gray;
+		}
+	}
+
+	@media (max-width: 1280px) {
+		width: 60px;
+		height: 60px;
+
+		&__svg {
+			width: 21px;
+			height: 30px;
+		}
+
+		&_right {
+			padding: 14px 15.5px 14px 21px;
+		}
+
+		&_left {
+			padding: 14px 21px 14px 15.5px;
+		}
+	}
+
+	@media (max-width: 768px) {
+		width: 60px;
+		height: 60px;
+
+		&__svg {
+			width: 21px;
+			height: 30px;
+		}
+
+		&_right {
+			padding: 14px 15.5px 14px 21px;
+		}
+
+		&_left {
+			padding: 14px 21px 14px 15.5px;
 		}
 	}
 }
