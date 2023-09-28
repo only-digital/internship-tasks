@@ -2,12 +2,12 @@ $blue-color: #002f6c;
 $cobolt-color: #0041a0;
 $grey-1-color: #bcbcbc;
 $text-color: #111111;
-$pale-blue-color: #99B3D8;
+$pale-blue-color: #99b3d8;
 $steel-color: #909090;
 
-$alt-hover-color: #BF1D26;
-$alt-active-color: #81080F;
-$grey-3-color: #F4F4F4;
+$alt-hover-color: #bf1d26;
+$alt-active-color: #81080f;
+$grey-3-color: #f4f4f4;
 
 .button-outline {
   $root: &;
@@ -42,16 +42,16 @@ $grey-3-color: #F4F4F4;
   }
 
   &:focus {
-	outline: 3px solid $pale-blue-color;
+    outline: 3px solid $pale-blue-color;
   }
 
   &:disabled {
     pointer-events: none;
-	color: $steel-color;
+    color: $steel-color;
 
-	#{$root}__svg {
-        fill: $steel-color;
-      }
+    #{$root}__svg {
+      fill: $steel-color;
+    }
   }
 
   @media (hover: hover) {
@@ -101,31 +101,29 @@ $grey-3-color: #F4F4F4;
     }
   }
 
-  
   // Alternate styles
 
   &_alt {
-	 background-color: red;
-	 color: white;
-	 border-color: transparent;
+    background-color: red;
+    color: white;
+    border-color: transparent;
 
-	 svg {
-		fill: white;
-	 }
+    svg {
+      fill: white;
+    }
 
-	 &:active {
-		background-color: $alt-active-color;	
-	  }
-	
-	  &:disabled {
-		background-color: $grey-3-color;
-	  }
-	
-	  @media (hover: hover) {
-		&:hover {
-		  background-color: $alt-hover-color;
-		}
-	  }
+    &:active {
+      background-color: $alt-active-color;
+    }
+
+    &:disabled {
+      background-color: $grey-3-color;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: $alt-hover-color;
+      }
+    }
   }
-  
 }

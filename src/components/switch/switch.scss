@@ -24,15 +24,15 @@ $pale-blue-color: #99b3d8;
   }
 
   &:disabled {
-	background-color: $grey-2-color;
+    background-color: $grey-2-color;
 
-	.switch__circle {
-		left: 4px;
+    .switch__circle {
+      left: 4px;
 
-		@media (min-width: 768px) {
-			left: 6px;
-		  }
-	}
+      @media (min-width: 768px) {
+        left: 6px;
+      }
+    }
   }
 
   @media (min-width: 768px) {

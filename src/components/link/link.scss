@@ -1,7 +1,7 @@
 $blue-color: #002f6c;
 $active-color: #bf1d26;
 $focus-color: rgba(0, 65, 160, 0.15);
-$gray-color: #BCBCBC;
+$gray-color: #bcbcbc;
 
 .link {
   $root: &;
@@ -29,7 +29,7 @@ $gray-color: #BCBCBC;
   }
 
   &[disabled] {
-	pointer-events: none;
+    pointer-events: none;
     .link__text {
       color: $gray-color;
     }
