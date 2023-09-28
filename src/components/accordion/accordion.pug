@@ -1,0 +1,6 @@
+mixin accordion(props)
+	.accordion&attributes(attributes)(data-component='accordion')
+		h2.accordion__header!= props.title
+		.accordion__list
+			each val in props.content
+				+accordion-item(val)

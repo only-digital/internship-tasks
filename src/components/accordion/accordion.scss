@@ -1,0 +1,78 @@
+@import "../../pages/global";
+
+.accordion {
+	$root: &;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: flex-start;
+
+	&__header {
+		color: $dark-teal;
+		line-height: 100%;
+	}
+
+	&__list {
+		width: 100%;
+	}
+
+	@media screen and (min-width: 375px) {
+		width: 327px;
+		margin: 152px 20px auto;
+
+		gap: 40px;
+
+		&__header {
+			width: 190px;
+
+			font-size: 30px;
+			letter-spacing: -0.6px;
+		}
+	}
+
+	@media screen and (min-width: 768px) {
+		width: 688px;
+		margin: 174px 40px auto;
+
+		gap: 50px;
+
+		&__header {
+			width: 100%;
+
+			font-size: 42px;
+			letter-spacing: -0.84px;
+		}
+	}
+
+	@media screen and (min-width: 1280px) {
+		width: 1066px;
+		margin: 167px 107px auto;
+
+		gap: 56px;
+	}
+
+	@media screen and (min-width: 1440px) {
+		width: 1212px;
+		margin: 179px 120px auto;
+
+		gap: 60px;
+
+		&__header {
+			font-size: 48px;
+			letter-spacing: -0.96px;
+		}
+	}
+
+	@media screen and (min-width: 1920px) {
+		width: 1619px;
+		gap: 80px;
+
+		margin: 183px auto auto 160px;
+
+		&__header {
+			font-size: 64px;
+			letter-spacing: -1.28px;
+		}
+	}
+}
