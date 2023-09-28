@@ -1,0 +1,5 @@
+mixin btn(props)
+  button(class="btn" type="submit")&attributes(attributes)
+    p.btn__text=props.text
+    span.btn__icon
+      +svg('arrow-svg')

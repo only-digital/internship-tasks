@@ -1,0 +1,161 @@
+$white: #fff;
+$blue: #0041a0;
+$dark-blue: #002f6c;
+
+$red: #ef1c1c;
+
+$light-grey: #ccc;
+$border-grey: #dedede;
+$grey: #909090;
+
+$tablet: 768px;
+$mobile: 375px;
+
+$size: 48px;
+
+.form {
+	padding: 26px 130px 0 30px;
+	$root: &;
+	font-family: Arial, sans-serif;
+
+	display: flex;
+
+	&__title {
+		color: $dark-blue;
+		height: 100%;
+		font-size: 32px;
+		line-height: 120%;
+		letter-spacing: -0.6px;
+	}
+
+	&__content {
+		margin: 24px 0 0 159px;
+		flex-grow: 1;
+
+		&--email {
+			display: block;
+			width: 100%;
+			border-radius: 24px;
+			border: 1px solid $blue;
+			height: 48px;
+			padding: 8px 20px;
+			margin-bottom: 25px;
+
+			&[disabled],
+			&[disabled] ~ .email__label {
+				pointer-events: none;
+				opacity: 0.3;
+			}
+		}
+
+		.email__label {
+			padding-left: 20px;
+			font-size: 12px;
+			line-height: 150%;
+			letter-spacing: -0.2px;
+		}
+
+		.validate__label {
+			font-size: 14px;
+			line-height: 150%;
+			color: $red;
+		}
+
+		.success {
+			display: none;
+
+			&.active {
+				display: flex;
+				align-items: center;
+
+				svg {
+					width: 48px;
+					height: 48px;
+					margin-right: 21px;
+					fill: $red;
+				}
+			}
+		}
+
+		.error {
+			display: none;
+
+			color: $red;
+			&.active {
+				display: flex;
+				align-items: center;
+
+				svg {
+					width: 48px;
+					height: 48px;
+					margin-right: 21px;
+					stroke: $red;
+					border: 2px solid $border-grey;
+					border-radius: 50%;
+				}
+			}
+		}
+	}
+
+	@media (max-width: $tablet) {
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+		&__title {
+			font-size: 26px;
+		}
+
+		&__content {
+			margin: 20px 0 0 0;
+
+			&--btn {
+				margin: 20px auto 0 auto;
+			}
+		}
+
+		.checkbox__label {
+			font-size: 14px;
+		}
+	}
+
+	@media (max-width: $mobile) {
+		&__title {
+			font-size: 24px;
+		}
+
+		.checkbox__label {
+			font-size: 12px;
+		}
+	}
+}
+
+.form--preloader {
+	display: none;
+	width: 100%;
+	height: calc($size / 10);
+	position: relative;
+	background: rgba($dark-blue, 0.15);
+	&::after {
+		content: "";
+		width: 0;
+		height: calc($size / 10);
+		background: green;
+		position: absolute;
+		top: 0;
+		left: 0;
+		animation: animFw 5s linear infinite;
+	}
+	&.active {
+		display: inline-block;
+	}
+}
+
+@keyframes animFw {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 100%;
+	}
+}

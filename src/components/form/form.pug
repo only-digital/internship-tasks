@@ -1,0 +1,19 @@
+mixin form(props)
+	form.form&attributes(attributes)(data-component='form')
+		h2.form__title Форма обратной связи
+		.form__content 
+			label(class="email__label" for="email") Email
+			input(class="form__content--email" type="email" name="email" id="email")
+			label(class="validate__label validate__label--email" for="email")
+
+			+checkbox
+
+			+btn({text: 'Отправить'})
+
+			.success
+				+svg('success-svg')
+				| Форма успешно отправлена
+
+			.error
+				+svg('error-svg')
+				| Ошибка отправки формы
