@@ -1,0 +1,8 @@
+- let counter = 1;
+
+mixin toggle-switch()
+  - const id = `toggle-switch-${counter}`
+  .toggle-switch
+    input(type='checkbox', id=id).toggle-switch__checkbox&attributes(attributes)
+    label(for=id).toggle-switch__label
+  - counter++

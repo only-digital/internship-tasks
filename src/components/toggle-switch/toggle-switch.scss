@@ -1,0 +1,72 @@
+.toggle-switch {
+	$root: &;
+
+	&__checkbox {
+		position: absolute;
+		width: 0;
+		height: 0;
+
+		&:disabled+.toggle-switch__label {
+			pointer-events: none;
+		}
+
+		&:checked+.toggle-switch__label {
+			background-color: #0041A0;
+
+			@media (min-width: 1280px) and (hover: hover) {
+				&:hover {
+					background-color: #002F6C;
+				}
+			}
+		}
+
+		&:checked+.toggle-switch__label::after {
+			left: calc((100% - 4px) - 12px);
+
+			@media (min-width: 768px) {
+				left: calc((100% - 7px) - 16px);
+			}
+		}
+	}
+
+	&__label {
+		position: relative;
+		display: inline-block;
+		width: 40px;
+		height: 20px;
+		border-radius: 14px;
+		background-color: #DEDEDE;
+		cursor: pointer;
+		transition: background-color 0.5s;
+
+		&::after {
+			content: "";
+			position: absolute;
+			width: 12px;
+			height: 12px;
+			top: calc(50% - 6px);
+			left: 4px;
+			border-radius: 50%;
+			background-color: #FFF;
+			transition: left 0.3s;
+		}
+
+		@media (min-width: 768px) {
+			width: 56px;
+			height: 28px;
+
+			&::after {
+				width: 16px;
+				height: 16px;
+				top: calc(50% - 8px);
+				left: 7px;
+			}
+		}
+	}
+
+	@media (min-width: 1280px) {
+		&>.toggle-switch__checkbox:focus+.toggle-switch__label {
+			outline: 3px solid #C2DAFF;
+		}
+	}
+}
