@@ -28,18 +28,18 @@ mixin uploadedFile()
 mixin feedback-form(props)
     .feedback-form&attributes(attributes)(data-component='feedback-form')
         h2.feedback-form__label Форма обратной связи
-        form.feedback-form__form
+        form#form.feedback-form__form(method='post' )
             .feedback-form__input
-                input#email-field.feedback-form__input-field(type='email' required='' maxlength='255')
+                input#email-field.feedback-form__input-field(type='email' required='' maxlength='255' name='email')
                 label(for='email-field').feedback-form__input-name E-mail
             div.feedback-form__message-input
             .feedback-form__textarea
-                textarea#textarea-block.feedback-form__textarea-element(maxlength='1000' required='' minlength='1')
+                textarea#textarea-block.feedback-form__textarea-element(maxlength='1000' required='' minlength='1' name='text')
                 label(for='textarea-block').feedback-form__input-name.feedback-form__textarea-name Ваше сообщение
                 img.feedback-form__textarea-image(src="../assets/images/mark.png" alt="mark")
-            div.feedback-form__message-textarea
+                div.feedback-form__message-textarea
             .feedback-form__file
-                input#file.feedback-form__file-button(type='file' multiple='' required='')
+                input#file.feedback-form__file-button(type='file' multiple='' required='' name='file')
                 label.feedback-form__file-label(for='file')
                     span.feedback-form__file-label-text Прикрепить файл
                     span.feedback-form__file-label-icon
@@ -47,7 +47,7 @@ mixin feedback-form(props)
                 +uploadedFile
             div.feedback-form__message-file
             .feedback-form__checkbox
-                input#checkbox-field.feedback-form__checkbox-item(type='checkbox' required='' checked='')
+                input#checkbox-field.feedback-form__checkbox-item(type='checkbox' required='' checked='' name='agreement')
                 label(for='checkbox-field').feedback-form__checkbox-name Вы подтверждаете, что ознакомились c <a href="#" class="link">политикой обработки персональных данных</a>
                     span.feedback-form__checkbox-checkmark(style="display:none")
             div.feedback-form__message-checkbox
@@ -55,3 +55,4 @@ mixin feedback-form(props)
                 span.feedback-form__button-text Отправить
                 span.feedback-form__button-icon
                     +svgArrow
+            div.feedback-form__message-button

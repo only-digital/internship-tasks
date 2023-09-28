@@ -10,7 +10,6 @@ class FeedbackForm extends Component {
     buttonSubmitEl;
     formEl;
     isChecked;
-    errorBlockEl;
     buttonSuccessfulEl;
     loaderEl;
     fieldNameEl;
@@ -18,8 +17,6 @@ class FeedbackForm extends Component {
     regex;
     loadedFile;
     loadedFileName;
-    loadedFileMimeType;
-    loadedFileType;
     loadedFileSize;
     fileName = [];
     fileSize = [];
@@ -29,17 +26,17 @@ class FeedbackForm extends Component {
     fileTypeSingle;
     fileCloseIcon = [];
     isCorrectSize;
-    fileListArr;
-    loadedFileData;
     uploadInput;
     addFileButton;
     emailFieldEl;
     errorFileEl;
     errorInputEl;
     errorTextEl;
+    errorButton;
     errorCheckboxEl;
     isValid = false;
     textFieldEl;
+    filesSizeArray = [];
     constructor(element) {
         super(element);
 
@@ -72,7 +69,9 @@ class FeedbackForm extends Component {
         this.errorInputEl = this.getElement('message-input');
         this.errorTextEl = this.getElement('message-textarea');
         this.errorCheckboxEl = this.getElement('message-checkbox');
+        this.errorButton = this.getElement('message-button');
 
+        this.checkboxEl = this.getElement('checkbox-item');
         this.textFieldEl = this.getElement('textarea-element');
 
         // this.errorBlockEl.innerText = 'text'
@@ -83,36 +82,43 @@ class FeedbackForm extends Component {
         // console.dir(this.inputFileEl)
         this.emailFieldEl.addEventListener('blur', this.validateEmail)
         this.textFieldEl.addEventListener('blur', this.validateTextField)
-        this.inputFileEl.addEventListener('change', this.onLoadFile)
+        this.inputFileEl.addEventListener('change', this.onLoadFile, true)
 
         this.checkboxEl.addEventListener('change', this.validateCheckbox)
 
+    }
+    checkTheFields = () => {
+        console.log(this.isChecked)
+        console.log(this.isValid)
+        console.log(this.textFieldEl.value)
+        console.log(this.uploadInput.files.length)
+        this.checkboxEl.checked ? this.isChecked = true : this.isChecked = false;
 
-        // console.log(this.inputFileEl.files);
-        // this.inputFileEl.validationMessage = null;
-        // console.log(this.inputFileEl.validationMessage);
-        // this.inputEl.addEventListener('focus', (e) => {
-        //     {
-        //         console.log('focus')
-        //         this.fieldNameEl.style.marginLeft = '20px'
-        //     }
-        // })
-        // this.inputEl.addEventListener('blur', (e) => {
-        //     {
-        //         console.log('blur')
-        //         this.fieldNameEl.style.marginLeft = '0px'
-        //     }
-        // })
+        if (!this.isChecked || !this.isValid || this.textFieldEl.value === '' || this.uploadInput.files.length < 1) {
+            console.log('no')
+            this.buttonSubmitEl.classList.add('not-active');
+            this.errorButton.classList.remove('success');
+            this.errorButton.innerText = 'Заполните все поля для отправки формы!'
 
-        this.formEl.addEventListener('submit', this.submitForm);
+        } else {
+            console.log('yes')
+            this.errorButton.innerText = '';
+            this.buttonSubmitEl.classList.remove('not-active');
+            this.formEl.addEventListener('submit', this.submitForm);
+            return true
+        }
+
     }
     validateCheckbox = () => {
 
         if (!this.checkboxEl.checked) {
+
             this.errorCheckboxEl.innerText = 'Нужно согласиться с политикой обработки персональных данных!'
         } else {
             this.errorCheckboxEl.innerText = ''
+
         }
+        this.checkTheFields();
     }
     validateEmail = () => {
         console.log('blur');
@@ -130,12 +136,14 @@ class FeedbackForm extends Component {
             this.emailFieldEl.value = '';
             this.isValid = false;
 
+
             this.emailFieldEl.addEventListener('focus', () => {
                 this.errorInputEl.innerText = ''
             })
 
 
         }
+        this.checkTheFields();
     }
     validateTextField = () => {
         if (this.textFieldEl.value !== '') {
@@ -147,91 +155,60 @@ class FeedbackForm extends Component {
             this.textFieldEl.addEventListener('focus', () => {
                 this.errorTextEl.innerText = ''
             })
+
+        }
+        this.checkTheFields();
+    }
+    checkFileSizeMultiple = (size) => {
+        size.forEach((el, index) => {
+            if (el > 5 * 1024 * 1024) {
+                console.log('размер файла не должен превышать 5 Мб');
+                this.errorFileEl.innerText = 'Размер файла не должен превышать 5 Мб';
+                this.isCorrectSize = false;
+                this.loadedFile.value = '';
+                this.fileName = this.fileName.slice(index + 1);
+                this.fileType = this.fileType.slice(index + 1);
+            } else if (el > 1024) {
+                this.fileSize.push(`${Math.round(el / 1024)} kB`)
+            } else {
+                this.fileSize.push(`${Math.round(el)} b`)
+            }
+        });
+    }
+    checkFileSizeSingle = (size) => {
+        if (size > 5 * 1024 * 1024) {
+            console.log('размер файла не должен превышать 5 Мб');
+            this.errorFileEl.innerText = 'Размер файла не должен превышать 5 Мб';
+            this.isCorrectSize = false;
+            this.loadedFile.value = '';
+        } else if (size > 1024) {
+            this.fileSizeSingle = `${Math.round(size / 1024)} kB`;
+        } else {
+            this.fileSizeSingle = `${Math.round(size)} b`;
         }
     }
-    onLoadFile = (e) => {
-        // e.preventDefault()
-        this.isCorrectSize = true;
-        // let arr = [];
-        // console.log(files);
-        let files = Object.values(this.inputFileEl.files);
 
-        console.log(files)
-        // console.log(arr)
-
-        // if (!this.loadedFile[0].classList.contains('hidden') && !this.loadedFile[0].classList.contains('hidden')) {
-        //     console.log('можно загрузить не более 2-х файлов!');
-        //     this.uploadInput.addEventListener('click', (e) => {
-        //         e.preventDefault();
-        //         // this.loadedFile.style.cursor = 'initial'
-        //         this.inputFileEl.removeEventListener('change', this.onLoadFile, false)
-        //     })
-        // } else {
-        //     this.uploadInput.removeEventListener('click', (e) => {
-        //         e.preventDefault();
-        //     })
-        // }
+    getFilesInfo = (files) => {
+        files.forEach((file) => {
+            this.fileName.push(file.name);
+            this.fileType.push(file.type);
+            this.filesSizeArray.push(file.size);
+        })
+    }
+    uploadMultiple = (files) => {
+        this.getFilesInfo(files);
+        this.checkFileSizeMultiple(this.filesSizeArray);
 
 
-
-        if (files.length === 2) {
-
-            let size = [];
-            files.forEach((file) => {
-                this.fileName.push(file.name);
-                this.fileType.push(file.type);
-                size.push(file.size);
-                // arr.push(`${file.name} ${file.type} ${file.size}`)
-            })
-            // console.log(arr)
-            // console.log(files)
-
-            size.forEach((el, index) => {
-                if (el > 1048576) {
-                    let elemSizeMb = Math.round(el / 1048576);
-                    if (elemSizeMb > 5) {
-                        console.log('размер файла не должен превышать 5 Мб');
-                        this.errorFileEl.innerText = 'Размер файла не должен превышать 5 Мб';
-
-                        this.isCorrectSize = false;
-                        this.loadedFile.value = '';
-                        this.fileName = this.fileName.slice(index + 1);
-                        this.fileType = this.fileType.slice(index + 1)
-                    } else {
-                        this.fileSize.push(`${elemSizeMb} Mb`);
-                    }
-                } else if (el > 1024) {
-                    this.fileSize.push(`${Math.round(el / 1024)} kB`)
-                } else {
-                    this.fileSize.push(`${Math.round(el)} b`)
-                }
-            });
-
-            console.log(files)
-
-            // if (files.length > 2) {
-            //     console.log('количество загружаемых файлов не больше 2 !');
         if (this.isCorrectSize) {
             console.log('загрузка файла')
             this.fileType.forEach((type) => {
-                if (type === 'application/msword' || type === 'application/pdf' || type === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
-
-
-                        // if (!this.loadedFile[0].classList.contains('hidden') && !this.loadedFile[0].classList.contains('hidden')) {
-                        //     console.log('можно загрузить не более 2-х файлов!');
-                        //     this.uploadInput.addEventListener('click', (e) => {
-                        //         e.preventDefault();
-                        //         // this.loadedFile.style.cursor = 'initial'
-                        //         // this.inputFileEl.removeEventListener('change', this.onLoadFile, false)
-                        //     })
-                        // } else {
-                        //
-                        // }
-
-
+                if (['application/msword','application/pdf','application/vnd.openxmlformats-officedocument.wordprocessingml.document'].includes(type)) {
+                    this.errorFileEl.innerText = ''
 
                     let docName = [];
                     docName = this.fileName.map((name, index) => {
+
                         this.loadedFileSize[index].parentElement.classList.remove('hidden');
 
                         this.fileCloseIcon[index].addEventListener('click', (e) => {
@@ -247,100 +224,111 @@ class FeedbackForm extends Component {
                         this.loadedFileSize[index].parentElement.classList.remove('hidden');
                         return this.loadedFileSize[index].innerText = size;
                     })
+
                 } else {
                     console.log(`Формат файла не поддерживается!`)
                     this.errorFileEl.innerText = 'Формат файла не поддерживается!';
                 }
             })
             console.log(files)
+
         }
-    } else if (files.length < 2) {
-            if (!this.loadedFile[0].classList.contains('hidden') && !this.loadedFile[0].classList.contains('hidden')) {
-                this.errorFileEl.innerText = 'Количество загружаемых файлов не больше 2!';
-            }
+    }
+    uploadOneByOne = (files) => {
 
-            this.fileNameSingle = files[0].name;
-            this.fileSizeSingle = files[0].size;
-            this.fileTypeSingle = files[0].type;
-            console.log(this.fileNameSingle + this.fileSizeSingle + this.fileTypeSingle)
+        if (!this.loadedFile[0].classList.contains('hidden') && !this.loadedFile[0].classList.contains('hidden')) {
+            this.errorFileEl.innerText = 'Вы достигли лимита по количеству загружаемых файлов!';
+            this.errorFileEl.classList.add('success');
+            // this.inputFileEl.removeEventListener('change', this.onLoadFile, false)
+        }
 
-            if (this.fileSizeSingle > 1048576) {
-                let elemSizeSingleMb = Math.round(this.fileSizeSingle / 1048576);
-                if (elemSizeSingleMb > 5) {
-                    console.log('размер файла не должен превышать 5 Мб');
-                    this.errorFileEl.innerText = 'Размер файла не должен превышать 5 Мб'
-                    this.isCorrectSize = false;
-                    this.loadedFile.value = '';
-                    this.fileName = '';
-                    this.fileType = '';
+        this.fileNameSingle = files[0].name;
+        this.fileSizeSingle = files[0].size;
+        this.fileTypeSingle = files[0].type;
+        this.checkFileSizeSingle(this.fileSizeSingle);
+
+        console.log(this.fileNameSingle + this.fileSizeSingle + this.fileTypeSingle)
+
+
+        if (this.isCorrectSize) {
+            if (this.fileTypeSingle === 'application/msword' || this.fileTypeSingle === 'application/pdf' || this.fileTypeSingle === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
+                console.log(this.loadedFile)
+                this.errorFileEl.innerText = ''
+                if (this.loadedFile[0].classList.contains('hidden')) {
+                    this.loadedFile[0].classList.remove('hidden');
+                    this.loadedFileName[0].innerText = `${this.fileNameSingle}, `;
+                    this.loadedFileSize[0].innerText = this.fileSizeSingle;
                 } else {
-                    this.fileSizeSingle = `${elemSizeSingleMb} Mb`;
+                    this.loadedFile[1].classList.remove('hidden');
+                    this.loadedFileName[1].innerText = `${this.fileNameSingle}, `;
+                    this.loadedFileSize[1].innerText = this.fileSizeSingle;
+
                 }
-            } else if (this.fileSizeSingle > 1024) {
-                this.fileSizeSingle = `${Math.round(this.fileSizeSingle / 1024)} kB`;
-            } else {
-                this.fileSizeSingle =`${Math.round(this.fileSizeSingle)} b`;
-            }
-
-            if (this.isCorrectSize) {
-                if (this.fileTypeSingle === 'application/msword' || this.fileTypeSingle === 'application/pdf' || this.fileTypeSingle === 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') {
-                    console.log(this.loadedFile)
-                    if (this.loadedFile[0].classList.contains('hidden')) {
-                        this.loadedFile[0].classList.remove('hidden');
-                        this.loadedFileName[0].innerText = `${this.fileNameSingle}, `;
-                        this.loadedFileSize[0].innerText = this.fileSizeSingle;
-                    } else {
-                        this.loadedFile[1].classList.remove('hidden');
-                        this.loadedFileName[1].innerText = `${this.fileNameSingle}, `;
-                        this.loadedFileSize[1].innerText = this.fileSizeSingle;
-
-                    }
 
 
 
-                    this.fileCloseIcon.forEach((elem, index) => {
-                        elem.addEventListener('click', (e) => {
-                            this.loadedFile[index].classList.add('hidden');
-                            this.inputFileEl.files.value = '';
-                        })
+                this.fileCloseIcon.forEach((elem, index) => {
+                    elem.addEventListener('click', (e) => {
+                        this.loadedFile[index].classList.add('hidden');
+                        this.inputFileEl.files.value = '';
                     })
-                } else {
-                    console.log(`Формат файла не поддерживается!`)
-                    this.errorFileEl.innerText = 'Формат файла не поддерживается!';
-                }
+                })
+            } else {
+                console.log(`Формат файла не поддерживается!`)
+                this.errorFileEl.innerText = 'Формат файла не поддерживается!';
             }
+        }
+    }
+    onLoadFile = () => {
+        this.isCorrectSize = true;
+        let files = Object.values(this.inputFileEl.files);
+
+        if (files.length === 2) {
+            this.uploadMultiple(files);
+        } else if (files.length < 2) {
+            this.uploadOneByOne(files);
         } else {
             console.log('количество загружаемых файлов не больше 2 !');
-            this.errorFileEl.innerText = 'Количество загружаемых файлов не больше 2 !'
+            this.errorFileEl.innerText = 'Количество загружаемых файлов не больше 2!'
         }
+        this.checkTheFields();
 }
 
-    submitForm = (e) => {
+
+    submitForm = async(e) => {
         e.preventDefault();
-        this.inputValue = this.emailFieldEl.value;
-        this.checkboxEl = this.getElement('checkbox-item');
 
-        this.checkboxEl.checked ? this.isChecked = true : this.isChecked = false;
+        console.log(this.formEl)
+        let formData = new FormData(this.formEl);
 
-        // this.buttonSubmitEl.classList.add('hidden');
-
-        console.log('button pushed')
-        if (!this.isChecked || !this.isValid || this.textFieldEl.value === '' || this.uploadInput.files.value === '') {
-            console.log('no')
-        } else {
-            console.log('yes')
+        if (this.checkTheFields()) {
+            this.buttonSubmitEl.classList.remove('not-active');
+            this.errorButton.innerText = '';
+            console.log('sending fetch')
+            fetch(this.URL, {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => {
+                console.log(response)
+                response.ok ? this.successReaction() : this.errorReaction();
+            })
         }
-        fetch(this.URL, {
-            method: 'POST',
-            body: JSON.stringify({
-                email: this.inputValue,
-                confirm: this.isChecked,
-            }),
-            headers: {
-                'content-type': 'application/json',
-            }
-        })
-            .then(response => console.log(response))
+    }
+    successReaction = () => {
+        this.errorButton.classList.add('success');
+        this.errorButton.innerText = 'Данные успешно отправлены!';
+        setTimeout(() => {
+            this.formEl.reset();
+            this.errorInputEl.innerText = '';
+            this.errorFileEl.innerText = '';
+            this.errorTextEl.innerText = '';
+            this.errorCheckboxEl.innerText = '';
+        },1000)
+    }
+    errorReaction = () => {
+        this.errorButton.classList.remove('success');
+        this.errorButton.innerText = 'При отправке данных произошла ошибка!';
     }
 }
 
