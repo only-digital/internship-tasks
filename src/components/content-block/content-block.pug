@@ -1,0 +1,6 @@
+mixin content-block(props)
+	.content-block&attributes(attributes)(data-component='content-block')
+		h2.content-block__title!= props.title
+		ul.content-block__list
+			each item in props.data
+				li.content-block__item!= item

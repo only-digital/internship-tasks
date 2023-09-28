@@ -1,4 +1,8 @@
 import ExampleButton from "../../components/example-button/example-button";
+import HeaderBlock from '../../components/header-block/header-block'
+import ContentBlock from '../../components/content-block/content-block'
+import Loader from '../../components/loader/loader'
+import FormBlock from '../../components/form-block/form-block'
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -7,6 +11,10 @@ import ExampleButton from "../../components/example-button/example-button";
  */
 const allComponents = {
     'example-button': ExampleButton,
+    'header-block': HeaderBlock,
+    'content-block': ContentBlock,
+    'form-block': FormBlock,
+    'loader': Loader
 }
 
 /**

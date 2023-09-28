@@ -1,0 +1,27 @@
+$size: 30px;
+$brand: #ff3d00;
+
+.loader {
+  $root: &;
+
+  width: $size;
+  height: $size;
+  border: 5px solid;
+  border-color: $brand transparent;
+  border-radius: 50%;
+  display: inline-block;
+  animation: rotation 1s linear infinite;
+
+  &.hidden {
+	display: none;
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

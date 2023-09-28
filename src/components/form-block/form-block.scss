@@ -1,0 +1,157 @@
+$colorBlue: #002f6c;
+$colorSteel: #909090;
+$colorCobolt: #0041a0;
+$colorExtraGrey: #bcbcbc;
+$colorWhite: #FFFFFF;
+$colorRed: #EF1C1C;
+$colorBlack: #111111;
+
+@mixin checkbox($color) {
+  padding-left: 16px;
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+
+  input[type="checkbox"] {
+    margin: 0;
+    &:focus ~ .indicator {
+      border: 1px solid $colorBlue;
+    }
+
+    &:focus:checked ~ .indicator {
+      border: 1px solid $color;
+    }
+
+    &:checked ~ .indicator {
+      color: white;
+      background: $color
+        url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8c3ZnIHdpZHRoPSIxMiIgaGVpZ2h0PSI5IiB2aWV3Qm94PSIwIDAgMTIgOSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCiAgPHBhdGggZD0iTTQuNTc1IDguOTc3cy0uNDA0LS4wMDctLjUzNi0uMTY1TC4wNTcgNS42NGwuODI5LTEuMjI3TDQuNDcgNy4yNjggMTAuOTIxLjA4NmwuOTIzIDEuMTAzLTYuODYzIDcuNjRjLS4xMzQtLjAwMy0uNDA2LjE0OC0uNDA2LjE0OHoiIGZpbGw9IiNGRkYiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPg0KPC9zdmc+)
+        50% 40% no-repeat;
+      border: 1px solid $color;
+    }
+  }
+
+  .indicator {
+    position: absolute;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border: 1px solid $colorExtraGrey;
+    user-select: none;
+  }
+}
+
+.form-block {
+  $root: &;
+
+  display: flex;
+  margin: 44px 217px 45px 103px;
+  column-gap: 80px;
+
+  &__title {
+    font-size: 32px;
+    line-height: 120%;
+    letter-spacing: -0.64px;
+    color: $colorBlue;
+  }
+
+  &__content {
+    margin-top: 24px;
+  }
+
+  &__input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+
+    & span {
+      font-size: 12px;
+      line-height: 150%;
+      letter-spacing: -0.24px;
+      margin-left: 20px;
+      color: $colorSteel;
+    }
+
+    &-field {
+      height: 48px;
+      border-radius: 24px;
+      border: 1px solid $colorCobolt;
+      padding: 8px 20px 14px 20px;
+
+      &.disabled {
+        pointer-events: none;
+        opacity: .3;
+      }
+    }
+  }
+
+  &__error-message {
+    display: block;
+    font-size: 14px;
+    line-height: 150%;
+    margin-bottom: 14px;
+    visibility: hidden;
+
+    &.error {
+      visibility: visible;
+      color: $colorRed;
+    }
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: center;
+    column-gap: 18px;
+    margin-bottom: 30px;
+    @include checkbox($colorCobolt);
+
+    &-text {
+      color: $colorSteel;
+      font-size: 14px;
+      line-height: 150%;
+
+      & .link {
+        color: $colorBlue;
+      }
+    }
+
+    &.disabled {
+      pointer-events: none;
+      opacity: .3;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 14px;
+    width: 155px;
+    height: 48px;
+    border-radius: 24px;
+    background-color: $colorBlue;
+
+    &-text {
+      color: $colorWhite;
+      font-size: 16px;
+    }
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  &__success-message {
+    display: flex;
+    align-items: center;
+    column-gap: 21px;
+    font-size: 16px;
+    line-height: 124%;
+    letter-spacing: -0.32px;
+    color: $colorBlack;
+
+    &.hidden {
+      display: none;
+    }
+  }
+}

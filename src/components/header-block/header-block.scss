@@ -1,0 +1,52 @@
+$colorSteel: #8f8f8f;
+$colorBlue: #04306a;
+
+.wrapper {
+  font-family: Arial;
+}
+
+.header-block {
+  $root: &;
+
+  margin: 115px 80px 144px 80px;
+
+  &__date {
+    color: $colorSteel;
+    font-feature-settings: "ss08" on;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: -0.4px;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    color: $colorBlue;
+    font-feature-settings: "ss08" on;
+    font-size: 64px;
+    letter-spacing: -1.28px;
+    margin-bottom: 45px;
+  }
+
+  &__stats {
+    $root: &;
+
+    color: $colorSteel;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: -0.32px;
+    display: flex;
+    column-gap: 36px;
+
+    &-views,
+    &-responses {
+      display: block;
+    }
+
+    &.hidden {
+      #{$root}-views,
+      #{$root}-responses {
+        display: none;
+      }
+    }
+  }
+}

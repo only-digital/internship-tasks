@@ -1,0 +1,31 @@
+mixin iconArrow()
+	svg(xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none")
+		g(clip-path="url(#clip0_225_12)")
+			path(d="M29.9059 14.9678L29.9059 17.0322L16.859 25.1208L17.9172 27L32 18.2751L32 13.7249L17.9172 5L16.859 6.87919L29.9059 14.9678Z" fill="white")
+			path(d="M27 17.0926L27 14.9074L1.05717e-06 14.9074L8.66136e-07 17.0926L27 17.0926Z" fill="white")
+
+mixin iconSuccess()
+	svg(xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none")
+		circle(cx="26" cy="26" r="25" stroke="#DEDEDE" stroke-width="2")
+		path(fill-rule="evenodd" clip-rule="evenodd" d="M36.503 19.4099L35.3267 18.2337L23.3798 30.1806L24.556 31.3569L36.503 19.4099ZM16.6457 26.1695L15.4695 27.3458L21.9503 33.8267L23.1266 32.6504L16.6457 26.1695Z" fill="#27AE60")
+
+mixin form-block(props)
+	.form-block&attributes(attributes)(data-component='form-block')
+		h3.form-block__title Форма обратной связи
+		form.form-block__content
+			.form-block__input
+				span E-mail
+				input.form-block__input-field(type="email")
+			span.form-block__error-message
+			label.form-block__checkbox
+				input.form-block__checkbox-field(type='checkbox')
+				span.indicator
+				span.form-block__checkbox-text Вы подтверждаете, что ознакомились <a class="link" href='/'>c политикой обработки персональных данных</a>
+			button.form-block__button(type='submit')
+				span.form-block__button-text Отправить
+				span.form-block__button-svg
+					+iconArrow
+			+loader.form-block__loader.hidden
+			.form-block__success-message.hidden
+				+iconSuccess
+				span.form-block__message-text

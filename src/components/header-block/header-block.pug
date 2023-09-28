@@ -1,0 +1,8 @@
+mixin header-block(props)
+	.header-block&attributes(attributes)(data-component='header-block')
+		p.header-block__date!= props.date
+		h1.header-block__title!= props.title
+		.header-block__stats.hidden
+			+loader.header-block__loader
+			p.header-block__stats-views Просмотров:
+			p.header-block__stats-responses Откликов:
