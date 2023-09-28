@@ -1,3 +1,109 @@
 .flex-container {
-    // Your code here
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1730px;
+    padding-top: 122px;
+    padding-bottom: 120px;
+
+    font-family: Arial;
+    font-weight: 700;
+    color: #04306A;
+
+    &__main-title {
+        gap: 13px;
+        margin-bottom: 80px;
+
+        font-size: 48px;
+    }
+
+    &__text--accent {
+        color: #FC0D1B;
+    }
+    
+    .navigation {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .navigation__up-wrapper {
+        gap: 19px;
+        min-height: 856px;
+
+        & > .navigation__link {
+            flex-basis: 50%;
+            padding-left: 49px;
+            padding-top: 49px;
+        }
+    }
+
+    .navigation__up-inner {
+        flex-direction: column;
+        flex-basis: 50%;
+        gap: 16px;
+
+        .navigation__link {
+            flex-grow: 1;
+        }
+    }
+
+    .navigation__middle-wrapper {
+        min-height: 480px;
+        gap: 18px;
+
+        .navigation__link {
+            flex-basis: 33.33%;
+        }
+    }
+
+    .navigation__bottom-wrapper {
+        min-height: 420px;
+        gap: 18px;
+
+        .navigation__link {
+            flex-basis: 50%;
+        }
+    }
+
+    .link {
+        padding-left: 36px;
+        padding-right: 36px;
+        padding-top: 24px;
+        padding-bottom: 25px;
+
+        background-color: #F4F4F4;
+    }
+
+    .link__title {
+        flex-grow: 1;
+
+        font-size: 32px;
+    }
+
+    .link__icon {
+        align-self: flex-end;
+        width: 65px;
+        height: 36px;
+        
+    }
+
+    .link--focused {
+        color: #ffffff;
+
+        background-color: #04306A;
+
+        path {
+            fill: #ffffff;
+        }
+    }
+
+    .link--hovered {
+        color: #ffffff;
+
+        background-color: #0041A0;
+
+        path {
+            fill: #ffffff;
+        }
+    }
 }
