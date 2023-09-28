@@ -1,3 +1,111 @@
 .grid-container {
-    // Your code here
+    width: 100%;
+    max-width: 1730px;
+    margin: 0 auto;
+    padding-top: 122px;
+    padding-bottom: 120px;
+
+    font-family: Arial;
+    font-weight: 700;
+    color: #04306A;
+
+    &__main-title {
+        gap: 13px;
+        grid-auto-flow: column;
+        width: max-content;
+        margin-bottom: 80px;
+
+        font-size: 48px;
+    }
+
+    &__text--accent {
+        color: #FC0D1B;
+    }
+
+    .navigation__list {
+        grid-template-areas: 
+            "A A A B B B"
+            "A A A C C C"
+            "D D E E F F"
+            "G G G H H H";
+        grid-template-rows: 420px 420px 480px 420px;
+        grid-template-columns: repeat(6, 1fr);
+        column-gap: 19px;
+        row-gap: 16px;
+    }
+
+    .navigation__item:nth-child(1) {
+        grid-area: A;
+
+        .navigation__link {
+            padding-left: 49px;
+            padding-top: 49px;
+        }
+    }
+
+    .navigation__item:nth-child(2) {
+        grid-area: B;
+    }
+
+    .navigation__item:nth-child(3) {
+        grid-area: C;
+    }
+
+    .navigation__item:nth-child(4) {
+        grid-area: D;
+    }
+
+    .navigation__item:nth-child(5) {
+        grid-area: E;
+    }
+
+    .navigation__item:nth-child(6) {
+        grid-area: F;
+    }
+
+    .navigation__item:nth-child(7) {
+        grid-area: G;
+    }
+
+    .navigation__item:nth-child(8) {
+        grid-area: H;
+    }
+
+    .link {
+        padding-left: 36px;
+        padding-right: 36px;
+        padding-top: 24px;
+        padding-bottom: 25px;
+
+        background-color: #F4F4F4;
+    }
+
+    .link__title {
+        font-size: 32px;
+    }
+
+    .link__icon {
+        justify-self: flex-end;
+        align-self: flex-end;
+    }
+
+    .link--focused {
+        color: #ffffff;
+
+        background-color: #04306A;
+
+        path {
+            fill: #ffffff;
+        }
+    }
+
+    .link--hovered {
+        color: #ffffff;
+
+        background-color: #0041A0;
+
+        path {
+            fill: #ffffff;
+        }
+    }
 }
