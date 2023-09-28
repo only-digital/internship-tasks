@@ -1,0 +1,5 @@
+mixin switch(props)
+    .switch(class=props.disabled ? 'switch_disabled': '')&attributes(attributes)
+        label.switch__container
+            input.switch__input(type='checkbox')
+            span.switch__handler

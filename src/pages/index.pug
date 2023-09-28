@@ -1,7 +1,25 @@
 extends ../../build_modules/common
 
-
 block body
-    +example-button({text: 'example text'})
-    +example-button({text: 'disabled'})(disabled='')
-    //Your code here
+    style
+        include ../assets/fonts/fonts.css
+    +example-button({ text: 'example text' })
+    +example-button({ text: 'disabled' })(disabled='')
+    +section Кнопка с обводкой
+        +button({ text: 'Кнопка' })
+        +button({ text: 'Кнопка' })(disabled='')
+    +section Кнопка с заливкой (альтернативный вариант)
+        +button({ text: 'Кнопка', mod: 'red' })
+        +button({ text: 'Кнопка', mod: 'red' })(disabled='')
+    +section Кнопка слайдера главной
+        +slider({ value: '01 / 04' })
+        +slider({ value: '01 / 04' })(disabled='')
+    +section Ссылки отдельно
+        +link({ text: 'Sustainalytics.com' })(href='##')
+        +link({ text: 'Sustainalytics.com', disabled: true })(href='##')
+    +section Ссылки в тексте
+        p Для подключения сервиса добавьте номер #[+link-in-text({ text: '+7(921)058-57-19' })(href='##')] в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже
+        p Цифровые продукты, направленные на создание #[+link-in-text({ text: 'дополнительных сервисов' })(href='##')] и устранение «проблемных точек» наших клиентов
+    +section Переключатель
+        +switch({})
+        +switch({ disabled: true })

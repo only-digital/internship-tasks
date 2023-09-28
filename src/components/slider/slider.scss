@@ -1,0 +1,39 @@
+.slider {
+  $root: &;
+
+  margin: 3px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 265px;
+  height: 80px;
+
+  &__buttons-container {
+    display: flex;
+    gap: 10px;
+    height: 100%;
+  }
+
+  &__value {
+    color: var(--main-steel, #909090);
+    opacity: .4;
+    font-family: 'Grtsk Peta', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: -0.32px;
+  }
+
+  @media (max-width: 1280px) {
+    width: 209px;
+    height: 60px;
+  }
+
+  @media (max-width: 375px) {
+    width: fit-content;
+    #{$root}__value {
+      display: none;
+    }
+  }
+}

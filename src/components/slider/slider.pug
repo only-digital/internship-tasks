@@ -1,0 +1,7 @@
+mixin slider(props)
+
+    .slider&attributes(attributes)
+        .slider__buttons-container
+            +slider-button&attributes(attributes)
+            +slider-button&attributes(attributes)
+        span.slider__value!= props.value

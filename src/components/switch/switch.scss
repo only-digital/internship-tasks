@@ -1,0 +1,95 @@
+.switch {
+  $root: &;
+  width: 0;
+  height: 28px;
+  position: relative;
+  border-radius: 50px;
+
+  &_disabled #{$root}__handler:before {
+    background-color: #DEDEDE;
+    pointer-events: none !important;
+    outline: none !important;
+  }
+
+  &_disabled #{$root}__handler:after {
+    pointer-events: none;
+  }
+
+  &__input {
+    position: absolute;
+    top: -4px;
+    appearance: none;
+
+    &:checked + #{$root}__handler:after {
+      left: 34px;
+      transition: left .2s;
+    }
+
+    @media (max-width: 375px) {
+      &:checked + #{$root}__handler:after {
+        left: 24px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      &:focus-visible:not(.switch_disabled):not(:hover) + #{$root}__handler:before {
+        background-color: #DEDEDE;
+        outline: 3px solid #C2DAFF;
+      }
+    }
+  }
+
+  &__handler {
+    padding-top: 15px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 56px;
+      height: 28px;
+      top: 0;
+      left: 0;
+      border-radius: 50px;
+      background-color: var(--extra-cobolt, #0041A0);
+      transition: background-color .3s;
+    }
+
+    @media (max-width: 375px) {
+      &:before {
+        width: 40px;
+        height: 20px;
+      }
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 16px;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      background-color: white;
+      left: 6px;
+      top: 6px;
+      transition: left .2s;
+    }
+
+    @media (max-width: 375px) {
+      &:after {
+        width: 12px;
+        left: 4px;
+        top: 4px;
+      }
+    }
+
+    @media (hover: hover) and (min-width: 768px) {
+      &:hover:before {
+        background-color: #002F6C;
+      }
+    }
+  }
+}

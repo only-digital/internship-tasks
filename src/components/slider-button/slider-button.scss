@@ -1,0 +1,56 @@
+.slider-button {
+  $root: &;
+
+  position: relative;
+  height: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50px;
+  border: 1px solid #DEDEDE;
+  outline: transparent;
+  transition: background-color 0.3s;
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    fill: #002F6C;
+    border-radius: 50px;
+  }
+
+  &:nth-child(2) #{$root}__icon {
+    transform: rotate(180deg);
+  }
+
+  @media (hover: hover) and (min-width: 768px) {
+    &:hover {
+      background-color: #F4F4F4;
+      border-color: transparent;
+    }
+  }
+
+  @media (min-width: 768px) {
+    &:focus-visible:not(:hover) {
+      background-color: inherit;
+      border: 1px solid #DEDEDE;
+      outline: 3px solid #99B3D8;
+      transition: outline-color .3s;
+    }
+  }
+
+  &:active {
+    background-color: #DEDEDE;
+    border: none;
+    transition: background-color 0.1s;
+  }
+
+  &:disabled {
+    border-color: #DEDEDE !important;
+    pointer-events: none;
+
+    #{$root}__icon {
+      fill: #BCBCBC;
+    }
+  }
+}
