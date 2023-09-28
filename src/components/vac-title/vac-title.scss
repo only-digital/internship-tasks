@@ -1,0 +1,42 @@
+$color-steel: #8F8F8F;
+$color-blue: #04306A;
+
+.wrapper {
+  margin: 115px 80px;
+}
+
+.vac-title {
+	$root: &;
+  font-feature-settings: 'ss08' on;
+  font-family: Arial;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+
+  &__date {
+    color: $color-steel;
+    line-height: 140%;
+    letter-spacing: -0.4px;
+  }
+
+  &__caption {
+    margin-top: 20px;
+    margin-bottom: 45px;
+    color: $color-blue;
+    font-size: 64px;
+    line-height: 100%;
+    letter-spacing: -1.28px;
+  }
+
+  &__stats {
+    display: flex;
+    gap: 36px;
+
+    color: $color-steel;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: -0.32px;
+  }
+}
+
+    

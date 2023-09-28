@@ -1,0 +1,8 @@
+mixin vac-title(props)
+  .vac-title&attributes(attributes)(data-component='vac-title')
+    time.vac-title__date()(datetime=props.datetime)= props.date
+    h1.vac-title__caption()= props.title 
+    .vac-title__stats 
+      +loader()(class="vac-title__loader")
+      span.vac-title__stats__views 
+      span.vac-title__stats__responses 
