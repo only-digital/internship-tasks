@@ -1,30 +1,18 @@
 .flex-container {
-  font-family: Arial, sans-serif;
-  font-weight: 700;
-  color: #04306A;
   flex-direction: column;
-  width: 90%;
-  gap: 80px;
-  margin: 122px auto 120px;
+}
 
-  h2 {
-    font-size: 46px;
-  }
+.block.flex-block {
+  justify-content: space-between;
+  flex-direction: column;
+}
 
-  h4 {
-    font-size: 32px;
-  }
+.vector {
+  align-self: end;
 }
 
 %column-flex {
   gap: 16px;
-  flex-direction: column;
-}
-
-.block {
-  background-color: #F4F4F4;
-  padding: 24px 36px 36px;
-  justify-content: space-between;
   flex-direction: column;
 }
 
@@ -37,11 +25,11 @@
   height: 856px;
   gap: 18px;
 
-  .block {
+  .flex-block {
     flex: 0 50%;
   }
 
-  .block.large {
+  .flex-block.large {
     padding: 49px 37px 25px 49px;
   }
 }
@@ -50,7 +38,7 @@
   @extend %column-flex;
   flex: 0 50%;
 
-  .block {
+  .flex-block {
     height: 420px;
   }
 }
@@ -59,7 +47,7 @@
   height: 480px;
   gap: 18px;
 
-  .block {
+  .flex-block {
     flex: 0 33%;
     padding-top: 23px;
     padding-bottom: 30px;
@@ -70,13 +58,9 @@
   height: 420px;
   gap: 18px;
 
-  .block {
+  .flex-block {
     flex: 0 50%;
   }
 }
 
-.vector {
-  width: 65px;
-  height: 36px;
-  align-self: end;
-}
+

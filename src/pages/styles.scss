@@ -1,0 +1,26 @@
+.flex-container, .grid-container {
+  font-family: Arial, sans-serif;
+  font-weight: 700;
+  color: #04306A;
+  width: 90%;
+  gap: 80px;
+  margin: 122px auto 120px;
+
+  h2 {
+    font-size: 46px;
+  }
+
+  h4 {
+    font-size: 32px;
+  }
+}
+
+.block {
+  background-color: #F4F4F4;
+  padding: 24px 36px 36px;
+}
+
+.vector {
+  width: 65px;
+  height: 36px;
+}

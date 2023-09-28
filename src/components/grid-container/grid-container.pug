@@ -1,6 +1,4 @@
 mixin grid-container()
-    - var whiteVector = '../assets/images/Vector-white.png'
-    - var blueVector = '../assets/images/Vector-blue.png';
     - var headings = ['Мостовая сталь/Стальные конструкции мостов', 'Железобетонные конструкции мостов', 'Дорожные ограждения барьерного типа', 'Шпунтовой замок', 'Мостовой крепеж', 'Профили для деформационных швов', 'Плетеные габионы', 'Модульные мосты'];
     section.grid-container
         h2
@@ -8,7 +6,7 @@ mixin grid-container()
             | предложения для мостостроения
         ul.grid-blocks-wrapper
             each heading, index in headings
-                li.grid-block
+                li.block.grid-block
                     h4= heading
                     if (+index === 3 || +index === 5)
                         img(src=whiteVector).vector
