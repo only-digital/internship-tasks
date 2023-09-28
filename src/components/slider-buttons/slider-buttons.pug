@@ -1,0 +1,8 @@
+mixin slider-buttons(props)
+	.slider-buttons
+		.slider-buttons__buttons-group 
+			button.slider-buttons__button.slider-buttons__prevBtn&attributes(attributes)
+				+svg('pagination-arrow-left')
+			button.slider-buttons__button.slider-buttons__nextBtn&attributes(attributes)
+				+svg('pagination-arrow-right')
+		.slider-buttons__pages&attributes(attributes) #{props.curPage} / #{props.pages}

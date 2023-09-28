@@ -1,0 +1,7 @@
+mixin button(props)
+	- var colorModificator = props.color === 'red' ? 'button_red' : '';	
+	
+	button.button&attributes(attributes, {'class': colorModificator})
+		span.button__text!= props.text
+		span.button__svg
+			+svg('arrow-icon').button__svg

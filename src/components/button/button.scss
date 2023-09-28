@@ -1,0 +1,165 @@
+$extra-grey-1: #bcbcbc;
+$extra-grey-3: #f4f4f4;
+$main-blue: #002f6c;
+$light-blue: #99b3d8;
+$extra-cobolt: #0041a0;
+$main-white: #ffffff;
+$main-steel: #909090;
+$system-text: #111;
+$main-red: #f00;
+$medium-red: #bf1d26;
+$dark-red: #81080f;
+
+.button {
+	$root: &;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 14px;
+
+	height: 48px;
+	padding: 0 14px 0 18px;
+
+	border: 1px solid $extra-grey-1;
+	border-radius: 25px;
+	background-color: transparent;
+
+	transition:
+		background-color 0.6s,
+		border-color 0.6s,
+		color 0.6s;
+
+	&__text {
+		font-family: Arial;
+		font-size: 16px;
+		font-weight: 400;
+		letter-spacing: -0.32px;
+		color: $system-text;
+	}
+
+	&__svg {
+		width: 32px;
+		height: 32px;
+		fill: $main-blue;
+	}
+
+	@media (max-width: 1280px) {
+		height: 42px;
+		gap: 12px;
+		padding: 0 14px 0 16px;
+
+		&__text {
+			font-size: 14px;
+		}
+
+		&__svg {
+			width: 24px;
+			height: 24px;
+		}
+	}
+
+	@media (max-width: 768px) {
+		padding: 13px 14px 13px 18px;
+		gap: 14px;
+
+		&__text {
+			font-size: 16px;
+		}
+	}
+
+	@media (max-width: 375px) {
+		width: 100%;
+		gap: 12px;
+	}
+
+	&:hover {
+		border-color: $extra-cobolt;
+		background-color: $extra-cobolt;
+
+		#{$root}__text {
+			color: $main-white;
+		}
+
+		#{$root}__svg {
+			fill: $main-white;
+		}
+	}
+
+	&:focus {
+		border-color: $extra-grey-1;
+		background-color: transparent;
+		outline: 2px solid $light-blue;
+
+		#{$root}__text {
+			color: $extra-cobolt;
+		}
+
+		#{$root}__svg {
+			fill: $extra-cobolt;
+		}
+	}
+
+	&:active {
+		border-color: $main-blue;
+		background-color: $main-blue;
+
+		#{$root}__text {
+			color: $main-white;
+		}
+
+		#{$root}__svg {
+			fill: $main-white;
+		}
+	}
+
+	&:disabled {
+		pointer-events: none;
+		border-color: $extra-grey-1;
+		background-color: transparent;
+
+		#{$root}__text {
+			color: $extra-grey-1;
+		}
+
+		#{$root}__svg {
+			fill: $extra-grey-1;
+		}
+	}
+
+	&_red {
+		&,
+		&:focus {
+			border: 0;
+			background-color: $main-red;
+
+			#{$root}__text {
+				color: $main-white;
+			}
+
+			#{$root}__svg {
+				fill: $main-white;
+			}
+		}
+
+		&:hover {
+			background-color: $medium-red;
+		}
+
+		&:active {
+			background-color: $dark-red;
+		}
+
+		&:disabled {
+			background-color: $extra-grey-3;
+
+			#{$root}__text {
+				color: $main-steel;
+			}
+
+			#{$root}__svg {
+				fill: $main-steel;
+			}
+		}
+	}
+}

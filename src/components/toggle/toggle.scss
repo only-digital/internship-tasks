@@ -1,0 +1,81 @@
+$extra-cobolt: #0041a0;
+$main-white: #ffffff;
+$main-blue: #002f6c;
+$light-blue: #99b3d8;
+$extra-grey-2: #dedede;
+
+$width-1920: 56px;
+$width-375: 40px;
+
+.toggle {
+	$root: &;
+
+	width: $width-1920;
+	height: calc($width-1920 / 2);
+	display: inline-block;
+
+	position: relative;
+
+	@media (max-width: 375px) {
+		width: $width-375;
+		height: calc($width-375 / 2);
+	}
+
+	&__slider {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		background-color: $extra-cobolt;
+		border-radius: 25px;
+
+		cursor: pointer;
+
+		transition: background-color 0.6s;
+
+		&:before {
+			content: "";
+			position: absolute;
+			left: 10%;
+			top: 50%;
+			transform: translateY(-50%);
+
+			width: 30%;
+			height: 60%;
+
+			background-color: $main-white;
+			border-radius: 25px;
+			transition: transform 0.6s;
+		}
+	}
+
+	input {
+		opacity: 0;
+		width: 0;
+		height: 0;
+
+		&:checked + #{$root}__slider:before {
+			transform: translate(calc(0.5 * $width-1920), -50%);
+
+			@media (max-width: 375px) {
+				transform: translate(calc(0.5 * $width-375), -50%);
+			}
+		}
+
+		&:focus + #{$root}__slider {
+			outline: 3px solid $light-blue;
+			background-color: $extra-grey-2;
+		}
+
+		&:disabled + #{$root}__slider {
+			pointer-events: none;
+			background-color: $extra-grey-2;
+		}
+
+		&:hover:not([disabled]) + #{$root}__slider {
+			background-color: $main-blue;
+		}
+	}
+}

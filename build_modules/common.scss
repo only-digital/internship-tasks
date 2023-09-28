@@ -1,4 +1,7 @@
-@import '../src/components/example-button/example-button';
+@import "../src/components/toggle/toggle";
+@import "../src/components/link/link";
+@import "../src/components/slider-buttons/slider-buttons";
+@import "../src/components/button/button";
 
 html {
     font-weight: normal;
@@ -19,7 +22,13 @@ body {
     -webkit-tap-highlight-color: transparent;
 }
 
-h1, h2, h3, h4, h5, p, a {
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a {
     color: inherit;
     font-size: inherit;
     font-weight: inherit;
@@ -30,7 +39,8 @@ h1, h2, h3, h4, h5, p, a {
     word-wrap: break-word;
 }
 
-ul, li {
+ul,
+li {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -63,4 +73,3 @@ button {
         outline: none;
     }
 }
-

@@ -2,6 +2,32 @@ extends ../../build_modules/common
 
 
 block body
-    +example-button({text: 'example text'})
-    +example-button({text: 'disabled'})(disabled='')
-    //Your code here
+    +button({text: 'Кнопка'})
+    +button({text: 'Кнопка'})(disabled='')
+
+    <br>
+
+    +button({text: 'Кнопка', color: 'red'})
+    +button({text: 'Кнопка', color: 'red'})(disabled='')
+
+    <br>
+
+    +slider-buttons({curPage: '01', pages: '04'})
+    +slider-buttons({curPage: '01', pages: '04'})(disabled='')
+    <br>
+    +link({text: 'Sustainalytics.com', withIcon: true})(href='#')
+    <br>
+    +link({text: 'Sustainalytics.com', withIcon: true})(disabled='' href='https://www.sustainalytics.com/' target='_blank')
+    p 
+        |Цифровые продукты, направленные на создание 
+        |
+        +link({text: 'дополнительных сервисов'})(href='https://www.sustainalytics.com/' target='_blank')
+        |
+        |и устранение «проблемных точек» наших клиентов
+    
+    <br>
+
+    +toggle()
+    +toggle()(disabled='')
+
+
