@@ -1,0 +1,27 @@
+.link {
+	$root: &;
+
+	color: #0041A0;
+	transition: color, background-color 0.3s;
+
+	&[data-disabled="true"] {
+		color: #BCBCBC;
+		pointer-events: none;
+	}
+
+	@media (min-width: 1280px) {
+		@media (hover: hover) {
+			&:hover {
+				color: #F00;
+			}
+		}
+
+		&:focus {
+			background-color: rgba(0, 65, 160, 0.15);
+		}
+	}
+
+	&:active {
+		color: #BF1D26;
+	}
+}
