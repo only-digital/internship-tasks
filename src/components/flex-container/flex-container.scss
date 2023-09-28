@@ -4,7 +4,6 @@
 
     width: 1920px - 95px * 2;
     margin: 120px 94px;
-    display: flex;
     flex-direction: column;
 
     .white {
@@ -32,7 +31,6 @@
     }
 
     .box {
-        display: flex;
         flex-direction: column;
         gap: 16px;
 
@@ -55,7 +53,6 @@
             }
 
             &__constructions-fences {
-                display: flex;
                 flex-direction: column;
                 width: 50%;
                 gap: 16px;
