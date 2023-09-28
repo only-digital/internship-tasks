@@ -1,0 +1,5 @@
+mixin button(props)
+	- var classes = [props.variant, props.theme].filter(Boolean)
+	button.button(class=`${classes}`)&attributes(attributes)
+		span!= props.text
+		include ../../assets/icons/arrow.svg

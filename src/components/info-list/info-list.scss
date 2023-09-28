@@ -1,0 +1,41 @@
+@import '../../style.scss';
+
+.info-list {
+	$root: &;
+	margin: 130px 0;
+
+	&__title {
+			font-size: 46px;
+			font-weight: 400;
+			line-height: 55px;
+			letter-spacing: -0.02em;
+			color: #04306A;
+	}
+
+	&__list {
+		margin-top: 35px;
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+					list-style-type: "+";
+	}
+
+	&__list-item {
+			display: flex;
+			font-size: 24px;
+			font-weight: 400;
+			line-height: 34px;
+			letter-spacing: 0em;
+			color: #012B34;
+
+			&::before {
+				content: '';
+				width: 20px;
+				flex-shrink: 0;
+				height: 1px;
+				margin: 17px 0 auto;
+				margin-right: 8px;
+				background-color: #0DB274;
+			}
+	}
+}

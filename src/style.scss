@@ -1,0 +1,34 @@
+
+
+header, main {
+	padding: 0 80px;
+}
+
+header {
+	padding-top: 115px;
+}
+
+.loading {
+	width: 300px;
+	height: 24px;
+	display: inline-block;
+	background-color: white;
+	border: 1px solid white;
+	border-radius: 4px;
+	background-image: linear-gradient(45deg, rgba(black, 0.25) 25%,
+			transparent 25%, transparent 50%, rgba(black, 0.25) 50%,
+			rgba(black, 0.25) 75%, transparent 75%, transparent);
+	font-size: 30px;
+	background-size: 1em 1em;
+	animation: barStripe 1s linear infinite;
+}
+
+@keyframes barStripe {
+	0% {
+		background-position: 1em 0;
+	}
+
+	100% {
+		background-position: 0 0;
+	}
+}

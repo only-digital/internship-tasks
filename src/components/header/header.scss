@@ -1,0 +1,32 @@
+@import '../../style.scss';
+
+.header {
+  $root: &;
+
+  &__date {
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+		color: #8F8F8F;
+  }
+
+  &__title {
+		margin-top: 20px;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 64px;
+    letter-spacing: -0.02em;
+    color: #04306a;
+  }
+
+  &__info {
+		color: #8F8F8F;
+		margin-top: 45px;
+		display: flex;
+		gap: 36px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: -0.02em;
+  }
+}

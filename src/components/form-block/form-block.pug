@@ -1,0 +1,20 @@
+mixin form-block(props)
+	.form-block&attributes(attributes)(data-component='form-block')
+		h2.form-block__title Форма обратной связи
+		form.form-block__form(action="")
+			label(for="email").form-block__input-label
+				p.form-block__input-label__text E-mail
+			input(placeholder="mail@mail.com" id="email" name="email" required).form-block__input 
+			p.form-block__input-error
+			label.form-block__confirm
+				input(type="checkbox" name="confirm").form-block__confirm-checkbox
+				span.form-block__confirm__checkbox
+					include ../../assets/icons/check.svg
+				p.form-block__confirm__text Вы подтверждаете, что ознакомились
+					=" "
+					a c политикой обработки персональных данных 
+			div.form-block__form__success
+				span.form-block__form__success__icon
+					include ../../assets/icons/check.svg
+				span.form-block__form__success__text Форма успешно отправлена
+			+button({variant: "outlined", text: 'Отправить'})

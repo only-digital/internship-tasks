@@ -1,0 +1,76 @@
+@import "../../global.scss";
+
+.button {
+  $root: &;
+
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 25px;
+  border: 1px solid #bcbcbc;
+  gap: 15px;
+  transition: background-color 0.3s, color 0.3s;
+	height: 48px;
+	width: min-content;
+
+	svg {
+			width: 32px;
+			height: 32px;
+		}
+
+	@include media-tablet-md {
+		height: 42px;
+		font-size: 14px;
+		svg {
+			width: 24px;
+			height: 24px;
+		}
+	}
+
+	@include media-tablet-sm {
+		font-size: 16px;
+	}
+
+	@include media-mobile {
+		width: 100%;
+		justify-content: center;
+	}
+
+  &.outlined {
+    @include hover-style {
+      background-color: #0041a0;
+      color: white;
+    }
+
+    &:active {
+      color: white;
+      background-color: #002f6c;
+    }
+
+    &:disabled {
+      color: #909090;
+      border-color: #bcbcbc;
+    }
+  }
+
+  &.filled {
+    background-color: #ff0000;
+    border: none;
+
+    @include hover-style {
+      background-color: #bf1d26;
+      color: white;
+    }
+
+    &:active {
+      color: white;
+      background-color: #81080f;
+    }
+
+    &:disabled {
+      background-color: #f4f4f4;
+      color: #909090;
+    }
+  }
+}
