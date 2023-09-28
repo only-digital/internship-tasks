@@ -1,0 +1,8 @@
+mixin slider(props)
+	.slider(data-disabled=props.disabled)
+		.slider__buttons
+			button.button&attributes(attributes)
+				+svg('slider-button').button__svg
+			button.button&attributes(attributes)
+				+svg('slider-button').button__svg
+		span.slider__text #{props.currentPage.padStart(2,'0')} / #{props.numPages.padStart(2,'0')} 
