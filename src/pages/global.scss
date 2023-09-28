@@ -1,0 +1,16 @@
+$black: #000402;
+$dark-teal: #012b34;
+$blue: #114c9a;
+$lain: #e6e6e6;
+
+@font-face {
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	src: url("/src/assets/fonts/Roboto-Regular.ttf");
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}
