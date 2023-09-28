@@ -18,8 +18,7 @@
 	}
 
 	@media screen and (min-width: 375px) {
-		width: 327px;
-		margin: 152px 20px auto;
+		margin: 152px 24px 98px;
 
 		gap: 40px;
 
@@ -32,8 +31,7 @@
 	}
 
 	@media screen and (min-width: 768px) {
-		width: 688px;
-		margin: 174px 40px auto;
+		margin: 174px 40px 213px;
 
 		gap: 50px;
 
@@ -46,15 +44,13 @@
 	}
 
 	@media screen and (min-width: 1280px) {
-		width: 1066px;
 		margin: 167px 107px auto;
 
 		gap: 56px;
 	}
 
 	@media screen and (min-width: 1440px) {
-		width: 1212px;
-		margin: 179px 120px auto;
+		margin: 179px 120px 141px 107px;
 
 		gap: 60px;
 
@@ -65,10 +61,8 @@
 	}
 
 	@media screen and (min-width: 1920px) {
-		width: 1619px;
+		margin: 183px 141px 138px 160px;
 		gap: 80px;
-
-		margin: 183px auto auto 160px;
 
 		&__header {
 			font-size: 64px;
