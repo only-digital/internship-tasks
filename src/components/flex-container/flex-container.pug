@@ -1,3 +1,39 @@
+mixin item-content(text, text_color, bg_color)
+    div(class=`item-content text_${text_color} background_${bg_color}`)
+        p.item-content__title= text 
+        button.item-content__btn
+            case text_color
+                when 'blue'
+                    include ../../assets/icons/blue-arrow.svg
+                when 'white'
+                    include ../../assets/icons/white-arrow.svg
+
 mixin flex-container()
     section.flex-container
         // Your code here
+        header.flex-container__header
+            h1.flex-container__header__title <span class="flex-container__header__title__red">Комплексные</span>&#160;предложения для мостостроения
+
+        .flex-container__row-1
+            .flex-container__row-1__left-block
+                .flex-container__row-1__left-block__item
+                    +item-content('Мостовая сталь/Стальные конструкции мостов', 'blue', 'grey')
+            .flex-container__row-1__right-block
+                .flex-container__row-1__right-block__item
+                    +item-content('Железобетонные конструкции мостов', 'blue', 'grey')
+                .flex-container__row-1__right-block__item
+                    +item-content('Дорожные ограждения барьерного типа', 'blue', 'grey')
+        
+        .flex-container__row-2
+            .flex-container__row-2__item
+                +item-content('Шпунтовой замок', 'white', 'dark-blue')
+            .flex-container__row-2__item
+                +item-content('Мостовой крепеж', 'blue', 'grey')
+            .flex-container__row-2__item
+                +item-content('Профили для деформационных швов', 'white', 'blue')
+
+        .flex-container__row-3
+            .flex-container__row-3__item
+                +item-content('Плетеные габионы', 'blue', 'grey')
+            .flex-container__row-3__item
+                +item-content('Модульные мосты', 'blue', 'grey')
