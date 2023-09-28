@@ -1,0 +1,67 @@
+.link {
+  $root: &;
+
+  display: flex;
+  gap: 12px;
+  width: fit-content;
+  outline: none;
+  transition: background-color .2s;
+
+  &_disabled {
+    pointer-events: none;
+
+    #{$root}__text {
+      color: #BCBCBC !important;
+    }
+  }
+
+  &__text {
+    color: var(--extra-cobolt, #0041A0);
+    font-family: 'Grtsk Peta', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.32px;
+    transition: color 0.3s;
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    fill: #002F6C;
+  }
+
+  @media (hover: hover) and (min-width: 768px) {
+    &:hover {
+      #{$root}__text {
+        color: #FF0000;
+        transition: color 0.3s;
+      }
+    }
+  }
+
+  &:active {
+    #{$root}__text {
+      color: #BF1D26;
+    }
+  }
+
+  @media (min-width: 768px) {
+    &:focus-visible:not(:hover) {
+      background-color: #0041A026;
+      transition: background-color 0.2s;
+    }
+  }
+
+  &:disabled {
+    background-color: #232323 !important;
+  }
+
+  @media (max-width: 768px) {
+    #{$root}__text {
+      border: 1px solid red;
+      font-size: 14px;
+    }
+  }
+}

@@ -1,8 +1,74 @@
+.link-in-text {
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  color: #0041A0;
+  transition: color 0.1s;
+}
+.link-in-text:hover {
+  color: #FF0000;
+  transition: color 0.1s;
+}
+
+.link {
+  display: flex;
+  gap: 12px;
+  width: fit-content;
+  outline: none;
+  transition: background-color 0.2s;
+}
+.link_disabled {
+  pointer-events: none;
+}
+.link_disabled .link__text {
+  color: #BCBCBC !important;
+}
+.link__text {
+  color: var(--extra-cobolt, #0041A0);
+  font-family: "Grtsk Peta", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -0.32px;
+  transition: color 0.3s;
+}
+.link__icon {
+  width: 24px;
+  height: 24px;
+  fill: #002F6C;
+}
+@media (hover: hover) and (min-width: 768px) {
+  .link:hover .link__text {
+    color: #FF0000;
+    transition: color 0.3s;
+  }
+}
+.link:active .link__text {
+  color: #BF1D26;
+}
+@media (min-width: 768px) {
+  .link:focus-visible:not(:hover) {
+    background-color: rgba(0, 65, 160, 0.1490196078);
+    transition: background-color 0.2s;
+  }
+}
+.link:disabled {
+  background-color: #232323 !important;
+}
+@media (max-width: 768px) {
+  .link .link__text {
+    border: 1px solid red;
+    font-size: 14px;
+  }
+}
+
 .section {
   padding: 12px;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  color: gray;
   border-top: 1px solid lightgray;
 }
 
@@ -22,7 +88,7 @@
 .slider__value {
   color: var(--main-steel, #909090);
   opacity: 0.4;
-  font-family: "Grtsk Peta", serif;
+  font-family: "Grtsk Peta", sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;

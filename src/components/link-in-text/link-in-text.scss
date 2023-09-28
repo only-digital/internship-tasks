@@ -1,0 +1,14 @@
+.link-in-text {
+  $root: &;
+
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  color: #0041A0;
+  transition: color .1s;
+
+  &:hover {
+    color: #FF0000;
+    transition: color .1s;
+  }
+}
