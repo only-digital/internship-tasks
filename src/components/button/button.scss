@@ -32,7 +32,16 @@
     }
   }
 
-  &:hover:enabled {
+  &:focus-visible {
+    outline: 3px solid #99b3d8;
+    color: #0041a0;
+
+    .button__svg-arrow {
+      fill: #0041a0;
+    }
+  }
+
+  &:hover {
     background-color: #0041a0;
     color: #fff;
 
@@ -47,15 +56,6 @@
 
     .button__svg-arrow {
       fill: #fff;
-    }
-  }
-
-  &:focus {
-    outline: 3px solid #99b3d8;
-    color: #0041a0;
-
-    .button__svg-arrow {
-      fill: #0041a0;
     }
   }
 
