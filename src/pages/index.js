@@ -1,7 +1,11 @@
 import styles from '../styles/index.module.scss'
 import ExampleButton from "../components/example-button/example-button";
+import {getIndexPage} from "../../lib/api";
 
-function Index() {
+function Index(props) {
+
+    console.log(props)
+
     return (
         <main className={styles.main}>
             <ExampleButton/>
@@ -15,16 +19,10 @@ function Index() {
 }
 
 export const getStaticProps = async () => {
+    const indexPage = await getIndexPage();
+
     return {
-        props: {
-            meta: {
-                title: 'Title',
-                description: 'description',
-                keywords: 'keywords'
-            },
-            header: {},
-            sandwich: {}
-        },
+        props: indexPage,
         revalidate: 1
     };
 };

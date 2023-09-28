@@ -4,6 +4,7 @@
     "private": true,
     "scripts": {
         "dev": "next dev",
+        "build": "next build && next start",
         "component:create": "node build_modules/scripts/componentCreate.js",
         "component:remove": "node build_modules/scripts/componentRemove.js"
     },
@@ -17,14 +18,6 @@
         "url": "https://github.com/VitoBravis/internship-tasks/issues"
     },
     "homepage": "https://github.com/VitoBravis/internship-tasks#readme",
-    "eslintConfig": {
-        "rules": {
-            "indent": [
-                "error",
-                4
-            ]
-        }
-    },
     "dependencies": {
         "next": "13.4.19",
         "react": "18.2.0",
