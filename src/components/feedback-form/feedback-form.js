@@ -13,6 +13,9 @@ class FeedbackForm extends Component {
     errorBlockEl;
     buttonSuccessfulEl;
     loaderEl;
+    res;
+    resError;
+    resSuccess;
     constructor(element) {
         super(element);
 
@@ -35,7 +38,7 @@ class FeedbackForm extends Component {
         this.inputValue = this.inputEl.value;
         this.checkboxEl = this.getElement('checkbox-item');
 
-        this.checkboxEl.checked ? this.isChecked = true : this.isChecked = false;
+        this.isChecked = this.checkboxEl.checked;
 
         this.buttonSubmitEl.classList.add('hidden');
         this.loaderEl.classList.remove('loading');
@@ -43,7 +46,6 @@ class FeedbackForm extends Component {
         this.sendData(this.inputValue,this.isChecked);
     }
     sendData = async(field,isChecked) => {
-        let res, resError, resSuccess;
         let response = await fetch(this.URL, {
             method: 'POST',
             body: JSON.stringify({
@@ -56,35 +58,32 @@ class FeedbackForm extends Component {
         });
 
         if (response.status === 422) {
-            res = await response.json();
-            resError = await res.message;
-
-            setTimeout(() => {
-                this.loaderEl.classList.add('loading');
-                this.buttonSubmitEl.classList.remove('hidden');
-            }, 5000);
-
-            this.errorBlockEl.innerText = resError;
-            return resError
-
+            this.errorReaction(response);
         } else {
-            res = await response.json();
-            resSuccess = await res.message;
-
-            setTimeout(() => {
-                this.loaderEl.classList.add('loading');
-                this.inputEl.classList.add('sent');
-                this.checkboxEl.classList.add('sent');
-                this.checkboxLabelEl.classList.add('sent');
-                this.checkboxLinkEl.classList.add('sent');
-                this.errorBlockEl.innerText = '';
-            }, 5000);
-
-            this.errorBlockEl.classList.add('success');
-            this.errorBlockEl.innerText = resSuccess;
-            this.buttonSuccessfulEl.classList.remove('hidden');
-            return resSuccess
+            this.successReaction(response);
         }
+    }
+    successReaction = async(response) => {
+        this.res = await response.json();
+        this.resSuccess = await this.res.message;
+        this.loaderEl.classList.add('loading');
+        this.inputEl.classList.add('sent');
+        this.checkboxEl.classList.add('sent');
+        this.checkboxLabelEl.classList.add('sent');
+        this.checkboxLinkEl.classList.add('sent');
+        this.errorBlockEl.innerText = '';
+        this.errorBlockEl.classList.add('success');
+        this.errorBlockEl.innerText = this.resSuccess;
+        this.buttonSuccessfulEl.classList.remove('hidden');
+        return this.resSuccess
+    }
+    errorReaction = async(response) => {
+        this.res = await response.json();
+        this.resError = await this.res.message;
+        this.loaderEl.classList.add('loading');
+        this.buttonSubmitEl.classList.remove('hidden');
+        this.errorBlockEl.innerText = this.resError;
+        return this.resError
     }
 }
 
