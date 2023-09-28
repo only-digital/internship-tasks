@@ -2,6 +2,16 @@ extends ../../build_modules/common
 
 
 block body
-    +example-button({text: 'example text'})
-    +example-button({text: 'disabled'})(disabled='')
-    //Your code here
+    +button({text : 'Кнопка'})
+    +button({text : 'Кнопка'})(disabled='')
+    +button({text : 'Кнопка'})(class='alt')
+    +button({text : 'Кнопка'})(disabled='' class='alt')
+    +slider-buttons
+    +slider-buttons(disabled='')
+    +link({text: 'Sustainalytics.com', icon: true})(href='#' target=_blank)
+    +link({text: 'Sustainalytics.com', icon: true})(href='#' target=_blank disabled='' tabindex='-1')
+    p Для подключения сервиса добавьте номер 
+        +link({text: '+7(921)058-57-19', icon: false})(href='#' target=_blank class="inline-block") 
+        |  в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже
+    +switcher 
+    +switcher(disabled='') 

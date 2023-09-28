@@ -1,0 +1,4 @@
+mixin link(props)
+	a.link&attributes(attributes)= props.text
+		if props.icon
+			+svg('link-icon').link__icon

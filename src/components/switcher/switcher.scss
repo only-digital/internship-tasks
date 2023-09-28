@@ -1,0 +1,68 @@
+$cobolt: #0041a0;
+$blue: #002f6c;
+$blue-light: #c2daff;
+$grey-light: #dedede;
+$white: #ffffff;
+
+.switcher {
+  $root: &;
+
+  &__input {
+    position: relative;
+    width: 56px;
+    height: 28px;
+    background-color: $cobolt;
+    border-radius: 14px;
+    margin-top: 10px;
+    transition: 0.3s ease-in;
+    cursor: pointer;
+
+    &:disabled {
+      background-color: #dedede;
+      pointer-events: none;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      width: 16px;
+      height: 16px;
+      border-radius: 16px;
+      background-color: $white;
+      transition: 0.3s;
+    }
+
+    &:checked::before {
+      left: 34px;
+    }
+
+    &:focus {
+      outline: 3px solid $blue-light;
+      background-color: $grey-light;
+    }
+
+    &:hover {
+      background-color: $blue;
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    &__input {
+      width: 40px;
+      height: 20px;
+
+      &::before {
+        top: 4px;
+        left: 4px;
+        width: 12px;
+        height: 12px;
+      }
+
+      &:checked::before {
+        left: 24px;
+      }
+    }
+  }
+}

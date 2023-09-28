@@ -1,0 +1,182 @@
+$grey: #bcbcbc;
+$extra-grey: #f4f4f4;
+$steel: #909090;
+$blue: #002f6c;
+$blue-light: #99b3d8;
+$cobolt: #0041a0;
+$black: #111111;
+$white: #ffffff;
+$red: #ff0000;
+$red-m: #bf1d26;
+$red-d: #81080f;
+
+.button {
+  $root: &;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  color: $white;
+  transition: color 0.3s, opacity 0.3s;
+  height: 48px;
+  padding: 0 9px 0 18px;
+  column-gap: 14px;
+  background: currentColor;
+  border-radius: 24px;
+  border: 1px solid $grey;
+
+  &.alt {
+    color: $red;
+    border: none;
+
+    #{$root}__text {
+      color: $white;
+    }
+
+    #{$root}__svg {
+      fill: $white;
+    }
+
+    &:disabled {
+      color: $extra-grey;
+      pointer-events: none;
+
+      #{$root}__svg {
+        fill: $steel;
+      }
+
+      #{$root}__text {
+        color: $steel;
+      }
+    }
+  }
+
+  &:disabled {
+    pointer-events: none;
+
+    #{$root}__svg {
+      fill: $steel;
+    }
+
+    #{$root}__text {
+      color: $steel;
+    }
+  }
+
+  &:focus {
+    outline: 3px solid $blue-light;
+
+    #{$root}__text {
+      color: $cobolt;
+    }
+    #{$root}__svg {
+      fill: $cobolt;
+    }
+
+    &.alt {
+      outline: 3px solid $blue-light;
+
+      #{$root}__text {
+        color: $white;
+      }
+
+      #{$root}__svg {
+        fill: $white;
+      }
+    }
+  }
+
+  &:hover {
+    color: $cobolt;
+
+    #{$root}__svg {
+      fill: $white;
+    }
+
+    #{$root}__text {
+      color: $white;
+    }
+
+    &.alt {
+      color: $red-m;
+
+      #{$root}__svg {
+        fill: $white;
+      }
+
+      #{$root}__text {
+        color: $white;
+      }
+    }
+  }
+
+  &:active {
+    color: $blue;
+
+    #{$root}__text {
+      color: $white;
+    }
+    #{$root}__svg {
+      fill: $white;
+    }
+
+    &.alt {
+      color: $red-d;
+    }
+  }
+
+  &__text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    user-select: none;
+    color: $black;
+    letter-spacing: -0.32px;
+  }
+
+  #{$root}__svg {
+    width: 32px;
+    height: 32px;
+    fill: $blue;
+    transition: fill 0.3s;
+  }
+
+  @media screen and (max-width: 1280px) {
+    padding: 0 14px 0 16px;
+    column-gap: 12px;
+    height: 42px;
+
+    &__text {
+      font-size: 14px;
+      letter-spacing: -0.28px;
+    }
+
+    &__svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 0 14px 0 18px;
+    column-gap: 14px;
+    height: 42px;
+
+    &__text {
+      font-size: 14px;
+      letter-spacing: -0.32px;
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    padding: 0 115px 0 115px;
+    column-gap: 12px;
+    height: 42px;
+
+    &__text {
+      font-size: 16px;
+      letter-spacing: -0.32px;
+    }
+  }
+}
