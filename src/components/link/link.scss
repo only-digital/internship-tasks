@@ -48,19 +48,14 @@
   }
 
   @media (min-width: 768px) {
-    &:focus-visible:not(:hover) {
+    &:focus-visible:not(:hover):not(.link_disabled) {
       background-color: #0041A026;
       transition: background-color 0.2s;
     }
   }
 
-  &:disabled {
-    background-color: #232323 !important;
-  }
-
   @media (max-width: 768px) {
     #{$root}__text {
-      border: 1px solid red;
       font-size: 14px;
     }
   }

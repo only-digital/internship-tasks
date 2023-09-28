@@ -1,3 +1,86 @@
+.switch {
+  width: 0;
+  height: 28px;
+  position: relative;
+  border-radius: 50px;
+}
+.switch_disabled .switch__handler:before {
+  background-color: #DEDEDE;
+  pointer-events: none !important;
+  outline: none !important;
+}
+.switch_disabled .switch__handler:after {
+  pointer-events: none;
+}
+.switch__input {
+  position: absolute;
+  top: -4px;
+  appearance: none;
+}
+.switch__input:checked + .switch__handler:after {
+  left: 34px;
+  transition: left 0.2s;
+}
+@media (max-width: 375px) {
+  .switch__input:checked + .switch__handler:after {
+    left: 24px;
+  }
+}
+@media (min-width: 768px) {
+  .switch__input:focus-visible:not(.switch_disabled):not(:hover) + .switch__handler:before {
+    background-color: #DEDEDE;
+    outline: 3px solid #C2DAFF;
+  }
+}
+.switch__handler {
+  padding-top: 15px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+.switch__handler:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 56px;
+  height: 28px;
+  top: 0;
+  left: 0;
+  border-radius: 50px;
+  background-color: var(--extra-cobolt, #0041A0);
+  transition: background-color 0.3s;
+}
+@media (max-width: 375px) {
+  .switch__handler:before {
+    width: 40px;
+    height: 20px;
+  }
+}
+.switch__handler:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 16px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: white;
+  left: 6px;
+  top: 6px;
+  transition: left 0.2s;
+}
+@media (max-width: 375px) {
+  .switch__handler:after {
+    width: 12px;
+    left: 4px;
+    top: 4px;
+  }
+}
+@media (hover: hover) and (min-width: 768px) {
+  .switch__handler:hover:before {
+    background-color: #002F6C;
+  }
+}
+
 .link-in-text {
   font-family: inherit;
   font-weight: inherit;
@@ -8,6 +91,9 @@
 .link-in-text:hover {
   color: #FF0000;
   transition: color 0.1s;
+}
+.link-in-text:focus {
+  outline: none;
 }
 
 .link {
@@ -48,17 +134,13 @@
   color: #BF1D26;
 }
 @media (min-width: 768px) {
-  .link:focus-visible:not(:hover) {
+  .link:focus-visible:not(:hover):not(.link_disabled) {
     background-color: rgba(0, 65, 160, 0.1490196078);
     transition: background-color 0.2s;
   }
 }
-.link:disabled {
-  background-color: #232323 !important;
-}
 @media (max-width: 768px) {
   .link .link__text {
-    border: 1px solid red;
     font-size: 14px;
   }
 }
