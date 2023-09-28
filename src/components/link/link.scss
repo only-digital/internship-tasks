@@ -28,9 +28,9 @@ $gray-color: #BCBCBC;
     background-color: $focus-color;
   }
 
-  &:disabled {
+  &[disabled] {
 	pointer-events: none;
-    #{$root}__text {
+    .link__text {
       color: $gray-color;
     }
   }
