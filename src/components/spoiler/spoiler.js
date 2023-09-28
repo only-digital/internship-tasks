@@ -7,23 +7,35 @@ class Spoiler extends Component {
   }
 
   onButtonClick = (event) => {
-    const btn = event.target;
-    const atribute = btn.getAttribute("data-row");
-    if (!atribute) {
+    let elem = event.target;
+    if (
+      elem.classList.contains("spoiler__row") ||
+      elem.classList.contains("spoiler__row__cotent")
+    ) {
       return;
     }
 
-    const height = btn.nextElementSibling.scrollHeight;   
-
-    if(btn.nextElementSibling.classList.contains("active")){
-      btn.nextElementSibling.style.height = '0px';
-    } else{
-      btn.nextElementSibling.style.height = `${height}px`;
+    const atribute = elem.getAttribute("data-row");
+    if (atribute) {
+      elem = elem.parentNode;
     }   
+    
+    if (elem.nodeName === "path") {
+      elem = elem.parentNode.parentNode;
+    }
+   
+    Array.from(elem.children).forEach((item) =>
+      item.classList.toggle("active")
+    );
 
-    btn.nextElementSibling.classList.toggle("active");
-    btn.previousElementSibling.classList.toggle("active"); 
-    btn.classList.toggle("active");
+    const height = elem.nextElementSibling.scrollHeight;
+
+    if (elem.nextElementSibling.classList.contains("active")) {
+      elem.nextElementSibling.style.height = "0px";
+    } else {
+      elem.nextElementSibling.style.height = `${height}px`;
+    }
+    elem.nextElementSibling.classList.toggle("active");
   };
 }
 

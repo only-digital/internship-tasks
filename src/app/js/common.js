@@ -1,5 +1,6 @@
 import ExampleButton from "../../components/example-button/example-button";
 import Spoiler from "../../components/spoiler/spoiler";
+import title from "../../components/title/title";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -9,6 +10,7 @@ import Spoiler from "../../components/spoiler/spoiler";
 const allComponents = {
     'example-button': ExampleButton,
     'spoiler': Spoiler,
+    'title': title,
 }
 
 
