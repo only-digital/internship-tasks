@@ -44,9 +44,17 @@
 	&__in-the-text {
 		display: inline;
 	}
+
+	@media (max-width: 768px) {
+		font-size: 14px;
+	}
 }
 
 .text {
 	margin-top: 10px;
+
+	@media (max-width: 768px) {
+		font-size: 14px;
+	}
 }
 
