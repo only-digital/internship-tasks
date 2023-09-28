@@ -1,5 +1,56 @@
-.link {
-	$root: &;
+$blue-color: #002f6c;
+$active-color: #bf1d26;
+$focus-color: rgba(0, 65, 160, 0.15);
+$gray-color: #BCBCBC;
 
-	//Your code here
+.link {
+  $root: &;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  @media (hover: hover) {
+    &:hover {
+      #{$root}__text {
+        color: red;
+      }
+    }
+  }
+
+  &:active {
+    #{$root}__text {
+      color: $active-color;
+    }
+  }
+
+  &:focus {
+    background-color: $focus-color;
+  }
+
+  &:disabled {
+	pointer-events: none;
+    #{$root}__text {
+      color: $gray-color;
+    }
+  }
+
+  &__text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    transition: color 0.3s;
+
+    @media (min-width: 1280px) {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  &__svg {
+    height: 19px;
+    width: 19px;
+    fill: $blue-color;
+  }
 }

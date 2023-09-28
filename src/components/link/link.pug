@@ -1,5 +1,4 @@
 mixin link(props)
-	.link&attributes(attributes)
-		a.link(href=props.ref)
-			span.link__text!= props.text
-			+svg('link-svg').link__svg
+	a.link(href=props.ref)&attributes(attributes)
+		span.link__text!= props.text
+		+svg('link-svg').link__svg
