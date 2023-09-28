@@ -1,5 +1,111 @@
 @import '../variables.scss';
 
 .grid-container {
-    // Your code here
+    width: 1920px - 95px * 2;
+    margin: 120px 94px;
+
+    .white {
+        color: white;
+    }
+
+    h1 {
+        @include text(46px);
+        line-height: 100%;
+        letter-spacing: -0.92px;
+        grid-template-columns: auto auto;
+        width: fit-content;
+    }
+
+    p {
+        @include text(32px);
+        line-height: 38px;
+    }
+
+    span {
+        color: $red;
+        white-space: pre;
+        width: fit-content;
+    }
+
+    .title {
+        margin-bottom: 80px;
+    }
+
+    .box {
+        gap: 16px;
+
+        &__first {
+            grid-template-columns: auto auto;
+            gap: 18px;
+            height: 856px;
+
+            &__bridge-steel {
+                position: relative;
+
+                p {
+                    margin: 49px;
+                }
+
+                .img {
+                    @include img(25px, 37px)
+                }
+            }
+
+            &__constructions-fences {
+                gap: 16px;
+
+                .constructions,
+                .fences {
+                    position: relative;
+
+                    p {
+                        margin: 24px 36px;
+                    }
+
+                    .img {
+                        @include img(33px, 36px);
+                    }
+                }
+            }
+        }
+
+        &__second {
+            grid-template-columns: 1fr 1fr 1fr;
+            height: 480px;
+            gap: 18px;
+
+            &__tongue-and-groove-lock,
+            &__bridge-fasteners,
+            &__expansion-joints {
+                position: relative;
+
+                p {
+                    margin: 24px 36px;
+                }
+
+                .img {
+                    @include img(30px, 36px);
+                }
+            }
+        }
+
+        &__third {
+            grid-template-columns: auto auto;
+            height: 420px;
+            gap: 18px;
+
+            &__braided-gabions,
+            &__modular-bridges {
+                position: relative;
+
+                p {
+                    margin: 24px 49px;
+                }
+
+                .img {
+                    @include img(33px, 36px);
+                }
+            }
+        }
+    }
 }
