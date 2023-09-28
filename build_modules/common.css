@@ -1,0 +1,128 @@
+.example-button {
+  display: flex;
+  align-items: center;
+  color: white;
+  transition: color 0.3s, opacity 0.3s;
+}
+.example-button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+@media (hover: hover) {
+  .example-button:hover {
+    color: black;
+  }
+  .example-button:hover .example-button__svg {
+    fill: white;
+  }
+}
+.example-button__text {
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-right: 25px;
+  user-select: none;
+  color: black;
+}
+@media (min-width: 1280px) {
+  .example-button__text {
+    font-size: 16px;
+  }
+}
+.example-button__circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background: currentColor;
+  border-radius: 50%;
+  border: 1px solid rgba(35, 35, 35, 0.5);
+}
+@media (min-width: 1280px) {
+  .example-button__circle {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media (min-width: 1920px) {
+  .example-button__circle {
+    width: 100px;
+    height: 100px;
+  }
+}
+.example-button__circle svg {
+  width: 14px;
+  height: 14px;
+  fill: black;
+  transition: fill 0.3s;
+}
+@media (min-width: 1280px) {
+  .example-button__circle svg {
+    width: 19px;
+    height: 18px;
+  }
+}
+@media (min-width: 1920px) {
+  .example-button__circle svg {
+    width: 24px;
+    height: 23px;
+  }
+}
+
+html {
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1, h2, h3, h4, h5, p, a {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-decoration: inherit;
+  padding: 0;
+  margin: 0;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+input {
+  border: none;
+  background: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  -webkit-appearance: none;
+  color: inherit;
+}
+input:hover, input:active, input:focus {
+  outline: none;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+button:hover, button:active, button:focus {
+  outline: none;
+}
