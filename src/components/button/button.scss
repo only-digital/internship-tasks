@@ -1,0 +1,88 @@
+.button {
+  $root: &;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 42px;
+  padding: 0 14px 0 18px;
+  border-radius: 25px;
+  border: 1px solid #bcbcbc;
+  transition: all 0.3s;
+
+  font-family: Arial;
+  color: #111;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+
+  &__svg-arrow {
+    width: 24px;
+    height: 24px;
+    fill: #002f6c;
+  }
+
+  &:disabled {
+    color: #909090;
+    pointer-events: none;
+
+    .button__svg-arrow {
+      fill: #909090;
+    }
+  }
+
+  &:hover:enabled {
+    background-color: #0041a0;
+    color: #fff;
+
+    .button__svg-arrow {
+      fill: #fff;
+    }
+  }
+
+  &:active {
+    background-color: #002f6c;
+    color: #fff;
+
+    .button__svg-arrow {
+      fill: #fff;
+    }
+  }
+
+  &:focus {
+    outline: 3px solid #99b3d8;
+    color: #0041a0;
+
+    .button__svg-arrow {
+      fill: #0041a0;
+    }
+  }
+
+  @media (min-width: 375px) {
+    width: 327px;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  @media (min-width: 768px) {
+    width: 121px;
+    justify-content: space-between;
+  }
+
+  @media (min-width: 1280px) {
+    width: 111px;
+    font-size: 14px;
+  }
+
+  @media (min-width: 1920px) {
+    width: 129px;
+    height: 48px;
+    font-size: 16px;
+
+    &__svg-arrow {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
