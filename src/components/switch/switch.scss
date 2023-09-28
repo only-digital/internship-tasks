@@ -1,5 +1,57 @@
-.switch {
-	$root: &;
+$blue-color: #002f6c;
+$cobolt-color: #0041a0;
+$grey-2-color: #dedede;
+$pale-blue-color: #99b3d8;
 
-	//Your code here
+.switch {
+  $root: &;
+
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  width: 40px;
+  background-color: $cobolt-color;
+  border-radius: 14px;
+
+  &:focus {
+    outline: 3px solid $pale-blue-color;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $blue-color;
+    }
+  }
+
+  &:disabled {
+	background-color: $grey-2-color;
+
+	.switch__circle {
+		left: 4px;
+
+		@media (min-width: 768px) {
+			left: 6px;
+		  }
+	}
+  }
+
+  @media (min-width: 768px) {
+    width: 56px;
+    height: 28px;
+  }
+
+  &__circle {
+    position: relative;
+    left: 24px;
+    width: 12px;
+    height: 12px;
+    background-color: white;
+    border-radius: 100%;
+
+    @media (min-width: 768px) {
+      width: 16px;
+      height: 16px;
+      left: 34px;
+    }
+  }
 }
