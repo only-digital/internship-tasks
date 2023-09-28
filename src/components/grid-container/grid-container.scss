@@ -4,24 +4,18 @@
     justify-content: center;
     gap: 18px;
     width: 100%;
-    grid-template-columns: auto auto;
+    grid-template-columns: 50% 50%;
 
     .center-items-wrapper {
         display: grid;
         justify-content: center;
-        grid-template-columns: 32.4% 32.4% 32.4%;
+        --width: 32.6%;
+        grid-template-columns:var(--width) var(--width) var(--width);
          grid-column:  1/ span 2;
-        gap: 18px;
+        gap: 19px;
     }
 
-    .item,
-    .item1,
-    .item2,
-    .item3,
-    .item4,
-    .item5,
-    .item6,
-    .item7 {
+    .item {
         width: 100%;
         background: var(--grey);
         padding: 48px 49px;
