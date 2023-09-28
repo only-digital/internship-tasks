@@ -1,0 +1,24 @@
+mixin feedback-form(props)
+  form.feedback-form&attributes(attributes)(data-component='feedback-form' novalidate="")
+    h2.feedback-form__title Форма обратной связи
+    .feedback-form__content
+      .feedback-form__input
+        .feedback-form__input-placeholder E-mail
+        input.feedback-form__input-field(type="email" name="email" id="email" )
+      .feedback-form__error
+      input.feedback-form__checkbox(type="checkbox" name="policy" id="policy")
+      label.feedback-form__label(for="policy")
+        span.feedback-form__checkbox__icon 
+          +svg('checkbox-icon').feedback-form__checkbox__icon-image
+        | Вы подтверждаете, что ознакомились 
+        a.feedback-form__label__link(href="/policy" target="_blank") с политикой обработки персональных данных
+      .feedback-from__button-container
+        button.feedback-form__submit(id="submit") 
+          | Отправить
+          +svg('arrow').feedback-form__submit-arrow
+        +loader.feedback-form__loader
+        .feedback-form__success.hidden
+          .feedback-form__success-icon
+            +svg('success')
+          | Форма успешно отправлена
+

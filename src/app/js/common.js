@@ -1,5 +1,8 @@
 import ExampleButton from "../../components/example-button/example-button";
 import VacTitle from "../../components/vac-title/vac-title";
+import FeedbackForm from "../../components/feedback-form/feedback-form";
+import Loader from "../../components/loader/loader";
+import TitledList from "../../components/titled-list/titled-list";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -9,6 +12,9 @@ import VacTitle from "../../components/vac-title/vac-title";
 const allComponents = {
   "example-button": ExampleButton,
   "vac-title": VacTitle,
+  "feedback-form": FeedbackForm,
+  loader: Loader,
+  "titled-list": TitledList,
 };
 
 /**
