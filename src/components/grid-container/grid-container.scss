@@ -1,3 +1,132 @@
+$color-red: #fc0d1b;
+$color-dark-blue: #04306a;
+$color-blue: #0041a0;
+$color-grey: #f4f4f4;
+
 .grid-container {
     // Your code here
+    width: 100%;
+    height: 100%;
+    max-width: 1920px;
+    padding: 120px 95px;
+
+    &__header {
+        margin-bottom: 80px;
+    
+        &__title {
+            grid-template-columns: auto auto;
+            justify-content: start;
+            font-family: Arial;
+            font-size: 46px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 100%;
+            letter-spacing: -0.92px;
+            color: $color-dark-blue;
+    
+            &__red {
+                color: $color-red;
+            }
+        }
+    }
+
+    &__row-1 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(855px, 1fr));
+        grid-template-areas: 
+            'item-1 item-2'
+            'item-1 item-3';
+        min-height: 855px;
+        column-gap: 20px;
+        row-gap: 16px;
+        margin-bottom: 16px;
+
+        &__item:nth-child(1) {
+            grid-area: item-1;
+            min-height: 855px;
+        }
+
+        &__item:nth-child(2) {
+            grid-area: item-2;
+            min-height: 420px;
+
+        }
+
+        &__item:nth-child(3) {
+            grid-area: item-3;
+            min-height: 420px;
+        }
+    }
+
+    &__row-2 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 20px;
+        min-height: 480px;
+        margin-bottom: 16px;
+
+        &__item {
+            min-width: 563px;
+            min-height: 480px;
+        }
+    }
+
+    &__row-3 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+        min-height: 420px;
+
+        &__item {
+            min-width: 855px;
+            min-height: 420px;
+        }
+    }
+
+    .item-content {
+        min-width: 100%;
+        min-height: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+
+        &__title {
+            justify-self: start;
+            align-self: start;
+            font-family: Arial;
+            font-size: 32px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 120%;
+            letter-spacing: -0.64px;
+            padding: 24px 36px;
+        }
+
+        &__btn {
+            margin: 24px 36px;
+            justify-self: end;
+            align-self: end;
+            cursor: pointer;
+        }
+    }
+}
+
+.text_blue {
+    color: $color-blue;
+}
+
+.text_white {
+    color: #FFFFFF;
+}
+
+.background_blue {
+    background-color: $color-blue;
+}
+
+.background_grey {
+    background-color: $color-grey;
+}
+
+.background_dark-blue {
+    background-color: $color-dark-blue;
 }
