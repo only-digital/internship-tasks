@@ -1,0 +1,113 @@
+.form-feedback {
+	$root: &;
+	display: grid;
+	grid-template-columns: 285px auto;
+	gap: 159px;
+
+	&__title{
+		color: #002F6C;
+		font-size: 32px;
+		font-weight: 700;
+		line-height: 120%;
+	}
+
+	.form{
+		display: flex;
+		margin-top: 33px;
+		flex-direction: column;
+		gap: 10px;
+
+		&__label-email{
+			display: none;
+			width: 836px;
+			color: #909090;
+			font-size: 12px;
+			line-height: 150%;
+
+			&.invalid{
+				display: block;
+				padding-left: 20px;
+			}
+		}
+		&__email{
+				padding-bottom: 18px;
+				border-bottom: 1px solid #DEDEDE;
+				max-width: 836px;
+
+				&__error-message{
+					display: none;
+					color: #F00;
+					font-size: 12px;
+					line-height: 150%;
+				}
+
+				&.valid{
+					border-radius: 24px;
+					background: #F4F4F4 url("/../src/assets/icons/Union.png") 98% 50%/18px 13px no-repeat ;
+					padding: 8px 20px 14px 20px;
+				}
+
+				&.invalid{
+					border: 1px solid #F00;
+					border-radius: 24px;
+					padding: 13px 20px 19px 20px;
+
+					+ .form__email__error-message{
+						display: block;
+						padding-left: 20px;
+						padding-top: 2px;
+					}
+				}
+
+				&:disabled{
+					pointer-events: none;
+					&::placeholder{
+						color: #BCBCBC;
+
+					}
+				}
+				&::placeholder{
+					color: #111;
+					font-size: 16px;
+				}
+				&:hover{
+					cursor: pointer;
+					border-radius: 24px;
+					background: #F4F4F4;
+					padding: 8px 20px 14px 20px;
+				}
+				&:focus{
+					border-radius: 24px;
+					background: white;
+					border: 1px solid #0041A0;
+					padding: 8px 20px 14px 20px;
+				}
+			}
+
+		&__message__textarea{
+			border-bottom: 1px solid #DEDEDE;
+			border-top: none;
+			border-left: none;
+			border-right: none;
+			max-width: 836px;
+			resize: none;
+
+			&::placeholder{
+				color: #111;
+				font-family: Arial;
+				font-size: 16px;
+			}
+			&:hover{
+				border-radius: 24px;
+				background: #F4F4F4;
+				height: 193px;
+				padding: 12px 20px 14px 20px;
+			}
+			&:focus{
+				border-radius: 24px;
+				border: 1px solid #0041A0;
+				padding: 12px 20px 16px 20px;
+			}
+		}
+	}
+}
