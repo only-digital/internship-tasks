@@ -1,3 +1,18 @@
 mixin link(props)
-	.link&attributes(attributes)
-		//Your code here
+	.link(tabindex='0')
+		a.link__text Sustainalytics.com
+		+svg('link').link__svg
+	.link(tabindex='0', disabled='').link__disabled
+		a.link__text Sustainalytics.com
+		+svg('link').link__svg
+	p.text 
+		| Для подключения сервиса добавьте  номер 
+		span.link.link__in-the-text(tabindex='0')
+			a.link__text +7(921)058-57-19
+		|  в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже
+
+	p.text 
+		| Цифровые продукты, направленные на создание 
+		span.link.link__in-the-text(tabindex='0')
+			a.link__text дополнительных
+		|  сервисов и устранение «проблемных точек» наших клиентов

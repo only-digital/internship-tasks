@@ -1,5 +1,52 @@
+@import '/src/pages/style.scss';
+
 .link {
+
 	$root: &;
 
-	//Your code here
+	margin-top: 10px;
+
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	width: 170px;
+
+	color: $blue;
+
+	transition: color 0.5s, background-color 0.5s;
+
+
+	&__svg {
+		width: 24px;
+		height: 24px;
+	}
+
+	&:hover {
+		color: $red;
+		cursor: pointer;
+	}
+
+	&:active {
+		color: #BF1D26; 
+	}
+
+	&:focus{
+		background-color: rgba(0, 65, 160, 0.15);
+	}
+
+	&__disabled {
+		pointer-events: none;
+		color: $gray;
+		cursor: none;
+	}
+
+	&__in-the-text {
+		display: inline;
+	}
 }
+
+.text {
+	margin-top: 10px;
+}
+
