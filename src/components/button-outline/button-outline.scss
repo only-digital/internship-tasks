@@ -34,7 +34,7 @@ $grey-3-color: #F4F4F4;
   &:active {
     background-color: $blue-color;
     color: white;
-    border: transparent;
+    border-color: transparent;
 
     #{$root}__svg {
       fill: white;
@@ -58,7 +58,7 @@ $grey-3-color: #F4F4F4;
     &:hover {
       background-color: $cobolt-color;
       color: white;
-      border: transparent;
+      border-color: transparent;
 
       #{$root}__svg {
         fill: white;
@@ -107,7 +107,7 @@ $grey-3-color: #F4F4F4;
   &_alt {
 	 background-color: red;
 	 color: white;
-	 border: transparent;
+	 border-color: transparent;
 
 	 svg {
 		fill: white;
