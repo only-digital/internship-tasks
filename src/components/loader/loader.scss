@@ -1,0 +1,46 @@
+$size: 38px;
+$base: #263238;
+$lite: #8F8F8F;
+
+
+.loader {
+	$root: &;
+
+  
+  width: calc($size/4);
+  height: calc($size/4);
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  color: $lite;
+  animation: animloader45 1s linear infinite alternate;
+  
+  &-container{
+    width: 100px;
+    display: none;
+    justify-content: center;
+
+    &.loading {
+      display: flex;
+    }
+  }
+
+
+  @keyframes animloader45 {
+    0% {
+      box-shadow: -38px -12px, -14px 0, 14px 0, 38px 0
+    }
+
+    33% {
+      box-shadow: -38px 0px, -14px -12px, 14px 0, 38px 0
+    }
+
+    66% {
+      box-shadow: -38px 0px, -14px 0, 14px -12px, 38px 0
+    }
+
+    100% {
+      box-shadow: -38px 0, -14px 0, 14px 0, 38px -12px
+    }
+  }
+}
