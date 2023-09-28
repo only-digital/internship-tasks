@@ -1,0 +1,40 @@
+$color-black: #012B34;
+$color-blue: #04306A;
+
+.titled-list {
+	$root: &;
+
+  margin-top: 130px;
+  width: 988px;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 400;
+
+
+	&__title {
+    margin-bottom: 35px;
+
+    color: $color-blue;
+    font-size: 46px;
+    line-height: 120%;
+    letter-spacing: -0.92px;
+  }
+
+  &__item {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+    
+    color: $color-black;
+    font-feature-settings: 'ss08' on;
+    font-size: 24px;
+    line-height: 140%;
+
+    &-icon{
+      margin-top: 15px;
+      min-width: 20px;
+      height: 1px;
+      background-color: #0DB274;
+    }
+  }
+}

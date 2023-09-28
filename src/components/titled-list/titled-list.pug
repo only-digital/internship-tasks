@@ -1,0 +1,8 @@
+mixin titled-list(props)
+  .titled-list&attributes(attributes)(data-component='titled-list')
+    h2.titled-list__title= props.title
+    ul.titled-list__items 
+      each item in props.items 
+        li.titled-list__item
+          .titled-list__item-icon
+          .titled-list__item-text= item
