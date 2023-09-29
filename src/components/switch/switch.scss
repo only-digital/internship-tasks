@@ -63,4 +63,9 @@
 			border: 3px solid #C2DAFF;
 		} 
 	}
+
+	&[disabled] &__input {
+		background-color: #DEDEDE;
+		pointer-events: none;
+	}
 }

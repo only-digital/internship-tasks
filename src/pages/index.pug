@@ -2,8 +2,8 @@ extends ../../build_modules/common
 
 
 block body
-    //- +example-button({text: 'example text'})
-    //- +example-button({text: 'disabled'})(disabled='')
+    +example-button({text: 'example text'})
+    +example-button({text: 'disabled'})(disabled='')
     
     //Button
     +button({text: 'Кнопка'})
@@ -19,4 +19,4 @@ block body
 
     //Switch
     +switch()
-    +switch()
+    +switch(disabled='')
