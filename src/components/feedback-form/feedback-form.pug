@@ -4,11 +4,6 @@ mixin svgArrow()
             path(d="M29.9059 14.9678L29.9059 17.0322L16.859 25.1208L17.9172 27L32 18.2751L32 13.7249L17.9172 5L16.859 6.87919L29.9059 14.9678Z" fill="white")
             path(d="M27 17.0926L27 14.9074L1.05717e-06 14.9074L8.66136e-07 17.0926L27 17.0926Z" fill="white")
 
-//mixin svgMark()
-//    svg(xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none")
-//        circle(cx="26" cy="26" r="25" stroke="#DEDEDE" stroke-width="2")
-//        path(fill-rule="evenodd" clip-rule="evenodd" d="M36.503 19.4099L35.3267 18.2337L23.3798 30.1806L24.556 31.3569L36.503 19.4099ZM16.6457 26.1695L15.4695 27.3458L21.9503 33.8267L23.1266 32.6504L16.6457 26.1695Z" fill="#27AE60")
-
 mixin svgPlusIcon()
     svg(xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none")
         path(d="M0 6.53333V7.46667H14V6.53333H0Z" fill="#909090")
@@ -28,7 +23,7 @@ mixin uploadedFile()
 mixin feedback-form(props)
     .feedback-form&attributes(attributes)(data-component='feedback-form')
         h2.feedback-form__label Форма обратной связи
-        form#form.feedback-form__form(method='post' )
+        form#form.feedback-form__form(method='post')
             .feedback-form__input
                 input#email-field.feedback-form__input-field(type='email' required='' maxlength='255' name='email')
                 label(for='email-field').feedback-form__input-name E-mail
