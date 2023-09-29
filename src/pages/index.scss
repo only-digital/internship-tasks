@@ -1,0 +1,46 @@
+$blue: #04306A;
+$black: #012B34;
+$grey: #8F8F8F;
+
+$smallMargin: 12px;
+$largeMargin: 35px;
+
+@mixin text-style($font-weight, $font-size, $color, $line-height) {
+	font-weight: $font-weight;
+	font-size: $font-size;
+	color: $color;
+	line-height: $line-height;
+}
+
+@mixin media($max-width, $max-height) {
+	@media (max-width: $max-width) and (max-height: $max-height) {
+		@content
+	}
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 115px 20px 45px 20px;
+
+	@include media(1440px, 900px) {
+		padding: 100px 20px 45px 20px;
+	}
+
+	@include media(1280px, 768px) {
+		padding: 90px 20px 45px 20px;
+	}
+
+	@include media(768px, 1024px) {
+		padding: 80px 20px 45px 20px;
+	}
+
+	@include media(375px, 812px) {
+		padding: 60px 20px 45px 20px;
+	}
+}
+
