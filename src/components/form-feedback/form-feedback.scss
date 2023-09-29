@@ -15,31 +15,34 @@
 		display: flex;
 		margin-top: 33px;
 		flex-direction: column;
-		gap: 10px;
 
-		&__label-email{
+		&__label-email,
+		&__message__label
+		{
 			display: none;
 			width: 836px;
 			color: #909090;
 			font-size: 12px;
 			line-height: 150%;
 
-			&.invalid{
+			&.invalid,
+			&.valid{
 				display: block;
 				padding-left: 20px;
 			}
 		}
+
+		&__error-message{
+			display: none;
+			color: #F00;
+			font-size: 12px;
+			line-height: 150%;
+		}
+
 		&__email{
 				padding-bottom: 18px;
 				border-bottom: 1px solid #DEDEDE;
 				max-width: 836px;
-
-				&__error-message{
-					display: none;
-					color: #F00;
-					font-size: 12px;
-					line-height: 150%;
-				}
 
 				&.valid{
 					border-radius: 24px;
@@ -52,7 +55,7 @@
 					border-radius: 24px;
 					padding: 13px 20px 19px 20px;
 
-					+ .form__email__error-message{
+					+ .form__error-message{
 						display: block;
 						padding-left: 20px;
 						padding-top: 2px;
@@ -85,12 +88,42 @@
 			}
 
 		&__message__textarea{
+			outline:none;
 			border-bottom: 1px solid #DEDEDE;
 			border-top: none;
 			border-left: none;
 			border-right: none;
 			max-width: 836px;
 			resize: none;
+
+			&.valid{
+				border-radius: 24px;
+				height: 172px;
+				background: #F4F4F4 url("/../src/assets/icons/Union.png") 97% 92%/18px 13px no-repeat ;
+				padding: 12px 50px 16px 20px;
+			}
+
+			&.invalid{
+				border: 1px solid #F00;
+				border-radius: 24px;
+				height: 172px;
+				padding: 13px 20px 19px 20px;
+
+				+ .form__error-message{
+					display: block;
+					padding-left: 20px;
+					padding-top: 2px;
+				}
+			}
+
+			&:disabled{
+				pointer-events: none;
+				background: white;
+				&::placeholder{
+					color: #BCBCBC;
+
+				}
+			}
 
 			&::placeholder{
 				color: #111;
@@ -107,6 +140,7 @@
 				border-radius: 24px;
 				border: 1px solid #0041A0;
 				padding: 12px 20px 16px 20px;
+				background: white;
 			}
 		}
 	}

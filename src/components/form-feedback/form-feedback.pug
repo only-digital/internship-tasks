@@ -4,9 +4,10 @@ mixin form-feedback(props)
 		form.form
 			label(for="email").form__label-email E-mail
 			input(type='email' required placeholder="E-mail")#email.form__email
-			p.form__email__error-message Сообщение ошибки
-			label.form__message__label
+			p.form__error-message Сообщение ошибки
+			label.form__message__label Ваше сообщение
 			textarea(placeholder="Ваше сообщение").form__message__textarea
+			p.form__error-message Сообщение ошибки
 			label add files
 				input(type="file")
 			input#approval.form-feedback__checkbox(type='checkbox')
