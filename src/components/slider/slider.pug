@@ -1,0 +1,8 @@
+mixin slider(props)
+	.slider(class=props.disabled?'slider_disabled':'')
+		.slider__buttons 
+			button.slider__button&attributes(attributes)
+				+svg('arrow').slider__svg
+			button.slider__button&attributes(attributes)
+				+svg('arrow').slider__svg
+		span.slider__info=`${props.currentPage<10?'0'+props.currentPage:props.currentPage}/${props.totalPages<10?'0'+props.totalPages:props.totalPages}`
