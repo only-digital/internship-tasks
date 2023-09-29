@@ -8,8 +8,10 @@ mixin form-feedback(props)
 			label.form__message__label Ваше сообщение
 			textarea(placeholder="Ваше сообщение").form__message__textarea
 			p.form__error-message Сообщение ошибки
-			label add files
-				input(type="file")
+			label.form__file
+				input(type="file").form__file-input
+				span Прикрепить файл
+					+svg('plus')
 			input#approval.form-feedback__checkbox(type='checkbox')
 			label(for='approval').form-feedback__security-policy Вы подтверждаете, что ознакомились
 				a(href='#') c политикой обработки персональных данных
