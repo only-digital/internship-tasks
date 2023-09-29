@@ -2,8 +2,8 @@ extends ../../build_modules/common
 
 
 block body
-    +example-button({text: 'example text'})
-    +example-button({text: 'disabled'})(disabled='')
+    //- +example-button({text: 'example text'})
+    //- +example-button({text: 'disabled'})(disabled='')
     
     //Button
     +button({text: 'Кнопка'})
@@ -16,3 +16,7 @@ block body
     //Links
     +links({url: 'Sustainalytics.com', before: 'Добавьте', after: 'в контакты', number: '+7(921)058-57-19'})
     +links({url: 'Sustainalytics.com', before: 'Добавьте', after: 'в контакты', number: '+7(921)058-57-19'})(disabled='')
+
+    //Switch
+    +switch()
+    +switch()

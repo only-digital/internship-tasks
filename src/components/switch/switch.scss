@@ -1,0 +1,66 @@
+.switch {
+	$root: &;
+
+	//Your code here
+	margin: 30px;
+
+	&__input {
+		position: relative;
+		height: 28px;
+		width: 56px;
+		border-radius: 14px;
+		border: 3px solid transparent;
+		background-color: #DEDEDE;
+		appearance: none;
+		outline: none;
+		transition: .5s;
+		cursor: pointer;
+
+		@media (max-width: 375px) {
+			width: 40px;
+        	height: 20px;
+		}
+	}
+
+	&__input::before {
+		content: "";
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		background-color: #fff;
+		border-radius: 50%;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 2px;
+		transition: .5s, background-color .5s, border-color .5s;
+
+		@media (max-width: 375px) {
+			height: 12px;
+        	width: 12px;
+		}
+	}
+
+	&__input:checked::before {
+		left: 32px;
+		@media (max-width: 375px) {
+			left: 21px;
+		}
+	}
+
+	&__input:checked {
+		background-color: #0041A0;
+	}
+
+	&__input:hover {
+		@media (min-width: 768px) {
+			background-color: #002F6C;
+		}
+	}
+
+	&__input:focus {
+		@media (min-width: 768px) {
+			background-color: #DEDEDE;
+			border: 3px solid #C2DAFF;
+		} 
+	}
+}
