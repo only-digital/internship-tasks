@@ -1,0 +1,53 @@
+.link-3 {
+	$root: &;
+	width: 240px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	&__text {
+		color: #0041A0;
+		font-size: 24px;
+		transition: .4s ease all;
+
+		&::selection {
+			background-color: #0041A026;
+		}
+	}
+
+	&__icon {
+		width: 28px;
+		height: 28px;
+		transition: .4s ease all;
+	}
+
+	&_hover:hover {
+		.link-3__text {
+			color: #FF0000;
+		}
+	}
+
+	&_active:active {
+		.link-3__text {
+			color: #BF1D26;
+		}
+	}
+
+	&_disabled:disabled{
+		cursor: no-drop;
+		.link-3__text{
+			color:#BCBCBC;
+			user-select: none;
+		}
+	}
+	@media only screen and (max-width:768px){
+		width: 185px;
+		&__text{
+			font-size: 18px;
+		}
+		&__icon{
+			width:24px;
+			height:24px;
+		}
+	}
+}

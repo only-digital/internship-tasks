@@ -1,4 +1,9 @@
-@import '../src/components/example-button/example-button';
+@import '../src/components/button-container/switch-button-4/switch-button-4';
+@import '../src/components/button-container/link-3/link-3';
+@import '../src/components/button-container/scroll-buttons-2/scroll-buttons-2';
+@import '../src/components/button-container/button-1/button-1';
+@import '../src/components/button-container/button-container';
+@import '../src/components/button-container/button-0/button-0';
 
 html {
     font-weight: normal;
@@ -10,6 +15,7 @@ html {
 
 * {
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {

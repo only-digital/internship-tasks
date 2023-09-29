@@ -1,0 +1,25 @@
+.button-container {
+	$root: &;
+
+	&__buttons {
+		display: flex;
+		background: rgb(255, 255, 255);
+		background: linear-gradient(90deg, rgba(255, 255, 255, 1) 39%, rgba(227, 227, 227, 1) 94%);
+		padding: 22px 18px;
+		border-bottom: 2px solid black;
+
+		&>* {
+			margin-left: 14px;
+		}
+
+		@media only screen and (max-width:375px) {
+			flex-direction: column;
+			align-items: center;
+			&>* {
+				margin-left: 0px;
+				margin-top: 15px;
+			}
+		}
+	}
+
+}

@@ -1,0 +1,17 @@
+mixin button-container(props)
+	.button-container&attributes(attributes)
+		.button-container__buttons 
+			+button-0()
+			+button-0(disabled="true")
+		.button-container__buttons 
+			+button-1()
+			+button-1(disabled="true")
+		.button-container__buttons 
+			+scroll-buttons-2()
+			+scroll-buttons-2(disabled="true")
+		.button-container__buttons 
+			+link-3()
+			+link-3(disabled="true")
+		.button-container__buttons 
+			+switch-button-4()
+			+switch-button-4(disabled="true")
