@@ -1,0 +1,15 @@
+mixin slides-btn(props)
+	.slides-btn&attributes(attributes)
+		//Your code here
+		button.slides-btn__btn-left
+			img(class='slides-btn__left-blue' src='../assets/images/Vector_left_blue.png')
+			img(class='slides-btn__left-grey' src='../assets/images/Vector_left_grey.png')
+
+		button.slides-btn__btn-right
+			img(class='slides-btn__right-blue' src='../assets/images/Vector_right_blue.png')
+			img(class='slides-btn__right-grey' src='../assets/images/Vector_right_grey.png')
+
+		.slides-btn__slides__text 
+			span#current=props.current
+			p /
+			span#total=props.total

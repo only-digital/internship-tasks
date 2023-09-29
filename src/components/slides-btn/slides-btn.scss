@@ -1,0 +1,99 @@
+@font-face {
+    font-family: 'Grtsk Semibold';
+    src: url('../src/assets/fonts/GrtskPeta-Semibold.ttf');
+}
+
+.slides-btn {
+	$root: &;
+
+	//Your code here
+	display: flex;
+    align-items: center;
+	margin: 30px;
+
+	&__btn-left,
+	&__btn-right {
+		width: 80px;
+		height: 80px;
+		background-color: #fff;
+		border: 1px solid #DEDEDE;
+		border-radius: 50%;
+		position: relative;
+		margin-right: 40px;
+		cursor: pointer;
+		transition: background-color .5s, border-color .5s;
+
+		@media (max-width: 1280px) {
+			width: 60px;
+        	height: 60px;
+		}
+	}
+
+	&__left-blue,
+	&__left-grey,
+	&__right-blue,
+	&__right-grey {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate3d(-50%, -50%, 0);
+		transition: opacity .5s;
+
+		@media (max-width: 1280px) {
+			width: 21px;
+        	height: 30px;
+		}
+	}
+
+	&__left-grey,
+	&__right-grey {
+		opacity: 0;
+	}
+
+	&__slides__text {
+		display: flex;
+		width: 60px;
+		opacity: 40%;
+		font-weight: 600;
+		font-size: 16px;
+		font-family: 'Grtsk Semibold';
+		color: #909090;
+	}
+
+	&__btn-left:hover,
+	&__btn-right:hover {
+		@media (min-width: 768px) {
+			background-color: #F4F4F4;
+			border-color: #F4F4F4;
+		}
+	}
+
+	&__btn-left:active,
+	&__btn-right:active {
+		background-color: #DEDEDE;
+	}
+
+	&__btn-left:focus,
+	&__btn-right:focus {
+		@media (min-width: 768px) {
+			border: 3px solid #99B3D8;
+		}
+	}
+
+	&[disabled] &__btn-left,
+	&[disabled] &__btn-right {
+		border-color: #DEDEDE;
+		pointer-events: none;
+		background-color: #fff;
+	}
+
+	&[disabled] &__left-blue,
+	&[disabled] &__right-blue {
+		opacity: 0;
+	}
+
+	&[disabled] &__left-grey,
+	&[disabled] &__right-grey {
+		opacity: 1;
+	}
+}
