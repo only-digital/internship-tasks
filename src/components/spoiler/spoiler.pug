@@ -1,0 +1,8 @@
+mixin spoiler(props)
+	template(id='spoiler')
+		li.spoiler&attributes(attributes)(data-component='spoiler')
+			h2.spoiler__title= props.title
+			button.spoiler__button.button
+				+svg('icon-open-spoiler').button__icon
+			div.spoiler__subtitle-container
+				p.spoiler__subtitle= props.text
