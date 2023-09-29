@@ -1,0 +1,116 @@
+.my-button {
+  $root: &;
+  font-family: Arial, sans-serif;
+  width: 99%;
+  height: 42px;
+  padding: 15px 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid #bcbcbc;
+  border-radius: 24px;
+
+  transition: all 0.3s;
+
+  &:disabled {
+    margin-top: 10px;
+    opacity: 0.5;
+    pointer-events: none;
+    #{$root}__svg {
+      fill: #909090;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: white;
+      background-color: #0041a0;
+      border-color: #0041a0;
+      #{$root}__svg {
+        fill: white;
+      }
+    }
+
+    &:active {
+      color: white;
+      background-color: #002f6c;
+      border-color: #002f6c;
+      #{$root}__svg {
+        fill: white;
+      }
+    }
+
+    &:focus {
+      border-color: #99b3d8;
+      border-width: 3px;
+      background-color: white;
+      color: #0041a0;
+      #{$root}__svg {
+        fill: #0041a0;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    margin-right: 14px;
+
+    @media (min-width: 1280px) {
+      font-size: 14px;
+    }
+
+    @media (min-width: 1920px) {
+      font-size: 16px;
+    }
+  }
+
+  &__arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  svg {
+    width: 24px;
+    height: 26px;
+    transition: fill 0.3s;
+    fill: #0041a0;
+    @media (min-width: 375px) {
+      width: 26px;
+      height: 24px;
+    }
+
+    @media (min-width: 768px) {
+      width: 24px;
+      height: 26px;
+    }
+
+    @media (min-width: 1280px) {
+      width: 24px;
+      height: 24px;
+    }
+
+    @media (min-width: 1920px) {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  @media (min-width: 375px) {
+    width: 121px;
+  }
+
+  @media (min-width: 768px) {
+    width: 111px;
+  }
+
+  @media (min-width: 1280px) {
+    width: 131px;
+  }
+
+  @media (min-width: 1920px) {
+    width: 138px;
+    height: 50px;
+  }
+}
