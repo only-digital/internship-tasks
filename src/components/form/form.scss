@@ -61,7 +61,7 @@ $size: 48px;
 			color: $red;
 		}
 
-		.success {
+		.success--msg {
 			display: none;
 
 			&.active {
@@ -77,7 +77,7 @@ $size: 48px;
 			}
 		}
 
-		.error {
+		.error--msg {
 			display: none;
 
 			color: $red;

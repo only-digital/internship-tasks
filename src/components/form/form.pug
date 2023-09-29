@@ -6,14 +6,15 @@ mixin form(props)
 			input(class="form__content--email" type="email" name="email" id="email")
 			label(class="validate__label validate__label--email" for="email")
 
+			+text-area 
 			+checkbox
 
 			+btn({text: 'Отправить'})
 
-			.success
+			.success--msg
 				+svg('success-svg')
 				| Форма успешно отправлена
 
-			.error
+			.error--msg
 				+svg('error-svg')
 				| Ошибка отправки формы

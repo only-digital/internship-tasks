@@ -13,7 +13,7 @@ import Form from "../../components/form/form";
 const allComponents = {
 	 'btn': Btn,
 	 'btn-file': BtnFile,
-	 'textarea': TextArea,
+	 'text-area': TextArea,
 	 'input-field': InputField,
 	 'checkbox': Checkbox,
 	 'form': Form,

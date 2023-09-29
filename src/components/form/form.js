@@ -12,12 +12,15 @@ class Form extends Component {
 
 		const emailInput = form.querySelector('[name="email"]');
 		const checkboxValue = form.querySelector('[name="checkbox"]');
+		const textAreaInput = form.querySelector('[name="textarea"]');
 
 		const validateEmailLabel = form.querySelector('.validate__label--email');
 		const validateCheckboxLabel = form.querySelector('.validate__label--checkbox');
+		const validateTextAreaLabel = form.querySelector('.validate__label--textarea');
 
 		let emailIsValid = true
 		let checkboxIsValid = true
+		let textAreaIsValid = true
 
 		if (!emailInput.value) {
 			validateEmailLabel.textContent = 'Поле E-mail обязательно';
@@ -37,6 +40,19 @@ class Form extends Component {
 			checkboxIsValid = true
 		}
 
+		if (textAreaInput.value.length < 30) {
+			textAreaInput.classList.add('error')
+			validateTextAreaLabel.textContent = 'Ваше сообщение должно быть больше 30 символов';
+			textAreaIsValid = false
+		}
+		else {
+			textAreaInput.classList.remove('error')
+			validateTextAreaLabel.textContent = '';
+			textAreaIsValid = true
+		}
+
+
+
 		return emailIsValid && checkboxIsValid
 	}
 
@@ -54,8 +70,8 @@ class Form extends Component {
 
 		const submitBtn = form.querySelector('[type="submit"]');
 
-		const successMessage = form.querySelector('.success');
-		const errorMessage = form.querySelector('.error');
+		const successMessage = form.querySelector('.success--msg');
+		const errorMessage = form.querySelector('.error--msg');
 
 		if (isValidate) {
 			submitBtn.style.display = 'none';

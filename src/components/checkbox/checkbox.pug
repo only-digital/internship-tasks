@@ -1,7 +1,7 @@
 mixin checkbox(props)
 	div.checkbox
 		input(class="checkbox--custom" type="checkbox" name="checkbox" id="checkbox")
-		label(class="checkbox__label" for="checkbox")
+		label(class="checkbox__label" for="checkbox")&attributes(attributes)(data-component='checkbox')
 			p Вы подтверждаете, что ознакомились с 
 				a(href="#")  политикой обработки персональных данных
-	label(class="validate__label validate__label--checkbox" for="checkbox")
+		label(class="validate__label validate__label--checkbox" for="checkbox")
