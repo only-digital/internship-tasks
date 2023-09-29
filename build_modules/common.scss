@@ -13,6 +13,16 @@ html {
     box-sizing: border-box;
 }
 
+:root {
+  --white: #ffffff;
+  --gray: #f4f4f4;
+  --blue: #0041a0;
+  --red: #fc0d1b;
+
+  --font-title: 700 46px "Arial", sans-serif;
+  --font-titleH3: 700 32px "Arial", sans-serif;
+}
+
 body {
     position: relative;
     padding: 0;

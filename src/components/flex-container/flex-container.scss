@@ -1,3 +1,102 @@
-.flex-container {
-    // Your code here
+.flex {
+  &-container {
+    --width: 1920px;
+    --height: 2156px;
+    display: flex;
+    flex-direction: column;
+    
+    border: solid 1px #0000004d;
+    margin: auto;
+    padding: 5%;
+    max-width: var(--width);
+    height: var(--height);
+  }
+
+  &__title {
+    font: var(--font-title);
+    span {
+      color: var(--red);
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 1%;
+    margin-top: 80px;
+    font: var(--font-titleH3);
+  }
+
+  &__constructions {
+    display: flex;
+    gap: 1%;
+
+    width: 100%;
+    height: 856px;
+
+    &_steel {
+      position: relative;
+      background-color: var(--gray);
+      padding: 4%;
+      flex: 1;
+    }
+
+    &_ferroconcrete {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2%;
+      > div {
+        position: relative;
+        padding: 4%;
+        background-color: var(--gray);
+        flex: 1;
+      }
+    }
+
+    &_title {
+      color: var(--blue);
+    }
+  }
+
+  &__fasteners {
+    height: 480px;
+    gap: 1%;
+    > div {
+      position: relative;
+      flex: 1;
+      padding: 3%;
+      color: var(--blue);
+      background-color: var(--gray);
+    }
+    > div:nth-child(odd) {
+      color: var(--white);
+      background-color: var(--blue);
+      .arrow svg path {
+        fill: var(--white);
+      }
+    }
+  }
+
+  &__gabions {
+    height: 480px;
+    gap: 1%;
+    > div {
+      position: relative;
+      padding: 3%;
+      background-color: var(--gray);
+      flex: 1;
+    }
+    &_title {
+      color: var(--blue);
+    }
+  }
+}
+.arrow {
+  position: absolute;
+  cursor: pointer;
+  // bottom: 25px;
+  // right: 37px;
+  bottom: 3%;
+  right: 4%;
 }
