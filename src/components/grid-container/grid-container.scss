@@ -1,3 +1,27 @@
 .grid-container {
-    // Your code here
+  max-width: 1920px;
+  height: 100%;
+  padding: 122px 97px 120px;
+  margin: 0 auto;
+}
+#title,
+#title_color {
+  display: inline !important;
+}
+.blocks__item {
+  grid-template-columns: 1fr 1fr;
+}
+.block_top_left,
+.block_top_right {
+  width: 100%;
+}
+.block__item_top_right {
+  height: 100%;
+}
+.blocks__item_middle {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.block__item_middle,
+.block__item_bottom {
+  width: 100%;
 }

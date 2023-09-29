@@ -1,3 +1,92 @@
 .flex-container {
-    // Your code here
+  flex-direction: column;
+  max-width: 1920px;
+  height: 100%;
+  padding: 122px 97px 120px;
+  margin: 0 auto;
+}
+.title {
+  margin-bottom: 80px;
+  color: #fc0d1b;
+  font-family: Arial;
+  font-size: 46px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: -0.92px;
+}
+.title_color {
+  color: #04306a;
+}
+.blocks {
+  flex-direction: column;
+  gap: 16px;
+}
+.blocks__item {
+  gap: 19px;
+  height: 856px;
+}
+.block_top_left {
+  width: 50%;
+  padding: 48px 49px;
+}
+.block_top_right {
+  flex-direction: column;
+  width: 50%;
+  gap: 16px;
+}
+.block__item_top_right {
+  gap: 16px;
+  height: 50%;
+  padding: 24px 62px 24px 36px;
+}
+.blocks__item_middle {
+  height: 480px;
+}
+.block__item_middle {
+  width: 33%;
+  padding: 23px 104px 23px 36px;
+  background-color: #04306a;
+}
+.block_bgcolor-middle {
+  background-color: #0041a0;
+}
+.blocks__item_gap {
+  gap: 18px;
+}
+.blocks__item_bottom {
+  height: 420px;
+}
+.block__item_bottom {
+  width: 50%;
+  padding: 24px 49px;
+}
+.block__item_bottom_padding {
+  padding: 24px 62px 24px 36px;
+}
+.block_bgcolor {
+  background-color: #f4f4f4;
+}
+.block_relative {
+  position: relative;
+}
+.text {
+  color: #04306a;
+  font-family: Arial;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: -0.64px;
+}
+.text_color {
+  color: #fff;
+}
+.arrow-icon {
+  position: absolute;
+  right: 36px;
+  bottom: 30px;
+}
+.arrow_white {
+  fill: #fff;
 }

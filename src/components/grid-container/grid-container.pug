@@ -1,3 +1,35 @@
 mixin grid-container()
     section.grid-container
-        // Your code here
+        h2.title#title  
+            | Комплексные&nbsp;
+            span.title_color#title_color предложения для мостостроения
+        .blocks
+            .blocks__item
+                .block_top_left.block_bgcolor.block_relative
+                    p.text Мостовая сталь/Стальные конструкции мостов
+                    +arrow
+                .block_top_right
+                    .block__item_top_right.block_bgcolor.block_relative
+                        p.text Железобетонные конструкции мостов
+                        +arrow
+                    .block__item_top_right.block_bgcolor.block_relative
+                        p.text Дорожные ограждения барьерного типа
+                        +arrow
+            .blocks__item.blocks__item_middle.blocks__item_gap
+                .block__item_middle.block_relative
+                    p.text.text_color Шпунтовой замок
+                    +arrow(class="arrow_white")
+                .block__item_middle.block_bgcolor.block_relative
+                    p.text Мостовой крепеж
+                    +arrow
+                .block__item_middle.block_relative.block_bgcolor-middle
+                    p.text.text_color Профили для деформационных швов
+                    +arrow(class="arrow_white")
+            .blocks__item.blocks__item_bottom
+                .block__item_bottom.block_bgcolor.block_relative
+                    p.text Плетеные габионы
+                    +arrow
+                .block__item_bottom.block__item_bottom_padding.block_bgcolor.block_relative
+                    p.text Модульные мосты
+                    +arrow
+
