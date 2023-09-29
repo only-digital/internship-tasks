@@ -1,0 +1,12 @@
+mixin icon_plus()
+	<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M21.0001 20.7878L11.0002 10.831L21.0002 0.874142" stroke="#114C9A" stroke-width="2"/>
+		<path d="M1.00012 0.874023L11.0001 10.8308L1.00001 20.7877" stroke="#114C9A" stroke-width="2"/>
+	</svg>
+
+mixin spoiler(props)
+	.spoiler&attributes(attributes)(data-component='spoiler')
+		h3.spoiler__title 
+			span #{props.title}
+			+icon_plus()
+		.spoiler__text #{props.text} 

@@ -1,0 +1,24 @@
+$xl: 1440px;
+$lg: 1280px;
+$sm: 768px;
+$xs: 375px;
+
+.row{
+	// margin: 0 auto;
+	// max-width: calc(100% - (160px * 2));
+	// padding: 0 15px;
+	width: 100%;
+	padding: 0 160px;
+	@media screen and (max-width: $xl) {
+		padding: 0 120px;
+	}
+	@media screen and (max-width: $lg) {
+		padding: 0 107px;
+	}
+	@media screen and (max-width: $sm) {
+		padding: 0 40px;
+	}
+	@media screen and (max-width: $xs) {
+		padding: 0 24px;
+	}
+}

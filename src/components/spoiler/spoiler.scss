@@ -1,0 +1,100 @@
+@import "../../index.scss";
+
+.spoiler {
+	$root: &;
+	
+	border-bottom: 1px solid #E6E6E6;
+	&:nth-of-type(1){
+		border-top: 1px solid #E6E6E6;
+	}
+	&.active &__title{
+		color: #114C9A;
+	}
+	&.active &__title svg{
+		transform: rotate(0deg);
+	}
+	padding-bottom: 0px;
+	transition: padding 0.3s;
+	&.active {
+		padding-bottom: 40px;
+		@media screen and (max-width: $xl) {
+			padding-bottom: 30px;
+		}
+		@media screen and (max-width: $lg) {
+			padding-bottom: 24px;
+		}
+		@media screen and (max-width: $xs) {
+			padding-bottom: 20px;
+		}
+	}
+
+	&__title{
+		padding: 30px 0;
+		font-weight: 400;
+		font-size: 36px;
+		line-height: 1.2;     
+		color: #012B34;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		cursor: pointer;
+		@media screen and (max-width: $xl) {
+			font-size: 27px;
+			padding: 24px 0;
+		}
+		@media screen and (max-width: $lg) {
+			font-size: 24px;
+			padding: 20px 0;
+		}
+		@media screen and (max-width: $sm) {
+			font-size: 27px;
+			padding: 24px 0;
+		}
+		@media screen and (max-width: $xs) {
+			font-size: 24px;
+			padding: 20px 0;
+		}
+		& span{
+			max-width: calc(100% - 35px);
+		}
+		& svg{
+			width: 20px;
+			height: 20px;
+			margin-top: 12px;
+			transform: rotate(45deg);
+			transition: transform 0.3s;
+			@media screen and (max-width: $xl) {
+				width: 14px;
+				height: 14px;
+			}
+		}
+	}
+
+	&__text{
+		font-size: 20px;
+		color: #000402;
+		max-width: calc((940 / 1600) * 100%);  
+		overflow: hidden;
+		line-height: 0;
+		opacity: 0;
+		transition: line-height 0.3s, opacity 0.3s;
+		#{$root}.active &{
+			line-height: 1.5;
+			opacity: 1;
+		}
+		@media screen and (max-width: $xl) {
+			max-width: calc((840 / 1200) * 100%);  
+			font-size: 15px;
+		}
+		@media screen and (max-width: $lg) {
+			font-size: 14px;
+		}
+		@media screen and (max-width: $sm) {
+			max-width: 100%;  
+			padding-right: 20px;
+			font-size: 15px;
+		}
+	}
+}
+
+
