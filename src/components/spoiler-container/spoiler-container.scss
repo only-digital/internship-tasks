@@ -1,0 +1,55 @@
+.spoiler-container {
+	$root: &;
+
+	max-width: 1920px;
+	min-width: 375px;
+	margin: 0 auto;
+	padding: 183px 142px 138px 160px;
+
+	@media (max-width: 1440px) {
+		padding: 179px 120px 141px 120px;
+	};
+
+	@media (max-width: 1280px) {
+		padding: 167px 107px 49px 107px;
+	};
+
+	@media (max-width: 768px) {
+		padding: 174px 40px 213px 40px;
+	};
+
+	@media (max-width: 375px) {
+		padding: 152px 24px 98px 24px;
+	}
+		
+	&__title {
+		color: #012B34;
+		font-family: Arial, sans-serif;
+		font-size: 64px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 100%;
+		letter-spacing: -1px;
+		margin-bottom: 80px;
+
+		@media (max-width: 1440px) {
+			font-size: 48px;
+			margin-bottom: 60px;
+		};
+
+		@media (max-width: 1280px) {
+			font-size: 42px;
+			margin-bottom: 56px;
+		};
+
+		@media (max-width: 768px) {
+			margin-bottom: 50px;
+		};
+
+		@media (max-width: 375px) {
+			font-size: 30px;
+			margin-bottom: 40px;
+			letter-spacing: -0.6px;
+		};
+	}
+}

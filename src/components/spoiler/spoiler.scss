@@ -1,0 +1,50 @@
+.spoiler {
+	$root: &;
+
+	&__wrapper {
+		font-family: Arial, sans-serif;
+		font-style: normal;
+		font-weight: 400;
+		color: #000402;
+		font-size: 20px;
+		line-height: 150%;
+		border-bottom: 1px solid #E6E6E6;
+
+		&:first-child {
+			border-top: 1px solid #E6E6E6;
+		}
+	}
+
+	&__button {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		padding: 30px 0 27px 0;
+	}
+
+	&__button-text {
+		font-size: 36px;
+		line-height: 120%;
+		opacity: 1;
+		color: #114C9A;
+	}
+
+	&__button-icon {
+		margin-top: 5px;
+		margin-right: 5px;
+		width: 23px;
+		height: 23px;
+		transform: rotate(0deg);
+		transition: rotate 0.5s ease;
+
+		.close {
+			transform: rotate(45deg);
+		}
+	}
+
+	&__text {
+		margin-bottom: 40px;
+		padding-right: 670px;
+		opacity: 0.8;
+	}
+}
