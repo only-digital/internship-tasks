@@ -1,3 +1,98 @@
+$red: #fc0d1b;
+$grey: #f4f4f4;
+$blue: #04306a;
+$white: #fff;
+
 .flex-container {
-    // Your code here
+	flex-direction: column;
+	padding: 20px 97px;
+	margin: 0 auto;
+	max-width: 1920px;
+}
+
+.flex-title {
+	gap: 20px;
+}
+
+.row {
+	gap: 20px;
+	justify-content: space-between;
+}
+
+.col {
+	flex-direction: column;
+	gap: 20px;
+	justify-content: space-between;
+}
+
+.flex {
+	flex-direction: column;
+	margin-bottom: 20px;
+	gap: 20px;
+	max-width: 420px;
+
+	&__item {
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 24px;
+		min-width: 564px;
+		max-width: 853px;
+		font-size: 32px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 120%;
+		letter-spacing: -0.64px;
+		color: $blue;
+		background-color: $grey;
+	}
+
+	svg {
+		margin-left: auto;
+	}
+
+	svg path {
+		fill: $blue;
+	}
+
+	&__item-1 {
+		min-width: 854px;
+	}
+
+	&__item-2,
+	&__item-3 {
+		min-width: 853px;
+		height: 418px;
+	}
+
+	&__item-4 {
+		background-color: $blue;
+		color: $white;
+		svg path {
+			fill: $white;
+		}
+	}
+
+	&__item-6 {
+		background-color: #0041a0;
+		color: $white;
+		span {
+			width: 80%;
+		}
+		svg path {
+			fill: $white;
+		}
+	}
+
+	&__item-4,
+	&__item-5,
+	&__item-6 {
+		min-width: 563px;
+		min-height: 475px;
+	}
+
+	&__item-7,
+	&__item-8 {
+		min-height: 416px;
+		min-width: 855px;
+	}
 }
