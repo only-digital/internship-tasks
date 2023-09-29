@@ -1,9 +1,6 @@
 mixin accordion(props)
 	.accordion&attributes(attributes)(data-component='accordion')
-		h2.accordion__header!= props.title
-		.accordion__list
-			+accordion-item({ subtitle: '1. Nullam tincidunt vestibulum porttitor', text: 'Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.' })
-			+accordion-item({ subtitle: '2. Class aptent taciti sociosqu ad litora', text: 'Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.' })
-			+accordion-item({ subtitle: '3. Nulla fringilla ligula elit, non laoreet ipsum rutrum eget', text: 'Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.' })
-			+accordion-item({ subtitle: '4. Mauris ut suscipit tellus', text: 'Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.' })
-			+accordion-item({ subtitle: '5. Nullam placerat porta libero, vel maximus augue euismod eget', text: 'Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.' })
+		h3!= props.subtitle
+		.accordion__text
+			p!= props.text
+		+svg('cross-icon').accordion__icon

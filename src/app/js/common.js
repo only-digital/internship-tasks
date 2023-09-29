@@ -1,6 +1,5 @@
 import ExampleButton from "../../components/example-button/example-button";
 import Accordion from '../../components/accordion/accordion';
-
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
  * Ключ объекта - Название компонента, которое было указано во время его создания (совпадает с именем файлов)
@@ -9,6 +8,7 @@ import Accordion from '../../components/accordion/accordion';
 const allComponents = {
     'example-button': ExampleButton,
     'accordion': Accordion,
+
 }
 
 
