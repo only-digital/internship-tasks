@@ -1,0 +1,77 @@
+$gap: 18px;
+$grey: #f4f4f4;
+$blue: #04306a;
+$blue-light: #0041a0;
+$red: #fc0d1b;
+$white: #ffffff;
+
+* {
+  font-family: Arial;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.title {
+  font-size: 46px;
+  line-height: 46px;
+  color: $blue;
+  margin-bottom: 80px;
+
+  span {
+    color: $red;
+  }
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.card {
+  padding: 24px 36px;
+
+  &_grey {
+    background-color: $grey;
+
+    .card__title {
+      color: $blue;
+    }
+
+    .card__icon {
+      background: url("/src/assets/icons/arrow-blue.png") no-repeat;
+    }
+  }
+
+  &_blue {
+    background-color: $blue;
+
+    .card__title {
+      color: $white;
+    }
+
+    .card__icon {
+      background: url("/src/assets/icons/arrow-white.png") no-repeat;
+    }
+  }
+
+  &_blue-light {
+    background-color: $blue-light;
+
+    .card__title {
+      color: $white;
+    }
+
+    .card__icon {
+      background: url("/src/assets/icons/arrow-white.png") no-repeat;
+    }
+  }
+
+  &__title {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  &__icon {
+    width: 65px;
+    height: 36px;
+  }
+}
