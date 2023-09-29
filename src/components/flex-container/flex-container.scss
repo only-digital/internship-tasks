@@ -1,15 +1,13 @@
 .flex {
   &-container {
     --width: 1920px;
-    --height: 2156px;
     display: flex;
     flex-direction: column;
     
     border: solid 1px #0000004d;
     margin: auto;
-    padding: 5%;
+    padding: 120px 97px;
     max-width: var(--width);
-    height: var(--height);
   }
 
   &__title {
@@ -22,33 +20,30 @@
   &__body {
     display: flex;
     flex-direction: column;
-    gap: 1%;
     margin-top: 80px;
     font: var(--font-titleH3);
   }
 
   &__constructions {
     display: flex;
-    gap: 1%;
-
-    width: 100%;
+    gap: 18px;
     height: 856px;
 
     &_steel {
       position: relative;
+      width: 50%;
       background-color: var(--gray);
-      padding: 4%;
-      flex: 1;
+      padding: 49px;
     }
 
     &_ferroconcrete {
-      flex: 1;
       display: flex;
+      width: 50%;
       flex-direction: column;
-      gap: 2%;
+      gap: 16px;
       > div {
         position: relative;
-        padding: 4%;
+        padding: 24px 36px;
         background-color: var(--gray);
         flex: 1;
       }
@@ -61,11 +56,12 @@
 
   &__fasteners {
     height: 480px;
-    gap: 1%;
+    gap: 20px;
+    margin-top: 16px;
     > div {
       position: relative;
       flex: 1;
-      padding: 3%;
+      padding: 23px 36px;
       color: var(--blue);
       background-color: var(--gray);
     }
@@ -80,10 +76,11 @@
 
   &__gabions {
     height: 480px;
-    gap: 1%;
+    gap: 20px;
+    margin-top: 16px;
     > div {
       position: relative;
-      padding: 3%;
+      padding: 24px 36px;
       background-color: var(--gray);
       flex: 1;
     }
@@ -95,8 +92,6 @@
 .arrow {
   position: absolute;
   cursor: pointer;
-  // bottom: 25px;
-  // right: 37px;
-  bottom: 3%;
-  right: 4%;
+  bottom: 25px;
+  right: 37px;
 }
