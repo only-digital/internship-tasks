@@ -17,10 +17,10 @@ mixin svgPlusIcon()
 mixin uploadedFile()
     - var n = 1;
     while n < 3
-        .feedback-form__file-uploads.hidden(class=`elem-`+n)
+        .feedback-form__file-uploads.hidden(class=`elem-`+n data-upload=n)
             span.feedback-form__file-uploads-name
-            span.feedback-form__file-uploads-type
             span.feedback-form__file-uploads-size
+            span.feedback-form__file-uploads-type
             span.feedback-form__file-uploads-icon
                 +svgPlusIcon
         - n += 1
