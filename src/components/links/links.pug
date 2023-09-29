@@ -1,0 +1,10 @@
+mixin links(props)
+	.links&attributes(attributes)
+		//Your code here
+		.links__content 
+			a(class='links__link links__logo' href='#links')= props.url
+				img(class='links__img' src='../assets/images/Union.png')
+
+		p.links__text= props.before + ' '
+			a(class='links__link' href='#links')= props.number + ' '
+			= props.after

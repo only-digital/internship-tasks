@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'Grtsk Regular';
+    src: url('../src/assets/fonts/GrtskPeta-Regular.ttf');
+}
+
+.links {
+	$root: &;
+
+	//Your code here
+	margin: 30px;
+
+	&__content {
+		width: 165px;
+    	position: relative;
+		margin-bottom: 15px;
+	}
+
+	&__link {
+		line-height: 24px;
+		font-family: 'Grtsk Regular';
+		font-size: 18px;
+		font-weight: 400;
+		color: #0041A0;
+		cursor: pointer;
+		text-decoration: none;
+		transition: color .5s, background-color .5s;
+	}
+
+	&__logo {
+		display: inline-block;
+    	width: 165px;
+	}
+
+	&__img {
+		position: absolute;
+		top: 2px;
+		right: 0;
+	}
+
+	&__text {
+		font-family: 'Grtsk Regular';
+		font-size: 18px;
+		font-weight: 400;
+		color: #111;
+		margin-bottom: 15px;
+	}
+
+	&__link:hover {
+		@media (min-width: 768px) {
+			color: #FF0000;
+		}
+	}
+
+	&__link:active {
+		color: #BF1D26;
+	}
+
+	&__link:focus {
+		@media (min-width: 768px) {
+			background-color: rgba(0, 65, 160, .2);
+		} 
+	}
+
+	&[disabled] &__link {
+		color: #BCBCBC;
+		pointer-events: none;
+	}
+
+	&__link,
+	&__text {
+		@media (max-width: 768px) {
+			font-size: 16px;
+		}
+	}
+
+	&__content,
+	&__logo {
+		@media (max-width: 768px) {
+			width: 150px;
+		}
+	}
+}

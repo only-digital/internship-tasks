@@ -58,6 +58,10 @@
 		font-size: 16px;
 		font-family: 'Grtsk Semibold';
 		color: #909090;
+		
+		@media (max-width: 375px) {
+			display: none;
+		}
 	}
 
 	&__btn-left:hover,
