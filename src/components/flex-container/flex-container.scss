@@ -5,6 +5,14 @@
   padding: 122px 96px;
   flex-direction: column;
 
+  .title {
+    color: $blue;
+
+    span {
+      color: $red;
+    }
+  }
+
   .wrapper {
     flex-direction: column;
     gap: $gap;
