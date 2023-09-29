@@ -6,27 +6,27 @@ mixin flex-container()
         - var cardTitles = ['Мостовая сталь/Стальные конструкции мостов', 'Железобетонные конструкции мостов', 'Дорожные ограждения барьерного типа', 'Шпунтовой замок', 'Мостовой крепеж', 'Профили для деформационных швов', 'Плетеные габионы', 'Модульные мосты' ]
         - var n = 0;
         h3.title
-            span= 'Комплексные'
-            |  &nbsp;предложения для мостостроения
+            span Комплексные&nbsp;
+            |  предложения для мостостроения
         .wrapper
-            div(class=classes[0] class=[`${classes[0]}_1`])
+            div(class=[`${classes[0]}`, `${classes[0]}_1`])
                 - for (var x = 0; x < 3; x++)
-                    div(class=classes[1] class=[`${classes[1]}_${modifiers[0]}`])
+                    div(class=[`${classes[1]}`, `${classes[1]}_${modifiers[0]}`])
                         .card__title= `${cardTitles[n++]}`
                         .card__icon
-            div(class=classes[0] class=[`${classes[0]}_2`])
-                div(class=classes[1] class=[`${classes[1]}_${modifiers[1]}`])
+            div(class=[`${classes[0]}`, `${classes[0]}_2`])
+                div(class=[`${classes[1]}`, `${classes[1]}_${modifiers[1]}`])
                     .card__title= `${cardTitles[n++]}`
                     .card__icon
-                div(class=classes[1] class=[`${classes[1]}_${modifiers[0]}`])
+                div(class=[`${classes[1]}`, `${classes[1]}_${modifiers[0]}`])
                     .card__title= `${cardTitles[n++]}`
                     .card__icon
-                div(class=classes[1] class=[`${classes[1]}_${modifiers[2]}`])
+                div(class=[`${classes[1]}`, `${classes[1]}_${modifiers[2]}`])
                     .card__title= `${cardTitles[n++]}`
                     .card__icon
-            div(class=classes[0] class=[`${classes[0]}_3`])
+            div(class=[`${classes[0]}`, `${classes[0]}_3`])
                 - for (var x = 0; x < 2; x++)
-                    div(class=classes[1] class=[`${classes[1]}_${modifiers[0]}`])
+                    div(class=[`${classes[1]}`, `${classes[1]}_${modifiers[0]}`])
                         .card__title= `${cardTitles[n++]}`
                         .card__icon
 

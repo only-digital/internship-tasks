@@ -6,8 +6,8 @@ mixin grid-container()
         - var i = 0;
         - var num = 1;
         h3.title
-            span(class=['title__text', 'title__text_red' ]) Комплексные
-            span(class=['title__text', 'title__text_blue' ]) &nbsp;предложения для мостостроения
+            span(class=['title__text', 'title__text_red' ]) Комплексные&nbsp;
+            span(class=['title__text', 'title__text_blue' ]) предложения для мостостроения
         .wrapper
             - for (var x = 0; x < 3; x++)
                 div(class=['card', `card_${modifiers[0]}`, `card_${num++}`])
