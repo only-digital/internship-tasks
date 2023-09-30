@@ -1,34 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
 $font-stack: 'Roboto', sans-serif;
 
-$color-main-text: #012B34;
 $color-extra-text: #000402;
 $color-accent-text: #114C9A;
 $color-accent: #E6E6E6;
 
-
-.section {
-	width: 100vw;
-	max-width: 1600px;
-	margin: 183px auto 138px;
-	font-family: $font-stack;
-	font-weight: 400;
-
-	&__title {
-		color: $color-main-text;
-		font-size: 64px;
-		font-style: normal;
-		line-height: 1;
-		letter-spacing: calc(-.02 * 64px);
-		padding-bottom: 80px;
-		border-bottom: 1px solid $color-accent;
-	}
-}
-
 .spoiler {
 	$root: &;
 
+	font-family: $font-stack;
+	font-weight: 400;
 	overflow: hidden;
 	border-bottom: 1px solid $color-accent;
 
@@ -36,10 +16,9 @@ $color-accent: #E6E6E6;
 		cursor: pointer;
 		display: flex;
 		justify-content: space-between;
-		transition: font-size .3s linear;
 		font-size: 36px;
 		margin: 30px 0;
-		transition: color .4s linear;
+		transition: color .3s linear;
 	}
 
 	&__text {

@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+$font-stack: 'Roboto', sans-serif;
+
+$color-main-text: #012B34;
+$color-accent: #E6E6E6;
+
+.section {
+	$root: &;
+
+	width: 100vw;
+	max-width: 1600px;
+	margin: 183px auto 138px;
+	font-family: $font-stack;
+	font-weight: 400;
+
+	&__title {
+		color: $color-main-text;
+		font-size: 64px;
+		font-style: normal;
+		line-height: 1;
+		letter-spacing: calc(-.02 * 64px);
+		padding-bottom: 80px;
+		border-bottom: 1px solid $color-accent;
+	}
+}
