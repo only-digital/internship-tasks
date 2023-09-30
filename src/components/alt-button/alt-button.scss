@@ -1,0 +1,35 @@
+@use '../../pages/index.scss' as var;
+
+.alt-button {
+	$root: &;
+	@include var.button-styles;
+	background-color: var.$red;
+	color: var.$white;
+
+	& > svg > path{
+			fill: var.$white;
+	}
+
+	&:hover {
+		background-color: var.$mediumRed;
+	}
+
+	&:active {
+		background-color: var.$darkRed;
+	}
+
+	&:focus-visible {
+		outline: 3px solid var.$lightBlue;
+	}
+
+	&:disabled {
+		background-color: var.$lightGrey;
+		border: 1px solid var.$grey;
+		color: var.$grey;
+		pointer-events: none;
+		
+		svg > path {
+			fill: var.$grey;
+		}
+	}
+}

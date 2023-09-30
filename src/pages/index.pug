@@ -1,7 +1,29 @@
 extends ../../build_modules/common
 
-
 block body
-    +example-button({text: 'example text'})
-    +example-button({text: 'disabled'})(disabled='')
-    //Your code here
+    .container
+        .element 
+            +button
+            +button(disabled="disabled")
+        .element
+            +alt-button
+            +alt-button(disabled="disabled")
+        .element
+            +slider-button
+            +slider-button(disabled="disabled")
+        .element 
+            +link({ text: 'Sustainalytics.com', icon: true })(href='#')
+            +link({ text: 'Sustainalytics.com', icon: true, disabled: true })(disabled="disabled")
+            p.text
+                | Для подключения сервиса добавьте номер&nbsp;
+                block content
+                    +link({ text: '+7(921)058-57-19', icon: false })(href='#')
+                | &nbsp;в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже	
+
+            p.text
+                | Цифровые продукты, направленные на создание&nbsp;
+                block content
+                    +link({ text: 'дополнительных сервисов', icon: false })(href='#')
+                | &nbsp;и устранение «проблемных точек» наших клиентов
+        .element
+            +switch-button(type='checkbox', id='toggle')

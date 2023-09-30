@@ -1,0 +1,53 @@
+@use '../../pages/index.scss' as var;
+
+
+.button {
+	$root: &;
+	@include var.button-styles;
+	background-color: var.$white;
+    border: 1px solid var.$grey;
+	color: var.$black;
+
+	& > svg > path {
+		fill: var.$darkBlue;
+	}
+
+	&:hover {
+		color: var.$white;
+		background-color: var.$blue;
+
+		& > svg > path {
+			fill: var.$white;
+			transition: fill 0.3s;
+		}
+	}
+
+	&:active {
+		background-color: var.$darkBlue;
+	}
+
+	&:focus-visible {
+		color: var.$blue;
+		background-color: var.$white;
+		outline: 3px solid var.$lightBlue;
+		svg > path {
+			fill: var.$blue;
+		}
+	}
+
+	&:disabled {
+		border: 1px solid var.$grey;
+		color: var.$grey;
+		pointer-events: none;
+		
+		svg > path {
+			fill: var.$grey;
+		}
+	}
+
+	@media (max-width: 768px) and (max-height: 1024px) {
+		&:focus-visible {
+			display: none;
+		}
+	}
+}
