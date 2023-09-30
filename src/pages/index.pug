@@ -4,8 +4,12 @@ extends ../../build_modules/common
 block body
     +example-button({text: 'example text'})
     +example-button({text: 'disabled'})(disabled='')
-    //Your code here
+
     +border-button({text: 'Border-button'})
     +border-button({text: 'Ddisabled'})(disabled='')
+
     +colored-button({text: 'Colored-button'})
     +colored-button({text: 'Ddisabled'})(disabled='')
+
+    +slider-button({page:1,total:4})
+    +slider-button({page:1,total:4})(disabled='')

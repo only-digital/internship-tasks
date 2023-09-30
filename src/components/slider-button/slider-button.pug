@@ -1,3 +1,8 @@
 mixin slider-button(props)
-	.slider-button&attributes(attributes)
-		//Your code here
+	.slider-buttons
+		.slider-buttons__arrows
+			button.slider-buttons__arrows_left&attributes(attributes)
+				+svg('arrow-prev-svg')
+			button.slider-buttons__arrows_right&attributes(attributes)
+				+svg('arrow-prev-svg')
+		.slider-buttons__text&attributes(attributes)= `${props.page} / ${props.total}`

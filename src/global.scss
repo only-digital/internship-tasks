@@ -2,17 +2,19 @@ $white: #ffffff;
 $black: #111111;
 
 $gray: #bcbcbc;
-$gray-disabled: #909090;
+$disabled-gray: #909090;
+$hover-gray: #F4F4F4;
+$border-gray: #dedede;
 
 $hover-blue: #0041a0;
 $active-blue: #002f6c;
 $border-blue: #99b3d8;
 
-$red:#FF0000;
-$hover-red:#BF1D26;
-$active-red:#81080F;
+$red: #ff0000;
+$hover-red: #bf1d26;
+$active-red: #81080f;
 
-$font-family:  "Arial", Helvetica, sans-serif;
+$font-family: "Arial", Helvetica, sans-serif;
 
 $font-size-m: 14px;
 $font-weight: 400;
@@ -22,3 +24,5 @@ $font-size-l: 16px;
 $font-weight-l: 400;
 $font-l: $font-weight-l $font-size-l $font-family;
 
+$font-weight-lsb: 600;
+$font-lsb: $font-weight-lsb $font-size-l $font-family ;

@@ -1,5 +1,85 @@
-.slider-button {
-	$root: &;
+@import "../../global.scss";
 
-	//Your code here
+.slider-buttons {
+  $root: &;
+
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  @media (min-width: 1280px) {
+    gap: 40px;
+  }
+  &__arrows {
+    display: flex;
+    gap: 10px;
+
+    &_right {
+      transform: rotate(180deg);
+    }
+
+    button {
+      padding: 0 5px 0 0px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 1px solid $border-gray;
+      transition: background-color 0.3s, opacity 0.3s;
+      svg {
+        width: 21px;
+        height: 30px;
+        fill: $active-blue;
+      }
+      @media (min-width: 1280px) {
+        padding: 0 7px 0 0px;
+        width: 80px;
+        height: 80px;
+        svg {
+          width: 28px;
+          height: 40px;
+        }
+      }
+
+      &:disabled {
+        pointer-events: none;
+        border: 1px solid $border-gray;
+        svg {
+          fill: $gray;
+        }
+      }
+
+      &:focus {
+        @media (min-width: 1280px) and (min-height: 720px) {
+          outline: 3px solid $border-blue;
+        }
+      }
+
+      &:hover {
+        @media (min-width: 1280px) and (min-height: 720px) {
+          background-color: $hover-gray;
+          border: 1px solid $hover-gray;
+        }
+      }
+
+      &:active {
+        background-color: $border-gray;
+      }
+    }
+  }
+
+  &__text {
+    font: $font-lsb;
+    color: $disabled-gray;
+    line-height: 24px;
+
+    &[disabled] {
+      color: $gray;
+    }
+
+    @media (max-width: 375px) {
+      display: none;
+    }
+  }
 }

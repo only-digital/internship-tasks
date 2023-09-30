@@ -11,13 +11,13 @@
   border: 1px solid $gray;
   padding: 0 9px 0 18px;
   height: 48px;
-  transition: all 0.3s;
+  transition: background-color 0.3s;
 
   &:disabled {
     opacity: 0.5;
     pointer-events: none;
     #{$root}__svg {
-      fill: $gray-disabled;
+      fill: $disabled-gray;
     }
   }
 
