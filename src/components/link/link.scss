@@ -1,0 +1,54 @@
+.link {
+	$root: &;
+
+	display: inline-flex;
+	gap: 10px;
+	width: max-content;
+	align-items: center;
+	cursor: pointer;
+	outline: none;
+	&:active {
+		.link__text {
+			color: #BF1D26;
+		}
+	}
+	&_disabled {
+		pointer-events: none;
+		.link__text {
+			color: #BCBCBC;
+		}
+	}
+
+	@media (min-width:700px) {
+		&:focus {
+			background-color: rgba(0, 65, 160, 0.15);
+		}
+	}
+
+	&__text {
+		color: #0041A0;
+		font-family: 'Arial',sans-serif;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 150%;
+		letter-spacing: -1px; 
+
+		@media (max-width:768px) {
+			font-size: 14px;
+		}
+		
+		@media (min-width:1280px) {
+			@media (hover: hover) {
+				&:hover {
+					color: #FF0000;
+				}
+			}
+
+		}
+	}
+	&__svg {
+		width: 24px;
+		height: 24px;
+	}
+}

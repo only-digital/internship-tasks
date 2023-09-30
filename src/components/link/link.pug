@@ -1,0 +1,4 @@
+mixin link(props)
+	a.link(href=props.href ? props.href: 'http://mock-address-change-me' class=props.disabled?'link_disabled':'' target='_blank' rel='noopener noreferrer')&attributes(attributes)
+		span.link__text!=props.text
+		+svg('link').link__svg
