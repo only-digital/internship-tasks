@@ -1,7 +1,6 @@
 .spoiler {
 	$root: &;
 
-	position: relative;
 	font-family: Arial, sans-serif;
 	font-style: normal;
 	font-weight: 400;
@@ -54,7 +53,6 @@
 	}
 
 	&__button {
-		position: relative;
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
@@ -138,7 +136,6 @@
 	}
 
 	&__text {
-		position: relative;
 		overflow: hidden;
 		max-height: 0;
 		margin-bottom: 0;
