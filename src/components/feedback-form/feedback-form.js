@@ -33,12 +33,16 @@ class FeedbackForm extends Component {
     errorTextEl;
     errorButton;
     errorCheckboxEl;
+    textareaLabel;
     isValid = false;
     textFieldEl;
     filesSizeArray = [];
     filesArray;
     allowedTypes;
     uploadedElInfo;
+    filesOneByOneArray = [];
+    markSuccessful;
+    markSuccessEmail;
     constructor(element) {
         super(element);
         this.URL = '/form';
@@ -59,7 +63,7 @@ class FeedbackForm extends Component {
         this.checkboxLinkEl = this.checkboxLabelEl.firstElementChild;
         this.formEl = this.getElement('form');
         this.inputEl = this.getElement('field');
-
+        this.textareaLabel = this.getElement('textarea-name');
         this.errorFileEl = this.getElement('message-file');
         this.errorInputEl = this.getElement('message-input');
         this.errorTextEl = this.getElement('message-textarea');
@@ -77,6 +81,8 @@ class FeedbackForm extends Component {
         this.inputFileEl.addEventListener('change', this.onLoadFile);
         this.checkboxEl.addEventListener('change', this.validateCheckbox);
 
+        this.markSuccessful = this.getElement('textarea-image');
+        this.markSuccessEmail = this.getElement('input-image');
     }
     checkTheFields = () => {
         this.checkboxEl.checked ? this.isChecked = true : this.isChecked = false;
@@ -99,43 +105,56 @@ class FeedbackForm extends Component {
     validateEmail = () => {
         this.inputValue = this.emailFieldEl.value;
 
+        this.emailFieldEl.nextElementSibling.style.top = '10px';
         if (this.regex.test(this.inputValue) && this.inputValue !== '' && this.inputValue.length > 1 && this.inputValue.length <= 255) {
-            this.errorInputEl.classList.add('success')
-            this.errorFileEl.innerText = ''
-            this.errorInputEl.innerText = 'Поле Email заполнено верно!';
+            this.errorInputEl.classList.add('success');
+            this.errorFileEl.innerText = '';
+            this.emailFieldEl.nextElementSibling.style.top = '10px';
+            this.markSuccessEmail.classList.add('show');
             this.isValid = true;
-        } else {
+        } else if (!this.regex.test(this.inputValue)) {
             this.errorInputEl.classList.remove('success')
             this.errorFileEl.innerText = ''
             this.errorInputEl.innerText = 'Поле Email заполнено не верно!';
+            this.markSuccessEmail.classList.remove('show');
             this.emailFieldEl.addEventListener('keydown', (e) => {
-                this.emailFieldEl.value = '';
+                this.errorInputEl.innerText = '';
             })
             this.isValid = false;
 
             this.emailFieldEl.addEventListener('focus', () => {
-                this.errorInputEl.innerText = ''
+                this.emailFieldEl.nextElementSibling.style.top = '10px';
             })
         }
         this.checkTheFields();
     }
     validateTextField = () => {
+        this.errorTextEl.innerText = '';
         if (this.textFieldEl.value !== '') {
-            this.errorTextEl.classList.add('success')
-            this.errorTextEl.innerText = 'Поле заполнено верно!';
-            this.textFieldEl.addEventListener('focus', () => {
-                this.errorTextEl.innerText = ''
-            })
+            this.textFieldEl.style.opacity = '1';
+            this.textareaLabel.style.borderBottom = 'none';
+            this.markSuccessful.classList.add('show');
         } else {
             this.errorTextEl.classList.remove('success')
+            this.textFieldEl.style.opacity = '0';
+            this.markSuccessful.classList.remove('show');
+            this.textareaLabel.style.borderBottom = '1px solid #DEDEDE';
             this.errorTextEl.innerText = 'Поле не должно быть пустым! Максимальное количество символов - 1000.'
-            }
+
+            this.textFieldEl.addEventListener('focus', () => {
+                this.textFieldEl.style.opacity = '1';
+                this.errorTextEl.innerText = '';
+                this.textFieldEl.style.minHeight = '148px';
+                this.textareaLabel.style.borderBottom = 'none';
+            })
+        }
         this.checkTheFields();
     }
 
     checkFileSizeMultiple = (size) => {
         size.forEach((el, index) => {
             if (el > 5 * 1024 * 1024) {
+                this.errorFileEl.classList.remove('success');
                 this.errorFileEl.innerText = 'Размер файла не должен превышать 5 Мб';
                 this.isCorrectSize = false;
             } else if (el > 1024) {
@@ -176,12 +195,13 @@ class FeedbackForm extends Component {
                 this.checkFileSizeSingle(el.size);
                 return [el.name, this.fileSize[index]]
             })
-
             this.fileType.forEach((type) => {
                 if (this.allowedTypes.includes(type)) {
                     this.loadedFile.forEach((contentBlock, index) => {
                         contentBlock.classList.remove('hidden');
                         let elemChildren = [...contentBlock.children];
+                        console.log(elemChildren[0])
+                        console.log(this.uploadedElInfo[index][0])
                         elemChildren[0].innerText = this.uploadedElInfo[index][0];
                         elemChildren[1].innerText = this.uploadedElInfo[index][1];
                         this.checkLimitUploads();
@@ -199,9 +219,13 @@ class FeedbackForm extends Component {
 
         if (this.isCorrectSize) {
             if (this.allowedTypes.includes(this.fileTypeSingle)) {
+                this.addFileButton.classList.remove('not-active');
                 this.errorFileEl.innerText = '';
-                this.showLoadedElement(0, 1, this.loadedFile, this.loadedFileName, this.loadedFileSize );
+                this.showLoadedElement(0, 1, this.loadedFile, this.loadedFileName, this.loadedFileSize);
+                this.filesOneByOneArray.push(...files);
                 this.checkLimitUploads();
+
+                console.log(this.filesOneByOneArray)
                 this.closeLoadedFilePreview();
             } else {
                 this.errorFileEl.classList.remove('success');
@@ -210,7 +234,7 @@ class FeedbackForm extends Component {
         }
     }
 
-    showLoadedElement = (index1, index2, blockName, fileName, fileSize ) => {
+    showLoadedElement = (index1, index2, blockName, fileName, fileSize) => {
         if (blockName[index1].classList.contains('hidden')) {
             blockName[index1].classList.remove('hidden');
             fileName[index1].innerText = `${this.fileNameSingle}, `;
@@ -227,23 +251,40 @@ class FeedbackForm extends Component {
             this.errorFileEl.innerText = 'Вы достигли лимита по количеству загружаемых файлов!';
             this.errorFileEl.classList.add('success');
             this.inputFileEl.disabled = true;
+            this.addFileButton.classList.add('not-active');
         } else {
             this.inputFileEl.disabled = false;
+            this.addFileButton.classList.remove('not-active');
             this.errorFileEl.classList.remove('success');
             this.errorFileEl.innerText = 'Максимальное количество файлов - 2';
         }
     }
 
     closeLoadedFilePreview = () => {
+        let elemNumber;
         this.fileCloseIcon.forEach((elem, index) => {
             elem.addEventListener('click', (e) => {
+                this.addFileButton.classList.remove('not-active');
+                console.log(e.target.parentElement.dataset.upload)
+                elemNumber = e.target.parentElement.dataset.upload;
+                console.log(this.filesOneByOneArray)
                 this.loadedFile[index].classList.add('hidden');
                 this.inputFileEl.files.value = '';
                 this.inputFileEl.disabled = false;
                 this.errorFileEl.classList.remove('success');
                 this.errorFileEl.innerText = 'Максимальное количество файлов - 2';
+
             })
+
         })
+        // this.filesOneByOneArray.splice(+elemNumber-1,1)
+        // this.filesOneByOneArray.forEach((e,index) => {
+        //     if (e === null) {
+        //         console.log('empty')
+        //         this.filesOneByOneArray.splice(index)
+        //     }
+        // })
+        console.log(this.filesOneByOneArray)
     }
     closeLoadedFilePreviewMultiple = (files) => {
         this.fileCloseIcon.forEach((elem) => {
@@ -256,6 +297,7 @@ class FeedbackForm extends Component {
     }
 
     onLoadFile = () => {
+
         this.isCorrectSize = true;
         this.filesArray = Object.values(this.inputFileEl.cloneNode(true).files);
 
@@ -268,14 +310,19 @@ class FeedbackForm extends Component {
         }
         this.checkTheFields();
     }
-
     submitForm = async(e) => {
         e.preventDefault();
-
+        console.log(this.filesOneByOneArray)
         this.inputFileEl.disabled = false;
         let formData = new FormData(this.formEl);
+        if (this.filesOneByOneArray.length > 0) {
+            formData.delete('file')
+            formData.append('file', this.filesOneByOneArray[0])
+            formData.append('file', this.filesOneByOneArray[1])
+        }
 
-        if (this.checkTheFields()) {
+
+        if (this.checkTheFields(this.filesArray)) {
             this.buttonSubmitEl.classList.remove('not-active');
             this.errorButton.innerText = '';
 

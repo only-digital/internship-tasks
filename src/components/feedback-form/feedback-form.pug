@@ -20,6 +20,9 @@ mixin uploadedFile()
                 +svgPlusIcon
         - n += 1
 
+mixin markImage(props)
+    img(src="../assets/images/mark.png" alt="mark" class=props.variant)
+
 mixin feedback-form(props)
     .feedback-form&attributes(attributes)(data-component='feedback-form')
         h2.feedback-form__label Форма обратной связи
@@ -27,11 +30,12 @@ mixin feedback-form(props)
             .feedback-form__input
                 input#email-field.feedback-form__input-field(type='email' required='' maxlength='255' name='email')
                 label(for='email-field').feedback-form__input-name E-mail
+                +markImage({variant: 'feedback-form__input-image'})
             div.feedback-form__message-input
             .feedback-form__textarea
                 textarea#textarea-block.feedback-form__textarea-element(maxlength='1000' required='' minlength='1' name='text')
                 label(for='textarea-block').feedback-form__input-name.feedback-form__textarea-name Ваше сообщение
-                img.feedback-form__textarea-image(src="../assets/images/mark.png" alt="mark")
+                +markImage({variant: 'feedback-form__textarea-image'})
                 div.feedback-form__message-textarea
             .feedback-form__file
                 input#file.feedback-form__file-button(type='file' multiple='' required='' name='file')
@@ -40,6 +44,9 @@ mixin feedback-form(props)
                     span.feedback-form__file-label-icon
                         +svgPlusIcon
                 +uploadedFile
+                .feedback-form__file-help
+                    img(src='../assets/images/tool.png' alt='info icon' class='feedback-form__file-help-icon')
+                    span.feedback-form__file-help-text Вы можете загрузить только 2 документа
             div.feedback-form__message-file
             .feedback-form__checkbox
                 input#checkbox-field.feedback-form__checkbox-item(type='checkbox' required='' checked='' name='agreement')

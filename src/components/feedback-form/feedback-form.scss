@@ -17,26 +17,41 @@
 		position: relative;
 		&-name {
 			position: absolute;
-			top: 0;
+			top: 27px;
 			left: 0;
 			display: block;
 			color: #909090;
 			font: 400 normal 12px/150% 'Arial', sans-serif;
 			letter-spacing: -0.24px;
+			&.hidden {
+				display: none;
+			}
+		}
+		&-image {
+			position: absolute;
+			right: 20px;
+			bottom: 16px;
+			display: none;
+			&.show {
+				display: block;
+		}
 		}
 		&-field {
 			border-bottom: 1px solid #DEDEDE;
 			display: block;
 			width: 100%;
-			margin-bottom: 10px;
+			margin-bottom: 5px;
+			font: 400 normal 16px/150% 'Grtsk Peta', sans-serif;
+			letter-spacing: -0.32px;
+			transition: all 0.3s ease-in-out 0s;
 			&:focus {
+				transition: all 0.3s ease-in-out 0s;
 				border-radius: 24px;
 				border: 1px solid #0041A0;
 				padding: 12px 20px 12px 20px;
-				font: 400 normal 16px/150% 'Grtsk Peta', sans-serif;
-				letter-spacing: -0.32px;
 				& + #{$root}__input-name {
 					margin-left: 20px;
+					top: 0;
 				}
 			}
 		}
@@ -45,41 +60,51 @@
 		padding-top: 30px;
 		position: relative;
 		&-name {
-			position: absolute;
-			top: 0;
-			left: 0;
-		}
-		&-element {
-			margin-bottom: 116px;
 			width: 100%;
-			max-height: 21px;
-			resize: none;
+			top: 0;
 			border-color: transparent;
 			border-bottom: 1px solid #DEDEDE;
+			padding-bottom: 19px;
+		}
+		&-element {
+			margin: 0 0 38px 0;
+			overflow: hidden;
+			width: 100%;
+			resize: none;
+			border-color: transparent;
+			font: 400 normal 16px/150% 'Arial', sans-serif;
+			letter-spacing: -0.32px;
+			color: #111;
+			min-height: 148px;
+			padding: 12px 20px 16px 20px;
+			border-radius: 24px;
+			background: #F4F4F4;
+			outline: none;
+			opacity: 0;
+			transition: opacity 0.3s ease-in-out 0s;
 			&:focus {
-					margin-bottom: 28px;
-					min-height: 148px;
-					padding: 12px 20px 16px 20px;
-					border-radius: 24px;
-					background: #F4F4F4;
-					color: #111;
-					font: 400 normal 16px/150% 'Arial', sans-serif;
-					letter-spacing: -0.32px;
-					outline: none;
+				transition: opacity 0.3s ease-in-out 0s;
+				opacity: 1;
+				min-height: 148px;
+				padding: 12px 20px 16px 20px;
+				border-radius: 24px;
+				background: #F4F4F4;
+				outline: none;
+				& + #{$root}__textarea-name {
+					margin-left: 20px;
 					border-bottom: none;
-					& + #{$root}__textarea-name {
-						margin-left: 20px;
-						& + #{$root}__textarea-image {
-							display: block;
-						}
-					}
+			}
+
 				}
 		}
 		&-image {
 				position: absolute;
-				bottom: 50px;
+				bottom: 59px;
 				right: 20px;
 				display: none;
+				&.show {
+					display: block;
+				}
 			}
 	}
 	&__file {
@@ -92,7 +117,7 @@
 		&-button {
 			max-width: 190px;
 			padding-left: 8px;
-			padding-bottom: 12px;
+			padding-bottom: 17px;
 			opacity: 0;
 			&.hidden {
 				display: none;
@@ -101,8 +126,34 @@
 				}
 			}
 		}
+		&:hover {
+			transition: visibility 0.3s ease-in-out 0s;
+			#{$root}__file-help {
+				visibility: visible;
+			}
+		}
+		&-help {
+			transition: visibility 0.3s ease-in-out 0s;
+			visibility: hidden;
+			position: absolute;
+			top: -145px;
+			left: -196px;
+			z-index: 1;
+			&-text {
+				width: 240px;
+				height: 74px;
+				padding: 16px 20px;
+				position: absolute;
+				top: 37px;
+				left: 40px;
+				z-index: 2;
+				color: #002F6C;
+				font: 400 normal 14px/150% 'Arial', sans-serif;
+			}
+		}
 
 		&-label {
+			z-index: 3;
 			cursor: pointer;
 			position: absolute;
 			top: -8px;
@@ -113,14 +164,26 @@
 			display: flex;
 			align-items: center;
 			column-gap: 16px;
+			&.not-active {
+				cursor: initial;
+				#{$root}__file-label-text, #{$root}__file-label-icon {
+					cursor: initial;
+				}
+			}
 			&-text {
 				cursor: pointer;
 				color: #909090;
 				font: 400 normal 16px/100% 'Arial', sans-serif;
 				letter-spacing: -0.32px;
+				&.not-active {
+					cursor: initial;
+				}
 			}
 			&-icon {
 				cursor: pointer;
+				&.not-active {
+					cursor: initial;
+				}
 			}
 		}
 		&-uploads {
@@ -155,22 +218,22 @@
 		&-file, &-input, &-textarea, &-checkbox, &-button {
 			color: #EF1C1C;
 			font: 400 normal 14px/150% 'Arial', sans-serif;
-			margin-bottom: 14px;
+			margin-bottom: 13px;
 			min-height: 21px;
 			&.success {
 				color: #27AE60;
 			}
 		}
+		&-input {
+			margin-bottom: 10px;
+		}
 		&-textarea {
 			position: absolute;
-			top: 62px;
+			top: 43px;
 			left: 0;
 		}
 		&-file {
 			margin-bottom: 14px;
-		}
-		&-checkbox {
-			margin-bottom: 20px;
 		}
 	}
 	&__form {
