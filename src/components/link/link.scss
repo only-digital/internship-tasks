@@ -2,16 +2,22 @@
 	$root: &;
 
 	display: inline-flex;
-	gap: 10px;
+	gap: 12px;
 	width: max-content;
 	align-items: center;
 	cursor: pointer;
 	outline: none;
+
+	@media (max-width:768px) {
+		gap: 10px;
+	}
+
 	&:active {
 		.link__text {
 			color: #BF1D26;
 		}
 	}
+
 	&_disabled {
 		pointer-events: none;
 		.link__text {
@@ -19,7 +25,7 @@
 		}
 	}
 
-	@media (min-width:700px) {
+	@media (min-width:1280px) {
 		&:focus {
 			background-color: rgba(0, 65, 160, 0.15);
 		}
@@ -37,7 +43,7 @@
 		@media (max-width:768px) {
 			font-size: 14px;
 		}
-		
+
 		@media (min-width:1280px) {
 			@media (hover: hover) {
 				&:hover {
