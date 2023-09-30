@@ -1,7 +1,6 @@
 mixin spoiler(props)
 	.spoiler&attributes(attributes)(data-component='spoiler')
-		.spoiler__wrapper 
-			button.spoiler__button 
-				p.spoiler__button-text!=props.button_text
-				+svg('spoiler-icon').spoiler__button-icon
-			p.spoiler__text!=props.text
+		button.spoiler__button 
+			p.spoiler__button-text!=props.button_text
+			+svg('spoiler-icon').spoiler__button-icon
+		p.spoiler__text!=props.text

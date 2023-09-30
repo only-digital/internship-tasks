@@ -4,10 +4,10 @@
 	max-width: 1920px;
 	min-width: 375px;
 	margin: 0 auto;
-	padding: 183px 142px 138px 160px;
+	padding: 183px 157px 138px 160px;
 
 	@media (max-width: 1440px) {
-		padding: 179px 120px 141px 120px;
+		padding: 179px 116px 141px 120px;
 	};
 
 	@media (max-width: 1280px) {
@@ -50,6 +50,7 @@
 			font-size: 30px;
 			margin-bottom: 40px;
 			letter-spacing: -0.6px;
+			padding-right: 90px;
 		};
 	}
 }
