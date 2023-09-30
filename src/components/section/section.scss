@@ -4,12 +4,13 @@
 	margin: 0 auto;
 	width: 100%;
 	padding: 0 30px;
-	box-sizing: border-box;
+	box-sizing: content-box;
 	max-width: 1600px;
+	scrollbar-gutter: stable;
 
 	&__title {
 		margin-top: 183px;
-		margin-bottom: 80px;
+		margin-bottom: 78px;
 		font-family: 'Roboto', sans-serif;
 		font-size: 64px;
 		font-style: normal;
