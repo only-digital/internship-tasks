@@ -1,0 +1,8 @@
+mixin spoiler({ isNumerable=true, spoilersList = [], title, titleTag='h2',subtitleTag='h3' }={})
+	.spoiler&attributes(attributes)(data-component='spoiler')
+		#{titleTag}.spoiler__title=title
+		each spoiler,index in spoilersList
+			.spoiler__elem 
+				#{subtitleTag}.spoiler__subtitle=`${isNumerable&&(index+1)}${isNumerable&&'. '}${spoiler.title}`
+					+svg('cross').spoiler__icon
+				p.spoiler__description=spoiler.description
