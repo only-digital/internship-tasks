@@ -2,11 +2,13 @@
 	$root: &;
 
 	margin: 0 auto;
-	width: 100%;
+	//width: 100%;
 	padding: 0 30px;
 	box-sizing: content-box;
 	max-width: 1600px;
-	scrollbar-gutter: stable;
+	overflow: hidden;
+
+
 
 	&__title {
 		margin-top: 183px;
