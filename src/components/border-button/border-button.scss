@@ -11,6 +11,7 @@
   border: 1px solid $gray;
   padding: 0 9px 0 18px;
   height: 48px;
+  transition: all 0.3s;
 
   &:disabled {
     opacity: 0.5;
@@ -25,17 +26,17 @@
       outline: 3px solid $border-blue;
 
       #{$root}__text {
-        color: $cobolt;
+        color: $hover-blue;
       }
 
       #{$root}__svg {
-        fill: $cobolt;
+        fill: $hover-blue;
       }
     }
   }
   @media (hover: hover) and (min-width: 1280px) {
     &:hover {
-      background: $cobolt;
+      background: $hover-blue;
       #{$root}__svg {
         fill: $white;
       }
@@ -45,7 +46,7 @@
     }
   }
   &:active {
-    background: $blue;
+    background: $active-blue;
     #{$root}__svg {
       fill: $white;
     }
@@ -87,7 +88,7 @@
   }
 
   svg {
-    fill: $blue;
+    fill: $active-blue;
     transition: fill 0.3s;
     width: 24px;
     height: 24px;
