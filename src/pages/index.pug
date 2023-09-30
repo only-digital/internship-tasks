@@ -1,0 +1,20 @@
+extends ../../build_modules/common
+
+
+block body
+    +example-button({text: 'example text'})
+    +example-button({text: 'disabled'})(disabled='')
+    +state-button({text: 'Кнопка'})
+    +state-button({text: 'disabled'})(disabled='')
+    +state-button({text: 'Кнопка'})(class='state-button__red')
+    +state-button({text: 'disabled'})(disabled='', class='state-button__red')
+    +slider-buttons
+    +slider-buttons(disabled='', class='slider-buttons__disabled')
+    +link({text: 'Sustainalytics.com', img: true})(href='#')
+    p
+        | Для подключения сервиса добавьте номер &#x20;
+        +link({text: '+7(921)058-57-19'})(href='#')
+        | &#x20; в ваши контакты  и напишите любое сообщение, или перейдите по ссылке ниже
+    +link({text: 'Sustainalytics.com', img: true})(href='#', class='link__disabled')
+    +switch-button
+    +switch-button(disabled='')

@@ -1,0 +1,76 @@
+$main: #0041a0;
+$main-light: #99B3D8;
+$main-disabled: #bcbcbc;
+.slider-buttons {
+	font-family: Arial;
+	$root: &;
+	display: flex;
+	gap: 2.5rem;
+	align-items: center;
+	color: #909090;
+	&__content {
+		display: flex;
+		gap: 0.625rem;
+	}
+	&__text{
+		font-size: 1rem;
+		font-weight: 600;
+		line-height: 1.5rem;
+		letter-spacing: -0.02rem;
+		opacity: 0.4;
+	}
+	&__disabled{
+		color: $main-disabled;
+	}
+	.slider-button{
+		display: inline-flex;
+		border: 1px solid #dedede;
+		width: 3.75rem;
+		height: 3.75rem;
+		fill: $main;
+		border-radius: 50%;
+		transition: 0.3s background-color, 0.3s border;
+		justify-content: center;
+		align-items: center;
+		&__svg{
+			width: 1.3125rem;
+			height: 1.875rem;
+		}
+		&:disabled {
+			opacity: 0.5;
+			pointer-events: none;
+			svg {
+				fill:$main-disabled;
+			}
+		}
+		@media (hover: hover) and (pointer: fine){
+			&:focus{
+				background: #fff;
+				border: 3px solid $main-light;
+			}
+			&:hover{
+				background: #F4F4F4;
+				border: 1px solid #F4F4F4;
+			}
+
+		}
+		&:active{
+			background: #DEDEDE;
+		}
+	}
+	@media (max-width: 375px) {
+		&__text{
+			display: none;
+		}
+	}
+	@media (min-width: 1920px) {
+		.slider-button{
+			width: 5rem;
+			height: 5rem;
+			&__svg{
+				width: 1.75rem;
+				height: 2.5rem;
+			}
+		}
+	}
+}

@@ -1,0 +1,8 @@
+mixin slider-buttons(props)
+	.slider-buttons&attributes(attributes)
+		.slider-buttons__content
+			button.slider-button&attributes(attributes)
+				+svg('left-arrow').slider-button__svg
+			button.slider-button&attributes(attributes)
+				+svg('right_arrow').slider-button__svg
+		p.slider-buttons__text 01/04

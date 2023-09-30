@@ -1,0 +1,125 @@
+$main: #0041a0;
+$main-dark: #002F6C;
+$main-light: #99B3D8;
+$main-text: #111;
+$border: #BCBCBC;
+
+$main-red: #f00;
+$main-red-dark: #BF1D26;
+$main-red-darkness: #81080F;
+$main-red-disabled: #f4f4f4;
+$text-disabled: #909090;
+
+
+.state-button {
+	$root: &;
+	font-family: Arial;
+	display: flex;
+	background: #fff;
+	border-radius: 1.5rem;
+	border: 1px solid $border;
+	justify-content: center;
+	align-items: center;
+	color: $main-text;
+	transition: color 0.3s, opacity 0.3s, background-color 0.3s;
+	&__text{
+		font-size: 1rem;
+		font-weight: 400;
+		line-height: 1rem;
+		letter-spacing: -0.02rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.875rem;
+	}
+	&__svg{
+		fill: $main-dark;
+		width: 1.5rem;
+		height: 1.5rem;
+		transition: fill 0.3s;
+		@media (min-width: 1920px) {
+			width: 2rem;
+			height: 2rem;
+		}
+	}
+
+	&__red{
+		background: $main-red;
+		color: #fff;
+		svg{
+			fill: #fff;
+		}
+	}
+
+	&:disabled {
+		opacity: 0.5;
+		pointer-events: none;
+		#{$root}__svg {
+			fill: $text-disabled;
+		}
+	}
+	&__red:disabled{
+		background: $main-red-disabled;
+		color: $text-disabled;
+		border: none;
+	}
+
+	@media (hover: hover) and (pointer: fine){
+		&:focus{
+			border: 3px solid $main-light;
+			color: $main;
+		}
+		&:hover {
+			background: $main;
+			color: #fff;
+			#{$root}__svg {
+				fill: #fff;
+			}
+		}
+		&__red:focus{
+			color: #fff;
+		}
+		&__red:hover{
+			background: $main-red-dark;
+			color: #fff;
+			border: none;
+			#{$root}__svg {
+				fill: #fff;
+			}
+		}
+	}
+	&:active{
+		background: $main-dark;
+		color: #fff;
+		border: none;
+		#{$root}__svg {
+			fill: #fff;
+		}
+	}
+	&__red:active{
+		background: $main-red-darkness;
+	}
+
+	@media (max-width: 1920px) {
+		width: 8rem;
+		height: 3rem;
+		padding: 0 0.875rem 0 1.125rem;
+	}
+
+	@media (max-width: 1280px) {
+		width: 6.9rem;
+		height: 2.625rem;
+		padding: 0 0.875rem 0 1rem;
+	}
+
+	@media (max-width: 768px) {
+		width: 7.56rem;
+		height: 2.625rem;
+		padding: 0 0.875rem 0 1.125rem;
+	}
+	@media (max-width: 375px) {
+		width: 20.43rem;
+		height: 2.625rem;
+		padding: 0 0.875rem;
+	}
+}
