@@ -1,4 +1,4 @@
 mixin button(props)
-	.button(class=props.disabled?'button_disabled':'')&attributes(attributes)
+	button.button(class=props.disabled?'button_disabled':'')&attributes(attributes)
 		span.button__text!= props.text
 		+svg('arrow-button').button__svg
