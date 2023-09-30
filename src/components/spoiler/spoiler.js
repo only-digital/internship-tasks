@@ -6,6 +6,7 @@ class Spoiler extends Component {
 
     this._title = element.title
     this._subtitle = element.description
+    this._id = element.id
   }
 
   _getTemplate() {
@@ -19,6 +20,7 @@ class Spoiler extends Component {
     this._element = this._getTemplate()
     this._element.querySelector('.spoiler__title').textContent = this._title
     this._element.querySelector('.spoiler__subtitle').textContent = this._subtitle
+    this._element.setAttribute('key', this._id)
     this._setEventListener()
     return this._element
   }
