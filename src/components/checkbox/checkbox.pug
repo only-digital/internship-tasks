@@ -1,5 +1,6 @@
 mixin checkbox(props)
-	label.checkbox(for='checkbox-name')
-		input.checkbox__invisible-checkbox&attributes(attributes)(type="checkbox", id='checkbox-name')
-		span.checkbox__pseudo-checkbox
-			span.checkbox__pseudo-switcher
+	.checkbox
+		input.checkbox__invisible-checkbox&attributes(attributes)(type="checkbox", id=`${props.id}`)
+		label.checkbox__visible-checkbox(for=`${props.id}`)
+			span.checkbox__pseudo-checkbox(for="second")
+				span.checkbox__pseudo-switcher

@@ -33,6 +33,7 @@
     }
   }
   &:disabled {
+    pointer-events: none;
     background-color: var(--disable-background-color);
     color: var(--disable-text-color);
     svg {

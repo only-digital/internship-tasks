@@ -40,6 +40,7 @@ $disable-slider-background-color: white;
     border-color: $active-slider-border-color;
   }
   &:disabled {
+    pointer-events: none;
     border-color: $disable-slider-border-color;
     background-color: $disable-slider-background-color;
     svg {
