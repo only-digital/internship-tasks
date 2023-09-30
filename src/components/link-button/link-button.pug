@@ -1,3 +1,5 @@
 mixin link-button(props)
-	.link-button&attributes(attributes)
-		//Your code here
+	button.link-button&attributes(attributes)
+		span.link-button__text!= props.text
+		div.link-button__arrow
+			+svg('link-arrow-svg').link-button__svg
