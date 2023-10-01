@@ -1,3 +1,20 @@
+mixin gridItem(title)
+    .grid-container__item&attributes(attributes)
+        h4= title 
+        svg(width="65", height="36", viewBox="0 0 65 36", fill="none", xmlns="http://www.w3.org/2000/svg")
+            path(d="M58.4384 19.4L0 19.4L0 16.6L58.4384 16.6L58.4384 19.4ZM36.5378 36L34.8869 33.6L61.685 20L61.685 16L34.8869 2.4L36.5378 0L64.9316 14.4V21.6L36.5378 36Z", fill="#04306A")
+
 mixin grid-container()
     section.grid-container
-        // Your code here
+        h3.grid-container__title 
+            span.grid-container__title-strong Комплексные
+            | &nbsp;предложения для мостостроения
+        .grid-container__list
+            +gridItem('Мостовая сталь/Стальные конструкции мостов')
+            +gridItem('Железобетонные конструкции мостов')
+            +gridItem('Дорожные ограждения барьерного типа')
+            +gridItem('Шпунтовой замок').grid-container__item-blue
+            +gridItem('Mостовой крепеж')
+            +gridItem('Профили для деформационных швов').grid-container__item-lightBlue
+            +gridItem('Плетеные габионы')
+            +gridItem('Модульные мосты')

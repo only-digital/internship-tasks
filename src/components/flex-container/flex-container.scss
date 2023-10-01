@@ -1,3 +1,87 @@
+$blue: #04306A;
+$lightBlue: #0041A0;
+$red: #FC0D1B;
+$grey: #F4F4F4;
+$white: #FFFFFF;
+$gap: 16px;
+
+@mixin flexItem($n){
+    flex: 0 0 calc(100% / $n - (($n - 1) * $gap / $n));
+}
+
 .flex-container {
-    // Your code here
+    font-family: Arial sant-serif;
+    color: $blue;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 120px 100px;
+    gap: $gap;
+    justify-content: space-between;
+
+    &__title {
+        font-size: 46px;
+        font-weight: 700;
+        line-height: 46px;
+        text-align: left;
+        margin-bottom: 80px;
+        width: 100%;
+
+        &-strong {
+            color: $red;
+        }
+    }
+
+    &__col {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: $gap;
+    }
+
+    &__item {
+        position: relative;
+        padding: 50px;
+        min-height: 420px;
+        background-color: $grey;
+        @include flexItem(1);
+
+        svg {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        &-2{
+            @include flexItem(2);
+        }
+
+        &-3{
+            @include flexItem(3);
+        }
+
+        &-blue{
+            background: $blue;
+            color: $white;
+
+            svg path{
+                fill: $white;
+            }
+        }
+
+        &-lightBlue{
+            background: $lightBlue;
+            color: $white;
+
+            svg path{
+                fill: $white;
+            }
+        }
+        
+        h4{
+            font-size: 32px;
+            font-weight: 700;
+        }
+    }
 }

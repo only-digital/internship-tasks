@@ -1,3 +1,83 @@
+$blue: #04306A;
+$lightBlue: #0041A0;
+$red: #FC0D1B;
+$grey: #F4F4F4;
+$white: #FFFFFF;
+$gap: 16px;
+$numCol: 6;
+
+
 .grid-container {
-    // Your code here
+    grid-template-rows: 110px;
+    gap: $gap;
+    grid-template-columns:  1fr;
+    font-family: Arial sant-serif;
+    color: $blue;
+    margin: 0 auto;
+    padding: 120px 100px;
+
+    &__title {
+        font-size: 46px;
+        font-weight: 700;
+        line-height: 46px;
+        text-align: left;
+        grid-auto-flow: column;
+        justify-content: start;
+    
+        &-strong {
+            color: $red;
+        }
+    }
+
+    &__item {
+        position: relative;
+        padding: 50px;
+        background-color: $grey;
+        grid-row: span 4;
+
+        svg {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        &-blue{
+            background: $blue;
+            color: $white;
+
+            svg path{
+                fill: $white;
+            }
+        }
+
+        &-lightBlue{
+            background: $lightBlue;
+            color: $white;
+
+            svg path{
+                fill: $white;
+            }
+        }
+
+        h4{
+            font-size: 32px;
+            font-weight: 700;
+        }
+    }
+    &__list {
+        grid-auto-rows: 420px;
+        gap: $gap;
+        grid-template-columns: repeat($numCol, 1fr);
+        grid-template-areas:
+            "item1 item1 item1 item2 item2 item2"
+            "item1 item1 item1 item3 item3 item3"
+            "item4 item4 item5 item5 item6 item6"
+            "item7 item7 item7 item8 item8 item8";
+    }
+}
+
+@for $i from 1 through 8 {
+    .grid-container__list .grid-container__item:nth-child(#{$i}){
+        grid-area: item#{$i};
+    } 
 }
