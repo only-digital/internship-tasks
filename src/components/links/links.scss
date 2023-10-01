@@ -1,0 +1,65 @@
+.links {
+	$root: &;
+
+	//Your code here
+	margin-top: 30px;
+	margin-left: 20px;
+	margin-bottom: 30px;
+	
+	svg {
+		width: 24px;
+		height: 24px;
+		fill: #002F6C; //
+	}
+
+	.link {
+		display: flex;
+		gap: 12px;
+		width: 187px;
+		outline: none; 		
+	
+		&__text {
+			font-size: 16px;
+			letter-spacing: 1px;
+			display: flex;
+			align-items: center;
+			color: #0041A0;
+			font-family: Arial, Helvetica, sans-serif;			
+		}
+		
+		&:focus:not(:hover) {				
+			background-color: #99B3D8;	
+		}
+
+	}
+
+
+
+	&[disabled] {
+		pointer-events: none;
+		
+		.link__text {
+			color: #BCBCBC;
+		}
+
+		.link:focus:not(:hover) {
+			background-color: #fff;
+		}
+
+	}
+
+	&:hover {		
+		.link__text {
+			color: #FF0000; 
+		}
+	}
+
+	&:active {		
+		.link__text {
+			color: #BF1D26;
+		}
+	}
+
+}
+
+
