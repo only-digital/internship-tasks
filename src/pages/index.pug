@@ -9,7 +9,12 @@ block body
         +button({text: 'Кнопка'})(disabled='')
         br
         +heading-h2({title: 'Кнопка с заливкой'})
-        +button({text: "Кнопка"})(class="button--red")
+        +button({text: "Кнопка"})(class='button--red')
         br
-        +button({text: "Кнопка"})(disabled="" class="button--red")
+        +button({text: "Кнопка"})(disabled='' class='button--red')
+        br
+        +heading-h2({title: 'Слайдер'})
+        +slider({currPage: '01', numOfPages: '04'})
+        br
+        +slider({currPage: '01', numOfPages: '04'})(disabled='')
         br
