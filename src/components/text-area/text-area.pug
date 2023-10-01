@@ -1,6 +1,6 @@
 mixin text-area(props)
 	.text-area--wrapper
+		textarea(class="text-area" name="textarea", id="textarea" maxlength="1000")&attributes(attributes)(data-component='text-area')
 		.text-area--label Ваше сообщение
-		textarea(class="text-area" name="textarea", id="textarea" maxlength="1024")&attributes(attributes)(data-component='text-area')
 		+svg('success-svg')
 	label(class="validate__label validate__label--textarea" for="textarea")

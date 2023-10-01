@@ -8,6 +8,8 @@ $light-grey: #ccc;
 $border-grey: #dedede;
 $grey: #909090;
 
+$fill: #F4F4F4;
+
 $tablet: 768px;
 $mobile: 375px;
 
@@ -102,6 +104,8 @@ $size: 48px;
 		align-items: center;
 		justify-content: center;
 
+		padding: 26px 30px 0 30px;
+
 		&__title {
 			font-size: 26px;
 		}
@@ -120,6 +124,8 @@ $size: 48px;
 	}
 
 	@media (max-width: $mobile) {
+		padding: 20px;
+
 		&__title {
 			font-size: 24px;
 		}
@@ -127,6 +133,10 @@ $size: 48px;
 		.checkbox__label {
 			font-size: 12px;
 		}
+	}
+
+	& input.filled, & textarea.filled {
+		background-color: $fill;
 	}
 }
 

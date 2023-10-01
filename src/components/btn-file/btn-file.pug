@@ -1,3 +1,9 @@
 mixin btn-file(props)
-	.btn-file&attributes(attributes)(data-component='btn-file')
-		//Your code here
+	.btn-file__wrapper
+		label.btn-file__label(tabIndex="0")
+			input.btn-file(type="file" id="file-upload" name="file-upload" accept=".pdf, .doc, .docx" hidden multiple)&attributes(attributes)(data-component='btn-file')
+			| Прикрепить файл
+			+svg('upload-svg')
+
+		ul(class="file-list")
+	label(class="validate__label validate__label--btn-file" for="btn-file")

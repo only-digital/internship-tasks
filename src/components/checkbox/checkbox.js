@@ -1,19 +1,20 @@
 import Component from '../../app/js/base/Component';
 
 class Checkbox extends Component {
-	link;
-    constructor(element) {
-        super(element);
+	errorLabel;
+	constructor(element) {
+		super(element);
 
-		  this.link = this.root.querySelector("a");
+		this.errorLabel = this.root.parentNode.nextElementSibling;
 
-		  this.link.addEventListener("click", this.onClickHandler);
-		}
+		this.root.addEventListener('change', this.onCheckHandler)
 
-		onClickHandler = (e) => {
-			console.log(this.root.getAttribute("checked"))
-			this.root.setAttribute("checked", "");
-		}
+	}
+
+	onCheckHandler = (e) => {
+		if (e.target.checked)
+			this.errorLabel.textContent = ''
+	}
 }
 export default Checkbox
 

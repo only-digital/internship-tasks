@@ -1,5 +1,5 @@
 mixin btn(props)
-  button(class="btn" type="submit")&attributes(attributes)
+  button(class="btn" type="submit")&attributes(attributes)(data-component='btn')
     p.btn__text=props.text
     span.btn__icon
       +svg('arrow-svg')

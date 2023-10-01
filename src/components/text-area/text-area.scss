@@ -64,8 +64,8 @@ $red: #f00;
 		background-color: $light-grey;
 	}
 
-	&:hover + &--label {
-		border: none;
+	&:hover ~ &--label {
+		border-color: transparent;
 	}
 
 	&:focus {
@@ -75,44 +75,37 @@ $red: #f00;
 
 	&.error {
 		outline: 1px solid $red;
-
-		&:after {
-			content: "Сообщение ошибки";
-			color: $red;
-			position: absolute;
-			bottom: -10px;
-		}
 	}
-}
-
-.text-area--label {
-	pointer-events: none;
-	color: #111;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 16px;
-	letter-spacing: -0.3px;
-	transition: all 0.3s ease-in-out;
-	position: absolute;
-	z-index: 1;
-	top: 12px;
-	left: 20px;
-
-	width: calc(100% - 40px);
-
-	padding-bottom: 14px;
-
-	border-bottom: 1px solid $extra-grey;
-
-	&.focus {
-		border-color: transparent;
-		color: $grey;
-		font-size: 12px;
-		line-height: 150%;
-		letter-spacing: -0.2px;
-		top: -20px;
-	}
-
-	&[disabled] {
+	
+	&:disabled, &:disabled ~ &--label {
 		color: $disabled;
+	}
+
+	&--label {
+		pointer-events: none;
+		color: #111;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 16px;
+		letter-spacing: -0.3px;
+		transition: all 0.3s ease-in-out;
+		position: absolute;
+		z-index: 1;
+		top: 12px;
+		left: 20px;
+	
+		width: calc(100% - 40px);
+	
+		padding-bottom: 18px;
+	
+		border-bottom: 1px solid $extra-grey;
+	
+		&.focus {
+			border-color: transparent;
+			color: $grey;
+			font-size: 12px;
+			line-height: 150%;
+			letter-spacing: -0.2px;
+			top: -20px;
+		}
 	}
 }

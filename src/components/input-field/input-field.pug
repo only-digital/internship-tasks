@@ -1,3 +1,6 @@
 mixin input-field(props)
-	.input-field&attributes(attributes)(data-component='input-field')
-		//Your code here
+	.input-field--wrapper
+		input(class="input-field" type="email" name="email", id="email" maxlength="255")&attributes(attributes)(data-component='input-field')
+		.input-field--label Email
+		+svg('success-svg')
+	label(class="validate__label validate__label--email" for="email")

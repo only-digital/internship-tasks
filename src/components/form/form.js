@@ -1,108 +1,133 @@
 import Component from '../../app/js/base/Component';
 
+
 class Form extends Component {
+	emailInput;
+	checkbox;
+	textArea;
+	files;
+
+	submitBtn;
+
+	validateCheckboxLabel;
+	validateEmailLabel;
+	validateTextAreaLabel;
+
+	successMessage;
+	errorMessage;
 
 	constructor(element) {
 		super(element);
 
-		this.root.addEventListener('submit', (event) => this.onFormSubmit(event));
+		this.emailInput = this.root.querySelector('[name="email"]');
+		this.checkbox = this.root.querySelector('[name="checkbox"]');
+		this.textArea = this.root.querySelector('[name="textarea"]');
+		this.files = this.root.querySelector('[name="file-upload"]');
+
+		this.submitBtn = this.root.querySelector('[type="submit"]');
+
+		this.validateEmailLabel = this.root.querySelector('.validate__label--email');
+		this.validateCheckboxLabel = this.root.querySelector('.validate__label--checkbox');
+		this.validateTextAreaLabel = this.root.querySelector('.validate__label--textarea');
+
+		this.successMessage = this.root.querySelector('.success--msg');
+		this.errorMessage = this.root.querySelector('.error--msg');
+
+		this.root.addEventListener('submit', this.onFormSubmit.bind(this));
 	}
 
-	onValidate(form) {
-
-		const emailInput = form.querySelector('[name="email"]');
-		const checkboxValue = form.querySelector('[name="checkbox"]');
-		const textAreaInput = form.querySelector('[name="textarea"]');
-
-		const validateEmailLabel = form.querySelector('.validate__label--email');
-		const validateCheckboxLabel = form.querySelector('.validate__label--checkbox');
-		const validateTextAreaLabel = form.querySelector('.validate__label--textarea');
+	onValidate() {
 
 		let emailIsValid = true
 		let checkboxIsValid = true
 		let textAreaIsValid = true
 
-		if (!emailInput.value) {
-			validateEmailLabel.textContent = 'Поле E-mail обязательно';
+		if (!this.emailInput.value) {
+			this.validateEmailLabel.textContent = 'Поле E-mail обязательно';
 			emailIsValid = false
 		}
 		else {
-			validateEmailLabel.textContent = '';
+			this.validateEmailLabel.textContent = '';
 			emailIsValid = true
 		}
 
-		if (!checkboxValue.checked) {
-			validateCheckboxLabel.textContent = 'Необходимо отметить соглашение';
+		if (!this.checkbox.checked) {
+			this.validateCheckboxLabel.textContent = 'Необходимо отметить соглашение';
 			checkboxIsValid = false
 		}
 		else {
-			validateCheckboxLabel.textContent = '';
+			this.validateCheckboxLabel.textContent = '';
 			checkboxIsValid = true
 		}
 
-		if (textAreaInput.value.length < 30) {
-			textAreaInput.classList.add('error')
-			validateTextAreaLabel.textContent = 'Ваше сообщение должно быть больше 30 символов';
+		if (this.textArea.value.length < 30) {
+			this.textArea.classList.add('error')
+			this.validateTextAreaLabel.textContent = 'Ваше сообщение должно быть больше 30 символов';
 			textAreaIsValid = false
 		}
 		else {
-			textAreaInput.classList.remove('error')
-			validateTextAreaLabel.textContent = '';
+			this.textArea.classList.remove('error')
+			this.validateTextAreaLabel.textContent = '';
 			textAreaIsValid = true
 		}
 
-
-
-		return emailIsValid && checkboxIsValid
+		return emailIsValid && checkboxIsValid && textAreaIsValid
 	}
 
 	async onFormSubmit(event) {
+
 		event.preventDefault();
 
 		const form = event.target;
 
-		const isValidate = this.onValidate(form);
-
-		const emailInput = form.querySelector('[name="email"]');
-
-		const checkboxArea = form.querySelector('.checkbox');
-		const checkboxValue = form.querySelector('[name="checkbox"]');
-
-		const submitBtn = form.querySelector('[type="submit"]');
-
-		const successMessage = form.querySelector('.success--msg');
-		const errorMessage = form.querySelector('.error--msg');
+		const isValidate = this.onValidate();
 
 		if (isValidate) {
-			submitBtn.style.display = 'none';
-			emailInput.setAttribute('disabled', '');
-			checkboxArea.classList.add('disabled');
+			this.submitBtn.style.display = 'none';
+
+			this.emailInput.setAttribute('disabled', '');
+			this.textArea.setAttribute('disabled', '');
+			this.checkbox.setAttribute('disabled', '');
+
+			this.files.parentNode.classList.add('disabled');
+
+			const formData = new FormData();
+			formData.append('email', this.emailInput.value);
+			formData.append('message', this.textArea.value);
+
+			if (this.files.files.length > 0)
+				formData.append('files', ...this.files.files);
+
+			formData.append('confirm', this.checkbox.checked);
 
 			await fetch('/form', {
 				method: 'POST',
-				body: JSON.stringify({
-					email: emailInput.value,
-					confirm: checkboxValue.checked
-				}),
+				body: formData,
 				headers: {
 					'Content-Type': 'application/json'
 				}
 			}).then(response => {
-				submitBtn.style.display = 'flex';
+				this.submitBtn.style.display = 'flex';
 
 				if (response.status === 200) {
-					submitBtn.style.display = 'none';
-					successMessage.classList.add('active');
+					this.submitBtn.style.display = 'none';
+
+					this.successMessage.classList.add('active');
 				}
 				if (response.status === 422) {
-					emailInput.removeAttribute('disabled');
-					checkboxArea.classList.remove('disabled');
-					submitBtn.style.display = 'none';
-					errorMessage.classList.add('active');
+					this.emailInput.removeAttribute('disabled');
+					this.textArea.removeAttribute('disabled');
+					this.checkbox.removeAttribute('disabled');
+
+					this.files.parentNode.classList.remove('disabled');
+
+					this.submitBtn.style.display = 'none';
+
+					this.errorMessage.classList.add('active');
 
 					setTimeout(() => {
-						errorMessage.classList.remove('active');
-						submitBtn.style.display = 'flex';
+						this.errorMessage.classList.remove('active');
+						this.submitBtn.style.display = 'flex';
 					}, 3000)
 
 					form.reset()
