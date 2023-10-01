@@ -1,0 +1,9 @@
+mixin only-slider(props)
+	.only-slider(class!=(attributes.disabled)?'only-slider_disabled':'')&attributes(attributes)
+		.only-slider__icons-wrapper 
+			button.only-slider__icon 
+				include ../../assets/icons/left-curs.svg
+			button.only-slider__icon 	
+				include ../../assets/icons/right-curs.svg
+		.only-slider__text 0/#{props.page_counts}
+		

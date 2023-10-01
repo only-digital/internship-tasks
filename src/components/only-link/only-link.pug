@@ -1,0 +1,5 @@
+mixin only-link(props)
+	a.only-link(class!=(attributes.disabled)?'only-link_disabled':'' href=(attributes.href)?attributes.href:'')&attributes(attributes)
+		span.only-link__text!= props.text
+		span.only-link__icon 
+			include ../../assets/icons/simple-link.svg

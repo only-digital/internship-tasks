@@ -1,0 +1,77 @@
+@import '../../styles/variables.scss';
+@import '../../styles//transitions.scss';
+
+.only-link {
+	$root: &;
+	display: inline-flex;
+	align-items: center;
+	padding-inline-start: 0.1rem;
+	padding-inline-end: 0.2rem;
+	transition: $background-color-fast-transition;
+	gap: 10px;
+	cursor: pointer;
+
+	&__text{
+		
+		color: $text-color-link;
+		transition: $color-fast-transition;
+		font-family: $main-font-family;
+		font-size: $main-font-size;
+		font-weight: $main-font-weight;
+		letter-spacing: 0.02em;
+		line-height: 24px;
+		
+
+		@media (max-width:768px){
+			font-size: 14px;
+			line-height: 21px;
+		}
+	}
+
+	&__icon{
+		display: flex;
+		align-items: center;
+		svg{
+
+			fill: $icon-color-link;
+		}
+	}
+
+	&_iconless{
+		gap: 0px;
+		#{$root}__icon{
+			svg{
+				display: none;
+			}
+		}
+	}
+
+	&:hover{
+		
+		#{$root}__text{
+			color:$text-color-hover-link;
+		}
+	}
+
+	&:active{
+		#{$root}__text{
+			color:$text-color-click-link;
+		}
+	}
+
+	&:focus{
+		background-color: $background-color-focus;
+	}
+
+	&_disabled,&_disabled:hover,
+	&_disabled:focus,
+	&_disabled:active{
+
+		#{$root}__text{
+			color:$disabled-1-color;
+		}
+		background-color: transparent;
+		cursor: default;
+	}
+	
+}

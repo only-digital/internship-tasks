@@ -1,0 +1,115 @@
+@import '../../styles/variables.scss';
+@import '../../styles//transitions.scss';
+
+.only-slider {
+	$root: &;
+	display: inline-flex;
+	box-sizing: border-box;
+	gap:40px;
+
+	&__icons-wrapper{
+		box-sizing: border-box;
+		display: flex;
+		gap: 10px;
+	}
+
+	&__icon{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 80px;
+		height: 80px;
+		box-sizing: border-box;
+
+		border-color: $border-color-slider;
+		border-radius: 50%;
+		border-width: 1px;
+		border-style: solid;
+
+		padding:0px calc(50px/2);
+
+		transition: $background-color-fast-transition,
+					$border-color-fast-transition;
+					
+		cursor: pointer;
+
+		svg{
+
+			transition: $fill-fast-transition;
+			box-sizing: border-box;
+			fill: $icon-color-cursor;
+
+		}
+
+		@media(max-width:1280px){
+			width: 60px;
+			height: 60px;
+			padding:0px calc(37.5px/2);
+			
+		}
+
+		&:hover{
+			background-color: $background-color-hover-slider;
+			border-color: $border-color-hover-slider;
+		}
+
+		&:active{
+
+			background-color: $background-color-click-slider;
+			border-color: $border-color-slider;
+
+		}
+
+		&:focus{
+			@media(max-width:1280px){
+				padding:0px calc(33.5px/2);
+			}
+			padding:0px calc(46px/2);
+			border-width: 3px;
+			border-color: $border-color-focus;
+		}
+	}
+
+	&__text{
+
+		color:$disabled-3-color;
+		font-weight: 600;
+		font-family: $main-font-family;
+		font-size: $main-font-size;
+		line-height: 24px;
+		letter-spacing: 0.02em;
+
+		display: flex;
+		align-items: center;
+		
+
+
+	}
+
+	&_disabled,
+	&_disabled:hover{
+
+		#{$root}__icon{
+			background-color: transparent;
+			&:active{
+
+				background-color: transparent;
+	
+			}
+
+			cursor: default;
+			
+			svg{
+				fill: $disabled-1-color;
+			}
+			
+		}
+
+		#{$root}__text{
+
+			color: $disabled-1-color;
+			opacity: 40%;
+		}
+		
+	}
+}

@@ -1,0 +1,81 @@
+@import '../../styles/variables.scss';
+@import '../../styles//transitions.scss';
+
+.only-switcher {
+	$root: &;
+	display: flex;
+	width: 62px;
+	height: 34px;
+	align-items: center;
+
+	border-radius: 17px;
+	border-width: 3px;
+	border-style: solid;
+	border-color: $White-color;
+
+	background-color: $background-color-switcher;
+	transition:	$background-color-fast-transition,
+				$border-color-fast-transition;
+
+	@media(max-width:375px){
+		width: 46px;
+		height: 26px;
+		border-radius: 13px;
+	}
+
+	&__circle{
+		
+		width: 16px;
+		height: 16px;
+		transition: $margin-fast-transition;
+		background-color: $background-color-circle;
+		border-radius: 50%;
+
+		@media(max-width:375px){
+			width:12px;
+			height: 12px;	
+		}
+	}
+
+	&_active{
+
+		#{$root}__circle{
+
+			margin-inline: 34px 6px;
+
+			@media(max-width:375px){
+				margin-inline: 24px 4px;
+			}
+		}
+		
+	}
+
+	&_disabled{
+
+		#{$root}__circle{
+
+			margin-inline: 6px 34px;
+
+			@media(max-width:375px){
+				margin-inline: 24px 4px;
+			}
+		}
+
+		background-color: $disabled-3-color;
+
+	}
+
+	&:hover{
+
+		background-color: $background-color-hover-switcher;
+
+	}
+
+
+	&:focus{
+		
+		border-color: $focus-color;
+
+	}
+
+}
