@@ -5,3 +5,26 @@ block body
     +example-button({text: 'example text'})
     +example-button({text: 'disabled'})(disabled='')
     //Your code here
+    +normal-button({text: 'Кнопка'})
+    +normal-button({text: 'Кнопка'})(disabled='')
+    
+    +slider({value: '01 / 04'}) 
+    +slider({value: '01 / 04'})(disabled='')
+
+    +links({text: 'Sustainalytics.com', href: 'https://Sustainalytics.com'})
+    +links({text: 'Sustainalytics.com', href: 'https://Sustainalytics.com'})(disabled='')
+
+    p
+        |&nbsp;&#x20;&#x20;Для подключения сервиса добавьте номер&#x20;
+        +link-inline({text: '+7(921)058-57-19', href:'#'})
+        |&#x20;в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже
+    
+    p
+        |&nbsp;&#x20;&#x20;Цифровые продукты, направленные на создание&#x20;
+        +link-inline({text: 'дополнительных'})
+        |&#x20;сервисов и устранение «проблемных точек» наших клиентов
+
+
+    +switch()
+    +switch(disabled='')
+    
