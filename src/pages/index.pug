@@ -2,10 +2,28 @@ extends ../../build_modules/common
 
 
 block body
+
+    style
+        include style.scss
+
     +example-button({text: 'example text'})
     +example-button({text: 'disabled'})(disabled='')
-    //Your code here
     h2 Состояние кнопки
     +button({text: 'Кнопка'})
     +button({text: 'Кнопка'})(disabled='')
     p Для того, чтобы увидеть "Состояние кнопки 2" необходимо добавить к тэгу <code>button.button</code> класс <code>.button_red</code>
+
+    h2 Ссылки
+    +link({text: 'Sustainalytics.com', icon: 'true'})(href='https://sustainalytics.com') 
+    br 
+    +link({text: 'Sustainalytics.com', icon: 'true'})(href='https://sustainalytics.com', disabled='')
+
+    p 
+        | Для подключения сервиса добавьте номер 
+        +link({text: '+7(921)058-57-19', icon: ''})(href='tel:+7(921)058-57-19')
+        | &nbsp;в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже
+
+    p 
+        | Цифровые продукты, направленные на создание 
+        +link({text: 'дополнительных сервисов', icon: ''})(href='https://sustainalytics.com', target='_blank') 
+        | &nbsp;и устранение «проблемных точек» наших клиентов
