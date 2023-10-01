@@ -1,8 +1,8 @@
 .spoiler-item {
 	$root: &;
 
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 
     border-bottom: 1px solid #E6E6E6;
 
@@ -11,13 +11,15 @@
     }
 
     &__text {
-        display: none;
-        margin-bottom: 10px;
-        margin-top: 30px;   
-        
+
         font-size: 20px;
         line-height: 1.5;
-     }
+
+        max-height: 0;
+        overflow: hidden;
+
+        transition: max-height 0.5s, margin-bottom 0.5s, margin-top 0.5s;
+    }
  
      &__block { 
          display: flex;
@@ -25,7 +27,7 @@
          align-items: center;
 
          gap: 10px;
-     }
+    }
 
     &:first-of-type {
         border-top: 1px solid #E6E6E6;
@@ -34,9 +36,19 @@
     &__svg {
         width: 28px;
         height: 28px;
+
+        transition: transform 0.5s;
     }
 
-	@media (max-width: 1440px) {
+    &__name {
+        transition: color 0.5s;
+    }
+
+	@media (max-width: 1440px) or (max-width: 768px) {
+
+        padding-top: 24px;
+        padding-bottom: 24px;
+
         &__name {
             font-size: 27px;
         }
@@ -54,6 +66,10 @@
     }
 
     @media (max-width: 1280px) or (max-width: 375px) {
+
+        padding-top: 20px;
+        padding-bottom: 20px;
+
         &__name {
             font-size: 24px;
         }
@@ -70,28 +86,4 @@
         }
     }
 
-    @media (max-width: 768px) {
-        &__name {
-            font-size: 27px;
-        }
-
-        &__text {
-            font-size: 15px;
-        }
-
-        &__svg {
-            min-width: 20px;
-            max-width: 20px;
-            
-            height: 20px;
-        }
-    }
-
-    @media (max-width: 375px) {
-
-        &__text {
-            font-size: 14px;
-        }
-
-    }
 }
