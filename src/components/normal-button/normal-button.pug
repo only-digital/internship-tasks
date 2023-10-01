@@ -1,0 +1,6 @@
+mixin normal-button(props)
+	button.normal-button&attributes(attributes)
+		//Your code here
+		span.normal-button__block
+			span.normal-button__text!= props.text
+			+svg('normal-svg').normal-button__svg
