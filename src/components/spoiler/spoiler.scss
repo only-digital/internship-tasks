@@ -3,14 +3,41 @@
 .spoiler {
 	$root: &;
 
-	margin-left: 160px;
+	margin-left: 8.4vw;
+	margin-right: 7.3vw;
+
 	margin-top: 183px;
 
 	&__title {
 		font-size: 64px;
 		margin-bottom: 80px;
+
+		@media (max-width: 1440px) {
+			font-size: 48px;
+		}
+
+		@media (max-width: 1280px) {
+			font-size: 42px;
+		}
+
+		@media (max-width: 375px) {
+			font-size: 30px;
+		}
 	}
 
-	width: 1600px;
-	
+	width: 83.3vw;	
+
+	@media (max-width: 768px) {
+		width: 89.5vw;	
+
+		margin-left: 5.21vw;
+		margin-right: 5.21vw;
+	}
+
+	@media (max-width: 375px) {
+		width: 87.2vw;	
+
+		margin-left: 6.4vw;
+		margin-right: 6.4vw;
+	}
 }
