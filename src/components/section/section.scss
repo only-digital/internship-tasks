@@ -7,14 +7,16 @@ $color-accent: #E6E6E6;
 
 .section {
 	$root: &;
-
+	
 	width: 100vw;
-	max-width: 1600px;
-	margin: 183px auto 138px;
+	max-width: 1620px;
+	padding: 180px 10px 130px;
+	margin: 0 auto;
 	font-family: $font-stack;
 	font-weight: 400;
 
 	&__title {
+		width: 100%;
 		color: $color-main-text;
 		font-size: 64px;
 		font-style: normal;
@@ -22,5 +24,47 @@ $color-accent: #E6E6E6;
 		letter-spacing: calc(-.02 * 64px);
 		padding-bottom: 80px;
 		border-bottom: 1px solid $color-accent;
+	}
+
+	@media (max-width: 1440px) {
+		max-width: 1220px;
+
+		&__title {
+			font-size: 48px;
+			letter-spacing: calc(-.02 * 48px);
+			padding-bottom: 60px;
+		}
+	}
+
+	@media (max-width: 1280px) {
+		max-width: 1086px;
+		padding-top: 165px;
+
+		&__title {
+			font-size: 42px;
+			letter-spacing: calc(-.02 * 42px);
+			padding-bottom: 56px;
+		}
+	}
+
+	@media (max-width: 768px) {
+		max-width: 708px;
+		padding-top: 175px;
+
+		&__title {
+			padding-bottom: 50px;
+		}
+	}
+
+	@media (max-width: 375px) {
+		max-width: 347px;
+		padding-top: 155px;
+
+		&__title {
+			font-size: 30px;
+			letter-spacing: calc(-.02 * 30px);
+			padding-right: 40%;
+			padding-bottom: 40px;
+		}
 	}
 }
