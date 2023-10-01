@@ -1,0 +1,49 @@
+.link {
+	$root: &;
+
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	width: max-content;
+	padding: 2px 3px 2px 0;
+	margin-top: 40px;
+
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	color: #0041A0;
+
+	background-color: transparent;
+
+	transition: color 0.3s, background-color 0.3s;
+
+	@media (hover: hover) {
+		&:hover {
+			color: #F00;
+		}
+
+		&:focus {
+			background-color: rgba(0, 65, 160, 0.15);
+		}
+	}
+	
+	&:active {
+		color: #BF1D26;
+	}
+
+	@media (min-width: 768px) {
+		font-size: 16px;
+	}
+
+	&__svg {
+		width: 19.5px;
+		height: 19.5px;
+
+		fill: #002F6C;
+	}
+
+	&--disabled {
+		color: #BCBCBC;
+
+		pointer-events: none;
+	}
+}
