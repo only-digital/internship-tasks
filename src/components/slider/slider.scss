@@ -1,0 +1,94 @@
+.slider {
+	$root: &;
+
+	//Your code here
+
+	display: flex;
+	justify-content: space-between;
+	gap: 30px;
+	width: 265px;	
+	margin-top: 30px;
+	margin-left: 20px;
+
+		&[disabled] {
+			opacity: 0.5;
+			pointer-events: none;
+		}
+
+		&__button:disabled {
+			#{$root}__svg {
+				fill: #BCBCBC;
+			}
+			
+		}
+
+
+		&__buttons-container {
+			display: flex;
+			justify-content: center;
+			gap: 10px;
+
+		}
+
+
+		&__button {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 80px;
+			height: 80px;	
+			border-radius: 50%;
+			border: 1px solid #DEDEDE;
+
+		}
+
+		&__value {
+			display: flex;
+			align-items: center;
+			width: 55px;
+			font-size: 18px;	
+			font-weight: 900;
+			line-height: 150%;
+			letter-spacing: 0.32px;
+			color: #909090; 
+			opacity: 0.5;
+		}
+
+		&__button:nth-child(2) {
+			svg {
+				transform: rotate(180deg);
+			}
+		}
+
+		&__button:hover {
+			background-color: #F4F4F4;
+			border: none;
+		}
+		
+		&__button:focus:not(:hover) {
+			border: 3px solid #99B3D8;
+		}
+
+		&__button:active {
+			background-color: #DEDEDE;
+			border: none;
+		}
+
+
+
+
+		svg {
+			width: 30px;
+			height: 40px;
+			fill: #002F6C;
+			transition: fill 0.3s;
+		}
+
+
+	
+}
+
+
+
+
+

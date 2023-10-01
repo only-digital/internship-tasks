@@ -1,0 +1,13 @@
+mixin slider(props)
+	.slider&attributes(attributes)
+		//Your code here
+		.slider__buttons-container
+			button.slider__button&attributes(attributes)
+				+svg('slider-svg').slider__svg
+			button.slider__button&attributes(attributes)
+				+svg('slider-svg').slider__svg
+		span.slider__value!= props.value
+
+
+
+		
