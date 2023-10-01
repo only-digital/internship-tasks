@@ -7,13 +7,10 @@
 	display: inline-flex;
 	gap: 10px;
 	transition: all 0.3s;
+	font-size: 16px;
 
 	@media (max-width: 1279px) {
 		font-size: 14px;
-	}
-
-	@media (min-width: 1280px) {
-		font-size: 16px;
 	}
 
 	&:hover {
@@ -28,15 +25,15 @@
 		background: rgba(0, 65, 160, 0.15);
 	}
 
-	&:disabled {
-		pointer-events: none;
-		color: #BCBCBC;
-	}
-
 	.link__svg {
 		display: flex;
 		height: 24px;
 		width: 24px;
 		fill: #002F6C;
 	}
+}
+
+.disabled {
+	pointer-events: none;
+	color: #BCBCBC;
 }
