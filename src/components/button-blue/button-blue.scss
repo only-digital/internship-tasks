@@ -1,0 +1,116 @@
+.wrapper {
+  padding: 20px 24px;
+
+  button:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.button-blue {
+  $root: &;
+
+  //Your code here
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  border: 1px solid #bcbcbc;
+  color: #111111;
+  padding: 14px;
+  width: 100%;
+  height: 42px;
+  gap: 14px;
+  transition: 0.3s;
+  user-select: none;
+
+  &:hover {
+    background: #0041a0;
+    color: #ffffff;
+    border: none;
+
+    #{$root}__svg {
+      color: #ffffff;
+    }
+  }
+
+  &:active {
+    background: #002f6c;
+    color: #ffffff;
+    border: none;
+
+    #{$root}__svg {
+      color: #ffffff;
+    }
+  }
+
+  &:focus {
+    color: #0041a0;
+    border: 3px solid #99b3d8;
+
+    #{$root}__svg {
+      color: #0041a0;
+    }
+  }
+
+  &:disabled {
+    color: #909090;
+    pointer-events: none;
+
+    #{$root}__svg {
+      color: #909090;
+    }
+  }
+
+  @media (min-width: 768px) {
+    width: auto;
+    padding: 0 14px 0 18px;
+  }
+
+  @media (min-width: 1280px) {
+    gap: 12px;
+    padding: 0 14px 0 16px;
+  }
+
+  @media (min-width: 1920px) {
+    gap: 14px;
+    height: 48px;
+    padding: 0 14px 0 18px;
+  }
+
+  &__text {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    text-transform: capitalize;
+
+    @media (min-width: 1280px) {
+      font-size: 14px;
+      line-height: 14px;
+    }
+
+    @media (min-width: 1920px) {
+      font-size: 16px;
+      line-height: 16px;
+    }
+  }
+
+  &__svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #002f6c;
+
+    svg {
+      width: 24px;
+      height: 16.5px;
+
+      @media (min-width: 1920px) {
+        width: 32px;
+        height: 22px;
+      }
+    }
+  }
+}
