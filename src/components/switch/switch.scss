@@ -3,46 +3,39 @@ $cobolt-color: #0041a0;
 $grey-2-color: #dedede;
 $pale-blue-color: #99b3d8;
 
+input {
+  width: 0px;
+  height: 0px;
+}
+
 .switch {
   $root: &;
 
-  display: inline-flex;
-  align-items: center;
-  height: 20px;
-  width: 40px;
-  background-color: $cobolt-color;
-  border-radius: 14px;
+  cursor: pointer;
 
-  &:focus {
-    outline: 3px solid $pale-blue-color;
-  }
-
-  @media (hover: hover) {
-    &:hover {
-      background-color: $blue-color;
-    }
-  }
-
-  &:disabled {
+  &__container {
+    display: inline-flex;
+    align-items: center;
+    height: 20px;
+    width: 40px;
     background-color: $grey-2-color;
+    border-radius: 14px;
 
-    .switch__circle {
-      left: 4px;
-
-      @media (min-width: 768px) {
-        left: 6px;
+    @media (hover: hover) {
+      &:hover {
+        background-color: $blue-color;
       }
     }
+
+    @media (min-width: 768px) {
+      width: 56px;
+      height: 28px;
+    }
   }
 
-  @media (min-width: 768px) {
-    width: 56px;
-    height: 28px;
-  }
-
-  &__circle {
+  &__slider {
     position: relative;
-    left: 24px;
+    left: 4px;
     width: 12px;
     height: 12px;
     background-color: white;
@@ -51,7 +44,27 @@ $pale-blue-color: #99b3d8;
     @media (min-width: 768px) {
       width: 16px;
       height: 16px;
-      left: 34px;
+      left: 6px;
+    }
+  }
+
+  input:focus {
+    +.switch__container {
+      outline: 3px solid $pale-blue-color;
+    }
+  }
+
+  input:checked {
+    + .switch__container {
+      background-color: $cobolt-color;
+
+      .switch__slider {
+        left: 24px;
+
+        @media (min-width: 768px) {
+          left: 34px;
+        }
+      }
     }
   }
 }
