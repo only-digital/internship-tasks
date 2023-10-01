@@ -5,10 +5,9 @@
 	align-items: center;
 	border-radius: 25px;
 	border: 1px solid #BCBCBC;
-
-
+	color: #111;
 	cursor: pointer;
-	transition: 0.3s;
+	transition: all 0.3s ease-out;
 
 	@media (max-width: 767px) {
 		width: 100%;
@@ -35,10 +34,7 @@
 	&:hover {
 		background: #0041A0;
 		border: 1px solid #0041A0;
-
-		#{$root}__text {
-			color: white;
-		}
+		color: white;
 
 		#{$root}__svg {
 			fill: white;
@@ -48,10 +44,7 @@
 	&:active {
 		background: #002F6C;
 		border: 1px solid #002F6C;
-
-		#{$root}__text {
-			color: white;
-		}
+		color: white;
 
 		#{$root}__svg {
 			fill: white;
@@ -65,10 +58,7 @@
 	&:disabled {
 		border: 1px solid #BCBCBC;
 		pointer-events: none;
-
-		#{$root}__text {
-			color: #909090;
-		}
+		color: #909090;
 
 		#{$root}__svg {
 			fill: #909090;
@@ -76,10 +66,8 @@
 	}
 
 	&__text {
-		color: #111;
 		font-family: Arial;
 		font-weight: 400;
-		transition: 0.3s;
 		user-select: none;
 
 		@media (max-width: 1279px) {
@@ -100,7 +88,6 @@
 
 		svg {
 			fill: #002F6C;
-			transition: fill 0.3s;
 
 			@media (max-width: 1919px) {
 				width: 24px;
