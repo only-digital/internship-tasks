@@ -2,6 +2,14 @@ extends ../../build_modules/common
 
 
 block body
-    +example-button({text: 'example text'})
-    +example-button({text: 'disabled'})(disabled='')
-    //Your code here
+    div(style='padding: 10px')
+        +heading-h2({title: 'Кнопка с обводкой'})
+        +button({text: 'Кнопка'})
+        br
+        +button({text: 'Кнопка'})(disabled='')
+        br
+        +heading-h2({title: 'Кнопка с заливкой'})
+        +button({text: "Кнопка"})(class="button--red")
+        br
+        +button({text: "Кнопка"})(disabled="" class="button--red")
+        br

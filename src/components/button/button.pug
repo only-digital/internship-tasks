@@ -1,0 +1,4 @@
+mixin button(props)
+	button.button&attributes(attributes)
+		span.button__text!= props.text
+		+svg('button-icon').button__icon
