@@ -1,4 +1,3 @@
-import ExampleButton from "../../components/example-button/example-button";
 import Spoiler from '../../components/spoiler/spoiler';
 
 /**
@@ -7,10 +6,8 @@ import Spoiler from '../../components/spoiler/spoiler';
  * Значение - JS-класс компонента (Импорт добавляется вручную)
  */
 const allComponents = {
-    'example-button': ExampleButton,
     'spoiler': Spoiler,
 }
-
 
 /**
  * Инициализация всех компонентов на странице
