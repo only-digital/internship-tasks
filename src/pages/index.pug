@@ -2,8 +2,6 @@ extends ../../build_modules/common
 
 
 block body
-    +example-button({text: 'example text'})
-    +example-button({text: 'disabled'})(disabled='')
 
     +border-button({text: 'Border-button'})
     +border-button({text: 'Ddisabled'})(disabled='')
@@ -13,3 +11,16 @@ block body
 
     +slider-button({page:1,total:4})
     +slider-button({page:1,total:4})(disabled='')
+
+    +link({text: 'Sustainalytics.com', icon: true})(href='#')
+    +link({text: 'Sustainalytics.com', icon: true})(href='#' disabled='')
+    
+    p Для подключения сервиса добавьте номер 
+        +link({text: '+7(921)058-57-19'})(href='#') 
+        |  в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже
+    p Цифровые продукты, направленные на создание 
+        +link({text: 'дополнительных сервисов'})(href='#')
+        |  и устранение «проблемных точек» наших клиентов
+
+    +switch-button()
+    +switch-button()(disabled='')

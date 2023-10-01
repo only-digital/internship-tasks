@@ -1,3 +1,5 @@
 mixin link(props)
-	.link&attributes(attributes)
-		//Your code here
+	a.link&attributes(attributes)
+		span.link__text= props.text 
+		if props.icon 
+			+svg('link-svg')

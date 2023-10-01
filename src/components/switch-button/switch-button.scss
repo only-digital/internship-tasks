@@ -1,5 +1,62 @@
 .switch-button {
-	$root: &;
+  $root: &;
 
-	//Your code here
+  input[type="checkbox"] {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    border-radius: 14px;
+    background-color: $hover-blue;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+	
+    &:disabled {
+      background-color: $border-gray;
+      pointer-events: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background-color: $white;
+      border-radius: 16px;
+      top: 4px;
+      left: 4px;
+      transition: ease-in-out 0.3s;
+    }
+    &:active:after {
+      width: 16px;
+    }
+    &:checked::after {
+      left: calc(100% - 5px);
+      transform: translateX(-100%);
+    }
+    @media (min-width: 375px) {
+      width: 56px;
+      height: 28px;
+      &::after {
+        width: 16px;
+        height: 16px;
+        top: 6px;
+        left: 6px;
+      }
+      &:active:after {
+        width: 24px;
+      }
+    }
+    @media (min-width: 768px) {
+      &:focus {
+        outline: 3px solid $border-blue-checkbox;
+        background-color: $border-gray;
+      }
+    }
+    @media (hover: hover) and (min-width: 768px) {
+      &:hover {
+        background-color: $active-blue;
+      }
+    }
+  }
 }

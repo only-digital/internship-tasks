@@ -1,4 +1,4 @@
 mixin border-button(props)
 	button.border-button&attributes(attributes)
-		span.border-button__text!= props.text
+		span.border-button__text= props.text
 		+svg('arrow-svg').border-button__svg
