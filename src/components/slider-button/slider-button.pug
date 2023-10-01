@@ -1,0 +1,8 @@
+mixin slider-button(props)
+	.slider-button(class=props)
+		.slider-button__buttons-wrapper
+			button&attributes(attributes).slider-button__button
+				+svg('slider-arrow-svg').slider-button__svg
+			button&attributes(attributes).slider-button__button
+				+svg('slider-arrow-svg').slider-button__svg
+		p.slider-button__text 01 / 04
