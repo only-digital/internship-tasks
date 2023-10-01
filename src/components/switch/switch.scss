@@ -1,5 +1,6 @@
 .switch {
 	$root: &;
+  
   display: flex;
   flex-direction: row;
 	position: relative;
@@ -30,13 +31,15 @@
 		border: none;
   }
 
-	&__input:checked:hover + .switch__slider-round {
-    background: #002F6C;
-		border: none;
-  }
+  @media (min-width:768px) {
+    &__input:checked:hover + .switch__slider-round {
+      background: #002F6C;
+      border: none;
+    }
 
-	&__input:not(:checked):focus + .switch__slider-round {
-		outline: 3px solid #C2DAFF;
+    &__input:not(:checked):focus + .switch__slider-round {
+      outline: 3px solid #C2DAFF;
+    }
   }
 
   &__input:checked + .switch__slider-round:before {
@@ -63,80 +66,4 @@
   
 }
 
-@media (max-width:768px){
-  .switch {
 
-		&__input:not(:checked):focus + .switch__slider-round {
-			background-color: white;
-			outline: none;
-    }
-
-		&__input:not(:checked):hover + .switch__slider-round {
-			background-color: white;
-    }
-
-		&__input:not(:checked):hover + .switch__slider-round::before {
-			height: 1px;
-      width: 30px;
-			top: 13px;
-			left: 13px;
-			border: none;
-			background-color: #DEDEDE;
-    }
-
-		&__input:not(:checked):focus + .switch__slider-round::before {
-			height: 1px;
-      width: 30px;
-			top: 13px;
-			left: 13px;
-			border: none;
-			background-color: #DEDEDE;
-    }
-  
-    
-}
-}
-
-@media (max-width:375px){
-  .switch {
-		width: 40px;
-		height: 20px;
-
-		&__slider-round {
-			width: 40px;
-			height: 20px;
-			transition: 0.6s;
-			box-sizing: border-box;
-		}
-
-		&__slider-round:before {
-      height: 12px;
-      width: 12px;
-			top: 4px;
-			left: 4px;
-    }
-
-		&__input:checked + .switch__slider-round:before {
-      transform: translateX(20px);
-    }
-
-		&__input:not(:checked):focus + .switch__slider-round {
-			background-color: white;
-			outline: none;
-    }
-
-		&__input:not(:checked):hover + .switch__slider-round {
-			background-color: white;
-    }
-
-		&__input:not(:checked):focus + .switch__slider-round::before,
-		&__input:not(:checked):hover + .switch__slider-round::before {
-			height: 1px;
-      width: 20px;
-			top: 10px;
-			left: 10px;
-			border: none;
-			background-color: #DEDEDE;
-    }
-	}
-}

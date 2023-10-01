@@ -34,31 +34,24 @@
 		cursor: pointer;
 		border: 1px solid #DEDEDE;
 
-			@media (max-width: 768px) {
+			@media (max-width: 1280px) {
 				width: 60px;
 				height: 60px;
-
+			}
+			@media (min-width: 1280px) and (hover:hover) {
 				&:hover {
-					width: 30px;
-					height: 1px;
+					border: none;
+					background-color: #F4F4F4;
 				}
-
+			}
+			@media (min-width: 1280px) {
 				&:focus {
-					width: 30px;
-					height: 1px;
+					outline: 3px solid #99B3D8;
 				}
-			}
-
-			&:hover {
-				border: none;
-				background-color: #F4F4F4;
-			}
-
-			&:focus {
-				outline: 3px solid #99B3D8;
 			}
 
 			&:disabled {
+				pointer-events: none;
 				svg {
 				fill: #bcbcbc;
 			}
@@ -72,13 +65,14 @@
 
 	&__info {
 		color: #909090;
-		font-family: 'Arial',sans-serif;
+		font-family: Arial,sans-serif;
 		font-size: 16px;
 		font-style: normal;
 		font-weight: 600;
 		line-height: 150%;
 		letter-spacing: -1px; 
 		opacity: .4;
+
 		@media (max-width: 375px) {
 			display: none;
 		}
@@ -89,7 +83,6 @@
 			transform: rotate(180deg);
 		}
 	}
-
 
 	&__svg {
 		width: 100%;

@@ -23,12 +23,19 @@
 
 	@media (max-width:1280px) {
 		height: 42px;
+		gap: 12px;
 		&__text {
 			font-size: 14px;
 		}
 		&__svg {
 			width: 24px;
 			height: 24px;
+		} 
+	}
+	@media (max-width:768px) {
+		gap: 14px;
+		&__text {
+			font-size: 16px;
 		} 
 	}
 	@media (max-width:375px) {
@@ -52,6 +59,9 @@
 		}
 		&:focus {
 			outline: 3px solid #99B3D8;
+			.button__text {
+				color: #0041A0;
+			}
 		}
 	}
 
