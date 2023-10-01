@@ -1,0 +1,45 @@
+// color palette
+$white: #fff;
+$gray: #DEDEDE;
+$dark-blue: #002F6C;
+$cobolt: #0041A0;
+$light-blue: #99B3D8;
+
+.toggle {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	width: 56px;
+	height: 28px;
+	border-radius: 14px;
+	background-color: $cobolt;
+	padding: 6px;
+	&__switch {
+		height: 16px;
+		width: 16px;
+		background-color: $white;
+		border-radius: 50%;
+	}
+	@media (max-width: 375px) {
+		width: 40px;
+		height: 20px;
+		padding: 4px;
+		&__switch {
+			height: 12px;
+			width: 12px;
+		}
+	}
+	&:focus {
+		box-shadow: 0 0 0 3px $light-blue;
+	}
+	&:hover {
+		background-color: $dark-blue;
+	}
+	&:disabled {
+		background-color: $gray;
+		justify-content: flex-start;
+	}
+	&.checked {
+		justify-content: flex-start;
+	}
+}

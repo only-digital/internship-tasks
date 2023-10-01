@@ -1,0 +1,36 @@
+// color palette
+$white: #fff;
+$gray: #BCBCBC;
+$blue: #0041A0;
+$light-red: #FF0000;
+$dark-red: #BF1D26;
+$light-blue:#0041a026;
+
+.intext-link {
+	display: inline;
+	font-family: inherit;
+	font-style: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+	color: $blue;
+
+	&:focus, &:focus-visible {
+		background-color: $light-blue;
+		border: none;
+		box-shadow: none;
+		outline: none;
+	}
+	&:hover {
+		color: $light-red;
+		box-shadow: none;
+		background-color: $white;
+	}
+	&:active {
+		color: $dark-red;
+	}
+	&.disabled {
+		background-color: $white;
+		color: $gray;
+		cursor: not-allowed; 
+	}
+}

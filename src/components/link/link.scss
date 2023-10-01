@@ -1,0 +1,53 @@
+// color palette
+$white: #fff;
+$gray: #BCBCBC;
+$dark-blue: #002F6C;
+$blue: #0041A0;
+$light-blue:#0041a026;
+$light-red: #FF0000;
+$dark-red: #BF1D26;
+
+.link {
+	//settings for all links and all media-q
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	width: fit-content;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 150%; /* 24px */
+	color: $blue;
+	&__svg path {
+		fill: $dark-blue;
+	}
+//settings for all links for media-q 1920px
+	gap: 12px;
+	font-size: 16px;
+	letter-spacing: -0.32px;
+
+	@media (max-width: 768px) {
+		gap: 10px;
+		font-size: 14px;
+		letter-spacing: -0.28px;
+	}
+	&:focus, &:focus-visible {
+		background-color: $light-blue;
+		border: none;
+		box-shadow: none;
+		outline: none;
+	}
+	&:hover {
+		color: $light-red;
+		box-shadow: none;
+		background-color: $white;
+	}
+	&:active {
+		color: $dark-red;
+	}
+	&.disabled {
+		background-color: $white;
+		color: $gray;
+		cursor: not-allowed; 
+	}
+}

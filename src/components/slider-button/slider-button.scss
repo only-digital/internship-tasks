@@ -1,0 +1,45 @@
+// color palette
+$white: #fff;
+$black: #111111;
+$light-gray: #DEDEDE;
+$dark-gray: #BCBCBC;
+$dark-blue: #002F6C;
+$light-blue: #99B3D8;
+
+
+.slider-button {
+	//settings for all slider-btns and all media-q
+	height: 80px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	transition: all 0.3s;
+	border: 1px $light-gray solid;
+	//settings for all btns for media-q 1920px
+	width: 80px;
+	&__svg  {
+		width: 100%;
+		height: 100%;
+	}
+	@media (max-width: 1280px) {
+		width: 60px;
+		height: 60px;
+	}
+	&:focus {
+		box-shadow: 0 0 0 3px $light-blue;
+	}
+	&:hover {
+	    background-color: $light-gray;
+		box-shadow: none;
+	}
+	&:active {
+		background-color: $dark-gray;
+	}
+	&:disabled {
+	    background-color: $white;
+		border: 1px solid $light-gray;
+		svg path {
+			fill: $dark-gray;
+		}
+	}
+}

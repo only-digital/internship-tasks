@@ -1,0 +1,12 @@
+mixin slider-button(direction)
+	button.slider-button&attributes(attributes)
+		if direction == 'left'
+			svg.slider-button__svg(xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none" transform="rotate(180 0 0)")
+				path(d="M30 22.6667L31.5386 20L58 36L58 44L54.9744 45.8295L54.9744 37.7778L30 22.6667Z" fill="#002F6C")
+				path(d="M31.5386 60L30 57.3333L52.0362 44L52.0362 47.606L31.5386 60Z" fill="#002F6C")
+		else if direction == 'right'
+			svg.slider-button__svg(xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none")
+				path(d="M30 22.6667L31.5386 20L58 36L58 44L54.9744 45.8295L54.9744 37.7778L30 22.6667Z" fill="#002F6C")
+				path(d="M31.5386 60L30 57.3333L52.0362 44L52.0362 47.606L31.5386 60Z" fill="#002F6C")
+		else 
+			p Sorry, we don't have any other options for now, chose from 'right' and 'left'.'Up' and 'down' are coming soon 
