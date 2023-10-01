@@ -1,0 +1,13 @@
+.link-inline {
+	$root: &;
+
+	//Your code here
+
+	color: #0041A0;
+	display: inline-block;
+
+	&:hover {
+		color: #FF0000;
+
+	}
+}
