@@ -1,0 +1,4 @@
+mixin toggle(props)
+	label.toggle
+		input&attributes(attributes)(type="checkbox" name!=props.name value!=props.value).toggle__checkbox
+		.toggle__thumbler

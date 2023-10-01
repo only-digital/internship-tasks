@@ -1,0 +1,98 @@
+$color-system-text: #111;
+$color-main-blue: #002F6C;
+$color-extra-cobolt: #0041A0;
+$color-main-white: #FFF;
+$color-main-grey: #DEDEDE;
+$color-extra-blue: #99B3D8;
+
+.toggle {
+	$root: &;
+
+	display: block;
+	width: 56px;
+	height: 28px;
+
+	@media (max-width: 375px) {
+		width: 40px;
+		height: 20px;
+	}
+
+	&__checkbox {
+		position: absolute;
+		overflow: hidden;
+		width: 1px;
+		height: 1px;
+		clip: rect(0 0 0 0);
+
+		@media (hover: hover) and (min-width: 1280px) {
+			&:hover + #{$root}__thumbler {
+				background-color: $color-main-blue;
+			}
+
+			&:checked:hover + #{$root}__thumbler {
+				background-color: $color-main-blue;
+			}
+		}
+
+		@media (min-width: 1280px) {
+			&:focus-visible {
+				+ #{$root}__thumbler {
+					outline: 3px solid $color-extra-blue;
+				}
+			}
+
+		}
+
+		&:checked {
+			+ #{$root}__thumbler {
+				background-color: $color-extra-cobolt;
+
+				&::after {
+					transform: translate(28px);
+
+					@media (max-width: 375px) {
+						transform: translate(20px);
+					}
+				}
+			}
+		}
+
+		&:disabled {
+			pointer-events: none;
+
+			+ #{$root}__thumbler {
+				background-color: $color-main-grey;
+				cursor: default;
+			}
+		}
+	}
+
+	&__thumbler{
+		position: relative;
+		width: 100%;
+		height: 100%;
+		background-color: $color-main-grey;
+		border-radius: 14px;
+		transition: background-color 0.3s ease, transform 0.3s ease;
+		cursor: pointer;
+
+		&::after {
+			content: '';
+			position: absolute;
+			width: 16px;
+			height: 16px;
+			top: 6px;
+			left: 6px;
+			background-color: $color-main-white;
+			border-radius: 50%;
+			transition: transform 0.3s ease;
+
+			@media (max-width: 375px) {
+				width: 12px;
+				height: 12px;
+				top: 4px;
+				left: 4px;
+			}
+		}
+	}
+}
