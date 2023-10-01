@@ -10,7 +10,7 @@
     margin-top: 10px;
     cursor: pointer;
     transition: background-color 0.3s;
-	
+
     &:disabled {
       background-color: $border-gray;
       pointer-events: none;
@@ -47,13 +47,13 @@
         width: 24px;
       }
     }
-    @media (min-width: 768px) {
+    @media (min-width: 1280px) {
       &:focus {
         outline: 3px solid $border-blue-checkbox;
         background-color: $border-gray;
       }
     }
-    @media (hover: hover) and (min-width: 768px) {
+    @media (hover: hover) and (min-width: 1280px) {
       &:hover {
         background-color: $active-blue;
       }
