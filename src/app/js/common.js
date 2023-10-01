@@ -1,5 +1,5 @@
 import Spoiler from "../../components/spoiler/spoiler.js";
-
+import Spoileritem from "../../components/spoiler-item/spoiler-item.js";
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
  * Ключ объекта - Название компонента, которое было указано во время его создания (совпадает с именем файлов)
@@ -7,6 +7,7 @@ import Spoiler from "../../components/spoiler/spoiler.js";
  */
 const allComponents = {
     'spoiler': Spoiler,
+    'spoiler-item': Spoileritem,
 }
 
 
