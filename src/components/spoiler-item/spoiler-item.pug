@@ -1,6 +1,6 @@
-mixin spoiler-item(props)
+mixin spoiler-item(name, text)
 	.spoiler-item&attributes(attributes)(data-component='spoiler-item')
-		.spoiler__block
-			p.spoiler__name 1. Nullam tincidunt vestibulum porttitor
-			+svg('open').spoiler__open
-		p.spoiler__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi eaque quasi voluptatibus quibusdam dolorum quam commodi omnis cum. Expedita repellendus debitis ut quae hic nulla ducimus aspernatur vero tempore odit.
+		.spoiler-item__block
+			p.spoiler-item__name= name
+			+svg('open').spoiler-item__open.spoiler-item__svg
+		p.spoiler-item__text= text

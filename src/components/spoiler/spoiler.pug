@@ -1,13 +1,10 @@
+
 mixin spoiler(props)
 	.spoiler&attributes(attributes)(data-component='spoiler')
 		p.spoiler__title Lorem ipsum dolor
-		.spoiler__wrapper
-			+spoiler-item()
-		.spoiler__wrapper
-			+spoiler-item()
-		.spoiler__wrapper
-			+spoiler-item()
-		.spoiler__wrapper
-			+spoiler-item()
-		.spoiler__wrapper
-			+spoiler-item()
+		.spoiler__wrapper 
+			+spoiler-item('1. Nullam tincidunt vestibulum porttitor', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi eaque quasi voluptatibus quibusdam dolorum quam commodi omnis cum. Expedita repellendus debitis ut quae hic nulla ducimus aspernatur vero tempore odit.')
+			+spoiler-item('2. Class aptent taciti sociosqu ad litora', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi eaque quasi voluptatibus quibusdam dolorum quam commodi omnis cum. Expedita repellendus debitis ut quae hic nulla ducimus aspernatur vero tempore odit.')
+			+spoiler-item('3. Nulla fringilla ligula elit, non laoreet ipsum rutrum eget', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi eaque quasi voluptatibus quibusdam dolorum quam commodi omnis cum. Expedita repellendus debitis ut quae hic nulla ducimus aspernatur vero tempore odit.')
+			+spoiler-item('4. Mauris ut suscipit tellus', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi eaque quasi voluptatibus quibusdam dolorum quam commodi omnis cum. Expedita repellendus debitis ut quae hic nulla ducimus aspernatur vero tempore odit.')
+			+spoiler-item('5. Nullam placerat porta libero, vel maximus augue euismod eget', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi eaque quasi voluptatibus quibusdam dolorum quam commodi omnis cum. Expedita repellendus debitis ut quae hic nulla ducimus aspernatur vero tempore odit.')

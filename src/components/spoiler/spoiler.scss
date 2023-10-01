@@ -1,5 +1,16 @@
+@import 'src/pages/style.scss';
+
 .spoiler {
 	$root: &;
 
+	margin-left: 160px;
+	margin-top: 183px;
+
+	&__title {
+		font-size: 64px;
+		margin-bottom: 80px;
+	}
+
+	width: 1600px;
 	
 }
