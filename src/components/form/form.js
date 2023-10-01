@@ -41,6 +41,7 @@ class Form extends Component {
 		let emailIsValid = true
 		let checkboxIsValid = true
 		let textAreaIsValid = true
+		let filesIsValid = true
 
 		if (!this.emailInput.value) {
 			this.validateEmailLabel.textContent = 'Поле E-mail обязательно';
@@ -71,7 +72,11 @@ class Form extends Component {
 			textAreaIsValid = true
 		}
 
-		return emailIsValid && checkboxIsValid && textAreaIsValid
+		if (this.files.files.length > 2) {
+			filesIsValid = false
+		}
+
+		return emailIsValid && checkboxIsValid && textAreaIsValid && filesIsValid
 	}
 
 	async onFormSubmit(event) {
