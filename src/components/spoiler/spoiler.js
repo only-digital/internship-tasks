@@ -6,10 +6,10 @@ class Spoiler extends Component {
 
   constructor(element) {
     super(element);
-    this.titleElement = this.getElement('title')
-    this.textElement = this.getElement('text')
+    this.titleElement = this.getElement('title');
+    this.textElement = this.getElement('text');
 
-    this.titleElement.addEventListener('click', this.onSpoilerClick)
+    this.titleElement.addEventListener('click', this.onSpoilerClick);
   }
 
   onSpoilerClick = () => {
