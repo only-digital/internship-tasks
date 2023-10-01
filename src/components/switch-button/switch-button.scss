@@ -1,4 +1,4 @@
-@import '/src/pages/index.scss';
+@use '/src/pages/index.scss' as var;
 
 .outline {
 	position: relative;
@@ -13,7 +13,7 @@
 	&:focus-visible {
 		width: 56px;
 		height: 28px;
-		border: 3px solid $mediumBlue;
+		border: 3px solid var.$mediumBlue;
 		border-radius: 14px;
 		position: absolute;
 		top: 0;
@@ -32,7 +32,7 @@
 
 	.input:checked + &:hover {
 		&:after {
-			background-color: $darkBlue;
+			background-color: var.$darkBlue;
 		}
 	}
 
@@ -41,8 +41,8 @@
 		display: block;
 		width: 56px;
 		height: 28px;
-		background-color: $mediumGrey;
-		border: 0px solid $mediumGrey;
+		background-color: var.$mediumGrey;
+		border: 0px solid var.$mediumGrey;
 		border-radius: 14px;
 		position: absolute;
 		top: 0;
@@ -55,7 +55,7 @@
 		display: block;
 		width: 16px;
 		height: 16px;
-		background-color: $white;
+		background-color: var.$white;
 		border-radius: 50%;
 		position: absolute;
 		top: 6px;
@@ -80,7 +80,7 @@
 }
 
 .input:checked + .label:after {
-	background-color: $blue;
+	background-color: var.$blue;
 }
 
 .input:checked + .label:before {
