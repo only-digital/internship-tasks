@@ -1,0 +1,7 @@
+mixin accordion(props)
+	.accordion&attributes(attributes)(data-component='accordion')
+		//Your code here
+		.accordion__title=props.title
+			+svg('accordion-svg').accordion__svg
+		.accordion__text=props.text
+		
