@@ -1,0 +1,67 @@
+.switch-container {
+	$root: &;
+
+	//Your code here
+	position: relative;
+	display: inline-block;
+	margin-top: 30px;
+	margin-left: 20px;
+	width: 56px;
+	height: 28px;
+	
+	&__input {
+		position: absolute;
+		width: 0;
+		height: 0;
+		
+
+		&:disabled + .switch-container__slider {
+			pointer-events: none;
+		}
+
+		&:checked +.switch-container__slider {
+			background-color: #0041a0;
+			outline: none;
+		}
+		
+		&:hover +.switch-container__slider {
+			background-color: #002F6C;
+		}
+
+		&:focus:not(:hover) + .switch-container__slider {
+			outline: 3px solid #C2DAFF;
+		}
+		
+	}
+
+	&__input:checked + &__slider::before { //применяется к слайдеру(кружку), когда нажат инпут
+		transform: translateX(-28px);
+	}
+
+	// &__input:focus:not(:hover) + &__slider { //применяется к слайдеру, когда  инпут в фокусе	
+	// 	outline: 3px solid #C2DAFF;
+	// }
+
+	&__slider {        //oval
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		border-radius: 20px;
+		background-color: #DEDEDE; 
+
+		&::before {
+			position: absolute;
+			content: "";
+			width: 16px;
+			height: 16px;
+			top: 6px;
+			left: 34px;
+			border-radius: 50%;
+			background-color: #fff;
+			transition: 0.3s;
+		}
+	}
+
+}

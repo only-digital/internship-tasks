@@ -1,0 +1,12 @@
+//- mixin switch(props)
+//- 	.switch&attributes(attributes)
+//- 		//Your code here
+
+mixin switch(props)
+	.switch&attributes(attributes)
+		//Your code here
+		.switch-container
+			input(type='checkbox' class='switch-container__input' id='checkbox')&attributes(attributes)
+			label(for="checkbox").switch-container__slider&attributes(attributes)
+
+		
