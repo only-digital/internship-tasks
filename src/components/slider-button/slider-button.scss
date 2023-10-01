@@ -52,6 +52,7 @@
   }
 
   &:disabled {
+    pointer-events: none;
     .slider-button__arrow {
       fill: #bcbcbc;
     }
