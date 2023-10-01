@@ -1,0 +1,173 @@
+.wrapper-title {
+	margin-top: 30px;
+	margin-left: 30px;
+	margin-bottom: 50px;
+	width: 516px;
+	height: 64px;
+	font-size: 60px;
+	font-family: Arial, Helvetica, sans-serif;
+	
+}
+
+.accordion {
+	$root: &;
+
+	//Your code here
+	
+	width: 1619px;
+	margin-left: 30px;
+	border-top: 1px solid #E6E6E6;
+	border-bottom: 1px solid #E6E6E6;
+	cursor: pointer;
+	font-family: Arial, Helvetica, sans-serif;
+
+	&__title {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: 34px;
+		margin-bottom: 30px;
+		margin-top: 20px;
+		
+	}
+
+	&.active &__title {
+		color: #114c9a;
+
+		svg {
+			transform: rotate(45deg);
+			transition: transform 0.2s ease-in-out;
+		}
+
+	}
+
+	&.active &__text {
+		max-height: max-content;
+		width: 950px;
+		// height: 60px;
+		height: calc(100% + 20px);
+		margin-bottom: 20px;
+		font-size: 18px;
+
+
+	}
+
+	
+	&__svg {
+		width: 35px;
+		height: 35px;
+		flex-shrink: 0;
+	}
+
+	&__text {
+
+		max-width: 640px;
+		//скрываем контент
+
+		max-height: 0;
+		overflow: hidden;
+	}
+}
+
+@media (min-width: 375px) and (max-width: 767.98px) {
+	.accordion {
+		width: 327px;
+		margin-left: 20px;
+
+		&.active &__text {
+			width: 320px;
+		}
+
+		&__svg {
+			
+			width: 16px;
+			height: 16px;
+		}
+	}
+
+	.accordion__title {
+		font-size: 24px;
+	}
+
+	.accordion__text {
+		width: 320px;
+		font-size: 15px;
+	}
+
+	.wrapper-title {
+		width: 190px;
+		height: 60px;
+		font-size: 26px;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1279.98) {
+	.accordion {
+		width: 688px;
+
+		&.active &__text {
+			width: 612px;
+		}
+	}
+
+	.accordion__title {
+		font-size: 24px;
+	}
+
+	.accordion__text {
+		width: 612px;
+	}
+
+}
+
+@media (min-width: 1280px) and (max-width: 1439.98){
+	.accordion {
+		width: 1066px;
+
+		&.active &__text {
+			width: 640px;
+		}
+	}
+
+	.accordion__title {
+		font-size: 24px;
+	}
+
+	.accordion__text {
+		width: 640px;
+	}
+
+	.wrapper-title {
+		width: 339px;
+		height: 42px;
+		font-size: 42px;
+	}
+}
+
+
+@media (min-width: 1440px) and (max-width: 1919.98px) {
+	.accordion {
+		width: 1212px;
+
+		&.active &__text {
+			width: 840px;
+		}
+	}
+
+	.accordion__title {
+		font-size: 24px;
+	}
+
+	.accordion__text {
+		width: 840px;
+		font-size: 15px;
+	}
+	
+	.wrapper-title {
+		width: 387px;
+		height: 48px;
+		font-size: 46px;
+	}
+	
+}
+
