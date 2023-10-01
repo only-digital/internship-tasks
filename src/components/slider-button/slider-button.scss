@@ -5,11 +5,11 @@
 	align-items: center;
 	margin-top: 40px;
 
-	@media (min-width: 375px) {
+	@media (min-width: 768px) {
 		gap: 24px;
 	}
 
-	@media (min-width: 1280px) {
+	@media (min-width: 1920px) {
 		gap: 40px;
 	}
 
@@ -47,7 +47,7 @@
 				border-color: #DEDEDE;
 			}
 
-			@media (min-width: 1280px) {
+			@media (min-width: 1920px) {
 				width: 80px;
 				height: 80px;
 				padding-right: 4px;
@@ -63,7 +63,7 @@
 				
 				fill: #002F6C;
 
-				@media (min-width: 1280px) {
+				@media (min-width: 1920px) {
 					width: 28px;
 					height: 40px;
 				}
@@ -81,7 +81,7 @@
 
 		opacity: 0.4;
 
-		@media (min-width: 375px) {
+		@media (min-width: 768px) {
 			display: block;
 			padding-top: 2px;
 		}

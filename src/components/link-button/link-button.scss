@@ -62,19 +62,19 @@
 		}
 	}
 
-	@media (min-width: 375px) {
+	@media (min-width: 768px) {
 		width: max-content;
 		max-width: none;
 		padding-left: 18px;
 		gap: 14px;
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: 1280px) {
 		padding-left: 16px;
 		gap: 12px;
 	}
 
-	@media (min-width: 1280px) {
+	@media (min-width: 1920px) {
 		padding: 7px 14px 9px 18px;
 	}
 
@@ -85,11 +85,11 @@
 
 		transition: color 0.3s;
 
-		@media (min-width: 768px) {
+		@media (min-width: 1280px) {
 			font-size: 14px;
 		}
 
-		@media (min-width: 1280px) {
+		@media (min-width: 1920px) {
 			font-size: 16px;
 		}
 	}
@@ -98,7 +98,7 @@
 		width: 24px;
 		height: 24px;
 
-		@media (min-width: 1280px) {
+		@media (min-width: 1920px) {
 			width: 32px;
 			height: 32px;
 		}
