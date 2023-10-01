@@ -1,6 +1,6 @@
 mixin spoiler-item(name, text)
-	.spoiler-item&attributes(attributes)(data-component='spoiler-item')
+	.spoiler-item.closed&attributes(attributes)(data-component='spoiler-item')
 		.spoiler-item__block
 			p.spoiler-item__name= name
-			+svg('open').spoiler-item__open.spoiler-item__svg
+			+svg('open').spoiler-item__svg
 		p.spoiler-item__text= text

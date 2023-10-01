@@ -6,8 +6,12 @@
 
     border-bottom: 1px solid #E6E6E6;
 
+    &:hover {
+        cursor: pointer;
+    }
+    
     &__text {
-        // display: none;
+        display: none;
         margin-bottom: 10px;
         margin-top: 30px;   
         
