@@ -1,0 +1,8 @@
+mixin my-slider(props)
+	.my-slider&attributes(attributes)
+		.my-slider__arrow-container 
+			button.my-slider__arrow.arrow-left
+				+svg('slider-arrow').my-slider__svg
+			button.my-slider__arrow.arrow-right
+				+svg('slider-arrow').my-slider__svg
+		.my-slider__text!= props.text
