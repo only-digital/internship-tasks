@@ -1,3 +1,147 @@
 .grid-container {
     // Your code here
 }
+
+.grid__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1em;
+    max-width: 1730px;
+    margin: 0 auto;
+
+    &__header {
+        font-family: Arial;
+        font-size: 46px;
+        font-weight: 700;
+        color: #04306A;
+        margin: 90px;
+
+        &__red {
+            color: #FC0D1B;
+        }
+    }
+
+    &__text {
+        font-family: Arial;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 38px;
+        letter-spacing: -0.02em;
+        text-align: left;
+        color: #04306A;
+    }
+
+    &__one {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: minmax(420px, auto);
+        grid-gap: 1em;
+
+        &__right {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-auto-rows: minmax(420px, auto);
+            grid-gap: 1em;
+        }
+    }
+
+
+
+    &__two {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-rows: minmax(480px, auto);
+        grid-gap: 1em;
+    }
+
+    &__three {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: minmax(420px, auto);
+        grid-gap: 1em;
+    }
+
+    &__block {
+        background-color: #F4F4F4;
+        padding: 30px;
+        position: relative;
+    }
+
+
+}
+
+.arrow {
+    display: inline-flex;
+    position: absolute;
+    right: 40px;
+    bottom: 30px;
+    width: 64px;
+    height: 36px;
+}
+
+.arrow::before,
+.arrow::after {
+    display: inline-flex;
+    position: absolute;
+    content: '';
+}
+
+.arrow::before {
+    width: 60px;
+    height: 5px;
+    background-color: #04306A;
+}
+
+.arrow::after {
+    width: 36px;
+    height: 36px;
+    bottom: 13px;
+    right: 0;
+    border-top: 5px solid #04306A;
+    border-right: 5px solid #04306A;
+    transform: rotate(45deg);
+
+    &__white {
+        display: inline-flex;
+        position: absolute;
+        right: 40px;
+        bottom: 30px;
+        width: 64px;
+        height: 36px;
+
+        &::before,
+        &::after {
+            display: inline-flex;
+            position: absolute;
+            content: '';
+        }
+
+        &::before {
+            width: 60px;
+            height: 5px;
+            background-color: #FFFFFF;
+        }
+
+        &::after {
+            width: 36px;
+            height: 36px;
+            bottom: 13px;
+            right: 0;
+            border-top: 5px solid #FFFFFF;
+            border-right: 5px solid #FFFFFF;
+            transform: rotate(45deg);
+        }
+    }
+}
+
+.white {
+    color: #FFFFFF;
+}
+
+.blue1{
+    background-color: #04306A;
+}
+
+.blue2{
+    background-color: #0041A0;
+}
