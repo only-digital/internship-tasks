@@ -1,0 +1,120 @@
+.form {
+	$root: &;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	font-family: Arial,sans-serif;
+	font-weight: 400;
+
+	&__left-side {
+		width: 100%;
+	}
+
+	&__right-side {
+		width: 100%;
+	}
+
+	&__title {
+		font-size: 32px;
+		line-height: 38px;
+		text-align: left;
+		color:#002F6C;
+	}
+
+	&__email-input {
+		border: 1px solid #0041A0;
+		height: 48px;
+		border-radius: 24px;
+		max-width: 836px;
+		width: 100%;
+		padding: 8px 20px 14px 20px;
+	}
+
+	&__submit {
+		width: 155px;
+		height: 48px;
+		display: flex;
+		align-items: center;
+		padding: 0 20px;
+		gap: 14px;
+		background-color: #0041A0;
+		color: white;
+		border-radius: 24px;
+		font-family: Arial,sans-serif;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 16px;
+		text-align: left;
+
+		svg {
+			width: 32px;
+			height: 32px;
+		}
+	}
+
+	&__email-label {
+		font-size: 12px;
+		line-height: 18px;
+		letter-spacing: -0.02em;
+		text-align: left;
+		color: #909090;
+	}
+
+	&__policy-label {
+		font-size: 14px;
+		line-height: 21px;
+		letter-spacing: 0em;
+		text-align: left;
+		position: relative;
+		padding-left: 34px;
+		color: #909090;
+		cursor: pointer;
+	}
+	&__policy-link {
+		color: #002F6C;
+		cursor: pointer;
+		font-size: 14px;
+		line-height: 21px;
+		letter-spacing: 0em;
+		text-align: left;
+	}
+
+	&__policy-input:not(:checked) + label:after {
+    opacity: 0;
+	}
+
+	&__policy-input:checked + label:after {
+    opacity: 1;
+	}
+
+	&__policy-input:checked + label:before, 
+	&__policy-input:not(:checked) + label:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 16px;
+		height: 16px;
+		border: 1px solid #909090;
+    background-color: #ffffff;
+	}
+
+	&__policy-input:checked + label:after, 
+	&__policy-input:not(:checked) + label:after {
+    content: "";
+    position: absolute;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+		left: 3px;
+    top: 3px;
+    width: 10px;
+    height: 5px;
+    border-radius: 1px;
+    border-left: 3px solid #909090;
+    border-bottom: 3px solid #909090;
+    transform: rotate(-45deg);
+	}
+
+}

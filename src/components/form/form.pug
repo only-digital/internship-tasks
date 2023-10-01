@@ -1,0 +1,15 @@
+mixin form({ title='', ref='http://mock-address-change-me'}={})
+	form.form&attributes(attributes)(data-component='form')
+		.form__left-side 
+			h3.form__title=title
+			input#id(type="checkbox", name="id")
+		.form__right-side
+			.form__email-wrapper 
+				label.form__email-label(for="email")='Email' 
+				input.form__email-input(type="email" name="email")
+			.form__policy-wrapper
+				input.form__policy-input(type="checkbox" id="policy" name="policy")
+				label.form__policy-label(for="policy") Вы подтверждаете, что ознакомились c &nbsp;
+				a.form__policy-link(href=ref target="_blank" rel="noreferrer noopener") политикой обработки персональных данных	
+			button.form__submit(type="submit") Отправить
+				+svg('arrow')
