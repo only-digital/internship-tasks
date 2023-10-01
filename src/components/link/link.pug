@@ -1,0 +1,4 @@
+mixin link(props)
+	a.link(href!=props.url target='_blank')(class=`${props.disabled ? 'link_disabled' : ''}`)&attributes(attributes)!=props.text
+		if props.hasIcon
+			+svg('link-icon').link__icon

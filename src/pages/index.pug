@@ -18,3 +18,20 @@ block body
         br
         +slider({currPage: '01', numOfPages: '04'})(disabled='')
         br
+        +heading-h2({title: 'Ссылки'})
+        +link({text: 'Sustainalytics.com', url: "https://www.sustainalytics.com/", hasIcon: true})
+        br
+        br
+        +link({text: 'Sustainalytics.com', url: "https://www.sustainalytics.com/", hasIcon: true, disabled: true})(tabindex='-1')
+        br
+        br
+        p.link-text
+            | Для подключения сервиса добавьте номер 
+            +link({text: '+7(921)058-57-19', url: "tel:+79210585719", hasIcon: false})
+            |  в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже
+        p.link-text
+            | Цифровые продукты, направленные на создание 
+            +link({text: 'дополнительных сервисов', url: "https://www.sustainalytics.com/", hasIcon: false})
+            |  и устранение «проблемных точек» наших клиентов
+        br
+        

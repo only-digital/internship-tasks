@@ -95,10 +95,6 @@ $color-extra-grey: #DEDEDE;
 			margin-left: 40px;
 		}
 
-		&_disabled {
-			color: $color-main-grey;
-		}
-
 		@media (max-width: 375px) {
 			display: none;
 		}
