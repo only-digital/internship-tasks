@@ -5,13 +5,18 @@ block body
 
     style
         include style.scss
-
+    
+    h2 example button
     +example-button({text: 'example text'})
     +example-button({text: 'disabled'})(disabled='')
     h2 Состояние кнопки
     +button({text: 'Кнопка'})
     +button({text: 'Кнопка'})(disabled='')
     p Для того, чтобы увидеть "Состояние кнопки 2" необходимо добавить к тэгу <code>button.button</code> класс <code>.button_red</code>
+
+    h2 Кнопки слайдера
+    +slider-button({number: 10})
+    +slider-button({number: 10})(disabled='')
 
     h2 Ссылки
     +link({text: 'Sustainalytics.com', icon: 'true'})(href='https://sustainalytics.com') 
