@@ -5,30 +5,31 @@ block body
 
     style
         include style.scss
-    
-    h2 example button
-    +example-button({text: 'example text'})
-    +example-button({text: 'disabled'})(disabled='')
-    h2 Состояние кнопки
-    +button({text: 'Кнопка'})
-    +button({text: 'Кнопка'})(disabled='')
-    p Для того, чтобы увидеть "Состояние кнопки 2" необходимо добавить к тэгу <code>button.button</code> класс <code>.button_red</code>
 
-    h2 Кнопки слайдера
-    +slider-button({number: 10})
-    +slider-button({number: 10})(disabled='')
+    .block
+        h2 example button
+        +example-button({text: 'example text'})
+        +example-button({text: 'disabled'})(disabled='')
+    .block
+        h2 Состояние кнопки
+        +button({text: 'Кнопка'})
+        +button({text: 'Кнопка'})(disabled='')
+        p Для того, чтобы увидеть "Состояние кнопки 2" необходимо добавить к тэгу <code>button.button</code> класс <code>.button_red</code>
+    .block
+        h2 Кнопки слайдера
+        +slider-button({number: 10})
+        +slider-button({number: 10})(disabled='')
+    .block
+        h2 Ссылки
+        +link({text: 'Sustainalytics.com', icon: 'true'})(href='https://sustainalytics.com') 
+        br 
+        +link({text: 'Sustainalytics.com', icon: 'true'})(href='https://sustainalytics.com', class='disabled')
+        p 
+            | Для подключения сервиса добавьте номер 
+            +link({text: '+7(921)058-57-19', icon: ''})(href='tel:+7(921)058-57-19')
+            | &nbsp;в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже
 
-    h2 Ссылки
-    +link({text: 'Sustainalytics.com', icon: 'true'})(href='https://sustainalytics.com') 
-    br 
-    +link({text: 'Sustainalytics.com', icon: 'true'})(href='https://sustainalytics.com', class='disabled')
-
-    p 
-        | Для подключения сервиса добавьте номер 
-        +link({text: '+7(921)058-57-19', icon: ''})(href='tel:+7(921)058-57-19')
-        | &nbsp;в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже
-
-    p 
-        | Цифровые продукты, направленные на создание 
-        +link({text: 'дополнительных сервисов', icon: ''})(href='https://sustainalytics.com', target='_blank') 
-        | &nbsp;и устранение «проблемных точек» наших клиентов
+        p 
+            | Цифровые продукты, направленные на создание 
+            +link({text: 'дополнительных сервисов', icon: ''})(href='https://sustainalytics.com', target='_blank') 
+            | &nbsp;и устранение «проблемных точек» наших клиентов

@@ -1,6 +1,6 @@
 h2 {
   font-size: 24px;
-  margin: 16px 0 8px;
+  margin-bottom: 5px;
   color: tomato;
   text-decoration: underline;
 }
@@ -9,4 +9,13 @@ code {
   background-color: #EBEBEB;
   border-radius: 25px;
   padding: 1px 10px;
+}
+
+.block {
+  border: 1px solid black;
+  width: 100%;
+  padding: 10px;
+  max-width: 900px;
+  margin-bottom: 5px;
+  border-radius: 25px;
 }
