@@ -1,0 +1,28 @@
+.Content {
+	background-color: var(--clr-bg-secondary);
+	display: flex;
+	flex-direction: column;
+	padding: 48px 0;
+	min-height: 0;
+	flex-grow: 1;
+
+	& > * {
+		padding: 0 40px;
+	}
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	gap: 32px;
+	justify-content: space-between;
+	margin-bottom: 28px;
+}
+
+.title {
+	font-size: 32px;
+	font-weight: 600;
+	line-height: 40px;
+	letter-spacing: 0.25px;
+	text-align: left;
+}

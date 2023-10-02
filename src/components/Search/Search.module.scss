@@ -1,0 +1,22 @@
+.Search {
+	height: 56px;
+	color: var(--clr-text);
+	max-width: 600px;
+	background-color: var(--clr-bg);
+	display: flex;
+	align-items: center;
+	border-radius: 10px;
+	padding: 0 16px;
+	flex-grow: 1;
+}
+
+.input {
+	flex-grow: 1;
+	&::placeholder {
+		opacity: 0.4;
+	}
+}
+
+.searchBtn {
+	color: var(--clr-primary);
+}

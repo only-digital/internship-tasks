@@ -6,6 +6,18 @@ html {
     position: relative;
 }
 
+body {
+	overflow: hidden;
+}
+
+:root {
+	--clr-accent: #D9E1EC;
+	--clr-primary: #007FFF;
+	--clr-text: #213C57;
+	--clr-bg: white;
+	--clr-bg-secondary: #F3F6F9;
+}
+	
 * {
     box-sizing: border-box;
 }

@@ -1,0 +1,16 @@
+.TodoList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+	overflow-y: auto;
+	flex-grow: 1;
+	min-height: 0;
+
+	&.completed .title {
+		color: var(--clr-primary);
+	}
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}

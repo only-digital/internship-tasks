@@ -1,8 +1,18 @@
 .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 6rem;
-    min-height: 100vh;
+  display: flex;
+	height: 100vh;
+	& > * {
+		flex-grow: 1;
+	}
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+.header {
+  height: 80px;
+  border-bottom: 1px solid var(--clr-accent);
+	flex-shrink: 0;
 }

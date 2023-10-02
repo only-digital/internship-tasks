@@ -19,14 +19,15 @@
     },
     "homepage": "https://github.com/VitoBravis/internship-tasks#readme",
     "dependencies": {
+        "@svgr/webpack": "^8.1.0",
         "next": "13.4.19",
         "react": "18.2.0",
         "react-dom": "18.2.0"
     },
     "devDependencies": {
-        "sass": "^1.67.0",
         "colors": "^1.4.0",
+        "eslint": "^8.47.0",
         "rimraf": "^3.0.2",
-        "eslint": "^8.47.0"
+        "sass": "^1.67.0"
     }
 }

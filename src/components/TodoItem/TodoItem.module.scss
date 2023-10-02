@@ -1,0 +1,59 @@
+.TodoItem {
+	padding: 24px;
+	color: var(--clr-text);
+	background-color: var(--clr-bg);
+	border-radius: 10px;
+	cursor: pointer;
+
+	&:not(.completed):hover .header {
+		color: var(--clr-primary);	
+	}
+
+	&.completed .title {
+		opacity: 0.3;
+		text-decoration: line-through;
+	}
+}
+
+.header {	
+	display: flex;
+	padding-bottom: 17px;
+	border-bottom: 1px solid var(--clr-accent);
+}
+
+.title {
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 31px;
+	letter-spacing: 0px;
+	text-align: left;
+}
+
+.text {
+	margin: 10px 0;
+	max-width: 80ch;
+}
+
+.deleteBtn {
+	margin-left: auto;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 26px;
+	width: 26px;
+	&::after, &::before {
+		content: '';
+		position: absolute;
+		height: 2px;
+		width: 14px;
+		border-radius: 2px;
+		background-color: var(--clr-primary);
+	}
+	&::after {
+		rotate: 45deg;
+	}
+	&::before {
+		rotate: -45deg;
+	}
+}

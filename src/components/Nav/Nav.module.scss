@@ -1,0 +1,35 @@
+.Nav {
+	max-width: 290px;
+	border-right: 1px solid var(--clr-accent);
+	min-height: 100%;
+	width: 100%;
+}
+
+.header {
+	height: 80px;
+	gap: 9px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-bottom: 1px solid var(--clr-accent);
+
+	& > *:last-child {
+		margin-right: 25%;
+	}
+}
+
+.list {
+	padding: 40px 25px;
+}
+
+.item {
+	background-color: var(--clr-accent);
+	min-height: 52px;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	border-radius: 10px;
+	padding: 0 18px;
+	align-items: center;
+	color: var(--clr-primary);
+}
