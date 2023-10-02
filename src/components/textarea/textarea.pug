@@ -1,0 +1,8 @@
+mixin textarea(props)
+	.textarea-block.field.input
+		label.input-wrapper
+			span.label= props.label
+			textarea&attributes(attributes)
+			span.svg-valid
+				include ../../assets/icons/check.svg
+		p.error Что то пошло не так

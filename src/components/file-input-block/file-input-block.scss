@@ -1,0 +1,94 @@
+@import '../../global.scss';
+
+.file-input-block {
+  $root: &;
+
+
+  margin-top: 28px;
+
+	&__wrapper {
+			display: flex;
+				align-items: center;
+				gap: 16px 32px;
+				flex-wrap: wrap;
+	}
+
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    height: 46px;
+    padding: 14px 16px 16px;
+    gap: 16px;
+    border-radius: 24px;
+
+		&:focus-within {
+			
+		}
+  }
+
+  &__input {
+    @include visual-hidden;
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 100%;
+  }
+
+  &__error {
+    &:empty {
+      display: none;
+    }
+    font-size: 12px;
+
+    line-height: 18px;
+    color: #ff0000;
+  }
+
+  .file-item {
+    height: 40px;
+    padding: 10px 13px 10px 18px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    display: inline-flex;
+    border-radius: 27px;
+
+    background-color: #f4f4f4;
+
+    .type {
+      color: #111111;
+    }
+
+    .info {
+      color: #909090;
+    }
+
+    .remove-btn {
+      width: 20px;
+      height: 20px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+
+      &::after,
+      &::before {
+        content: "";
+        min-width: 10px;
+        min-height: 1px;
+        background-color: #002f6c;
+        position: absolute;
+      }
+
+      &::after {
+        rotate: 45deg;
+      }
+      &::before {
+        rotate: -45deg;
+      }
+    }
+  }
+}

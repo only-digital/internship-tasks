@@ -1,0 +1,26 @@
+.textarea-block {
+	$root: &;
+
+	height: 166px;
+
+	.svg-valid {
+		margin-top: auto;
+		margin-bottom: 16px;
+	}
+
+	.input-wrapper {
+		display: flex;
+		height: 100%;
+		margin-bottom: auto;
+	}
+	
+	& .input-wrapper textarea {
+		padding-top: 12px;
+		padding-bottom: 16px;
+		margin-bottom: auto;
+	}
+
+	&:is(.valid, .invalid, :focus-within) .input-wrapper textarea, .input-wrapper:hover textarea {
+		height: 100%;
+	}
+}

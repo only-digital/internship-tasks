@@ -1,0 +1,33 @@
+.form-block {
+  $root: &;
+
+	margin: 26px 30px;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 160px;
+  margin-right: 130px;
+
+  &__form {
+    flex-grow: 1;
+		padding-top: 24px;
+  }
+
+  &__title {
+    color: #002f6c;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -0.04rem;
+  }
+
+	&__submit-button {
+			margin-top: 30px;
+				display: inline-flex;
+				align-items: center;
+				gap: 14px;
+				border-radius: 24px;
+				height: 48px;
+				padding: 2px 14px 2px 18px;
+	}
+}

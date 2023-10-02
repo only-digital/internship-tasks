@@ -1,0 +1,8 @@
+mixin file-input-block(props)
+	.file-input-block.field(data-component='file-input-block')
+		.file-input-block__wrapper
+			label.file-input-block__label.action
+				input(type="file", multiple).file-input-block__input&attributes(attributes)
+				span.file-input-block__text Прикрепить файл
+				include ../../assets/icons/plus.svg
+		span.file-input-block__error

@@ -1,0 +1,71 @@
+@import '../../global.scss';
+
+.confirm-checkbox {
+  $root: &;
+
+  display: block;
+  margin-top: 15px;
+
+  input {
+		@include visual-hidden;
+  }
+
+	input:is(:focus-visible, :focus) + &__wrapper__checkbox {
+			border-color: #0041a0;
+	}
+
+  &__wrapper {
+    display: flex;
+    gap: 12px;
+    user-select: none;
+
+    &:hover &__checkbox {
+      border-color: #0041a0;
+    }
+
+    &__checkbox {
+      width: 16px;
+      height: 16px;
+      border: 1px solid #bcbcbc;
+      display: flex;
+      flex-shrink: 0;
+      outline: none;
+
+      svg {
+        display: none;
+        margin: auto;
+        color: white;
+      }
+    }
+
+    &__text {
+      color: #909090;
+
+      a {
+        color: #002f6c;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &:not(.invalid) .error {
+    display: none;
+  }
+
+  .error {
+    margin-top: 10px;
+    color: #ff0000;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  input:checked + &__wrapper__checkbox {
+    background-color: #002f6c;
+
+    svg {
+      display: block;
+    }
+  }
+}

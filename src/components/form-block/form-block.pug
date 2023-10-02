@@ -1,0 +1,13 @@
+
+mixin form-block(props)
+	.form-block&attributes(attributes)(data-component='form-block')
+		h1.form-block__title Форма обратной связи
+		form.form-block__form
+			+input({label: 'E-mail'})(name="email" placeholder="E-mail" maxlength="255", required, type="text")
+			//- +input({label: 'Пароль'})(name="password" placeholder="Password" maxlength="255", required, type="text")
+			+textarea({label: "Ваше сообщение"})(name="body" placeholder="Ваше сообщение" maxlength="1000", required)
+			+file-input-block()(accept=".pdf, .doc, .docx")
+			+confirm-checkbox()(required)
+			button.form-block__submit-button.action
+				span.form-block__submit-button__text Отправить
+				include ../../assets/icons/arrow-right.svg

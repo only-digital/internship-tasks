@@ -1,0 +1,8 @@
+mixin input(props)
+	.input-block.field.input
+		label.input-wrapper
+			span.label= props.label
+			input&attributes(attributes)
+			span.svg-valid
+				include ../../assets/icons/check.svg
+		p.error Что то пошло не так

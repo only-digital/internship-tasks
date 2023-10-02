@@ -1,0 +1,177 @@
+textarea {
+  border: none;
+  background: none;
+  outline: none;
+  resize: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+
+.input {
+  padding-top: 18px;
+  position: relative;
+
+  .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 20px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.02em;
+    color: #909090;
+  }
+  .input-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 10px;
+    border-radius: 24px;
+
+    .svg-valid {
+      display: inline-flex;
+    }
+
+    &:focus-within {
+      outline: 1px solid #0041a0;
+    }
+
+    input,
+    textarea {
+      box-sizing: border-box;
+      color: #111111;
+      height: 48px;
+      width: 100%;
+      padding: 13px 0 19px;
+      box-shadow: 0 1px 0 0 #dedede;
+
+      ::placeholder {
+        color: #111111;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 16px;
+        letter-spacing: -0.02em;
+      }
+    }
+  }
+
+  &.valid .input-wrapper,
+  &:not(.invalid) .input-wrapper:not(:focus-within):hover {
+    background-color: #f4f4f4;
+  }
+
+  &:is(.valid, .invalid, :focus-within) :is(input, textarea),
+  .input-wrapper:hover :is(input, textarea) {
+    box-shadow: none;
+  }
+
+  &:not(.valid, .invalid, :focus-within) .label {
+    display: none;
+  }
+
+  &:not(.valid) .svg-valid {
+    display: none;
+  }
+
+  &.invalid .input-wrapper {
+    outline: 1px solid #ff0000;
+    background: none;
+  }
+
+  &:not(.invalid) .error {
+    display: none;
+  }
+
+  .error {
+    margin-top: 2px;
+    margin-left: 20px;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: -0.02em;
+    color: #ff0000;
+  }
+}
+
+.action {
+  outline: 1px solid #bcbcbc;
+  color: #021f45;
+
+  &:is(:hover, :active) {
+    color: white;
+    svg {
+      color: white;
+    }
+  }
+
+  &:hover {
+    background-color: #0041a0;
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: #002f6c;
+  }
+
+  &:is(:focus-visible, :focus-within) {
+    outline: 3px solid #99b3d8;
+    color: #021f45;
+    svg {
+      color: #002f6c;
+    }
+  }
+
+  &:is(:disabled, .disabled) {
+    border: 1px solid #bcbcbc;
+    color: #909090;
+    pointer-events: none;
+  }
+}
+
+.popover {
+	$arrow-size: 16px;
+  width: 240px;
+  background-color: white;
+  color: #002f6c;
+  font-size: 14px;
+  line-height: 21px;
+  filter: drop-shadow(0px 4px 40px rgba(0, 0, 0, 0.1));
+  position: absolute;
+  top: 0;
+  left: 0;
+  translate: -80% calc(-100% - $arrow-size - 10px);
+
+  &__content {
+    padding: 16px 20px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-right: $arrow-size solid white;
+      border-bottom: $arrow-size solid transparent;
+      translate: 0 100%;
+    }
+  }
+}
+
+
+@mixin visual-hidden {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		border: 0;
+		padding: 0;
+		white-space: nowrap;
+		clip-path: inset(100%);
+		clip: rect(0 0 0 0);
+		overflow: hidden;
+}
