@@ -48,11 +48,18 @@
 
 		&:focus {
 			color: #0041A0;
-			border-width: 3px;
-			border-style: #99B3D8;
+			outline: 3px solid #99B3D8;
 
 			#{$root}__svg {
 				fill: #0041A0;
+			}
+
+			&:hover {
+				color: #FFF;
+
+				#{$root}__svg {
+					fill: #FFF;
+				}
 			}
 		}
 	}
