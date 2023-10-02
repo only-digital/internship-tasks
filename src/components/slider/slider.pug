@@ -1,0 +1,8 @@
+mixin slider(props)
+	.slider
+		.wrapper
+			button.btn.btn-left&attributes(attributes)
+				+svg('pagination-left').btn__icon
+			button.btn.btn_right&attributes(attributes)
+				+svg('pagination-right').btn__icon
+		p.count 01/04

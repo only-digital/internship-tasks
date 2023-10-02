@@ -47,6 +47,8 @@
         "rimraf": "^3.0.2",
         "sass": "^1.66.1",
         "sass-loader": "^13.3.2",
+        "stylelint": "^15.10.3",
+        "stylelint-config-standard-scss": "^11.0.0",
         "svg-sprite-loader": "^6.0.11",
         "svg-transform-loader": "^2.0.13",
         "webpack": "^5.88.2",

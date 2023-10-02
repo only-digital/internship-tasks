@@ -3,5 +3,31 @@ extends ../../build_modules/common
 
 block body
     +example-button({text: 'example text'})
+    br
     +example-button({text: 'disabled'})(disabled='')
-    //Your code here
+    br
+    +button({text: 'Кнопка'})
+    br
+    +button({text: 'Кнопка'})(disabled='')
+    br
+    +button-alt({text: 'Кнопка'})
+    br
+    +button-alt({text: 'Кнопка'})(disabled='')
+    br
+    +slider({text: '01/04'})
+    br
+    +slider({text: '01/04'})(disabled='')
+    br
+    +link({text: 'Sustainalytics.com' , setIcon: true})(href='#')
+    br
+    +link({text: 'Sustainalytics.com', setIcon: true})(href='#')(class='disabled')
+    br
+    p Для подключения сервиса добавьте  номер 
+        +link({text: '+7(921)058-57-19' , setIcon: false})(href='#')
+        |  
+        | в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже
+    br
+    +switch 
+    br
+    
+

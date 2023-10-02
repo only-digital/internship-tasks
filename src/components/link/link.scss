@@ -1,0 +1,47 @@
+$red: #ff0000;
+$red-dark: #bf1d26;
+$blue: #0041a0;
+$blue-dark: #002f6c;
+$grey: #bcbcbc;
+
+.link {
+  $root: &;
+  display: inline-block;
+  color: $blue;
+  font-family: Grtsk Peta, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: -0.32px;
+  transition: color 0.3s, background-color 0.3s;
+
+  &:hover {
+    color: $red;
+  }
+
+  &:active {
+    color: $red-dark;
+  }
+
+  &:focus {
+    background-color: rgba($blue, 0.15);
+    color: $blue;
+  }
+
+  &.disabled {
+    pointer-events: none;
+    color: $grey;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
+
+  &__svg {
+    margin-left: 10px;
+    width: 24px;
+    height: 24px;
+    fill: $blue-dark;
+  }
+}

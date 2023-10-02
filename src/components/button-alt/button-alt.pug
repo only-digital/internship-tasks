@@ -1,0 +1,5 @@
+mixin button-alt(props)
+	button.button-alt&attributes(attributes)
+		span.button-alt__text!=props.text 
+		span.button-alt__icon 
+			+svg('arrow-btn').button-alt__icon
