@@ -16,4 +16,7 @@ $border-width-fast-transition:border-width 0.2s;
 $fill-medium-transition:fill 0.4s;
 $fill-fast-transition:fill 0.2s;
 
-$margin-fast-transition:margin-inline 0.3s; //this transition for switch on - switch off statement 
+$outline-color-fast-transition:outline-color 0.3s;
+$outline-color-medium-transition:outline-color 0.4s linear;
+
+$transform-fast-transition:transform 0.2s; 

@@ -3,78 +3,102 @@
 
 .only-switcher {
 	$root: &;
-	display: flex;
-	width: 62px;
-	height: 34px;
+	display: block;
+	position: relative;
+	width: 56px;
+	height: 28px;
 	align-items: center;
 
-	border-radius: 17px;
-	border-width: 3px;
-	border-style: solid;
-	border-color: $White-color;
+	border-radius: 14px;
+	outline-style: solid;
+	outline-color: transparent;
+	outline-width: 3px;
+	
 
-	background-color: $background-color-switcher;
 	transition:	$background-color-fast-transition,
-				$border-color-fast-transition;
+				$outline-color-medium-transition;
 
 	@media(max-width:375px){
-		width: 46px;
-		height: 26px;
-		border-radius: 13px;
+		width: 40px;
+		height: 20px;
+		border-radius: 14px;
 	}
 
 	&__circle{
+
+		border-radius: 14px;
 		
-		width: 16px;
-		height: 16px;
-		transition: $margin-fast-transition;
-		background-color: $background-color-circle;
-		border-radius: 50%;
+		cursor: pointer;
 
-		@media(max-width:375px){
-			width:12px;
-			height: 12px;	
-		}
-	}
-
-	&_active{
-
-		#{$root}__circle{
-
-			margin-inline: 34px 6px;
-
-			@media(max-width:375px){
-				margin-inline: 24px 4px;
-			}
-		}
-		
-	}
-
-	&_disabled{
-
-		#{$root}__circle{
-
-			margin-inline: 6px 34px;
-
-			@media(max-width:375px){
-				margin-inline: 24px 4px;
-			}
-		}
-
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	
+		transition: 0.4s;
 		background-color: $disabled-3-color;
 
+		&::before{
+			
+			position: absolute;
+			content: '';
+			left: 6px;
+			top:6px;
+			border-radius: 50%;
+			width: 16px;
+			height: 16px;
+			
+			transition: $transform-fast-transition;
+			background-color: $background-color-circle;
+
+			@media(max-width:375px){
+				left: 4px;
+				top: 4px;
+				width:12px;
+				height: 12px;	
+			}
+		}
 	}
+
+	input:checked + &__circle{
+
+		background-color: $background-color-switcher;
+
+	}
+
+	input:checked + &__circle::before{
+
+		transform: translateX(28px);
+		
+		@media(max-width:375px){
+			transform: translateX(20px);
+		}
+	}
+
+	&__input{
+		opacity:0;
+		width: 0;
+		height: 0;
+	}
+
+	
 
 	&:hover{
 
-		background-color: $background-color-hover-switcher;
+		#{$root}__circle{
+
+			background-color: $background-color-hover-switcher;
+
+		}
 
 	}
 
 
 	&:focus{
 		
-		border-color: $focus-color;
+		
+		outline-color: $focus-color;
 
 	}
 
