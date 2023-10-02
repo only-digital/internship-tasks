@@ -1,0 +1,19 @@
+.link-text {
+  $root: &;
+
+  font-family: Arial;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  color: #0041a0;
+  pointer-events: stroke;
+  transition: all 0.3s;
+
+  &:hover {
+    color: #ff0000;
+  }
+
+  &:active {
+    color: #bf1d26;
+  }
+}
