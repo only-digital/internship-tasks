@@ -14,7 +14,9 @@ body {
 	max-width: 1920px;
 }
 
-.title {
+.grid-title {
+	grid-template-columns: 18% auto;
+	gap: 0;
 	margin-bottom: 82px;
 	color: $blue;
 	font-size: 46px;
@@ -25,11 +27,6 @@ body {
 	.red {
 		color: #fc0d1b;
 	}
-}
-
-.grid-title {
-	grid-template-columns: 18% auto;
-	gap: 0;
 }
 
 .grid {
