@@ -1,7 +1,8 @@
 .wrapper {
   padding: 20px 24px;
+  font-family: Arial, sans-serif;
 
-  button:not(:last-child) {
+  > *:not(:last-child) {
     margin-bottom: 20px;
   }
 }
@@ -15,8 +16,8 @@
   align-items: center;
   justify-content: center;
   border-radius: 25px;
-  border: 1px solid #bcbcbc;
-  color: #111111;
+  border: 1px solid $grey-1;
+  color: $text-black;
   padding: 14px;
   width: 100%;
   height: 42px;
@@ -25,40 +26,40 @@
   user-select: none;
 
   &:hover {
-    background: #0041a0;
-    color: #ffffff;
+    background: $cobolt;
+    color: $main-white;
     border: none;
 
     #{$root}__svg {
-      color: #ffffff;
+      color: $main-white;
     }
   }
 
   &:active {
-    background: #002f6c;
-    color: #ffffff;
+    background: $main-blue;
+    color: $main-white;
     border: none;
 
     #{$root}__svg {
-      color: #ffffff;
+      color: $main-white;
     }
   }
 
   &:focus {
-    color: #0041a0;
-    border: 3px solid #99b3d8;
+    color: $cobolt;
+    border: 3px solid $blue-light;
 
     #{$root}__svg {
-      color: #0041a0;
+      color: $cobolt;
     }
   }
 
   &:disabled {
-    color: #909090;
+    color: $main-steel;
     pointer-events: none;
 
     #{$root}__svg {
-      color: #909090;
+      color: $main-steel;
     }
   }
 
@@ -79,7 +80,6 @@
   }
 
   &__text {
-    font-family: Arial, sans-serif;
     font-size: 16px;
     line-height: 16px;
     font-weight: 400;
@@ -101,7 +101,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #002f6c;
+    color: $main-blue;
 
     svg {
       width: 24px;

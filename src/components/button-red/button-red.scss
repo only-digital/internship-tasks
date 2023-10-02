@@ -8,8 +8,8 @@
   justify-content: center;
   border-radius: 25px;
   border: none;
-  background: #ff0000;
-  color: #ffffff;
+  background: $main-red;
+  color: $main-white;
   padding: 14px;
   width: 100%;
   height: 42px;
@@ -18,25 +18,25 @@
   user-select: none;
 
   &:hover {
-    background: #bf1d26;
+    background: $red-dark-1;
   }
 
   &:active {
-    background: #81080f;
+    background: $red-dark-2;
   }
 
   &:focus {
-    background: #ff0000;
-    border: 3px solid #99b3d8;
+    background: $main-red;
+    border: 3px solid $blue-light;
   }
 
   &:disabled {
-    color: #909090;
-    background: #f4f4f4;
+    color: $main-steel;
+    background: $grey-3;
     pointer-events: none;
 
     #{$root}__svg {
-      color: #909090;
+      color: $main-steel;
     }
   }
 
@@ -79,7 +79,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #ffffff;
+    color: $main-white;
 
     svg {
       width: 24px;
