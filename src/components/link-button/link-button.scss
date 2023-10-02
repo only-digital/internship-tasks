@@ -1,0 +1,51 @@
+@import '../styles/roots.scss';
+
+
+.link-button {
+	$root: &;
+    display: flex;
+	align-items: center;
+	width: max-content;
+	margin-bottom: 25px;
+	padding-left: 25px;
+   &:disabled{
+	&_link{
+		color: $extra-grey-1
+	}
+   }
+
+   &_link{
+	margin-right: 12px;
+	font-family: 'Grtsk Peta';
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 1.5;
+	letter-spacing: -0.32px;
+	color: $extra-cobolt;
+   }
+   &_link:hover {
+	color: $main-red;
+   }
+   &_link:active {
+     color: $hover-red;
+   }
+   &:focus-visible {
+	background-color: $focus-border;
+	outline: none;
+  }
+	svg{
+		width: 24px;
+		height: 24px;
+	}
+
+	@media (max-width: 768px) {
+		&_link{
+			font-size: 14px;
+		}
+		&:hover,
+		&:focus-visible {
+			opacity: 0;
+		}
+		
+	}
+}
