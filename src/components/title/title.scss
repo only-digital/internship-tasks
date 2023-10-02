@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 .container {
+	min-width: 375px;
 	padding: 0 24px;
 
 	@media (min-width: 768px) {
