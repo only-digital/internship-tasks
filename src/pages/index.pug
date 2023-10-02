@@ -3,10 +3,10 @@ extends ../../build_modules/common
 block body
     +example-button({text: 'example text'})
     +example-button({text: 'disabled'})(disabled='')
-    +bordered-button({text: 'Кнопка'})
-    +bordered-button({text: 'Кнопка'})(disabled='')
-    +colored-button({text: 'Кнопка'})
-    +colored-button({text: 'Кнопка'})(disabled='')
+    +button({text: 'Кнопка'})
+    +button({text: 'Кнопка'})(disabled='')
+    +button({text: 'Кнопка', colored: 'true'})
+    +button({text: 'Кнопка', colored: 'true'})(disabled='')
     +slider({currentPage: '1', numPages: '4'})
     +slider({currentPage: '1', numPages: '4', disabled: 'true'})(disabled='')
     +toggle-switch

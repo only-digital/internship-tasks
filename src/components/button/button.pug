@@ -1,0 +1,5 @@
+mixin button(props)
+	- const buttonClass = props.colored ? 'button_colored' : 'button_bordered'
+	button.button&attributes(attributes)(class=buttonClass)
+		span.button__text!= props.text
+		+svg('button').button__svg
