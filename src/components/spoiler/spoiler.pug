@@ -1,8 +1,9 @@
 mixin spoiler(props)
 	.spoiler&attributes(attributes)(data-component='spoiler')
 		.container
-			.spoiler__up-wrapper
-				h2.spoiler__title!= `${props.number} ${props.titleText}`
-				button.spoiler__button
-			.spoiler__bottom-wrapper
-				p.spoiler__text!= props.text
+			.spoiler__main-wrapper
+				.spoiler__up-wrapper
+					h2.spoiler__title!= `${props.number} ${props.titleText}`
+					button.spoiler__button
+				.spoiler__bottom-wrapper
+					p.spoiler__text!= props.text
