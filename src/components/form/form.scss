@@ -125,7 +125,9 @@
     transform: rotate(-45deg);
 	}
 
-	&__email-error, &__policy-error {
+	&__email-error, 
+	&__policy-error,
+	&__server-error {
 		color: #EF1C1C;
 		font-size: 14px;
 		font-weight: 400;
