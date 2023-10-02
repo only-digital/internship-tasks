@@ -8,6 +8,16 @@ block body
 
     +my-button({text: 'Кнопка'})
     +my-button({text: 'disabled'})(disabled='')
-
+    br
     +my-slider({text: '01 / 04'})
     +my-slider({text: 'disabled'})(class='disabled')
+    br
+    +my-links({link: 'Sustainalytics.com', textLink: 'Sustainalytics.com'})
+    +my-links({link: 'Sustainalytics.com', textLink: 'Sustainalytics.com'})(class='disabled')
+    br
+    br
+    +my-text({part1: 'Для подключения сервиса добавьте номер', link: "+7(921)058-57-19", textLink: "+7(921)058-57-19", part2: ' в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже'})
+    br
+    +my-text({part1: 'Цифровые продукты, направленные на создание', link: 'google.com' , textLink: "дополнительных сервисов", part2: ' и устранение «проблемных точек» наших клиентов'})
+
+    

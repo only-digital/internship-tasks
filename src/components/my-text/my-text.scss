@@ -1,0 +1,9 @@
+.my-text {
+  $root: &;
+  font-family: sans-serif;
+  font-size: 14px;
+  transition: font-size 0.2s linear;
+  @media (min-width: 1280px) {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,5 @@
+mixin my-links(props)
+	.my-links&attributes(attributes)
+		a(class='my-links__link' href=`${props.link[0] === "+" ? `tel:${props.link}` : `https://${props.link}/`}`)= props.textLink
+			if props.link[0] != "+" 
+				+svg('link-icon').my-links__svg

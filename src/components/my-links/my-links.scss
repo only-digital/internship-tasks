@@ -1,0 +1,44 @@
+.my-links {
+  $root: &;
+  display: inline-block;
+  color: #0041a0;
+  font-size: 14px;
+  text-wrap: nowrap;
+  &__link {
+    font-family: sans-serif;
+
+    display: inline-flex;
+    align-items: center;
+
+    transition: all 0.2s linear;
+    @media (hover: hover) {
+      &:hover {
+        color: #ff0000;
+      }
+
+      &:active {
+        color: #bf1d26;
+      }
+
+      &:focus {
+        outline: none;
+        color: #0041a0;
+        background-color: rgba(0, 65, 160, 0.15);
+      }
+    }
+  }
+  &__svg {
+    width: 24px;
+    height: 24px;
+    margin-left: 12px;
+  }
+  &.disabled {
+    pointer-events: none;
+    color: gray;
+    opacity: 0.5;
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 16px;
+  }
+}

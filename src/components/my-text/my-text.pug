@@ -1,0 +1,10 @@
+mixin my-text(props)
+	.my-text&attributes(attributes)!= props.part1 
+		|
+		|
+		+my-links({link: props.link , textLink: props.textLink})
+		!= props.part2
+
+		
+		
+		
