@@ -1,0 +1,6 @@
+include ./questions-list/questions-list
+
+mixin offers-questions(props)
+	.offers-questions&attributes(attributes)(data-component='offers-questions')
+		h2.offers-questions__title="Частые вопросы"
+		+questions-list 

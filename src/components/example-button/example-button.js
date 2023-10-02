@@ -27,7 +27,7 @@ class ExampleButton extends Component {
 
         // Заменяем число в тексте на новое с помощью метода replace
         this.textElement.textContent = text.replace(/\d+/g, this.count);
-    }
+    }   
 }
 
 export default ExampleButton

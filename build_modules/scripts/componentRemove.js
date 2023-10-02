@@ -3,6 +3,7 @@ const path = require('path');
 const rimraf = require('rimraf');
 const Logger = require('./Logger');
 
+
 const logger = new Logger();
 
 const args = process.argv;

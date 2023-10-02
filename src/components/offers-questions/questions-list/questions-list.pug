@@ -1,0 +1,27 @@
+include ./question/question
+
+-const answer = "Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit. "
+-
+	const questions = [
+		{
+			title:"Nullam tincidunt vestibulum porttitor",
+			answer:answer + answer
+		},{
+			title:"Class aptent taciti sociosqu ad litora",
+			answer:answer
+		},{
+			title:"Nulla fringilla ligula elit, non laoreet ipsum rutrum eget",
+			answer:answer
+		},{
+			title:"Mauris ut suscipit tellus",
+			answer:answer
+		},{
+			title:"Nullam placerat porta libero, vel maximus augue euismod eget",
+			answer:answer
+		},
+	]
+
+mixin questions-list(props)
+	ul.questions-list&attributes(attributes)(data-component='questions-list')
+		each question,i in questions
+			+question({title:question.title,answer:question.answer,index:i+1})

@@ -1,0 +1,7 @@
+mixin question(props)
+	li.question&attributes(attributes)(data-component='question')
+		button.question__title
+			span.question__text=`${props.index}. ${props.title}`
+			+svg("question-button-svg")(class="question__icon")
+		.question__dropdown-ct
+			.question__dropdown=props.answer

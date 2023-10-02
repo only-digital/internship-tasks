@@ -4,10 +4,10 @@ const Logger = require('./Logger');
 
 const logger = new Logger();
 
-String.prototype.capitalize = function() {
+String.prototype.capitalize = function () {
     return this.charAt(0).toUpperCase() + this.slice(1);
 }
-String.prototype.fromKebabToCamel = function() {
+String.prototype.fromKebabToCamel = function () {
     return this.replace(/-([a-z0-9])/g, (g) => g[1].toUpperCase());
 }
 

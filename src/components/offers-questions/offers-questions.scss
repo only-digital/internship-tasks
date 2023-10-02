@@ -1,0 +1,35 @@
+@import "./questions-list/questions-list.scss";
+
+.offers-questions {
+	$root: &;
+	padding: 3em 5em;
+	width: 100%;
+
+	&__title {
+		font-size: 40px;
+		padding-bottom: 32px;
+	}
+
+	@media only screen and (max-width:1440px) {
+		&__title {
+			font-size: 36px;
+			padding-bottom: 36px;
+		}
+	}
+
+	@media only screen and (max-width:768px) {
+		padding: 2em 2em;
+
+		&__title {
+			font-size:28px;
+			padding-bottom: 36px;
+		}
+	}
+
+	@media only screen and (max-width:375px) {
+		&__title {
+			font-size:22px;
+			padding-bottom: 28px;
+		}
+	}
+}

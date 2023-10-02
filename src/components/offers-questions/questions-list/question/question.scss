@@ -1,0 +1,111 @@
+.question {
+	$root: &;
+	font-size: 28px;
+	padding: 20px 0px;
+	width: 100%;
+	border-bottom: 1px solid rgb(232, 232, 232);
+
+	&__title {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		font-size: 34px;
+		text-align: left;
+	}
+
+	&__text {
+		transition: .4s ease color;
+		width: 96%;
+	}
+
+	&__dropdown {
+		padding-top: 20px;
+		text-align: left;
+		font-size: 22px;
+	}
+
+	&__dropdown-ct {
+		max-height: 0px;
+		width: 70%;
+		overflow: hidden;
+		font-size: 14px;
+		transition: 1s ease max-height;
+	}
+
+	&__icon {
+		transition: .7s ease transform;
+		width: 30px;
+		height: 30px;
+	}
+
+	&_active {
+		.question__dropdown-ct{
+			max-height:var(--dropdownHeight) ;
+		}
+
+		.question__icon {
+			transform: rotate(45deg);
+		}
+
+		.question__text {
+			color: #114C9A;
+		}
+	}
+
+	@media only screen and (max-width:1440px) {
+		&__title {
+			font-size: 28px;
+		}
+		&__icon{
+			width: 23px;
+			height: 23px;
+		}
+		&__dropdown{
+			font-size: 18px;
+		}
+	}
+	@media only screen and (max-width:1280px) {
+		&__title {
+			font-size: 25px;
+		}
+		&__text{
+			width: 95%;
+		}
+		&__icon{
+			width: 20px;
+			height: 20px;
+		}
+		&__dropdown{
+			font-size: 16px;
+			&-ct{
+				width: 93%;
+			}
+		}
+	}
+	@media only screen and (max-width:768px) {
+		padding: 14px 0px;
+		&__title {
+			font-size: 22px;
+		}
+		&__icon{
+			width: 17px;
+			height: 17px;
+		}
+		&__dropdown{
+			font-size: 14px;
+			padding-top: 10px;
+		}
+	}
+	@media only screen and (max-width:375px) {
+		&__title {
+			font-size: 16px;
+		}
+		&__icon{
+			width: 13px;
+			height: 13px;
+		}
+		&__dropdown{
+			font-size: 10px;
+		}
+	}
+}
