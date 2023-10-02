@@ -3,7 +3,6 @@
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    background: #F4F4F4;
     padding: 24px 36px 30px 36px;
     // transition: .4s;
     cursor: pointer;
@@ -25,6 +24,9 @@
         width: 200px;
         height: 45px;
         fill: #04306A;
+        &-white {
+            fill: #fff;
+        }
     }
 
     // &:hover {

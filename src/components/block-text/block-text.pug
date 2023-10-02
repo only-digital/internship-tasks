@@ -1,15 +1,7 @@
-mixin block-text(title, isBlue)
--if(isBlue)
-    .block
-        h3.block__title= title
+mixin block-text(title, background_color)
+    - const arrowClass = background_color ? 'block__arrow-white' : 'block__arrow'
+    .block(style=`background: ${background_color || '#F4F4F4'}`)
+        h3.block__title(style=`color: ${background_color ? 'white' : '#04306A'}`)= title
         .block__img 
-            <svg width="66" height="36" viewBox="0 0 66 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M58.7053 19.4L0.348877 19.4L0.348877 16.6L58.7053 16.6L58.7053 19.4ZM36.8355 36L35.1869 33.6L61.9474 20L61.9474 16L35.1869 2.4L36.8355 0L65.1894 14.4V21.6L36.8355 36Z" fill="none" class="block__arrow" />
-            </svg>
--if(!isBlue)
-    .block
-        h3.block__title= title
-        .block__img 
-            <svg width="66" height="36" viewBox="0 0 66 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M58.7053 19.4L0.348877 19.4L0.348877 16.6L58.7053 16.6L58.7053 19.4ZM36.8355 36L35.1869 33.6L61.9474 20L61.9474 16L35.1869 2.4L36.8355 0L65.1894 14.4V21.6L36.8355 36Z" fill="none" class="block__arrow" />
-            </svg>
+            svg(width="66" height="36" viewBox="0 0 66 36" fill="none" xmlns="http://www.w3.org/2000/svg")
+                path(d="M58.7053 19.4L0.348877 19.4L0.348877 16.6L58.7053 16.6L58.7053 19.4ZM36.8355 36L35.1869 33.6L61.9474 20L61.9474 16L35.1869 2.4L36.8355 0L65.1894 14.4V21.6L36.8355 36Z" fill="none" class=arrowClass)
