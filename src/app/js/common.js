@@ -1,4 +1,11 @@
-import ExampleButton from "../../components/example-button/example-button";
+import DateNow from "../../components/date-now/date-now";
+import MainTitle from "../../components/main-title/main-title";
+import Statistic from "../../components/statistic/statistic";
+import Title from "../../components/title/title";
+import Clause from "../../components/clause/clause";
+import Form from "../../components/form/form";
+import ContainerForm from "../../components/container-form/container-form";
+import Button from "../../components/button/button";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -6,7 +13,15 @@ import ExampleButton from "../../components/example-button/example-button";
  * Значение - JS-класс компонента (Импорт добавляется вручную)
  */
 const allComponents = {
-    'example-button': ExampleButton,
+    'date-now': DateNow,
+    'main-title': MainTitle,
+    'statistic': Statistic,
+    'title': Title,
+    'clause': Clause,
+    'form': Form,
+    'container-form': ContainerForm,
+    'button': Button,
+
 }
 
 /**

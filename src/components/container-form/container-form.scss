@@ -1,0 +1,18 @@
+.container-form {
+	$root: &;
+
+	display: flex;
+	margin-left: 103px;
+	margin-top: 136px;
+	margin-bottom: 60px;
+	&__title{
+		color: #002F6C;
+		font-family: Arial;
+		font-size: 32px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 120%; 
+		letter-spacing: -0.64px;
+		margin-right: 81px;
+	}
+}

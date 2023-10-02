@@ -1,0 +1,33 @@
+.clause {
+	$root: &;
+
+	color: #012B34;
+	display: flex;
+	font-feature-settings: 'ss08' on;
+	font-family: Arial;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 140%;
+	margin-left: 80px;
+	width: 940px;
+	margin-bottom: 12px;
+
+	
+	&__tag{		
+		display: inline-block;
+		width: 20px;
+		height: 2px;
+		background-color: #0DB274;
+		flex-shrink: 0;		
+		margin-right: 10px;
+		margin-top: 16px;	
+	}
+	&__tag{
+		content: '';
+		display: inline-block;
+		width: 20px;
+		height: 2px;
+		background-color: #0DB274;			
+	}
+}

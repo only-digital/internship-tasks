@@ -1,0 +1,14 @@
+.main-title {
+	$root: &;
+
+	color: #04306A;
+	font-feature-settings: 'ss08' on;
+	font-family: Arial;
+	font-size: 64px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 100%;
+	letter-spacing: -1.28px;
+	margin-left: 80px;
+	margin-top: 15px;
+}

@@ -1,0 +1,148 @@
+.form {
+	$root: &;
+	margin-top: 25px;
+	position: relative;
+
+	&__email:disabled {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+	
+	&__error-email{
+		position: absolute;
+		color: #EF1C1C;
+		font-family: Arial;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 150%;
+		top: 100px
+	}
+
+	&__email{
+		border-radius: 24px;
+		border: 1px solid var(--extra-cobolt, #0041A0);
+		height: 48px;
+		padding: 8px 20px 14px 20px;
+		width: 796px;
+		margin-bottom: 80px;
+	}
+
+	&__label{
+		color:#909090;
+		font-family: Arial;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 150%; 
+		letter-spacing: -0.24px;
+		margin-left: 20px;
+	}
+
+	&__label-checkbox{
+		display: flex;
+		align-items: center;
+	}
+
+	&__checkbox:disabled {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+	&__label-checkbox__custom{
+		width: 16px;
+		height: 16px;
+		border: 1px solid #BCBCBC;
+		display: inline-block;
+    	margin-right: 25px;
+		margin-top: -1px;
+		position: relative;
+	}
+
+	&__label-checkbox__custom__svg{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	
+	&__label-checkbox__text{		
+		color: #909090;
+		font-family: Arial;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 150%;
+		margin-right: 5px;		
+	}
+
+	&__label-checkbox__href{
+		color:#002F6C;
+		font-family: Arial;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 150%;
+		transition: color .3s;
+	}
+	&__label-checkbox__href:hover{
+		color:#f80000;		
+	}
+
+	&__checkbox:checked + &__label-checkbox__custom{
+		background-color: #002F6C;
+	}
+
+	&__checkbox:disabled + &__label-checkbox__custom {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+
+	&__checkbox:disabled ~ &__label-checkbox__href {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+
+	&__message__success, &__message__fault{
+		display: none;
+	}
+
+	&__message{
+		display: flex;
+		align-items: center;
+		gap: 21px;
+		margin-top: 27px;
+	}
+
+	&__message-text{
+		color: #111;
+		font-family: Arial;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 124%; 
+		letter-spacing: -0.32px;	
+	}
+
+	&__loader {
+		width: 48px;
+		height: 48px;
+		border: 5px solid #002F6C;
+		border-bottom-color: transparent;
+		border-radius: 50%;
+		display: inline-block;
+		box-sizing: border-box;
+		animation: rotation 1s linear infinite;
+		display: none;
+		@keyframes rotation {
+			0% {
+				transform: rotate(0deg);
+			}
+			100% {
+				transform: rotate(360deg);
+			}
+			}
+
+		}
+	
+		 
+}

@@ -1,0 +1,22 @@
+mixin form() 
+	.form&attributes(attributes)(data-component='form')
+		.form__label E-mail
+		input.form__email(type='text')
+		.form__error-email
+		label.form__label-checkbox(for='policy') 
+			input(type='checkbox' class='form__checkbox' id='policy')
+			.form__label-checkbox__custom
+				svg(xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" class="form__label-checkbox__custom__svg")
+					path(fill-rule="evenodd" clip-rule="evenodd" d="M6.64575 9.59405L4.12788 6.89904L3 8.09777L6.64575 12L13 5.19872L11.8801 4L6.64575 9.59405Z" fill="white")
+			span(class='form__label-checkbox__text') Вы подтверждаете, что ознакомились
+			a(href="#" class='form__label-checkbox__href') c политикой обработки персональных данных		
+		.form__message
+			svg(xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none" class='form__message__success')
+				circle(cx="26" cy="26" r="25" stroke="#DEDEDE" stroke-width="2")
+				path(fill-rule="evenodd" clip-rule="evenodd" d="M36.503 19.4099L35.3267 18.2337L23.3798 30.1806L24.556 31.3569L36.503 19.4099ZM16.6457 26.1695L15.4695 27.3458L21.9503 33.8267L23.1266 32.6504L16.6457 26.1695Z" fill="#27AE60")
+			svg(xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 52 52" fill="none" class='form__message__fault')
+				circle(cx="26" cy="26" r="25" stroke="#DEDEDE" stroke-width="2")
+				path(fill-rule="evenodd" clip-rule="evenodd" d="M33 20.3211L31.718 19L25.9157 24.9791L20.2317 19.1219L19 20.3911L24.684 26.2482L19.4139 31.6789L20.6959 33L25.966 27.5693L31.1847 32.947L32.4164 31.6778L27.1977 26.3001L33 20.3211Z" fill="red")
+			.form__message-text
+		+button('Отправить') 
+		.form__loader 
