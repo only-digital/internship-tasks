@@ -7,6 +7,26 @@
 
 	cursor: pointer;
 
+	&:last-of-type {
+		margin-bottom: 98px;
+
+		@media (min-width: 768px) {
+			margin-bottom: 213px;
+		}
+
+		@media (min-width: 1280px) {
+			margin-bottom: 48px;
+		}
+
+		@media (min-width: 1440px) {
+			margin-bottom: 141px;
+		}
+
+		@media (min-width: 1920px) {
+			margin-bottom: 138px;
+		}
+	}
+
 	&--active {
 		.spoiler__title {
 			color: #114C9A;
