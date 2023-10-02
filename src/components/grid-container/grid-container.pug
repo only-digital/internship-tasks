@@ -2,12 +2,19 @@ include ../block-text/block-text.pug
 
 mixin grid-container()
     section.grid-container
-        .grid-container_row_first
+        .item1
             +block-text('Мостовая сталь/Стальные конструкции мостов')
+        .item2
             +block-text('Железобетонные конструкции мостов')
+        .item3
             +block-text('Дорожные ограждения барьерного типа')
-        //- +block-text('Шпунтовой замок', '#04306A')
-        //- +block-text('Мостовой крепеж')
-        //- +block-text('Профили для деформационных швов', '#0041A0')
-        //-     +block-text('Плетеные габионы')
-        //-     +block-text('Модульные мосты')
+        .item4
+            +block-text('Шпунтовой замок', '#04306A')
+        .item5
+            +block-text('Мостовой крепеж')
+        .item6
+            +block-text('Профили для деформационных швов', '#0041A0')
+        .item7
+            +block-text('Плетеные габионы')
+        .item8 
+            +block-text('Модульные мосты')

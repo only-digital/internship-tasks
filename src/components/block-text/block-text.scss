@@ -7,6 +7,7 @@
     // transition: .4s;
     cursor: pointer;
     min-height: 460px;
+    position: relative;
 
     &__title {
         // transition: .2s;
@@ -16,8 +17,9 @@
     }
 
     &__img {
-        display: flex;
-        justify-content: flex-end;
+        position: absolute;
+        right: 37px;
+        bottom: 30px;
     }
 
     &__arrow {
@@ -40,8 +42,4 @@
     // &__blue-bg:hover {
     //     background: #0041A0;
     // }
-}
-
-svg.arrow_right {
-    stroke: black;
 }
