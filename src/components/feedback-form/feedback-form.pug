@@ -9,17 +9,6 @@ mixin svgPlusIcon()
         path(d="M0 6.53333V7.46667H14V6.53333H0Z" fill="#909090")
         path(d="M7.46667 4.07974e-08L6.53333 0L6.53333 14H7.46667L7.46667 4.07974e-08Z" fill="#909090")
 
-mixin uploadedFile()
-    - var n = 1;
-    while n < 3
-        .feedback-form__file-uploads.hidden(class=`elem-`+n data-upload=n)
-            span.feedback-form__file-uploads-name
-            span.feedback-form__file-uploads-size
-            span.feedback-form__file-uploads-type
-            span.feedback-form__file-uploads-icon
-                +svgPlusIcon
-        - n += 1
-
 mixin markImage(props)
     img(src="../assets/images/mark.png" alt="mark" class=props.variant)
 
@@ -43,10 +32,9 @@ mixin feedback-form(props)
                     span.feedback-form__file-label-text Прикрепить файл
                     span.feedback-form__file-label-icon
                         +svgPlusIcon
-                +uploadedFile
-                .feedback-form__file-help
-                    img(src='../assets/images/tool.png' alt='info icon' class='feedback-form__file-help-icon')
-                    span.feedback-form__file-help-text Вы можете загрузить только 2 документа
+            .feedback-form__file-help
+                img(src='../assets/images/tool.png' alt='info icon' class='feedback-form__file-help-icon')
+                span.feedback-form__file-help-text Вы можете загрузить только 2 документа
             div.feedback-form__message-file
             .feedback-form__checkbox
                 input#checkbox-field.feedback-form__checkbox-item(type='checkbox' required='' checked='' name='agreement')

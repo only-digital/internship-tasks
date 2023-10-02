@@ -128,24 +128,26 @@
 		}
 		&:hover {
 			transition: visibility 0.3s ease-in-out 0s;
-			#{$root}__file-help {
+			& ~ #{$root}__file-help {
 				visibility: visible;
 			}
 		}
 		&-help {
 			transition: visibility 0.3s ease-in-out 0s;
 			visibility: hidden;
-			position: absolute;
-			top: -145px;
-			left: -196px;
-			z-index: 1;
+			position: relative;
+			& img {
+				left: -237px;
+				position: absolute;
+				top: -204px;
+			}
 			&-text {
 				width: 240px;
 				height: 74px;
 				padding: 16px 20px;
 				position: absolute;
-				top: 37px;
-				left: 40px;
+				top: -167px;
+				left: -197px;
 				z-index: 2;
 				color: #002F6C;
 				font: 400 normal 14px/150% 'Arial', sans-serif;
@@ -196,6 +198,11 @@
 			max-width: fit-content;
 			font: 400 normal 16px/124% 'Arial', sans-serif;
 			letter-spacing: -0.32px;
+			&:hover {
+				#{$root}__file-uploads-icon {
+					opacity: 1;
+				}
+			}
 			&-name {
 				color: #111;
 			}
@@ -203,6 +210,7 @@
 				color: #909090;
 			}
 			&-icon {
+				opacity: 0;
 				cursor: pointer;
 				transform: rotate(45deg);
 				& svg {
