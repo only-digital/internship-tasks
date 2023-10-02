@@ -1,0 +1,30 @@
+.spoilers-list {
+	$root: &;
+
+  margin-bottom: 138px;
+  padding: 0;
+}
+
+@media (max-width: 1440px) {
+  .spoilers-list {
+    margin-bottom: 141px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .spoilers-list {
+    margin-bottom: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .spoilers-list {
+    margin-bottom: 213px;
+  }
+}
+
+@media (max-width: 375px) {
+  .spoilers-list {
+    margin-bottom: 98px;
+  }
+}
