@@ -1,9 +1,10 @@
 mixin confirm-checkbox(props)
-	label.confirm-checkbox.field(data-component='confirm-checkbox')
+	.confirm-checkbox.field(data-component='confirm-checkbox')
 		.confirm-checkbox__wrapper
-			input(type="checkbox" name="confirm", tabIndex=0)&attributes(attributes)
-			span.confirm-checkbox__wrapper__checkbox
-				include ../../assets/icons/check.svg
+			label
+				input(type="checkbox" name="confirm", tabIndex=0)&attributes(attributes)
+				span.confirm-checkbox__wrapper__checkbox
+					include ../../assets/icons/check.svg
 			p.confirm-checkbox__wrapper__text Вы подтверждаете, что ознакомились
 				=" "
 				a c политикой обработки персональных данных 

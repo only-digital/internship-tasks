@@ -19,10 +19,6 @@
     gap: 12px;
     user-select: none;
 
-    &:hover &__checkbox {
-      border-color: #0041a0;
-    }
-
     &__checkbox {
       width: 16px;
       height: 16px;
@@ -30,6 +26,10 @@
       display: flex;
       flex-shrink: 0;
       outline: none;
+
+			&:hover {
+					border-color: #0041a0;
+				}
 
       svg {
         display: none;
