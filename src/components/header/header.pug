@@ -1,0 +1,9 @@
+mixin header(props)
+	- const datetime = props.datetime || "";
+	.header&attributes(attributes)(data-component='header')
+		time.header__date(datetime = datetime)!=props.date 
+		h1.header__title!=props.title 
+		small.header__views Просмотров:
+			span.header__views-num 123
+		small.header__responses Откликов:
+			span.header__views-num 12

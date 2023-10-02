@@ -1,0 +1,47 @@
+.vacancy-list {
+	$root: &;
+
+	color: #012B34;
+	font-family: Arial, sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 140%;
+	padding-right: 320px;
+
+	&:not(:last-child) {
+		margin-bottom: 130px;
+	}
+
+	&:last-child {
+		margin-bottom: 109px;
+	}
+
+	&__title {
+		color: #04306A;
+		font-size: 46px;
+		line-height: 120%;
+		letter-spacing: -1px;
+		margin-bottom: 35px;
+	}
+
+	&__item {
+		position: relative;
+		padding-left: 28px;
+
+		&:not(:last-child) {
+			margin-bottom: 12px;
+		}
+
+		&::before {
+			position: absolute;
+			content: "";
+			width: 20px;
+			height: 1px;
+			background-color: #0DB274;
+			left: 0;
+			top: 15px;
+		}
+	}
+
+}
