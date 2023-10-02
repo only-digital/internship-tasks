@@ -1,0 +1,8 @@
+mixin spoiler(props)
+	.spoiler&attributes(attributes)(data-component='spoiler')
+		.spoiler__header 
+			h2.spoiler__title!= props.title 
+			+svg('close').spoiler__svg_close
+			+svg('plus').spoiler__svg_plus
+
+		p.spoiler__body!= props.body

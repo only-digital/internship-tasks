@@ -1,0 +1,122 @@
+$dark-teal: #012b34;
+$divider: 1px solid #e6e6e6;
+$blue-color: #114c9a;
+
+.spoiler {
+    font-family: "Roboto", sans-serif;
+    $root: &;
+
+    border-top: $divider;
+
+    svg {
+        width: 16px;
+        height: 16px;
+        margin-top: 6px;
+
+        @media (min-width: 768px) {
+            width: 20px;
+            height: 20px;
+        }
+        @media (min-width: 1280px) {
+            width: 16px;
+            height: 16px;
+        }
+        @media (min-width: 1440px) {
+			width: 24px;
+            height: 24px;
+        }
+    }
+
+    .spoiler__svg_close {
+        display: none;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 20px 0;
+		cursor: pointer;
+
+		@media (min-width: 768px) {
+            padding: 24px 0;
+        }
+        @media (min-width: 1280px) {
+            padding: 20px 0;
+        }
+        @media (min-width: 1440px) {
+            padding: 24px 0;
+        }
+        @media (min-width: 1920px) {
+            padding: 30px 0;
+        }
+    }
+
+    &__title {
+        font-size: 24px;
+
+        &:hover {
+            color: $blue-color;
+        }
+        @media (min-width: 768px) {
+            font-size: 27px;
+        }
+        @media (min-width: 1280px) {
+            font-size: 24px;
+        }
+        @media (min-width: 1440px) {
+            font-size: 27px;
+        }
+        @media (min-width: 1920px) {
+            font-size: 36px;
+        }
+    }
+
+    &__body {
+        color: black;
+        font-size: 15px;
+        line-height: 22px;
+        max-height: 0;
+        overflow: hidden;
+        margin-bottom: 0;
+        transition: max-height 0.5s;
+		transition: margin-bottom 0.2s;
+
+        @media (min-width: 1920px) {
+            font-size: 20px;
+            line-height: 30px;
+        }
+    }
+
+    &.spoiler_expanded {
+        .spoiler__body {
+			// Set max-height higher than expected value
+            max-height: 9000px;
+            margin-bottom: 20px;
+
+			@media (min-width: 768px) {
+				margin-bottom: 24px;
+			}
+			@media (min-width: 1280px) {
+				margin-bottom: 20px;
+			}
+			@media (min-width: 1440px) {
+				margin-bottom: 24px;
+			}
+			@media (min-width: 1920px) {
+				margin-bottom: 30px;
+			}
+        }
+
+        .spoiler__title {
+            color: $blue-color;
+        }
+
+        .spoiler__svg_close {
+            display: block;
+        }
+        .spoiler__svg_plus {
+            display: none;
+        }
+    }
+}

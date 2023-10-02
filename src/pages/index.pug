@@ -1,7 +1,7 @@
 extends ../../build_modules/common
 
-
 block body
-    +example-button()
-    +example-button()
-    //Your code here
+    .wrapper
+        h1 Lorem ipsum dolor
+        +spoiler({title: '1. Nullam tincidunt vestibulum porttitor', body: 'Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.'}).spoiler_expanded
+        +spoiler({title: '2. Class aptent taciti sociosqu ad litora', body: 'Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.'})
