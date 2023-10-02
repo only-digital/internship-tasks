@@ -83,7 +83,6 @@ class Form extends Component {
                 },
                 body:JSON.stringify(data)
             });
-            console.log(response)
             if (response.ok) {
                 this.setSuccess();
             } else this.setError(response.statusText);
