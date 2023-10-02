@@ -1,0 +1,21 @@
+mixin contact-form(props)
+	.contact-form&attributes(attributes)(data-component='contact-form')
+		.contact-form__content 
+			h3 Форма обратной связи
+			form#contact-form.contact-form__controls 
+				.contact-form__email 
+					label(for='email-input') Email
+					input#email-input(type="text" name='email')
+					span.contact-form__error-field
+				.contact-form__agreement
+					label(for="agreement-check") Вы подтверждаете, что ознакомились #[a(href='') c политикой обработки персональных данных]
+						input#agreement-check(type="checkbox" name="agreement")
+						span
+				button(type='submit').contact-form__send-button
+					span Отправить
+					+svg('arrow-right')
+				.contact-form__success-response
+					+svg('check-icon')
+					span Форма успешно отправлена
+
+

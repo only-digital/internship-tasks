@@ -1,0 +1,7 @@
+mixin content-block(props)
+	.content-block&attributes(attributes)(data-component='content-block')
+		.content-block__header!= props.header 
+		ul 	
+			each item in props.list 
+				li!= item
+		//Your code here

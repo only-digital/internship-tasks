@@ -1,0 +1,232 @@
+@import "../../pages/global";
+
+.contact-form {
+	$root: &;
+
+	width: 1600px;
+	height: 338px;
+
+	margin-top: 109px;
+	padding: 44px 217px 45px 103px;
+
+	font-family: "Arial", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+
+	&__content {
+		display: flex;
+		gap: 81px;
+
+		h3 {
+			color: $dark-blue;
+			font-size: 32px;
+			line-height: 120%; /* 38.4px */
+			letter-spacing: -0.64px;
+		}
+	}
+
+	&__controls {
+		display: flex;
+		flex-direction: column;
+
+		margin-top: 24px;
+	}
+
+	&__email {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+
+		label {
+			margin-left: 20px;
+
+			color: $main-steel;
+
+			font-size: 12px;
+			line-height: 150%;
+			letter-spacing: -0.24px;
+
+			a {
+				color: $dark-blue !important;
+				font-size: 14px;
+				line-height: 150%;
+			}
+		}
+
+		input {
+			width: 836px;
+			height: 48px;
+
+			display: flex;
+			align-items: center;
+			align-self: stretch;
+
+			margin-bottom: 60px;
+			padding: 8px 20px 14px 20px;
+
+			border-radius: 24px;
+			border: 1px solid $cobolt;
+		}
+	}
+
+	&__error-field {
+		position: absolute;
+		bottom: 15px;
+
+		color: $red;
+		font-size: 14px;
+		line-height: 150%;
+	}
+
+	&__agreement {
+		display: flex;
+		align-items: center;
+		gap: 18px;
+
+		margin-bottom: 30px;
+
+		label {
+			position: relative;
+
+			margin-left: 34px;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+
+			color: $main-steel;
+			font-size: 14px;
+			line-height: 150%;
+
+			cursor: pointer;
+		}
+
+		a {
+			color: $dark-blue;
+			font-size: 14px;
+			line-height: 150%;
+		}
+
+		input {
+			position: absolute;
+
+			height: 0;
+			width: 0;
+
+			opacity: 0;
+
+			cursor: pointer;
+		}
+
+		span {
+			position: absolute;
+			top: 2px;
+			left: -34px;
+			height: 16px;
+			width: 16px;
+
+			border: 1px solid $extra-gray;
+
+			&::after {
+				content: "";
+				position: absolute;
+				display: none;
+			}
+		}
+
+		label:hover input ~ span {
+			background-color: $extra-gray;
+		}
+
+		label input:checked ~ span:after {
+			display: block;
+		}
+
+		label span:after {
+			left: 4px;
+			top: 0;
+			width: 4px;
+			height: 8px;
+			border: solid $green;
+			border-width: 0 3px 3px 0;
+			transform: rotate(45deg);
+		}
+	}
+
+	&__send-button {
+		width: -webkit-fit-content;
+		width: -moz-fit-content;
+		width: fit-content;
+		height: 48px;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 14px;
+
+		padding: 0px 14px 0px 18px;
+
+		border-radius: 25px;
+
+		background: $cobolt;
+
+		&:hover {
+			background: $dark-blue;
+		}
+
+		span {
+			color: $white;
+			font-size: 16px;
+			line-height: 100%;
+			letter-spacing: -0.32px;
+		}
+
+		svg {
+			width: 32px;
+			height: 32px;
+		}
+	}
+
+	&__success-response {
+		display: none;
+
+		span {
+			color: $black;
+			font-size: 16px;
+			line-height: 124%;
+			letter-spacing: -0.32px;
+		}
+
+		svg {
+			width: 48px;
+			height: 48px;
+		}
+	}
+
+	&.submitted {
+		pointer-events: none;
+
+		#{$root}__email {
+			opacity: 0.3;
+		}
+
+		#{$root}__error-field {
+			display: none;
+		}
+
+		#{$root}__agreement {
+			margin-bottom: 25px;
+			opacity: 0.3;
+		}
+
+		#{$root}__send-button {
+			display: none;
+		}
+
+		#{$root}__success-response {
+			display: flex;
+			align-items: center;
+			gap: 21px;
+		}
+	}
+}

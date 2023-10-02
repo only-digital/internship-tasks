@@ -1,0 +1,52 @@
+@import "../../pages/global";
+
+.vacancy-info {
+	$root: &;
+
+	display: flex;
+	flex-direction: column;
+
+	margin: 115px auto 0 80px;
+
+	font-family: "Arial", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+
+	&__date {
+		margin-left: 9px;
+		margin-bottom: 20px;
+
+		color: $steel;
+		font-feature-settings: "ss08" on;
+		font-size: 20px;
+		line-height: 140%;
+		letter-spacing: -0.4px;
+	}
+
+	&__title {
+		margin-bottom: 45px;
+
+		color: $blue;
+		font-feature-settings: "ss08" on;
+		font-size: 64px;
+		line-height: 100%;
+		letter-spacing: -1.28px;
+	}
+
+	&__status {
+		display: flex;
+		gap: 36px;
+		margin-bottom: 144px;
+
+		color: $steel;
+		font-size: 16px;
+		line-height: 130%;
+		letter-spacing: -0.32px;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 130px;
+	}
+}

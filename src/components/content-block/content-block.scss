@@ -1,0 +1,58 @@
+@import "../../pages/global";
+
+.content-block {
+	$root: &;
+
+	display: flex;
+	flex-direction: column;
+
+	font-family: "Arial", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+
+	&__header {
+		margin-bottom: 35px;
+
+		color: $blue;
+		font-size: 46px;
+
+		line-height: 120%;
+		letter-spacing: -0.92px;
+	}
+
+	ul {
+		gap: 12px;
+	}
+
+	li {
+		position: relative;
+		margin-left: 28px;
+		padding-bottom: 12px;
+
+		color: $black;
+		font-feature-settings: "ss08" on;
+		font-size: 24px;
+		line-height: 140%;
+
+		&:before {
+			width: 20px;
+
+			position: absolute;
+			bottom: 60%;
+			left: -28px;
+
+			border: 1px solid $green;
+			content: "";
+		}
+
+		&:last-child {
+			padding-bottom: 0;
+
+			&:before {
+				bottom: 50%;
+			}
+		}
+	}
+
+	//Your code here
+}
