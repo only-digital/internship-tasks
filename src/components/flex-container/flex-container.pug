@@ -2,5 +2,18 @@ include ../block-text/block-text.pug
 
 mixin flex-container()
     section.flex-container
-        +block-text(3232)
-        +block-text(3232)
+        .flex-container__col
+            +block-text('Мостовая сталь/Стальные конструкции мостов')
+        .flex-container__col
+            .flex-container__row-col
+                +block-text('Железобетонные конструкции мостов')
+                +block-text('Дорожные ограждения барьерного типа')
+    section.flex-container
+        +block-text('Шпунтовой замок')
+        +block-text('Мостовой крепеж')
+        +block-text('Профили для деформационных швов')
+    section.flex-container
+        .flex-container__col
+            +block-text('Плетеные габионы')
+        .flex-container__col
+            +block-text('Модульные мосты')

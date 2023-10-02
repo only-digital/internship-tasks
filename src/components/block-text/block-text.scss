@@ -7,16 +7,24 @@
     padding: 24px 36px 30px 36px;
     // transition: .4s;
     cursor: pointer;
+    min-height: 460px;
 
     &__title {
         // transition: .2s;
         font-size: 32px;
+        font-weight: 700;
+        color: #04306A;
     }
 
     &__img {
-        width: 20px;
-        height: 20px;
-        fill: black;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__arrow {
+        width: 200px;
+        height: 45px;
+        fill: #04306A;
     }
 
     // &:hover {
@@ -30,4 +38,8 @@
     // &__blue-bg:hover {
     //     background: #0041A0;
     // }
+}
+
+svg.arrow_right {
+    stroke: black;
 }
