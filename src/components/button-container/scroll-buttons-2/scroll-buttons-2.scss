@@ -13,21 +13,21 @@
 		background: #fff;
 		border: 2px solid #DEDEDE;
 
-		&_hover:hover {
+		&:hover {
 			background: #F4F4F4;
 			border-color: #F4F4F4;
 		}
 
-		&_focus:focus {
+		&:focus {
 			border-color: #002F6C;
 		}
 
-		&_active:active {
+		&:active {
 			background: #DEDEDE;
 			border-color: #DEDEDE;
 		}
 
-		&_disabled:disabled {
+		&:disabled {
 			cursor: no-drop;
 			background: #fff;
 			border-color: #DEDEDE;

@@ -4,24 +4,15 @@
 	background-color: #FF0000;
 	display: flex;
 	align-items: center;
-	justify-content: space-evenly;
-	padding: 0px 16px;
-	height: 54px;
-	width: 169px;
-	border: 1px solid #BCBCBC;
+	border: 2px solid transparent;
+	padding: 14px 36px;
 	border-radius: 45px;
 	transition: .6s ease all;
-
-	&__content-box {
-		width: 95px;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
 
 	&__icon {
 		width: 26px;
 		height: 24px;
+		margin-left: 12px;
 		fill: white;
 		stroke: white;
 	}
@@ -31,26 +22,27 @@
 		color: white;
 	}
 
-	&_hover:hover {
+	&:hover {
 		background-color: #BF1D26;
 		border-color: transparent;
 	}
 
 
-	&_focus:focus {
-		border: #99B3D8 3px solid;
+	&:focus {
+		border-color: #99B3D8;
 	}
 
-	&_active:active {
+	&:active {
 		background-color: #81080F;
 		border-color: transparent;
 	}
 
-	&_disabled:disabled {
+	&:disabled {
 		--disabledColor: rgb(188, 187, 187);
 		background-color: #F4F4F4;
 		border-color: var(--disabledColor);
 		cursor: no-drop;
+
 		.button-1__icon {
 			stroke: var(--disabledColor);
 			fill: var(--disabledColor);
@@ -62,9 +54,7 @@
 	}
 
 	@media only screen and (max-width:1280px) {
-		&__content-box {
-			width: 80px;
-		}
+		padding: 10px 20px;
 
 		&__text {
 			font-size: 16px;
@@ -74,21 +64,13 @@
 			width: 22px;
 			height: 20px;
 		}
-
-		width: 129px;
-		height: 44px;
 	}
 
 	@media only screen and (max-width:768px) {
-		height: 38px;
+		padding: 7px 20px;
 	}
 
 	@media only screen and (max-width:375px) {
-		width: 327px;
-		justify-content: space-evenly;
-
-		&__content-box {
-			width: 90px;
-		}
+		padding: 7px 35%;
 	}
 }

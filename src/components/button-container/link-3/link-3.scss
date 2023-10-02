@@ -4,6 +4,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	cursor: pointer;
 
 	&__text {
 		color: #0041A0;
@@ -21,20 +22,20 @@
 		transition: .4s ease all;
 	}
 
-	&_hover:hover {
+	&:hover {
 		.link-3__text {
 			color: #FF0000;
 		}
 	}
 
-	&_active:active {
+	&:active {
 		.link-3__text {
 			color: #BF1D26;
 		}
 	}
 
-	&_disabled:disabled{
-		cursor: no-drop;
+	&_disabled{
+		pointer-events: none;
 		.link-3__text{
 			color:#BCBCBC;
 			user-select: none;

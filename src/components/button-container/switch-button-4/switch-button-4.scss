@@ -1,51 +1,66 @@
 .switch-button-4 {
-	$root: &;
 	--buttonWidth: 80px;
 	--butonHeight: 36px;
 	--ballRadiuse: 18px;
-	--ballPadding: calc(((var(--butonHeight) - 8px) - var(--ballRadiuse)) / 2 );
 	width: var(--buttonWidth);
 	height: var(--butonHeight);
 	width: var(--buttonWidth);
-	background-color: #0041A0;
 	border-radius: 30px;
-	position: relative;
-	border: 4px solid transparent;
-	transition: .7s ease all;
+	cursor: pointer;
 
-	&::before {
+	&__fake-button {
+		$root: &;
+		--ballPadding: calc(((var(--butonHeight) - 8px) - var(--ballRadiuse)) / 2);
+		width: 100%;
+		height: 100%;
+		background-color: #0041A0;
+		border-radius: 30px;
+		position: relative;
+		border: 4px solid transparent;
 		transition: .7s ease all;
-		content: "";
-		height: var(--ballRadiuse);
-		width: var(--ballRadiuse);
-		background-color: rgb(255, 255, 255);
-		border-radius: 50%;
-		position: absolute;
-		left: calc(100% - var(--ballPadding));
-		transform: translate(-100%, -50%);
-		top: 50%;
+		display: block;
+
+		&::before {
+			transition: .7s ease all;
+			content: "";
+			height: var(--ballRadiuse);
+			width: var(--ballRadiuse);
+			background-color: rgb(255, 255, 255);
+			border-radius: 50%;
+			position: absolute;
+			left: calc(100% - var(--ballPadding));
+			transform: translate(-100%, -50%);
+			top: 50%;
+		}
+
+		&:hover {
+			background-color: #002F6C;
+		}
 	}
 
-	&_hover:hover {
-		background-color: #002F6C;
-	}
-
-	&_focus:focus {
+	&__input:checked+&__fake-button {
 		background-color: #DEDEDE;
 		border-color: #C2DAFF;
+
 		&::before {
 			left: calc(0% + var(--ballPadding));
 			transform: translate(0%, -50%);
 		}
 	}
 
-	&_disabled:disabled{
+	&__input:disabled+&__fake-button {
 		background-color: #DEDEDE;
+
 		&::before {
 			left: calc(0% + var(--ballPadding));
 			transform: translate(0%, -50%);
 		}
 	}
+
+	&__input {
+		display: none;
+	}
+
 	@media only screen and (max-width:375px) {
 		--buttonWidth: 74px;
 		--butonHeight: 34px;
