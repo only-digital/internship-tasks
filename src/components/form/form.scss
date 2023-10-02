@@ -1,0 +1,157 @@
+@import '../../pages/index.scss';
+
+.form {
+	$root: &;
+	margin-top: 153px;
+	display: grid;
+	grid-template-columns: 1fr 836px;
+	grid-template-areas: "a ."
+					     ". b";
+
+
+	&__right {
+		display: flex;
+		flex-direction: column;
+		grid-area: b;
+	}
+
+
+	&__title {
+		@include text-style(400, 32px, $blue, 38.4px);
+		grid-area: a;
+		cursor: default;
+	}
+
+	&__label {
+		@include text-style(400, 12px, $grey, 18px);
+		position: relative;
+		left: 20px;
+	}
+
+	&__input {
+		padding: 14px 20px 14px 20px;
+		border-radius: 24px;
+		border: 1px solid $blue;
+		height: 48px;
+		@include text-style(400, 16px, $grey, 24px);
+	}
+
+	&__input._error {
+		border: 1px solid $red;
+	}
+
+	&__empty {
+		@include text-style(400, 14px, $red, 21px);
+		display: none;
+		color: #EF1C1C;
+		margin-top: 25px;
+	}
+
+	&__valid {
+		@include text-style(400, 14px, $red, 21px);
+		display: none;
+		color: #EF1C1C;
+		margin-top: 25px;
+	}
+
+	.agreement {
+		margin-top: 14px;
+		display: flex;
+		align-items: center;
+		
+		&__input {
+			width: 16px;
+			height: 16px;
+			border: 1px solid $grey;
+			position: relative;
+
+			&:checked {
+				background-color: $lightBlue;	
+				border: 1px solid $lightBlue;
+
+				&:before {
+					content: '';
+					width: 5px;
+					height: 2px;
+					transform: rotate(45deg);
+					background-color: #fff;
+					position: absolute;
+					top: 7px;
+					left: 2px;
+				}
+
+				&:after {
+					content: '';
+					width: 10px;
+					height: 2px;
+					transform: rotate(-45deg);
+					background-color: #fff;
+					position: absolute;
+					top: 5px;
+					left: 4px;
+				}
+			}
+		}
+
+		&__input._error {
+			border: 1px solid $red;
+		}
+
+		&__label {
+			@include text-style(400, 14px, $grey, 21px);
+			margin-left: 18px;
+		}
+
+		&__link {
+			@include text-style(400, 14px, $blue, 21px);
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__button {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		max-width: 170px;
+		background-color: $lightBlue;
+		color: #fff;
+		border-radius: 24px;
+		padding: 15px 18px;
+		margin-top: 30px;
+		transition: background-color 0.5s ease;
+
+		@include text-style(400, 16px, #fff, 16px);
+
+		&:hover {
+			background-color: $blue;
+		}
+
+		&:active {
+			background-color: $lightBlue;
+		}
+	}
+
+	&__success {
+		display: none;
+		align-items: center;
+		margin-top: 30px;
+
+		.success__icon {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 48px;
+			height: 48px;
+			border-radius: 50%;
+			border: 2px solid #DEDEDE;
+		}
+
+		.success__text {
+			margin-left: 21px;
+			@include text-style(400, 16px, $black, 20px);
+		}
+	}
+}

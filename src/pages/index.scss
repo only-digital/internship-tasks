@@ -1,6 +1,9 @@
+$lightBlue: #0041A0;
 $blue: #04306A;
 $black: #012B34;
 $grey: #8F8F8F;
+$red: #EF1C1C;
+$green: #27AE60;
 
 $smallMargin: 12px;
 $largeMargin: 35px;
@@ -41,6 +44,26 @@ body {
 
 	@include media(375px, 812px) {
 		padding: 60px 20px 45px 20px;
+	}
+}
+
+.conditions {
+	margin-top: 144px;
+
+	@include media(1440px, 900px) {
+		margin-top: 120px;
+	}
+
+	@include media(1280px, 768px) {
+		margin-top: 100px;
+	}
+
+	@include media(768px, 1024px) {
+		margin-top: 80px;
+	}
+
+	@include media(375px, 812px) {
+		margin-top: 70px;
 	}
 }
 
