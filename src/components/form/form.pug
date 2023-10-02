@@ -2,16 +2,17 @@ mixin form({ title='', ref='http://mock-address-change-me'}={})
 	form.form&attributes(attributes)(data-component='form')
 		.form__left-side 
 			h3.form__title=title
-			input#id(type="checkbox", name="id")
 		.form__right-side
 			.form__email-wrapper 
 				label.form__email-label(for="email")='Email' 
 				input.form__email-input(type="email" name="email")
-				span.form__email-error Поле E-mail обязательно
+				span.form__email-error.form_invisible-elem Поле E-mail обязательно
 			.form__policy-wrapper
 				input.form__policy-input(type="checkbox" id="confirm" name="confirm")
 				label.form__policy-label(for="confirm") Вы подтверждаете, что ознакомились c &nbsp;
 				a.form__policy-link(href=ref target="_blank" rel="noreferrer noopener") политикой обработки персональных данных	
-				span.form__policy-error Необходимо ознакомиться с политикой
+				span.form__policy-error.form_invisible-elem Необходимо ознакомиться с политикой
 			button.form__submit(type="submit") Отправить
 				+svg('arrow')
+			button.form__success.form_invisible-elem(type="button") Форма успешно отправлена
+				+svg('success')

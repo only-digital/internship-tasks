@@ -5,6 +5,10 @@ class Form extends Component {
     policyError;
     emailInput;
     policyInput;
+    submitButton;
+    successButton;
+    emailWrapper;
+    policyWrapper;
 
     constructor(element) {
         super(element);
@@ -14,31 +18,65 @@ class Form extends Component {
         this.emailError = this.getElement('email-error');
         this.emailInput = this.getElement('email-input');
         this.policyInput = this.getElement('policy-input');
+        this.submitButton = this.getElement('submit');
+        this.successButton = this.getElement('success');
+        this.emailWrapper = this.getElement('email-wrapper');
+        this.policyWrapper = this.getElement('policy-wrapper');
         this.emailInput.addEventListener('input',this.handleEmailChange);
         this.policyInput.addEventListener('change',this.handlePolicyChange);
     }
 
     handleEmailChange = () => {
-        this.emailError.classList.remove('form__error_visible');
+        this.emailError.classList.add('form_invisible-elem');
     }
 
     handlePolicyChange = () => {
-        console.log('inside chnage');
-        this.policyError.classList.remove('form__error_visible');
+        this.policyError.classList.add('form_invisible-elem');
     }
 
     handleFormSubmit = (event) => {
         event.preventDefault();
         const formData = new FormData(this.root);
         if (!formData.get('confirm')) {
-            if (!this.policyError.classList.contains('form__error_visible')) {
-                this.policyError.classList.add('form__error_visible');
+            if (this.policyError.classList.contains('form_invisible-elem')) {
+                this.policyError.classList.remove('form_invisible-elem');
             }
-        }
-        if (formData.get('email').length === 0) {
-            if (!this.emailError.classList.contains('form__error_visible')) {
-                this.emailError.classList.add('form__error_visible');
+        } else if (formData.get('email').length === 0) {
+            if (this.emailError.classList.contains('form_invisible-elem')) {
+                this.emailError.classList.remove('form_invisible-elem');
             }
+        } else {{
+            this.submitData({
+                email: formData.get('email'),
+                confirm: true,
+            })
+        }}
+    }
+
+    setSuccess = () => {
+        this.successButton.classList.remove('form_invisible-elem');
+        this.submitButton.classList.add('form_invisible-elem');
+        this.emailWrapper.classList.add('form_success');
+        this.policyWrapper.classList.add('form_success');
+    }
+
+    submitData = async (data) => {
+        const url = 'http://localhost:3000/form';
+        console.log('inside data');
+        console.log(data);
+        try {
+            const response = await fetch(url,{
+                method:'POST',
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8'
+                },
+                body:JSON.stringify(data)
+            });
+            if (response.ok) {
+                this.setSuccess();
+            } else this.setError(error);
+        } catch (error) {
+            console.error(error);
         }
     }
 }
