@@ -1,7 +1,28 @@
 .spoilers-list {
+  margin-bottom: 138px;
   padding: 0;
 }
 
+@media (max-width: 1440px) {
+  .spoilers-list {
+    margin-bottom: 141px;
+  }
+}
+@media (max-width: 1280px) {
+  .spoilers-list {
+    margin-bottom: 48px;
+  }
+}
+@media (max-width: 768px) {
+  .spoilers-list {
+    margin-bottom: 213px;
+  }
+}
+@media (max-width: 375px) {
+  .spoilers-list {
+    margin-bottom: 98px;
+  }
+}
 .spoiler {
   position: relative;
   list-style: inherit;
@@ -9,11 +30,15 @@
   overflow: hidden;
   height: fit-content;
   border-top: 1px solid #E6E6E6;
+  counter-increment: listNum;
 }
 .spoiler:last-child {
   border-bottom: 1px solid #E6E6E6;
 }
-.spoiler::marker {
+.spoiler::before {
+  position: absolute;
+  top: 31px;
+  content: "" counter(listNum) ". ";
   font-family: "Roboto", sans-serif;
   font-size: 36px;
   font-weight: 400;
@@ -22,20 +47,20 @@
   transition: color 0.2s;
 }
 .spoiler_open .spoiler__subtitle-container {
-  max-height: 400px;
+  max-height: 500px;
   transition: max-height 0.8s;
 }
 .spoiler_open .button .button__icon {
   transform: rotate(-45deg);
   transition: transform 0.3s;
 }
-.spoiler_open .spoiler__title, .spoiler_open::marker {
+.spoiler_open .spoiler__title, .spoiler_open::before {
   color: #114C9A;
   transition: color 0.3s;
 }
 .spoiler__title {
   max-width: 93%;
-  padding: 31px 0 28px;
+  padding: 31px 0 28px 38px;
   display: inline-block;
   font-family: "Roboto", sans-serif;
   font-size: 36px;
@@ -50,6 +75,7 @@
 }
 .spoiler__subtitle {
   padding-bottom: 40px;
+  max-width: 70%;
   font-family: "Roboto", sans-serif;
   font-size: 20px;
   font-style: normal;
@@ -64,6 +90,11 @@
   top: 13px;
   width: 70px;
   height: 70px;
+  transition: opacity 0.3s;
+}
+.spoiler__button:hover {
+  opacity: 0.8;
+  transition: opacity 0.3s;
 }
 
 .button__icon {
@@ -73,6 +104,95 @@
   transition: transform 0.2s;
 }
 
+@media (max-width: 1440px) {
+  .spoiler::before {
+    top: 25px;
+    font-size: 27px;
+  }
+  .spoiler__title {
+    padding: 25px 0 22px 29px;
+    font-size: 27px;
+  }
+  .spoiler__subtitle {
+    padding-bottom: 26px;
+    font-size: 15px;
+  }
+  .spoiler__button {
+    right: -16px;
+    top: 14px;
+    width: 52px;
+    height: 52px;
+  }
+}
+@media (max-width: 1280px) {
+  .spoiler::before {
+    top: 20px;
+    font-size: 24px;
+  }
+  .spoiler__title {
+    padding: 20px 0 20px 25px;
+    font-size: 24px;
+  }
+  .spoiler__subtitle {
+    padding-bottom: 17px;
+    font-size: 14px;
+  }
+  .spoiler__button {
+    right: -12px;
+    top: 14px;
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .spoiler {
+    display: flex;
+    flex-direction: column;
+  }
+  .spoiler::before {
+    top: 24px;
+    font-size: 27px;
+  }
+  .spoiler__title {
+    max-width: 85%;
+    padding: 24px 0 21px 30px;
+    font-size: 27px;
+  }
+  .spoiler__subtitle {
+    max-width: 90%;
+    padding-bottom: 17px;
+    font-size: 15px;
+  }
+  .spoiler__button {
+    right: -16px;
+    top: 15px;
+    width: 50px;
+    height: 50px;
+  }
+}
+@media (max-width: 375px) {
+  .spoiler {
+    counter-increment: listNum;
+  }
+  .spoiler::before {
+    top: 20px;
+    font-size: 24px;
+  }
+  .spoiler__title {
+    max-width: 90%;
+    padding: 20px 0 20px 25px;
+    font-size: 24px;
+  }
+  .spoiler__subtitle {
+    max-width: 100%;
+  }
+  .spoiler__button {
+    right: -13px;
+    top: 13px;
+    width: 42px;
+    height: 42px;
+  }
+}
 .section {
   margin: 0 auto;
   padding: 0 30px;
@@ -92,6 +212,50 @@
   color: var(--DARK-TEAL, #012B34);
 }
 
+@media (max-width: 1440px) {
+  .section {
+    max-width: 1200px;
+  }
+  .section__title {
+    margin-top: 179px;
+    margin-bottom: 60px;
+    font-size: 48px;
+    letter-spacing: -0.96px;
+  }
+}
+@media (max-width: 1280px) {
+  .section {
+    max-width: 1063px;
+  }
+  .section__title {
+    margin-top: 167px;
+    margin-bottom: 56px;
+    font-size: 42px;
+    letter-spacing: -0.84px;
+  }
+}
+@media (max-width: 768px) {
+  .section {
+    max-width: 685px;
+  }
+  .section__title {
+    margin-top: 174px;
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: 375px) {
+  .section {
+    padding: 0 20px;
+    max-width: 327px;
+  }
+  .section__title {
+    max-width: 190px;
+    margin-top: 152px;
+    margin-bottom: 39px;
+    font-size: 30px;
+    letter-spacing: -0.6px;
+  }
+}
 .example-button {
   display: flex;
   align-items: center;
