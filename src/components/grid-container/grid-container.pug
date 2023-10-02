@@ -1,3 +1,13 @@
+include ../block-text/block-text.pug
+
 mixin grid-container()
     section.grid-container
-        // Your code here
+        .grid-container_row_first
+            +block-text('Мостовая сталь/Стальные конструкции мостов')
+            +block-text('Железобетонные конструкции мостов')
+            +block-text('Дорожные ограждения барьерного типа')
+        //- +block-text('Шпунтовой замок', '#04306A')
+        //- +block-text('Мостовой крепеж')
+        //- +block-text('Профили для деформационных швов', '#0041A0')
+        //-     +block-text('Плетеные габионы')
+        //-     +block-text('Модульные мосты')
