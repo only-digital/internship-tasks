@@ -1,4 +1,4 @@
-@import '../src/components/example-button/example-button';
+@import '../src/components/button/button';
 
 html {
     font-weight: normal;
@@ -14,9 +14,10 @@ html {
 
 body {
     position: relative;
-    padding: 0;
+    padding: 60px;
     margin: 0;
     -webkit-tap-highlight-color: transparent;
+    font-family: Arial;
 }
 
 h1, h2, h3, h4, h5, p, a {
