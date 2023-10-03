@@ -1,0 +1,44 @@
+$extraCobolt: #0041A0;
+$red: #FF0000;
+$extraRed: #BF1D26;
+$extraGray: #BCBCBC;
+$blue: #002F6C;
+
+.link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    font-size: 16px;
+    color: $extraCobolt;
+
+    transition: color .2s;
+
+    width: fit-content;
+    padding: 2px;
+
+    & svg {
+        width: 24px;
+        height: 24px;
+        fill: $blue;
+    }
+
+    &:hover {
+        color: $red;
+    }
+
+    &:active {
+        transition: none;
+        color: $extraRed;
+    }
+
+    &:focus {
+        background-color: #0041A026;
+        outline: none;
+    }
+
+    &[disabled] {
+        pointer-events: none;
+        color: $extraGray;
+    }
+}

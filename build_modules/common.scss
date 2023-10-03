@@ -1,4 +1,5 @@
 @import '../src/components/button/button';
+@import '../src/components/link/link';
 
 html {
     font-weight: normal;
@@ -65,3 +66,14 @@ button {
     }
 }
 
+@media (max-width: 1280px) {
+    body {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 375px) {
+    body {
+        padding: 10px;
+    }
+}
