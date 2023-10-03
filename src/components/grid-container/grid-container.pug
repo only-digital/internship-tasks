@@ -1,28 +1,22 @@
+mixin grid-card(title)
+    .grid-container__item&attributes(attributes)
+        h4= title
+        svg(width="65" height="36" viewBox="0 0 65 36" fill="none" xmlns="http://www.w3.org/2000/svg")
+            path(d="M58.4384 19.4L0 19.4L0 16.6L58.4384 16.6L58.4384 19.4ZM36.5378 36L34.8869 33.6L61.685 20L61.685 16L34.8869 2.4L36.5378 0L64.9316 14.4V21.6L36.5378 36Z" fill="currentColor")
+
+
 mixin grid-container()
     section.grid-container
         // Your code here
-        - var modifiers = ['grey', 'blue', 'blue-light'];
-        - var cardTitles = ['Мостовая сталь/Стальные конструкции мостов', 'Железобетонные конструкции мостов', 'Дорожные ограждения барьерного типа', 'Шпунтовой замок', 'Мостовой крепеж', 'Профили для деформационных швов', 'Плетеные габионы', 'Модульные мосты' ]
-        - var i = 0;
-        - var num = 1;
-        h3.title
-            span(class=['title__text', 'title__text_red' ]) Комплексные&nbsp;
-            span(class=['title__text', 'title__text_blue' ]) предложения для мостостроения
-        .wrapper
-            - for (var x = 0; x < 3; x++)
-                div(class=['card', `card_${modifiers[0]}`, `card_${num++}`])
-                    .card__title= `${cardTitles[i++]}`
-                    .card__icon
-            div(class=['card', `card_${modifiers[1]}`, `card_${num++}`])
-                .card__title= `${cardTitles[i++]}`
-                .card__icon
-            div(class=['card', `card_${modifiers[0]}`, `card_${num++}`])
-                .card__title= `${cardTitles[i++]}`
-                .card__icon
-            div(class=['card', `card_${modifiers[2]}`, `card_${num++}`])
-                .card__title= `${cardTitles[i++]}`
-                .card__icon
-            - for (var x = 0; x < 2; x++)
-                div(class=['card', `card_${modifiers[0]}`, `card_${num++}`])
-                    .card__title= `${cardTitles[i++]}`
-                    .card__icon
+        h3.grid-container__title.grid-title
+            span.grid-title__text.grid-title__text_red Комплексные&nbsp;
+            span.grid-title__text.grid-title__text_blue предложения для мостостроения
+        .grid-container__wrapper
+            +grid-card('Мостовая сталь/Стальные конструкции мостов').grid-container__item.grid-container__item_grey.grid-container__item_1
+            +grid-card('Железобетонные конструкции мостов').grid-container__item.grid-container__item_grey.grid-container__item_2
+            +grid-card('Дорожные ограждения барьерного типа').grid-container__item.grid-container__item_grey.grid-container__item_3
+            +grid-card('Шпунтовой замок').grid-container__item.grid-container__item_blue.grid-container__item_4
+            +grid-card('Мостовой крепеж').grid-container__item.grid-container__item_grey.grid-container__item_5
+            +grid-card('Профили для деформационных швов').grid-container__item.grid-container__item_blue-light.grid-container__item_6
+            +grid-card('Плетеные габионы').grid-container__item.grid-container__item_grey.grid-container__item_7
+            +grid-card('Модульные мосты').grid-container__item.grid-container__item_grey.grid-container__item_8

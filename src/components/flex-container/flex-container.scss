@@ -2,10 +2,16 @@
 
 .flex-container {
   // Your code here
+
+  $root: &;
+
   padding: 122px 96px;
   flex-direction: column;
 
-  .title {
+  &__title {
+    font-size: 46px;
+    line-height: 46px;
+    margin-bottom: 80px;
     color: $blue;
 
     span {
@@ -13,47 +19,69 @@
     }
   }
 
-  .wrapper {
+  &__wrapper {
     flex-direction: column;
+    width: 100%;
     gap: $gap;
+  }
 
-    .row {
-      display: flex;
-      gap: $gap;
-      width: 100%;
+  &__row {
+    display: flex;
+    gap: $gap;
+    width: 100%;
 
-      .card {
-        flex-direction: column;
-        justify-content: space-between;
-        flex: 1 1 0;
+    &_1 {
+      flex-flow: column wrap;
+      height: 856px;
 
-        &__icon {
-          align-self: flex-end;
+      #{$root}__item {
+        width: calc(50% - $gap/2);
+
+        &:nth-child(1) {
+          flex-basis: 100%;
+          padding-top: 50px;
+          padding-left: 50px;
         }
       }
+    }
 
-      &_1 {
-        flex-flow: column wrap;
-        height: 856px;
+    &_2 {
+      height: 480px;
+    }
 
-        .card {
-          width: calc(50% - $gap/2);
+    &_3 {
+      height: 420px;
+    }
+  }
 
-          &:nth-child(1) {
-            flex-basis: 100%;
-            padding-top: 50px;
-            padding-left: 50px;
-          }
-        }
-      }
+  &__item {
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1 1 0;
+    padding: 24px 36px;
 
-      &_2 {
-        height: 480px;
-      }
+    h4 {
+      font-size: 32px;
+      line-height: 38px;
+    }
 
-      &_3 {
-        height: 420px;
-      }
+    svg {
+      align-self: flex-end;
+    }
+
+    &_grey {
+      background-color: $grey;
+      color: $blue;
+    }
+
+    &_blue {
+      background-color: $blue;
+      color: $white;
+    }
+
+    &_blue-light {
+      background-color: $blue-light;
+      color: $white;
     }
   }
 }

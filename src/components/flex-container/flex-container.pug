@@ -1,32 +1,25 @@
+mixin flex-card(title)
+    .flex-container__item&attributes(attributes)
+        h4= title
+        svg(width="65" height="36" viewBox="0 0 65 36" fill="none" xmlns="http://www.w3.org/2000/svg")
+            path(d="M58.4384 19.4L0 19.4L0 16.6L58.4384 16.6L58.4384 19.4ZM36.5378 36L34.8869 33.6L61.685 20L61.685 16L34.8869 2.4L36.5378 0L64.9316 14.4V21.6L36.5378 36Z" fill="currentColor")
+
+
 mixin flex-container()
     section.flex-container
         // Your code here
-        - var classes = ['row', 'card'];
-        - var modifiers = ['grey', 'blue', 'blue-light'];
-        - var cardTitles = ['Мостовая сталь/Стальные конструкции мостов', 'Железобетонные конструкции мостов', 'Дорожные ограждения барьерного типа', 'Шпунтовой замок', 'Мостовой крепеж', 'Профили для деформационных швов', 'Плетеные габионы', 'Модульные мосты' ]
-        - var n = 0;
-        h3.title
+        h3.flex-container__title
             span Комплексные&nbsp;
             |  предложения для мостостроения
-        .wrapper
-            div(class=[`${classes[0]}`, `${classes[0]}_1`])
-                - for (var x = 0; x < 3; x++)
-                    div(class=[`${classes[1]}`, `${classes[1]}_${modifiers[0]}`])
-                        .card__title= `${cardTitles[n++]}`
-                        .card__icon
-            div(class=[`${classes[0]}`, `${classes[0]}_2`])
-                div(class=[`${classes[1]}`, `${classes[1]}_${modifiers[1]}`])
-                    .card__title= `${cardTitles[n++]}`
-                    .card__icon
-                div(class=[`${classes[1]}`, `${classes[1]}_${modifiers[0]}`])
-                    .card__title= `${cardTitles[n++]}`
-                    .card__icon
-                div(class=[`${classes[1]}`, `${classes[1]}_${modifiers[2]}`])
-                    .card__title= `${cardTitles[n++]}`
-                    .card__icon
-            div(class=[`${classes[0]}`, `${classes[0]}_3`])
-                - for (var x = 0; x < 2; x++)
-                    div(class=[`${classes[1]}`, `${classes[1]}_${modifiers[0]}`])
-                        .card__title= `${cardTitles[n++]}`
-                        .card__icon
-
+        .flex-container__wrapper
+            .flex-container__row.flex-container__row_1
+                +flex-card('Мостовая сталь/Стальные конструкции мостов').flex-container__item_grey
+                +flex-card('Железобетонные конструкции мостов').flex-container__item_grey
+                +flex-card('Дорожные ограждения барьерного типа').flex-container__item_grey
+            .flex-container__row.flex-container__row_2
+                +flex-card('Шпунтовой замок').flex-container__item_blue
+                +flex-card('Мостовой крепеж').flex-container__item_grey
+                +flex-card('Профили для деформационных швов').flex-container__item_blue-light
+            .flex-container__row.flex-container__row_3
+                +flex-card('Плетеные габионы').flex-container__item_grey
+                +flex-card('Модульные мосты').flex-container__item_grey
