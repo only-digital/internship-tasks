@@ -110,10 +110,10 @@
 			background: blue;
 		}
 	}
+
 	&.open &__status {
 		transform: rotate(45deg);
 		transition: transform .1s ease;
 	}
-
 }
 

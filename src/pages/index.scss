@@ -5,18 +5,21 @@
         local('Roboto-Regular'),
         url('/src/assets/fonts/Roboto-Regular.ttf') format('truetype');
 }
-
-* {
-    font-family: 'Roboto', sans-serif;
-}
-
+//root
 $root: &;
 $dark-teal: #012B34;
 $blue: #114C9A;
 $black: #000402;
 $light-grey: #E6E6E6;
+//Apply font-family
+* {
+    font-family: 'Roboto', sans-serif;
+}
 
 .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
     padding: 183px 140px 138px 160px;
     @media (max-width: 1440px) {
@@ -49,9 +52,4 @@ $light-grey: #E6E6E6;
 
         margin-bottom: 80px;
 	}
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
 }
