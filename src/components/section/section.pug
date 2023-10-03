@@ -1,0 +1,4 @@
+mixin section(props)
+    .section&attributes(attributes)(data-component='section')
+        h4.section__title= props.title
+        ul.section__list(class= (props.data === 'responsibilities' && 'section__list_responsibilities') || (props.data === 'requirements' && 'section__list_requirements') || (props.data === 'conditions' && 'section__list_conditions'))

@@ -1,7 +1,13 @@
 extends ../../build_modules/common
 
-
 block body
+    style
+        include ./index.scss
     +example-button()
     +example-button()
-    //Your code here
+    +wrapper
+        +vacancy-header
+    +wrapper
+        +section({ title: 'Вам предстоит', data: 'responsibilities' })
+        +section({ title: 'Мы ожидаем', data: 'requirements' })
+        +section({ title: 'Мы предлагаем', data: 'conditions' })
