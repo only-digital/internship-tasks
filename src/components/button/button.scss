@@ -86,3 +86,31 @@
     }
   }
 }
+
+.button--fill {
+  $root: &;
+
+  border: none;
+  color: #fff;
+  background-color: #ff0000;
+
+  .button__svg-arrow {
+    fill: #fff;
+  }
+
+  &:disabled {
+    background-color: #f4f4f4;
+
+    .button__svg-arrow {
+      fill: #909090;
+    }
+  }
+
+  &:hover {
+    background-color: #bf1d26;
+  }
+
+  &:active {
+    background-color: #81080f;
+  }
+}
