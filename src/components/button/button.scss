@@ -108,6 +108,14 @@
     }
   }
 
+  &:focus-visible {
+    color: #fff;
+
+    .button__svg-arrow {
+      fill: #fff;
+    }
+  }
+
   &:hover {
     background-color: #bf1d26;
   }
