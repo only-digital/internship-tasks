@@ -1,0 +1,82 @@
+$white: #fff;
+
+$border-color: #e7eaee;
+
+$text-color: rgba(22, 31, 62, 0.9);
+$completed-color: rgba(22, 31, 62, 0.3);
+$hover-color: #007fff;
+
+$desktop-s: 1024px;
+$tablet: 768px;
+
+.TodoItem {
+	background-color: $white;
+
+	padding: 24px;
+
+	border-radius: 10px;
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		user-select: none;
+
+		padding-bottom: 17px;
+
+		border-bottom: 1px solid $border-color;
+
+		img {
+			cursor: pointer;
+		}
+	}
+
+	&__title {
+		color: $text-color;
+		font-feature-settings:
+			"clig" off,
+			"liga" off;
+		font-size: 24px;
+		line-height: 130%;
+
+		transition: color 0.3s ease-in-out;
+
+		cursor: pointer;
+
+		&[data-task-completed="true"] {
+			text-decoration: line-through;
+			color: $completed-color;
+		}
+
+		&:not([data-task-completed="true"]):hover {
+			color: $hover-color;
+		}
+	}
+
+	&__text {
+		margin-top: 10px;
+
+		width: 50%;
+
+		color: $text-color;
+		font-feature-settings:
+			"clig" off,
+			"liga" off;
+		font-size: 16px;
+		line-height: 175%;
+		letter-spacing: 0.15px;
+
+		@media (max-width: $desktop-s) {
+			width: 75%;
+		}
+
+		@media (max-width: $tablet) {
+			width: 100%;
+		}
+	}
+
+	&:not(:first-child) {
+		margin-top: 20px;
+	}
+}

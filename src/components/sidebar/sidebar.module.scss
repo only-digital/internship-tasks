@@ -1,0 +1,13 @@
+$grey: #d9e1ec;
+
+.Sidebar {
+	flex-grow: 0;
+	flex-shrink: 0;
+
+	width: 100%;
+	max-width: 290px;
+
+	border-right: 1px solid $grey;
+
+	padding: 40px 25px;
+}

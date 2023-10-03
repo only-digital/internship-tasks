@@ -1,0 +1,40 @@
+$dark-blue: #213c57;
+$grey: #d9e1ec;
+
+.Header {
+	width: 100%;
+	height: 80px;
+
+	border-bottom: 1px solid $grey;
+
+	&__logo {
+		padding-left: 45px;
+
+		height: 100%;
+		width: 100%;
+		max-width: 290px;
+		border-right: 1px solid $grey;
+
+		display: flex;
+		align-items: center;
+
+		a {
+			display: flex;
+			outline: none;
+		}
+
+		&--text {
+			margin-left: 9px;
+
+			display: block;
+			width: 44px;
+
+			color: $dark-blue;
+			font-size: 7px;
+			font-style: normal;
+			font-weight: 500;
+			line-height: 120%;
+			text-transform: uppercase;
+		}
+	}
+}

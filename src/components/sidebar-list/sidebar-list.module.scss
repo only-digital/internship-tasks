@@ -1,0 +1,45 @@
+$white: #fff;
+$light: #e3edf7;
+$blue: #007fff;
+$dark-blue: #062d53;
+
+$tablet: 768px;
+
+.SidebarList {
+	display: flex;
+	align-items: center;
+
+	background-color: $light;
+
+	padding: 13px 0 13px 16px;
+
+	border-radius: 10px;
+
+	cursor: pointer;
+
+	transition: background-color 0.3s ease-in-out;
+
+	p {
+		margin-left: 16px;
+
+		color: $blue;
+		font-feature-settings:
+			"clig" off,
+			"liga" off;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 160%;
+
+		transition: color 0.3s ease-in-out;
+	}
+
+	@media (min-width: $tablet) {
+		&:hover {
+			background-color: $dark-blue;
+		}
+
+		&:focus {
+			outline: 3px solid $blue;
+		}
+	}
+}
