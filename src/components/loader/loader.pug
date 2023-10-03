@@ -1,5 +1,5 @@
-mixin loader(props)
-	.loader
+mixin loader({ disabled=true}={})
+	.loader(class=disabled&&'loader_disabled')
 		.loader__curtain
 		span.loader__spinner&attributes(attributes)(data-component='loader')
 		//Your code here

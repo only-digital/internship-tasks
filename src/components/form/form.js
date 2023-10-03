@@ -10,6 +10,7 @@ class Form extends Component {
     successButton;
     emailWrapper;
     policyWrapper;
+    loader;
 
     constructor(element) {
         super(element);
@@ -24,6 +25,7 @@ class Form extends Component {
         this.successButton = this.getElement('success');
         this.emailWrapper = this.getElement('email-wrapper');
         this.policyWrapper = this.getElement('policy-wrapper');
+        this.loader = document.querySelector('.loader');
         this.emailInput.addEventListener('input',this.handleEmailChange);
         this.policyInput.addEventListener('change',this.handlePolicyChange);
     }
@@ -34,6 +36,14 @@ class Form extends Component {
 
     handlePolicyChange = () => {
         this.policyError.classList.add('form_invisible-elem');
+    }
+
+    showLoader = () => {
+        this.loader.classList.remove('loader_disabled')
+    }
+
+    hideLoader = () => {
+        this.loader.classList.add('loader_disabled')
     }
 
     handleFormSubmit = (event) => {
@@ -76,6 +86,7 @@ class Form extends Component {
         this.clearError();
         const url = 'http://localhost:3000/form';
         try {
+            this.showLoader();
             const response = await fetch(url,{
                 method:'POST',
                 headers: {
@@ -83,6 +94,7 @@ class Form extends Component {
                 },
                 body:JSON.stringify(data)
             });
+            this.hideLoader();
             if (response.ok) {
                 this.setSuccess();
             } else this.setError(response.statusText);

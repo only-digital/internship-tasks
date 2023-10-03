@@ -4,6 +4,10 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	
+	&_disabled {
+		display: none;
+	}
 
 	&__spinner {
 		width: 88px;
