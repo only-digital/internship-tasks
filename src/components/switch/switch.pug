@@ -1,3 +1,4 @@
 mixin switch(props)
-	.switch&attributes(attributes)
-		//Your code here
+	.switch
+		input(type="checkbox" id!=props.id)&attributes(attributes)
+		label.toggle(for!=props.id)

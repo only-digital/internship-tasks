@@ -1,5 +1,66 @@
 .switch {
 	$root: &;
+	display: inline-flex;
 
-	//Your code here
+	.toggle {
+		width: 56px;
+		height: 28px;
+		background-color: #fff;
+		border-radius: 14px;
+		cursor: pointer;
+		position: relative;
+		transition: all 0.3s;
+
+		@media (max-width: 812px) {
+			width: 40px;
+			height: 20px;
+		}
+	}
+
+	.toggle::before {
+		position: absolute;
+		content: "";
+		background-color: #0041a0;
+		width: 16px;
+		height: 16px;
+		border-radius: 50%;
+		margin: 6px;
+
+		@media (max-width: 812px) {
+			width: 12px;
+			height: 12px;
+			margin: 4px;
+		}
+	}
+
+	input:checked+.toggle {
+		background-color: #0041a0;
+	}
+
+	input:checked+.toggle::before {
+		transform: translateX(28px);
+		background-color: #fff;
+
+		@media (max-width: 812px) {
+			transform: translateX(20px);
+		}
+	}
+
+	input {
+		display: none;
+	}
+
+	input:hover+.toggle {
+		background-color: #002f6c;
+	}
+
+	input:focus+.toggle {
+		outline: 3px solid #c2daff;
+	}
+
+	input:disabled+.toggle {
+		background-color: #dedede;
+		user-select: none;
+		cursor: default;
+	}
 }
