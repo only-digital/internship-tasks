@@ -1,0 +1,73 @@
+.example-button {
+	$root: &;
+
+	display: flex;
+	align-items: center;
+	color: white;
+	transition: color 0.3s, opacity 0.3s;
+
+	&:disabled {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+
+	@media (hover: hover) {
+		&:hover {
+			color: black;
+
+			#{$root}__svg {
+				fill: white;
+			}
+		}
+	}
+
+	&__text {
+		font-size: 14px;
+		text-transform: uppercase;
+		margin-right: 25px;
+		user-select: none;
+		color: black;
+
+		@media (min-width: 1280px) {
+			font-size: 16px;
+		}
+	}
+
+	&__circle {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 60px;
+		height: 60px;
+		background: currentColor;
+		border-radius: 50%;
+		border: 1px solid rgba(#232323, 0.5);
+
+		@media (min-width: 1280px) {
+			width: 80px;
+			height: 80px;
+		}
+
+		@media (min-width: 1920px) {
+			width: 100px;
+			height: 100px;
+		}
+
+		svg {
+			width: 14px;
+			height: 14px;
+			fill: black;
+			transition: fill 0.3s;
+
+			@media (min-width: 1280px) {
+				width: 19px;
+				height: 18px;
+			}
+
+			@media (min-width: 1920px) {
+				width: 24px;
+				height: 23px;
+			}
+		}
+	}
+}
