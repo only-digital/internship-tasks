@@ -1,3 +1,5 @@
+@import './colors.scss';
+
 .link-button {
 	$root: &;
 
@@ -10,7 +12,7 @@
 	padding: 8px 14px 10px 14px;
 	margin-top: 40px;
 
-	border: 1px solid #BCBCBC;
+	border: 1px solid $color6;
 	border-radius: 24px;
 	outline: 2px solid transparent;
 
@@ -18,47 +20,55 @@
 
 	&:disabled {
 		.link-button__text {
-			color: #909090;
+			color: $color4;
 		}
 
 		.link-button__svg {
-			fill: #909090;
+			fill: $color4;
 		}
 
-		border-color: #BCBCBC;
+		border-color: $color6;
 
 		pointer-events: none;
 	}
 
 	@media (hover: hover) {
 		&:hover {
-			background-color: #0041A0;
-			border-color: #0041A0;
+			background-color: $color3;
+			border-color: $color3;
 
 			.link-button__text {
-				color: #FFFFFF;
+				color: $color2;
 			}
 
 			.link-button__svg {
-				fill: #FFFFFF;
+				fill: $color2;
 			}
 		}
 
 		&:focus {
-			outline: 2px solid #99B3D8;
+			outline: 2px solid $color7;
+
+			.link-button__text {
+				color: $color3;
+			}
+
+			.link-button__svg {
+				fill: $color3;
+			}
 		}
 	}
 
 	&:active {
-		background-color: #002F6C;
-		border-color: #002F6C;
+		background-color: $color5;
+		border-color: $color5;
 
 		.link-button__text {
-			color: #FFFFFF;
+			color: $color2;
 		}
 
 		.link-button__svg {
-			fill: #ffffff;
+			fill: $color2;
 		}
 	}
 
@@ -81,7 +91,7 @@
 	&__text {
 		font-family: Arial, sans-serif;
 		font-size: 16px;
-		color: #111111;
+		color: $color1;
 
 		transition: color 0.3s;
 
@@ -107,43 +117,51 @@
 			width: 100%;
 			height: 100%;
 
-			fill: #002F6C;
+			fill: $color5;
 
 			transition: fill 0.3s;
 		}
 	}
 
 	&--alt-color {
-		border: 1px solid #FF0000;
-		background-color: #FF0000;
+		border: 1px solid $color8;
+		background-color: $color8;
 
 		.link-button__text {
-			color: #FFFFFF;
+			color: $color2;
 		}
 
 		.link-button__svg {
-			fill: #FFFFFF;
+			fill: $color2;
 		}
 
 		&:disabled {
-			background-color: #F4F4F4;
-			border-color: #F4F4F4;
+			background-color: $color11;
+			border-color: $color11;
 		}
 
 		@media (hover: hover) {
 			&:hover {
-				border-color: #BF1D26;
-				background-color: #BF1D26;
+				border-color: $color9;
+				background-color: $color9;
 			}
 
 			&:focus {
-				border-color: #99B3D8;
+				border-color: $color7;
+
+				.link-button__text {
+					color: $color2;
+				}
+
+				.link-button__svg {
+					fill: $color2;
+				}
 			}
 		}
 
 		&:active {
-			border-color: #81080F;
-			background-color: #81080F;
+			border-color: $color10;
+			background-color: $color10;
 		}
 	}
 }

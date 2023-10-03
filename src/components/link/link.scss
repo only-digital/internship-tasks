@@ -1,3 +1,5 @@
+@import './colors.scss';
+
 .link {
 	$root: &;
 
@@ -10,7 +12,7 @@
 
 	font-family: Arial, sans-serif;
 	font-size: 14px;
-	color: #0041A0;
+	color: $color1;
 
 	background-color: transparent;
 
@@ -18,16 +20,16 @@
 
 	@media (hover: hover) {
 		&:hover {
-			color: #F00;
+			color: $color3;
 		}
 
 		&:focus {
-			background-color: rgba(0, 65, 160, 0.15);
+			background-color: $color5;
 		}
 	}
 	
 	&:active {
-		color: #BF1D26;
+		color: $color4;
 	}
 
 	@media (min-width: 1280px) {
@@ -38,11 +40,11 @@
 		width: 19.5px;
 		height: 19.5px;
 
-		fill: #002F6C;
+		fill: $color2;
 	}
 
 	&--disabled {
-		color: #BCBCBC;
+		color: $color6;
 
 		pointer-events: none;
 	}

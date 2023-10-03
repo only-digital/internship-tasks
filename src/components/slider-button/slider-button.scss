@@ -1,3 +1,5 @@
+@import './colors.scss';
+
 .slider-button {
 	$root: &;
 
@@ -25,7 +27,7 @@
 			height: 60px;
 			padding-right: 3px;
 
-			border: 1px solid #DEDEDE;
+			border: 1px solid $color1;
 			border-radius: 50%;
 			outline: 3px solid transparent;
 
@@ -33,18 +35,18 @@
 
 			@media (hover: hover) {
 				&:hover {
-					background-color: #F4F4F4;
-					border-color: #F4F4F4;
+					background-color: $color4;
+					border-color: $color4;
 				}
 
 				&:focus {
-					outline: 3px solid #99B3D8;
+					outline: 3px solid $color5;
 				}
 			}
 
 			&:active {
-				background-color: #DEDEDE;
-				border-color: #DEDEDE;
+				background-color: $color1;
+				border-color: $color1;
 			}
 
 			@media (min-width: 1920px) {
@@ -61,7 +63,7 @@
 				width: 21px;
 				height: 30px;
 				
-				fill: #002F6C;
+				fill: $color2;
 
 				@media (min-width: 1920px) {
 					width: 28px;
@@ -77,7 +79,7 @@
 		font-family: Arial, sans-serif;
 		font-size: 16px;
 		font-weight: 600;
-		color: #909090;
+		color: $color3;
 
 		opacity: 0.4;
 
@@ -90,18 +92,18 @@
 	&--disabled {
 		.slider-button__buttons-wrapper {
 			.slider-button__button {
-				border-color: #DEDEDE;
+				border-color: $color1;
 
 				pointer-events: none;
 			}
 
 			.slider-button__svg {
-				fill: #BCBCBC;
+				fill: $color6;
 			}
 		}
 		
 		.slider-button__text {
-			color: #BCBCBC;
+			color: $color6;
 		}
 	}
 }
