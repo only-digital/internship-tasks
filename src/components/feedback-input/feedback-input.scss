@@ -93,11 +93,12 @@ $color-red: #FF0000;
   }
 
   &__field:disabled+&__label {
-    color: $color-extra-gray;
+    color: $color-light-gray;
   }
 
   &__field:disabled {
     border-bottom-color: $color-extra-gray;
+    pointer-events: none;
   }
 
   &__error{

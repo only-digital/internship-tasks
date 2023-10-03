@@ -9,26 +9,33 @@ class FeedbackInput extends Component {
 
     this.input = this.getElement("field");
     this.input.addEventListener("change", this.onChange);
+    this.input.addEventListener("input", this.onInput);
     this.error = this.getElement("error");
   }
+
+  onInput = () => {
+    this.error.textContent = "";
+    this.root.classList.remove("success", "error");
+  };
 
   onChange = () => {
     this.root.classList.remove("success", "error");
     this.error.textContent = "";
 
-    const validRes = this.isValid();
-    if (validRes.result) {
-      this.root.classList.add("success");
-    } else {
-      this.root.classList.add("error");
-      this.error.textContent = validRes.message;
+    if (this.input.value.length > 0) {
+      const validRes = this.isValid();
+      if (validRes.result) {
+        this.root.classList.add("success");
+      } else {
+        this.root.classList.add("error");
+        this.error.textContent = validRes.message;
+      }
     }
   };
 
   isValid = () => {
     const reg = new RegExp(this.root.dataset.regex);
     const maxLength = this.root.dataset.maxlength;
-    console.log(maxLength);
     let result = {
       result: true,
       message: "",
@@ -40,7 +47,7 @@ class FeedbackInput extends Component {
     if (maxLength < this.input.value.length) {
       result = {
         result: false,
-        message: "E-mail должен быть короче 255 символов",
+        message: `E-mail должен быть короче ${maxLength} символов`,
       };
     }
     return result;
