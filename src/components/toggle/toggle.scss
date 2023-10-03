@@ -10,7 +10,7 @@
   justify-content: flex-end;
   border-radius: 25px;
   background-color: #0041a0;
-  transition: all 0.3s;
+  transition: outline 0.3s, background-color 0.3s, justify-content 0.3s;
 
   &--inactive {
     background-color: #dedede;
