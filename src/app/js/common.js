@@ -1,4 +1,5 @@
 import ExampleButton from "../../components/example-button/example-button";
+import FeedbackFile from "../../components/feedback-file/feedback-file";
 import FeedbackInput from "../../components/feedback-input/feedback-input";
 import FeedbackTextarea from "../../components/feedback-textarea/feedback-textarea";
 
@@ -11,6 +12,7 @@ const allComponents = {
   "example-button": ExampleButton,
   "feedback-input": FeedbackInput,
   "feedback-textarea": FeedbackTextarea,
+  "feedback-file": FeedbackFile,
 };
 
 /**

@@ -1,0 +1,10 @@
+mixin feedback-file(props)
+  .feedback-file&attributes(attributes)(data-component='feedback-file')
+
+    button.feedback-file__button&attributes(attributes)
+      .feedback-file__button__message
+      | Прикрепить файл 
+      +svg("plus").feedback-file__button-image
+    input#file.feedback-file__input(type="file" name="" accept=".doc, .docx, .pdf" multiple="multiple")
+    .feedback-file__container
+    .feedback-file__error

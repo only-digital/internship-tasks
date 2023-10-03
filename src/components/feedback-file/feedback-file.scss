@@ -1,0 +1,227 @@
+$color-black: #111;
+$color-white: #FFFFFF;
+$color-gray: #DEDEDE;
+$color-extra-gray: #F4F4F4;
+$color-light-gray: #BCBCBC;
+$color-steel: #909090;
+$color-cobalt: #0041A0;
+$color-blue: #002F6C;
+$color-light-blue: #99B3D8;
+$color-red: #FF0000;
+$color-midnight:  #021F45;
+
+.feedback-file {
+	$root: &;
+  display: flex;
+  column-gap: 20px;
+  row-gap: 7px;
+  margin: 10px;
+  flex-wrap: wrap;
+  
+
+  &__container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+   
+  }
+
+	#file{
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &__button{
+    position: relative;
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    padding-top: 14px;
+    height: 46px;
+    width: fit-content;
+
+    color:  $color-midnight;
+    background-color: $color-white;
+    text-align: center;
+    font-family: "arial";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -0.32px;
+
+    border-radius: 24px;
+    border: solid 1px $color-light-gray;
+    transition: color .2s ease;
+    transition: background-color .2s ease;
+    transition: border-color .2s ease,
+                background-color .2s ease,
+                color .2s ease;
+    cursor: pointer;
+
+    &-image{
+      width: 14px;
+      height: 14px;
+      fill:$color-blue;
+      transition: fill .2s ease;
+    }
+
+
+    &:focus {
+      color: $color-midnight;
+      background-color: $color-white;
+      border-color: $color-extra-gray;
+      outline: auto;
+      outline-width: 3px;
+      outline-color: $color-light-blue;
+
+    }
+
+    &:hover {
+      color: $color-white;
+      background-color: $color-cobalt;
+      border-color: $color-cobalt;
+    }
+
+    &:hover &-image{
+      fill: $color-white;
+    }
+
+    &:active {
+      color: $color-white;
+      background-color: $color-blue;
+      border-color: $color-blue;
+    }
+
+    &:disabled, 
+    &.disabled:hover {
+      color: $color-steel;
+      border-color: $color-light-gray;
+      background-color: $color-white;
+      cursor: default;
+    }
+
+     
+
+    &:disabled &-image {
+      fill: $color-steel;
+    }
+
+    &.disabled:hover &__message {
+      opacity: 1;
+    }
+
+    &__message {
+      position: absolute;
+      width: 240px;
+      height: 76px;
+      top: -26px;
+      left: -190px;
+      padding: 16px 20px 18px 20px;
+      transform: translateY(-100%);
+      background-color: #111;
+      filter: drop-shadow(0px 8px 16px rgba(117, 132, 141, 0.25));
+      background-color: $color-white;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 10;
+      transition: opacity 0.2s ease;
+
+      color: $color-blue;
+      font-family: Arial;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      text-align: left;
+
+
+      &::after{
+        position: absolute;
+        bottom: -15px;
+        right: 0px;
+        content: "";
+        width: 0;
+        height: 0;
+        border-top: 16px solid $color-white;
+        border-left: 16px solid transparent;
+        filter: drop-shadow(0px 8px 16px rgba(117, 132, 141, 0.25));
+      }
+    }
+  }
+
+  &__item{
+    display: flex;
+    align-items: center;
+    gap:2px;
+    max-width: 260px;
+    padding: 10px 13px 10px 18px;
+    height: 40px;
+    font-family: Arial;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 124%;
+    letter-spacing: -0.32px;
+    color: $color-steel;
+    background-color: $color-extra-gray;
+    border-radius: 27px;
+    transition: max-width 0.2s ease;
+
+    &:hover {
+      max-width: 274px;
+      cursor: pointer;
+    }
+    &:hover &-remove{
+      margin-left: 10px;
+      width: 15px;
+     
+    }
+
+    &-title {
+      display: inline-block;
+      max-width: 70px;
+      height: 19px;
+      color: $color-black;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      text-wrap: nowrap;
+    }
+
+    &-ext {
+
+      color: $color-steel;
+      text-transform: uppercase;
+    }
+
+    &-size {
+      width: fit-content;
+      color: $color-steel;
+    }
+
+    &-remove {
+      color: $color-blue;
+      fill: $color-blue;
+      margin-left: 0;
+      width: 0px;
+      height: 15px;
+      transform: rotate(45deg);
+      transition: width 0.2s ease,
+                  margin-left 0.2s ease;
+    }
+
+    
+  }
+  &__error {
+    width: 100%;
+    color: $color-red;
+    font-family: Arial;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.24px;
+  }
+}
