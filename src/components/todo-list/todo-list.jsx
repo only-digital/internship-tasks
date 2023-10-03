@@ -1,6 +1,6 @@
 import TodoItem from '../todo-item/todo-item';
 import styled from './todo-list.module.scss';
-import {useState, useCallback} from 'react';
+import {useState, useCallback, useEffect} from 'react';
 import Image from 'next/image';
 
 const TodoList = ({props}) => {
@@ -34,7 +34,7 @@ const TodoList = ({props}) => {
 	}
 
 	const handleRemoveTask = (taskId) => {
-  		setTodoList(prevTodoList => prevTodoList.filter((item, index) => index !== taskId));
+  		setTodoList(prevTodoList => prevTodoList.filter((item) => item.id !== taskId));
 	};
 
 	const handleInput = (e) => {
@@ -42,15 +42,21 @@ const TodoList = ({props}) => {
 	};
 	
 	const handleSearch = useCallback((e) => {
-		if ((e.key === 'Enter' || !e.key) && searchValue !== '') { 
-			setSearchTasks(useSearch(todoList, searchValue));
-			setIsShowSearch(true);
+		if ((e.key === 'Enter' || !e.key)) { 
+			if (searchValue === '') 
+			setIsShowSearch(false);
+			else {
+				setSearchTasks(useSearch(todoList, searchValue));
+				setIsShowSearch(true);
+			}
 		}
 
-		if (searchValue === '') 
-			setIsShowSearch(false);
-
 	}, [todoList, searchValue]);
+
+	useEffect(() => {
+		if (isShowSearch)
+			setSearchTasks(useSearch(todoList, searchValue));
+	}, [todoList]);
 
 	return (
 		<div className={styled.TodoList} >
@@ -72,21 +78,24 @@ const TodoList = ({props}) => {
 			<ul className={styled.TodoList__tasks}>
 				{
 				isShowSearch && searchTasks.length
-				? searchTasks.map((item, index) => {
+				? <div>
+					<h1>Найденные задачи по запросу: {searchValue}</h1>
+					{searchTasks.map((item) => {
 									return <TodoItem
-					key={index}
+					key={item.id}
 					title={item.title} 
 					text={item.text} 
 					isCompleted={item.isCompleted}
-					handleRemoveTask={() => handleRemoveTask(index)}
-					/>})
+					handleRemoveTask={() => handleRemoveTask(item.id)}
+					/>})}
+					</div>
 				: todoList.length
-				? todoList.map((item, index) => <TodoItem 
-					key={index}
+				? todoList.map((item) => <TodoItem 
+					key={item.id}
 					title={item.title} 
 					text={item.text} 
 					isCompleted={item.isCompleted}
-					handleRemoveTask={() => handleRemoveTask(index)}
+					handleRemoveTask={() => handleRemoveTask(item.id)}
 					/>) 
 
 				: <h1 className={styled.TodoList__empty}>Задач не найдено</h1>}
