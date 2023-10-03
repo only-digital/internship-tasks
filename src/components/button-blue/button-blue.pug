@@ -1,6 +1,6 @@
-mixin button-blue(props)
+mixin button-blue(text)
 	button.button-blue&attributes(attributes)
 		//Your code here
-		span.button-blue__text!= props.text
+		span.button-blue__text= text
 		span.button-blue__svg
 			+svg('btn-arrow')

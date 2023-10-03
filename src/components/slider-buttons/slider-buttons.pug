@@ -1,10 +1,9 @@
-mixin slider-buttons(props)
-	- var classes = ['prev', 'next']
+mixin slider-buttons(text)
 	.slider-buttons&attributes(attributes)
 		//Your code here
 		.slider-buttons__container
-			button(class=['slider-buttons__button', `slider-buttons__button_${classes[0]}`])
+			button.slider-buttons__button.slider-buttons__button_prev
 				+svg('slider-arrow')
-			button(class=['slider-buttons__button', `slider-buttons__button_${classes[1]}`], disabled='true')
+			button.slider-buttons__button.slider-buttons__button_next
 				+svg('slider-arrow')
-		.slider-buttons__counter #{props.text}
+		.slider-buttons__counter= text
