@@ -1,0 +1,11 @@
+mixin vacancy-form(props)
+	.vacancy__form&attributes(attributes)(data-component='vacancy-form')
+		h3.vacancy__form-name Форма обратной связи
+		.vacancy__email 
+			label E-mail
+			input(type="email")
+		.vacancy__checkbox 
+			input(type='checkbox')
+			label Вы подтверждаете, что ознакомились c политикой обработки персональных данных 
+		button.vacancy__sendForm Отправить
+			+svg('arrow')
