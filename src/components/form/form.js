@@ -1,20 +1,20 @@
 import Component from '../../app/js/base/Component';
 
 class Form extends Component {
-	isLoading = false;
-
     constructor(element) {
         super(element);
 
 		this.form = element.component;
         this.input = this.getElement('input');
 		this.button = this.getElement('button');
-		this.empty = this.getElement('empty');
-		this.valid = this.getElement('valid');
-		this.warning = this.getElement('warning');
-		this.success = this.getElement('success');
+		this.emptyEmail = this.getElement('email-empty');
+		this.validEmail = this.getElement('email-valid');
+		this.result = this.getElement('result');
+		this.data = this.getElement('data');
+		this.resultText = document.querySelector('.result__text');
+		this.resultIcon = document.querySelector('.result__icon');
+		this.loader = document.querySelector('.loader-wrapper');
 
-		// this.button.addEventListener('click', this.sendData);
 		this.form.addEventListener('submit', this.formSend);
     }
 
@@ -24,6 +24,12 @@ class Form extends Component {
 		let error = this.formValidate(this.form);
 		
 		if (error === 0) {
+			this.loader.classList.add('_sending');
+
+			this.emptyEmail.style.display = 'none';
+			this.validEmail.style.display = 'none';
+			
+
 			let response = await fetch('/form', {
 				method: 'POST',
 				body: JSON.stringify({
@@ -33,60 +39,59 @@ class Form extends Component {
 				headers: {
 					'content-type': 'application/json'
 				}
-			})
-			console.log(1)
+			});	
+
+			let result = await response.json();
+
+			this.result.style.display = 'flex';
+			this.resultText.innerHTML = result.message;	
+
 			if (response.ok) {
-				let result = await response.json();
+				this.loader.classList.remove('_sending');
+				this.data.classList.add('disabled');
 
 				this.button.style.display = 'none';
-				this.success.style.display = 'flex';
-				this.form.setAttribute('disabled', true);
 			} else {
+				this.loader.classList.remove('_sending');
+				this.result.classList.add('_error');
 
+				this.resultIcon.children[0].style.display = 'none';
+				this.button.style.display = 'flex';
 			}
-		} else {
+		} 
+	};
 
-		}
-	}
-
-	formValidate = (form) => {
+	formValidate = () => {
 		let error = 0;
 		let formReq = document.querySelectorAll('._req');
 
 		for (let i = 0; i < formReq.length; i++) {
 			const input = formReq[i];
-			this.formRemoveError(input);
+			input.classList.remove('_error');
 
 			if (input.classList.contains('_email')) {
 				if (input.value.length === 0) {
-					this.formAddError(input);
-					this.empty.style.display = 'block';
-					this.valid.style.display = 'none';
+					input.classList.add('_error');
+					this.emptyEmail.style.display = 'block';
+					this.validEmail.style.display = 'none';
 					error++;
 				} else if (!this.emailValidate(input)) {
-					this.formAddError(input);
-					this.empty.style.display = 'none';
-					this.valid.style.display = 'block';
+					input.classList.remove('_error');
+					this.emptyEmail.style.display = 'none';
+					this.validEmail.style.display = 'block';
 					error++;
-				}	
-			} else if (input.getAttribute('type') === 'checkbox' && input.checked === false) {
-				this.formAddError(input);
+				} else {
+					this.emptyEmail.style.display = 'none';
+					this.validEmail.style.display = 'none';
+				}
+			} else if (input.checked === false) {
+				input.classList.add('_error');
 				error++;
-			}
+			} 
 		}
 
 		return error;
 	}
-
-	formAddError = (input) => {
-		input.parentElement.classList.add('_error');
-		input.classList.add('_error');
-	}	
-	
-	formRemoveError = (input) => {
-		input.parentElement.classList.remove('_error');
-		input.classList.remove('_error');
-	}	
 
 	emailValidate = (input) => {
 		return /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu.test(input.value);
@@ -94,47 +99,3 @@ class Form extends Component {
 }
 
 export default Form
-
-// sendData = async (e) => {
-// 	e.preventDefault();
-
-// 	if (this.input.value.length === 0) {
-// 		this.empty.style.display = 'block';
-// 	} else {
-// 		e.preventDefault();
-
-// 		this.empty.style.display = 'none';
-
-// 		// const warning = document.createElement('p');
-// 		// warning.classList.add('warning');
-
-// 		const response = await fetch('/form', {
-// 			method: 'POST',
-// 			body: JSON.stringify({
-// 				email: this.input.value,
-// 				confirm: true  
-// 			}),
-// 			headers: {
-// 				'content-type': 'application/json'
-// 			}
-// 		})
-// 		let result = await response.json();
-
-// 		console.log(result)
-// 		if (response.ok) {
-// 			this.warning.innerHTML = result.message;
-// 			this.warning.style.color = 'green';
-// 			// this.form.appendChild(warning);
-// 		} else {
-// 			this.warning.innerHTML = result.message;
-// 			this.warning.style.color = 'red';
-// 			this.form.appendChild(warning);
-// 		}
-// 	}
-// }
-
-// addResult = (className) => {
-// 	result.innerHTML = response.message;
-// 	result.style.color = className;
-// 	this.form.appendChild(result);
-// }

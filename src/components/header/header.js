@@ -8,7 +8,7 @@ class Header extends Component {
 		this.views = this.getElement('views');
 		this.responses = this.getElement('responses');
 
-		this.getData()
+		this.getData();
     }
 
 	getData = () => {

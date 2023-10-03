@@ -6,20 +6,49 @@
 	display: grid;
 	grid-template-columns: 1fr 836px;
 	grid-template-areas: "a ."
-					     ". b";
+					     ". b"
+						 ". c";
+	
+	@include media(1280px, 900px) {
+		display: flex;
+		flex-direction: column;
+		margin-top: 90px;
+	}
 
+	@include media(768px, 1024px) {
+		margin-top: 70px;
+	}
 
-	&__right {
+	&__data {
 		display: flex;
 		flex-direction: column;
 		grid-area: b;
-	}
+		position: relative;
 
+		&.disabled {
+			opacity: 0.5;
+			pointer-events: none;
+		}	
+
+		@include media(1280px, 900px) {
+			margin-top: 20px;
+		}
+	}
 
 	&__title {
 		@include text-style(400, 32px, $blue, 38.4px);
 		grid-area: a;
 		cursor: default;
+
+		@include media(768px, 1024px) {
+			font-size: 28px;
+			line-height: 34px;
+		}
+
+		@include media(580px, 1024px) {
+			font-size: 26px;
+			line-height: 32px;
+		}
 	}
 
 	&__label {
@@ -40,69 +69,84 @@
 		border: 1px solid $red;
 	}
 
-	&__empty {
+	&__email-empty {
 		@include text-style(400, 14px, $red, 21px);
 		display: none;
 		color: #EF1C1C;
 		margin-top: 25px;
+
+		@include media(1280px, 900px) {
+			margin-top: 20px;
+		}
+
+		@include media(768px, 1024px) {
+			margin-top: 15px;
+		}
 	}
 
-	&__valid {
+	&__email-valid {
 		@include text-style(400, 14px, $red, 21px);
 		display: none;
 		color: #EF1C1C;
 		margin-top: 25px;
+
+		@include media(1280px, 900px) {
+			margin-top: 20px;
+		}
+
+		@include media(768px, 1024px) {
+			margin-top: 15px;
+		}
 	}
 
-	.agreement {
+	&__agreement {
 		margin-top: 14px;
 		display: flex;
 		align-items: center;
 		
-		&__input {
-			width: 16px;
-			height: 16px;
+		.agreement__input {
+			width: 1em;
+			height: 1em;
 			border: 1px solid $grey;
 			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+
+			@include media(580px, 1024px) {
+				width: 1.5em;
+				height: 1.5em;
+			}
+
+			@include media(500px, 1024px) {
+				width: 2em;
+			}
 
 			&:checked {
 				background-color: $lightBlue;	
 				border: 1px solid $lightBlue;
-
-				&:before {
-					content: '';
-					width: 5px;
-					height: 2px;
-					transform: rotate(45deg);
-					background-color: #fff;
-					position: absolute;
-					top: 7px;
-					left: 2px;
-				}
-
-				&:after {
-					content: '';
-					width: 10px;
-					height: 2px;
-					transform: rotate(-45deg);
-					background-color: #fff;
-					position: absolute;
-					top: 5px;
-					left: 4px;
-				}
+				background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M3.64575 5.59405L1.12788 2.89904L0 4.09777L3.64575 8L10 1.19872L8.88006 0L3.64575 5.59405Z' fill='white'/%3e%3c/svg%3e");
+				background-position: center;
+				background-repeat: no-repeat;
 			}
+			
 		}
 
-		&__input._error {
+		.agreement__input._error {
 			border: 1px solid $red;
 		}
 
-		&__label {
+		.agreement__label {
 			@include text-style(400, 14px, $grey, 21px);
 			margin-left: 18px;
+
+			@include media(580px, 1024px) {
+				font-size: 13px;
+			}
 		}
 
-		&__link {
+		.agreement__link {
 			@include text-style(400, 14px, $blue, 21px);
 
 			&:hover {
@@ -132,14 +176,34 @@
 		&:active {
 			background-color: $lightBlue;
 		}
+
+		@include media(1280px, 900px) {
+			margin-top: 20px;
+		}
+
+		@include media(768px, 1024px) {
+			margin-top: 15px;
+		}
+
+		@include media(580px, 1024px) {
+			max-width: none;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+
+			svg {
+				margin-left: 15px;
+			}
+		}
 	}
 
-	&__success {
+	&__result {
 		display: none;
 		align-items: center;
 		margin-top: 30px;
+		grid-area: c;
 
-		.success__icon {
+		.result__icon {
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -149,9 +213,90 @@
 			border: 2px solid #DEDEDE;
 		}
 
-		.success__text {
+		.result__text {
 			margin-left: 21px;
-			@include text-style(400, 16px, $black, 20px);
+			@include text-style(400, 16px, $green, 20px);
+			cursor: default;
+		}
+
+		&._error {
+			.result__icon {
+				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				
+				&:before {
+					content: '';
+					width: 22px;
+					height: 2px;
+					background-color: $red;
+					position: absolute;
+					transform: rotate(45deg);
+				}
+
+				&:after {
+					content: '';
+					width: 22px;
+					height: 2px;
+					background-color: $red;
+					position: absolute;
+					transform: rotate(-45deg);
+				}
+			}
+
+			.result__text {
+				margin-left: 21px;
+				@include text-style(400, 16px, $red, 20px);
+				cursor: default;
+			}
 		}
 	}
+
+	.loader-wrapper {
+		width: 100%;
+		height: 100%;
+		background-color: rgba(255, 255, 255, 0.5);
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.5s ease, visibility 0.5s ease;
+
+		.loader {
+			width : 48px;
+			height: 48px;
+			border: 3px solid $black;
+			border-radius: 50%;
+			display: inline-block;
+			position: relative;
+			animation: rotation 1s linear infinite;
+			&:after {
+				content: '';
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50% , -50%);
+				width:  48px + 8px;
+				height:  48px + 8px;
+				border-radius: 50%;
+				border: 3px solid ;
+				border-color: $red transparent;
+			}
+		}
+
+		&._sending {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+@keyframes rotation {
+    0% { transform: rotate(0deg) }
+    100% { transform: rotate(360deg) }
 }

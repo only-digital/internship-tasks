@@ -63,11 +63,25 @@
 	}
 
 	&__item {
+		position: relative;
+		padding-left: 28px;
+	
+
 		&:not(:first-child) {
 			margin-top: 12px;
 		}
 
 		@include text-style(400, 24px, $black, 33.6px);
+
+		&:before {
+			content: '';
+			width: 20px;
+			height: 1px;
+			background-color: $green;
+			position: absolute;
+			top: 16px;
+			left: 0;
+		}
 
 		@include media(1280px, 768px) {
 			font-size: 22px;

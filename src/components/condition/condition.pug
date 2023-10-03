@@ -1,6 +1,6 @@
 mixin condition(props)
 	.condition&attributes(attributes)(data-component='condition')
 		h2.condition__title= props.title
-		ol.condition__list 
+		ul.condition__list 
 			each item in props.list 
 				li.condition__item #{item}
