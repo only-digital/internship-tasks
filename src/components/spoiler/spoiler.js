@@ -6,13 +6,11 @@ class Spoiler extends Component {
 
         // Находим все кнопки и присваиваем их в переменную
 
-        const buttons = this.getElements("button")
+        const button = this.getElement("button")
 
-        // Навешиваем обработчики события клика на кнопки
-
-        buttons.forEach(button => {
-            button.addEventListener("click", this.onButtonClick)
-        })
+        // Навешиваем обработчики события клика на кнопку
+        
+        button.addEventListener("click", this.onButtonClick)
     }
 
     // Обработчик события нажатия на кнопку в спойлере
