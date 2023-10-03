@@ -1,3 +1,4 @@
 mixin toggle(props)
-	button.toggle&attributes(attributes)
-		.circle
+	.toggle(tabindex='0')
+		input(id='toggle' type='checkbox').toggle__input&attributes(attributes)
+		label(for='toggle').toggle__label
