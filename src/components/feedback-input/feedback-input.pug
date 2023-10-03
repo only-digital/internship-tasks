@@ -1,0 +1,6 @@
+mixin feedback-input(props)
+  .feedback-input&attributes(attributes)(data-component='feedback-input' data-regex=props.regex data-maxlength=props.maxLength)
+    input.feedback-input__field&attributes(attributes)
+    span.feedback-input__label= attributes.placeholder
+    +svg("union").feedback-input__success
+    .feedback-input__error

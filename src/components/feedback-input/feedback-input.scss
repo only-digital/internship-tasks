@@ -1,0 +1,145 @@
+$color-black: #111;
+$color-white: #FFFFFF;
+$color-gray: #DEDEDE;
+$color-extra-gray: #F4F4F4;
+$color-light-gray: #BCBCBC;
+$color-steel: #909090;
+$color-cobalt: #0041A0;
+$color-red: #FF0000;
+
+.feedback-input {
+	$root: &;
+
+  position: relative;
+  color: $color-black;
+  font-family: Arial;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.32px;
+
+  &__field{
+    position: relative;
+    width: 100%;
+    height: 48px;
+    padding-top: 13px;
+    padding-bottom: 19px;
+    margin-top: 18px;
+  
+    background-color: $color-white;
+    color: $color-black;
+    font-family: "Arial";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: -0.32px;
+  
+    border-bottom: solid 1px $color-gray;
+    transition: all 0.2s ease;
+    z-index: 5;
+
+    &::placeholder{
+      visibility: hidden;
+    }
+  
+    &:hover {
+      border-bottom-color: $color-extra-gray;
+      border-radius: 24px;
+      padding-left: 20px;
+      padding-right: 58px;
+      background-color: $color-extra-gray;
+    }
+  
+    &:focus {
+      background-color: $color-white;
+      border: solid 1px $color-cobalt;
+      border-radius: 24px;
+      padding-left: 20px;
+      padding-right: 58px;
+    }
+  }
+
+
+
+  &__label {
+    position: absolute;
+    width: calc(100% - 40px);
+    height: 18px;
+    left: 0;
+    top: 31px;
+    z-index: 10;
+    pointer-events: none;
+    transition: all 0.2s ease;
+  }
+
+  &__field:hover + &__label {
+    left: 20px;
+  }
+
+  &__field:focus+&__label,
+  &.error &__label,
+  &.success &__label{
+    left: 20px;
+    top: 0;
+    transform:  translateY(0);
+    color: $color-steel;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.24px;
+  }
+
+  &__field:disabled+&__label {
+    color: $color-extra-gray;
+  }
+
+  &__field:disabled {
+    border-bottom-color: $color-extra-gray;
+  }
+
+  &__error{
+    margin-top: 2px;
+    margin-left: 20px;
+
+    color: $color-red;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.24px;
+  }
+
+  &.error &__field{
+    background-color: $color-white;
+    border: solid 1px $color-red;
+    border-radius: 24px;
+    padding-left: 20px;
+    padding-right: 58px;
+  }
+
+  &__success{
+    opacity: 0;
+    position: absolute;
+    width: 18px;
+    height: 13px;
+    right: 20px;
+    top: 34px;
+    z-index: 10;
+    transition: opacity 0.2s ease;
+  }
+
+  &.success &__field{
+    background-color: $color-extra-gray;
+    border: solid 1px $color-extra-gray;
+    border-radius: 24px;
+    padding-left: 20px;
+    padding-right: 58px;
+  }
+
+  &.success &__success {
+    opacity: 1;
+  }
+}
