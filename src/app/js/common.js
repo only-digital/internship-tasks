@@ -1,4 +1,3 @@
-import ExampleButton from "../../components/example-button/example-button";
 import Question from "../../components/offers-questions/questions-list/question/question";
 
 /**
@@ -7,7 +6,6 @@ import Question from "../../components/offers-questions/questions-list/question/
  * Значение - JS-класс компонента (Импорт добавляется вручную)
  */
 const allComponents = {
-    'example-button': ExampleButton,
     'question': Question
 }
 
