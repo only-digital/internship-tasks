@@ -1,5 +1,5 @@
 import ExampleButton from "../../components/example-button/example-button";
-
+import Item from '../../components/item/item'
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
  * Ключ объекта - Название компонента, которое было указано во время его создания (совпадает с именем файлов)
@@ -7,6 +7,8 @@ import ExampleButton from "../../components/example-button/example-button";
  */
 const allComponents = {
     'example-button': ExampleButton,
+    'item': Item,
+
 }
 
 

@@ -1,0 +1,7 @@
+mixin item(props)
+	button.item&attributes(attributes)(data-component='item')
+			p.item__title= props.title
+			.item__dropdown.dropdown
+				p.item__text= props.inner
+			.item__status.status
+				span.item__line
