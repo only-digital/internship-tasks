@@ -3,7 +3,7 @@ mixin slider-button(props)
 	.container
 		.wrapper
 			button.slider-button.slider-button__back&attributes(attributes)
-				+svg('arrow-slider-back').slider-button__arrow
+				+svg('arrow-slider').slider-button__arrow
 			button.slider-button.slider-button__forward&attributes(attributes)
-				+svg('arrow-slider-forward').slider-button__arrow
+				+svg('arrow-slider').slider-button__arrow
 		p.slider-button__counter!=`${start}/${props.amount}`

@@ -42,6 +42,10 @@
     fill: #002f6c;
   }
 
+  &__forward {
+    transform: rotate(180deg);
+  }
+
   &__counter {
     font-family: Arial;
     font-size: 16px;
