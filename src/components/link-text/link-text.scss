@@ -9,6 +9,11 @@
   pointer-events: stroke;
   transition: color 0.3s;
 
+  &--disabled {
+    color: #bcbcbc;
+    pointer-events: none;
+  }
+
   &:hover {
     color: #ff0000;
   }
