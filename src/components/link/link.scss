@@ -41,4 +41,10 @@ $blue: #002F6C;
         pointer-events: none;
         color: $extraGray;
     }
+
+    @media (max-width: 768px) {
+        & {
+            font-size: 14px;
+        }
+    }
 }

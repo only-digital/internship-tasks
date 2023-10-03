@@ -2,13 +2,19 @@ extends ../../build_modules/common
 
 
 block body
-    +button({text: 'Кнопка'})
-    +button({text: 'Кнопка'})(disabled='')
-    +button({text: 'Кнопка', color: 'red'})
-    +button({text: 'Кнопка', color: 'red'})(disabled='')
-    +link({text: 'Sustainalytics.com', icon: true})(href='#')
-    +link({text: 'Sustainalytics.com', icon: true})(disabled='' href="#")
-    p 
-        |Цифровые продукты, направленные на создание
-        +link({text: 'дополнительных сервисов'})(href='https://www.sustainalytics.com/')
-        |и устранение «проблемных точек» наших клиентов
+    .ui__wrap
+        h2.ui__title Buttons
+        +button({text: 'Кнопка'})
+        +button({text: 'Кнопка'})(disabled='')
+        +button({text: 'Кнопка', color: 'red'})
+        +button({text: 'Кнопка', color: 'red'})(disabled='')
+        h2.ui__title Links
+        +link({text: 'Sustainalytics.com', icon: true})(href='#')
+        +link({text: 'Sustainalytics.com', icon: true})(disabled='' href="#")
+        p 
+            |Цифровые продукты, направленные на создание
+            +link({text: 'дополнительных сервисов'})(href='https://www.sustainalytics.com/')
+            |и устранение «проблемных точек» наших клиентов
+        h2.ui__title Slider buttons
+        +slider-buttons
+        +slider-buttons(disabled='')

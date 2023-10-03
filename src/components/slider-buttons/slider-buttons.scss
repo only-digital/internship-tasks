@@ -1,0 +1,92 @@
+$extraCobolt: #0041A0;
+$red: #FF0000;
+$extraRed: #BF1D26;
+$extraGray: #BCBCBC;
+$gray: #DEDEDE;
+$lightGray: #F4F4F4;
+$blue: #002F6C;
+$steel: #909090;
+
+.slider-buttons {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+
+    &__btn {
+        border: 1px solid $gray;
+        border-radius: 100%;
+        transition: background-color .3s;
+
+        & svg {
+            width: 28px;
+            height: 40px;
+            fill: $blue;
+        }
+
+        &:hover {
+            background-color: $lightGray;
+        }
+
+        &:active {
+            transition: none;
+            background-color: $gray;
+        }
+        
+        &:focus {
+            outline: 3px solid #99B3D8;
+        }
+
+        &:disabled {
+			pointer-events: none;
+			svg {
+				fill: $extraGray;
+			}
+		}
+    }
+
+    &__next {
+        margin-left: 10px;
+        padding: 20px 22px 20px 30px;
+        & svg {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__prev {
+        padding: 20px 30px 20px 22px;
+    }
+
+    &__pagination {
+        color: $steel;
+        font-weight: 600;
+        font-size: 16px;
+        letter-spacing: -0.32px;
+        opacity: 0.4;
+
+        &[disabled] {
+            color: $extraGray;
+        }
+    }
+
+    @media (max-width: 1280px) {
+        &__btn {
+            svg {
+                width: 21px;
+                height: 30px;
+            }
+        }
+        &__prev {
+            padding: 15px 22px 15px 16px;
+        }
+
+        &__next {
+            padding: 15px 16px 15px 22px;
+        }
+    }
+
+    @media (max-width: 375px) {
+        &__pagination {
+            display: none;
+        }
+    }
+}

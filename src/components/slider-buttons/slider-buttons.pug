@@ -1,0 +1,8 @@
+mixin slider-buttons
+	.slider-buttons
+		.slider-buttons__btns-wrap 
+			button.slider-buttons__btn.slider-buttons__prev&attributes(attributes)
+				+svg('slider-arrow')
+			button.slider-buttons__btn.slider-buttons__next&attributes(attributes)
+				+svg('slider-arrow')
+		.slider-buttons__pagination&attributes(attributes) 01 / 04

@@ -1,5 +1,12 @@
 @import '../src/components/button/button';
 @import '../src/components/link/link';
+@import '../src/components/slider-buttons/slider-buttons';
+
+$extraCobolt: #0041A0;
+$red: #FF0000;
+$extraRed: #BF1D26;
+$extraGray: #BCBCBC;
+$blue: #002F6C;
 
 html {
     font-weight: normal;
@@ -18,7 +25,7 @@ body {
     padding: 60px;
     margin: 0;
     -webkit-tap-highlight-color: transparent;
-    font-family: Arial;
+    font-family: 'Arial';
 }
 
 h1, h2, h3, h4, h5, p, a {
@@ -66,9 +73,28 @@ button {
     }
 }
 
+.ui {
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+
+    &__title {
+        font-size: 36px;
+    }
+}
+
 @media (max-width: 1280px) {
     body {
         padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    p {
+        font-size: 14px;
     }
 }
 
