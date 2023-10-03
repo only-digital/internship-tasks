@@ -24,7 +24,6 @@ class ExampleButton extends Component {
 
         // Получаем внутренний текст из заранее найденного элемента element-button__text
         const text = this.textElement.textContent
-        this.textElement.classList.toggle('test')
         // Заменяем число в тексте на новое с помощью метода replace
         this.textElement.textContent = text.replace(/\d+/g, this.count);
     }
