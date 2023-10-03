@@ -1,3 +1,12 @@
 mixin feedback-form(props)
 	.feedback-form&attributes(attributes)(data-component='feedback-form')
-		//Your code here
+		h2.feedback-form__title!=props.title 
+		form.feedback-form__inner(action="", method="post")
+			label.feedback-form__label!=props.mail
+				input.feedback-form__input(type="email", name="email", required)
+			span.feedback-form__warning!=props.warning
+			label.feedback-form__label-confirm Вы подтверждаете, что ознакомились #[span c политикой обработки персональных данных]
+				input.feedback-form__input-confirm(type="checkbox", name="confirm", required)
+				span.feedback-form__input-mark
+			.feedback-form__sending-result
+			+button({text: "Отправить"})

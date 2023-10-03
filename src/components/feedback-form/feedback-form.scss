@@ -1,5 +1,67 @@
 .feedback-form {
 	$root: &;
 
-	//Your code here
+	color: #002F6C;
+	font-family: Arial, sans-serif;
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 120%;
+	letter-spacing: -0.6px;
+
+	&__title {
+		padding-left: 23px;
+	}
+
+	&__inner {
+		padding-left: 467px;
+	}
+
+	&__label {
+		display: block;
+		color: #909090;
+		font-size: 12px;
+		line-height: 150%;
+		letter-spacing: -0.2px;
+	}
+
+	&__input {
+		display: block;
+		color: black;
+		font-size: 16px;
+		line-height: 150%;
+		letter-spacing: -0.3px;
+		padding: 12px 20px;
+		border-radius: 24px;
+		border: 1px solid #0041A0;
+		width: 100%;
+	}
+
+	&__warning {
+		display: block;
+		color: #EF1C1C;
+		font-size: 14px;
+		line-height: 150%;
+	}
+
+	&__label-confirm {
+		color: #909090;
+		font-size: 14px;
+		line-height: 150%;
+
+		span {
+			color: #002F6C;
+		}
+	}
+
+	&__input-confirm {}
+
+	&__input-mark {}
+
+	&__sending-result {
+		width: 50px;
+		height: 50px;
+		border: 2px solid #DEDEDE;
+		border-radius: 50%;
+	}
 }
