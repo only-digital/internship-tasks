@@ -1,5 +1,78 @@
+@import '/src/pages/style.scss';
+
 .vacancy {
 	$root: &;
 
-	//Your code here
+	&__container {
+		width: 1440px;
+
+		margin-top: 115px;
+		margin-left: 80px;
+		margin-bottom: 45px;
+	}
+
+	&__data {
+		color: $gray;
+		font-size: 20px;
+		letter-spacing: -0.4px;
+
+		margin-bottom: 20px;
+	}
+
+	&__title {
+		color: $blue;
+		font-size: 64px;
+		letter-spacing: -1.28px;
+
+		margin-bottom: 45px;
+	}
+
+	&__check {
+		display: flex;
+		gap: 36px;
+
+		color: $gray;
+		font-size: 16px;
+
+		margin-bottom: 144px;
+	}
+
+	&__block-name {
+		color: $blue;
+		font-size: 46px;
+		letter-spacing: -0.92px;
+
+		margin-bottom: 35px;
+	}
+
+	&__item {
+
+		position: relative;
+		padding-left: 28px;
+
+		&:not(:last-child) {
+			margin-bottom: 12px;
+		}
+
+		&::before {
+			content: "";
+			background-color: #0DB274;
+
+			width: 20px;
+			height: 1px;
+
+			position: absolute;
+			
+			left: 0;
+			top: 12px;
+		}
+	}
+
+	&__need {
+		margin-bottom: 130px;
+
+		&:last-child {
+			margin-bottom: 153px;
+		}
+	}
 }

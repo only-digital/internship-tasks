@@ -6,6 +6,6 @@ mixin vacancy-form(props)
 			input(type="email")
 		.vacancy__checkbox 
 			input(type='checkbox')
-			label Вы подтверждаете, что ознакомились c политикой обработки персональных данных 
+			label Вы подтверждаете, что ознакомились c #[span] политикой обработки персональных данных 
 		button.vacancy__sendForm Отправить
-			+svg('arrow')
+			+svg('arrow').vacancy__arrow
