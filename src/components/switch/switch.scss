@@ -9,7 +9,7 @@
 		border-radius: 14px;
 		cursor: pointer;
 		position: relative;
-		transition: all 0.3s;
+		transition: background-color 0.3s;
 
 		@media (max-width: 812px) {
 			width: 40px;
@@ -25,6 +25,7 @@
 		height: 16px;
 		border-radius: 50%;
 		margin: 6px;
+		transition: background-color 0.3s, transform 0.3s;
 
 		@media (max-width: 812px) {
 			width: 12px;
@@ -60,7 +61,11 @@
 
 	input:disabled+.toggle {
 		background-color: #dedede;
-		user-select: none;
+		pointer-events: none;
 		cursor: default;
+	}
+
+	input:disabled+.toggle::before {
+		background-color: #fff;
 	}
 }
