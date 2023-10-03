@@ -4,4 +4,17 @@ extends ../../build_modules/common
 block body
     +example-button({text: 'example text'})
     +example-button({text: 'disabled'})(disabled='')
-    //Your code here
+    +myButton1({text: 'Кнопка'})
+    +myButton1({text: 'disabled'})(disabled)
+    +myButton2({text: 'Кнопка'})
+    +myButton2({text: 'disabled'})(disabled)
+    +sliderNav({currentSlide: '01', numSlides: '04'})
+    +sliderNav({currentSlide: '01', numSlides: '04'}).disabled
+    +link({name: 'google', icon: 'true', href: 'https://www.google.com'})
+    +link({name: 'google', href: 'https://www.google.com'}).disabled
+    .text 
+        | Для подключения сервиса добавьте номер 
+        +link({name: '+7(921)058-57-19', href: 'https://www.google.com'})
+        | &nbsp;в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже
+    +switcher({id: switcher_1})
+    +switcher({id: switcher_2}).disabled

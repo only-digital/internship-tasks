@@ -1,0 +1,98 @@
+.sliderNav {
+	$root: &;
+	$extra-grey: #DEDEDE;
+	$extra-grey1: #BCBCBC;
+	$extra-grey2: #F4F4F4;
+	$main-blue:	#002F6C;
+	$outline-color: #99B3D8;
+
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	
+	&.disabled {
+		#{$root}__button {
+			pointer-events: none;
+		}
+
+		#{$root}__svg {
+			fill: $extra-grey1;
+		}
+
+		#{$root}__fraction {
+			color: $extra-grey1;
+		}
+	}
+
+	@media screen and (man-width: 1920px){
+		gap: 40px;
+	}
+
+	&__buttons{
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	&__button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 60px;
+		height: 60px;
+		border: 1px solid $extra-grey;
+		border-radius: 50%;
+		transition: background-color 0.3s;
+
+		&-prev {
+			transform: rotate(-180deg);
+		}
+
+		@media screen and (min-width: 1920px){
+			width: 80px;
+			height: 80px;
+		}
+
+		@media (hover: hover) and (min-width: 1280px){
+			&:hover {
+				background-color: $extra-grey2;
+			}
+		}
+
+		@media screen and (min-width: 1280px) {
+			&:focus:not(:hover){
+				outline: 3px solid $outline-color;
+			}
+		}
+
+		&:active {
+			background-color: $extra-grey;
+		}
+	}
+
+	&__svg {
+		fill: $main-blue;
+		width: 21px;
+		height: 30px;
+		transition: fill 0.3s;
+
+		@media screen and (min-width: 1920px){
+			width: 28px;
+			height: 40px;
+		}
+	}
+
+	&__fraction {
+		opacity: 0.4;
+		font-size: 16px;
+		font-weight: 600;
+		line-height: 24px;
+		letter-spacing: -.02em;
+		transition: color 0.3s;
+		display: none;
+
+		@media screen and (min-width: 768px){
+			display: block;
+		}
+	}
+}

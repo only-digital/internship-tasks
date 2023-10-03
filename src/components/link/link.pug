@@ -1,0 +1,6 @@
+mixin link(props)
+	a.link&attributes(attributes)(href=props.href)
+		span.link__name= props.name
+		if props.icon 
+			span.link__icon
+				+svg('union').link__svg

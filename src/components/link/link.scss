@@ -1,0 +1,61 @@
+.link {
+	$root: &;
+	$extra-cobolt: #0041A0;
+	$extra-grey1: #BCBCBC;
+	$main-blue: #002F6C;
+	$main-red:#FF0000;
+	$dark-red: #BF1D26;
+	$bg-focus: rgba(0, 65, 160, 0.15);
+	
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+
+	color: $extra-cobolt;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 21px;
+	letter-spacing: -.02em;
+
+	transition: 
+		color 0.3s,
+		background-color 0.3s;
+
+	&.disabled {
+		color: $extra-grey1;
+		pointer-events: none;
+	}
+
+	@media (hover: hover) and (min-width: 1280px){
+		&:hover {
+			color: $main-red;
+		}
+	}
+
+	@media screen and (min-width: 1280px) {
+		font-size: 16px;
+		line-height: 24px;
+		letter-spacing: -0.02em;
+
+		&:focus:not(:hover){
+			background-color: $bg-focus;
+			outline: none;
+		}
+	}
+
+	&:active {
+		color: $dark-red;
+	}
+
+	&__icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__svg{
+		width: 19.5px;
+		height: 19.5px;
+		fill: $main-blue;
+	}
+}

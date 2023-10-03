@@ -1,0 +1,101 @@
+.myButton2 {
+	$root: &;
+	$main-red: #FF0000;
+	$main-white: #FFFFFF;
+	$dark-red:  #BF1D26;
+	$maroon:  #81080F;
+	$outline-color: #99B3D8;
+	$extra-grey: #F4F4F4;
+	$main-steel: #909090;
+
+	display: flex;
+	gap: 12px;
+	align-items: center;
+	justify-content: center;
+
+	height: 42px;
+	width: 100%;
+	padding: 0px 14px 0px 14px;
+	border-radius: 25px;
+	color: $main-white;
+	background-color: $main-red;
+	transition: 
+		background-color 0.3s,
+		outline 0.3s;
+
+	&:disabled {
+		background-color: $extra-grey;
+		color: $main-steel;
+		pointer-events: none;
+	
+		#{$root}__svg {
+			fill: $main-steel;
+		}
+	}
+
+	@media (hover: hover) and (min-width: 1280px){
+		&:hover {
+			background-color: $dark-red;
+		}
+	}
+
+	&:active {
+		background-color: $maroon;
+	}
+
+	@media (min-width: 768px) {
+		gap: 14px;
+		padding: 0px 14px 0px 18px;
+		width: auto;
+	}
+	
+	@media (min-width: 1280px) {
+		gap: 12px;
+		padding: 0px 14px 0px 16px;
+
+		&:focus:not(:hover){
+			outline: 3px solid $outline-color;
+		}
+	}
+	
+	@media (min-width: 1920px) {
+		gap: 14px;
+		padding: 0px 14px 0px 18px;
+		height: 48px;
+	}
+
+	&__text {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 16px;
+		line-height: 1em;
+		user-select: none;
+		padding: 0px 0px 3px 0px;
+		letter-spacing: -.02em;
+
+		@media (min-width: 768px) {
+			font-size: 16px;
+		}
+
+		@media (min-width: 1280px) {
+			font-size: 14px;
+			padding: 0px 0px 4px 0px;
+		}
+
+		@media (min-width: 1920px) {
+			font-size: 16px;
+			padding: 0px 0px 2px 0px;
+		}
+	}
+
+	&__svg {
+		width: 24px;
+		height: 24px;
+		fill: $main-white;
+		transition: fill 0.3s;
+
+		@media (min-width: 1920px) {
+			width: 32px;
+			height: 32px;
+		}
+	}
+}

@@ -1,0 +1,4 @@
+mixin switcher(props)
+	label.switcher&attributes(attributes)(for=props.id)
+		input(type='checkbox').switcher__input(id=props.id)
+		span.switcher__inner

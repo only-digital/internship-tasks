@@ -1,0 +1,9 @@
+mixin sliderNav(props)
+	.sliderNav&attributes(attributes)
+		.sliderNav__buttons
+			button.sliderNav__button.sliderNav__button-prev
+				+svg('vector').sliderNav__svg
+			button.sliderNav__button.sliderNav__button-next
+				+svg('vector').sliderNav__svg
+		.sliderNav__fraction #{props.currentSlide} / #{props.numSlides}
+			
