@@ -1,5 +1,6 @@
 import ExampleButton from "../../components/example-button/example-button";
 import FeedbackInput from "../../components/feedback-input/feedback-input";
+import FeedbackTextarea from "../../components/feedback-textarea/feedback-textarea";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -9,6 +10,7 @@ import FeedbackInput from "../../components/feedback-input/feedback-input";
 const allComponents = {
   "example-button": ExampleButton,
   "feedback-input": FeedbackInput,
+  "feedback-textarea": FeedbackTextarea,
 };
 
 /**

@@ -1,0 +1,6 @@
+mixin feedback-textarea(props)
+  .feedback-textarea&attributes(attributes)(data-component='feedback-textarea' data-maxlength=props.maxLength)
+    textarea.feedback-textarea__area&attributes(attributes)
+    span.feedback-textarea__label= attributes.placeholder
+    +svg("union").feedback-textarea__success
+    .feedback-textarea__error
