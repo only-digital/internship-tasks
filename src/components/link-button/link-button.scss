@@ -1,0 +1,57 @@
+@import '../styles/roots.scss';
+@import '../styles/ytilitys/link-style.scss';
+
+.link-button {
+	$root: &;
+	display: flex;
+	align-items: center;
+	width: max-content;
+	margin-bottom: 25px;
+	padding-left: 25px;
+
+
+
+	&_link {
+		@include linkStyle();
+		color: $extra-cobolt;
+
+	}
+
+	&_disabled {
+		@include linkStyle();
+		opacity: 0.5;
+		pointer-events: none;
+		color: $extra-grey-1
+	}
+
+	&_link:hover {
+		color: $main-red;
+	}
+
+	&_link:active {
+		color: $hover-red;
+	}
+
+	&:focus-visible {
+		background-color: $focus-border;
+		outline: none;
+	}
+
+	svg {
+		width: 24px;
+		height: 24px;
+	}
+
+	@media (max-width: 768px) {
+		&_disabled,
+		&_link {
+			font-size: 14px;
+		}
+
+		&:hover,
+		&:focus-visible {
+			opacity: 0;
+		}
+
+	}
+}

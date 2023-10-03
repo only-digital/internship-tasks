@@ -1,0 +1,10 @@
+mixin check-button(props)
+    .check-button
+        if(props!=1)
+            label(for='checkbox').check-button_label
+                input(type='checkbox', id='checkbox')(onfocus="this.blur()").check-button_inpt
+                span(tabindex='0').check-button_span
+        else
+            label(for='checkbox', style='pointer-events: none;').check-button_label
+                input(type='checkbox', id='checkbox')(onfocus="this.blur()").check-button_inpt
+                span(tabindex='0').check-button_disabled     

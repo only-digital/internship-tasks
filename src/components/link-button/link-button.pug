@@ -1,0 +1,8 @@
+mixin link-button(props)
+	.link-button&attributes(attributes)(tabindex='0')(props)
+		if(props!=1)
+			a(href="#")(onfocus="this.blur()").link-button_link Sustainalytics.com
+			+svg('link-vector')
+		else
+			a(href="#")(onfocus="this.blur()").link-button_disabled Sustainalytics.com
+			+svg('link-vector')

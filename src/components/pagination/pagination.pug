@@ -1,0 +1,12 @@
+mixin pagination(props)
+	.pagination&attributes(attributes)(tabindex="0")
+		if(props!=1)
+			.pagination&attributes(attributes)(tabindex="0")
+				+slider-button(class='slider-button_turn')(tabindex="0")
+				+slider-button(tabindex='0')
+				.slider_counter <span>01 </span>/<span> 04</span>
+		else
+			.pagination&attributes(attributes)(tabindex="0")
+				+slider-button(class='slider-button_turn')(tabindex="0")(disabled='')
+				+slider-button(tabindex='0')(disabled='')
+				.slider_counter(style='opacity: 0.4; pointer-events: none;') <span>01 </span>/<span> 04</span> 

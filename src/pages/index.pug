@@ -2,6 +2,13 @@ extends ../../build_modules/common
 
 
 block body
-    +example-button({text: 'example text'})
-    +example-button({text: 'disabled'})(disabled='')
-    //Your code here
+    +vector-button({text: 'Кнопка'})
+    +vector-button({text: 'Кнопка'})(disabled='')
+    +vector-button({text: 'Кнопка'})(class='vector-button_red')
+    +vector-button({text: 'Кнопка'})(class='vector-button_red')(disabled='')
+    +pagination()
+    +pagination(1)
+    +link-button()
+    +link-button(1)
+    +check-button()
+    +check-button(1)
