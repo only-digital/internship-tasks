@@ -1,3 +1,6 @@
 mixin aboute-vac(props)
     .aboute-vac
         h2.aboute-vac__title=props.title
+        ul.aboute-vac__detailes
+            each detaile in props.detailes
+                li.aboute-vac__detaile="- "+detaile

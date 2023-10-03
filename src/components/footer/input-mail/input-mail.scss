@@ -1,0 +1,19 @@
+@import "../../../app/scss/variables.scss";
+
+.input-mail{
+    position: relative;
+    &__label{
+        color: $gray;
+        font-size: 12px;
+        position: absolute;
+        transform: translate(20px,-100%);
+        padding-bottom: 2px;
+    }
+    &__input{
+        width: 90%;
+        height: 44px;
+        padding: 0px 12px;
+        border-radius: 30px;
+        border: 1px solid $blue;
+    }
+}

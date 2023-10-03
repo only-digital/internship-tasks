@@ -1,0 +1,9 @@
+include ./input-mail/input-mail
+include ./checkbox/checkbox
+
+mixin footer(props)
+	.footer&attributes(attributes)(data-component='footer')
+		h2.footer__title="Форма обратной связи"
+		form.footer__form 
+			+input-mail
+			+checkbox

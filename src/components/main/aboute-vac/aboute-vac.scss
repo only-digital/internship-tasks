@@ -1,6 +1,15 @@
+@import "../../../app/scss/variables.scss";
+
 .aboute-vac{
     &__title{
-        font-size: 32px;
-        color:#04306A;
+        font-size: 38px;
+        color:$blue;
+    }
+    &__detailes{
+        padding-top: 30px;
+    }
+    &__detaile{
+        font-size: 22px;
+        padding: 10px 0px;
     }
 }

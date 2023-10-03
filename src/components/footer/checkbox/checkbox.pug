@@ -1,0 +1,7 @@
+mixin checkbox(props)
+    .checkbox
+        label.checkbox__box 
+            input.checkbox__checkbox(type="checkbox" id="political")
+            span.checkbox__fake-checkbox(for="political")
+                +svg("checkbox-svg").checkbox__icon
+        

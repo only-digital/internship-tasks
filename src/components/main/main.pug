@@ -4,7 +4,7 @@ include ./aboute-vac/aboute-vac
 	const vacAboutes = [
 		{
 			title:"Вам Предстоит",
-			aboute:[
+			detailes:[
 				"Участие в проектах в роли архитектора/консультанта по интеграции данных",
 				"Проектирование архитектуры интеграции по технологиям SAP (Process Orchestration 7.5, Data Services 4.2, RFC, IDOC)",
 				"Подбор способов взаимодействия с non-SAP системами (1C:ERP, Lotus и др.)",
@@ -14,7 +14,7 @@ include ./aboute-vac/aboute-vac
 		},
 		{
 			title:"Мы ожидаем",
-			aboute:[
+			detailes:[
 				"Знание ASAP, MS Visio, SAP PI / SAP PO, SAP HANA, JSON, XML",
 				"Опыт работы в сфере аналитики от 3-х лет в должности аналитика, ведущего аналитика, специалиста по внедрению информационных систем",
 				"Опыт разработки технических заданий и постановок задач",
@@ -25,7 +25,7 @@ include ./aboute-vac/aboute-vac
 		},
 		{
 			title:"Мы предлагаем",
-			aboute:[
+			detailes:[
 				"Оформление в соответствии с нормами ТК РФ, социальные гарантии",
 				"Крупные проекты в компании–лидере отрасли",
 				"Возможность модернизировать процессы реального производственного бизнеса в команде сильнейших экспертов",
@@ -36,6 +36,6 @@ include ./aboute-vac/aboute-vac
 		}
 	]
 mixin main(props)
-	.main&attributes(attributes)
-		//- -ea
-		+aboute-vac({title:"Вам Предстоит"})
+	main.main&attributes(attributes)
+		each aboute in vacAboutes
+			+aboute-vac(aboute)

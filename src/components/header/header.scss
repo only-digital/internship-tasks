@@ -1,14 +1,16 @@
+@import "../../app/scss/variables.scss";
+
 .header {
 	$root: &;
 	&__span{
 		color: #8F8F8F;
-		font-size: 14px;	
+		font-size: 18px;	
 	}
 
 	&__title {
 		$root: &;
-		color: #04306A;
-		font-size: 42px;
+		color: $blue;
+		font-size: 60px;
 		padding: 28px 0px;
 	}
 
