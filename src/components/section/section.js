@@ -9,7 +9,7 @@ class Section extends Component {
     const requirementsListElement = document.querySelector('.section__list_requirements')
     const conditionsListElement = document.querySelector('.section__list_conditions')
 
-    function renderChapter(listElement, listItem) {
+    function renderChapter(listElement, listItem, index) {
       const listItemElement = document.createElement('li')
       listItemElement.classList.add('section__list-item')
       listItemElement.textContent = listItem

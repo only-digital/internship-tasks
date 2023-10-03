@@ -17,5 +17,16 @@ export class Api {
       }
     })
   }
+
+  postEmail(data) {
+    return fetch(`${this._baseUrl}/form/`, {
+      method: 'POST',
+      headers: this._headers,
+      body: JSON.stringify({
+        email: data.email,
+        confirm: data.confirm,
+      }),
+    })
+  }
 }
 

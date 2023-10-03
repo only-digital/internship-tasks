@@ -1,0 +1,15 @@
+mixin feedback-form(props)
+	.feedback-form&attributes(attributes)(data-component='feedback-form')
+		h5.feedback-form__title Форма обратной связи
+		form.feedback-form__container(name='form')
+			.feedback-form__input-container
+				label.feedback-form__input-label(for='email') E-mail
+				input.feedback-form__input(type='email', name='email', id='email', required)
+				span.feedback-form__input-error
+			label.feedback-form__checkbox-label(for='checkbox') Вы подтверждаете, что ознакомились c политикой обработки персональных данных
+				input.feedback-form__checkbox(type='checkbox' id='checkbox')
+			button.feedback-form__submit-button(type='submit') Отправить
+			.feedback-form__submitted
+				.feedback-form__submitted-icon-box
+					+svg('icon-success').feedback-form__submitted-icon
+				span.feedback-form__submitted-message
