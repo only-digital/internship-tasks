@@ -1,0 +1,19 @@
+.header {
+	$root: &;
+	&__span{
+		color: #8F8F8F;
+		font-size: 14px;	
+	}
+
+	&__title {
+		$root: &;
+		color: #04306A;
+		font-size: 42px;
+		padding: 28px 0px;
+	}
+
+	&__response{
+		margin-left: 20px;
+	}
+	//Your code here
+}

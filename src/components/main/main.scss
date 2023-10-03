@@ -1,0 +1,7 @@
+@import "./aboute-vac/aboute-vac.scss";
+
+.main {
+    & > *{
+        padding: 6em 0px;
+    }
+}
