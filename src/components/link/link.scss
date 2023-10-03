@@ -18,8 +18,10 @@ $dark-red: #BF1D26;
 	font-weight: 400;
 	line-height: 150%; /* 24px */
 	color: $blue;
-	&__svg path {
+	&__svg {
 		fill: $dark-blue;
+		width: 24px;
+		height: 24px;
 	}
 //settings for all links for media-q 1920px
 	gap: 12px;
