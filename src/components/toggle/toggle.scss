@@ -38,14 +38,19 @@ $light-blue: #99B3D8;
 			right: 4px;
 		}
 	}
-	&:focus {
+	&:focus,
+	&:focus-visible {
 		box-shadow: 0 0 0 3px $light-blue;
-	}
+		background-color: $gray;
+		outline: none;
+	 }
 	&:hover {
 		background-color: $dark-blue;
+		box-shadow: none;
 	}
 	&[disabled] {
 		background-color: $gray;
+		box-shadow: none;
 		cursor: not-allowed;
 		.toggle__slider {
 		left: 6px;

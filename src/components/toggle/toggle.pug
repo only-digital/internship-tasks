@@ -1,4 +1,4 @@
-mixin toggle()
-	label.toggle&attributes(attributes)
-		input(type="checkbox")&attributes(attributes)
+mixin toggle(id, tabindex)
+	label.toggle(for=id tabindex=tabindex)&attributes(attributes)
+		input(type="checkbox" id=id)&attributes(attributes)
 		span.toggle__slider
