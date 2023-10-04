@@ -1,0 +1,9 @@
+mixin feedback-form(props)
+  form.feedback-form&attributes(attributes)(data-component='feedback-form')
+    .feedback-form__title Форма обратной связи
+    .feedback-form__container
+      +feedback-input({maxLength:255, regex: `^([a-zA-Z\-0-9_]+|([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)+)|(".+"))@(([a-zA-Z\-0-9]+\.)+[a-zA-Z\-0-9]{2,})$`})(type="email" name="email" value="" placeholder="E-mail")
+      +feedback-textarea({maxLength:1000})(name="message" value="" placeholder="Ваше сообщение" )
+      +feedback-file(data-maxfilescount="2" data-maxfilesize="5 MB")
+      +feedback-checkbox()
+      +feedback-submit()
