@@ -1,0 +1,404 @@
+$colorBlue: #002f6c;
+$colorLightBlue: #99b3d8;
+$colorCobolt: #0041a0;
+$colorMidnight: #021f45;
+$colorRed: #ff0000;
+$colorExtraGrey1: #bcbcbc;
+$colorExtraGrey2: #dedede;
+$colorExtraGrey3: #f4f4f4;
+$colorBlack: #111;
+$colorSteel: #909090;
+$colorWhite: #ffffff;
+$colorGrey3: #f4f4f4;
+
+@mixin checkbox($color) {
+  padding-left: 16px;
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+
+  input[type="checkbox"] {
+    margin: 0;
+    &:focus ~ .indicator {
+      border: 2px solid $colorLightBlue;
+    }
+
+    &:focus:checked ~ .indicator {
+      border: 1px solid $color;
+    }
+
+    &:checked ~ .indicator {
+      color: white;
+      background: $color
+        url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8c3ZnIHdpZHRoPSIxMiIgaGVpZ2h0PSI5IiB2aWV3Qm94PSIwIDAgMTIgOSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCiAgPHBhdGggZD0iTTQuNTc1IDguOTc3cy0uNDA0LS4wMDctLjUzNi0uMTY1TC4wNTcgNS42NGwuODI5LTEuMjI3TDQuNDcgNy4yNjggMTAuOTIxLjA4NmwuOTIzIDEuMTAzLTYuODYzIDcuNjRjLS4xMzQtLjAwMy0uNDA2LjE0OC0uNDA2LjE0OHoiIGZpbGw9IiNGRkYiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPg0KPC9zdmc+)
+        50% 40% no-repeat;
+      border: 1px solid $color;
+    }
+
+	&:hover ~ .indicator {
+		border: 1px solid $color;
+	}
+  }
+
+  .indicator {
+    position: absolute;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border: 1px solid $colorExtraGrey1;
+    user-select: none;
+  }
+}
+
+.feedback-form {
+  $root: &;
+
+  margin: 26px 130px 60px 30px;
+  font-family: Arial;
+  display: flex;
+  column-gap: 159px;
+
+  &__title {
+    font-size: 32px;
+    color: $colorBlue;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -0.64px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    width: 836px;
+
+    &__text-email,
+    &__text-message {
+      display: none;
+      font-size: 12px;
+      letter-spacing: -0.24px;
+      line-height: 150%;
+      margin-left: 20px;
+      color: $colorSteel;
+
+      &.active {
+        display: block;
+      }
+    }
+
+    &__error-email,
+    &__error-message,
+    &__error-files {
+      font-size: 12px;
+      letter-spacing: -0.24px;
+      line-height: 150%;
+      margin: 2px 0 10px 20px;
+      color: $colorRed;
+      height: 18px;
+    }
+
+    &__error-message {
+      margin-bottom: 10px;
+    }
+
+    &__error-files {
+      margin: 7px 0 30px 0;
+    }
+
+    &__input-email {
+      padding-bottom: 18px;
+      border-bottom: 1px solid $colorExtraGrey2;
+      max-width: 836px;
+
+      &.valid {
+        border-radius: 24px;
+        background: $colorExtraGrey3 url("/src/assets/icons/iconSuccess.png")
+          97% 50% no-repeat;
+        padding: 13px 20px 19px 20px;
+        border: none;
+        // width: 556px;
+      }
+
+      &.invalid {
+        border-radius: 24px;
+        border: 1px solid $colorRed;
+        padding: 13px 20px 19px 20px;
+        // width: 556px;
+      }
+
+      &::placeholder {
+        font-size: 16px;
+        letter-spacing: -0.32px;
+        color: $colorBlack;
+      }
+
+      &:hover {
+        cursor: pointer;
+        border-radius: 24px;
+        background: $colorExtraGrey3;
+        padding: 13px 20px 19px 20px;
+        border: none;
+        // width: 556px;
+      }
+
+      &:focus {
+        border-radius: 24px;
+        border: 1px solid $colorCobolt;
+        padding: 13px 20px 19px 20px;
+        // width: 566px;
+      }
+
+      &:disabled {
+        pointer-events: none;
+
+        &::placeholder {
+          color: $colorExtraGrey1;
+        }
+      }
+    }
+
+    &__input-message {
+      font-family: Arial;
+      border: none;
+      border-bottom: 1px solid $colorExtraGrey2;
+      resize: none;
+      outline: none;
+      font-size: 16px;
+      max-width: 836px;
+      margin-bottom: 88px;
+
+      &.valid {
+        border-radius: 24px;
+        background: $colorExtraGrey3 url("/src/assets/icons/iconSuccess.png")
+          bottom 16px right 20px no-repeat;
+        padding: 12px 50px 16px 20px;
+        height: 172px;
+        border: none;
+        margin-bottom: 0;
+      }
+
+      &.invalid {
+        border-radius: 24px;
+        border: 1px solid $colorRed;
+        padding: 12px 50px 16px 20px;
+        height: 172px;
+        margin-bottom: 0;
+      }
+
+      &::placeholder {
+        font-size: 16px;
+        letter-spacing: -0.32px;
+        color: $colorBlack;
+      }
+
+      &:hover {
+        cursor: pointer;
+        border-radius: 24px;
+        background: $colorExtraGrey3;
+        padding: 12px 50px 16px 20px;
+        border: none;
+        height: 193px;
+        margin-bottom: 0;
+      }
+
+      &:focus {
+        border-radius: 24px;
+        border: none;
+        border: 1px solid $colorCobolt;
+        padding: 12px 50px 16px 20px;
+        height: 193px;
+        margin-bottom: 0;
+      }
+
+      &:disabled {
+        pointer-events: none;
+        background-color: $colorWhite;
+
+        &::placeholder {
+          color: $colorExtraGrey1;
+        }
+      }
+    }
+
+    &__wrapper-files {
+      position: relative;
+      display: flex;
+      column-gap: 32px;
+      width: fit-content;
+      pointer-events: none;
+
+      &-add {
+        pointer-events: all;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 16px;
+        position: relative;
+        cursor: pointer;
+        font-size: 16px;
+        letter-spacing: -0.32px;
+        color: $colorMidnight;
+        border: 1px solid $colorExtraGrey1;
+        padding: 14px 16px 16px 16px;
+        border-radius: 24px;
+        width: 200px;
+        height: 46px;
+
+        & svg {
+          width: 14px;
+          height: 14px;
+        }
+
+        &:hover {
+          border: 1px solid $colorCobolt;
+          background-color: $colorCobolt;
+          color: $colorWhite;
+
+          & svg path {
+            fill: $colorWhite;
+          }
+        }
+
+        &:active {
+          border: 1px solid $colorBlue;
+          background-color: $colorBlue;
+          color: $colorWhite;
+
+          & svg path {
+            fill: $colorWhite;
+          }
+        }
+
+        &:focus {
+          outline: 3px solid $colorLightBlue;
+        }
+
+        &.disabled {
+          pointer-events: none;
+          border-color: $colorExtraGrey1;
+          color: $colorSteel;
+          & svg path {
+            fill: $colorSteel;
+          }
+        }
+      }
+
+      &-input {
+        position: absolute;
+        opacity: 0;
+        display: block;
+        width: 0;
+        height: 0;
+        z-index: -1;
+      }
+
+      &-item {
+        display: flex;
+        align-items: center;
+        column-gap: 4px;
+        font-size: 16px;
+        line-height: 124%;
+        letter-spacing: -0.32px;
+        background-color: $colorGrey3;
+        padding: 10px 13px 10px 18px;
+        border-radius: 27px;
+
+        & span {
+          color: $colorSteel;
+        }
+
+        &-icon {
+          pointer-events: all;
+          cursor: pointer;
+          width: 20px;
+          height: 20px;
+          background: $colorGrey3 url("/../src/assets/icons/iconDelete.png")
+            no-repeat;
+        }
+      }
+    }
+
+    &__checkbox {
+      display: flex;
+      align-items: center;
+      column-gap: 12px;
+      margin-bottom: 30px;
+      @include checkbox($colorCobolt);
+
+      &-text {
+        color: $colorSteel;
+        font-size: 14px;
+        line-height: 150%;
+
+        & .link {
+          color: $colorBlue;
+        }
+      }
+
+      &.disabled {
+        pointer-events: none;
+        opacity: 0.3;
+		color: $colorExtraGrey1;
+      }
+    }
+
+	&__button-submit {
+		display: flex;
+		align-items: center;
+		width: fit-content;
+		height: 48px;
+		padding: 0px 14px 0px 18px;
+		border-radius: 24px;
+		border: 1px solid $colorExtraGrey1;
+		column-gap: 14px;
+		font-size: 16px;
+		font-family: Arial;
+		color: $colorBlack;
+		margin-bottom: 55px;
+
+		& svg {
+			width: 32px;
+			height: 32px;
+			fill: $colorBlue;
+		}
+
+		&:hover {
+			border: 1px solid $colorCobolt;
+			background-color: $colorCobolt;
+			color: $colorWhite;
+
+			& svg {
+				fill: $colorWhite;
+			}
+		}
+
+		&:active {
+			border: 1px solid $colorBlue;
+			background-color: $colorBlue;
+			color: $colorWhite;
+
+			& svg {
+				fill: $colorWhite;
+			}
+		}
+
+		&:focus {
+			outline: 3px solid $colorLightBlue;
+			color: $colorCobolt;
+
+			& svg {
+				fill: $colorCobolt;
+			}
+		}
+
+		&:disabled {
+			pointer-events: none;
+			color: $colorSteel;
+
+			& svg {
+				fill: $colorSteel;
+			}
+		}
+	}
+  }
+}

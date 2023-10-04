@@ -1,0 +1,27 @@
+mixin iconPlus()
+	svg(xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none")
+		path(d="M0 6.53333V7.46667H14V6.53333H0Z" fill="#002F6C")
+		path(d="M7.46667 4.07974e-08L6.53333 0L6.53333 14H7.46667L7.46667 4.07974e-08Z" fill="#002F6C")
+
+mixin feedback-form(props)
+	.feedback-form&attributes(attributes)(data-component='feedback-form')
+		h2.feedback-form__title Форма обратной связи
+		form.feedback-form__form
+			span.feedback-form__form__text-email E-mail
+			input(type="email" placeholder="E-mail" maxlength="255" name="email" required).feedback-form__form__input-email
+			span.feedback-form__form__error-email
+			span.feedback-form__form__text-message Ваше сообщение
+			textarea(name="message" placeholder="Ваше сообщение").feedback-form__form__input-message
+			span.feedback-form__form__error-message
+			label.feedback-form__form__wrapper-files
+				input(type="file" name="files" accept="application/msword, application/pdf, application/vnd.openxmlformats-officedocument.wordprocessingml.document" multiple).feedback-form__form__wrapper-files-input
+				span.feedback-form__form__wrapper-files-add Прикрепить файл
+					+iconPlus
+			span.feedback-form__form__error-files
+			label.feedback-form__form__checkbox
+				input.feedback-form__form__checkbox-field(type='checkbox' name="confirm")
+				span.indicator
+				span.feedback-form__form__checkbox-text Вы подтверждаете, что ознакомились 
+					a(href='/').link c политикой обработки персональных данных
+			button(type="submit" disabled='').feedback-form__form__button-submit Отправить
+				+svg('iconArrow')
