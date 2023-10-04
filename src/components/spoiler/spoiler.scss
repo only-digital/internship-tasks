@@ -1,0 +1,102 @@
+@import '../../app/scss/colors.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.spoiler {
+	$root: &;
+	font-family: 'Roboto';
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
+	&__wrapper {
+		max-width: 327px;
+		margin: 152px auto 0;
+	}
+
+	&__title {
+		max-width: 190px;
+		color: $primary;
+		font-size: 30px;
+		line-height: 100%;
+		letter-spacing: -1px;
+		margin-bottom: 40px;
+	}
+
+	&__item {
+		border-top: 1px solid $separator;
+		padding-top: 20px;
+		margin-bottom: 4px;
+
+		&:last-child {
+			border-bottom: 1px solid $separator;
+		}
+	}
+
+	@media (min-width: 768px) {
+		&__wrapper {
+			min-width: 688px;
+			margin-top: 174px;
+		}
+
+		&__title {
+			max-width: initial;
+			font-size: 42px;
+			margin-bottom: 50px;
+		}
+
+		&__item {
+			padding-top: 24px;
+			margin-bottom: 8px;
+		}
+	}
+
+	@media (min-width: 1280px) {
+		&__wrapper {
+			min-width: 1066px;
+			margin-top: 167px;
+		}
+
+		&__title {
+			margin-bottom: 56px;
+		}
+
+		&__item {
+			padding-top: 20px;
+			margin-bottom: 4px;
+		}
+	}
+
+	@media (min-width: 1440px) {
+		&__wrapper {
+			min-width: 1200px;
+			margin-top: 179px;
+		}
+
+		&__title {
+			font-size: 48px;
+			margin-bottom: 60px;
+		}
+
+		&__item {
+			padding-top: 24px;
+			margin-bottom: 4px;
+		}
+	}
+
+	@media (min-width: 1920px) {
+		&__wrapper {
+			min-width: 1600px;
+			margin-top: 183px;
+		}
+
+		&__title {
+			font-size: 64px;
+			margin-bottom: 80px;
+		}
+
+		&__item {
+			padding-top: 30px;
+			margin-bottom: 0;
+		}
+	}
+}

@@ -1,0 +1,8 @@
+mixin spoiler-item(props)
+  li.spoiler__item.spoiler-item&attributes(attributes)(data-component='spoiler-item')
+    .spoiler-item__header
+      h2.spoiler-item__title!= `${props.id}. ${props.title}`
+      button.spoiler-item__button.button
+        +svg('cross').button__icon
+    .spoiler-item__body
+      p.spoiler-item__text!= props.text

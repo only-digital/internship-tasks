@@ -1,0 +1,31 @@
+mixin spoiler(props)
+  -
+    const spoilers = [
+      {
+        title: 'Nullam tincidunt vestibulum porttitor',
+        text: 'Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.',
+      },
+      {
+        title: 'Class aptent taciti sociosqu ad litora',
+        text: 'Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.',
+      },
+      {
+        title: 'Nulla fringilla ligula elit, non laoreet ipsum rutrum eget',
+        text: 'Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.',
+      },
+      {
+        title: 'Mauris ut suscipit tellus',
+        text: 'Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.',
+      },
+      {
+        title: 'Nullam placerat porta libero, vel maximus augue euismod eget',
+        text: 'Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.',
+      },
+    ]
+  .spoiler&attributes(attributes)
+    .spoiler__wrapper
+      h1.spoiler__title Lorem ipsum dolor
+      ul.spoiler__list 
+        each spoiler, index in spoilers
+          - const id = index + 1
+          +spoiler-item({id, title: spoiler.title, text: spoiler.text})
