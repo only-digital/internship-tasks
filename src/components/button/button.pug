@@ -1,6 +1,6 @@
 mixin button(props)
-	button.button-wrapper&attributes(attributes)
-		span.text= props.text
-		span.button(attributes) Кнопка
-				+svg('Vector').icon
+    button.button-wrapper&attributes(attributes)
+        span.text= props.text
+        span.button(attributes, class=props.class) Кнопка
+            +svg('Vector').icon
 

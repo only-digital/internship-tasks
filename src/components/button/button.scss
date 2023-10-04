@@ -23,51 +23,93 @@
     height: 48px;
     border-radius: 24px;
     gap: 14px;
-    border: 1px solid gray;
     transition: background 0.3s, color 0.3s, border 0.3s;
   }
 
   .icon {
     width: 32px;
     height: 22px;
-    fill: #002F6C;
     transition: fill 0.3s;
   }
 
+  .white-button {
+    border: 1px solid gray;
 
-  &:hover {
-    .button {
-      background: #0041A0;
-      color: #FFFFFF;
-      border-color: #0041A0;
+    .icon {
+      fill: #002F6C;;
     }
+  }
+
+  .red-button {
+    background: #FF0000;
+    color: #FFFFFF;
 
     .icon {
       fill: #FFFFFF;
     }
   }
 
+  &:hover {
+    .white-button {
+      background: #0041A0;
+      color: #FFFFFF;
+      border-color: #0041A0;
+
+      .icon {
+        fill: #FFFFFF;
+      }
+    }
+
+    .red-button {
+      background: #BF1D26;
+    }
+  }
+
   &:active {
-    .button {
+    .white-button {
       background: #002F6C;
+    }
+
+    .red-button {
+      background: #81080F;
     }
   }
 
   &:focus {
     .button {
-      background: #FFFFFF;
-      color: #0041A0;
       border: 3px solid #99B3D8;
     }
 
-    .icon {
-      fill: #0041A0;
+    .white-button {
+      background: #FFFFFF;
+      color: #0041A0;
+
+      .icon {
+        fill: #0041A0;
+      }
+    }
+
+    .red-button {
+      background: #FF0000;
     }
   }
 
   &:disabled {
-    opacity: 0.5;
     pointer-events: none;
+    color: #909090;
+
+    .icon {
+      fill: #909090;
+    }
+
+    .white-button {
+      border: 1px solid #BCBCBC;
+    }
+
+    .red-button {
+      color: #909090;
+      background: #F4F4F4;
+    }
   }
 }
 
