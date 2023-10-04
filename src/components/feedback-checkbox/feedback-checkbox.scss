@@ -1,0 +1,82 @@
+$color-blue: #002F6C;
+$color-cobalt: #0041A0;
+$color-blue-light: #8EB2EC;
+$color-steel: #909090;
+$color-red: #EF1C1C;
+$color-gray: #BCBCBC;
+$color-gray-dark: #BEBEBE;
+$color-black: #111111;
+
+.feedback-checkbox {
+	$root: &;
+
+  font-family: Arial, sans-serif;
+
+  &__input {
+    margin: 0;
+    position: absolute;
+    opacity: 1;
+    z-index: 1;
+  
+    &:checked+.feedback-checkbox__field>.feedback-checkbox__icon {
+      background-color: $color-cobalt;
+      border-color: $color-cobalt;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    margin-right: 12px;
+    border: solid 1px $color-gray;
+    transition: border-color .2s ease, 
+                background-color .2s ease,
+                opacity .2s ease;
+
+    &-image {
+      width: 87%;
+      height: 87%;
+    }
+
+  
+  }
+  
+  &__field {
+    display: flex;
+    align-items: center;
+    margin-top: 14px;
+    width: fit-content;
+    color: $color-steel;
+    font-size: 14px;
+    line-height: 150%;
+
+    &__link {
+      cursor: pointer;
+      color: $color-blue;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:hover .feedback-checkbox__icon {
+      border-color: $color-cobalt;
+    }
+
+  }
+
+  &[disabled] {
+    pointer-events: none;
+    opacity: 0.3;
+  }
+
+  &__field:focus &__icon {
+    outline: auto;
+    outline-offset: 2px;
+    outline-width: 2px;
+    outline-color: $color-blue-light;
+  }
+}

@@ -1,0 +1,8 @@
+mixin feedback-checkbox(props)
+  .feedback-checkbox&attributes(attributes)(data-component='feedback-checkbox')
+    input.feedback-checkbox__input(type="checkbox" name="policy")
+    button.feedback-checkbox__field
+      span.feedback-checkbox__icon 
+        +svg('checkbox-icon').feedback-checkbox__icon-image
+      | Вы подтверждаете, что ознакомились 
+      a.feedback-checkbox__field__link(href="/policy" target="_blank") с политикой обработки персональных данных
