@@ -1,0 +1,16 @@
+include ../date/date
+include ../view/view
+include ../list/list
+include ../form/form
+mixin vacancy(props)
+	section.vacancy&attributes(attributes)(data-component='vacancy')
+		.vacancy__date
+			+date({date:'18 декабря 2020'})
+		h2.vacancy__description=props.description
+		.vacancy__views 
+			+view()
+		.vacancy__duties 
+			each duty in props.duties 
+				+list({listArray:duty.listArray, header:duty.header})
+		.vacancy__form 
+			+form({title:'Форма обратной связи'})

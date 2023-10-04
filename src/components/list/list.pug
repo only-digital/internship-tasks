@@ -1,5 +1,5 @@
 mixin list({ listArray = [],header }={})
-	ul.list&attributes(attributes)(data-component='list')
+	.list&attributes(attributes)(data-component='list')
 		h2.list__header!=header
 		each text in listArray 
 			li.list__elem

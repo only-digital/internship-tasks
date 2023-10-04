@@ -1,6 +1,10 @@
 import ExampleButton from "../../components/example-button/example-button";
 import View from '../../components/view/view';
 import Form from '../../components/form/form';
+import Loader from '../../components/loader/loader';
+import Date from '../../components/date/date';
+import List from '../../components/list/list';
+import Vacancy from '../../components/vacancy/vacancy';
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -11,6 +15,10 @@ const allComponents = {
     'example-button': ExampleButton,
     'view': View,
     'form': Form,
+    'loader':Loader,
+    'date':Date,
+    'list':List,
+    'vacancy':Vacancy,
 }
 
 /**

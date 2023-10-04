@@ -1,0 +1,33 @@
+.vacancy {
+	$root: &;
+
+	padding-left: 80px;
+	padding-top: 115px;
+	&__description {
+		color:#04306A;
+		font-feature-settings: 'ss08' on;
+		font-family: Arial;
+		font-size: 64px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 100%; /* 64px */
+		letter-spacing: -1px;
+		margin-bottom: 45px;
+	}
+
+	&__date {
+		margin-bottom: 20px;
+	}
+
+	&__views {
+		margin-bottom: 144px;
+	}
+
+	&__duties {
+		display: flex;
+		flex-direction: column;
+		gap: 130px;
+		margin-bottom: 109px;
+	}
+	
+}
