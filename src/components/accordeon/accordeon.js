@@ -1,4 +1,4 @@
-import Component from '../../app/js/base/Component';
+import Component from '../../app/js/base/сomponent';
 
 class Accordeon extends Component {
     constructor(element) {
