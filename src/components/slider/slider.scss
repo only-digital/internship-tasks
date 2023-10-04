@@ -1,0 +1,88 @@
+$white: #fff;
+$main-blue: #002f6c;
+$grey-1: #dedede;
+$grey-2: #f4f4f4;
+$accent-blue: #99b3d8;
+$main-steel: #909090;
+
+// @font-face {
+// 	font-family: 'Grtsk-Peta';
+// 	src: local('Grtsk-Peta-Semibold'),
+// 		url('../../fonts/GrtskPeta-Semibold.woff2') format('woff2'),
+// 		url('../../fonts/GrtskPeta-Semibold.woff') format('woff');
+// 	font-style: normal;
+// 	font-weight: 600;
+// 	font-display: swap;
+// }
+
+.slider {
+	$root: &;
+
+	display: flex;
+	margin: 15px;
+	gap: 10px;
+	align-items: center;
+
+	&__next {
+		transform: rotate(180deg);
+	}
+
+	&__pagination {
+		color: $main-steel;
+		font-family: 'Grtsk Peta', sans-serif;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 150%;
+		letter-spacing: -0.32px;
+	}
+
+	&__btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 80px;
+		height: 80px;
+		background: $white;
+		border-radius: 100%;
+		outline: none;
+		transition: background-color 0.2s ease-in-out, outline 0.2s ease-in-out;
+		path {
+			fill: $main-blue;
+		}
+		circle {
+			stroke: $grey-1;
+			transition: stroke 0.2s ease-in-out;
+		}
+	}
+
+	&__btn:focus {
+		background-color: $white;
+		outline: 3px solid #99b3d8;
+		circle {
+			stroke: $grey-1;
+		}
+	}
+
+	&__btn:hover {
+		background-color: $grey-2;
+		circle {
+			stroke: $grey-2;
+		}
+	}
+
+	&__btn:active {
+		background-color: $grey-1;
+		circle {
+			stroke: $grey-1;
+		}
+	}
+
+	&__btn:disabled {
+		background-color: $white;
+		outline: none;
+		circle {
+			stroke: $grey-1;
+		}
+	}
+}
