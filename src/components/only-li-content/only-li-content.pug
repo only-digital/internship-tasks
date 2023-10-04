@@ -1,0 +1,9 @@
+mixin only-li-content(props)
+	.only-li-content(class!=attributes.first??'')&attributes(attributes)(data-component='only-li-content')
+		.only-li-content__header
+			h3.only-li-content__header-text!= props.header
+			.only-li-content__icon(class='only-li-content-open') 
+				include ../../assets/icons/li-content-cross.svg
+		.only-li-content-block
+			span.only-li-content__text!= props.text 
+		

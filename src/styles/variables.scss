@@ -1,0 +1,105 @@
+$dark-blue:#012B34;
+$blue:#114C9A;
+$black:#000402;
+$grey:#E6E6E6;
+
+$font-family-main:'Roboto';
+$font-weight-main:400;
+$letter-spacing:0.02em;
+
+$transition-color:color 0.3s;
+$transition-slider:padding-bottom 0.2s;
+$transition-rotate:transform 0.2s;
+
+@mixin bigFont(){
+
+    font-family:$font-family-main;
+    font-weight: $font-weight-main;
+    line-height: 64px;
+    font-size: 64px;
+    $letter-spacing:0.02em;
+
+    @media(max-width:1440px){
+        line-height: 48px;
+        font-size: 48px;
+    }
+
+    @media(max-width:1280px){
+        line-height: 42px;
+        font-size: 42px;
+    }
+
+    @media(max-width:375px){
+        line-height: 30px;
+        font-size: 30px;
+    }
+   
+}
+
+@mixin medFont(){
+
+    font-family: $font-family-main;
+    font-weight: $font-weight-main;
+    line-height: 43px;
+    font-size: 36px;
+    $letter-spacing:0.02em;
+
+    @media(max-width:1440px){
+        line-height: 32px;
+        font-size: 27px;
+    }
+
+    @media(max-width:1280px){
+        line-height: 29px;
+        font-size: 24px;
+
+    }
+
+    @media(max-width:768px){
+        line-height: 32px;
+        font-size: 27px;
+    }
+
+    @media(max-width:375px){
+        line-height: 29px;
+        font-size: 24px;
+    }
+
+}
+
+@mixin smallFont(){
+
+    font-family: $font-family-main;
+    font-weight: $font-weight-main;
+    line-height: 30px;
+    font-size: 20px;
+    $letter-spacing:0.02em;
+
+    @media(max-width:1440px){
+        line-height: 22.5px;
+        font-size: 15px;
+    }
+
+}
+
+@mixin adaptiveWidthTextContent{
+    @media(max-width:1920px){
+        width: 60%;
+    }
+    @media(max-width:1440px){
+        width: 70%;
+    }
+
+    @media(max-width:1280px){
+        width: 60%;
+    }
+
+    @media (max-width:768px) {
+        width: 90%;
+    }
+
+    @media(max-width:375px){
+        width: 100%;
+    }
+}
+

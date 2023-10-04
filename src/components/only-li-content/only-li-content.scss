@@ -1,0 +1,70 @@
+
+@import '../../styles/variables.scss';
+
+.only-li-content {
+	$root: &;
+
+	display: block;
+	cursor: pointer;
+
+	border-bottom: 1px, solid, $grey;
+
+	&__header{
+		display: flex;
+		justify-content: space-between
+	}
+
+	&__header-text{
+
+		@include medFont();
+		color: $dark-blue
+
+	}
+
+	&__content-block{
+		
+		@include adaptiveWidthTextContent();
+		padding-right: 15px
+
+	}
+
+	&__text{
+
+		@include smallFont();
+		color: $black;
+
+	}
+
+	&__icon{
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+
+		svg{
+			fill: $blue;
+		}
+
+	}
+
+	&_first{
+		border-top: 1px, solid,$grey;
+
+	}
+
+	&_open{
+
+		#{$root}__icon{
+			transform: rotate(45deg);
+		}
+
+	}
+
+	&_closed{
+
+		transform: rotate(0);
+		
+	}
+	//Your code here
+}
