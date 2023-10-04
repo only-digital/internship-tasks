@@ -1,3 +1,4 @@
 mixin toggle()
-	button.toggle&attributes(attributes)
-		.toggle__switch
+	label.toggle&attributes(attributes)
+		input(type="checkbox")&attributes(attributes)
+		span.toggle__slider
