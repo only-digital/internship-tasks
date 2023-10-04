@@ -1,0 +1,5 @@
+mixin accordion(props)
+	.accordion&attributes(attributes)(data-component='accordion')
+		h2.accordion__title= props.title
+		each item in props.items
+			+spoiler(item)

@@ -1,0 +1,54 @@
+.accordion {
+	$root: &;
+
+	padding: 183px 140px 138px 160px;
+    margin: 0 auto;
+
+	&__title{
+		font-size: 64px;
+		font-weight: 400;
+		line-height: 64px;
+		letter-spacing: -0.02em;
+		margin-bottom: 80px;
+	}
+
+	@media screen and (max-width: 1440px){
+		padding: 180px 108px 141px 120px;
+
+		#{$root}__title{
+			margin-bottom: 60px;
+			font-size: 48px;
+			line-height: 48px;
+		}
+	}
+
+	@media screen and (max-width: 1280px){
+		padding: 167px 107px 48px;
+
+		#{$root}__title{
+			margin-bottom: 56px;
+			font-size: 42px;
+			line-height: 42px;
+		}
+	}
+
+	@media screen and (max-width: 768px){
+		padding: 174px 40px 213px;
+
+		#{$root}__title{
+			margin-bottom: 74px;
+			font-size: 42px;
+			line-height: 42px;
+		}
+	}
+
+	@media screen and (max-width: 375px){
+		padding: 152px 24px 98px;
+
+		#{$root}__title{
+			margin-bottom: 40px;
+			font-size: 30px;
+			line-height: 30px;
+		}
+	}
+}
