@@ -1,0 +1,176 @@
+@import "./../../pages/index.scss";
+
+$black: #000402;
+$dark-teal: #012b34;
+$blue: #114c9a;
+$grey: #e6e6e6;
+
+.spoiler {
+  $root: &;
+
+  font-family: "Roboto", sans-serif;
+  max-width: 1620px;
+  padding-top: 30px;
+  margin: 0 140px 0 160px;
+  cursor: pointer;
+  user-select: none;
+  border-top: 1px solid $grey;
+
+  &.active {
+    #{$root}__title {
+      color: $blue;
+
+      &-svg {
+        transform: rotate(0deg);
+      }
+    }
+  }
+
+  &:last-child {
+    border-bottom: 1px solid $grey;
+  }
+
+  &__title {
+    position: relative;
+    font-size: 36px;
+    line-height: 120%;
+    color: $dark-teal;
+    margin-bottom: 30px;
+    padding-right: 25px;
+
+    &-svg {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      right: 5px;
+      top: 5px;
+      transform: rotate(45deg);
+      transition: transform 0.4s ease-in;
+    }
+  }
+
+  &__text {
+    max-height: 0;
+    overflow: hidden;
+    color: $black;
+    font-size: 20px;
+    line-height: 150%;
+    transition: max-height 0.4s ease-in;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 40px;
+    }
+  }
+
+  &__text-wrap {
+    max-width: 924px;
+  }
+
+  @media screen and (max-width: 1440px) {
+    margin: 0 120px 0 107px;
+
+    &__title {
+      font-size: 27px;
+      margin-bottom: 20px;
+
+      &-svg {
+        height: 14px;
+        width: 14px;
+      }
+    }
+
+    &__text {
+      font-size: 15px;
+
+      &::after {
+        height: 30px;
+      }
+    }
+
+    &__text-wrap {
+      max-width: 840px;
+    }
+  }
+
+  @media screen and (max-width: 1280px) {
+    margin: 0 107px 0 107px;
+
+    &__title {
+      font-size: 24px;
+      margin-bottom: 16px;
+
+      &-svg {
+        height: 14px;
+        width: 14px;
+      }
+    }
+
+    &__text {
+      font-size: 14px;
+
+      &::after {
+        height: 24px;
+      }
+    }
+
+    &__text-wrap {
+      max-width: 640px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    margin: 0 40px 0 40px;
+    max-width: 640px;
+
+    &__title {
+      font-size: 24px;
+      margin-bottom: 16px;
+
+      &-svg {
+        height: 14px;
+        width: 14px;
+      }
+    }
+
+    &__text {
+      font-size: 15px;
+
+      &::after {
+        height: 24px;
+      }
+    }
+
+    &__text-wrap {
+      max-width: 600px;
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    margin: 0 24px 0 24px;
+    max-width: 289px;
+
+    &__title {
+      font-size: 24px;
+      margin-bottom: 16px;
+
+      &-svg {
+        height: 14px;
+        width: 14px;
+      }
+    }
+
+    &__text {
+      font-size: 15px;
+
+      &::after {
+        height: 20px;
+      }
+    }
+
+    &__text-wrap {
+      max-width: 327px;
+    }
+  }
+}

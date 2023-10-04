@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+$dark-teal: #012b34;
+
+.title {
+  font-family: "Roboto", sans-serif;
+  margin: 183px 140px 80px 160px;
+  color: $dark-teal;
+  font-size: 64px;
+  line-height: 100%;
+  letter-spacing: -2%;
+
+  @media screen and (max-width: 1440px) {
+    font-size: 48px;
+    margin: 179px 107px 60px 120px;
+  }
+  @media screen and (max-width: 1280px) {
+    font-size: 42px;
+    margin: 167px 107px 56px 107px;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 42px;
+    margin: 174px 40px 50px 40px;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 30px;
+    margin: 152px 24px 40px 24px;
+  }
+}
