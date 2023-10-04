@@ -1,0 +1,106 @@
+@import "../../pages/global.scss";
+
+.spoiler {
+  $root: &;
+  $width: 14px;
+  padding: 20px 0;
+
+  &__title {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-right: calc($width + 10px);
+    font: $font-l;
+    line-height: 120%;
+    color: $dark;
+  }
+  
+  &__content {
+    height: 0px;
+    overflow: hidden;
+    padding-right: calc($width + 10px);
+    transition: height 0.5s ease, margin-top 0.5s ease;
+    font: $font-m;
+    line-height: 150%;
+  }
+
+  @media (min-width: 768px) {
+    padding: 24px 0;
+    &__title {
+      font-size: 27px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    padding: 20px 0;
+    &__title {
+      font-size: 24px;
+    }
+    &__content {
+      font-size: 14px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    padding: 24px 0;
+    &__title {
+      font-size: 27px;
+    }
+    &__content {
+      font-size: 15px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    padding: 30px 0;
+    &__title {
+      font-size: 36px;
+    }
+    &__content {
+      font-size: 20px;
+    }
+  }
+
+  .btn {
+    position: absolute;
+    width: $width;
+    height: $width;
+    right: 0px;
+    transition: transform 0.5s ease;
+
+    &:before,
+    &:after {
+      content: " ";
+      position: absolute;
+      left: calc($width / 2);
+      top: 0px;
+      height: $width;
+      width: 2px;
+      background-color: $blue;
+    }
+
+    &:before {
+      transform: rotate(90deg);
+    }
+  }
+
+  &.open &__content {
+    margin-top: 16px;
+    transition: height 0.5s ease, margin-top 0.5s ease;
+    @media (min-width: 1440px) {
+      margin-top: 20px;
+    }
+    @media (min-width: 1920px) {
+      margin-top: 30px;
+    }
+  }
+
+  &.open &__title {
+    color: $blue;
+  }
+
+  &.open span {
+    transform: rotate(45deg);
+  }
+}

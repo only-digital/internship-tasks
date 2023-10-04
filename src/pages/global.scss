@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+$blue: #114c9a;
+$black: #000402;
+$dark: #012b34;
+$lain: #E6E6E6;
+
+$font-family: "Roboto", sans-serif;
+
+$font-size-xl: 30px;
+$font-xl: $font-size-xl $font-family;
+
+$font-size-l: 24px;
+$font-l: $font-size-l $font-family;
+
+$font-size-m: 15px;
+$font-m: $font-size-m $font-family;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 152px 24px 98px 24px;
+
+  & > div {
+    border-top: 1px solid $lain;
+    &:last-child{
+      border-bottom: 1px solid $lain;
+    }
+  }  
+
+  &__title {
+    font: $font-xl;
+    color: $dark;
+    letter-spacing: -0.02em;
+    line-height: 100%;
+    margin-bottom: 40px;
+  }
+
+  @media (min-width: 768px) {
+    margin: 174px 40px 213px 40px;
+    &__title {
+      margin-bottom: 50px;
+      font-size: 42px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    margin: 167px 107px 48px 107px;
+    &__title {
+      margin-bottom: 56px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    margin: 179px 120px 141px 107px;
+    &__title {
+      margin-bottom: 60px;
+      font-size: 48px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    margin: 183px 141px 138px 160px;
+    &__title {
+      margin-bottom: 80px;
+      font-size: 64px;
+    }
+  }
+}

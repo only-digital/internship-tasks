@@ -1,0 +1,5 @@
+mixin spoiler(props)
+	.spoiler&attributes(attributes)(data-component='spoiler')
+		.spoiler__title=props.title
+			span.btn
+		.spoiler__content=props.text

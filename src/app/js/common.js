@@ -1,13 +1,12 @@
-import ExampleButton from "../../components/example-button/example-button";
-
+import Spoiler from '../../components/spoiler/spoiler'
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
  * Ключ объекта - Название компонента, которое было указано во время его создания (совпадает с именем файлов)
  * Значение - JS-класс компонента (Импорт добавляется вручную)
  */
 const allComponents = {
-    'example-button': ExampleButton,
-}
+  "spoiler": Spoiler,
+};
 
 
 /**
