@@ -31,7 +31,7 @@ class FeedbackFile extends Component {
     this.addFile = this.getElement("button");
     this.input = this.getElement("input");
     this.addFile.addEventListener("click", this.onAdd);
-    this.input.addEventListener("change", this.onSelectFiles);
+    this.input.addEventListener("input", this.onSelectFiles);
     this.container = this.getElement("container");
     this.error = this.getElement("error");
     this.error.textContent = `Максимальный размер файла ${this.root.dataset.maxfilesize}`;
@@ -109,6 +109,7 @@ class FeedbackFile extends Component {
     this.removeFileFromFileList(file.name);
     this.files = this.files.filter((item) => item.name !== file.name);
     this.isValid();
+    this.input.dispatchEvent(new Event("input"));
   };
 
   removeFileFromFileList = (name) => {
@@ -165,8 +166,10 @@ class FeedbackFile extends Component {
       }
     });
     if (isError) {
+      this.root.classList.add("error");
       this.root.append(this.error);
     } else {
+      this.root.classList.remove("error");
       this.error.remove();
     }
   };

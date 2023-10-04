@@ -25,7 +25,7 @@ $color-black: #111111;
   }
 
   &__icon {
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     width: 16px;
@@ -45,7 +45,7 @@ $color-black: #111111;
   }
   
   &__field {
-    display: flex;
+    display: inline;
     align-items: center;
     margin-top: 14px;
     width: fit-content;
