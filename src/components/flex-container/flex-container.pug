@@ -1,6 +1,9 @@
 include ../block-text/block-text.pug
 
 mixin flex-container()
+    h3.title
+        span.highlighted-text Комплексные
+        |  предложения для мостостроения
     section.flex-container
         .flex-container__col
             +block-text('Мостовая сталь/Стальные конструкции мостов')
@@ -9,9 +12,9 @@ mixin flex-container()
                 +block-text('Железобетонные конструкции мостов')
                 +block-text('Дорожные ограждения барьерного типа')
     section.flex-container
-        +block-text('Шпунтовой замок', '#04306A')
+        +block-text('Шпунтовой замок', 'blue')
         +block-text('Мостовой крепеж')
-        +block-text('Профили для деформационных швов', '#0041A0')
+        +block-text('Профили для деформационных швов', 'light_blue')
     section.flex-container
         .flex-container__col
             +block-text('Плетеные габионы')
