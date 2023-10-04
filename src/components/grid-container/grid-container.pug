@@ -1,21 +1,19 @@
-include ../block-text/block-text.pug
+mixin grid-block-text(title)
+    .grid-container__block&attributes(attributes)
+        h4.grid-container__block_title= title
+        include ../../assets/images/arrow-right.svg
 
 mixin grid-container()
-    h3.title
-        span.highlighted-text Комплексные
-        |  предложения для мостостроения
     section.grid-container
-        .grid-container_first
-            .grid-container_first__item-first
-                +block-text('Мостовая сталь/Стальные конструкции мостов')
-            .grid-container_first__item-second
-                +block-text('Железобетонные конструкции мостов')
-            .grid-container_first__item-third
-                +block-text('Дорожные ограждения барьерного типа')
-        .grid-container_second
-            +block-text('Шпунтовой замок', 'blue')
-            +block-text('Мостовой крепеж')
-            +block-text('Профили для деформационных швов', 'light_blue')
-        .grid-container_third
-            +block-text('Плетеные габионы')
-            +block-text('Модульные мосты')
+        h3.title 
+            span.highlighted-text Комплексные
+            | &nbsp;предложения для мостостроения
+        .grid-container__list
+            +grid-block-text('Мостовая сталь/Стальные конструкции мостов')
+            +grid-block-text('Железобетонные конструкции мостов')
+            +grid-block-text('Дорожные ограждения барьерного типа')
+            +grid-block-text('Шпунтовой замок').grid-container__block-blue
+            +grid-block-text('Mостовой крепеж')
+            +grid-block-text('Профили для деформационных швов').grid-container__block-lightBlue
+            +grid-block-text('Плетеные габионы')
+            +grid-block-text('Модульные мосты')

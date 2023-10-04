@@ -1,16 +1,65 @@
+@mixin flexItem($n){
+    flex: 0 0 calc(100% / $n - (($n - 1) * 16px / $n));
+}
+
 .flex-container {
-    gap: 18px;
-    margin-top: 18px;
+    gap: 16px;
+    color: #04306A;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
     &__col {
-        width: 50%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 16px;
     }
 
-    &__row-col {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
+    &__block {
+        position: relative;
+        padding: 50px;
+        min-height: 420px;
+        background-color: #F4F4F4;
+        @include flexItem(1);
+
+        svg {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+
+        &-2{
+            @include flexItem(2);
+        }
+
+        &-3{
+            @include flexItem(3);
+        }
+
+        &-blue{
+            background: #04306A;
+            color: #fff;
+
+            svg path{
+                fill: #fff;
+            }
+        }
+
+        &-lightBlue{
+            background: #0041A0;
+            color: #fff;
+
+            svg path{
+                fill: #fff;
+            }
+        }
+        
+        &_title{
+            font-size: 32px;
+            font-weight: 700;
+        }
     }
 }
 

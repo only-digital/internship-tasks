@@ -1,5 +1,0 @@
-mixin block-text(title, background_color)
-    .block(class=`${background_color === 'blue' ? 'block__blue' : background_color === 'light_blue' ? 'block__light-blue' : ''}`)
-        h3.block__title(class=`${background_color === 'blue' || background_color === 'light_blue' ? 'block__title-white' : 'block__title'}`)= title
-        .block__img
-            include ../../assets/images/arrow-right.svg
