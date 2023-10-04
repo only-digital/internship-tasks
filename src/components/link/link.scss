@@ -40,6 +40,10 @@ $blue: #002F6C;
     &[disabled] {
         pointer-events: none;
         color: $extraGray;
+
+        &:focus {
+            background-color: transparent;
+        }
     }
 
     @media (max-width: 768px) {
