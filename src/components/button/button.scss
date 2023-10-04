@@ -1,13 +1,16 @@
+@import '../variables.scss';
+
 .button {
 	$root: &;
 
 	display: flex;
 	align-items: center;
 	border-radius: 25px;
-	border: 1px solid #BCBCBC;
+	border: 1px solid $grey;
+	background-color: transparent;
 	color: #111;
 	cursor: pointer;
-	transition: all 0.3s ease-out;
+	transition: background-color 0.3s, border 0.3s, color 0.3s;
 
 	@media (max-width: 767px) {
 		width: 100%;
@@ -32,36 +35,36 @@
 	}
 
 	&:hover {
-		background: #0041A0;
-		border: 1px solid #0041A0;
-		color: white;
+		background-color: $blue;
+		border: 1px solid $blue;
+		color: $white;
 
 		#{$root}__svg {
-			fill: white;
+			fill: $white;
 		}
 	}
 
 	&:active {
-		background: #002F6C;
-		border: 1px solid #002F6C;
-		color: white;
+		background: $dark-blue;
+		border: 1px solid $dark-blue;
+		color: $white;
 
 		#{$root}__svg {
-			fill: white;
+			fill: $white;
 		}
 	}
 
 	&:focus {
-		outline: 3px solid #99B3D8;
+		outline: 3px solid #99b3d8;
 	}
 
 	&:disabled {
-		border: 1px solid #BCBCBC;
+		border: 1px solid $grey;
 		pointer-events: none;
-		color: #909090;
+		color: $disabled;
 
 		#{$root}__svg {
-			fill: #909090;
+			fill: $disabled;
 		}
 	}
 
@@ -87,7 +90,8 @@
 		display: flex;
 
 		svg {
-			fill: #002F6C;
+			fill: $dark-blue;
+			transition: fill 0.3s;
 
 			@media (max-width: 1919px) {
 				width: 24px;
@@ -100,43 +104,44 @@
 			}
 		}
 	}
-}
 
-.button_red {
-	border-radius: 25px;
-	border: 1px solid #FF0000;
-	background: #FF0000;
-	color: white;
+	&_red {
+		border-radius: 25px;
+		border: 1px solid $red;
+		background-color: $red;
+		color: $white;
+		transition: color 0.3s, background-color 0.3s;
 
-	svg {
-		fill: white;
-	}
-
-	.button__text {
-		color: white;
-	}
-
-	&:hover {
-		background: #BF1D26;
-		border: 1px solid #BF1D26;
-	}
-
-	&:active {
-		background: #81080F;
-		border: 1px solid #81080F;
-	}
-
-	&:disabled {
-		background: #F4F4F4;
-		border: 1px solid #F4F4F4;
-		pointer-events: none;
-
-		.button__text {
-			color: #909090;
+		svg {
+			fill: $white;
 		}
 
-		.button__svg {
-			fill: #909090;
+		#{$root}__text {
+			color: $white;
+		}
+
+		&:hover {
+			background: $light-red;
+			border: 1px solid $light-red;
+		}
+
+		&:active {
+			background: $dark-red;
+			border: 1px solid $dark-red;
+		}
+
+		&:disabled {
+			background: $light-grey;
+			border: 1px solid $light-grey;
+			pointer-events: none;
+
+			#{$root}__text {
+				color: $disabled;
+			}
+
+			#{$root}__svg {
+				fill: $disabled;
+			}
 		}
 	}
 }

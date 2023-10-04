@@ -1,3 +1,5 @@
+@import '../variables.scss';
+
 .switch {
 	$root: &;
 	display: inline-flex;
@@ -5,7 +7,7 @@
 	.toggle {
 		width: 56px;
 		height: 28px;
-		background-color: #fff;
+		background-color: $white;
 		border-radius: 14px;
 		cursor: pointer;
 		position: relative;
@@ -20,7 +22,7 @@
 	.toggle::before {
 		position: absolute;
 		content: "";
-		background-color: #0041a0;
+		background-color: $blue;
 		width: 16px;
 		height: 16px;
 		border-radius: 50%;
@@ -35,12 +37,12 @@
 	}
 
 	input:checked+.toggle {
-		background-color: #0041a0;
+		background-color: $blue;
 	}
 
 	input:checked+.toggle::before {
 		transform: translateX(28px);
-		background-color: #fff;
+		background-color: $white;
 
 		@media (max-width: 812px) {
 			transform: translateX(20px);
@@ -52,7 +54,11 @@
 	}
 
 	input:hover+.toggle {
-		background-color: #002f6c;
+		background-color: $dark-blue;
+	}
+
+	input:hover+.toggle::before {
+		background-color: $white;
 	}
 
 	input:focus+.toggle {
@@ -60,12 +66,12 @@
 	}
 
 	input:disabled+.toggle {
-		background-color: #dedede;
+		background-color: $light-grey;
 		pointer-events: none;
 		cursor: default;
 	}
 
 	input:disabled+.toggle::before {
-		background-color: #fff;
+		background-color: $white;
 	}
 }

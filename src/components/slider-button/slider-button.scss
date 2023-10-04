@@ -1,3 +1,5 @@
+@import '../variables.scss';
+
 .slider-button {
 	$root: &;
 
@@ -11,16 +13,17 @@
 
 	button {
 		border-radius: 50%;
-		border: 1px solid #DEDEDE;
-		transition: all 0.3s;
+		border: 1px solid $light-grey;
+		background-color: transparent;
+		transition: background-color 0.3s;
 
 		&:hover {
-			background: #F4F4F4;
-			border: 1px solid #F4F4F4;
+			background: $grey;
+			border: 1px solid $grey;
 		}
 
 		&:active {
-			background: #DEDEDE;
+			background: $light-grey;
 		}
 
 		&:focus {
@@ -31,7 +34,7 @@
 			pointer-events: none;
 
 			.icon>svg {
-				fill: #BCBCBC;
+				fill: $disabled;
 			}
 		}
 
@@ -41,7 +44,11 @@
 			align-items: center;
 
 			svg {
-				fill: #002F6C;
+				fill: $dark-blue;
+			}
+
+			&__right {
+				transform: rotateZ(-180deg);
 			}
 		}
 	}
@@ -79,7 +86,7 @@
 	font-size: 16px;
 	font-weight: 600;
 	line-height: 150%;
-	color: #909090;
+	color: $disabled;
 	cursor: default;
 
 	@media (max-width: 767px) {

@@ -5,8 +5,8 @@ mixin slider-button(props)
 				span.icon
 					+svg('button-left')
 			button&attributes(attributes)
-				span.icon
-						+svg('button-right')
+				span.icon.icon__right
+						+svg('button-left')
 		.counter
 			span 01 / 
 			span= props.number

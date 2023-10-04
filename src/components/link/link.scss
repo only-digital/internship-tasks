@@ -1,24 +1,26 @@
+@import '../variables.scss';
+
 .link {
 	$root: &;
 
-	color: #0041A0;
+	color: $blue;
+	font-size: 16px;
 	font-weight: 400;
 	line-height: 150%;
 	display: inline-flex;
 	gap: 10px;
-	transition: all 0.3s;
-	font-size: 16px;
+	transition: color 0.3s;
 
 	@media (max-width: 1279px) {
 		font-size: 14px;
 	}
 
 	&:hover {
-		color: #FF0000;
+		color: $red;
 	}
 
 	&:active {
-		color: #BF1D26;
+		color: $light-red;
 	}
 
 	&:focus {
@@ -29,11 +31,11 @@
 		display: flex;
 		height: 24px;
 		width: 24px;
-		fill: #002F6C;
+		fill: $dark-blue;
 	}
 }
 
 .disabled {
 	pointer-events: none;
-	color: #BCBCBC;
+	color: $grey;
 }
