@@ -3,6 +3,8 @@ import FeedbackFile from "../../components/feedback-file/feedback-file";
 import FeedbackInput from "../../components/feedback-input/feedback-input";
 import FeedbackTextarea from "../../components/feedback-textarea/feedback-textarea";
 import FeedbackCheckbox from "../../components/feedback-checkbox/feedback-checkbox";
+import FeedbackSubmit from "../../components/feedback-submit/feedback-submit";
+import FeedbackForm from "../../components/feedback-form/feedback-form";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -15,6 +17,8 @@ const allComponents = {
   "feedback-textarea": FeedbackTextarea,
   "feedback-file": FeedbackFile,
   "feedback-checkbox": FeedbackCheckbox,
+  "feedback-submit": FeedbackSubmit,
+  "feedback-form": FeedbackForm,
 };
 
 /**
