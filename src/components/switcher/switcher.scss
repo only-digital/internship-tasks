@@ -1,10 +1,6 @@
 .switcher {
 	$root: &;
-	$extra-cobolt: #0041A0;
-	$main-blue: #002F6C;
-	$border-color: #C2DAFF;
-	$extra-grey2: #DEDEDE;
-	$white: #FFFFFF;
+
 	$size-toggle: 16px;
 	$size-toggle-small: 12px; 
 	$width-switcher: 56px;
@@ -50,7 +46,7 @@
 			width: $size-toggle;
 			height: $size-toggle;
 			border-radius: 50%;
-			background-color: $white;
+			background-color: $main-white;
 			position: absolute;
 			top: calc(50% - $size-toggle / 2);
 			left: $margin;

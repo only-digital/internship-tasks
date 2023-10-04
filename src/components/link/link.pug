@@ -1,5 +1,5 @@
 mixin link(props)
-	a.link&attributes(attributes)(href=props.href)
+	a.link&attributes(attributes)(href=props.href target=props.target||'_blank')
 		span.link__name= props.name
 		if props.icon 
 			span.link__icon

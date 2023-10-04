@@ -1,12 +1,5 @@
 .myButton2 {
 	$root: &;
-	$main-red: #FF0000;
-	$main-white: #FFFFFF;
-	$dark-red:  #BF1D26;
-	$maroon:  #81080F;
-	$outline-color: #99B3D8;
-	$extra-grey: #F4F4F4;
-	$main-steel: #909090;
 
 	display: flex;
 	gap: 12px;
@@ -24,7 +17,7 @@
 		outline 0.3s;
 
 	&:disabled {
-		background-color: $extra-grey;
+		background-color: $extra-grey2;
 		color: $main-steel;
 		pointer-events: none;
 	
@@ -54,7 +47,7 @@
 		padding: 0px 14px 0px 16px;
 
 		&:focus:not(:hover){
-			outline: 3px solid $outline-color;
+			outline: 3px solid $focus-color;
 		}
 	}
 	

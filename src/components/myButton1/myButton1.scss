@@ -1,12 +1,5 @@
 .myButton1 {
 	$root: &;
-	$extra-gray: #BCBCBC;
-	$extra-cobolt: #0041A0;
-	$main-blue: #002F6C;
-	$main-white: #FFFFFF;
-	$text-color: #111111;
-	$focus-color: #99B3D8;
-	$main-steel: #909090;
 
 	display: flex;
 	gap: 12px;
@@ -16,7 +9,7 @@
 	height: 42px;
 	width: 100%;
 	padding: 0px 14px 0px 14px;
-	border: 1px solid $extra-gray;
+	border: 1px solid $extra-grey1;
 	border-radius: 25px;
 	color: $text-color;
 	transition: 
