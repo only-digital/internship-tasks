@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Задание 4</title>
+  </head>
+  <body>
+    <div class="job-vacancy" data-component="job-vacancy">
+      <div class="job-vacancy__title"> 
+        <div class="job-vacancy__title__date">18 декабря 2020</div>
+        <div class="job-vacancy__title__text">Консультант SAP PO</div>
+        <ul class="job-vacancy__title__additional-information">
+          <li>Просмотров: <span class="job-vacancy__title__additional-information__views loader"> </span></li>
+          <li>Откликов: <span class="job-vacancy__title__additional-information__response loader"></span></li>
+        </ul>
+      </div>
+      <div class="job-vacancy__content">
+        <div class="job-vacancy__content__description" data-component="job-vacancy__content__description">
+          <div class="job-vacancy__content__description__title">Вам предстоит</div>
+          <ul class="job-vacancy__content__description__list">
+            <li>Участие в проектах в роли архитектора/консультанта по интеграции данных</li>
+            <li>Проектирование архитектуры интеграции по технологиям SAP (Process Orchestration 7.5, Data Services 4.2, RFC, IDOC)</li>
+            <li>Подбор способов взаимодействия с non-SAP системами (1C:ERP, Lotus и др.)</li>
+            <li>Подготовка проектной документации (ФТТ, ТЗ, АЗ, тех. проект, проектные решения по интеграции, спецификации на разработку, описания настроек)</li>
+            <li>Проведение аудита интеграционных сценариев и проектно-эксплуатационной документации, разработанных подрядными организациями</li>
+            <li>Разработка и поддержка интеграционных сценариев</li>
+          </ul>
+        </div>
+        <div class="job-vacancy__content__description" data-component="job-vacancy__content__description">
+          <div class="job-vacancy__content__description__title">Мы ожидаем</div>
+          <ul class="job-vacancy__content__description__list">
+            <li>Знание ASAP, MS Visio, SAP PI / SAP PO, SAP HANA, JSON, XML</li>
+            <li>Опыт работы в сфере аналитики от 3-х лет в должности аналитика, ведущего аналитика, специалиста по внедрению информационных систем</li>
+            <li>Опыт разработки технических заданий и постановок задач</li>
+            <li>Опыт описания бизнес-процессов в нотациях BPMN и UML</li>
+            <li>Опыт формирования требований к информационным системам</li>
+            <li>Опыт составления проектной документации по ГОСТ</li>
+          </ul>
+        </div>
+        <div class="job-vacancy__content__description" data-component="job-vacancy__content__description">
+          <div class="job-vacancy__content__description__title">Мы предлагаем</div>
+          <ul class="job-vacancy__content__description__list">
+            <li>Оформление в соответствии с нормами ТК РФ, социальные гарантии</li>
+            <li>Крупные проекты в компании–лидере отрасли</li>
+            <li>Возможность модернизировать процессы реального производственного бизнеса в команде сильнейших экспертов</li>
+            <li>Полис ДМС (включая стоматологию)</li>
+            <li>Доступ к корпоративной OnLine библиотеке</li>
+            <li>Обучение в программах Корпоративного университета</li>
+          </ul>
+        </div>
+      </div>
+      <form class="feedback-form" data-component="feedback-form">
+        <div class="feedback-form__title">Форма обратной связи</div>
+        <div class="feedback-form__content">
+          <div class="feedback-form__content__email">
+            <label for="email">E-mail</label>
+            <input class="feedback-form__content__email__input" type="email" id="email"/>
+          </div>
+          <div class="feedback-form__content__confirm">
+            <input class="feedback-form__content__checkbox__input" type="checkbox" id="confirm"/>
+            <label for="confirm">
+               	Вы подтверждаете, что ознакомились <span>c политикой обработки персональных данных </span></label>
+          </div>
+          <button class="feedback-form__content__submit">Отправить
+            <svg class="feedback-form__content__submit__svg" focusable="false">
+              <use xlink:href="#submit-button"></use>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+    <!--Your code here-->
+  </body>
+</html>

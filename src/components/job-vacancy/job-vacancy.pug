@@ -1,0 +1,25 @@
+
+mixin job-vacancy__content__description(props)
+	.job-vacancy__content__description&attributes(attributes)(data-component='job-vacancy__content__description')
+		.job-vacancy__content__description__title!=props.title
+		ul.job-vacancy__content__description__list
+			each val in [...props.list]
+				li= val
+
+
+
+mixin job-vacancy(props)
+	.job-vacancy&attributes(attributes)(data-component='job-vacancy')
+		.job-vacancy__title 
+			.job-vacancy__title__date!=props.date
+			.job-vacancy__title__text!=props.title
+			ul.job-vacancy__title__additional-information
+				li Просмотров: 
+					span.job-vacancy__title__additional-information__views.loader 
+				li Откликов: 
+					span.job-vacancy__title__additional-information__response.loader
+		.job-vacancy__content
+			+job-vacancy__content__description({title:"Вам предстоит", list:['Участие в проектах в роли архитектора/консультанта по интеграции данных', 'Проектирование архитектуры интеграции по технологиям SAP (Process Orchestration 7.5, Data Services 4.2, RFC, IDOC)','Подбор способов взаимодействия с non-SAP системами (1C:ERP, Lotus и др.)', 'Подготовка проектной документации (ФТТ, ТЗ, АЗ, тех. проект, проектные решения по интеграции, спецификации на разработку, описания настроек)', 'Проведение аудита интеграционных сценариев и проектно-эксплуатационной документации, разработанных подрядными организациями', 'Разработка и поддержка интеграционных сценариев']})
+			+job-vacancy__content__description({title:'Мы ожидаем', list:['Знание ASAP, MS Visio, SAP PI / SAP PO, SAP HANA, JSON, XML','Опыт работы в сфере аналитики от 3-х лет в должности аналитика, ведущего аналитика, специалиста по внедрению информационных систем','Опыт разработки технических заданий и постановок задач', 'Опыт описания бизнес-процессов в нотациях BPMN и UML', 'Опыт формирования требований к информационным системам', 'Опыт составления проектной документации по ГОСТ']})
+			+job-vacancy__content__description({title:'Мы предлагаем', list:['Оформление в соответствии с нормами ТК РФ, социальные гарантии', 'Крупные проекты в компании–лидере отрасли' , 'Возможность модернизировать процессы реального производственного бизнеса в команде сильнейших экспертов', 'Полис ДМС (включая стоматологию)', 'Доступ к корпоративной OnLine библиотеке', 'Обучение в программах Корпоративного университета' ]})
+		+feedback-form()
