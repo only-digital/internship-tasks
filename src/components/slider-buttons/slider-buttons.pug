@@ -1,0 +1,10 @@
+mixin slider-buttons(props)
+	.slider-buttons&attributes(attributes)
+		span.text= props.text
+		.slider-buttons-wrapper
+			div.buttons(class=props.class)
+				button.slider-button&attributes(attributes)
+					+svg('back-vector').icon
+				button.slider-button&attributes(attributes)
+					+svg('forward-vector').icon
+			div.pages 01/04

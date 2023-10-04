@@ -1,0 +1,70 @@
+.slider-buttons {
+  display: flex;
+  align-items: center;
+
+  .text {
+    text-transform: uppercase;
+  }
+}
+
+.slider-buttons-wrapper {
+  $root: &;
+
+  display: flex;
+  width: 265px;
+  height: 80px;
+  align-items: center;
+  justify-content: space-between;
+
+  .buttons {
+    display: flex;
+    width: 170px;
+    justify-content: space-between;
+  }
+
+  .pages {
+    color: #909090;
+  }
+
+  .slider-button {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #DEDEDE;
+    border-radius: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, border 0.3s;
+  }
+
+  .icon {
+    width: 28px;
+    height: 40px;
+    fill: #002F6C;
+  }
+
+  .slider-button:hover {
+    background: #F4F4F4;
+  }
+
+  .slider-button:active {
+    background: #DEDEDE;
+  }
+
+  .slider-button:focus {
+    background: #FFFFFF;
+    border: 3px solid #99B3D8;
+  }
+
+  .slider-button:disabled {
+    pointer-events: none;
+
+    .icon {
+      fill: #BCBCBC;
+    }
+  }
+
+  .buttons.disabled + .pages {
+    color: #BCBCBC;
+  }
+}
