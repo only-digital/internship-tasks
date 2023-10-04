@@ -1,0 +1,55 @@
+.TaskList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .card{
+    padding: 24px 24px 31px 24px;
+    background: #FFF;
+    border-radius: 12px;
+
+    &Title{
+      display: flex;
+      color: rgba(22, 31, 62, 0.90);
+      font-size: 24px;
+      justify-content: space-between;
+      padding-bottom: 19px;
+      border-bottom: 1px solid #E7EAEE;
+
+      p{
+        width: 100%;
+        height: 100%;
+      }
+
+      &.completed{
+        p{
+          text-decoration: line-through;
+          color: rgba(22, 31, 62, 0.30);
+        }
+
+      }
+      &:hover{
+        p{
+          color: #007FFF;
+        }
+
+      }
+      button{
+        cursor: pointer;
+        img{
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+
+    &Body{
+      color: rgba(22, 31, 62, 0.90);
+      font-size: 16px;
+      line-height: 175%;
+      padding-top: 10px;
+    }
+
+  }
+
+}

@@ -1,0 +1,23 @@
+.Search {
+  position: relative;
+  max-width: 608px;
+	input{
+      min-width: 608px;
+      height: 56px;
+      padding: 15px 16px;
+      background: #FFF;
+      border-radius: 10px;
+
+      &::placeholder{
+        color: rgba(33, 60, 87, 0.40);
+        font-size: 16px;
+        line-height: 150%;
+      }
+    }
+  img{
+    position: absolute;
+    cursor: pointer;
+    right: 10px;
+    top: 25%;
+  }
+}
