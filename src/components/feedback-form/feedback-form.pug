@@ -1,12 +1,17 @@
 mixin feedback-form(props)
 	.feedback-form&attributes(attributes)(data-component='feedback-form')
 		h2.feedback-form__title!=props.title 
-		form.feedback-form__inner(action="", method="post")
-			label.feedback-form__label!=props.mail
-				input.feedback-form__input(type="email", name="email", required)
+		form.feedback-form__inner(action="https://echo.htmlacademy.ru/", method="post")
+			label.feedback-form__label
+				span.feedback-form__label-text!=props.mail
+				input.feedback-form__input(type="email", name="email")
 			span.feedback-form__warning!=props.warning
 			label.feedback-form__label-confirm Вы подтверждаете, что ознакомились #[span c политикой обработки персональных данных]
-				input.feedback-form__input-confirm(type="checkbox", name="confirm", required)
+				input.feedback-form__input-confirm.visually-hidden(type="checkbox", name="confirm")
 				span.feedback-form__input-mark
-			.feedback-form__sending-result
+					+svg('checkbox').feedback-form__input-mark-svg
+			.feedback-form__sending-wrapper
+				.feedback-form__sending-result
+					+svg('tick').feedback-form__sending-svg
+				span.feedback-form__sending-text Форма успешно отправлена
 			+button({text: "Отправить"})

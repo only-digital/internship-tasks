@@ -8,14 +8,7 @@
 	font-weight: 400;
 	line-height: 140%;
 	padding-right: 320px;
-
-	&:not(:last-child) {
-		margin-bottom: 130px;
-	}
-
-	&:last-child {
-		margin-bottom: 153px;
-	}
+	margin-bottom: 129px;
 
 	&__title {
 		color: #04306A;
@@ -30,7 +23,7 @@
 		padding-left: 28px;
 
 		&:not(:last-child) {
-			margin-bottom: 12px;
+			margin-bottom: 13px;
 		}
 
 		&::before {

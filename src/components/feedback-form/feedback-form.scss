@@ -8,6 +8,7 @@
 	font-weight: 400;
 	line-height: 120%;
 	letter-spacing: -0.6px;
+	padding-top: 23px;
 
 	&__title {
 		padding-left: 23px;
@@ -15,6 +16,7 @@
 
 	&__inner {
 		padding-left: 467px;
+		margin-top: -14px;
 	}
 
 	&__label {
@@ -25,9 +27,13 @@
 		letter-spacing: -0.2px;
 	}
 
+	&__label-text {
+		padding-left: 20px;
+	}
+
 	&__input {
 		display: block;
-		color: black;
+		color: #909090;
 		font-size: 16px;
 		line-height: 150%;
 		letter-spacing: -0.3px;
@@ -35,6 +41,17 @@
 		border-radius: 24px;
 		border: 1px solid #0041A0;
 		width: 100%;
+		margin-bottom: 10px;
+
+		&:hover,
+		&:focus-visible {
+			outline: 2px solid #99B3D8;
+		}
+
+		&:disabled {
+			opacity: 0.5;
+		}
+
 	}
 
 	&__warning {
@@ -42,26 +59,136 @@
 		color: #EF1C1C;
 		font-size: 14px;
 		line-height: 150%;
+		margin-bottom: 14px;
+		opacity: 0;
 	}
 
 	&__label-confirm {
+		position: relative;
 		color: #909090;
 		font-size: 14px;
 		line-height: 150%;
+		padding-left: 34px;
 
 		span {
 			color: #002F6C;
 		}
 	}
 
-	&__input-confirm {}
+	&__input-mark {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		margin: auto;
+		left: 0;
+		width: 16px;
+		height: 16px;
+		border: 1px solid #BCBCBC;
+		background-color: #fff;
+	}
 
-	&__input-mark {}
+	&__input-mark-svg {
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		top: 0;
+		width: 15px;
+		height: 15px;
+	}
+
+	&__input-confirm {
+		&.visually-hidden {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			margin: -1px;
+			padding: 0;
+			border: 0;
+			clip: rect(0 0 0 0);
+			overflow: hidden;
+		}
+
+		&:not(:disabled):hover+.feedback-form__input-mark,
+		&:not(:disabled):focus-visible+.feedback-form__input-mark {
+			outline: 2px solid #99B3D8;
+		}
+
+		&:not(:disabled):invalid:focus+.feedback-form__input-mark {
+			border-color: #c00000;
+		}
+
+		&:checked +.feedback-form__input-mark .feedback-form__input-mark-svg {
+		display: block;
+		}
+	}
+
 
 	&__sending-result {
+		position: relative;
 		width: 50px;
 		height: 50px;
 		border: 2px solid #DEDEDE;
 		border-radius: 50%;
 	}
+
+	&__sending-svg {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		width: 22px;
+		height: 16px;
+	}
+
+	&__sending-wrapper {
+		display: none;
+		// display: flex;
+		align-items: center;
+		column-gap: 25px;
+		margin: 30px 0;
+	}
+
+	&__sending-text {
+		color: #111;
+		font-size: 16px;
+		line-height: 124%;
+		letter-spacing: -0.3px;
+	}
 }
+
+// .form-toggle-wrapper input:not(:disabled):hover+.control-mark {
+//     border-color: #5c5c5c;
+// }
+
+// .form-toggle-wrapper input:not(:disabled):focus+.control-mark {
+//     border-color: #5c5c5c;
+// }
+
+// .form-toggle-wrapper input:not(:disabled):invalid:focus+.control-mark {
+//     border-color: #c00000;
+// }
+
+// .form-toggle-wrapper input:disabled+.control-mark,
+// .form-toggle-wrapper input:disabled~.checkbox-text {
+//     opacity: 0.4;
+// }
+
+// .form input:hover {
+//     border-color: #5c5c5c;
+// }
+
+// .form input:focus {
+//     border-color: #5c5c5c;
+//     outline: none;
+// }
+
+// .form input:disabled {
+//     opacity: 0.4;
+// }
+
+// .form input:invalid:focus {
+//     border-color: #c00000;
+// }
