@@ -1,0 +1,73 @@
+@import './colors.scss';
+
+.section-spoiler {
+	$root: &;
+
+	.container {
+		min-width: 375px;
+		padding: 0 24px;
+		padding-top: 152px;
+		padding-bottom: 98px;
+	
+		@media (min-width: 768px) {
+			padding: 0 40px;
+			padding-top: 174px;
+			padding-bottom: 213px;
+		}
+	
+		@media (min-width: 1280px) {
+			padding: 0 107px;
+			padding-top: 167px;
+			padding-bottom: 48px;
+		}
+	
+		@media (min-width: 1440px) {
+			padding: 0 120px;
+			padding-top: 179px;
+			padding-bottom: 141px;
+		}
+	
+		@media (min-width: 1920px) {
+			width: 1600px;
+			padding: 0;
+			padding-top: 183px;
+			padding-bottom: 138px;
+			margin: 0 auto;
+		}
+	}
+
+	&__title {
+		$root: &;
+	
+		width: 190px;
+		margin-bottom: 40px;
+	
+		font-family: 'Roboto', sans-serif;
+		line-height: 100%;
+		font-size: 30px;
+		color: $dark-aqua;
+	
+		@media (min-width: 768px) {
+			width: auto;
+			margin-bottom: 50px;
+	
+			font-size: 42px;
+		}
+	
+		@media (min-width: 1280px) {
+			margin-bottom: 56px;
+		}
+	
+		@media (min-width: 1440px) {
+			font-size: 48px;
+	
+			margin-bottom: 60px;
+		}
+	
+		@media (min-width: 1920px) {
+			font-size: 64px;
+
+			margin-bottom: 80px;
+		}
+	}
+}
