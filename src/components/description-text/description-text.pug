@@ -1,0 +1,7 @@
+mixin description-text(props)
+	.description-text&attributes(attributes)(data-component='description-text')
+		input.description-text__input#open-spoiler(type='checkbox')
+		label.description-text__header(for='open-spoiler')!= props.text
+		p.description-text__text!= props.decription
+		+svg('plus-svg').description-text__plus
+		+svg('cross-svg').description-text__cross

@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+}
+
+.block-header {
+	color: #012B34;
+
+	@media (min-width: 375px) {
+		display: inline-block;
+		width: 190px;
+		font-size: 30px;
+		letter-spacing: -0.6px;
+		margin: 152px auto 40px 24px;
+	}
+
+	@media (min-width: 768px) {
+		width: max-content;
+		font-size: 42px;
+		letter-spacing: -0.84px;
+		margin: 174px auto 50px 40px;
+	}
+
+	@media (min-width: 1280px) {
+		margin: 167px auto 56px 107px;
+	}
+
+	@media (min-width: 1440px) {
+		font-size: 48px;
+		letter-spacing: -0.96px;
+		margin: 179px auto 60px 120px;
+	}
+
+	@media (min-width: 1920px) {
+		font-size: 64px;
+		letter-spacing: -1.28px;
+		margin: 183px auto 80px 160px;
+	}
+}
+
+.description-text {
+	$root: &;
+
+	position: relative;
+	transition: height 300ms ease-in-out;
+
+	&:hover {
+		cursor: pointer;
+
+		.description-text__header {
+			color: #114C9A;
+		}
+	}
+
+	&:active > .description-text__header {
+		color: #114C9A;
+	}
+
+	@media (min-width: 375px) {
+		margin-left: 24px;
+		width: 327px;
+		border-top: 1px solid #E6E6E6;
+	}
+
+	@media (min-width: 768px) {
+		width: 688px;
+		margin-left: 40px;
+	}
+
+	@media (min-width: 1280px) {
+		width: 1066px;
+		margin-left: 107px;
+	}
+
+	@media (min-width: 1440px) {
+		width: 1200px;
+		margin-left: 120px;
+	}
+
+	@media (min-width: 1920px) {
+		width: 1600px;
+		margin-left: 160px;
+	}
+
+	.description-text__plus {
+		position: absolute;
+		transition: 300ms ease-in-out;
+
+		@media (min-width: 375px) {
+			top: 27px; 
+			left: 311px;
+			width: 16px;
+			height: 16px;
+		}
+
+		@media (min-width: 768px) {
+			top: 30px;
+			left: 668px;
+			width: 20px;
+			height: 20px;
+		}
+
+		@media (min-width: 1280px) {
+			top: 25px;
+			left: 1050px;
+			width: 16px;
+			height: 16px;
+		}
+
+		@media (min-width: 1440px) {
+			top: 30px;
+			left: 1180px;
+		}
+
+		@media (min-width: 1920px) {
+			top: 35px;
+			left: 1571px;
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+	.description-text__cross {
+		position: absolute;
+		opacity: 0;
+		transition: 300ms ease-in-out;
+		@media (min-width: 375px) {
+			top: 28px;
+			left: 312px;
+			width: 14px;
+			height: 14px;
+		}
+
+		@media (min-width: 768px) {
+			top: 33px;
+			left: 671px;
+		}
+
+		@media (min-width: 1280px) {
+			top: 26px;
+			left: 1051px;
+		}
+
+		@media (min-width: 1440px) {
+			top: 31px;
+			left: 1181px;
+		}
+
+		@media (min-width: 1920px) {
+			top: 35px;
+			left: 1571px;
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+	.description-text__header {
+
+		$root: &;
+
+		&:hover {
+			cursor: pointer;
+		}
+
+		color: #012B34;
+
+		@media (min-width: 375px) {
+			display: inline-block;
+			margin: 24px 0 20px 0;
+			width: 270px;
+			font-size: 24px;
+			line-height: 120%;
+		}
+
+		@media (min-width: 768px) {
+			margin: 24px 0 24px 0;
+			width: max-content;
+			font-size: 27px;
+		}
+
+		@media (min-width: 1280px) {
+			margin: 20px 0 20px 0;
+			font-size: 24px;
+		}
+
+		@media (min-width: 1440px) {
+			margin: 24px 0 24px 0;
+			font-size: 27px;
+		}
+
+		@media (min-width: 1920px) {
+			margin: 30px 0 30px 0;
+			font-size: 36px;
+		}
+	}
+
+
+	.description-text__text {
+		opacity: 0;
+		color: #000402;
+		transition: 300ms ease-in-out;
+		position: absolute;
+
+		@media (min-width: 375px) {
+			margin: -4px 0 20px 0;
+			font-size: 15px;
+			line-height: 150%;
+		}
+
+		@media (min-width: 768px) {
+			margin: -8px 0 24px 0;
+			width: 612px;
+		}
+
+		@media (min-width: 1280px) {
+			margin: -4px 0 24px 0;
+			width: 640px;
+			font-size: 14px;
+		}
+
+		@media (min-width: 1440px) {
+			margin: -4px 0 30px 0;
+			width: 820px;
+			font-size: 15px;
+		}
+
+		@media (min-width: 1920px) {
+			margin: 0px 0 40px 0;
+			width: 900px;
+			font-size: 20px;
+		}
+	}
+
+	input:checked ~ .description-text__header {
+		color: #114C9A;
+	}
+
+	input:checked ~ .description-text__text {
+		opacity: 1;
+		transition: 500ms ease-in-out;
+	}
+
+	input:checked ~ .description-text__plus {
+		opacity: 0;
+		transform: rotate(45deg);
+		transition: 400ms ease-in-out;
+	}
+
+	input:checked ~ .description-text__cross {
+		opacity: 1;
+		transition: 600ms ease-in-out;
+	}
+}
