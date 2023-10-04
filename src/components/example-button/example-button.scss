@@ -1,73 +1,161 @@
-.example-button {
-	$root: &;
+$darkGray: #909090;
+$blue: #0041A0;
+$gray: #BCBCBC;
+$darkBlue: #002F6C;
+$red: #FF0000;
+$lightGray: #F4F4F4;
+$lightRed: #BF1D26;
+$darkRed: #81080F;
 
+.example-button__blue {
+	font-size: 16px;
+	line-height: 16px;
+	padding: 15px 18px;
+	width: 134px;
+	height: 50px;
 	display: flex;
 	align-items: center;
-	color: white;
-	transition: color 0.3s, opacity 0.3s;
-
+	justify-content: center;
+	gap: 14px;
+	border: 1px solid $gray;
+	border-radius: 25px;
+	transition:  background-color 0.3s;
+	svg {
+		width: 32px;
+		height: 32px;
+		fill: $darkBlue;
+	}
 	&:disabled {
-		opacity: 0.5;
 		pointer-events: none;
-	}
-
-	@media (hover: hover) {
-		&:hover {
-			color: black;
-
-			#{$root}__svg {
-				fill: white;
-			}
-		}
-	}
-
-	&__text {
-		font-size: 14px;
-		text-transform: uppercase;
-		margin-right: 25px;
-		user-select: none;
-		color: black;
-
-		@media (min-width: 1280px) {
-			font-size: 16px;
-		}
-	}
-
-	&__circle {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 60px;
-		height: 60px;
-		background: currentColor;
-		border-radius: 50%;
-		border: 1px solid rgba(#232323, 0.5);
-
-		@media (min-width: 1280px) {
-			width: 80px;
-			height: 80px;
-		}
-
-		@media (min-width: 1920px) {
-			width: 100px;
-			height: 100px;
-		}
-
+		color: $darkGray;
 		svg {
-			width: 14px;
-			height: 14px;
-			fill: black;
-			transition: fill 0.3s;
-
-			@media (min-width: 1280px) {
-				width: 19px;
-				height: 18px;
-			}
-
-			@media (min-width: 1920px) {
-				width: 24px;
-				height: 23px;
-			}
+			fill: $darkGray;
+		}
+	}
+	&:hover {
+		background-color: $blue;
+		color: white;
+		svg {
+			fill: white;
+		}
+		&:focus {
+			color: white;
+		}
+	}
+	&:active {
+		background-color: $darkBlue;
+		color: white;
+	}
+	&:focus {
+		border: 3px solid #99B3D8;
+		color: $blue;
+	}
+}
+.example-button__red {
+	font-size: 16px;
+	line-height: 16px;
+	padding: 15px 18px;
+	width: 134px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 14px;
+	border: 1px solid $gray;
+	border-radius: 25px;
+	background-color: $red;
+	color: white;
+	transition:  background-color 0.3s;
+	svg {
+		width: 32px;
+		height: 32px;
+		fill: white;
+	}
+	&:disabled {
+		pointer-events: none;
+		background-color: $lightGray;
+		color: $darkGray;
+		svg {
+			fill: $darkGray;
+		}
+	}
+	&:hover {
+		background-color: $lightRed;
+	}
+	&:active {
+		background-color: $darkRed;
+	}
+	&:focus {
+		border: 3px solid #99B3D8;
+	}
+}
+@media (max-width: 1280px) {
+	.example-button__blue {
+		font-size: 14px;
+		line-height: 14px;
+		padding: 12px 16px;
+		width: 110px;
+		height: 40px;
+		gap: 12px;
+		border-radius: 25px;
+	}
+	.example-button__red {
+		font-size: 14px;
+		line-height: 14px;
+		padding: 12px 16px;
+		width: 110px;
+		height: 40px;
+		gap: 12px;
+		border-radius: 25px;
+	}
+}
+@media (max-width: 768px) {
+	.example-button__blue {
+		padding: 12px 18px;
+		width: 120px;
+		height: 40px;
+		gap: 14px;
+		border-radius: 25px;
+		svg {
+			width: 24px;
+			height: 26px;
+			fill: $darkBlue;
+		}
+	}
+	.example-button__red {
+		padding: 12px 18px;
+		width: 120px;
+		height: 40px;
+		gap: 14px;
+		border-radius: 25px;
+		svg {
+			width: 24px;
+			height: 26px;
+		}
+	}
+}
+@media (max-width: 375px) {
+	.example-button__blue {
+		padding: 120px 16px;
+		width: 327px;
+		height: 40px;
+		gap: 12px;
+		border-radius: 25px;
+		svg {
+			width: 24px;
+			height: 24px;
+			fill: $darkBlue;
+		}
+	}
+	.example-button__red {
+		padding: 120px 16px;
+		width: 327px;
+		height: 40px;
+		gap: 12px;
+		border-radius: 25px;
+		svg {
+			width: 24px;
+			height: 24px;
 		}
 	}
 }

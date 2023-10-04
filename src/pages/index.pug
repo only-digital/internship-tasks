@@ -2,6 +2,17 @@ extends ../../build_modules/common
 
 
 block body
-    +example-button({text: 'example text'})
-    +example-button({text: 'disabled'})(disabled='')
+    +example-button({text: 'Кнопка', color: "blue"})
+    +example-button({text: 'Кнопка', color: "blue"})(disabled='')
+    +example-button({text: 'Кнопка', color: "red"})
+    +example-button({text: 'Кнопка', color: "red"})(disabled='')
+    +slider-button
+    +slider-button(disabled='')
+    +link({text: 'Sustainalytics.com', type:'normal'})
+    +link({text: '+88003555265', type:'text'})
+    +link({text: 'Sustainalytics.com', type:'normal'})(disabled='')
+    +switch
+    +switch(disabled='')
     //Your code here
+    
+

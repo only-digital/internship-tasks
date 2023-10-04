@@ -1,0 +1,38 @@
+$blue: #0041A0;
+$gray: #BCBCBC;
+$red: #FF0000;
+$darkRed: #BF1D26;
+$transparentBlue: #0041A026;
+
+.link {
+	display: flex;
+	gap: 10px;
+	color: $blue;
+	font-size: 16px;
+	line-height: 24px;
+	transition:  color 0.3s;
+	&:hover {
+		color: $red;
+	}
+	&:active {
+		color:$darkRed;
+	}
+	&:focus {
+		background-color: $transparentBlue;
+		outline: none;
+	}
+}
+.link[disabled] {
+	pointer-events: none;
+	color: $gray;
+}
+.link-svg {
+	width: 20px;
+	height: 20px;
+}
+@media (max-width: 768px) {
+	.link {
+		font-size: 14px;
+		line-height: 21px;
+	}
+}

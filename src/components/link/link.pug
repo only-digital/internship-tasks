@@ -1,0 +1,7 @@
+mixin link(props)
+	a(href="").link&attributes(attributes)
+		if props.type === 'normal'
+			span.link-text!=props.text
+			+svg('linkIcon').link-svg
+		else 
+			span.link-text!=props.text
