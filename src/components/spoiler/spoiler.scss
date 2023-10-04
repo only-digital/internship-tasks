@@ -1,3 +1,5 @@
+@import './colors.scss';
+
 .spoiler {
 	$root: &;
 
@@ -29,7 +31,7 @@
 
 	&--active {
 		.spoiler__title {
-			color: #114C9A;
+			color: $dark-blue;
 		}
 
 		.spoiler__button {
@@ -40,14 +42,14 @@
 	@media (hover:hover) {
 		&:hover {
 			.spoiler__title {
-				color: #114C9A;
+				color: $dark-blue;
 			}
 		}
 	}
 
 	&__main-wrapper {
-		border-top: 1px solid #E6E6E6;
-		border-bottom: 1px solid #E6E6E6;
+		border-top: 1px solid $gray;
+		border-bottom: 1px solid $gray;
 	}
 
 	&__up-wrapper {
@@ -79,7 +81,7 @@
 
 	&__title {
 		font-size: 24px;
-		color: #012B34;
+		color: $dark-aqua;
 		line-height: 120%;
 
 		transition: color 0.3s;
@@ -135,7 +137,7 @@
 			width: 2px;
 			height: 100%;
 
-			background-color: #114C9A;
+			background-color: $dark-blue;
 
 			@media (min-width: 1920px) {
 				width: 1.5px;

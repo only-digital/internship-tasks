@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import './colors.scss';
 
 .container {
 	min-width: 375px;
@@ -33,7 +34,7 @@
 	font-family: 'Roboto', sans-serif;
 	line-height: 100%;
 	font-size: 30px;
-	color: #012B34;
+	color: $dark-aqua;
 
 	@media (min-width: 768px) {
 		width: auto;
