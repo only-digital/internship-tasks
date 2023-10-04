@@ -12,7 +12,6 @@ class Spoiler extends Component {
         if (!elHeader) {
             return;
         }
-        console.log(e.currentTarget);
         e.currentTarget.classList.toggle("spoiler-opened");
     };
 }
