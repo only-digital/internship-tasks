@@ -2,9 +2,13 @@ extends ../../build_modules/common
 
 block body
     +button({text: 'Кнопка'})
+    +button({text: 'Кнопка'})(disabled)
     +button({text: 'Кнопка'})(class="button--fill")
+    +button({text: 'Кнопка'})(class="button--fill")(disabled)
     +slider-button({amount: ' 04'})
+    +slider-button({amount: ' 04'})(disabled)
     +link({text: 'Sustainalytics.com', href: 'https://www.sustainalytics.com'})(target="_blank")
+    +link({text: 'Sustainalytics.com', href: 'https://www.sustainalytics.com'})(target="_blank")(class="link--disabled")
     p 
         |Для подключения сервиса добавьте номер 
         +link-text({ text: '+7(921)058-57-19 ', href: "#" }) 

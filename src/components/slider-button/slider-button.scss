@@ -40,6 +40,8 @@
 
   &__arrow {
     fill: #002f6c;
+    width: 60px;
+    height: 60px;
   }
 
   &__forward {
@@ -89,5 +91,10 @@
   @media (min-width: 1920px) {
     width: 80px;
     height: 80px;
+
+    &__arrow {
+      width: 80px;
+      height: 80px;
+    }
   }
 }
