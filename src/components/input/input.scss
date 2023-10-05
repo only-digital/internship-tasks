@@ -1,0 +1,53 @@
+.input {
+	$root: &;
+	font-family: 'Arial',sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 150%; 
+	letter-spacing: -1px;
+
+	&__input {
+		height: 36px;
+		max-width: 556px;
+		width: 100%;
+		padding: 31px 48px 18px 20px;
+		color: #111;
+		font-size: 16px;
+		border-bottom: 1px solid #DEDEDE;
+	}
+
+	&__input:hover {
+		background-color: #F4F4F4;
+		border-radius: 24px;
+		border: none;
+	}
+
+	&__input::placeholder {
+		color: #111;
+		font-size: 16px;
+		opacity: 1;
+	}
+
+	&__wrapper {
+		position: relative;
+		width: max-content;
+	}
+
+	&__svg {
+		position: absolute;
+		width: 18px;
+		height: 14px;
+		right: 20px;
+		top: 18px;
+	}
+
+	&_invisible {
+		display: none;
+	}
+
+	&__error {
+		color: #F00;
+		font-size: 12px;
+	}
+
+}
