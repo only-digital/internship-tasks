@@ -117,7 +117,13 @@
 		border-radius: 48px;
 
 		padding: 9px 13px;
+	}
 
+	&__checkbox {
+	position: relative;
+	input:hover {
+		background-color: $blue;
+	}
 	}
 
 	&__svg {
@@ -125,8 +131,22 @@
 		height: 15px;
 	}
 
+	&__s {
+		width: 10px;
+		height: 8px;
+
+		position: absolute;
+
+		left: 7px;
+	}
+
 	}
 
 	.correct {
 		display: none;
+	}
+
+	.agree {
+		background-color: $blue;
+		border-color: #002F6C;
 	}

@@ -8,6 +8,8 @@ class Vacancy extends Component {
         this.confirm = this.getElement('checkbox').getElementsByTagName('input')[0];
         this.btn = this.getElement('sendForm');
 
+        this.checkBox = this.getElement('checkbox').getElementsByTagName('input')[0];
+        this.s = this.getElement('s');
         this.success = this.getElement('success');
 
         this.status = this.getElement('status');
@@ -18,8 +20,15 @@ class Vacancy extends Component {
         this.getData();
 
         this.btn.addEventListener("click", this.sendData);
+        this.checkBox.addEventListener("click", this.agreeConfirm);
     }
 
+    agreeConfirm = () => {
+        this.checkBox.classList.add('agree');
+        this.s.classList.toggle('correct')
+        
+        console.log('agree')
+    }
     showValidationResult = (res) => {
         
         if (res === 'none')

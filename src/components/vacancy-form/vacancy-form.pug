@@ -6,11 +6,12 @@ mixin vacancy-form(props)
 			input(type="email")
 			p.vacancy__status.correct Email обязательно
 		.vacancy__checkbox 
+			+svg('agree').vacancy__s.correct
 			input(type='checkbox')
 			label Вы подтверждаете, что ознакомились c #[span] политикой обработки персональных данных 
 		button.vacancy__sendForm Отправить
 			+svg('arrow').vacancy__arrow
-		.vacancy__success.correct
+		.vacancy__succes.correct
 			.vacancy__circle 		
 				+svg('success').vacancy__svg
 			p Форма успешно отправлена
