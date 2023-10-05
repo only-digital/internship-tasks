@@ -2,6 +2,8 @@ extends ../../build_modules/common
 
 
 block body
-    +example-button()
-    +example-button()
-    //Your code here
+    section.faq
+        h2.faq__title Lorem ipsum dolor
+        .faq__wrapper
+            +spoiler-item(1, '123', '123')
+            +spoiler-item('', '123', '123')

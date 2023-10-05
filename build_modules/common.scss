@@ -1,4 +1,4 @@
-@import '../src/components/example-button/example-button';
+@import '../src/components/spoiler-item/spoiler-item';
 
 html {
     font-weight: normal;
@@ -14,9 +14,10 @@ html {
 
 body {
     position: relative;
-    padding: 0;
+    padding: 100px;
     margin: 0;
     -webkit-tap-highlight-color: transparent;
+    font-family: 'Roboto';
 }
 
 h1, h2, h3, h4, h5, p, a {
@@ -64,3 +65,15 @@ button {
     }
 }
 
+.faq {
+    &__wrapper {
+        margin-top: 80px;
+        border-top: 1px solid rgba(230, 230, 230, 1);
+    }
+    &__title {
+        font-family: 'roboto';
+        font-weight: 400;
+        font-size: 64px;
+        color: rgba(1, 43, 52, 1);
+    }
+}
