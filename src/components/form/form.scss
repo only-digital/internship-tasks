@@ -1,0 +1,172 @@
+.form {
+	$root: &;
+
+	//Your code here
+	height:338px;
+	padding-top: 44px;
+	font-family: Arial, Helvetica, sans-serif;
+
+	&__title {
+		width: 363px;
+		height: 38px;
+		font-size: 32px;
+		margin-left: 103px;
+		color: #002F6C;
+	}
+
+	&__block {
+		width: 837px;
+		margin-left: 547px;
+		position: relative;
+		// opacity: 0.3;
+	}
+
+	&__email-error {		
+		color: #EF1C1C;
+	}
+
+	&__success-text {
+		color: green;
+	}
+
+	&__email-block {
+		margin-bottom: 20px;
+	}
+
+	&__label {
+		font-size: 14px;
+	}
+
+	&__policy {
+		font-size: 14px;
+		padding-left: 20px;
+		
+
+		a {
+			color: #002F6C;
+		}
+	}
+
+
+	&__button-submit {
+		padding-left: 15px;
+		padding-right: 15px;
+		height: 48px;
+		background-color: #002F6C;
+		border-radius: 35px;
+		display: flex;	
+		justify-content: center;
+		align-items: center;
+		gap: 14px;
+
+		&.hidden {
+			visibility: hidden; 
+		}
+		
+	}
+
+	&__button-text {
+		color: white;
+		font-size: 16px;
+	}
+
+	&__svg {
+		width: 32px;
+		height: 32px;
+	}
+
+	&__success-svg {
+		width: 48px;
+		height: 48px;
+		margin-right: 20px;
+	}
+
+	&__success-submit {
+		display: flex;
+		height: 48px;
+		align-items: center;
+		position: absolute;
+		bottom: 0px;
+
+		// visibility: hidden; //
+		
+	}
+
+	&__policy {
+		margin-bottom: 30px;
+		display: inline-block;
+		margin-top: 3px;
+
+	}
+
+	&__input {
+		width: 836px;
+		height: 50px;
+		border-radius: 30px;
+		border: 1px solid #0041A0;
+		margin-bottom: 40px;
+		padding-left: 20px;
+
+	}
+
+	&__label {
+		margin-left: 10px;
+		display: block;
+		height: 20px;
+		color: #909090;
+		font-size: 12px;
+	}
+
+	&__checkbox-block {
+		display: flex;
+		position: relative;
+		
+	}
+
+	&__checkbox-input {
+		display: inline;
+		position: relative;
+		width: 16px;
+		height: 16px;
+		border: 1px solid #909090;
+		// margin-top: 15px;
+
+		&:before {
+			position: absolute;
+			content: '';
+			display: block;
+			top: -1px;
+			left: 3px;
+			width: 7px;
+			height: 9px;
+			border: 1px solid #4b4a4a;
+			border-width: 0 2px 2px 0;
+			transform: rotate(45deg);
+			opacity: 0;   //галочка не видна
+		}
+		
+		&:checked {
+			background-color: #BBBBBB;
+			opacity: 0.5;
+				
+			&::before {      //открываем галочку
+				opacity: 1;
+			}
+		}
+
+
+	}
+
+	.hidden {
+		visibility: hidden;
+	}
+
+	.inactive {
+		opacity: 0.3;
+		pointer-events: none;
+	}
+
+	
+
+}
+
