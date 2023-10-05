@@ -1,0 +1,68 @@
+$main-blue: #0041a0;
+$dark-blue: #002f6c;
+$light-blue: #c2daff;
+$white: #fff;
+$grey: #dedede;
+
+.switch {
+	$root: &;
+
+	box-sizing: border-box;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 6px;
+	margin: 15px;
+	width: 56px;
+	height: 28px;
+	background-color: $main-blue;
+	border-radius: 14px;
+	outline: none;
+	cursor: pointer;
+	transition: background-color 0.3s ease-in-out, outline 0.3s ease-in-out;
+
+	&__control {
+		width: 16px;
+		height: 16px;
+		border-radius: 100%;
+		background-color: $white;
+		transform: translateX(13px);
+		transition: transform 0.3s ease-in-out;
+	}
+
+	&:focus {
+		background-color: $grey;
+		outline: 3px solid $light-blue;
+		#{$root}__control {
+			transform: translateX(-13px);
+		}
+	}
+
+	&:hover {
+		background-color: $dark-blue;
+	}
+
+	&:disabled {
+		background-color: $grey;
+		outline: none;
+		#{$root}__control {
+			transform: translateX(-13px);
+		}
+	}
+
+	@media (max-width: 375px) {
+		width: 40px;
+		height: 20px;
+		#{$root}__control {
+			width: 12px;
+			height: 12px;
+			transform: translateX(10px);
+		}
+		&:focus {
+			#{$root}__control {
+				transform: translateX(-10px);
+			}
+		}
+	}
+}
