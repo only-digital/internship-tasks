@@ -1,33 +1,25 @@
 mixin accordeon(props)
 	.accordeon&attributes(attributes)(data-component='accordeon')
 		//Your code here
-		mixin item(title, text, active, hide)
-				.item 
-					.item__header
-						if active === true
-							div(class='item__title active')= title
-								button(class='item__btn rotate')
-									img(class='item__img' src='../assets/images/cross.png')
-						else 
-							.item__title= title
-								button.item__btn
-									img(class='item__img' src='../assets/images/cross.png')
-					if hide === 'hide'
-						p(class='item__text hide')= text
-					else 
-						p.item__text= text
+		mixin item(title, text)
+				.accordeon__item 
+					.accordeon__header
+						div(class='accordeon__title')= title
+						button(class='accordeon__btn')
+							img(class='accordeon__img' src='../assets/images/cross.png')
+					p.accordeon__text= text
 
 
 		.accordeon__wrapper
 			.accordeon__container
 				p.accordeon__logo Lorem ipsum dolor
 
-				+item('1. Nullam tincidunt vestibulum porttitor', 'Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.', true)
+				+item('1. Nullam tincidunt vestibulum porttitor', 'Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.')
 
-				+item('2. Class aptent taciti sociosqu ad litora', 'Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit. Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.', false, 'hide')
+				+item('2. Class aptent taciti sociosqu ad litora', 'Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit. Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.')
 
-				+item('3. Nulla fringilla ligula elit, non laoreet ipsum rutrum eget', 'Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.', false, 'hide')
+				+item('3. Nulla fringilla ligula elit, non laoreet ipsum rutrum eget', 'Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.')
 
-				+item('4. Mauris ut suscipit tellus', 'Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.', false, 'hide')
+				+item('4. Mauris ut suscipit tellus', 'Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.')
 
-				+item('5. Nullam placerat porta libero, vel maximus augue euismod eget', 'Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.', false, 'hide')
+				+item('5. Nullam placerat porta libero, vel maximus augue euismod eget', 'Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.')
