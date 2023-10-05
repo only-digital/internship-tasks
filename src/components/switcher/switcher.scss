@@ -20,24 +20,29 @@
   transition: right 0.3s;
 }
 
-#switcher-checkbox:hover + .switcher {
+#switcher-input:hover + .switcher {
   cursor: pointer;
   background: #002F6C;
 }
 
-#switcher-checkbox:focus + .switcher {
+#switcher-input:focus + .switcher {
   background: #DEDEDE;
   border: 3px solid #C2DAFF;
 }
 
-#switcher-checkbox:focus + .switcher:after {
+#switcher-input:focus + .switcher:after {
   right: 34px;
 }
 
-#switcher-checkbox:disabled + .switcher {
+#switcher-disabled {
+  pointer-events: none;
+}
+
+#switcher-disabled + .switcher {
   background: #DEDEDE;
 }
 
-#switcher-checkbox:disabled + .switcher:after {
+#switcher-disabled + .switcher:after {
   right: 34px;
 }
+

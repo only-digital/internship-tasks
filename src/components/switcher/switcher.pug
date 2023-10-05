@@ -1,6 +1,6 @@
 mixin switcher(props)
 	.switcher-wrapper.container&attributes(attributes)
 		span.text=props.text
-		input(type='checkbox')#switcher-checkbox&attributes(attributes)
-		label(for='switcher-checkbox').switcher
+		input(type='checkbox', id=props.id)
+		label(for=props.id).switcher
 
