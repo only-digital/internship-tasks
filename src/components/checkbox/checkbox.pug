@@ -1,0 +1,4 @@
+mixin checkbox({ label='',id}={})
+	.checkbox&attributes(attributes)(data-component='checkbox')
+		input.checkbox__input(type="checkbox" id=id name=id)
+		label.checkbox__label(for=id)=label
