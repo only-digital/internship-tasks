@@ -1,0 +1,20 @@
+mixin form(props)
+	.form&attributes(attributes)(data-component='form')
+		//Your code here
+		h2.form__title Форма обратной связи
+		form.form__block
+			.form__email-block
+				label(for='email').form__label Email
+				input(type='email', id='email').form__input
+				p.form__email-error.hidden
+			.form__checkbox-block
+				input(type='checkbox', id='agreement').form__checkbox-input
+				label(for='agreement').form__policy Вы подтверждаете, что ознакомились&nbsp;
+					a(href='#') c политикой обработки персональных данных
+			button(type='submit').form__button-submit
+				p.form__button-text Отправить
+				+svg('form-svg').form__svg
+			.form__success-submit.hidden
+				+svg('form-success').form__success-svg
+				p.form__success-text
+				
