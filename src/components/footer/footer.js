@@ -46,8 +46,8 @@ class Footer extends Component {
             this.inputMail.classList.add("input-mail__alert_active");
         } else if (status = 200) {
             this.inputMail.classList.remove("input-mail__alert_active");
-            this.formElements.button.style.property = "disabled:true"
-            console.log(this.formElements);
+            this.formElements.button.style.disabled = "true";
+            console.log(this.formElements.button.style);
         }
     }
 
