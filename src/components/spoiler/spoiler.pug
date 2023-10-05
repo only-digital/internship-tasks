@@ -1,5 +1,5 @@
 mixin spoiler(num, title, text)
-	.spoiler_opened&attributes(attributes)(data-component='spoiler')
+	.spoiler_closed&attributes(attributes)(data-component='spoiler')
 		.spoiler__first-line
 			h2.spoiler__title #{num}. #{title}
 			+svg('cross').spoiler__svg
