@@ -128,11 +128,17 @@ $cobolt-color: #0041a0;
         }
 
         &__checkbox-container {
+			
             margin-top: 60px;
             align-items: center;
+
+			input {
+				display: none;
+			}
+			
             label {
-				display: flex;
-				align-items: center;
+                display: flex;
+                align-items: center;
                 .custom-checkbox-text {
                     font-size: 14px;
                     line-height: 21px;
@@ -146,24 +152,27 @@ $cobolt-color: #0041a0;
             }
 
             .custom-checkbox {
+				display: flex;
+				justify-content: center;
+				align-items: center;
                 width: 16px;
                 height: 16px;
                 border: 1px solid #bcbcbc;
                 margin-right: 18px;
-				background-color: white;
-				svg {
-					fill: none;
-				}
+                background-color: white;
+                svg {
+                    fill: none;
+					width: 10px;
+					height: 8px;
+                }
             }
 
-			input:checked + label{
-				.custom-checkbox {
-					background-color: $blue-color;
-					svg {
-						fill: white;
-					}
-				}
-			}
+            input[type="checkbox"]:checked + .custom-checkbox {
+                background-color: $blue-color;
+                svg {
+                    fill: white;
+                }
+            }
         }
     }
 }

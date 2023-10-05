@@ -38,10 +38,10 @@ mixin vacancy(props)
 					label(for='email') E-mail
 					input(type="email", name="email")
 				.vacancy__contact__checkbox-container
-					input(type="checkbox", name="agreement")
-					label(for='agreement')
+					label
+						input(type="checkbox", name="agreement")
 						.custom-checkbox 
-							+svg('checked.svg')
+							+svg('checked')
 						span.custom-checkbox-text Вы подтверждаете, что ознакомились <a>с политикой  обработки персональных данных</a>
 				button(type="submit") 
 					span Отправить
