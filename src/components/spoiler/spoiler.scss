@@ -122,13 +122,33 @@ $time: 0.5s;
 		transform: rotate(45deg);
 		transition: all $time ease-in-out;
 	}
+	.spoiler__text {
+		animation-name: slideOut;
+  		animation-duration: $time; 
+  		animation-timing-function: ease; 
+  		animation-iteration-count: 1;
+	}
 }
 .spoiler_closed {
 	@include spoiler;
 	.spoiler__text {
 		height: 0;
 		margin-bottom: 0;
-		transition: all $time ease-in;
 		overflow: hidden;
+		transition: all $time ease-in;
 	}
 }
+
+
+@keyframes slideOut {
+	0% {
+	  opacity: 0;
+	  transform: translateY(-25px);
+	}
+	
+	100% {
+	  opacity: 1;
+	  transform: translateY(0px);
+	}
+  }
+  
