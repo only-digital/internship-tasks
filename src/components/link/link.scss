@@ -1,0 +1,51 @@
+@import "../../pages/constants.scss";
+
+.link {
+  $root: &;
+
+  //Your code here
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: $cobolt;
+
+  &:hover {
+    color: $main-red;
+  }
+
+  &:active {
+    color: $red-dark-1;
+  }
+
+  &:focus {
+    background: rgba($cobolt, 0.15);
+  }
+
+  &.disabled {
+    pointer-events: none;
+    color: $grey-1;
+  }
+
+  @media (min-width: 1280px) {
+    gap: 16px;
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: -0.02em;
+
+    @media (min-width: 1280px) {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  svg {
+    width: 19.5px;
+    height: 19.5px;
+  }
+}

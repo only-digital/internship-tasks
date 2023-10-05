@@ -1,0 +1,8 @@
+mixin link(props)
+	a.link&attributes(attributes)
+		//Your code here
+		if props.separate
+			.link__text(target='_blank')= props.text
+			+svg('link-icon')
+		else
+			= props.text
