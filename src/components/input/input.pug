@@ -1,6 +1,6 @@
-mixin input(props)
-	.input&attributes(attributes)(data-component='input')
+mixin input({ placeholder='',disabled=false}={})
+	.input(class=disabled&&'input_disabled')&attributes(attributes)(data-component='input')
 		.input__wrapper
-			input.input__input(type="text" placeholder=props.placeholder)
+			input.input__input(type="text" placeholder=placeholder)
 			+svg('tip').input__svg.input_invisible
 		span.input__error.input_invisible
