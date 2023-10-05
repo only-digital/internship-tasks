@@ -1,0 +1,23 @@
+.spoiler-custom {
+	$root: &;
+
+	//Your code here
+}
+
+.spoiler-custom__title {
+	color:green;
+}
+
+.spoiler-custom__btn,
+.spoiler__header {
+	width: auto;
+}
+
+.spoiler-custom__btn-img {
+	height: 32px;
+	width: 32px;
+}
+
+.spoiler-custom__text {
+	color: yellow;
+}
