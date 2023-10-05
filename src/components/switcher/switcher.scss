@@ -1,0 +1,43 @@
+.switcher {
+  width: 56px;
+  height: 28px;
+  background: #0041A0;
+  border-radius: 14px;
+  position: relative;
+  box-sizing: content-box;
+  transition: background 0.3s, border 0.3s;
+}
+
+.switcher:after {
+  content: '';
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 16px;
+  background: #FFFFFF;
+  transition: right 0.3s;
+}
+
+#switcher-checkbox:hover + .switcher {
+  cursor: pointer;
+  background: #002F6C;
+}
+
+#switcher-checkbox:focus + .switcher {
+  background: #DEDEDE;
+  border: 3px solid #C2DAFF;
+}
+
+#switcher-checkbox:focus + .switcher:after {
+  right: 34px;
+}
+
+#switcher-checkbox:disabled + .switcher {
+  background: #DEDEDE;
+}
+
+#switcher-checkbox:disabled + .switcher:after {
+  right: 34px;
+}
