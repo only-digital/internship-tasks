@@ -1,9 +1,8 @@
 export class Api {
-  constructor () {
+  constructor() {
     this._baseUrl = 'http://localhost:3000'
-    this._headers = {'Content-Type': 'application/json'}
+    this._headers = { 'Content-Type': 'application/json' }
   }
-
 
   getVacancyInfo() {
     return fetch(`${this._baseUrl}/stats/`, {
@@ -24,8 +23,8 @@ export class Api {
       headers: this._headers,
       body: JSON.stringify({
         email: data.email,
-        confirm: data.confirm,
-      }),
+        confirm: data.confirm
+      })
     })
   }
 }

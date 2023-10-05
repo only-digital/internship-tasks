@@ -6,8 +6,6 @@ class FeedbackForm extends Component {
   constructor(element) {
     super(element)
 
-    // const form = document.getElementById('form')
-
     const form = document.forms.form
     const emailInputField = form.elements.email
     const checkboxIsChecked = form.elements.checkbox
@@ -16,6 +14,7 @@ class FeedbackForm extends Component {
     const submitButton = form.querySelector('.feedback-form__submit-button')
     const formSubmittedElement = form.querySelector('.feedback-form__submitted')
     let formSubmittedMessageElement = form.querySelector('.feedback-form__submitted-message')
+    const preloaderElement = document.querySelector('.preloader')
 
     const api = new Api()
 
@@ -23,7 +22,6 @@ class FeedbackForm extends Component {
     emailInputField.addEventListener('invalid', function (evt) {
       evt.preventDefault()
       if (!emailInputField.validity.valid) {
-
         submitButton.disabled = true
 
         emailInputField.validity.typeMismatch
@@ -33,28 +31,23 @@ class FeedbackForm extends Component {
         emailValidationErrorField.textContent = emailInputField.validationMessage
         emailValidationErrorField.classList.add('feedback-form__input-error_visible')
       }
-
     })
 
 // HIDE ERROR MESSAGE WHEN USER INPUT SOME DATA TO FIELD
     emailInputField.addEventListener('input', function (evt) {
-
       emailValidationErrorField.textContent = ''
+      emailInputField.setCustomValidity('')
       emailValidationErrorField.classList.remove('feedback-form__validation-error_visible')
-      if (!emailInputField.validity.typeMismatch) {
-        submitButton.disabled = false
-      }
+      submitButton.disabled = false
     })
 
 // SUBMIT FORM
     form.addEventListener('submit', function (evt) {
       evt.preventDefault()
 
-      // if (!emailInputField.validity.valid) {
-      //   return
-      // }
       submitButton.classList.add('feedback-form__submit-button_hidden')
       form.classList.add('feedback-form_submitted')
+      preloaderElement.classList.add('preloader_visible')
 
       api.postEmail({ email: emailInputField.value, confirm: checkboxIsChecked.checked })
       .then((res) => {
@@ -68,17 +61,15 @@ class FeedbackForm extends Component {
             formSubmittedElement.classList.remove('feedback-form__submitted_fail')
             form.classList.remove('feedback-form_submitted')
             submitButton.classList.remove('feedback-form__submit-button_hidden')
-          }, 4500)
+          }, 4000)
         }
       })
       .catch((err) => {
         console.log(err.message)
       })
-
+      .finally(() => preloaderElement.classList.remove('preloader_visible'))
     })
-
   }
-
 }
 
 export default FeedbackForm

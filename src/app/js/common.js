@@ -3,6 +3,7 @@ import Wrapper from '../../components/wrapper/wrapper'
 import VacancyHeader from '../../components/vacancy-header/vacancy-header'
 import Section from '../../components/section/section'
 import FeedbackForm from '../../components/feedback-form/feedback-form'
+import Preloader from '../../components/preloader/preloader'
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -14,7 +15,8 @@ const allComponents = {
     'wrapper': Wrapper,
     'vacancy-header': VacancyHeader,
     'section': Section,
-    'feedback-form': FeedbackForm
+    'feedback-form': FeedbackForm,
+    'preloader': Preloader
 }
 
 /**

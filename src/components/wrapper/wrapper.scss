@@ -1,14 +1,12 @@
 .wrapper {
-	$root: &;
+  $root: &;
 
-	display: flex;
-	flex-direction: column;
-	gap: 130px;
-	border: 1px solid red;
-	margin: 0 auto;
-	padding: 115px 80px 0;
-	box-sizing: content-box;
-	width: 100%;
-	max-width: 1440px;
-
+  margin: 0 auto;
+  padding: 0 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 130px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1440px;
 }

@@ -9,14 +9,14 @@ class Section extends Component {
     const requirementsListElement = document.querySelector('.section__list_requirements')
     const conditionsListElement = document.querySelector('.section__list_conditions')
 
-    function renderChapter(listElement, listItem, index) {
+    function renderChapter(listElement, listItem) {
       const listItemElement = document.createElement('li')
       listItemElement.classList.add('section__list-item')
       listItemElement.textContent = listItem
       listElement.appendChild(listItemElement)
     }
 
-    mockVacancy.responsibilities.forEach(item => {
+    mockVacancy.responsibilities.forEach((item) => {
       renderChapter(responsibilitiesListElement, item)
     })
 
@@ -27,9 +27,7 @@ class Section extends Component {
     mockVacancy.conditions.forEach(item => {
       renderChapter(conditionsListElement, item)
     })
-
   }
-
 }
 
 export default Section

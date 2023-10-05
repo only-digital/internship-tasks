@@ -13,12 +13,11 @@ class VacancyHeader extends Component {
     this.dateElement = this.getElement('date')
     this.viewsElement = this.getElement('views')
     this.responsesElement = this.getElement('reacts')
+    this.dateElement.textContent = formatDate(new Date())
 
     const api = new Api()
     const views = this.viewsElement.textContent
     const responses = this.responsesElement.textContent
-
-    this.dateElement.textContent = formatDate(new Date())
 
     api.getVacancyInfo()
     .then(res => {
