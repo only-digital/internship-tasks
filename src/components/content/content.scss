@@ -1,0 +1,40 @@
+.content {
+	$root: &;
+
+	//Your code here
+
+	width: 988px;
+	margin-left: 80px;
+	font-family: Arial, Helvetica, sans-serif;
+
+	&__first {
+		margin-bottom: 130px;
+	}
+
+	&__second {
+		margin-bottom: 109px;
+	}
+	
+
+	&__title {
+		font-size: 36px;
+		color: #04306A;
+		margin-bottom: 35px;
+	}
+
+	&__item {
+		font-size: 24px;
+		margin-bottom: 12px;
+		color: #012B34;
+
+		&::before {
+			content: "";
+			display: inline-block;
+			vertical-align: 25%;			
+			width: 20px;
+			height: 1px;
+			background-color: #0DB274;
+			margin-right: 8px;
+		}
+	}
+}
