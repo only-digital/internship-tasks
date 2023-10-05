@@ -11,6 +11,8 @@ $lg-margin: 120px;
 $md-margin: 107px;
 $sm-margin: 40px;
 $xs-margin: 24px;
+//timing
+$time: 0.5s;
 
 
 @mixin spoiler {
@@ -37,9 +39,10 @@ $xs-margin: 24px;
 	.spoiler__svg {
 		height: 36px;
 		width: 36px;
+		transform: rotate(0deg);
+		transition: all $time ease-in-out;
 	}
 	.spoiler__text {
-		display: block;
 		margin-bottom: 40px;
 		color: $black;
 		font-size: 15px;
@@ -48,6 +51,7 @@ $xs-margin: 24px;
 		line-height: 150%; /* 22.5px */
 		height: fit-content;
 		width: 100%;
+		transition: all $time ease-in;
 	}
 }
 
@@ -60,11 +64,15 @@ $xs-margin: 24px;
 		height: 36px;
 		width: 36px;
 		transform: rotate(45deg);
+		transition: all $time ease-in-out;
 	}
 }
 .spoiler_closed {
 	@include spoiler;
 	.spoiler__text {
-		display: none;
+		height: 0;
+		margin-bottom: 0;
+		transition: all $time ease-in;
+		overflow: hidden;
 	}
 }
