@@ -1,0 +1,35 @@
+.header {
+	$root: &;
+
+	//Your code here
+
+	width: 1600px;
+	height: 437px;
+	padding-top: 115px;
+	padding-left: 89px;
+	font-family: Arial, Helvetica, sans-serif;
+
+	&__date {
+		width: 149px;
+		height: 28px;
+		font-size: 18px;
+		color: #8F8F8F;
+		margin-bottom: 20px;
+	}
+
+	&__title {
+		width: 1440px;
+		height: 64px;
+		color: #04306A;
+		font-size: 64px;
+		margin-bottom: 45px;
+	}
+
+	&__info {
+		color: #8F8F8F;
+		font-size: 16px;
+	}
+	&__info-views {
+		margin-right:15px;
+	}
+}
