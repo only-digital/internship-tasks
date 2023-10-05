@@ -1,6 +1,6 @@
 mixin spoiler(props)
   -
-    const spoilers = [
+    const content = [
       {
         title: 'Nullam tincidunt vestibulum porttitor',
         text: 'Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.',
@@ -26,6 +26,6 @@ mixin spoiler(props)
     .spoiler__wrapper
       h1.spoiler__title Lorem ipsum dolor
       ul.spoiler__list 
-        each spoiler, index in spoilers
+        each spoiler, index in content
           - const id = index + 1
           +spoiler-item({id, title: spoiler.title, text: spoiler.text})
