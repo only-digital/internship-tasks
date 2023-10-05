@@ -1,3 +1,18 @@
+mixin itemGrid(title)
+	.grid-container__item&attributes(attributes)
+		span.grid-container__item-title= title
+		button.grid-container__button
+			svg(width="66", height="36", viewBox="0 0 66 36", fill="none", xmlns="http://www.w3.org/2000/svg")
+				path(id="Vector", d="M58.6341 19.4L0.277649 19.4L0.277649 16.6L58.6341 16.6L58.6341 19.4ZM36.7642 36L35.1156 33.6L61.8761 20L61.8761 16L35.1156 2.4L36.7642 0L65.1182 14.4V21.6L36.7642 36Z", fill="#04306A")
+
 mixin grid-container()
-    section.grid-container
-        // Your code here
+	section.grid-container
+		h2.grid-container__title #[span.grid-container__title_color_red Комплексные&nbsp;]предложения для мостостроения
+		+itemGrid('Мостовая сталь/Стальные конструкции мостов').grid-container__item-1.grid-container__item_size_large
+		+itemGrid('Железобетонные конструкции мостов').grid-container__item-2.grid-container__item_size_medium
+		+itemGrid('Дорожные ограждения барьерного типа').grid-container__item-3.grid-container__item_size_medium
+		+itemGrid('Шпунтовой замок').grid-container__item-4.grid-container__item_size_small.grid-container__item_color_blue
+		+itemGrid('Мостовой крепеж').grid-container__item-5.grid-container__item_size_small
+		+itemGrid('Профили для деформационных швов').grid-container__item-6.grid-container__item_size_small.grid-container__item_color_lightBlue
+		+itemGrid('Плетеные габионы').grid-container__item-7.grid-container__item_size_medium
+		+itemGrid('Модульные мосты').grid-container__item-8.grid-container__item_size_medium
