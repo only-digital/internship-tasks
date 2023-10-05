@@ -1,0 +1,55 @@
+$colorWhite: #ffffff;
+$colorLightGray: #e7eaee;
+$colorBlue: #007fff;
+$colorSteel3: rgba(22, 31, 62, 0.3);
+$colorSteel9: rgba(22, 31, 62, 0.9);
+
+.TaskElement {
+  $root: &;
+
+  width: 100%;
+  background-color: white;
+  padding: 24px 24px 31px 24px;
+  border-radius: 10px;
+  position: relative;
+  margin-bottom: 20px;
+  cursor: pointer;
+
+  &__icon {
+	position: absolute;
+	top: 27px;
+	right: 24px;
+	width: 26px;
+	height: 26px;
+  }
+
+
+  &__title {
+    color: $colorSteel9;
+    font-size: 24px;
+    line-height: 130%;
+    padding-bottom: 17px;
+    border-bottom: 1px solid $colorLightGray;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    color: $colorSteel9;
+    font-size: 16px;
+    line-height: 175%;
+    letter-spacing: 0.15px;
+  }
+
+  &:hover {
+	#{$root}__title {
+	  color: $colorBlue;
+	}
+  }
+
+  &.completed {
+    #{$root}__title {
+      color: $colorSteel3;
+      text-decoration: line-through;
+    }
+  }
+}

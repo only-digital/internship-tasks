@@ -1,0 +1,17 @@
+$colorDarkBlue: #213C57;
+$colorLightGray: #D9E1EC;
+
+.HeaderBlock {
+	display: flex;
+	width: 100%;
+	height: 80px;
+	border-bottom: 1px solid $colorLightGray;
+	
+	&__title {
+		display: flex;
+		width: 290px;
+		padding: 1.81rem 7.19rem 1.5rem 2.81rem;
+		column-gap: 9px;
+		border-right: 1px solid $colorLightGray;
+	}
+}

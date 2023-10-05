@@ -1,19 +1,13 @@
 import styles from '../styles/index.module.scss'
-import ExampleButton from "../components/example-button/example-button";
-import {getIndexPage} from "../../lib/api";
+import { getIndexPage } from "../../lib/api";
+import HeaderBlock from '@/components/header-block/header-block';
+import ContentBlock from '@/components/content-block/content-block';
 
 function Index(props) {
-
-    console.log(props)
-
     return (
         <main className={styles.main}>
-            <ExampleButton/>
-
-            <ExampleButton initialValue={10}/>
-
-            {/* Your code here */}
-
+            <HeaderBlock />
+            <ContentBlock props={props}/>
         </main>
     )
 }

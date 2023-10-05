@@ -1,0 +1,28 @@
+$colorLightGray: #f3f6f9;
+$colorDarkBlue: #213c57;
+
+.ContentBlock {
+  display: grid;
+  grid-template-columns: 290px 1fr;
+
+  &__tasks {
+    min-height: calc(100vh - 80px);
+    background: $colorLightGray;
+    padding: 48px 40px 144px 40px;
+
+    &_header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+
+      & header {
+        color: $colorDarkBlue;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 123.5%;
+        letter-spacing: 0.25px;
+      }
+    }
+  }
+}

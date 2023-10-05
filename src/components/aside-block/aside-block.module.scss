@@ -1,0 +1,21 @@
+$colorLightBlue: #e3edf7;
+$colorBlue: #007fff;
+
+.AsideBlock {
+  margin: 40px 25px;
+
+  &__button {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    width: 240px;
+    padding: 16px 18px;
+    background-color: $colorLightBlue;
+    border-radius: 10px;
+    cursor: pointer;
+
+    color: $colorBlue;
+    font-size: 16px;
+    line-height: 160%;
+  }
+}
