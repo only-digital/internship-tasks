@@ -1,6 +1,6 @@
 @import "../../../app/scss/variables.scss";
 
-.button{
+.button {
     background-color: $aqua;
     display: flex;
     align-items: center;
@@ -8,27 +8,33 @@
     border-radius: 40px;
     transition: .4s ease background-color;
     border: 2px solid transparent;
-    &__icon{
-        margin-left:14px;
+
+    &:hover {
+        background-color: $blue;
+    }
+
+    &:active {
+        border-color: $gray;
+        background-color: white;
+
+        .button-ct__text {
+            color: black;
+        }
+
+        .button-ct__icon {
+            fill: black;
+        }
+    }
+
+    &__icon {
+        margin-left: 14px;
         width: 40px;
         height: 38px;
         fill: white;
     }
-    &__text{
+
+    &__text {
         font-size: 18px;
         color: white;
-    }
-    &:hover{
-        background-color: $blue;
-    }
-    &:active{
-        border-color:$gray;
-        background-color: white;
-        .button__text{
-            color: black;
-        }
-        .button__icon{
-            fill: black;
-        }
     }
 }

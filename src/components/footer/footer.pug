@@ -1,12 +1,14 @@
-include ./input-mail/input-mail
-include ./checkbox/checkbox
+include ./input-ct/input-ct
+include ./checkbox-ct/checkbox-ct
 include ./button/button
 include ../loader/loader
+include ./sucsses-placeholder/sucsses-placeholder
 
 mixin footer(props)
 	.footer&attributes(attributes)(data-component="footer")
 		h2.footer__title="Форма обратной связи"
 		form.footer__form(action="/form" method="POST") 
-			+input-mail(class="footer__input-mail")
-			+checkbox
-			+button
+			+input-ct(class="footer__input-ct")
+			+checkbox-ct(class="footer__checkbox-ct")
+			+button(class="footer__button")
+			+sucsses-placeholder(class="footer__sucsses-placeholder")

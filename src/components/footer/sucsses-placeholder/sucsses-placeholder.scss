@@ -1,0 +1,17 @@
+.sucsses-placeholder {
+    display: none;
+    align-items: center;
+
+    &-icon {
+        width: 60px;
+        height: 60px;
+        border: 2px solid rgb(204, 204, 204);
+        border-radius: 50%;
+        padding: 14px;
+    }
+
+    &-text {
+        font-size: 18px;
+        margin-left: 18px;
+    }
+}

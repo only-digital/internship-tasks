@@ -1,0 +1,8 @@
+mixin checkbox-ct(props)
+    .checkbox-ct&attributes(attributes)
+        label.checkbox-ct__box 
+            input.checkbox-ct__checkbox(type="checkbox" name="checkbox" )
+            span.checkbox-ct__fake-checkbox
+                +svg("checkbox-svg").checkbox-ct__icon
+        span.checkbox-ct__text="Вы подтверждаете, что ознакомились "
+            span.checkbox-ct__text_blue="c политикой обработки персональных данных"

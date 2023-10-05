@@ -1,5 +1,5 @@
-.checkbox {
-    padding-bottom: 32px ;
+.checkbox-ct {
+    padding-bottom: 32px;
     padding-top: 20px;
     display: flex;
     align-items: center;
@@ -34,13 +34,23 @@
         border-color: $blue;
     }
 
-    &__text{
+    &:disabled &__fake-checkbox {
+        opacity: 0.6;
+    }
+
+    &__text {
         margin-left: 20px;
         color: $gray;
         user-select: none;
     }
 
-    &__text_blue{
+    &__text_blue {
         color: $blue;
+    }
+
+    &_disabled{
+        .checkbox-ct__text,.checkbox-ct__fake-checkbox{
+            opacity: 0.4;
+        }
     }
 }

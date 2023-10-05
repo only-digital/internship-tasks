@@ -1,6 +1,6 @@
 @import "../../../app/scss/variables.scss";
 
-.input-mail {
+.input-ct {
     position: relative;
 
     &__label {
@@ -28,8 +28,16 @@
     }
 
     &__alert_active {
-        .input-mail__alert {
+        .input-ct__alert {
             opacity: 1;
+        }
+    }
+
+    &_disabled{
+        .input-ct__label,.input-ct__input{
+            opacity: 0.4;
+            user-select: none;
+            cursor: no-drop;
         }
     }
 }

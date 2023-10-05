@@ -1,4 +1,4 @@
 mixin button()
-    button.button(name="button")
+    button&attributes(attributes).button(name="button")
         span.button__text="Отправить"
         +svg("arrow-svg").button__icon

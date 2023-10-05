@@ -11,14 +11,14 @@ class Header extends Component {
         this.getData();
     }
     getData = async () => {
-        // this.toggleLoader();
+        this.toggleLoader();
         await fetch('/stats')
             .then(res => res.json())
             .then(data => {
                 this.response.innerText = "откликов:" + data.responses;
                 this.viewers.innerText = "просмотров:" + data.views;
             })
-        // this.toggleLoader();
+        this.toggleLoader();
     }
 }
 

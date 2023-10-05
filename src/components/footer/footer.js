@@ -3,13 +3,18 @@ import Component from '../../app/js/base/Component';
 class Footer extends Component {
     form;
     formElements;
-    inputMail;
-
+    inputCt;
+    checkboxCt;
+    button;
+    succses;
 
     constructor(element) {
         super(element);
         this.form = this.getElement("form");
-        this.inputMail = this.getElement("input-mail");
+        this.inputCt = this.getElement("input-ct");
+        this.checkboxCt = this.getElement("checkbox-ct")
+        this.button = this.getElement("button");
+        this.succses = this.getElement("sucsses-placeholder");
         this.initialFormElemts();
 
         this.form.addEventListener("submit", this.onSubmit);
@@ -43,11 +48,21 @@ class Footer extends Component {
 
     changeForm = (status) => {
         if (status === 422) {
-            this.inputMail.classList.add("input-mail__alert_active");
-        } else if (status = 200) {
-            this.inputMail.classList.remove("input-mail__alert_active");
-            this.formElements.button.style.disabled = "true";
-            console.log(this.formElements.button.style);
+            this.inputCt.classList.add("input-ct__alert_active");
+            return;
+        }
+        if (status === 200) {
+            this.inputCt.classList.remove("input-ct__alert_active");
+
+            this.formElements.email.setAttribute("disabled", "true");
+            this.formElements.checkbox.setAttribute("disabled", "true");
+
+            this.inputCt.classList.add("input-ct_disabled");
+            this.checkboxCt.classList.add("checkbox-ct_disabled");
+
+            this.button.style.display = "none";
+            this.succses.style.display = "flex";
+            return;
         }
     }
 
