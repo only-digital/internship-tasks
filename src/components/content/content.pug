@@ -1,0 +1,7 @@
+mixin content(props)
+	.content&attributes(attributes)(data-component='content')
+		//Your code here
+		p.content__title!=props.title
+			ul
+				each contentItem in props.contentList
+					li.content__item=contentItem
