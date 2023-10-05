@@ -3,7 +3,8 @@
 .input-ct {
     position: relative;
 
-    &__label {
+    &::before {
+        content: "E-mail";
         color: $gray;
         font-size: 14px;
         position: absolute;
