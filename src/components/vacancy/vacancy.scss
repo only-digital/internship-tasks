@@ -1,0 +1,169 @@
+$steel: #8f8f8f;
+$blue-color: #04306a;
+$black-color: #012b34;
+$cobolt-color: #0041a0;
+.vacancy {
+    $root: &;
+
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: -0.02em;
+    max-width: 1600px;
+    margin: auto;
+
+    &__header {
+        padding: 0 80px;
+
+        &__date {
+            margin-top: 115px;
+            font-size: 20px;
+            color: $steel;
+            line-height: 28px;
+            text-align: left;
+        }
+
+        h1 {
+            font-size: 64px;
+            line-height: 64px;
+            color: $blue-color;
+            margin-top: 20px;
+        }
+
+        &__stats {
+            display: flex;
+            margin-top: 45px;
+            margin-bottom: 144px;
+
+            span {
+                font-size: 16px;
+                line-height: 21px;
+                margin-right: 36px;
+                color: $steel;
+            }
+        }
+    }
+
+    &__description {
+        padding: 0 80px;
+
+        h2 {
+            font-size: 46px;
+            line-height: 55px;
+            margin-bottom: 35px;
+            color: $blue-color;
+        }
+
+        ul {
+            margin-bottom: 135px;
+        }
+
+        ul:last-child {
+            margin-bottom: 109px;
+        }
+
+        li {
+            color: $black-color;
+            font-size: 24px;
+            line-height: 34px;
+            letter-spacing: 0em;
+        }
+    }
+
+    &__contact {
+        display: flex;
+        padding: 44px 217px 45px 103px;
+
+        h3 {
+            color: $blue-color;
+            font-size: 32px;
+            line-height: 38px;
+        }
+
+        form {
+            margin-left: 81px;
+
+            button {
+                height: 48px;
+                margin-top: 30px;
+                padding-left: 18px;
+                padding-right: 14px;
+                background-color: $cobolt-color;
+                color: white;
+                border-radius: 25px;
+
+                display: flex;
+                gap: 14px;
+                align-items: center;
+
+                span {
+                    font-size: 16px;
+                    line-height: 16px;
+                }
+
+                svg {
+                    fill: white;
+                    width: 32px;
+                    height: 22px;
+                }
+            }
+        }
+
+        &__input-container {
+            padding-top: 24px;
+            display: flex;
+            flex-direction: column;
+
+            label {
+                color: $steel;
+                font-size: 12px;
+                line-height: 18px;
+                padding-left: 20px;
+            }
+
+            input {
+                border: 1px solid $cobolt-color;
+                height: 48px;
+                border-radius: 24px;
+                padding: 8px 20px 14px 20px;
+            }
+        }
+
+        &__checkbox-container {
+            margin-top: 60px;
+            align-items: center;
+            label {
+				display: flex;
+				align-items: center;
+                .custom-checkbox-text {
+                    font-size: 14px;
+                    line-height: 21px;
+                    color: $steel;
+
+                    a {
+                        color: $blue-color;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .custom-checkbox {
+                width: 16px;
+                height: 16px;
+                border: 1px solid #bcbcbc;
+                margin-right: 18px;
+				background-color: white;
+				svg {
+					fill: none;
+				}
+            }
+
+			input:checked + label{
+				.custom-checkbox {
+					background-color: $blue-color;
+					svg {
+						fill: white;
+					}
+				}
+			}
+        }
+    }
+}
