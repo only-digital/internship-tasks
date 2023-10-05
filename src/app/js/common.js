@@ -1,4 +1,3 @@
-import ExampleButton from "../../components/example-button/example-button";
 import Item from '../../components/item/item'
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -6,7 +5,6 @@ import Item from '../../components/item/item'
  * Значение - JS-класс компонента (Импорт добавляется вручную)
  */
 const allComponents = {
-    'example-button': ExampleButton,
     'item': Item,
 
 }
