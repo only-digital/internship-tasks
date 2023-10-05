@@ -1,3 +1,19 @@
+mixin itemFlex(titleArray)
+	each title in titleArray
+		.blocks__item&attributes(attributes)
+			span.blocks__title= title
+			button.blocks__button
+				svg(width="66", height="36", viewBox="0 0 66 36", fill="none", xmlns="http://www.w3.org/2000/svg")
+					path(id="Vector", d="M58.6341 19.4L0.277649 19.4L0.277649 16.6L58.6341 16.6L58.6341 19.4ZM36.7642 36L35.1156 33.6L61.8761 20L61.8761 16L35.1156 2.4L36.7642 0L65.1182 14.4V21.6L36.7642 36Z", fill="#04306A")
+
 mixin flex-container()
-    section.flex-container
-        // Your code here
+	section.flex-container
+		h2.flex-container__title #[span.flex-container__title_color_red Комплексные&nbsp;] предложения для мостостроения
+		.flex-container__blocks.blocks
+			.blocks__column
+				+itemFlex(['Мостовая сталь/Стальные конструкции мостов']).blocks__item_size_large
+				+itemFlex(['Железобетонные конструкции мостов', 'Дорожные ограждения барьерного типа']).blocks__item_size_medium
+			+itemFlex(['Шпунтовой замок']).blocks__item_size_small.blocks__item_color_blue
+			+itemFlex(['Мостовой крепеж']).blocks__item_size_small
+			+itemFlex(['Профили для деформационных швов']).blocks__item_size_small.blocks__item_color_lightBlue
+			+itemFlex(['Плетеные габионы', 'Модульные мосты']).blocks__item_size_medium

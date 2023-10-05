@@ -1,3 +1,97 @@
+$blue: #04306a;
+$lightBlue: #0041a0;
+$red: #fc0d1b;
+$gray: #f4f4f4;
+$white: #ffffff;
+
 .flex-container {
-    // Your code here
+  font-family: Arial;
+  font-weight: 700;
+  color: $blue;
+
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 122px 96px 120px 97px;
+
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+
+  &__title {
+    font-size: 46px;
+    line-height: calc(46 / 46 * 100%);
+    letter-spacing: -0.92px;
+
+    align-self: flex-start;
+
+    &_color_red {
+      color: $red;
+    }
+  }
+}
+
+.blocks {
+  width: 1729px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 16px;
+
+  &__column {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 16px 19px;
+    height: 856px;
+  }
+
+  &__item {
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $gray;
+    padding: 24px 36px 33px;
+
+    &_size_large {
+      width: 854px;
+      height: 100%;
+      padding: 48px 0px 0px 49px;
+    }
+
+    &_size_medium {
+      width: 854px;
+      height: 420px;
+    }
+
+    &_size_small {
+      width: 564px;
+      height: 480px;
+      padding-bottom: 30px;
+    }
+
+    &_color_blue,
+    &_color_lightBlue {
+      color: $white;
+      & > .blocks__button {
+        & > svg > path {
+          fill: $white;
+        }
+      }
+    }
+
+    &_color_blue {
+      background-color: $blue;
+    }
+
+    &_color_lightBlue {
+      background-color: $lightBlue;
+    }
+  }
+
+  &__button {
+    align-self: flex-end;
+  }
+
+  &__title {
+    font-size: 32px;
+    line-height: calc(38.4 / 32 * 100%);
+    letter-spacing: -0.64px;
+  }
 }
