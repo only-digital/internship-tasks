@@ -1,6 +1,6 @@
 import Vacancy from "../../components/vacancy/vacancy";
 import VacancyForm from "../../components/vacancy-form/vacancy-form";
-
+import Loader from "../../components/loader/loader";
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
  * Ключ объекта - Название компонента, которое было указано во время его создания (совпадает с именем файлов)
@@ -9,6 +9,7 @@ import VacancyForm from "../../components/vacancy-form/vacancy-form";
 const allComponents = {
     'vacancy': Vacancy,
     'vacancy-form': VacancyForm,
+    'loader': Loader,
 }
 
 /**

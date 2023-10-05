@@ -8,6 +8,8 @@ class Vacancy extends Component {
         this.confirm = this.getElement('checkbox').getElementsByTagName('input')[0];
         this.btn = this.getElement('sendForm');
 
+        this.loader = document.querySelector('.loader');
+
         this.checkBox = this.getElement('checkbox').getElementsByTagName('input')[0];
         this.yes = this.getElement('checkbox-yes');
         this.success = this.getElement('success');
@@ -83,6 +85,7 @@ class Vacancy extends Component {
     }
 
     postRequestStatus = (status,msg) => {
+        this.loader.classList.toggle('hide');
         if (status === 'error') {
             if (this.dataValidation(msg))
             {
@@ -102,6 +105,7 @@ class Vacancy extends Component {
 
     sendData = () => {
 
+
         this.showValidationResult('restart');
 
         let msg = {
@@ -109,31 +113,27 @@ class Vacancy extends Component {
             confirm: this.confirm.checked
         }
 
-        console.log(msg)
 
-        //if (this.dataValidation(msg))
-       // {
-            console.log('herer')
-            const self = this;
-            fetch('http://localhost:3000/form', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json;charset=utf-8'},
-                body: JSON.stringify(msg)
-            })
+        const self = this;
+        self.loader.classList.toggle('hide');
+        fetch('http://localhost:3000/form', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json;charset=utf-8'},
+            body: JSON.stringify(msg)
+        })
 
-            .then(function (response) {
-                console.log(response.status)
+        .then(function (response) {
+            setTimeout(function () {
                 if (response.status === 422)
-                    self.postRequestStatus('error',msg)
+                    self.postRequestStatus('error', msg)
                 else if (response.status === 200)
-                    self.postRequestStatus('ok',msg)
-            })
+                    self.postRequestStatus('ok', msg)
+            }, 5000); // 5000 миллисекунд (5 секунд)
+        })
 
-            .catch(function (error) {
-                console.error(error);
+        .catch(function (error) {
+            console.error(error);
             });
-       // }
-
     }
 
     parseData = (data) => {
