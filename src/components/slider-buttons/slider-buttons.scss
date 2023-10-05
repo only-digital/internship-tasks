@@ -74,6 +74,8 @@ $steel: #909090;
 
     @media (max-width: 1280px) {
         &__btn {
+            width: 60px;
+            height: 60px;
             svg {
                 width: 21px;
                 height: 30px;
