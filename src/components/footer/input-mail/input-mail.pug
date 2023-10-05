@@ -1,4 +1,6 @@
 mixin input-mail(props)
-    .input-mail
-        label.input-mail__label(for="mail")="E-mail"
-        input.input-mail__input(type="email" id="mail") 
+    .input-mail&attributes(attributes)()
+        label.input-mail__label(for="email")="E-mail"
+        input.input-mail__input(type="email" value="sad@gmail.com" id="email" name="email" placeholedr="example@mail.ru" ) 
+        br
+        span.input-mail__alert="Поле E-mail и ознакомления с политикой обязательно"

@@ -1,7 +1,8 @@
 mixin checkbox(props)
     .checkbox
         label.checkbox__box 
-            input.checkbox__checkbox(type="checkbox" id="political")
-            span.checkbox__fake-checkbox(for="political")
+            input.checkbox__checkbox(type="checkbox" name="checkbox" )
+            span.checkbox__fake-checkbox
                 +svg("checkbox-svg").checkbox__icon
-        
+        span.checkbox__text="Вы подтверждаете, что ознакомились "
+            span.checkbox__text_blue="c политикой обработки персональных данных"

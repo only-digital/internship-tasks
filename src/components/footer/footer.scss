@@ -1,15 +1,18 @@
 @import "../../app/scss/variables.scss";
 @import "./input-mail/input-mail.scss";
 @import "./checkbox/checkbox.scss";
+@import "./button/button.scss";
 
 .footer {
 	display: flex;
-	&__title{
+
+	&__title {
 		width: 40%;
 		font-size: 30px;
-		color:$blue;
+		color: $blue;
 	}
-	&__form{
+
+	&__form {
 		width: 60%;
 	}
 }

@@ -1,6 +1,7 @@
 @import '../src/components/footer/footer';
 @import '../src/components/main/main';
 @import '../src/components/header/header';
+@import "../src/components/loader/loader.scss";
 
 html {
     font-weight: normal;
@@ -20,9 +21,29 @@ body {
     padding: 4em 3em;
     margin: 0;
     -webkit-tap-highlight-color: transparent;
+
 }
 
-h1, h2, h3, h4, h5, p, a {
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+}
+
+::-webkit-scrollbar-thumb {
+    background: $blue;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a {
     color: inherit;
     font-size: inherit;
     font-weight: inherit;
@@ -33,7 +54,8 @@ h1, h2, h3, h4, h5, p, a {
     word-wrap: break-word;
 }
 
-ul, li {
+ul,
+li {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -66,4 +88,3 @@ button {
         outline: none;
     }
 }
-

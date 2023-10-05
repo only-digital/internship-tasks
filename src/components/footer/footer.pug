@@ -1,9 +1,12 @@
 include ./input-mail/input-mail
 include ./checkbox/checkbox
+include ./button/button
+include ../loader/loader
 
 mixin footer(props)
-	.footer&attributes(attributes)(data-component='footer')
+	.footer&attributes(attributes)(data-component="footer")
 		h2.footer__title="Форма обратной связи"
-		form.footer__form 
-			+input-mail
+		form.footer__form(action="/form" method="POST") 
+			+input-mail(class="footer__input-mail")
 			+checkbox
+			+button
