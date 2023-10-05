@@ -9,8 +9,11 @@ class Vacancy extends Component {
         this.btn = this.getElement('sendForm');
 
         this.checkBox = this.getElement('checkbox').getElementsByTagName('input')[0];
-        this.s = this.getElement('s');
+        this.yes = this.getElement('checkbox-yes');
         this.success = this.getElement('success');
+
+
+        this.whiteBlock = this.getElement('whiteBlock');
 
         this.status = this.getElement('status');
         
@@ -24,9 +27,9 @@ class Vacancy extends Component {
     }
 
     agreeConfirm = () => {
-        this.checkBox.classList.add('agree');
-        this.s.classList.toggle('correct')
-        
+        this.checkBox.classList.toggle('agree');
+        this.yes.classList.toggle('correct')
+
         console.log('agree')
     }
     showValidationResult = (res) => {
@@ -45,6 +48,12 @@ class Vacancy extends Component {
             return false;
         }
 
+        if (res === 'confirm') {
+            this.status.textContent = 'Необходимо подтвердить согласие с обработкой персональных данных';
+            this.status.classList.toggle('correct');
+            return false;
+        }
+
         if ((res === 'restart') && (!this.status.classList.contains('correct')))
             this.status.classList.add('correct');
             
@@ -52,29 +61,40 @@ class Vacancy extends Component {
     }
 
     dataValidation = (check) => {
-        if (check === '') 
+        if (check.email === '') 
         { 
             this.showValidationResult('none');
             return false;
         }
 
         const emailRegexp = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
-        if (!emailRegexp.test(check))
+        if (!emailRegexp.test(check.email))
         {
             this.showValidationResult('incorrect');
+            return false;
+        }
+
+        if (!check.confirm) {
+            this.showValidationResult('confirm');
             return false;
         }
         
         return true;
     }
 
-    postRequestStatus = (status) => {
-       // if (status === 'error') {
-      //      this.status.textContent = 'Ошибка не сервере. Попробуйте еще раз';
-      //      this.status.classList.toggle('correct');
-      //  }
-
+    postRequestStatus = (status,msg) => {
         if (status === 'error') {
+            if (this.dataValidation(msg))
+            {
+                this.status.textContent = 'Ошибка не сервере. Попробуйте еще раз';
+                this.status.classList.toggle('correct');
+            }
+        }
+
+        if (status === 'ok') {
+            this.whiteBlock.classList.toggle('correct');
+
+            
             this.success.classList.toggle('correct');
             this.btn.classList.toggle('correct')
         }
@@ -84,15 +104,16 @@ class Vacancy extends Component {
 
         this.showValidationResult('restart');
 
-        this.confirm.value === 'on' ? confirm = true : false;
-
         let msg = {
             email: this.email.value,
-            confirm: false
+            confirm: this.confirm.checked
         }
 
-        if (this.dataValidation(msg.email))
-        {
+        console.log(msg)
+
+        //if (this.dataValidation(msg))
+       // {
+            console.log('herer')
             const self = this;
             fetch('http://localhost:3000/form', {
                 method: 'POST',
@@ -101,16 +122,17 @@ class Vacancy extends Component {
             })
 
             .then(function (response) {
+                console.log(response.status)
                 if (response.status === 422)
-                    self.postRequestStatus('error')
+                    self.postRequestStatus('error',msg)
                 else if (response.status === 200)
-                    self.postRequestStatus('ok')
+                    self.postRequestStatus('ok',msg)
             })
 
             .catch(function (error) {
                 console.error(error);
             });
-        }
+       // }
 
     }
 
