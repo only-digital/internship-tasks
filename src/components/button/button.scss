@@ -1,19 +1,7 @@
 .button-wrapper {
   $root: &;
-
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  margin: 10px;
-
-  font-family: Arial, sans-serif;
-  color: #111111;
-  font-size: 16px;
-  font-weight: 400;
-
-  .text {
-    text-transform: uppercase;
-  }
+  font-size: inherit;
+  font-family: inherit;
 
   .button {
     display: flex;
@@ -23,6 +11,8 @@
     height: 48px;
     border-radius: 24px;
     gap: 14px;
+    font-family: Arial, sans-serif;
+    color: #111111;
     transition: background 0.3s, color 0.3s, border 0.3s;
   }
 

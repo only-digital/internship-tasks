@@ -1,14 +1,14 @@
 mixin links(props)
-	.links&attributes(attributes)
-		span.text=props.text
-		a(href='https://www.sustainalytics.com/').link.separate(class=props.class) Sustainalytics.com
-			+svg('link-icon').icon
-	div.links-in-text(class=props.class)
-		p
-		| Для подключения сервиса добавьте номер
-		a(href='tel:+79210585719').link  +7(921)058-57-19
-		|  в ваши контакты  и напишите любое сообщение, или перейдите по ссылке ниже.
-		p
-		| Цифровые продукты, направленные на создание
-		a(href='https://www.sustainalytics.com/').link  дополнительных сервисов
-		|  и устранение «проблемных точек» наших клиентов
+    .links.container&attributes(attributes)
+        span.text=props.text
+        a(href='https://www.sustainalytics.com/').link.separate(class=props.class) Sustainalytics.com
+            +svg('link-icon').icon
+    div.links-in-text(class=props.class)
+        p
+            | Для подключения сервиса добавьте номер
+            a(href='tel:+79210585719').link  +7(921)058-57-19
+            |  в ваши контакты  и напишите любое сообщение, или перейдите по ссылке ниже.
+        p
+            | Цифровые продукты, направленные на создание
+            a(href='https://www.sustainalytics.com/').link  дополнительных сервисов
+            |  и устранение «проблемных точек» наших клиентов.

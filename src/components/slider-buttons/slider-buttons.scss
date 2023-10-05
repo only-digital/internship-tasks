@@ -1,12 +1,3 @@
-.slider-buttons {
-  display: flex;
-  align-items: center;
-
-  .text {
-    text-transform: uppercase;
-  }
-}
-
 .slider-buttons-wrapper {
   $root: &;
 
@@ -15,6 +6,7 @@
   height: 80px;
   align-items: center;
   justify-content: space-between;
+  font-weight: 600;
 
   .buttons {
     display: flex;
