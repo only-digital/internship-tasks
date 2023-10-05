@@ -6,10 +6,10 @@ class SpoilerItem extends Component {
     constructor(element) {
         super(element);
         this.bodyElement = this.getElement('body');
-        this.root.addEventListener('click', this.onButtonClick);
+        this.root.addEventListener('click', this.onClick);
     }
 
-    onButtonClick = () => {
+    onClick = () => {
         this.root.classList.toggle('spoiler-item_active');
     }
 }
