@@ -7,36 +7,24 @@ $darkTeal: rgba(1, 43, 52, 1);
     border-bottom: 1px solid $lain;
     width: 100%;
     padding-top: 30px;
+    cursor: pointer;
     
     &__head {
         display: flex;
         width: 100%;
         justify-content: space-between;
         align-items: center;
-        cursor: pointer;
 
         & svg {
             width: 20px;
             height: 20px;
             transform: rotate(45deg);
-            transition: transform 0.3s ease; /* Плавный поворот иконки */
+            transition: transform 0.3s ease;
         }
 
         &-title {
             color: $darkTeal;
             font-size: 36px;
-        }
-
-        @media (max-width: 1280px) {
-            margin-bottom: 26px;
-        }
-
-        @media (max-width: 768px) {
-            margin-bottom: 20px;
-        }
-
-        @media (max-width: 375px) {
-            margin-bottom: 10px;
         }
     }
 
@@ -46,24 +34,11 @@ $darkTeal: rgba(1, 43, 52, 1);
         max-height: 0;
         overflow: hidden;
         overflow-wrap: break-word;
-        width: 50%;
+        max-width: 840px;
         transition: max-height .3s ease, padding-top .3s ease, opacity .3s ease;
         margin-bottom: 30px;
         padding-top: 0;
         opacity: 0;
-
-        @media (max-width:1280px) {
-            font-size: 14px;
-            margin-bottom: 24px;
-        }
-
-        @media (max-width:768px) {
-            font-size: 15px;
-        }
-
-        @media (max-width:375px) {
-            margin-bottom: 20px;
-        }
     }
 
     &__active {
@@ -71,14 +46,120 @@ $darkTeal: rgba(1, 43, 52, 1);
             transform: rotate(0deg);
         }
 
-        .spoiler-item__desc {
-            padding-top: 30px;
-            max-height: 1000px; /* Устанавливаем максимальную высоту для анимации */
-            opacity: 1;
+        .spoiler-item {
+            &__desc {
+                padding-top: 30px;
+                max-height: 1000px;
+                opacity: 1;
+            }
+
+            &__head-title {
+                color: $blue;
+            }
         }
-        
-        .spoiler-item__head-title {
-            color: $blue;
+    }
+}
+
+@media (max-width: 1440px) {
+    .spoiler-item {
+        padding-top: 24px;
+
+        &__head {
+            &-title {
+                font-size: 27px;
+            }
+
+            & svg {
+                width: 14px;
+                height: 14px;
+            }
+        }
+
+        &__desc {
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        &__active {
+            .spoiler-item {
+                &__desc {
+                    padding-top: 24px;
+                    margin-bottom: 24px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1280px) {
+    .spoiler-item {
+        padding-top: 20px;
+
+        &__head {
+            &-title {
+                font-size: 24px;
+            }
+        }
+
+        &__desc {
+            font-size: 14px;
+        }
+
+        &__active {
+            .spoiler-item {
+                &__desc {
+                    padding-top: 16px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .spoiler-item {
+        padding-top: 24px;
+
+        &__head {
+            align-items: flex-start;
+
+            & svg {
+                margin-top: 10px;
+            }
+
+            &-title {
+                font-size: 27px;
+                margin-right: 60px;
+            }
+        }
+
+        &__desc {
+            font-size: 15px;
+            margin-bottom: 24px;
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    .spoiler-item {
+        padding-top: 20px;
+
+        &__head {
+            &-title {
+                font-size: 24px;
+            }
+        }
+
+        &__desc {
+            font-size: 14px;
+        }
+
+        &__active {
+            .spoiler-item {
+                &__desc {
+                    padding-top: 16px;
+                    margin-bottom: 20px;
+                }
+            }
         }
     }
 }
