@@ -1,8 +1,10 @@
 $colorLightBlue: #e3edf7;
 $colorBlue: #007fff;
+$colorLightGray: #D9E1EC;
 
 .AsideBlock {
-  margin: 40px 25px;
+  padding: 40px 25px;
+  border-right: 1px solid $colorLightGray;
 
   &__button {
     display: flex;

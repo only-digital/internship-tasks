@@ -3,9 +3,12 @@ import AsideBlock from '../aside-block/aside-block';
 import styled from './content-block.module.scss';
 import TaskElement from '../task-element/task-element';
 import SearchElement from '../search-element/search-element';
+import useSearch from '@/hooks/useSearch';
 
 const ContentBlock = ({ props }) => {
     const [tasks, setTasks] = useState(props.tasks);
+    const [searchQuery, setSearchQuery] = useState('');
+    const filtredTasks = useSearch(tasks, searchQuery);
     const title = props.title;
 
     const onToggleTaskStatus = (task) => {
@@ -17,7 +20,7 @@ const ContentBlock = ({ props }) => {
     }
 
     const onChangeHandler = (value) => {
-        console.log(value);
+        setSearchQuery(value);
     }
 
     return (
@@ -28,7 +31,7 @@ const ContentBlock = ({ props }) => {
                     <header>{title}</header>
                     <SearchElement tasks={tasks} onInputChange={onChangeHandler}/>
                 </div>
-                {tasks.map((task, idx) => (
+                {filtredTasks.map((task, idx) => (
                     <TaskElement
                         key={idx}
                         task={task}
