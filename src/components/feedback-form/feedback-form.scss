@@ -157,6 +157,67 @@
 		line-height: 124%;
 		letter-spacing: -0.3px;
 	}
+
+	&__button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 14px;
+		transition: color 0.3s ease,
+			background-color 0.3s ease,
+			border 0.3s ease,
+			opacity 0.3s ease;
+		color: white;
+		background-color: #0041A0;
+		margin: 25px 0;
+		height: 48px;
+		padding: 0px 14px 0px 18px;
+		border-radius: 25px;
+		border: 1px solid #BCBCBC;
+		cursor: pointer;
+	
+		@media (hover: hover) {
+			&:hover {
+				background-color: #0041A0;
+				border: 1px solid #0041A0;
+				opacity: 0.9;
+			}
+		}
+	
+		&:disabled {
+			pointer-events: none;
+			color: #909090;
+		}
+	
+		&:focus-visible {
+			background-color: #0041A0;
+			border: 1px solid #BCBCBC;
+			outline: 2px solid #99B3D8;
+			color: white;
+		}
+	
+		&:active {
+			background-color: #002F6C;
+			border: 1px solid #002F6C;
+			color: white;
+		}
+	}
+
+	&__button-text {
+		font-family: Arial, sans-serif;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 100%;
+		letter-spacing: -0.32px;
+	}
+
+	&__button-svg {
+		width: 32px;
+		height: 32px;
+		color: #002F6C;
+		transition: color 0.3s ease;
+	}
 }
 
 // .form-toggle-wrapper input:not(:disabled):hover+.control-mark {

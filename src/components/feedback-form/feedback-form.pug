@@ -7,11 +7,13 @@ mixin feedback-form(props)
 				input.feedback-form__input(type="email", name="email")
 			span.feedback-form__warning!=props.warning
 			label.feedback-form__label-confirm Вы подтверждаете, что ознакомились #[span c политикой обработки персональных данных]
-				input.feedback-form__input-confirm.visually-hidden(type="checkbox", name="confirm")
+				input.feedback-form__input-confirm.visually-hidden(type="checkbox", name="confirm", value="true")
 				span.feedback-form__input-mark
 					+svg('checkbox').feedback-form__input-mark-svg
 			.feedback-form__sending-wrapper
 				.feedback-form__sending-result
 					+svg('tick').feedback-form__sending-svg
 				span.feedback-form__sending-text Форма успешно отправлена
-			+button({text: "Отправить"})
+			button.feedback-form__button&attributes(attributes)
+				span.feedback-form__button-text!= props.text
+				+svg('buttons-icon').feedback-form__button-svg
