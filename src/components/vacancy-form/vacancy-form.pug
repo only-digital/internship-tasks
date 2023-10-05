@@ -4,8 +4,14 @@ mixin vacancy-form(props)
 		.vacancy__email 
 			label E-mail
 			input(type="email")
+			p.vacancy__status.correct Email обязательно
 		.vacancy__checkbox 
 			input(type='checkbox')
 			label Вы подтверждаете, что ознакомились c #[span] политикой обработки персональных данных 
 		button.vacancy__sendForm Отправить
 			+svg('arrow').vacancy__arrow
+		.vacancy__success.correct
+			.vacancy__circle 		
+				+svg('success').vacancy__svg
+			p Форма успешно отправлена
+			

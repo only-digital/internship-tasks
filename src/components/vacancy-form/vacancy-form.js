@@ -4,7 +4,7 @@ class VacancyForm extends Component {
     constructor(element) {
         super(element);
 
-        // Your code here
+
     }
 
     // Your code here
