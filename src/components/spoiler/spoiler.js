@@ -9,7 +9,12 @@ class Spoiler extends Component {
     }
     // Обработчик события click
     onClick = () => {
-        
+        console.log(this.root);
+        if (this.root.classList.contains('spoiler_opened')) {
+            this.root.classList.replace('spoiler_opened', 'spoiler_closed');
+        } else {
+            this.root.classList.replace('spoiler_closed', 'spoiler_opened');
+        }
     }
 }
 
