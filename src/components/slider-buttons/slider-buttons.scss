@@ -15,7 +15,9 @@ $steel: #909090;
     &__btn {
         border: 1px solid $gray;
         border-radius: 100%;
-        transition: background-color .3s;
+        transition: background-color .3s, border .3s;
+        width: 80px;
+        height: 80px;
 
         & svg {
             width: 28px;
@@ -25,11 +27,13 @@ $steel: #909090;
 
         &:hover {
             background-color: $lightGray;
+            border: 1px solid $lightGray;
         }
 
         &:active {
             transition: none;
             background-color: $gray;
+            border: 1px solid $gray;
         }
         
         &:focus {
