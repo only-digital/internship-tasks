@@ -1,18 +1,14 @@
 import Component from '../../app/js/base/Component';
 
-console.log(1);
-
 class SpoilerItem extends Component {
+    head;
     constructor(element) {
         super(element);
-
-        const head = this.getElement("spoiler-item")
-        
-        head.addEventListener("click", this.onSpoilerClick)
+        this.root.addEventListener("click", this.toggleSpoiler.bind(this));
     }
 
-    onSpoilerClick = () => {
-        this.root.classList.toggle("spoiler-item__active")
+    toggleSpoiler() {
+        this.root.classList.toggle('spoiler-item__active');
     }
 }
 

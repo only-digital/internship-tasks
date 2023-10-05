@@ -6,7 +6,7 @@ import SpoilerItem from "../../components/spoiler-item/spoiler-item";
  * Значение - JS-класс компонента (Импорт добавляется вручную)
  */
 const allComponents = {
-    'spoiler': SpoilerItem,
+    'spoiler-item': SpoilerItem,
 }
 
 
