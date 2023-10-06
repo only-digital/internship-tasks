@@ -1,0 +1,17 @@
+.input-mail-ct{
+    width: 100%;
+    position: relative;
+    &__input{
+        $grey:#F4F4F4;
+        border: 2px solid $grey;
+        border-color: transparent transparent $grey transparent;
+        transition: 0.8s ease all;
+        width: 100%;
+    }
+    &:before{
+        width: 40px;
+        height: 40px;
+        background-color: black;
+        position: absolute;
+    }
+}
