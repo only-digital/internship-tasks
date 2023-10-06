@@ -12,7 +12,7 @@ mixin vacancy-form(props)
 		form.vacancy-form__form
 			label.vacancy-form__label(for="id_email") E-mail
 			input.vacancy-form__input(type="email" id="id_email")
-			p.vacancy-form__error Поле E-mail обязательно
+			p.vacancy-form__error  
 			.vacancy-form__policy
 				input.vacancy-form__checkbox(type="checkbox" id="policy")
 				label(for="policy") 
@@ -23,5 +23,6 @@ mixin vacancy-form(props)
 						<path fill-rule="evenodd" clip-rule="evenodd" d="M21.503 1.40993L20.3267 0.233673L8.37976 12.1806L9.55602 13.3569L21.503 1.40993ZM1.64574 8.16954L0.469482 9.34579L6.95034 15.8267L8.1266 14.6504L1.64574 8.16954Z" fill="#27AE60"/>
 					</svg>
 				span.text Форма успешно отправлена
+			+loader()
 			+btn({text: "Отправить"}) 
 

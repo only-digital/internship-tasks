@@ -15,7 +15,7 @@ $color_blue: #04306A;
 	font-weight: 400;
 	padding-top: 115px;
 	padding-bottom: 14px;
-	// letter-spacing: -2%;
+	position: relative;
 
 	&__date{
 		color: $color_gray;
@@ -39,5 +39,18 @@ $color_blue: #04306A;
 	&__statistics span{
 		display: inline-block;
 		margin-right: 36px;
+	}
+	&.loading &__statistics{
+		visibility: hidden;
+	}
+	& .loader{
+		display: none;
+		position: absolute;
+		bottom: -12px;
+		left: 0;
+		transform: rotate(-45deg) scale(0.5);
+	}
+	&.loading .loader{
+		display: block;
 	}
 }

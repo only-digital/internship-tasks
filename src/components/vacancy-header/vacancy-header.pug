@@ -3,6 +3,6 @@ mixin vacancy-header(props)
 		p.vacancy-header__date #{props.date}
 		h1.vacancy-header__title #{props.title}
 		.vacancy-header__statistics
-			span Просмотров: #{props.views}
-			span Откликов: #{props.respons}
+			span.vacancy-header__views Просмотров: #{props.views}
+			span.vacancy-header__responses Откликов: #{props.respons}
 		+loader()
