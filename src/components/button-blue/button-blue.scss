@@ -26,13 +26,13 @@
   width: 100%;
   height: 42px;
   gap: 14px;
-  transition: 0.3s;
+  transition: background 0.3s, color 0.3s, border 0.3s;
   user-select: none;
 
   &:hover {
     background: $cobolt;
     color: $main-white;
-    border: none;
+    border-color: $cobolt;
 
     #{$root}__svg {
       color: $main-white;
@@ -110,6 +110,7 @@
     svg {
       width: 24px;
       height: 16.5px;
+      transition: color 0.3s;
 
       @media (min-width: 1920px) {
         width: 32px;
