@@ -1,12 +1,21 @@
 import ExampleButton from "../../components/example-button/example-button";
+import Textarea from "../../components/textarea/textarea";
+import Checkbox from "../../components/checkbox/checkbox";
+import Button from '../../components/button/button';
+import Input from '../../components/input/input';
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
  * Ключ объекта - Название компонента, которое было указано во время его создания (совпадает с именем файлов)
  * Значение - JS-класс компонента (Импорт добавляется вручную)
  */
+
 const allComponents = {
     'example-button': ExampleButton,
+    'textarea': Textarea,
+    'checkbox': Checkbox,
+    'button': Button,
+    'input':Input,
 }
 
 /**

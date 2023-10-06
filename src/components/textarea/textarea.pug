@@ -1,0 +1,4 @@
+mixin textarea({ placeholder='Ваше сообщение',title='Ваше сообщение'}={})
+	.textarea&attributes(attributes)(data-component='textarea')
+		span.textarea__title=title
+		textarea(placeholder=placeholder).textarea__area

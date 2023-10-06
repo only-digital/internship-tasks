@@ -1,0 +1,32 @@
+.textarea {
+	$root: &;
+	display: flex;
+	flex-direction: column;
+
+	// &__area:hover {
+	// 	height: 193px;
+	// 	border: none;
+	// 	background-color: #F4F4F4;
+	// }
+
+	&__area {
+		max-width: 556px;
+	width: 100%;
+	height: 36px;
+	resize: none;
+	overflow: auto;
+	border: none;
+	border-bottom: 1px solid #DEDEDE;
+	}
+
+	&__area::placeholder {
+		color: #111;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 100%;
+		letter-spacing: -1px;
+	}
+
+}
