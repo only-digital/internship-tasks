@@ -6,7 +6,7 @@
 	&-name {
 		font-size: 32px;
 		letter-spacing: -0.64px;
-		color: #002F6C;
+		color: $blue;
 	}
 }
 
@@ -14,13 +14,16 @@
 	$root: &;
 
 	&__email {
+		
+		margin-bottom: 60px;
+		margin-left: 547px;
 
 		display: flex;
 		flex-direction: column;
 
 		label {
 			font-size: 12px;
-			color: #909090;
+			color: $gray-second;
 
 			line-height: 1.5;
 
@@ -37,21 +40,24 @@
 			padding-left: 10px;
 		}
 
-
-		margin-bottom: 60px;
-		margin-left: 547px;
 	}
 
 	&__checkbox {
 
+		margin-left: 547px;
+		margin-bottom: 30px;
+
 		display: flex;
 		align-items: center;
-
 		gap: 18px;
+
+		position: relative;
+	
+		cursor: pointer;
 
 		label {
 			font-size: 14px;
-			color: #909090;
+			color: $gray-second;
 
 			span {
 				color: $blue;
@@ -63,16 +69,29 @@
 			height: 16px;
 
 			outline: 1px solid #BCBCBC;
-		}
 
-		margin-left: 547px;
-		margin-bottom: 30px;
+			&:hover {
+				outline: 1px solid  $blue;
+				cursor: pointer;
+			}
+		}
+		
+		&-yes {
+			width: 10px;
+			height: 8px;
+		
+			position: absolute;
+		
+			left: 7px;
+		}
+	
 	}
 
 	&__sendForm {
 		border-radius: 25px;
+		
 		background-color: $blue;
-		color: #fff;
+		color: white;
 
 		padding-left: 18px;
 		padding-right: 14px;
@@ -97,6 +116,7 @@
 
 	&__status {
 		margin-top: 10px;
+
 		color: red;
 	}
 
@@ -119,36 +139,6 @@
 		padding: 9px 13px;
 	}
 
-	&__checkbox {
-
-	position: relative;
-	
-	cursor: pointer;
-
-		input { 
-			&:hover {
-				outline: 1px solid  $blue;
-				cursor: pointer;
-			}
-		}
-
-		&-yes {
-			width: 10px;
-			height: 8px;
-	
-			position: absolute;
-	
-			left: 7px;
-		}
-
-		label {
-			span {
-				color: $blue;
-			}
-		}
-
-	}
-
 	&__ack {
 		width: 21px;
 		height: 15px;
@@ -167,13 +157,13 @@
 		left: 620px;
 	}
 
-	}
+}
 
-	.correct {
-		display: none;
-	}
+.hidden {
+	display: none;
+}
 
-	.agree {
-		background-color: $blue;
-		outline: 1px solid #011a3a;
-	}
+.agree {
+	background-color: $blue;
+	outline: 1px solid #011a3a;
+}

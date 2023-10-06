@@ -4,16 +4,15 @@ class Vacancy extends Component {
     constructor(element) {
         super(element);
 
+        this.getData();
+
         this.email = this.getElement('email').getElementsByTagName('input')[0];
         this.confirm = this.getElement('checkbox').getElementsByTagName('input')[0];
+        this.yes = this.getElement('checkbox-yes');
+        this.success = this.getElement('success');
         this.btn = this.getElement('sendForm');
 
         this.loader = document.querySelector('.loader');
-
-        this.checkBox = this.getElement('checkbox').getElementsByTagName('input')[0];
-        this.yes = this.getElement('checkbox-yes');
-        this.success = this.getElement('success');
-
 
         this.whiteBlock = this.getElement('whiteBlock');
 
@@ -22,42 +21,39 @@ class Vacancy extends Component {
         this.views = this.getElement('views').getElementsByTagName('span')[0];
         this.responses = this.getElement('responses').getElementsByTagName('span')[0];
         
-        this.getData();
-
         this.btn.addEventListener("click", this.sendData);
-        this.checkBox.addEventListener("click", this.agreeConfirm);
+        this.confirm.addEventListener("click", this.agreeConfirm);
     }
 
     agreeConfirm = () => {
-        this.checkBox.classList.toggle('agree');
-        this.yes.classList.toggle('correct')
-
-        console.log('agree')
+        this.confirm.classList.toggle('agree');
+        this.yes.classList.toggle('hidden')
     }
+
     showValidationResult = (res) => {
         
         if (res === 'none')
         {
             this.status.textContent = 'Поле E-mail обязательно';
-            this.status.classList.toggle('correct');
+            this.status.classList.toggle('hidden');
             return false;
         }
         
-        if (res === 'incorrect')
+        if (res === 'email')
         {
             this.status.textContent = 'Некорректный E-mail';
-            this.status.classList.toggle('correct');
+            this.status.classList.toggle('hidden');
             return false;
         }
 
         if (res === 'confirm') {
             this.status.textContent = 'Необходимо подтвердить согласие с обработкой персональных данных';
-            this.status.classList.toggle('correct');
+            this.status.classList.toggle('hidden');
             return false;
         }
 
-        if ((res === 'restart') && (!this.status.classList.contains('correct')))
-            this.status.classList.add('correct');
+        if ((res === 'restart') && (!this.status.classList.contains('hidden')))
+            this.status.classList.add('hidden');
             
         return true;
     }
@@ -72,7 +68,7 @@ class Vacancy extends Component {
         const emailRegexp = /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i;
         if (!emailRegexp.test(check.email))
         {
-            this.showValidationResult('incorrect');
+            this.showValidationResult('email');
             return false;
         }
 
@@ -85,37 +81,37 @@ class Vacancy extends Component {
     }
 
     postRequestStatus = (status,msg) => {
-        this.loader.classList.toggle('hide');
+        this.loader.classList.toggle('hidden');
+
         if (status === 'error') {
-            if (this.dataValidation(msg))
+            if (this.dataValidation(msg)) //если ошибка не в данных
             {
                 this.status.textContent = 'Ошибка не сервере. Попробуйте еще раз';
-                this.status.classList.toggle('correct');
+                this.status.classList.toggle('hidden');
             }
         }
 
         if (status === 'ok') {
-            this.whiteBlock.classList.toggle('correct');
+            this.whiteBlock.classList.toggle('hidden');
 
-            
-            this.success.classList.toggle('correct');
-            this.btn.classList.toggle('correct')
+            this.success.classList.toggle('hidden');
+            this.btn.classList.toggle('hidden')
         }
     }
 
     sendData = () => {
 
-
-        this.showValidationResult('restart');
+        //скрываем строку с ошибкой (если она есть)
+        this.showValidationResult('restart'); 
 
         let msg = {
             email: this.email.value,
             confirm: this.confirm.checked
         }
 
-
         const self = this;
-        self.loader.classList.toggle('hide');
+        self.loader.classList.toggle('hidden');
+        
         fetch('http://localhost:3000/form', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json;charset=utf-8'},
@@ -124,16 +120,16 @@ class Vacancy extends Component {
 
         .then(function (response) {
             setTimeout(function () {
-                if (response.status === 422)
+                if (!response.ok)
                     self.postRequestStatus('error', msg)
-                else if (response.status === 200)
+                else 
                     self.postRequestStatus('ok', msg)
-            }, 5000); // 5000 миллисекунд (5 секунд)
+            }, 5000); 
         })
 
         .catch(function (error) {
             console.error(error);
-            });
+        });
     }
 
     parseData = (data) => {

@@ -1,18 +1,18 @@
 mixin vacancy-form(props)
 	.vacancy__form&attributes(attributes)(data-component='vacancy-form')
 		h3.vacancy__form-name Форма обратной связи
-		.vacancy__whiteBlock.correct
+		.vacancy__whiteBlock.hidden
 		.vacancy__email 
 			label E-mail
 			input(type="email")
-			p.vacancy__status.correct Email обязательно
+			p.vacancy__status.hidden Email обязательно
 		.vacancy__checkbox 
-			+svg('agree').vacancy__checkbox-yes.correct
+			+svg('agree').vacancy__checkbox-yes.hidden
 			input(type='checkbox')
 			label Вы подтверждаете, что ознакомились #[span с политикой обработки персональных данных ]
 		button.vacancy__sendForm Отправить
 			+svg('arrow').vacancy__arrow
-		.vacancy__success.correct
+		.vacancy__success.hidden
 			.vacancy__circle 		
 				+svg('success').vacancy__ack
 			p Форма успешно отправлена
