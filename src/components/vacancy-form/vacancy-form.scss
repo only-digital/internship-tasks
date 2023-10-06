@@ -1,0 +1,130 @@
+$font_family: Arial, sans-serif;
+$color_gray: #909090;
+$color_blue: #002F6C;
+
+.vacancy-form {
+	$root: &;
+
+	font-family: $font_family;
+	font-weight: 400;
+	display: flex;
+	align-items: flex-start;
+	gap: 80px;
+	padding: 45px 0;
+	margin-top: 109px;
+	@media screen and (max-width: 1280px) {
+		margin-top: 50px;
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+
+	&__title {
+		color: $color_blue;
+		font-size: 32px;
+		line-height: 1.2;
+		@media screen and (max-width: 1280px) {
+			font-size: 26px;
+		}
+	}
+	&__form {
+		padding-top: 24px;
+		flex-grow: 1;
+	}
+	&__label {
+		display: block;
+		padding: 0 0 0 20px;
+		font-size: 12px;
+		line-height: 1.5;
+		color: $color_gray;
+	}
+	&__input {
+		display: block;
+		width: 100%;
+		padding: 0 20px;
+		font-size: 16px;
+		color: #BBBBBB;
+		height: 48px;
+		border-radius: 24px;
+		border: 1px solid #0041A0;
+	}
+	&__error {
+		color: #EF1C1C;
+		font-size: 14px;
+		line-height: 1.5;
+		margin: 25px 0 14px;
+	}
+	&__checkbox {
+		display: none;
+	}
+	&__policy label{
+		// color: #EF1C1C;
+		display: inline-block;
+		font-size: 14px;
+		line-height: 1.5;
+		// margin: 25px 0 14px;
+		padding: 0 0 0 34px;
+		position: relative;
+		color: #909090;
+	}
+	&__policy label::after,
+	&__policy label::before{
+		display: block;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	&__policy label::before{
+		content: '';
+		left: 0;
+		width: 16px;
+		height: 16px;
+		border: 1px solid #BCBCBC;
+	}
+	&__checkbox:checked + label::before{
+		background-color: #0075ff;
+	}
+	&__checkbox:checked + label::after{
+		content: "\2713";
+		color: #fff;
+		left: 4px;
+	}
+	&__policy a{
+		color: #002F6C;
+	}
+
+	&__success {
+		margin-top: 25px;
+		display: flex;
+		align-items: center;
+		gap: 21px;
+		.icon {
+			border: 2px solid #DEDEDE;
+			width: 48px;
+			height: 48px;
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+
+	&__btn{
+		margin-top: 30px;
+		height: 48px;
+		border-radius: 24px;
+		color: #fff;
+		background-color: #0041A0;
+		border: 1px solid #0041A0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		column-gap: 14px;
+		font-size: 16px;
+		padding: 0px 14px 0px 18px;
+		&:hover{
+			background-color: transparent;
+			border-color: #BCBCBC;
+			color: #002F6C;
+		}
+	}
+}

@@ -2,6 +2,11 @@ extends ../../build_modules/common
 
 
 block body
-    +example-button()
-    +example-button()
-    //Your code here
+    .row
+        +vacancy-header({date: "18 декабря 2020", title: "Консультант SAP PO", views: 123, respons: 15})
+
+        +vacancy-info({title: "Вам предстоит", list: ["Участие в проектах в роли архитектора/консультанта по интеграции данных", "Проектирование архитектуры интеграции по технологиям SAP (Process Orchestration 7.5, Data Services 4.2, RFC, IDOC)"]})
+        +vacancy-info({title: "Мы ожидаем", list: ["Знание ASAP, MS Visio, SAP PI / SAP PO, SAP HANA, JSON, XML", "Опыт работы в сфере аналитики от 3-х лет в должности аналитика, ведущего аналитика, специалиста по внедрению информационных систем"]})
+        +vacancy-info({title: "Мы предлагаем", list: ["Оформление в соответствии с нормами ТК РФ, социальные гарантии", "Крупные проекты в компании–лидере отрасли"]})
+
+        +vacancy-form({title: "Форма обратной связи"})

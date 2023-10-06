@@ -1,0 +1,6 @@
+mixin vacancy-info(props)
+	.vacancy-info&attributes(attributes)(data-component='vacancy-info')
+		h3.vacancy-info__title #{props.title}
+		ul.vacancy-info__list
+			each item in props.list
+				li #{item}

@@ -1,0 +1,48 @@
+$lite:  #909090;
+
+.loader {
+	$root: &;
+
+	margin: 30px;
+	display: block;
+	
+	width: 106px;
+	height: 56px;
+	background-image: linear-gradient($lite 50px, transparent 0), 
+					  linear-gradient($lite 50px, transparent 0), 
+					  linear-gradient($lite 50px, transparent 0), 
+					  linear-gradient($lite 50px, transparent 0), 
+	radial-gradient(circle 14px , $lite 100%, transparent 0);
+	background-size: 48px 15px , 15px 35px, 15px 35px, 25px 15px, 28px 28px;
+	background-position: 25px 5px, 58px 20px, 25px 17px, 2px 37px, 76px 0px;
+	background-repeat: no-repeat;
+	position: relative;
+	transform: rotate(-45deg) scale(0.7);
+  
+	&::after , &::before {
+	  content: '';
+	  position: absolute;
+	  width: 56px;
+	  height: 56px;
+	  border: 6px solid $lite;
+	  border-radius: 50%;
+	  left: -45px;
+	  top: -10px;
+	  background-repeat: no-repeat;
+	  background-image: linear-gradient($lite 64px, transparent 0), 
+	  linear-gradient($lite 66px, transparent 0), 
+	  radial-gradient(circle 4px, $lite 100%, transparent 0);
+	  background-size: 40px 1px , 1px 40px, 8px 8px;
+	  background-position: center center;
+	  animation: rotation 0.7s linear infinite;
+	}
+	&::before {
+		left: 25px;
+		top: 60px;
+	}
+  }
+
+  @keyframes rotation {
+    0% { transform: rotate(0deg) }
+    100% { transform: rotate(360deg) }
+  }

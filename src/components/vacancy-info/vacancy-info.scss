@@ -1,0 +1,58 @@
+$font_family: Arial, sans-serif;
+$color_gray: #8F8F8F;
+$color_blue: #04306A;
+$color_black: #012B34;
+$marker_color: #0DB274;
+
+.vacancy-info {
+	$root: &;
+
+	font-family: $font_family;
+	font-weight: 400;
+	// letter-spacing: -2%;
+	padding-top: 130px;
+	@media screen and (max-width: 1280px) {
+		padding-top: 60px;
+	}
+
+	&__title {
+		color: $color_blue;
+		font-size: 46px;
+		line-height: 1.14;
+		margin: 0 0 35px 0;
+		@media screen and (max-width: 1280px) {
+			font-size: 36px;
+		}
+	}
+	&__list {
+		// list-style: inside;
+		// margin-left: 30px;
+	}
+	&__list li{
+		color: $color_black;
+		font-size: 24px;
+		line-height: 1.4;
+		position: relative;
+		padding-left: 28px;
+		@media screen and (max-width: 1280px) {
+			font-size: 20px;
+		}
+	}
+	&__list li:not(:last-child){
+		margin-bottom: 12px;
+	}
+	&__list li::before{
+		content: '';
+		display: block;
+		height: 2px;
+		width: 22px;
+		background-color: $marker_color;
+		position: absolute;
+		top: 16px;
+		left: 0;
+		@media screen and (max-width: 1280px) {
+			top: 12px;
+			width: 18px;
+		}
+	}
+}
