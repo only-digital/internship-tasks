@@ -1,12 +1,23 @@
 import Component from '../../app/js/base/Component';
 
+const succsesHTML = (props) => {
+    return (
+        `<div class="sucsses-placeholder footer__sucsses-placeholder">
+        <svg class="sucsses-placeholder-icon" focusable="false">
+        <use xlink:href="#checked-svg"></use>
+        </svg>
+        <span class="sucsses-placeholder-text">Форма успешно отправлена</span>
+        <div>
+        `
+    )
+}
+//представим что это pug компонента
 class Footer extends Component {
     form;
     formElements;
     inputCt;
     checkboxCt;
     button;
-    succses;
 
     constructor(element) {
         super(element);
@@ -14,7 +25,6 @@ class Footer extends Component {
         this.inputCt = this.getElement("input-ct");
         this.checkboxCt = this.getElement("checkbox-ct")
         this.button = this.getElement("button");
-        this.succses = this.getElement("sucsses-placeholder");
         this.initialFormElemts();
 
         this.form.addEventListener("submit", this.onSubmit);
@@ -60,8 +70,8 @@ class Footer extends Component {
             this.inputCt.classList.add("input-ct_disabled");
             this.checkboxCt.classList.add("checkbox-ct_disabled");
 
-            this.button.style.display = "none";
-            this.succses.style.display = "flex";
+            this.button.remove();
+            this.form.innerHTML += succsesHTML();
             return;
         }
     }
