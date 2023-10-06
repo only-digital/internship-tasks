@@ -68,24 +68,12 @@ $time: 0.5s;
 		font-weight: 400;
 		line-height: 120%; /* 32.4px */
 		width: calc(100% - 44px);
-		@media (max-width: 1440px){
-		
-		}
-		@media (max-width: 1280px) {
-			
-		}
-		@media (max-width: 768px) {
-			
-		}
-		@media (max-width: 375px) {
-			
-		}
 	}
 	.spoiler__svg {
 		height: 55px; //actual svg path is smaller ~20px
 		width: 55px;
 		transform: rotate(0deg);
-		transition: all $time ease-in-out;
+		transition: transform $time ease-in-out;
 		@media (max-width: 1440px){
 			height: 36px; //actual svg path is smaller ~14px
 			width: 36px;
@@ -100,7 +88,6 @@ $time: 0.5s;
 		line-height: 150%; /* 22.5px */
 		height: fit-content;
 		width: 100%;
-		transition: all $time ease-in;
 		@media (max-width: 1440px){
 			font-size: 15px;
 		}
@@ -120,7 +107,7 @@ $time: 0.5s;
 	@include spoiler;
 	.spoiler__svg {
 		transform: rotate(45deg);
-		transition: all $time ease-in-out;
+		transition: transform $time ease-in-out;
 	}
 	.spoiler__text {
 		animation-name: slideOut;
@@ -135,7 +122,8 @@ $time: 0.5s;
 		height: 0;
 		margin-bottom: 0;
 		overflow: hidden;
-		transition: all $time ease-in;
+		transition: height $time ease-in,
+					margin-bottom $time ease-in;
 	}
 }
 
