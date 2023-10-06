@@ -12,7 +12,13 @@ const ContentBlock = ({ props }) => {
     const title = props.title;
 
     const onToggleTaskStatus = (task) => {
-        setTasks(prev => prev.map((t) => t === task ? { ...t, isCompleted: !t.isCompleted } : t));
+        setTasks(prev =>
+            prev.map((currentTask) =>
+                currentTask === task ?
+                    { ...currentTask, isCompleted: !currentTask.isCompleted } :
+                    currentTask
+            )
+        );
     }
 
     const onDeleteHandler = (deleteTask) => {
@@ -29,7 +35,7 @@ const ContentBlock = ({ props }) => {
             <div className={styled.ContentBlock__tasks}>
                 <div className={styled.ContentBlock__tasks_header}>
                     <header>{title}</header>
-                    <SearchElement tasks={tasks} onInputChange={onChangeHandler}/>
+                    <SearchElement tasks={tasks} onInputChange={onChangeHandler} />
                 </div>
                 {filtredTasks.map((task, idx) => (
                     <TaskElement
