@@ -1,0 +1,6 @@
+mixin spoiler({ title, text })
+	.spoiler&attributes(attributes)(data-component='spoiler')
+		button.spoiler__button 
+			p.spoiler__button__title!=title 
+			+svg('spoiler-icon').spoiler__button__icon
+		p.spoiler__text!=text
