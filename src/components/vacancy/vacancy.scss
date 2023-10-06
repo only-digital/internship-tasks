@@ -1,5 +1,26 @@
-.vacancy {
-	$root: &;
+//color palette
+ $blue: #04306A;
+ $black: #012B34;
 
-	//Your code here
+
+.vacancy {
+	font-family: Arial, Helvetica, sans-serif;
+	&__wrapper {
+		width: 1600px;
+		margin: 0 auto;
+		padding: 115px 80px 45px;
+	}
+	&__header {
+		width: 100%;
+		margin-bottom: 144px;
+
+	}
+	&__section {
+		width: 100%;
+		margin-bottom: 130px;
+	}
+	& form {
+		width: 100%;
+		padding: 23px 137px 0 23px;
+	}
 }
