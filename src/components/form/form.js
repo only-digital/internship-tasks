@@ -3,6 +3,7 @@ import Component from '../../app/js/base/Component';
 const errorsText = {
     email: 'Поле E-mail обязательно',
     confirm: 'Необходимо согласится с условиями',
+    server: 'Ошибка сервера'
 }
 class Form extends Component {
     controlEl;
@@ -42,7 +43,7 @@ class Form extends Component {
             if (response.status === 200) {
                 this.setSuccess();
             } else if (response.status === 422) {
-                this.setError(response.statusText);
+                this.setError(errorsText.server);
             }
         }).finally(() => this.hidePreloader()); 
     }
