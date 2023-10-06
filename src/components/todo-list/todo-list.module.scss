@@ -21,7 +21,6 @@
 		margin-bottom: 10px;
 	}
 	&__labelName {
-		//cursor: default;
 		transition: color 0.3s ease-in-out 0s;
 		color: rgba(22, 31, 62, 0.90);
 		font: 400 normal 24px/130% 'Roboto', sans-serif;
@@ -34,7 +33,6 @@
 	&__labelNameCompleted {
 		color: rgba(22, 31, 62, 0.30);
 		text-decoration-line: line-through;
-		//cursor: default;
 		transition: color 0.3s ease-in-out 0s;
 		font: 400 normal 24px/130% 'Roboto', sans-serif;
 
