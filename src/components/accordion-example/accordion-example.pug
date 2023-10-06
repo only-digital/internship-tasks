@@ -1,8 +1,25 @@
-
-
+-
+	var accordionData = [
+		{
+			title:"Nullam tincidunt vestibulum porttitor",
+			text:"Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."
+		},{
+			title:"Class aptent taciti sociosqu ad litora",
+			text:"Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."
+		},{
+			title:"Nulla fringilla ligula elit, non laoreet ipsum rutrum eget",
+			text:"Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."
+		},{
+			title:"Mauris ut suscipit tellus",
+			text:"Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."
+		},{
+			title:"Nullam placerat porta libero, vel maximus augue euismod eget",
+			text:"Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."
+		},
+	]
 
 mixin accordion-example(props)
-	.accordion-example&attributes(attributes)(data-component='accordion-example')
+	li.accordion-example&attributes(attributes)(data-component='accordion-example')
 		button.accordion-example__button=`${props.title}`
 			+svg('button_icon').accordion-example__button-icon
 		p.accordion-example__text=`${props.text}`
