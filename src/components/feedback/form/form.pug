@@ -1,0 +1,13 @@
+include ./input-mail/input-mail
+include ./input-fyle/input-fyle
+include ./textarea/textarea
+include ./conf-checkbox/conf-checkbox
+include ./button/button
+
+mixin form(props)
+    .form&attributes(attributes)
+        +input-mail
+        +textarea
+        +input-fyle
+        +conf-checkbox
+        +button

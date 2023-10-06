@@ -1,0 +1,10 @@
+@import "./form/form.scss";
+
+.feedback {
+	display: flex;
+	justify-content: space-between;
+	&__title{
+		width: 30%;
+		
+	}
+}
