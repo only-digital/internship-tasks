@@ -44,6 +44,10 @@ mixin vacancy(props)
 						.custom-checkbox 
 							+svg('checked')
 						span.custom-checkbox-text Вы подтверждаете, что ознакомились <a>с политикой  обработки персональных данных</a>
-				button(type="submit") 
+				button(type="submit" style="display: none;") 
 					span Отправить
 					+svg('arrow-right')
+				.vacancy__contact__success
+					.circle 
+						+svg('check-success')
+					span Форма успешно отправлена

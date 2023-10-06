@@ -2,7 +2,7 @@ $steel: #8f8f8f;
 $blue-color: #04306a;
 $black-color: #012b34;
 $cobolt-color: #0041a0;
-$text-error-color: #EF1C1C;
+$text-error-color: #ef1c1c;
 
 .vacancy {
     $root: &;
@@ -141,10 +141,10 @@ $text-error-color: #EF1C1C;
             margin-top: 14px;
             align-items: center;
 
-			input {
-				display: none;
-			}
-			
+            input {
+                display: none;
+            }
+
             label {
                 display: flex;
                 align-items: center;
@@ -161,9 +161,9 @@ $text-error-color: #EF1C1C;
             }
 
             .custom-checkbox {
-				display: flex;
-				justify-content: center;
-				align-items: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 width: 16px;
                 height: 16px;
                 border: 1px solid #bcbcbc;
@@ -171,8 +171,8 @@ $text-error-color: #EF1C1C;
                 background-color: white;
                 svg {
                     fill: none;
-					width: 10px;
-					height: 8px;
+                    width: 10px;
+                    height: 8px;
                 }
             }
 
@@ -181,6 +181,34 @@ $text-error-color: #EF1C1C;
                 svg {
                     fill: white;
                 }
+            }
+        }
+
+        &__success {
+            display: flex;
+            gap: 21px;
+            align-items: center;
+            margin-top: 25px;
+
+            .circle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid #dedede;
+                border-radius: 100%;
+                width: 48px;
+                height: 48px;
+
+                svg {
+                    height: 16px;
+                    width: 21px;
+                }
+            }
+
+            span {
+                font-size: 16px;
+                line-height: 20px;
+                color: black;
             }
         }
     }
