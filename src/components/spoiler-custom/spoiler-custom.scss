@@ -1,23 +1,134 @@
 .spoiler-custom {
-	$root: &;
+  $root: &;
+  max-width: 1600px;
+  border-bottom: 1px solid #e6e6e6;
+  font-family: Roboto;
+  padding-top: 30px;
 
-	//Your code here
+  &.active .spoiler-custom__title {
+    color: #114c9a;
+  }
+  &.active .spoiler-custom__text {
+    opacity: 1;
+    transform: translateY(0);
+    height: auto;
+    overflow: visible;
+    padding-bottom: 40px;
+
+    @media (max-width: 1440px) {
+      padding-bottom: 30px;
+    }
+    @media (max-width: 1280px) {
+      padding-bottom: 24px;
+    }
+    @media (max-width: 375px) {
+      padding-bottom: 20px;
+    }
+  }
+  &.active .spoiler-custom__img {
+    transform: rotate(135deg);
+  }
+
+  @media (max-width: 1440px) {
+    max-width: 1200px;
+    padding-top: 24px;
+  }
+  @media (max-width: 1280px) {
+    max-width: 1066px;
+    padding-top: 20px;
+  }
+  @media (max-width: 768px) {
+    max-width: 688px;
+    padding-top: 24px;
+  }
+  @media (max-width: 375px) {
+    max-width: 327px;
+    padding-top: 20px;
+  }
+}
+
+.spoiler__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  padding-bottom: 30px;
+
+  @media (max-width: 1440px) {
+    margin-bottom: 20px;
+  }
+  @media (max-width: 1280px) {
+    margin-bottom: 16px;
+  }
+  @media (max-width: 768px) {
+    gap: 24px;
+  }
+  @media (max-width: 375px) {
+    gap: 22px;
+  }
 }
 
 .spoiler-custom__title {
-	color:green;
-}
+  color: #012b34;
+  font-size: 36px;
+  line-height: 120%;
+  cursor: pointer;
 
-.spoiler-custom__btn,
-.spoiler__header {
-	width: auto;
-}
-
-.spoiler-custom__btn-img {
-	height: 32px;
-	width: 32px;
+  @media (max-width: 1440px) {
+    font-size: 27px;
+  }
+  @media (max-width: 1280px) {
+    font-size: 24px;
+  }
+  @media (max-width: 768px) {
+    font-size: 27px;
+  }
 }
 
 .spoiler-custom__text {
-	color: yellow;
+  max-width: 942px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 150%;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+
+  @media (max-width: 1440px) {
+    max-width: 840px;
+    font-size: 15px;
+  }
+  @media (max-width: 1280px) {
+    max-width: 640px;
+    font-size: 14px;
+  }
+  @media (max-width: 768px) {
+    max-width: 612px;
+    font-size: 15px;
+  }
+}
+
+.spoiler-custom__img {
+  width: 20px;
+  height: 19.914px;
+  transition: all 0.3s ease;
+
+  @media (max-width: 1440px) {
+    width: 18.942px;
+    height: 18.92px;
+  }
+  @media (max-width: 1280px) {
+    width: 16px;
+    height: 16px;
+  }
+  @media (max-width: 768px) {
+    width: 20px;
+    height: 20px;
+  }
+  @media (max-width: 375px) {
+    width: 16px;
+    height: 16px;
+  }
 }

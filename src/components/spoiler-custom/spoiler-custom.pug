@@ -2,5 +2,5 @@ mixin spoiler-custom(props)
 	.spoiler-custom&attributes(attributes)(data-component='spoiler-custom')
 		.spoiler__header
 			span.spoiler-custom__title!= props.title
-			+svg('plus').spoiler-custom__btn-img
+			+svg('plus').spoiler-custom__img
 		p.spoiler-custom__text!= props.text
