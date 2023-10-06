@@ -1,5 +1,5 @@
-
 @import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
 
 .only-li-content {
 	$root: &;
@@ -11,20 +11,27 @@
 
 	&__header{
 		display: flex;
-		justify-content: space-between
+		justify-content: space-between;
+		@include headerBlockPadding($xl-size,$m-size,$xs-size);
 	}
 
 	&__header-text{
 
 		@include medFont();
-		color: $dark-blue
+		transition: $transition-color;
+		color: $blue;
+		
 
 	}
 
 	&__content-block{
 		
 		@include adaptiveWidthTextContent();
-		padding-right: 15px
+		@include paddingTextBlock($xl-size,$m-size,$xs-size);
+		transition: $transition-slider;
+		overflow: hidden;
+		padding-right: 15px;
+	
 
 	}
 
@@ -38,12 +45,21 @@
 	&__icon{
 
 		display: flex;
-		align-items: center;
 		justify-content: center;
-
-
+		
 		svg{
-			fill: $blue;
+
+			transition: $transition-rotate;
+
+			width: 40px;
+			height: 40px;
+
+			@media(max-width:1440px){
+				width: 28px;
+				height: 28px;
+			}
+			
+			
 		}
 
 	}
@@ -54,16 +70,37 @@
 	}
 
 	&_open{
-
 		#{$root}__icon{
-			transform: rotate(45deg);
+			
+			svg{
+				transform: rotate(45deg);
+			}
+			
+		}
+		#{$root}__content-block{
+			max-height: 100%;
+
 		}
 
 	}
 
 	&_closed{
 
-		transform: rotate(0);
+		#{$root}__header-text{
+			color: $dark-blue;
+		}
+
+		#{$root}__icon{
+			
+			svg{
+				transform: rotate(0);
+			}
+		}
+
+		#{$root}__content-block{
+			max-height: 0%;
+			padding-bottom: 0px;	
+		}
 		
 	}
 	//Your code here

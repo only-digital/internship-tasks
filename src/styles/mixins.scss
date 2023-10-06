@@ -1,0 +1,113 @@
+@import './variables.scss';
+
+@mixin bigFont(){
+
+    font-family:$font-family-main;
+    font-weight: $font-weight-main;
+    line-height: 100%;
+    font-size: $xl-size;
+    $letter-spacing:0.02em;
+
+    @media(max-width:1440px){
+        font-size: $l-size;
+    }
+
+    @media(max-width:1280px){
+        font-size: $m-size;
+    }
+
+    @media(max-width:375px){
+        font-size: $s-size;
+    }
+   
+}
+
+@mixin medFont(){
+
+    font-family: $font-family-main;
+    font-weight: $font-weight-main;
+    line-height: 120%;
+    font-size: $m-size;
+    $letter-spacing:0.02em;
+
+    @media(max-width:1440px){
+        font-size: $xs-size;
+    }
+
+    @media(max-width:1280px){
+        font-size: $xxs-size;
+
+    }
+
+    @media(max-width:768px){
+        font-size: $xs-size;
+    }
+
+    @media(max-width:375px){
+        font-size: $xxs-size;
+    }
+
+}
+
+@mixin smallFont(){
+
+    font-family: $font-family-main;
+    font-weight: $font-weight-main;
+    line-height: 150%;
+    font-size: 20px;
+    $letter-spacing:0.02em;
+
+    @media(max-width:1440px){
+        font-size: 15px;
+    }
+
+}
+
+@mixin adaptiveWidthTextContent{
+    width: 60%;
+
+    @media(max-width:1440px){
+        width: 70%;
+    }
+
+    @media (max-width:768px) {
+        width: 90%;
+    }
+
+    @media(max-width:375px){
+        width: 100%;
+    }
+    
+}
+
+@mixin headerBlockPadding($big-padding, $medium-padding, $small-padding){
+    padding-block: calc($big-padding / 2);
+
+    @media(max-width: 1440px){
+
+        padding-block: calc($medium-padding / 2);
+    }
+
+    @media(max-width:1280px){
+
+        padding-block: calc($small-padding / 2);
+    }
+
+}
+
+@mixin paddingTextBlock($big-padding, $medium-padding, $small-padding){
+    
+    padding-bottom: calc(($big-padding / 2) /0.66 );
+
+    @media(max-width: 1440px){
+
+        padding-bottom: calc(($medium-padding / 2) / 0.66);
+    }
+
+    @media(max-width:1280px){
+
+        padding-bottom: calc(($small-padding / 2) / 0.66);
+
+    }
+}
+
