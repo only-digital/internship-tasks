@@ -1,0 +1,14 @@
+mixin vacancyPage(props)
+	.vacancyPage&attributes(attributes)(data-component='vacancyPage')
+		.vacancyPage__header
+			.vacancyPage__subTitle= props.date
+			h1.vacancyPage__title= props.title
+			.vacancyPage__states
+				.vacancyPage__views
+				.vacancyPage__responses
+		.vacancyPage__description
+			each item in props.content 
+				+list(item)
+		.vacancyPage__footer
+			+form
+		

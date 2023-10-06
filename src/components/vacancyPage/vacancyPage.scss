@@ -1,0 +1,51 @@
+.vacancyPage {
+	$root: &;
+
+	font-family: Arial, sans-serif;
+	&__header {
+		padding: 115px 80px 35px;
+	}
+
+	&__subTitle {
+		padding-left: 9px;
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 28px;
+		letter-spacing: -0.02em;
+		color: $steel;
+		margin-bottom: 20px;
+	}
+
+	&__title{
+		padding-bottom: 45px;
+		color: $blue;
+		font-size: 64px;
+		font-weight: 400;
+		line-height: 64px;
+		letter-spacing: -0.02em;
+	}
+
+	&__states{
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		gap: 36px;
+
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 21px;
+		letter-spacing: -0.02em;
+		color: $steel;
+	}
+
+	&__description{
+		padding: 113px 532px 109px 80px;
+		display: flex;
+		flex-direction: column;
+		gap: 130px;	
+	}
+
+	&__footer{
+		padding: 44px 217px 45px 103px;
+	}
+}

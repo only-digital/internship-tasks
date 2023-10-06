@@ -1,4 +1,9 @@
+@import '../src/styles/colors.scss';
+@import '../src/components/form/form';
+@import '../src/components/list/list';
+@import '../src/components/vacancyPage/vacancyPage';
 @import '../src/components/example-button/example-button';
+@import '../src/components/myButton/myButton';
 
 html {
     font-weight: normal;

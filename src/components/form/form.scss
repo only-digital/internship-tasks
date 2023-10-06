@@ -1,0 +1,143 @@
+.form {
+	$root: &;
+
+	$gap: 26px;
+	display: flex;
+	justify-content: space-between;
+	gap: $gap;
+
+	&__title{
+		flex: 0 0 calc((100% - $gap) / 3);
+		color: $main-blue;
+		font-size: 32px;
+		font-weight: 400;
+		line-height: 38px;
+		letter-spacing: -0.02em;
+		margin-top: 44px;
+	}
+
+	&__inner{
+		flex: 0 0 calc((100% - $gap) * 2 / 3);
+		margin: 68px 0 30px;
+	}
+
+	&__form-group{
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 25px;
+	}
+
+	&__control{
+		height: 48px;
+		padding: 8px 20px 14px 20px;
+		border-radius: 24px;
+		border: 1px solid $extra-cobolt;
+
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+		letter-spacing: -0.02em;
+	}
+
+	&__label{
+		color: $main-steel;
+		font-family: Arial;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 18px;
+		letter-spacing: -0.02em;
+		padding-left: 20px;
+		position: relative;
+	}
+
+	&__link{
+		color: $main-blue;
+	}
+
+	&__form-check{
+		margin-bottom: 30px;
+	
+		.form__label::before{
+			content: '';
+			cursor: pointer;
+			display: inline-block;
+			position: absolute;
+			left: -6px;
+			width: 16px;
+			height: 16px;
+			border: 1px solid $extra-grey1;
+		}
+
+
+		input[type="checkbox"]:checked + .form__label::before {
+			background-color: $extra-cobolt;
+		}
+
+		.form__label:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: -3px;
+			width: 5px;
+			height: 10px;
+			border: solid #fff;
+			border-width: 0 2px 2px 0;
+			transform: rotate(45deg);
+			display: none;
+		  }
+
+		  input[type="checkbox"]:checked + .form__label:after {
+			display: block;
+		  }
+
+		
+	}
+
+	&__error{
+		color: $error-color;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 21px;
+		letter-spacing: 0em;
+		margin-bottom: 14px;
+		min-height: 21px;
+	}
+
+	&--success .form__inner{
+		opacity: .3;
+		pointer-events: none;
+	}
+
+	&__success{
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 21px;
+		color: $text-color;
+		font-family: Arial;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 20px;
+		letter-spacing: -0.02em;
+	}
+
+	&__icon--success{
+		border: 2px solid grey;
+		border-radius: 50%;
+		width: 48px;
+		height: 48px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		.js-inactive {
+			display: none;
+		}
+		
+		svg{
+			height: 16px;
+			width: 22px;
+		}
+	}
+}
+

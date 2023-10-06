@@ -1,4 +1,8 @@
 import ExampleButton from "../../components/example-button/example-button";
+import VacancyPage from "../../components/vacancyPage/vacancyPage";
+import List from "../../components/list/list"
+import Form from "../../components/form/form"
+import MyButton from "../../components/myButton/myButton"
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -7,6 +11,10 @@ import ExampleButton from "../../components/example-button/example-button";
  */
 const allComponents = {
     'example-button': ExampleButton,
+    'vacancyPage': VacancyPage,
+    'list': List,
+    'form': Form,
+    'myButton': MyButton,
 }
 
 /**

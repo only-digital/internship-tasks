@@ -1,0 +1,19 @@
+mixin form(props)
+	form.form&attributes(attributes)(data-component='form')
+		h3.form__title Форма обратной связи
+		.form__inner
+			.form__form-group
+				label.form__label(for="email")='Email' 
+				input.form__control(type="email" name="email")
+			.form__error
+			.form__form-check
+				input.form__input(type="checkbox" id="confirm" name="confirm")
+				label.form__label(for="confirm") Вы подтверждаете, что ознакомились c&nbsp;
+					a.form__link(href=ref target="_blank" rel="noreferrer noopener") политикой обработки персональных данных
+			+myButton({text: 'Отправить', icon: 'arrow'})(type="submit").form__submit
+			.form__success.js-inactive
+				.form__icon--success 
+					+svg('success')
+				div Форма успешно отправлена
+
+		
