@@ -10,6 +10,7 @@ class Form extends Component {
     submitBtn;
     errorEl;
     successEl;
+    preLoaderEl;
     constructor(element) {
         super(element);
         this.controlEl = this.getElement('control');
@@ -17,6 +18,7 @@ class Form extends Component {
         this.submitBtn = this.getElement('submit');
         this.errorEl = this.getElement('error');
         this.successEl = this.getElement('success');
+        this.preLoaderEl = this.getElement('preloder');
         this.root.addEventListener('submit', this.handleSubmit)
     }
 
@@ -35,11 +37,26 @@ class Form extends Component {
             return;
         }
 
-        this.postData(values); 
+        this.showPreloader();
+        this.postData(values).then((response) => {
+            if (response.status === 200) {
+                this.setSuccess();
+            } else if (response.status === 422) {
+                this.setError(response.statusText);
+            }
+        }).finally(() => this.hidePreloader()); 
     }
 
     setError = (text) => {
         this.errorEl.textContent = text;
+    }
+
+    showPreloader = () => {
+        this.preLoaderEl.classList.add('active');
+    }
+
+    hidePreloader = () => {
+        this.preLoaderEl.classList.remove('active');
     }
 
     clearError = () => {
@@ -47,16 +64,13 @@ class Form extends Component {
     }
 
     postData = async (data) => {
-        const response = await fetch('/form',{
+        return await fetch('/form',{
             method:'POST',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
             },
             body:JSON.stringify(data)
         });
-        if (response.ok) {
-            this.setSuccess();
-        } else this.setError(response.statusText);
     } 
 
     setSuccess = () => {

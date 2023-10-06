@@ -4,6 +4,7 @@ mixin vacancyPage(props)
 			.vacancyPage__subTitle= props.date
 			h1.vacancyPage__title= props.title
 			.vacancyPage__states
+				+preLoader.vacancyPage__preloader
 				.vacancyPage__views
 				.vacancyPage__responses
 		.vacancyPage__description

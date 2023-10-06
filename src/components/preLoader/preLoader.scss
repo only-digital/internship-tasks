@@ -1,0 +1,29 @@
+.preLoader {
+	$root: &;
+	$size: 48px;
+
+	display: none;
+	height: calc($size / 10);
+	position: relative;
+	width: 100%;
+	background: rgba($extra-cobolt, 0.15);
+	&::after {
+	 	content: '';
+		width: 0;
+		height: calc($size / 10);
+		background: $green1;
+		position: absolute;
+		top: 0;
+		left: 0;
+		animation: animFw 5s linear infinite;
+	}
+	
+	&.active {
+		display: inline-block;
+	}
+
+	@keyframes animFw {
+		0% { width: 0}
+		100% { width:100%}
+	}
+}

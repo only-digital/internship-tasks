@@ -3,6 +3,7 @@ import VacancyPage from "../../components/vacancyPage/vacancyPage";
 import List from "../../components/list/list"
 import Form from "../../components/form/form"
 import MyButton from "../../components/myButton/myButton"
+import PreLoader from "../../components/preLoader/preLoader"
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -15,6 +16,7 @@ const allComponents = {
     'list': List,
     'form': Form,
     'myButton': MyButton,
+    'preLoader': PreLoader,
 }
 
 /**
