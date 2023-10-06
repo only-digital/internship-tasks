@@ -8,20 +8,10 @@ class OnlySlider extends Component {
 
         this.listItems=this.getElement('block-content');
         this.items = this.listItems.querySelectorAll('.only-li-content');
-        
-        for(let i=0;i<this.items.length;i++){
-            if(i==0){
-                this.items[i].setAttribute('first','true');
-            }
-
-
-
-        }
-        // Your code here
+        this.items[0].classList.add('only-li-content_first');
+       
     }
 
-
-    // Your code here
 }
 
 export default OnlySlider

@@ -21,7 +21,6 @@
 		transition: $transition-color;
 		color: $blue;
 		
-
 	}
 
 	&__content-block{
@@ -31,12 +30,12 @@
 		transition: $transition-slider;
 		overflow: hidden;
 		padding-right: 15px;
-	
-
+		
 	}
 
 	&__text{
 
+		@include paddingTextBlock($xl-size,$m-size,$xs-size);
 		@include smallFont();
 		color: $black;
 
@@ -49,6 +48,7 @@
 		
 		svg{
 
+			transform: rotate(45deg);
 			transition: $transition-rotate;
 
 			width: 40px;
@@ -65,25 +65,12 @@
 	}
 
 	&_first{
+		
 		border-top: 1px, solid,$grey;
 
 	}
 
-	&_open{
-		#{$root}__icon{
-			
-			svg{
-				transform: rotate(45deg);
-			}
-			
-		}
-		#{$root}__content-block{
-			max-height: 100%;
-
-		}
-
-	}
-
+	
 	&_closed{
 
 		#{$root}__header-text{
@@ -97,11 +84,16 @@
 			}
 		}
 
-		#{$root}__content-block{
-			max-height: 0%;
+		#{root}__text{
 			padding-bottom: 0px;	
+		}
+
+		#{$root}__content-block{
+			max-height: 0px;
+			padding-bottom: 0px;	
+			
 		}
 		
 	}
-	//Your code here
+
 }

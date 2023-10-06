@@ -1,5 +1,5 @@
 mixin only-li-content(props)
-	.only-li-content(class!=`${(attributes.first)?'only-li-content_first':''} only-li-content_closed`)&attributes(attributes)(data-component='only-li-content')
+	.only-li-content(class!=`only-li-content_closed`)&attributes(attributes)(data-component='only-li-content')
 		.only-li-content__header
 			h3.only-li-content__header-text!= props.header
 			.only-li-content__icon 
