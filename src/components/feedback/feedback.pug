@@ -1,6 +1,6 @@
 include ./form/form
 
 mixin feedback(props)
-	.feedback&attributes(attributes)(data-component='feedback')
+	.feedback&attributes(attributes)
 		h2.feedback__title="Форма обратной связи"
 		+form(class="feedback__form")

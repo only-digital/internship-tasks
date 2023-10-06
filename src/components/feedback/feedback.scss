@@ -1,10 +1,17 @@
 @import "./form/form.scss";
+@import "../../scssVariebles/color-varievles.scss";
 
 .feedback {
+	padding: 3em;
 	display: flex;
 	justify-content: space-between;
 	&__title{
 		width: 30%;
-		
+		font-size: 39px;
+		color:$blue;
+		font-weight: 700;
+	}
+	&__form{
+		width: 60%;
 	}
 }
