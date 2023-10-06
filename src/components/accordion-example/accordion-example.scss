@@ -1,0 +1,107 @@
+@import '../../pages/index.scss';
+@import './variables.scss';
+.accordion-example {
+  $root: &;
+  padding: $accordion-item-paddings-1920 0;
+
+  position: relative;
+  border-bottom: 1px solid $border-color;
+  @media screen and (max-width: 1440px) {
+    padding: $accordion-item-paddings-1440 0;
+  }
+  @media screen and (max-width: 1280px) {
+    padding: $accordion-item-paddings-1280 0;
+  }
+  @media screen and (max-width: 768px) {
+    padding: $accordion-item-paddings-768 0;
+  }
+
+  @media screen and (max-width: 375px) {
+    padding: $accordion-item-paddings-375 0;
+  }
+
+  &:first-of-type {
+    border-top: 1px solid $border-color;
+  }
+
+  &__button {
+    text-align: left;
+    font-size: $title-size-1920;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media screen and (max-width: 1440px) {
+      font-size: $title-size-1440;
+    }
+    @media screen and (max-width: 1280px) {
+      font-size: $title-size-1280;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: $title-size-768;
+    }
+    @media screen and (max-width: 375px) {
+      font-size: $title-size-1440;
+    }
+    &_active {
+      color: $title-color-active;
+    }
+  }
+  &__button-icon {
+    flex-shrink: 0;
+    align-self: flex-start;
+    width: 30px;
+    margin-left: 24px;
+    aspect-ratio: 1;
+    transition: transform 0.5s;
+    @media screen and (max-width: 1440px) {
+      width: 24px;
+    }
+    @media screen and (max-width: 1280px) {
+      width: 16px;
+    }
+    @media screen and (max-width: 768px) {
+      width: 24px;
+    }
+    @media screen and (max-width: 320px) {
+      width: 16px;
+    }
+    &_transform_rotated {
+      transform: rotate(45deg);
+    }
+  }
+  &__text {
+    padding-bottom: 0;
+    padding-top: 0;
+    width: calc(327px + (942 - 327) * (100% - 327px) / (1600 - 327));
+    display: block;
+    overflow: hidden;
+    max-height: 0;
+    font-size: $text-size-1920;
+    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1),
+      padding 0.5s cubic-bezier(0, 1, 0, 1);
+    @media screen and (min-width: 1920px) {
+      width: 942px;
+    }
+    @media screen and (max-width: 1440px) {
+      font-size: $text-size-1440;
+    }
+    @media screen and (max-width: 1280px) {
+      font-size: $text-size-1280;
+    }
+    @media screen and (max-width: 768px) {
+      font-size: $text-size-768;
+    }
+    @media screen and (max-width: 375px) {
+      font-size: $text-size-375;
+    }
+
+    &_visible {
+      padding-bottom: 10px;
+      padding-top: 30px;
+      max-height: 10000px;
+      transition: max-height 0.5s cubic-bezier(1, 0, 1, 0),
+        padding 0.5s cubic-bezier(1, 0, 1, 0);
+    }
+  }
+}

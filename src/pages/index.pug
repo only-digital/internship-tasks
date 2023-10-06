@@ -1,7 +1,14 @@
 extends ../../build_modules/common
 
 
+
 block body
     +example-button()
     +example-button()
-    //Your code here
+    .accordion 
+        h1.accordion__title Lorem ipsum dolor
+        +accordion-example({title:"1. Nullam tincidunt vestibulum porttitor", text:"Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."})
+        +accordion-example({title:"2. Class aptent taciti sociosqu ad litora", text:"Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."})
+        +accordion-example({title:"3. Nulla fringilla ligula elit, non laoreet ipsum rutrum eget", text:"Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."})
+        +accordion-example({title:"4. Mauris ut suscipit tellus", text:"Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."})
+        +accordion-example({title:"5. Nullam placerat porta libero, vel maximus augue euismod eget", text:"Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."})
