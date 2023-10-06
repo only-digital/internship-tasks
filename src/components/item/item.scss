@@ -51,7 +51,6 @@
 	}
 	&__text {
 		font-size: 20px;
-		margin-bottom: 40px;
 		text-align: left;
 		color: transparent;
 		transition: color .3s ease;
@@ -59,9 +58,9 @@
 	}
 
 	&__dropdown{
-		max-height: 0;
+		height: 0;
 		overflow: hidden;
-		transition: max-height 0.3s ease;
+		transition: height 0.3s ease;
 	}
 	
 	&.open > &__title {
@@ -69,13 +68,13 @@
 	}
 
 	&.open .dropdown {
-		max-height: 300px;
-		transition: max-height 0.3s ease;
+		transition: height 0.3s ease;
+		margin-bottom: 30px;
 	}
+
 	&.open &__text {
 		color: black;
 		transition: color .3s ease;
-		
 	}
 	
 	&__status {

@@ -5,7 +5,7 @@ import Item from '../../components/item/item'
  * Значение - JS-класс компонента (Импорт добавляется вручную)
  */
 const allComponents = {
-    'item': Item,
+    'item': Item
 
 }
 
