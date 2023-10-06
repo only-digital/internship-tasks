@@ -1,4 +1,4 @@
-.input {
+.input-email {
 	$root: &;
 	font-family: 'Arial',sans-serif;
 	font-style: normal;
@@ -25,6 +25,11 @@
 		background-color: #F4F4F4;
 		border-radius: 24px;
 		border: none;
+	}
+
+	&__input.input-email__input_error {
+		border-radius: 24px;
+		border: 1px solid #FF0000;
 	}
 
 	&__input::placeholder {

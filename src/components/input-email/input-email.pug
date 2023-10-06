@@ -1,0 +1,6 @@
+mixin input-email({ placeholder='',disabled=false}={})
+	.input-email(class=disabled&&'input-email_disabled')(data-component='input-email')
+		.input-email__wrapper
+			input.input-email__input(type="text" placeholder=placeholder)&attributes(attributes)
+			+svg('tip').input-email__svg.input-email_invisible
+		span.input-email__error.input-email_invisible

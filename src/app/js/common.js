@@ -2,7 +2,7 @@ import ExampleButton from "../../components/example-button/example-button";
 import Textarea from "../../components/textarea/textarea";
 import Checkbox from "../../components/checkbox/checkbox";
 import Button from '../../components/button/button';
-import Input from '../../components/input/input';
+import InputEmail from "../../components/input-email/input-email";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -15,7 +15,7 @@ const allComponents = {
     'textarea': Textarea,
     'checkbox': Checkbox,
     'button': Button,
-    'input':Input,
+    'input-email':InputEmail,
 }
 
 /**
