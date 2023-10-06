@@ -1,0 +1,10 @@
+mixin feedback-form(props)
+	.feedback-form&attributes(attributes)(data-component='feedback-form')
+		h1!=props.text
+		form.feedback-form__controls 
+			+email-input({ text: 'E-mail' })
+			+text-area({ text: 'Ваше сообщение' })
+			+attach-button({ text: 'Прикрепить файл' })
+			+checkbox()
+			+submit-button({ text: 'Отправить' })
+

@@ -1,0 +1,4 @@
+mixin submit-button(props)
+	button(type='submit').submit-button.disabled&attributes(attributes)(data-component='submit-button')
+		span!= props.text
+		+svg('arrow-icon')

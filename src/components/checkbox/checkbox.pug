@@ -1,0 +1,5 @@
+mixin checkbox(props)
+	.checkbox&attributes(attributes)(data-component='checkbox')
+		label(for="agreement-check") Вы подтверждаете, что ознакомились #[a(href='') c политикой обработки персональных данных]
+			input#agreement-check(type="checkbox" name='agreement').checkbox__status
+			span

@@ -1,0 +1,6 @@
+mixin email-input(props)
+	.email-input&attributes(attributes)(data-component='email-input')
+		input(type="text" id='email' name='email')
+		label(for="email")!= props.text
+		+svg('valid-icon')
+		span.email-input__error-field

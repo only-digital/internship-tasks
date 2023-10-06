@@ -1,0 +1,76 @@
+@import "../../pages/global";
+
+.submit-button {
+	$root: &;
+
+	width: -webkit-fit-content;
+	width: -moz-fit-content;
+	width: fit-content;
+	height: 48px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 14px;
+
+	margin-top: 30px;
+	padding: 0px 14px 0px 18px;
+
+	border: 1px solid $extra-gray;
+	border-radius: 25px;
+
+	background: $white;
+
+	transition: background-color 0.3s;
+
+	&:hover {
+		background: $cobolt;
+
+		span {
+			color: $white;
+		}
+
+		svg {
+			fill: $white;
+		}
+	}
+
+	&:active {
+		background: $blue;
+	}
+
+	&:focus-visible {
+		outline: $jordy-blue solid 3px;
+
+		span {
+			color: $cobolt;
+		}
+
+		svg {
+			fill: $cobolt;
+		}
+	}
+
+	span {
+		color: $black;
+
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 100%; /* 16px */
+		letter-spacing: -0.32px;
+
+		transition: color 0.3s;
+	}
+
+	svg {
+		width: 32px;
+		height: 32px;
+
+		transition: fill 0.3s;
+	}
+
+	&.disabled {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+}

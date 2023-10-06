@@ -1,0 +1,6 @@
+mixin text-area(props)
+	.text-area&attributes(attributes)(data-component='text-area')
+		textarea(id='message' name="message")
+		label!= props.text
+		+svg('valid-icon')
+		span.text-area__error-field

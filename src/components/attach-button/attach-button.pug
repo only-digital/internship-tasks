@@ -1,0 +1,11 @@
+mixin attach-button(props)
+	.attach-button&attributes(attributes)(data-component='attach-button')
+		label(for='attach-file').attach-button__label
+			input(type="file" id='attach-file' name='attachment' accept='.pdf,.doc,.docx' multiple).attach-button__input
+			span.attach-button__text!= props.text
+			+svg('plus-icon').attach-button__svg
+		span.attach-button__error-field
+		.attach-button__notice
+			.attach-button__notice-arrow
+			span.attach-button__notice-text Вы можете загрузить только 2 документа
+		.attach-button__file-tabs
