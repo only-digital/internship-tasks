@@ -52,7 +52,8 @@ $white: #ffffff;
     &_size_large {
       width: 854px;
       height: 100%;
-      padding: 48px 0px 0px 49px;
+      padding-top: 48px;
+      padding-left: 49px;
     }
 
     &_size_medium {
