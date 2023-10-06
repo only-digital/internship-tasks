@@ -1,13 +1,26 @@
-import Component from '../../app/js/base/Component';
+import Component from "../../app/js/base/Component";
 
 class Vacancy extends Component {
     constructor(element) {
         super(element);
 
-        // Your code here
+        this.viewsElement = this.getElement("views");
+        this.responsesElement = this.getElement("responses");
+        this.updateStats();
     }
 
-    // Your code here
+    getStats = async () => {
+        const res = await fetch("/stats");
+        const data = await res.json();
+        return data;
+    };
+
+    updateStats = async () => {
+        const stats = await this.getStats();
+
+        this.viewsElement.textContent = stats.views;
+        this.responsesElement.textContent = stats.responses;
+    };
 }
 
-export default Vacancy
+export default Vacancy;
