@@ -1,0 +1,51 @@
+$black: #012B34;
+
+.accordion {
+	border-bottom: 1px solid #E6E6E6;
+	max-width: 1620px;
+	margin: 0 auto;
+}
+.accordion-title {
+	margin-bottom: 80px;
+	font-size: 64px;
+	line-height: 64px;
+	color: $black;
+}
+@media (max-width: 1440px) {
+	.accordion {
+		max-width: 1212px;
+	}
+	.accordion-title {
+		margin-bottom: 60px;
+		font-size: 48px;
+		line-height: 48px;
+	}
+}
+@media (max-width: 1280px) {
+	.accordion {
+		max-width: 1060px;
+	}
+	.accordion-title {
+		margin-bottom: 56px;
+		font-size: 42px;
+		line-height: 42px;
+	}
+}
+@media (max-width: 768px) {
+	.accordion {
+		max-width: 680px;
+	}
+	.accordion-title {
+		margin-bottom: 50px;
+	}
+}
+@media (max-width: 375px) {
+	.accordion {
+		max-width: 327px;
+	}
+	.accordion-title {
+		margin-bottom: 40px;
+		font-size: 30px;
+		line-height: 30px;
+	}
+}

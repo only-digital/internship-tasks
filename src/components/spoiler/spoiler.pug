@@ -1,0 +1,6 @@
+mixin spoiler(props)
+	.spoiler&attributes(attributes)(data-component='spoiler')
+		.spoiler__caption
+			h2.spoiler__caption__title!=props.caption 
+			+svg('closeIcon').spoiler__caption__svg
+		p.spoiler__description!=props.description
