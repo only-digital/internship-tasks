@@ -3,14 +3,12 @@ import Component from '../../app/js/base/Component';
 class Accordion extends Component {
     
     text;
-    title;
 
     constructor(element) {
         super(element);
         this.text = this.getElement('text');
-        this.title = this.getElement('title');
             
-        this.title.addEventListener("click", this.onClick);
+        this.root.addEventListener("click", this.onClick);
     }
 
     // Your code here
