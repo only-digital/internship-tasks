@@ -1,0 +1,8 @@
+mixin button-slider(props)
+	.button-slider
+		.button-slider__pagination
+			button.pagination__btn&attributes(attributes)
+				+svg('pagination').pagination__svg.pagination__svg_left&attributes(attributes)
+			button.pagination__btn&attributes(attributes)
+				+svg('pagination').pagination__svg&attributes(attributes)
+		span.button-slider__numbers 01 / 04

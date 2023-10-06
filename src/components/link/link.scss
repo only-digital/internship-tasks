@@ -1,0 +1,63 @@
+.link {
+  $root: &;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  &:active {
+    #{$root}__text {
+      color: #bf1d26;
+    }
+  }
+  &_disabled {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
+
+    #{$root}__text {
+      color: #bcbcbc;
+    }
+
+    &:focus {
+      background: none;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    font-size: 16px;
+    letter-spacing: -0.32px;
+    gap: 12px;
+
+    &:hover {
+      #{$root}__text {
+        color: #ff0000;
+      }
+    }
+    &:focus {
+      background: rgba(0, 65, 160, 0.15);
+      outline: none;
+    }
+  }
+
+  &__text {
+    color: #0041a0;
+    font-family: Arial;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.28px;
+    transition: color 0.3s;
+
+    @media (min-width: 1280px) {
+      font-size: 16px;
+      letter-spacing: -0.32px;
+    }
+  }
+
+  &__svg {
+    width: 24px;
+    height: 24px;
+  }
+}

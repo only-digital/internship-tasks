@@ -4,4 +4,13 @@ extends ../../build_modules/common
 block body
     +example-button({text: 'example text'})
     +example-button({text: 'disabled'})(disabled='')
-    //Your code here
+    +button-outlined({text: 'Кнопка'})
+    +button-outlined({text: 'Кнопка'})(disabled='')
+    +button-filled({text: 'Кнопка'})
+    +button-filled({text: 'Кнопка'})(disabled='')
+    +button-slider()
+    +button-slider()(disabled='')
+    +link({text: 'Link.com', href: 'link.ru', target: '_blank', svg: 'link'})()
+    +link({text: 'Link.com', href: 'link.ru', target: '_blank', svg: 'link'})(class='link_disabled')
+    +button-switch({id: 'switch'})
+    +button-switch({id: 'switchDisabled'})(checked='',disabled='')

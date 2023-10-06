@@ -1,0 +1,5 @@
+mixin link(props)
+	a(href=props.href target=props.target).link&attributes(attributes)
+		span.link__text!= props.text
+		if props.svg 
+			+svg(props.svg).link__svg

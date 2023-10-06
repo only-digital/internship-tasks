@@ -1,0 +1,45 @@
+.button-filled {
+  $root: &;
+
+  background-color: #f00;
+  border: none !important;
+
+  @media (hover: hover) {
+    &:hover {
+      background: #bf1d26 !important;
+    }
+  }
+  @media (min-width: 1280px) {
+    &:focus {
+      .button-outlined__svg {
+        fill: #fff !important;
+      }
+    }
+  }
+
+  &:disabled {
+    background: #f4f4f4;
+
+    #{$root} svg {
+      fill: #909090 !important;
+    }
+  }
+  &:active {
+    background: #81080f !important;
+  }
+
+  span {
+    color: #fff;
+
+    @media (min-width: 768px) {
+    }
+    @media (min-width: 1280px) {
+    }
+    @media (min-width: 1920px) {
+    }
+  }
+
+  .button-outlined__svg {
+    fill: #fff;
+  }
+}
