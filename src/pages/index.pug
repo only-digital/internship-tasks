@@ -8,4 +8,4 @@ block body
         h1.accordion__title Lorem ipsum dolor
         ul.accordion__list
             each accordionItem, index in accordionData
-                +accordion-example({title:`${index+1} ${accordionItem.title}`, text:`${accordionItem.text}`})
+                +accordion-example({title:`${index+1}. ${accordionItem.title}`, text:`${accordionItem.text}`})

@@ -3,9 +3,8 @@
 .accordion-example {
   $root: &;
   padding: $accordion-item-paddings-1920 0;
-
-  position: relative;
   border-bottom: 1px solid $border-color;
+  font-size: $title-size-1920;
   @media screen and (max-width: 1440px) {
     padding: $accordion-item-paddings-1440 0;
   }
