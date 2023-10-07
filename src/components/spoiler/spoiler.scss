@@ -8,18 +8,18 @@
 	cursor: pointer;
 
 	&--opened {
-		.spoiler__title {
+		#{$root}__title {
 			color: $dark-blue;
 		}
 
-		.spoiler__button {
+		#{$root}__button {
 			transform: rotate(45deg);
 		}
 	}
 
 	@media (hover:hover) {
 		&:hover {
-			.spoiler__title {
+			#{$root}__title {
 				color: $dark-blue;
 			}
 		}
