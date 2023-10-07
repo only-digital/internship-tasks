@@ -20,7 +20,6 @@ class Header extends Component {
                 }
             })
             .then((data) => {
-                console.log(data)
                 onSuccess(data);
             })
             .catch((error) => {

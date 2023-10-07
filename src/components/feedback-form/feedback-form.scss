@@ -20,7 +20,8 @@
 	}
 
 	&__label {
-		display: block;
+		display: flex;
+		flex-direction: column;
 		color: #909090;
 		font-size: 12px;
 		line-height: 150%;
@@ -29,6 +30,7 @@
 
 	&__label-text {
 		padding-left: 20px;
+		order: -1;
 	}
 
 	&__input {
@@ -41,17 +43,17 @@
 		border-radius: 24px;
 		border: 1px solid #0041A0;
 		width: 100%;
-		margin-bottom: 10px;
+		margin-bottom: 23px;
 
-		&:hover,
-		&:focus-visible {
+		&:not(:disabled):hover,
+		&:not(:disabled):focus-visible {
 			outline: 2px solid #99B3D8;
 		}
 
-		&:disabled {
-			opacity: 0.5;
+		&:disabled,
+		&:disabled+.feedback-form__label-text {
+			opacity: 0.3;
 		}
-
 	}
 
 	&__warning {
@@ -59,17 +61,22 @@
 		color: #EF1C1C;
 		font-size: 14px;
 		line-height: 150%;
-		margin-bottom: 14px;
-		opacity: 0;
+		min-height: 20px;
+		margin-bottom: 15px;
 	}
 
 	&__label-confirm {
-		position: relative;
+		position: relative;	
+		display: flex;
+		align-items: center;
+	}
+
+	&__input-confirm-text {
 		color: #909090;
 		font-size: 14px;
 		line-height: 150%;
 		padding-left: 34px;
-
+	
 		span {
 			color: #002F6C;
 		}
@@ -98,7 +105,7 @@
 	}
 
 	&__input-confirm {
-		&.visually-hidden {
+		& .visually-hidden {
 			position: absolute;
 			width: 1px;
 			height: 1px;
@@ -114,12 +121,14 @@
 			outline: 2px solid #99B3D8;
 		}
 
-		&:not(:disabled):invalid:focus+.feedback-form__input-mark {
-			border-color: #c00000;
-		}
-
 		&:checked +.feedback-form__input-mark .feedback-form__input-mark-svg {
 		display: block;
+		}
+
+		&:disabled +.feedback-form__input-mark,
+		&:disabled +.feedback-form__input-mark .feedback-form__input-mark-svg,
+		&:disabled ~.feedback-form__input-confirm-text {
+			opacity: 0.3;
 		}
 	}
 
@@ -145,10 +154,13 @@
 
 	&__sending-wrapper {
 		display: none;
-		// display: flex;
 		align-items: center;
 		column-gap: 25px;
 		margin: 30px 0;
+
+		&.successful {
+       display: flex;
+		}
 	}
 
 	&__sending-text {
@@ -175,6 +187,10 @@
 		border-radius: 25px;
 		border: 1px solid #BCBCBC;
 		cursor: pointer;
+
+		&.successful {
+			display: none;
+			 }
 	
 		@media (hover: hover) {
 			&:hover {
