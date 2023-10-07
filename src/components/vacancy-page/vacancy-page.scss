@@ -1,0 +1,11 @@
+.vacancy-page {
+	$root: &;
+
+	padding: 115px 80px;
+
+	&__description-container {
+		display: flex;
+		flex-direction: column;
+		gap: 130px;
+	}
+}

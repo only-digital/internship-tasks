@@ -1,0 +1,6 @@
+mixin description-block(props)
+	.description-block&attributes(attributes)(data-component='description-block')
+		h2.description-block__title= props.title
+		ul.description-block__list
+			each item, i in props.items
+				li.description-block__item= item.text
