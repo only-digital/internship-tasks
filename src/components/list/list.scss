@@ -1,0 +1,47 @@
+$black-color: #000402;
+$dark-teal-color: #012B34;
+$lain-color: #E6E6E6;
+$white-color: #fff;
+$blue-color: #114C9A;
+
+$font: Arial, sans-serif;
+
+.list {
+	$root: &;
+
+	max-width: 1620px;
+	width: 100%;
+	margin: 100px auto 0;
+	padding: 0 140px;
+	font-family: $font;
+
+	@media screen and (min-width: 1440px) and (max-width: 1919px) {
+		padding: 0 120px;
+	}
+
+	@media screen and (min-width: 1280px) and (max-width: 1439px) {
+		padding: 0 107px;
+	}
+
+	@media screen and (min-width: 768px) and (max-width: 1279px) {
+		padding: 0 40px;
+	}
+
+	@media screen and (max-width: 767px) {
+		padding: 0 24px;
+	}
+
+	&__title {
+		margin-bottom: 60px;
+		font-size: 48px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 100%;
+		letter-spacing: -0.96px;
+	}
+
+	&__list {
+		margin: 0;
+		padding: 0;
+	}
+}

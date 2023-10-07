@@ -1,0 +1,10 @@
+mixin spoiler(props)
+	li.spoiler&attributes(attributes)(data-component='spoiler')
+		.spoiler__container
+			h3.spoiler__title
+				span.spoiler__number= props.number + '. '
+				span.spoiler__title-text= props.title
+			.spoiler__collapse
+				p.spoiler__text= props.text
+		button.spoiler__button
+			+svg('plus-icon').spoiler__svg

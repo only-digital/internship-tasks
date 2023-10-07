@@ -1,0 +1,136 @@
+@import '../list/list';
+
+.spoiler {
+	$root: &;
+
+	display: flex;
+	justify-content: space-between;
+	gap: 80px;
+	padding: 30px 0;
+	border-top: 1px solid $lain-color;
+	border-bottom: 1px solid $lain-color;
+
+	@media screen and (min-width: 1440px) and (max-width: 1919px) {
+		padding: 24px 0;
+	}
+
+	@media screen and (min-width: 1280px) and (max-width: 1439px) {
+		gap: 37px;
+		padding: 20px 0;
+	}
+
+	@media screen and (min-width: 768px) and (max-width: 1279px) {
+		gap: 30px;
+		padding: 24px 0;
+	}
+
+	@media screen and (max-width: 767px) {
+		gap: 22px;
+		padding: 20px 0;
+	}
+
+	&__button {
+		width: 24px;
+		height: 24px;
+	}
+
+	&__svg {
+		width: 24px;
+		height: 24px;
+		transition: transform 0.3s;
+
+		@media screen and (min-width: 1280px) and (max-width: 1439px) {
+			width: 16px;
+			height: 16px;
+		}
+
+		@media screen and (min-width: 768px) and (max-width: 1279px) {
+			width: 20px;
+			height: 20px;
+		}
+
+		@media screen and (max-width: 767px) {
+			width: 16px;
+			height: 16px;
+		}
+	}
+
+	&__title {
+		color: $black-color;
+		font-size: 36px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 120%;
+		transition: color 0.3s;
+
+		@media screen and (min-width: 1440px) and (max-width: 1919px) {
+			font-size: 27px;
+		}
+
+		@media screen and (min-width: 1280px) and (max-width: 1439px) {
+			font-size: 24px;
+		}
+
+		@media screen and (min-width: 768px) and (max-width: 1279px) {
+			font-size: 27px;
+		}
+
+		@media screen and (max-width: 767px) {
+			font-size: 24px;
+		}
+	}
+
+	&__collapse {
+		display: grid;
+		grid-template-rows: 0fr;
+		overflow: hidden;
+		transition: grid-template-rows 0.4s, padding 0.4s;
+
+		&_open {
+			grid-template-rows: 1fr;
+			padding: 30px 0 10px;
+
+			#{$root}:has(&) #{$root}__title {
+				color: $blue-color;
+			}
+
+			#{$root}:has(&) #{$root}__svg {
+				transform: rotate(45deg);
+			}
+
+			@media screen and (min-width: 1440px) and (max-width: 1919px) {
+				padding: 20px 0 6px;
+			}
+
+			@media screen and (min-width: 1280px) and (max-width: 1919px) {
+				padding: 16px 0 4px;
+			}
+
+			@media screen and (max-width: 1279px) {
+				padding: 16px 0 0;
+			}
+		}
+	}
+
+	&__text {
+		max-width: 640px;
+		min-height: 0;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 150%;
+		opacity: .8;
+
+		@media screen and (min-width: 1440px) and (max-width: 1919px) {
+			font-size: 15px;
+		}
+
+		@media screen and (min-width: 1280px) and (max-width: 1439px) {
+			font-size: 14px;
+		}
+
+		@media screen and (max-width: 1279px) {
+			font-size: 15px;
+		}
+	}
+}

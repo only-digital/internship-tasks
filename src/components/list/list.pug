@@ -1,0 +1,18 @@
+include ../spoiler/spoiler
+
+- const allText = 'Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.';
+-
+    const data = [
+        {title: 'Nullam tincidunt vestibulum porttitor', text: allText},
+        {title: 'Class aptent taciti sociosqu ad litora', text: allText},
+        {title: 'Nulla fringilla ligula elit, non laoreet ipsum rutrum eget', text: allText},
+        {title: 'Mauris ut suscipit tellus', text: allText},
+        {title: 'Nullam placerat porta libero, vel maximus augue euismod eget', text: allText},
+    ];
+
+mixin list(props)
+    .list&attributes(attributes)(data-component='list')
+        h2.list__title= props.title
+        ol.list__list
+            each val, i in data
+                +spoiler({title: val.title, text: val.text, number: i + 1})
