@@ -7,7 +7,7 @@ class SpoilerItem extends Component {
   }
 
   toggleSpoiler() {
-    this.root.classList.toggle('spoiler-item__active');
+    this.root.classList.toggle('spoiler-item_active');
   }
 }
 

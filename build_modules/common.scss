@@ -1,4 +1,5 @@
 @import '../src/components/spoiler-item/spoiler-item';
+@import '../src/components/faq/faq';
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400&family=Roboto&display=swap');
 
@@ -67,74 +68,25 @@ button {
     }
 }
 
-.faq {
-    &__wrapper {
-        margin-top: 80px;
-        border-top: 1px solid rgba(230, 230, 230, 1);
-    }
-    &__title {
-        font-family: 'Roboto';
-        font-weight: 400;
-        font-size: 64px;
-        color: rgba(1, 43, 52, 1);
-    }
-}
-
 @media (max-width: 1440px) {
-    .faq {
-        &__wrapper {
-            margin-top: 60px;
-        }
-
-        &__title {
-            font-size: 48px;
-        }
-    }
-
     body {
         padding: 150px 115px 0 115px;
     }
 }
 
 @media (max-width: 1280px) {
-    .faq {
-        &__wrapper {
-            margin-top: 56px;
-        }
-
-        &__title {
-            font-size: 42px;
-        }
-    }
-
     body {
         padding: 167px 107px 0 107px;
     }
 }
 
 @media (max-width: 768px) {
-    .faq {
-        &__wrapper {
-            margin-top: 50px;
-        }
-    }
-
     body {
         padding: 174px 40px 0 40px;
     }
 }
 
 @media (max-width: 375px) {
-    .faq {
-        &__wrapper {
-            margin-top: 40px;
-        }
-
-        &__title {
-            font-size: 30px;
-        }
-    }
-
     body {
         padding: 152px 24px 0 24px;
     }

@@ -1,6 +1,6 @@
 mixin spoiler-item(number, title, description)
     .spoiler-item&attributes(attributes)(data-component='spoiler-item')
         .spoiler-item__head
-            h3.spoiler-item__head-title= number !== '' ? (number + '. ' + title) : title
+            h3.spoiler-item__head-title= `${number}. ${title}`
             +svg('spoiler-icon').spoiler-item__head-icon
         .spoiler-item__desc= description
