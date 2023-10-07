@@ -25,9 +25,9 @@ $white: #ffffff;
 
   &__title {
     font-size: 46px;
-    line-height: calc(46 / 46 * 100%);
-    letter-spacing: -0.92px;
-    margin-bottom: 61.99px;
+    line-height: 100%;
+    letter-spacing: 1px;
+    margin-bottom: 62px;
 
     grid-area: header;
     grid-auto-flow: column dense;
@@ -86,8 +86,8 @@ $white: #ffffff;
 
     &-title {
       font-size: 32px;
-      line-height: calc(38.4 / 32 * 100%);
-      letter-spacing: -0.64px;
+      line-height: 120%;
+      letter-spacing: -1px;
     }
   }
 
