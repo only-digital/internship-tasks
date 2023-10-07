@@ -1,6 +1,4 @@
 .main {
-
-
 	&__block {
 		background-color: #D9E1EC;
 		display: grid;
@@ -8,7 +6,7 @@
 		grid-template-rows: 80px auto;
 		grid-column-gap: 1px;
 		grid-row-gap: 1px;
-
+		height: 100vh;
 	}
 	&__headerLogo {
 		background-color: #ffffff;

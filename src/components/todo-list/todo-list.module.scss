@@ -1,10 +1,36 @@
 .TodoList {
 	&__header {
+		margin-bottom: 28px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+	}
+	&__headerName {
 		color: #213C57;
 		font: 600 normal 32px/123.5% 'Roboto', sans-serif;
 		font-feature-settings: 'clig' off, 'liga' off;
 		letter-spacing: 0.25px;
-		margin-bottom: 28px;
+	}
+	&__headerSearch {
+		display: inline-block;
+		border-radius: 10px;
+		background: #FFF;
+		padding: 15px 16px;
+		min-width: 608px;
+		font: 400 normal 16px/150% 'Roboto', sans-serif;
+		letter-spacing: 0.15px;
+		&::placeholder {
+			color: rgba(33, 60, 87, 0.40);
+			font: 400 normal 16px/150% 'Roboto', sans-serif;
+			letter-spacing: 0.15px;
+		}
+	}
+	&__headerIcon {
+		cursor: pointer;
+		position: absolute;
+		top: 12px;
+		right: 16px;
 	}
 	&__item {
 		background-color: #ffffff;
@@ -19,12 +45,14 @@
 		border-bottom: 1px solid #E7EAEE;
 		padding-bottom: 17px;
 		margin-bottom: 10px;
+		cursor: default;
 	}
 	&__labelName {
 		transition: color 0.3s ease-in-out 0s;
 		color: rgba(22, 31, 62, 0.90);
 		font: 400 normal 24px/130% 'Roboto', sans-serif;
 		&:hover {
+			cursor: default;
 			transition: color 0.3s ease-in-out 0s;
 			color: #007FFF;
 		}

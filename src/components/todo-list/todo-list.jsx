@@ -1,37 +1,51 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import styled from './todo-list.module.scss';
 import data from '../../../data/index.json';
+import useSearch from './useSearch.js'
 
 const TodoList = () => {
-  const [state, setState] = useState(data.tasks.map((e) => e.isCompleted))
-  console.log(state)
-
-  const [task, setTask] = useState(data.tasks)
-  console.log(task)
-
+  const [task, setTask] = useState(data.tasks);
+  const [state, setState] = useState(task.map((e) => e.isCompleted));
+  const [request, setRequest] = useState('')
   const onCompleteTask = (element, index) => {
     setState(state.map((e,i) => i === index ? e = element : e));
-    console.log(`edited ${state}`)
   }
-
   const onDeleteTask = (index) => {
     if (task[index] === index) {
-      setTask(task.splice(index+1,1))
+      setTask(task.splice(index+1,1));
     }
 
-    let item = document.querySelector(`#item-${index+1}`)
-    item.remove()
+    let item = document.querySelector(`#item-${index+1}`);
+    item.remove();
+  }
+
+  //поиск
+
+  const getSearchRequest = (event) => {
+    setRequest(event.target.value)
+  }
+
+  const onSearch = useSearch(request, task, setTask);
+
+  const onRenderSearchResult = () => {
+    onSearch.onClick()
   }
 
   return (
       <div className={styled.TodoList}>
-        <h1 className={styled.TodoList__header}>{task.title}</h1>
+        <div className={styled.TodoList__header}>
+          <h1 className={styled.TodoList__headerName}>{data.title}</h1>
+          <input type="text" className={styled.TodoList__headerSearch} placeholder={'Поиск'} onChange={(event) => getSearchRequest(event)} value={onSearch.value}/>
+          <span className={styled.TodoList__headerIcon} onClick={onRenderSearchResult}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <circle cx="11" cy="11" r="6.25" stroke="#007FFF" strokeWidth="1.5"/>
+              <path d="M15.9058 16.021L20.1944 19.697" stroke="#007FFF" strokeWidth="1.5" strokeLinecap="round"/>
+            </svg>
+          </span>
+        </div>
         {task.map((elem, index) =>
-
           <div className={styled.TodoList__item} key={`key-${index}`} id={`item-${index+1}`}>
-
             <div className={styled.TodoList__label}>
-
               {state[index]
                 ? <h2 className={styled.TodoList__labelNameCompleted} onClick={(event) => onCompleteTask(!state[index], index)} id={`id-${index+1}`}>{elem.title}</h2>
                 : <h2 className={styled.TodoList__labelName} onClick={(event) => onCompleteTask(!state[index], index)} id={`id-${index+1}`}>{elem.title}</h2>}
@@ -45,11 +59,6 @@ const TodoList = () => {
             <p className={styled.TodoList__description}>{elem.text}</p>
           </div>
           )}
-
-
-
-
-          {/* Your code here */}
       </div>
   )
 }
