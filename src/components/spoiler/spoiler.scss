@@ -15,6 +15,12 @@
 		#{$root}__button {
 			transform: rotate(45deg);
 		}
+
+		#{$root}__bottom-wrapper {
+			max-height: 600px;
+
+			transition: max-height 1s;
+		}
 	}
 
 	@media (hover:hover) {
@@ -164,6 +170,6 @@
 
 		overflow: hidden;
 
-		transition: max-height 0.3s;
+		transition: max-height 0.3s ease-out;
 	}
 }
