@@ -1,0 +1,20 @@
+- var today = new Date();
+- var todayStr = today.toLocaleDateString("ru-RU", {day: "numeric", month: "long"}) + " " + today.getFullYear();
+
+mixin loader()
+  .loader
+
+mixin page-header(props)
+  .page-header&attributes(attributes)(data-component='page-header')
+    span.page-header__date= todayStr
+    h2.page-header__title= props.title 
+    .page-header__stats
+      span.page-header__stats_views 
+        | Просмотров:  
+        span(data-type='views')
+          +loader
+      span.page-header__stats_responses 
+        | Откликов: 
+        span(data-type='responses')
+          +loader
+
