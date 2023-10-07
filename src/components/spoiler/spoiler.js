@@ -10,10 +10,10 @@ class Spoiler extends Component {
         this.spoiler = this.getElement('main-wrapper')
         this.textContent = this.getElement('bottom-wrapper')
 
-        this.root.addEventListener('click', this.onSliderClick)
+        this.root.addEventListener('click', this.onSpoilerClick)
     }
-    onSliderClick = () => {
-        this.root.classList.toggle('spoiler--active')
+    onSpoilerClick = () => {
+        this.root.classList.toggle('spoiler--opened')
 
         if (this.textContent.style.maxHeight) {
             this.textContent.style.maxHeight = null;

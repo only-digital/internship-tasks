@@ -7,7 +7,7 @@
 
 	cursor: pointer;
 
-	&--active {
+	&--opened {
 		.spoiler__title {
 			color: $dark-blue;
 		}
