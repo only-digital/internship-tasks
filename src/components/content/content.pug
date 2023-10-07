@@ -1,0 +1,6 @@
+mixin content(props)
+	.content&attributes(attributes)(data-component='content')
+		.content__title=props.title
+		ul.content__text_block
+			each val in props.texts
+				li=val

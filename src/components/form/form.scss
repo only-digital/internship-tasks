@@ -1,0 +1,122 @@
+@import "../../pages/global.scss";
+
+.form {
+  $root: &;
+  margin-bottom: 50px;
+  justify-content: space-between;
+  display: flex;
+
+  &__title {
+    font-size: 32px;
+    line-height: 120%;
+  }
+  &__email {
+    &_p {
+      color: $gray-form;
+      font-size: 12px;
+      line-height: 150%;
+      margin-left: 20px;
+    }
+    &_input {
+      width: 100%;
+      border: 1px solid $bakground-form;
+      border-radius: 24px;
+      padding: 8px 20px 14px 20px;
+      font-size: 24px;
+      background-color:$white;      
+    }
+  }
+  &__message {
+    display: block;
+    min-height: 21px;
+    font-size: 14px;
+    line-height: 150%;
+    color: $green;
+    margin: 25px auto 14px;
+  }
+  &__checkbox {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 25px;
+    p {
+      font-size: 14px;
+      line-height: 150%;
+      color: $gray-form;
+      a {
+        color: $blue-form;
+      }
+    }
+    &_lable {
+      position: relative;
+      cursor: pointer;
+      input {
+        width: 16px;
+        height: 16px;
+        border: 1px solid #bcbcbc;
+        background-color: $white;
+        &:checked {
+          background-color: $blue-form;
+        }
+      }
+      span {
+        position: absolute;
+        left: 7px;
+        top: 7px;
+        svg {
+          position: absolute;
+          fill: $white;
+          width: 10px;
+          height: 8px;
+        }
+      }
+    }
+  }
+  &__submit {
+    color: $white;
+    display: flex;
+    border-radius: 24px;
+    align-items: center;
+    gap: 14px;
+    background-color: $bakground-form;
+    padding: 7px 14px 7px 18px;
+    transition: opacity 0.3s;
+    svg {
+      fill: $white;
+      width: 32px;
+      height: 32px;
+    }
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+  &__dispatched {
+    display: none;
+    align-items: center;
+    gap: 21px;
+    span:first-child {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 48px;
+      min-height: 48px;
+      border: 2px solid $gray-dispatched;
+      border-radius: 50%;
+      svg {
+        width: 21px;
+        height: 15px;
+      }
+      p{
+        color: $blackDis;
+        font-size: 16px;
+        line-height: 124%;
+      }
+    }
+  }
+}
+.error {
+  color: $red-form;
+}
+.disabled {
+  pointer-events: none;
+  opacity: 0.3;
+}

@@ -1,0 +1,25 @@
+$gray: #8f8f8f;
+$blue: #04306a;
+$black: #012b34;
+$blackDis: #111111;
+$white: #ffffff;
+$green: #0db274;
+
+$blue-form: #002f6c;
+$gray-form: #909090;
+$gray-dispatched: #DEDEDE;
+$red-form: #ef1c1c;
+$bakground-form: #0041a0;
+
+$font-family: "Arial", Helvetica, sans-serif;
+$font-weight: 400;
+$font-size-xs: 24px;
+
+$font: $font-weight $font-size-xs $font-family;
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 115px 80px 45px;
+  font: $font;
+}

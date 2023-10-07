@@ -1,0 +1,21 @@
+mixin form(props)
+	.form&attributes(attributes)(data-component='form')
+		h3.form__title Форма обратной связи
+		form.form__form
+			div.form__email
+				p.form__email_p E-mail
+				input.form__email_input(type="email", name='email')
+				p.form__message
+			div.form__checkbox
+				label(for="checkbox").form__checkbox_lable
+					input.form__checkbox_input(type='checkbox',id='checkbox', name='checkbox' )
+					span
+						+svg('check-checkbox-svg')
+				p.form__checkbox_p Вы подтверждаете, что ознакомились c <a href="#">политикой обработки персональных данных</a>
+			div
+				button.form__submit(type='submit') Отправить
+					+svg('arrow-svg')
+				.form__dispatched 
+					span
+						+svg('check-svg')
+					p Форма успешно отправлена

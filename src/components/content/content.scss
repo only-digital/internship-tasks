@@ -1,0 +1,32 @@
+@import "../../pages/global.scss";
+
+.content {
+  $root: &;
+
+  &__title {
+    color: $blue;
+    font-size: 46px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    margin-bottom: 35px;
+  }
+  &__text {
+    &_block {
+		margin-bottom: 130px;
+		li {
+			display: flex;
+			color: $black;
+			font-size: 24px;
+			line-height: 140%;
+			margin-bottom: 12px;
+			&::before {
+				content: "";
+				margin: .7em 8px 0px 0px;
+				background-color: $green;
+				min-width: 20px;
+				height: 1px;
+			}
+		}
+	}
+  }
+}
