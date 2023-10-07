@@ -8,11 +8,12 @@ mixin itemGrid(title)
 mixin grid-container()
 	section.grid-container
 		h3.grid-container__title #[span.grid-container__title_color_red Комплексные&nbsp;]предложения для мостостроения
-		+itemGrid('Мостовая сталь/Стальные конструкции мостов').grid-container__item-1.grid-container__item_size_large
-		+itemGrid('Железобетонные конструкции мостов').grid-container__item-2.grid-container__item_size_medium
-		+itemGrid('Дорожные ограждения барьерного типа').grid-container__item-3.grid-container__item_size_medium
-		+itemGrid('Шпунтовой замок').grid-container__item-4.grid-container__item_size_small.grid-container__item_color_blue
-		+itemGrid('Мостовой крепеж').grid-container__item-5.grid-container__item_size_small
-		+itemGrid('Профили для деформационных швов').grid-container__item-6.grid-container__item_size_small.grid-container__item_color_lightBlue
-		+itemGrid('Плетеные габионы').grid-container__item-7.grid-container__item_size_medium
-		+itemGrid('Модульные мосты').grid-container__item-8.grid-container__item_size_medium
+		.grid-container__wrapper
+			+itemGrid('Мостовая сталь/Стальные конструкции мостов').grid-container__item-1.grid-container__item_size_large
+			+itemGrid('Железобетонные конструкции мостов').grid-container__item-2.grid-container__item_size_medium
+			+itemGrid('Дорожные ограждения барьерного типа').grid-container__item-3.grid-container__item_size_medium
+			+itemGrid('Шпунтовой замок').grid-container__item-4.grid-container__item_size_small.grid-container__item_color_blue
+			+itemGrid('Мостовой крепеж').grid-container__item-5.grid-container__item_size_small
+			+itemGrid('Профили для деформационных швов').grid-container__item-6.grid-container__item_size_small.grid-container__item_color_lightBlue
+			+itemGrid('Плетеные габионы').grid-container__item-7.grid-container__item_size_medium
+			+itemGrid('Модульные мосты').grid-container__item-8.grid-container__item_size_medium

@@ -7,23 +7,23 @@
   margin: 0 auto;
   padding: 122px 96px 120px 97px;
 
-  grid-template-columns: repeat(6, auto);
-  grid-template-rows: repeat(5, auto);
-  grid-template-areas:
-    "header header header header header header"
-    "item-1 item-1 item-1 item-2 item-2 item-2"
-    "item-1 item-1 item-1 item-3 item-3 item-3"
-    "item-4 item-4 item-5 item-5 item-6 item-6"
-    "item-7 item-7 item-7 item-8 item-8 item-8";
-  gap: 18.01px;
+  &__wrapper {
+    grid-template-columns: repeat(6, auto);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+      "item-1 item-1 item-1 item-2 item-2 item-2"
+      "item-1 item-1 item-1 item-3 item-3 item-3"
+      "item-4 item-4 item-5 item-5 item-6 item-6"
+      "item-7 item-7 item-7 item-8 item-8 item-8";
+    gap: 18px;
+  }
 
   &__title {
     font-size: 46px;
     line-height: 100%;
     letter-spacing: 1px;
-    margin-bottom: 62px;
+    margin-bottom: 80px;
 
-    grid-area: header;
     grid-auto-flow: column dense;
     justify-content: start;
 
