@@ -1,50 +1,52 @@
+
+-
+	let spoilers = [
+		{
+			titleText: 'Nullam tincidunt vestibulum porttitor',
+			text: `
+				Cras vel nibh ac nisi dignissim molestie et sit amet dui.
+				Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis,
+				ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.
+			`
+		},
+		{
+			titleText: 'Class aptent taciti sociosqu ad litora',
+			text: `
+				Cras vel nibh ac nisi dignissim molestie et sit amet dui.
+				Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis,
+				ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.
+			`
+		},
+		{
+			titleText: 'Nulla fringilla ligula elit, non laoreet ipsum rutrum eget',
+			text: `
+				Cras vel nibh ac nisi dignissim molestie et sit amet dui.
+				Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis,
+				ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.
+			`
+		},
+		{
+			titleText: 'Mauris ut suscipit tellus',
+			text: `
+				Cras vel nibh ac nisi dignissim molestie et sit amet dui.
+				Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis,
+				ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.
+			`
+		},
+		{
+			titleText: 'Nullam placerat porta libero, vel maximus augue euismod eget',
+			text: `
+				Cras vel nibh ac nisi dignissim molestie et sit amet dui.
+				Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis,
+				ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.
+			`
+		},
+	]
+
 mixin section-spoiler(props)
 	section.section-spoiler&attributes(attributes)(data-component='section-spoiler')
 		.container
 			h1.section-spoiler__title Lorem ipsum dolor
-			-
-				let spoilers = [
-					{
-						titleText: 'Nullam tincidunt vestibulum porttitor',
-						text: `
-							Cras vel nibh ac nisi dignissim molestie et sit amet dui.
-							Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis,
-							ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.
-						`
-					},
-					{
-						titleText: 'Class aptent taciti sociosqu ad litora',
-						text: `
-							Cras vel nibh ac nisi dignissim molestie et sit amet dui.
-							Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis,
-							ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.
-						`
-					},
-					{
-						titleText: 'Nulla fringilla ligula elit, non laoreet ipsum rutrum eget',
-						text: `
-							Cras vel nibh ac nisi dignissim molestie et sit amet dui.
-							Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis,
-							ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.
-						`
-					},
-					{
-						titleText: 'Mauris ut suscipit tellus',
-						text: `
-							Cras vel nibh ac nisi dignissim molestie et sit amet dui.
-							Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis,
-							ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.
-						`
-					},
-					{
-						titleText: 'Nullam placerat porta libero, vel maximus augue euismod eget',
-						text: `
-							Cras vel nibh ac nisi dignissim molestie et sit amet dui.
-							Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis,
-							ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.
-						`
-					},
-				]
 			each spoiler,i in spoilers 
 				+spoiler({
 					number: i + 1 + '.', 
