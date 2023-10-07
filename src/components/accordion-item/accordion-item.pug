@@ -1,0 +1,12 @@
+mixin accordion-item(props)
+	.accordion-item&attributes(attributes)(data-component='accordion-item')
+		if(props)
+			.accordion-item__block
+				h2.accordion-item__title!= props.title
+				+svg('Group').accordion-item__svg
+			p.accordion-item__text!= props.text
+		else
+			.accordion-item__block
+				h2.accordion-item__title accordionItem
+				+svg('Group').accordion-item__svg
+			p.accordion-item__text accordionText

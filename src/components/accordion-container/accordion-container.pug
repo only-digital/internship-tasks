@@ -1,0 +1,6 @@
+mixin accordion-container(props)
+	.accordion-container&attributes(attributes)(data-component='accordion-container')
+		h2.accordion-container__title Lorem ipsum dolor
+		+accordion-item({title: '1. Nullam tincidunt vestibulum porttitor', text: 'Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit. ' })
+		+accordion-item({title: '2. Class aptent taciti sociosqu ad litora', text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus dolore maxime repudiandae, excepturi asperiores numquam aliquam nisi veniam molestias consequatur sit enim nemo rerum at officia, magni voluptatum ipsam iure!'})
+		+accordion-item({title: '3. Nulla fringilla ligula elit, non laoreet ipsum rutrum eget', text: 'text-none'})

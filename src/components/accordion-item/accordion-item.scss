@@ -1,0 +1,86 @@
+@import '../styles/roots.scss';
+
+.accordion-item {
+	$root: &;
+
+	width: 91%;
+	padding-top: 30px;
+	border-bottom: 1px solid $lain;
+	cursor: pointer;
+
+	&__block {
+		display: flex;
+		justify-content: space-between;
+
+		svg {
+			width: 20px;
+			height: 20px;
+			margin-top: 10px;
+			transform: rotate(45deg);
+			transition: transform .5s ease-in-out;
+		}
+	}
+
+	&__title {
+		font-family: 'Roboto';
+		margin-bottom: 30px;
+		font-size: 36px;
+		font-weight: 400;
+		line-height: 1.2;
+		color: $dark-teal;
+	}
+
+	&__text {
+		margin: 0;
+		max-height: 0;
+		overflow: hidden;
+		font-family: 'Roboto';
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 1.5;
+		color: $black;
+		opacity: 0.8;
+		transition: .5s ease-in-out;
+
+	}
+
+	@media (max-width:1440px) {
+
+		&__title {
+			font-size: 27px;
+		}
+
+		&__text {
+			font-size: 15px;
+		}
+	}
+
+	@media (max-width:1280px) {
+
+		margin: 0 auto;
+
+		&__title {
+			font-size: 24px;
+		}
+
+		&__text {
+			font-size: 14px;
+		}
+	}
+
+	@media (max-width:768px) and (min-width:376px) {
+		&__title {
+			font-size: 24px;
+		}
+
+		&__text {
+			font-size: 14px;
+		}
+	}
+
+	@media (max-width:375px) {
+		&__text {
+			font-size: 15px;
+		}
+	}
+}

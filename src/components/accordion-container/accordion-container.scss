@@ -1,0 +1,41 @@
+.accordion-container {
+	$root: &;
+
+	height: max-content;
+	padding: 183px 0 138px 160px;
+
+	&__title {
+		font-family: 'Roboto';
+		font-size: 64px;
+		font-weight: 400;
+		line-height: 1;
+		letter-spacing: -1.28px;
+	}
+
+	@media (max-width:1440px) {
+		padding: 179px 0 141px 120px;
+
+		&__title {
+			font-size: 48px;
+			letter-spacing: -0.96px;
+		}
+	}
+
+	@media (max-width:1280px) {
+		padding: 167px 0 48px 0;
+
+		&__title {
+			width: 91%;
+			margin: 0 auto;
+			font-size: 42px;
+			letter-spacing: -0.84px;
+		}
+	}
+
+	@media (max-width:375px) {
+		&__title {
+			font-size: 30px;
+			letter-spacing: -0.6px;
+		}
+	}
+}

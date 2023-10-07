@@ -1,12 +1,13 @@
-import ExampleButton from "../../components/example-button/example-button";
-
+import AccordionItem from "../../components/accordion-item/accordion-item";
+import AccordionContainer from "../../components/accordion-container/accordion-container";
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
  * Ключ объекта - Название компонента, которое было указано во время его создания (совпадает с именем файлов)
  * Значение - JS-класс компонента (Импорт добавляется вручную)
  */
 const allComponents = {
-    'example-button': ExampleButton,
+    'accordion-item': AccordionItem,
+    'accordion-container': AccordionContainer
 }
 
 
