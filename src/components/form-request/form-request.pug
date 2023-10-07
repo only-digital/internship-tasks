@@ -1,0 +1,65 @@
+mixin form-request(props)
+	.form-request&attributes(attributes)(data-component='form-request')
+		//Your code here
+		// Header
+		.form-request__header 
+			span.form-request__header-date 18 декабря 2020
+			.form-request__header-logo Консультант SAP PO
+			.form-request__header-info 
+				p Просмотров: 
+					span.form-request__header-views 123
+				p Откликов: 
+					span.form-request__header-responses 12
+
+		// Content
+		.form-request__content
+
+			.form-request__content-item
+				.form-request__content-title Вам предстоит
+				.form-request__content-text Участие в проектах в роли архитектора/консультанта по интеграции данных
+				.form-request__content-text Проектирование архитектуры интеграции по технологиям SAP (Process Orchestration 7.5, Data Services 4.2, RFC, IDOC)
+				.form-request__content-text Подбор способов взаимодействия с non-SAP системами (1C:ERP, Lotus и др.)
+				.form-request__content-text Подготовка проектной документации (ФТТ, ТЗ, АЗ, тех. проект, проектные решения по интеграции, спецификации на разработку, описания настроек)
+				.form-request__content-text Проведение аудита интеграционных сценариев и проектно-эксплуатационной документации, разработанных подрядными организациями
+				.form-request__content-text Разработка и поддержка интеграционных сценариев
+
+			.form-request__content-item 
+				.form-request__content-title Мы ожидаем
+				.form-request__content-text Знание ASAP, MS Visio, SAP PI / SAP PO, SAP HANA, JSON, XML
+				.form-request__content-text Опыт работы в сфере аналитики от 3-х лет в должности аналитика, ведущего аналитика, специалиста по внедрению информационных систем
+				.form-request__content-text Опыт разработки технических заданий и постановок задач
+				.form-request__content-text Опыт описания бизнес-процессов в нотациях BPMN и UML
+				.form-request__content-text Опыт формирования требований к информационным системам
+				.form-request__content-text Опыт составления проектной документации по ГОСТ
+
+			.form-request__content-item
+				.form-request__content-title Мы предлагаем
+				.form-request__content-text Оформление в соответствии с нормами ТК РФ, социальные гарантии
+				.form-request__content-text Крупные проекты в компании–лидере отрасли
+				.form-request__content-text Возможность модернизировать процессы реального производственного бизнеса в команде сильнейших экспертов
+				.form-request__content-text Полис ДМС (включая стоматологию)
+				.form-request__content-text Доступ к корпоративной OnLine библиотеке
+				.form-request__content-text Обучение в программах Корпоративного университета
+
+
+		.form-request__footer
+			.form-request__footer-item
+				.form-request__footer-title Форма обратной связи
+			.form-request__footer-item
+				form(class='form-request__form' method='post')
+					.form-request__form-text E-mail
+					input(class='form-request__form-email' type='email' name='email')
+					.form-request__form-error Поле E-mail обязательно
+					label.form-request__form-checkbox
+						input(class='form-request__form-checkbox-real' type='checkbox' name='checkbox')
+						span.form-request__form-checkbox-custom
+						p Вы подтверждаете, что ознакомились 
+							a(class='form-request__form-link' href='#form-request__form-checkbox') c политикой обработки персональных данныx
+					.form-request__form-submit
+						button(class='form-request__form-btn' method='post' type='submit' form='form')
+							span Отправить
+							img(src='../assets/images/Vector.png')
+						.form-request__form-success
+							div
+								img(src='../assets/images/Union.png')
+							span Форма успешно отправлена
