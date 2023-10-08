@@ -1,0 +1,26 @@
+.vacancy-header {
+    margin: 115px 0 144px 0;
+
+    &__date {
+        font-size: 20px;
+        color: $steel;
+
+        margin-bottom: 20px;
+    }
+
+    &__title {
+        font-size: 64px;
+        color: $blue;
+
+        margin-bottom: 45px;
+    }
+
+    &__stats {
+        color: $steel;
+        font-size: 16px;
+    }
+
+    &__views {
+        margin-right: 36px;
+    }
+}

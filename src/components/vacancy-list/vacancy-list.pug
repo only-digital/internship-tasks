@@ -1,0 +1,6 @@
+mixin vacancy-list(title, list)
+    .vacancy-list&attributes(attributes)
+        h2.vacancy-list__title= title
+        ul
+            each item in list
+                li.vacancy-list__item= item

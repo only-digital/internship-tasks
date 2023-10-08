@@ -1,0 +1,29 @@
+.vacancy-list {
+    max-width: 65%;
+    margin-bottom: 130px;
+
+    &__title {
+        font-size: 46px;
+        color: $blue;
+
+        margin-bottom: 35px;
+    }
+
+    & ul {
+        font-size: 24px;
+        color: $black;
+    }
+
+    &__item {
+        margin-bottom: 12px;
+        display: flex;
+        align-items: flex-start;
+
+        &::before {
+            content: '—';
+            color: $green;
+            margin-right: 8px;
+            margin-top: -2px;
+        }
+    }
+}
