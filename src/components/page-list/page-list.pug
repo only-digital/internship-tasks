@@ -1,0 +1,8 @@
+mixin page-list(props)
+	section.page-list&attributes(attributes)(data-component='page-list')
+		h2.page-list__title= props.title 
+		ul.page-list__list 
+			each item in props.items 
+				li.page-list__list-item
+					+svg('list-svg').page-list__item-icon
+					span.page-list__item-text= item

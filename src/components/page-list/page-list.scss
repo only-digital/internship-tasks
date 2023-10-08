@@ -1,0 +1,50 @@
+$font-stack: Arial, Helvetica, sans-serif;
+$color-main-text: #012B34;
+$color-secondary-text: #8F8F8F;
+$color-accent-text: #04306A;
+
+.page-list {
+	$root: &;
+
+	padding: 0 80px 130px;
+	font-family: $font-stack;
+	font-weight: 400;
+
+	&:last-of-type {
+		padding-bottom: 0;
+	}
+
+	&__title {
+		color: $color-accent-text;
+		font-size: 46px;
+		line-height: 1.2;
+		letter-spacing: calc(-.02 * 48px);
+		margin-bottom: 35px;
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	&__list-item {
+		display: flex;
+		gap: 8px;
+	}
+
+	&__item-icon {
+		display: block;
+		width: 22px;
+		height: calc(24px * 1.4);
+		flex-shrink: 0;
+	}
+
+	&__item-text {
+		color: $color-main-text;
+		font-feature-settings: 'ss08' on;
+		font-size: 24px;
+		line-height: 1.40;
+		max-width: 960px;
+	}
+}
