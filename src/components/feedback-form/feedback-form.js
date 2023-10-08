@@ -8,6 +8,7 @@ class FeedbackForm extends Component {
     inputConfirm;
     submitButton;
     sendingWrapper;
+    formLoader;
 
     constructor(element) {
         super(element);
@@ -19,6 +20,8 @@ class FeedbackForm extends Component {
         this.inputConfirm = this.getElement("input-confirm");
         this.submitButton = this.getElement("button");
         this.sendingWrapper = this.getElement("sending-wrapper");
+        this.formLoader = this.getElement("loader");
+
         this.form.addEventListener("submit", this.handlingSubmitEvent)
     }
 
@@ -37,6 +40,13 @@ class FeedbackForm extends Component {
             body: JSON.stringify(data),
         })
     };
+
+    connectLoader(meaning) {
+        if(meaning) 
+            this.formLoader.classList.add("active") 
+        else 
+            this.formLoader.classList.remove("active")
+    }
 
     renderSendInfo = (responseStatus, res) => {
         res.then(data => {
@@ -57,7 +67,7 @@ class FeedbackForm extends Component {
                 console.log(error);
             })
             .finally(()=> {
-                // connectLoader(false);
+                this.connectLoader(false);
             })
 
         return;
@@ -66,20 +76,11 @@ class FeedbackForm extends Component {
     handlingSubmitEvent = async (e) => {
         e.preventDefault();
         let formData = this.getFormData();
-        // connectLoader(true);
+        this.connectLoader(true);
         const response = await this.sendData(formData);
         const promis = response.json();
         this.renderSendInfo(response.status, promis);
     }
-
-    // connectLoader(meaning) {
-    //     if(meaning) 
-    //         this.root.classList.add('loading') 
-    //     else 
-    //         this.root.classList.remove('loading')
-    // }
-
-
 }
 
 export default FeedbackForm

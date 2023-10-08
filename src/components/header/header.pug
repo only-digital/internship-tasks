@@ -3,7 +3,9 @@ mixin header(props)
 	.header&attributes(attributes)(data-component='header')
 		time.header__date(datetime = datetime)!=props.date 
 		h1.header__title!=props.title 
-		small.header__views Просмотров:&nbsp;
-			span.header__views-num 
-		small.header__responses Откликов:&nbsp;
-			span.header__response-num 
+		.header__info-wrapper
+			small.header__views Просмотров:&nbsp;
+				span.header__views-num 
+			small.header__responses Откликов:&nbsp;
+				span.header__response-num 
+			+header-loader.header__loader
