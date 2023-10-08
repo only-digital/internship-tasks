@@ -1,3 +1,134 @@
-.grid-container {
-    // Your code here
+$bg-color: #F4F4F4;
+%bg-color {
+  color: #FFFFFF;
+  background: #04306A;
 }
+//set size of selected item
+@mixin size_window($width, $height){
+  width: $width;
+  height: $height;
+}
+//set size of span and title
+@mixin text-style($fSize, $lHeight, $tColor) {
+  font-size: $fSize;
+  line-height: $lHeight;
+  color: $tColor;
+}
+@mixin indent-span($margin) {
+  display: inline-block;
+  margin: $margin;
+}
+.grid_container {
+  @include size_window(1920px, 2156px); // size of window
+  padding: 122px 96.06px;
+  overflow: hidden;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: left;
+  font-family: Arial;
+  &_img {
+    width: 65px;
+    height: 36px;
+    & svg {
+    @extend .grid_container_img
+    }
+  }
+  &_title {
+    @include text-style(46px, 46px, #04306A);
+    font-family: Grtsk Peta;
+    margin: 0 0 80px 0;
+  }
+  &_title span {
+    color: red;
+  }
+  &_wrapper {
+    @include text-style(32px, 38px, #04306A);
+    display: grid;
+    grid-template: 856px 480px 480px/856px 856px;
+    row-gap: 16px;
+    grid-template-areas:
+    "first-line first-line"
+    "second-line second-line"
+    "third-line third-line";
+  }
+  &_first-line {
+      grid-area: first-line;
+      display: grid;
+      grid-template: 856px/856px 856px;
+      column-gap: 18px;
+    &_bridge {
+      @include size_window(856.14px, 856px);
+      background: #F4F4F4;
+      display: grid;
+      grid-template: 796px 60px/755px 100px;
+      & span {
+        @include indent-span(49px 0 0 49px); //span indent
+      }
+      & > .grid_container_img {
+        grid-area: 2/2;
+                              }
+            }
+    &_constructions-fences {
+      display: grid;
+      grid-template: 419px 419px/856px;
+      row-gap: 18px;
+    }
+    &_construction {
+      @include size_window(855px, 420px);
+      background: #F4F4F4;
+      display: grid;
+      grid-template: 350px 70px/755px 100px; //set the arrow area
+      & span {
+        @include indent-span(24px 0 0 36px);
+      }
+      & > .grid_container_img {
+        grid-area: 2/2; //move the arrow to the cell
+      }
+    }
+  }
+  &_second-line {
+      grid-area: second-line;
+    &_squares {
+    display: grid;
+    grid-template: 480px/564px 564px 564px;//set the arrow area
+      column-gap: 18px;
+    }
+    &_square {
+      @include size_window(564px, 480px);
+      background: #F4F4F4;
+      display: grid;
+      grid-template: 410px 70px/464px 100px;//set the arrow area
+      &:nth-child(odd) {
+        @extend %bg-color;
+      }
+      & span {
+        @include indent-span(23px 0 0 36px);
+      }
+      & > .grid_container_img {
+        grid-area: 2/2;  //move the arrow to the cell
+      }
+    }
+  }
+  &_third-line {
+      grid-area: third-line;
+    &_rectangles {
+      display: grid;
+      grid-template: 420px/865px 865px;
+      column-gap: 18px;
+    }
+    &_rectangle {
+      @include size_window(856.14px, 420px);
+      background: #F4F4F4;
+      display: grid;
+      grid-template: 350px 70px/756px 100px;//set the arrow area
+      & span {
+        @include indent-span(24px 0 0 49.23px);
+      }
+      & > .grid_container_img {
+        grid-area: 2/2; //move the arrow to the cell
+      }
+    }
+  }
+}
+
+

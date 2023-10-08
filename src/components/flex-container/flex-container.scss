@@ -1,3 +1,142 @@
-.flex-container {
-    // Your code here
+$bg-color: #F4F4F4;
+%flex-direction{
+  display: flex;
+  flex-direction: row;
 }
+//set color block and text
+%bg-color {
+  color: #FFFFFF;
+  background: #04306A;
+}
+//set size of selected item
+@mixin size_window($width, $height){
+  width: $width;
+  height: $height;
+}
+
+@mixin bg-and-margin($margin){
+  background: $bg-color;
+  margin: $margin;
+}
+//set size of span and title
+@mixin text-style($fSize, $lHeight, $tColor) {
+  font-size: $fSize;
+  line-height: $lHeight;
+  color: $tColor;
+}
+//set indent of span
+@mixin indent-span($margin) {
+  display: inline-block;
+  margin: $margin;
+}
+//set position of arrows
+@mixin position-arrow($top, $left, $margin) {
+  position: relative;
+  top: $top;
+  left: $left;
+  margin: $margin;
+  transform: translateY(-50%);
+}
+.flex_container {
+  @include size_window(1920px, 2156px); // size of window
+  padding: 122px 96.06px;
+  overflow: hidden;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: left;
+  font-family: Arial;
+  &_img {
+    width: 65px;
+    height: 36px;
+    & svg {
+      @extend .flex_container_img;
+    }
+  }
+  &_title {
+    @include text-style(46px, 46px, #04306A);
+    font-family: Grtsk Peta;
+    margin: 0 0 80px 0;
+  }
+  &_title span {
+  color: red;
+  }
+  &_wrapper {
+    @include text-style(32px, 38px, #04306A);
+  }
+  &_first-line {
+    @extend %flex-direction;
+
+    &_bridge {
+      @include size_window(856.14px, 856px);
+      @include bg-and-margin(0 18px 0 0); //block indent
+      & span {
+        @include indent-span(49px 0 0 49px); //span indent
+            }
+      & > .flex_container_img {
+        @include position-arrow(87.7%, 92.35%, -25px 0 0 -37.26px); //set arrow location
+                              }
+              }
+    &_constructions-fences {
+    }
+      &_construction {
+        @include size_window(854.93px, 420px);
+        @include bg-and-margin(0);
+    &:last-child {
+      margin: 16px 0 0 0;
+                  }
+        & span {
+          @include indent-span(24px 0 0 36px);
+              }
+        & > .flex_container_img {
+          @include position-arrow(80.9%, 92.35%, -36px 0 0 -33px); //set arrow location
+                                }
+                   }
+  }
+  &_second-line {
+    &_squares {
+      @extend %flex-direction; //set flex-direction of block
+    }
+      &_square{
+        @include size_window(564.35px, 480px);
+        @include bg-and-margin(16px 18px 0 0);
+    &:last-child {
+      margin: 16px 0 0 0;
+    }
+  &:nth-child(odd) {
+    @extend %bg-color;
+  }
+        & span {
+          @include indent-span(23px 0 0 36px);
+        }
+        & > .flex_container_img {
+          @include position-arrow(83.5%, 88.5%, -30px 0 0 -37.2px);
+        }
+        //& > .flex_container_img:nth-child(1) {
+        //  @include position-arrow(75.4%, 62.29%, -33px 0 0 -37.28px);
+        //}
+      }
+  }
+  &_third-line {
+    &_rectangles {
+      @extend %flex-direction;
+    }
+      &_rectangle{
+        @include size_window(856.14px, 420px);
+        @include bg-and-margin(16px 18px 0 16px);
+        &:last-child {
+          margin: 16px 0 0 0;
+                     }
+        & span {
+          @include indent-span(24px 0 0 49.23px);
+              }
+        & > .flex_container_img {
+          @include position-arrow(80.85%, 92.29%, -33px 0 0 -37.28px);
+                                }
+                  }
+                }
+}
+//fix size last square
+#fixSize.flex_container_img {
+  @include position-arrow(75.6%, 88.5%, -30px 0 0 -37.2px);
+}
+
