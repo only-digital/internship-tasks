@@ -37,11 +37,11 @@ class Header extends Component {
   };
 
   addLoader() {
-    this.loader.classList.add("loading");
+    this.loader.style.display='block';
   }
 
   removeLoader() {
-    this.loader.classList.remove("loading");
+    this.loader.style.display = "none";
   }
 
   addStats({ views, responses }) {

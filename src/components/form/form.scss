@@ -5,13 +5,22 @@
   margin-bottom: 50px;
   justify-content: space-between;
   display: flex;
-
   &__title {
     font-size: 32px;
     line-height: 120%;
   }
+  &__loader{
+    display: none;
+    // position: absolute;
+    // margin-top: 10px;    
+    width: 32px;
+    height: 32px;
+
+        
+  }
   &__email {
     &_p {
+      position: relative;
       color: $gray-form;
       font-size: 12px;
       line-height: 150%;

@@ -19,6 +19,7 @@
   }
   &__info {
     display: flex;
+    position: relative;
     gap: 36px;
     font-size: 16px;
     line-height: 130%;
@@ -26,9 +27,10 @@
     &_views{
       min-height: 21px;
     }
-
+    
   }
   &__loader {
+    position: absolute;
     display: none;
   }
 }

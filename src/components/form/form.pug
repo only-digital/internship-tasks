@@ -14,8 +14,10 @@ mixin form(props)
 				p.form__checkbox_p Вы подтверждаете, что ознакомились c <a href="#">политикой обработки персональных данных</a>
 			div
 				button.form__submit(type='submit') Отправить
-					+svg('arrow-svg')
+					+loader.form__loader
+					+svg('arrow-svg').form__arrow
 				.form__dispatched 
 					span
 						+svg('check-svg')
 					p Форма успешно отправлена
+				//- +loader.form__loader

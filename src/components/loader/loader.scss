@@ -1,5 +1,24 @@
-.loader {
-	$root: &;
+$base: #263238;
+$lite: #ebe8e8;
+$brand: #ff3d00;
+$size: 48px;
 
-	//Your code here
+.loader {
+  $root: &;
+  
+  width: $size;
+  height: $size;
+  border: 5px solid $lite;
+  border-bottom-color: $brand;
+  border-radius: 50%;
+  display: inline-block;
+  animation: rotation 1s linear infinite;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

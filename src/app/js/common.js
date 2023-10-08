@@ -1,6 +1,7 @@
 import header from "../../components/header/header";
 import content from "../../components/content/content";
 import form from "../../components/form/form";
+import loader from "../../components/loader/loader";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -11,6 +12,7 @@ const allComponents = {
   header: header,
   content: content,
   form: form,
+  loader: loader,
 };
 
 /**

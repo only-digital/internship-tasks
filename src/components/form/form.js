@@ -2,6 +2,8 @@ import Component from "../../app/js/base/Component";
 
 class Form extends Component {
   URL;
+  form;
+  loader;
   message;
   submitBtn;
   email;
@@ -12,6 +14,9 @@ class Form extends Component {
   constructor(element) {
     super(element);
     this.URL = "/form";
+    this.form = this.getElement("form");
+    this.loader = this.getElement("loader");
+    this.arrow = this.getElement("arrow");
     this.message = this.getElement("message");
     this.submitBtn = this.getElement("submit");
     this.email = this.getElement("email_input");
@@ -25,6 +30,7 @@ class Form extends Component {
 
   onSubmit = e => {
     e.preventDefault();
+    this.addLoader();
     const data = {
       email: this.form.email.value,
       confirm: this.form.checkbox.checked,
@@ -45,7 +51,7 @@ class Form extends Component {
     } else if (response.status === 200) {
       this.successMessage(json.message);
     }
-    return json;
+    this.removeLoader();
   };
 
   errorMessage = message => {
@@ -63,6 +69,14 @@ class Form extends Component {
     this.email.disabled = true;
     this.submitBtn.style.display = "none";
     this.dispatched.style.display = "flex";
+  };
+  addLoader = () => {
+    this.arrow.style.display = "none";
+    this.loader.style.display = "block";
+  };
+  removeLoader = () => {
+    this.loader.style.display = "none";
+    this.arrow.style.display = "block";
   };
 }
 
