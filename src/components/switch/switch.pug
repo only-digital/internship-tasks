@@ -1,5 +1,4 @@
-mixin switch
-	.switch
-		label(for='switch-checkbox').switch__label
-			input(type='checkbox', id='switch-checkbox').switch__input
-			span.switch__control
+mixin switch(props)
+	label.switch&attributes(attributes)
+		input(type='checkbox').switch__input
+		span.switch__control

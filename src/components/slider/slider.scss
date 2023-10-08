@@ -2,6 +2,7 @@ $white: #fff;
 $main-blue: #002f6c;
 $grey-1: #dedede;
 $grey-2: #f4f4f4;
+$grey-3: #bcbcbc;
 $accent-blue: #99b3d8;
 $main-steel: #909090;
 
@@ -75,5 +76,8 @@ $main-steel: #909090;
 	&__btn:disabled {
 		background-color: $white;
 		outline: 1px solid $grey-1;
+		#{$root}__arrow {
+			fill: $grey-3;
+		}
 	}
 }

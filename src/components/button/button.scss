@@ -48,7 +48,7 @@ $active-red: #81080f;
 		outline: 1px solid $main-steel;
 		color: $main-steel;
 		pointer-events: none;
-		&__arrow {
+		#{$root}__arrow {
 			fill: $extra-grey-1;
 		}
 	}

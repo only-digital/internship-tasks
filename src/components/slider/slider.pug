@@ -1,10 +1,10 @@
 mixin slider(props)
 	- let start = '01 '
-	.slider&attributes(attributes)
-		button.slider__btn
+	.slider
+		button.slider__btn&attributes(attributes)
 			+svg('pagination').slider__arrow
 
-		button.slider__next.slider__btn
+		button.slider__next.slider__btn&attributes(attributes)
 			+svg('pagination').slider__arrow
 
 		span.slider__pagination!=`${start}/${props.amount}`

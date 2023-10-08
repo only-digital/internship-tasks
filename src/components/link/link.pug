@@ -1,4 +1,3 @@
 mixin link(props)
-	.link&attributes(attributes)
-		a(class="link__text" href="#")!= props.text
-		+svg('link-icon').link__icon
+	a.link&attributes(attributes)= props.text
+		+svg('link-icon')
