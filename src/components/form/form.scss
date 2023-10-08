@@ -1,0 +1,79 @@
+@import '../../pages/index.scss';
+
+.form {
+	$root: &;
+	display: flex;
+	flex-direction: column;
+	padding-top: 40px;
+
+	&__email-label, &__text-label {
+		display: none;
+		padding-left: 20px;
+		@include text-style(400, 12px, 	$grey, 18px);
+
+		&.active {
+			display: block;
+		}
+	}
+
+	// &__email {
+	// 	width: 836px;
+	// 	border-bottom: 1px solid #DEDEDE;
+	// 	padding: 14px 20px 14px 0px;
+	// 	border-radius: 0;
+	// 	cursor: pointer;
+	// 	transition: background 1s ease, padding 1s ease, border-radius 1s ease;
+
+	// 	&:hover {
+	// 		background-color: $lightGrey;
+	// 		border-radius: 24px;
+	// 		padding: 14px 20px 14px 20px;
+	// 		border-bottom: none;
+	// 		transition: background 1s ease, padding 1s ease, border-radius 1s ease;
+	// 	}	
+
+	// 	&:focus-visible {
+	// 		border-radius: 24px;
+	// 		border: 1px solid $blue;
+	// 		padding: 14px 20px 14px 20px;
+
+	// 		&__label {
+	// 			display: block;
+	// 		}
+	// 	}
+	// }
+
+	// &__text {
+	// 	width: 836px;
+	// 	border-bottom: 1px solid #DEDEDE;
+	// 	padding: 14px 20px 14px 0px;
+	// 	margin-top: 20px;
+	// }
+}
+
+.input {
+	width: 836px;
+		border-bottom: 1px solid #DEDEDE;
+		padding: 14px 20px 14px 0px;
+		border-radius: 0;
+		cursor: pointer;
+		transition: background 1s ease, padding 1s ease, border-radius 1s ease;
+
+		&:hover {
+			background-color: $lightGrey;
+			border-radius: 24px;
+			padding: 14px 20px 14px 20px;
+			border-bottom: none;
+			transition: background 1s ease, padding 1s ease, border-radius 1s ease;
+		}	
+
+		&:focus-visible {
+			border-radius: 24px;
+			border: 1px solid $blue;
+			padding: 14px 20px 14px 20px;
+
+			&__label {
+				display: block;
+			}
+		}
+}

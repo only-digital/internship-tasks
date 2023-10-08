@@ -1,0 +1,7 @@
+mixin form(props)
+	form.form&attributes(attributes)(data-component='form')
+		label.form__email-label(for='email') E-mail
+		input.form__email.input(type='text', placeholder='E-mail', id='name')
+
+		//- label.form__text-label(for='message') Ваше сообщение
+		//- textarea.form__text.input(name="text", placeholder='Ваше сообщение')
