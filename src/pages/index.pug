@@ -2,6 +2,30 @@ extends ../../build_modules/common
 
 
 block body
-    +example-button({text: 'example text'})
-    +example-button({text: 'disabled'})(disabled='')
-    //Your code here
+    +button({text: 'Кнопка'})
+    +button({text: 'Кнопка'})(disabled)
+    +button({text: 'Кнопка'})(class="button--red")
+    +button({text: 'Кнопка'})(disabled)(class="button--red")
+    
+    +slider({amount: ' 04'})
+    +slider({amount: ' 04'})(disabled)
+
+    +link({text: 'Sustainalytics.com'})
+    +link({text: 'Sustainalytics.com'})(disabled)
+
+    p(style="font-family: 'Arial', sans-serif;") 
+        |Для подключения сервиса добавьте номер 
+        +text-with-link({text: '+7(921)058-57-19 '})
+        |в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже
+
+    p(style="font-family: 'Arial', sans-serif;") 
+        |Цифровые продукты, направленные на создание 
+        +text-with-link({text: 'дополнительных сервисов '})
+        |и устранение «проблемных точек» наших клиентов
+
+             
+
+    +switch
+    +switch(disabled)
+    
+

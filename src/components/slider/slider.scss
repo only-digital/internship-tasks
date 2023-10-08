@@ -5,16 +5,6 @@ $grey-2: #f4f4f4;
 $accent-blue: #99b3d8;
 $main-steel: #909090;
 
-// @font-face {
-// 	font-family: 'Grtsk-Peta';
-// 	src: local('Grtsk-Peta-Semibold'),
-// 		url('../../fonts/GrtskPeta-Semibold.woff2') format('woff2'),
-// 		url('../../fonts/GrtskPeta-Semibold.woff') format('woff');
-// 	font-style: normal;
-// 	font-weight: 600;
-// 	font-display: swap;
-// }
-
 .slider {
 	$root: &;
 
@@ -29,7 +19,7 @@ $main-steel: #909090;
 
 	&__pagination {
 		color: $main-steel;
-		font-family: 'Grtsk Peta', sans-serif;
+		font-family: Arial, Helvetica, sans-serif;
 		font-size: 16px;
 		font-style: normal;
 		font-weight: 600;
@@ -48,19 +38,19 @@ $main-steel: #909090;
 		height: 80px;
 		background: $white;
 		border-radius: 100%;
-		outline: none;
+		outline: 1px solid $grey-1;
 		transition: background-color 0.2s ease-in-out, outline 0.2s ease-in-out;
-		path {
+
+		#{$root}__arrow {
+			width: 80px;
+			height: 80px;
 			fill: $main-blue;
 		}
-		circle {
-			stroke: $grey-1;
-			transition: stroke 0.2s ease-in-out;
-		}
+
 		@media (max-width: 1280px) {
 			width: 60px;
 			height: 60px;
-			svg {
+			#{$root}__arrow {
 				width: 60px;
 				height: 60px;
 			}
@@ -69,31 +59,21 @@ $main-steel: #909090;
 
 	&__btn:focus {
 		background-color: $white;
-		outline: 3px solid #99b3d8;
-		circle {
-			stroke: $grey-1;
-		}
+		outline: 3px solid $accent-blue;
 	}
 
 	&__btn:hover {
 		background-color: $grey-2;
-		circle {
-			stroke: $grey-2;
-		}
+		outline: 1px solid $grey-2;
 	}
 
 	&__btn:active {
 		background-color: $grey-1;
-		circle {
-			stroke: $grey-1;
-		}
+		outline: 1px solid $grey-1;
 	}
 
 	&__btn:disabled {
 		background-color: $white;
-		outline: none;
-		circle {
-			stroke: $grey-1;
-		}
+		outline: 1px solid $grey-1;
 	}
 }

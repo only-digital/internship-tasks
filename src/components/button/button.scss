@@ -1,0 +1,156 @@
+$main-blue: #002f6c;
+$cobalt: #0041a0;
+
+$main-steel: #909090;
+$extra-grey-1: #bcbcbc;
+$extra-grey-2: #f4f4f4;
+$text: #111;
+$accent-blue: #99b3d8;
+$white: #ffffff;
+
+$main-red: #ff0000;
+$hover-red: #bf1d26;
+$active-red: #81080f;
+
+.button {
+	$root: &;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 14px;
+	margin: 15px;
+	padding: 14px 16px;
+	width: 129px;
+	height: 48px;
+	background-color: $white;
+	outline: 1px solid $extra-grey-1;
+	cursor: pointer;
+	border-radius: 24px;
+	transition: background-color 0.3s ease-in-out, outline 0.3s ease-in-out;
+
+	color: $text;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 100%;
+	letter-spacing: -0.32px;
+
+	&__arrow {
+		width: 32px;
+		height: 32px;
+		fill: $main-blue;
+	}
+
+	&:disabled {
+		background-color: $white;
+		outline: 1px solid $main-steel;
+		color: $main-steel;
+		pointer-events: none;
+		&__arrow {
+			fill: $extra-grey-1;
+		}
+	}
+
+	@media (max-width: 1280px) {
+		& {
+			padding: 13px 16px 15px;
+			width: 108px;
+			height: 41px;
+			font-size: 14px;
+			letter-spacing: -0.28px;
+			&__arrow {
+				width: 24px;
+				height: 24px;
+			}
+		}
+	}
+
+	@media (max-width: 768px) {
+		& {
+			width: 119px;
+			height: 42px;
+			font-size: 16px;
+			letter-spacing: -0.32px;
+			&__arrow {
+				width: 24px;
+			}
+		}
+	}
+
+	@media (max-width: 375px) {
+		& {
+			padding: 13px 117px 15px;
+			width: 320px;
+			height: 42px;
+			&__arrow {
+				width: 24px;
+			}
+		}
+	}
+
+	&:hover {
+		background-color: $cobalt;
+		outline: 1px solid $cobalt;
+		color: $white;
+		&__arrow {
+			fill: $white;
+		}
+	}
+
+	&:active {
+		background-color: $main-blue;
+		outline: 1px solid $main-blue;
+		color: $white;
+		&__arrow {
+			fill: $white;
+		}
+	}
+
+	&:focus-visible {
+		background-color: $white;
+		outline: 3px solid $accent-blue;
+		color: $cobalt;
+		&__arrow {
+			fill: $cobalt;
+		}
+	}
+}
+
+.button--red {
+	$root: &;
+
+	background-color: $main-red;
+	outline: 1px solid $main-red;
+	color: $white;
+
+	.button__arrow {
+		fill: $white;
+	}
+
+	&:disabled {
+		background-color: $extra-grey-2;
+		outline: 1px solid $extra-grey-2;
+		color: $main-steel;
+		pointer-events: none;
+		.button__arrow {
+			fill: $main-steel;
+		}
+	}
+
+	&:hover {
+		background-color: $hover-red;
+		outline: 1px solid $hover-red;
+	}
+
+	&:active {
+		background-color: $active-red;
+		outline: 1px solid $active-red;
+	}
+
+	&:focus-visible {
+		background-color: $main-red;
+		outline: 3px solid $accent-blue;
+	}
+}

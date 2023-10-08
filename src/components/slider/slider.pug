@@ -1,14 +1,10 @@
-mixin slider
-	.slider
+mixin slider(props)
+	- let start = '01 '
+	.slider&attributes(attributes)
 		button.slider__btn
-			span.slider__svg-wrap
-				include ../../assets/icons/pagination.svg
+			+svg('pagination').slider__arrow
 
 		button.slider__next.slider__btn
-			span.slider__svg-wrap
-				include ../../assets/icons/pagination.svg
+			+svg('pagination').slider__arrow
 
-		span.slider__pagination 01 / 04
-
-
-+slider
+		span.slider__pagination!=`${start}/${props.amount}`
