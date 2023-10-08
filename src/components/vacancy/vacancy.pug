@@ -4,10 +4,12 @@ mixin vacancy(props)
 			.vacancy__header__date 18 декабря 2020
 			h1 Консультант SAP PO
 			.vacancy__header__stats 
-				span Просмотров: 
+				span.text Просмотров: 
 					span.vacancy__views
-				span Откликов: 
+					span.loader_inline.vacancy__spinner-stats
+				span.text Откликов: 
 					span.vacancy__responses
+					span.loader_inline.vacancy__spinner-stats
 		section.vacancy__description
 			h2 Вам предстоит
 			ul 

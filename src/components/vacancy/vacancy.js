@@ -6,7 +6,9 @@ class Vacancy extends Component {
 
         this.viewsElement = this.getElement("views");
         this.responsesElement = this.getElement("responses");
-        this.updateStats();
+        this.statsSpinners = document.querySelectorAll(".vacancy__spinner-stats")
+        
+        this.displayStats();
     }
 
     getStats = async () => {
@@ -15,11 +17,12 @@ class Vacancy extends Component {
         return data;
     };
 
-    updateStats = async () => {
+    displayStats = async () => {
         const stats = await this.getStats();
 
         this.viewsElement.textContent = stats.views;
         this.responsesElement.textContent = stats.responses;
+        this.statsSpinners.forEach(spinner => spinner.style.display = "none");
     };
 }
 
