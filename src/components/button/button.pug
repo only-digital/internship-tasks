@@ -1,0 +1,4 @@
+mixin button(props)
+	button(class=['button', `button_style_${props.style}`])&attributes(attributes)
+		span.button__text= props.text
+		+svg('button').button__svg

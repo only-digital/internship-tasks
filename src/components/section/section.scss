@@ -1,0 +1,13 @@
+.section {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 2rem;
+
+	&__title {
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 600;
+		letter-spacing: -0.32px;
+	}
+}

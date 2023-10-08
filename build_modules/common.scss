@@ -1,4 +1,17 @@
+@import './variables.scss';
 @import '../src/components/example-button/example-button';
+@import '../src/components/switch/switch';
+@import '../src/components/link/link';
+@import '../src/components/slider-button/slider-button';
+@import '../src/components/section/section';
+@import '../src/components/button/button';
+
+*, *::after, *::before {
+    text-decoration: inherit;
+    font-family: inherit;
+    padding: 0;
+    margin: 0;
+}
 
 html {
     font-weight: normal;
@@ -8,22 +21,17 @@ html {
     position: relative;
 }
 
-* {
-    box-sizing: border-box;
-}
+ 
 
 body {
     position: relative;
-    padding: 0;
-    margin: 0;
+
     -webkit-tap-highlight-color: transparent;
 }
 
 h1, h2, h3, h4, h5, p, a {
     color: inherit;
-    font-size: inherit;
     font-weight: inherit;
-    text-decoration: inherit;
     padding: 0;
     margin: 0;
     word-break: break-word;
@@ -64,3 +72,16 @@ button {
     }
 }
 
+
+.text {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.32px;
+  
+    @media (max-width: 768px) {
+      font-size: 14px;
+      letter-spacing: -0.28px;
+    }
+  }

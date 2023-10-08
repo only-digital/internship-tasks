@@ -1,0 +1,48 @@
+.slider-button {
+	$root: &;
+
+	width: 80px;
+	height: 80px;
+	border: 1px solid var(--grey);
+	border-radius: 50%;
+	transition: background .3s, box-shadow .2s;
+
+	&__svg {
+		width: 80px;
+		height: 80px;
+		fill: var(--blue);
+	}
+
+	&:hover {
+		background: var(--grey);
+		border-color: var(--grey);
+	}
+
+	&:active {
+		background: var(--grey);
+	}
+
+	&:focus {
+		box-shadow: 0 0 0 3px var(--border-color);
+	}
+
+	&:disabled {
+		pointer-events: none;
+
+		#{$root}__svg {
+			fill: var(--grey);
+		}
+	}
+
+	@media (max-width: 1280px) {
+		display: flex;
+		align-items: center;
+		width: 60px;
+		height: 60px;
+
+		&__svg {
+			width: 60px;
+			height: 60px;
+		}
+	}
+}

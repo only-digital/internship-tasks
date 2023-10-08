@@ -1,0 +1,111 @@
+.button {
+	$root: &;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 14px;
+	width: fit-content;
+	height: 48px;
+	padding: 0 14px 0 18px;
+	border-radius: 25px;
+	transition: background .3s, box-shadow .2s, color .3s;
+
+	&__text {
+		font-size: 16px;
+		font-weight: 400;
+		letter-spacing: -0.32px;
+	}
+
+	&__svg {
+		width: 32px;
+		height: 32px;
+		transition: fill .3s;
+	}
+
+	&_style_withBorder {
+		border: 1px solid var(--grey);
+		background: var(--white);
+		color: var(--black);
+
+		#{$root}__svg {
+			fill: rgb(0, 0, 255);
+		}
+
+		&:hover {
+			color: #ffff;
+			background: #002F6C;
+			border-color: #002F6C;
+
+			svg path {
+				fill: #ffff;
+			}
+		}
+
+		&:active {
+			background: rgb(0, 0, 255);
+			border-color: rgb(0, 0, 255);
+		}
+	}
+
+	&_style_withBackground {
+		background: rgb(255, 0, 0);
+		color: #ffff;
+
+		#{$root}__svg {
+			fill: #ffff;
+		}
+
+		&:hover {
+			background: rgb(139, 0, 0);
+		}
+
+		&:disabled {
+			background: rgb(128, 128, 128);
+		}
+
+		&:active {
+			background: rgb(125, 0, 0);
+		}
+
+	}
+
+	&:disabled {
+		color: rgb(128, 128, 128);
+		pointer-events: none;
+
+		#{$root}__svg {
+			fill: #909090;
+		}
+	}
+
+	&:focus {
+		box-shadow: 0 0 0 3px var(--border-color);
+	}
+
+	@media  (max-width: 1919px) {
+		height: 42px;
+
+		&__svg {
+			width: 24px;
+			height: 24px;
+		}
+	}
+
+	@media  (min-width: 1280px) {
+		gap: 12px;
+		padding: 0 14px 0 16px;
+
+		&__text {
+			font-size: 14px;
+			letter-spacing: -0.28px;
+		}
+	}
+
+	@media (max-width: 767px) {
+		max-width: 375px;
+		width: 100%;
+		gap: 12px;
+		padding: 0 14px 0 14px;
+	}
+}

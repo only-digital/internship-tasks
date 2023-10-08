@@ -1,0 +1,53 @@
+
+.link {
+	$root: &;
+
+	display: inline-flex;
+	align-items: center;
+	width: fit-content;
+	color: var(--cobolt);
+	transition: background .3s, color .3s;
+
+	&__text {
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 150%;
+		letter-spacing: -0.32px;
+	}
+
+	&__svg {
+		width: 24px;
+		height: 24px;
+		margin-left: 12px;
+		fill: rgb(0, 0, 255);
+	}
+
+	&:hover {
+		color: var(--red);
+	}
+
+	&:active {
+		color: var(--dark-red);
+	}
+
+	&:focus {
+		background: rgba(0, 65, 160, 0.15);
+	}
+
+	&.disabled, &:disabled {
+		pointer-events: none;
+		color: rgb(123, 123, 123);
+	}
+
+	@media (max-width: 768px) {
+		&__text {
+			font-size: 14px;
+			letter-spacing: -0.28px;
+		}
+
+		&__svg {
+			margin-left: 10px;
+		}
+	}
+}

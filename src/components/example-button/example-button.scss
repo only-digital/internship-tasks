@@ -11,13 +11,11 @@
 		pointer-events: none;
 	}
 
-	@media (hover: hover) {
-		&:hover {
-			color: black;
+	&:hover {
+		color: black;
 
-			#{$root}__svg {
-				fill: white;
-			}
+		#{$root}__svg {
+			fill: white;
 		}
 	}
 

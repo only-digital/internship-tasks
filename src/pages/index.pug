@@ -2,6 +2,41 @@ extends ../../build_modules/common
 
 
 block body
-    +example-button({text: 'example text'})
-    +example-button({text: 'disabled'})(disabled='')
-    //Your code here
+    +section('Example')
+        +example-button({text: 'example text'})
+        +example-button({text: 'disabled'})(disabled='')
+
+    +section('Link')
+        +link({text: 'Sustainalytics.com'})(href='#')
+        +link({text: 'Sustainalytics.com'})(class='disabled')
+
+    +section('Link in text')
+        p.text Для подключения сервиса добавьте  номер
+            +link({text: '+7(921)058-57-19', hiddenIcon: true })(href='#')
+            | в ваши контакты
+            | и напишите любое сообщение, или перейдите по ссылке ниже
+
+        p.text Цифровые продукты, направленные на создание
+            +link({text: 'дополнительных сервисов', hiddenIcon: true})(href='#')
+            | и устранение «проблемных точек» наших клиентов
+
+    +section('Switch')
+        +switch
+
+    +section('Button with outline')
+        +button({text: 'Кнопка', style: 'withBorder'})
+        +button({text: 'Кнопка', style: 'withBorder'})(disabled='')
+
+    +section('Fill button')
+        +button({text: 'Кнопка', style: 'withBackground'})
+        +button({text: 'Кнопка', style: 'withBackground'})(disabled='')
+
+    +section('Slider button')
+        div(style={display: 'flex', gap: '10px'})
+            +slider-button({direction: 'left'})
+            +slider-button({direction: 'right'})
+
+        div(style={display: 'flex', gap: '10px'})
+            +slider-button({direction: 'left'})(disabled='')
+            +slider-button({direction: 'right'})(disabled='')
+

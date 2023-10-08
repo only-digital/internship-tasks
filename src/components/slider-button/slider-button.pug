@@ -1,0 +1,6 @@
+mixin slider-button(props)
+	button.slider-button&attributes(attributes)
+		if (props.direction === 'right')
+			+svg('pagination-right').slider-button__svg
+		else
+			+svg('pagination-left').slider-button__svg
