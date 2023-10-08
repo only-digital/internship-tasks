@@ -12,14 +12,6 @@
     span {
       border-color: $main-blue;
       background: $main-blue;
-
-      &::before {
-        transform: translateX(20px);
-
-        @media (min-width: 768px) {
-          transform: translateX(28px);
-        }
-      }
     }
   }
 
@@ -28,17 +20,20 @@
     height: 0;
     width: 0;
 
-    &:checked {
-      & + span {
-        border-color: $cobolt;
-        background: $cobolt;
+    &:checked + span {
+      border-color: $cobolt;
+      background: $cobolt;
 
-        &::before {
-          transform: translateX(20px);
+      &:hover {
+        border-color: $main-blue;
+        background: $main-blue;
+      }
 
-          @media (min-width: 768px) {
-            transform: translateX(28px);
-          }
+      &::before {
+        transform: translateX(20px);
+
+        @media (min-width: 768px) {
+          transform: translateX(28px);
         }
       }
     }

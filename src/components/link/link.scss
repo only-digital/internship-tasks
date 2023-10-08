@@ -32,18 +32,23 @@
   }
 
   &__text {
-    font-size: 14px;
     font-weight: 400;
-    line-height: 21px;
     letter-spacing: -0.02em;
+    font-size: 16px;
+    line-height: 24px;
 
-    @media (min-width: 1280px) {
-      font-size: 16px;
-      line-height: 24px;
+    &:not(:last-child) {
+      font-size: 14px;
+      line-height: 21px;
+
+      @media (min-width: 1280px) {
+        font-size: 16px;
+        line-height: 24px;
+      }
     }
   }
 
-  svg {
+  &__icon {
     width: 19.5px;
     height: 19.5px;
   }

@@ -1,7 +1,5 @@
 mixin link(props)
-	if props.withIcon
-		a.link(href=`${props.href}` target='_blank')&attributes(attributes)
-			.link__text= props.text
-			+svg('link-icon')
-	else
-		a.link(href=`${props.href}` target='_self')&attributes(attributes)= props.text
+	a.link(href=`${props.href}` target=props.isBlank ? '_blank': '_self')&attributes(attributes)
+		span.link__text= props.text
+		if props.withIcon
+			+svg('link-icon').link__icon
