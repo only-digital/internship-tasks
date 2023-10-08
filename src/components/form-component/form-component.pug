@@ -1,0 +1,20 @@
+mixin form-component(props)
+	.form-component&attributes(attributes)(data-component='form-component')
+		h2.form-component__title Форма обратной связи
+		form.form-component__form
+			label(for="email").form-component__label-email Email
+			input(type="email" name="email" id="email").form-component__input
+			span.form-component__invalid-email
+			.form-component__checkbox-container
+				label(for="checkbox").form-component__label-confirm
+					input(type='checkbox' name='checkbox' id='checkbox').form-component__checkbox-confirm
+					span.form-component__checkbox-img-container
+						+svg('checkbox-svg')
+					span.form-component__text-confirm Вы подтверждаете, что ознакомились c <a href="#">политикой обработки персональных данных</a>
+			button(type="submit").form-component__submit-btn Отправить
+				+svg('arrow-svg')
+			span.form-component__loader
+			.form-component__success-container
+					span.form-component__success
+						+svg('success-svg')
+					span Форма успешно отправлена

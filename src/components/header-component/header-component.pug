@@ -1,0 +1,7 @@
+mixin header-component(props)
+	.header-component&attributes(attributes)(data-component='header-component')
+		span.header-component__date!= props.date
+		h2.header-component__title!= props.title
+		.header-component__info-container
+			span.header-component__watch-count
+			span.header-component__applications-count

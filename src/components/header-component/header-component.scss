@@ -1,0 +1,36 @@
+.header-component {
+  $root: &;
+
+  width: 1600px;
+  height: 437px;
+  padding: 115px 80px 144px;
+	font-family: Arial;
+
+  &__date {
+    margin-bottom: 20px;
+    color: #8f8f8f;
+    font-feature-settings: "ss08" on;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: -0.4px;
+  }
+
+  &__title {
+		width: 1440px;
+    margin-bottom: 45px;
+    color: #04306a;
+    font-feature-settings: "ss08" on;
+    font-size: 64px;
+    line-height: 100%;
+    letter-spacing: -1.28px;
+  }
+
+  &__info-container {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    color: #8f8f8f;
+    line-height: 130%;
+    letter-spacing: -0.32px;
+  }
+}

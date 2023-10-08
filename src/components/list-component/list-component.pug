@@ -1,0 +1,6 @@
+mixin list-component(props)
+	.list-component&attributes(attributes)(data-component='list-component')
+		h2.list-component__title!= props.title
+		ul.list-component__items
+			each item in props.items
+				li.list-component__item!= item
