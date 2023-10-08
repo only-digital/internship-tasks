@@ -17,7 +17,6 @@ class Form extends Component {
     onClick = (e) => {
 		const actives = document.getElementsByClassName('active');
 
-		console.log(e.composedPath()[0].classList.contains('input') && e.target === document.activeElement)
 		if (e.composedPath()[0].classList.contains('input') && e.target === document.activeElement) {
 			e.target.previousElementSibling.classList.add('active');
 		} else {
@@ -27,7 +26,7 @@ class Form extends Component {
 
 	emailValidation = () => {
 		const REG_EXP = /^([a-zA-Z\-0-9_]+|([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)+)|(".+"))@(([a-zA-Z\-0-9]+\.)+[a-zA-Z\-0-9]{2,})$/;
-		console.log(2)
+
 		if (this.email.value.length <= 255 && REG_EXP.test(this.email.value)) {
 			console.log(1)
 		}
