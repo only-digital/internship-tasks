@@ -1,5 +1,6 @@
 import VacancyHeader from '../../components/vacancy-header/vacancy-header';
 import VacancyForm from '../../components/vacancy-form/vacancy-form';
+import Loader from '../../components/loader/loader';
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -9,6 +10,7 @@ import VacancyForm from '../../components/vacancy-form/vacancy-form';
 const allComponents = {
   'vacancy-header': VacancyHeader,
   'vacancy-form': VacancyForm,
+  'vacancy-loader': Loader,
 };
 
 /**

@@ -53,6 +53,7 @@
     &__checkbox {
         border: 1px solid $extraGray;
         border-radius: 0 !important;
+        cursor: pointer;
     }
 
     &__acceptText {
@@ -112,6 +113,13 @@
         & span {
             color: $black;
             font-size: 16px;
+        }
+    }
+
+    & .success {
+        input, label, button {
+            opacity: 0.3;
+            pointer-events: none;
         }
     }
 }
