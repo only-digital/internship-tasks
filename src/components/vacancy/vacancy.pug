@@ -1,13 +1,13 @@
 mixin vacancy(props)
 	.vacancy__wrapper&attributes(attributes)(data-component='vacancy')
 		header.vacancy__header 
-			span.date 18 декабря 2020
-			h1 Консультант SAP PO
-			span.views Просмотров: #{views} 123
-			span.responses Откликов: #{responses} 12
+			span.vacancy__date 18 декабря 2020
+			h1.vacancy__title Консультант SAP PO
+			span.vacancy__views 
+			span.vacancy__responses 
 
 		section.vacancy__section
-			h2 Вам предстоит
+			h2.vacancy__list-title Вам предстоит
 			ul
 				li Участие в проектах в роли архитектора/консультанта по интеграции данных
 				li Проектирование архитектуры интеграции по технологиям SAP (Process Orchestration 7.5, Data Services 4.2, RFC, IDOC)
@@ -16,7 +16,7 @@ mixin vacancy(props)
 				li Проведение аудита интеграционных сценариев и проектно-эксплуатационной документации, разработанных подрядными организациями
 				li Разработка и поддержка интеграционных сценариев
 		section.vacancy__section 
-			h2 Мы ожидаем
+			h2.vacancy__list-title Мы ожидаем
 			ul
 				li Знание ASAP, MS Visio, SAP PI / SAP PO, SAP HANA, JSON, XML
 				li Опыт работы в сфере аналитики от 3-х лет в должности аналитика, ведущего аналитика, специалиста по внедрению информационных систем
@@ -25,7 +25,7 @@ mixin vacancy(props)
 				li Опыт формирования требований к информационным системам
 				li Опыт составления проектной документации по ГОСТ
 		section.vacancy__section 
-			h2 Мы предлагаем
+			h2.vacancy__list-title Мы предлагаем
 			ul
 				li Оформление в соответствии с нормами ТК РФ, социальные гарантии
 				li Крупные проекты в компании–лидере отрасли
@@ -33,7 +33,7 @@ mixin vacancy(props)
 				li Полис ДМС (включая стоматологию)
 				li Доступ к корпоративной OnLine библиотеке
 				li Обучение в программах Корпоративного университета
-				
+
 		form(action="/submit" method="post")
 			h3 Форма обратной связи
 			label(for="email") E-mail

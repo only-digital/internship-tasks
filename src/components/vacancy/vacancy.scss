@@ -1,23 +1,61 @@
 //color palette
  $blue: #04306A;
  $black: #012B34;
+ $gray: #8F8F8F;
 
 
 .vacancy {
 	font-family: Arial, Helvetica, sans-serif;
+
 	&__wrapper {
 		width: 1600px;
 		margin: 0 auto;
 		padding: 115px 80px 45px;
 	}
 	&__header {
+		font-family: Arial, Helvetica, sans-serif;
 		width: 100%;
 		margin-bottom: 144px;
-
+		.vacancy__title {
+		color: $blue;
+		font-size: 64px;
+		font-weight: 400;
+		line-height: 100%; /* 64px */
+		letter-spacing: -1.28px;
+		margin: 20px 0 45px;
+		}
+		span {
+			color: $gray;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 130%; /* 20.8px */
+			letter-spacing: -0.32px;
+			margin-right: 36px;
+		}
+		.vacancy__date {
+			font-size: 20px;
+			font-weight: 400;
+			line-height: 140%; /* 28px */
+			letter-spacing: -0.4px;	
+		}
 	}
 	&__section {
 		width: 100%;
 		margin-bottom: 130px;
+		.vacancy__list-title {
+			color: $blue;
+			font-family: Arial;
+			font-size: 46px;
+			font-weight: 400;
+			line-height: 120%; /* 55.2px */
+			letter-spacing: -0.92px;
+		}
+
+		ul {
+			// does not work!
+			list-style-image: url('/Users/ekaterina/Desktop/internship-tasks-katerina-shche/src/assets/icons/list-icon.svg');
+			list-style-position: outside;
+		}
 	}
 	& form {
 		width: 100%;
