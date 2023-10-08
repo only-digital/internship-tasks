@@ -1,0 +1,130 @@
+$dark-teal: #012B34;
+$second-color: #114C9A;
+$black: #000402;
+$lain: #E6E6E6;
+.accordion-item {
+	$root: &;
+	font-family: 'Roboto', sans-serif;
+	border-bottom: 1px solid $lain;
+	display: flex;
+	flex-direction: column;
+	gap: 1.87rem;
+	transition: height 0.3s;
+	position: relative;
+	overflow: hidden;
+	&:first-of-type{
+		border-top: 1px solid $lain;
+	}
+	&__title{
+		color: $black;
+		font-size: 2.25rem;
+		font-weight: 400;
+		line-height: 2.7rem;
+		position: relative;
+		transition: color 0.3s;
+		background: white;
+		padding: 30px 0;
+		&::before,
+		&::after{
+			content: '';
+			position: absolute;
+			top: 49%;
+			right: 0;
+			width: 20px;
+			height: 2px;
+			background: $second-color;
+			transition: transform 0.3s;
+		}
+		&::before{
+			transform: rotate(90deg);
+		}
+	}
+	&__text{
+		opacity: 0;
+		max-width: 60%;
+		color: $black;
+		font-size: 1.25rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 1.875rem;
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		transition: top 0.3s, opacity 0.3s;
+	}
+	&__active{
+		#{$root}__title{
+			color: $second-color;
+			&::before{
+				transform: rotate(45deg);
+			}
+			&::after{
+				transform: rotate(-45deg);
+			}
+		}
+		#{$root}__text{
+			opacity: 0.8;
+		}
+	}
+	@media (max-width: 1440px) {
+		&__title{
+			font-size: 1.6875rem;
+			line-height: 2.025rem;
+			padding: 24px 0;
+			&::before,
+			&::after{
+				width: 14px;
+			}
+		}
+		&__text{
+			font-size: 0.9375rem;
+			line-height: 1.40625rem;
+			max-width: 70%;
+		}
+	}
+	@media (max-width: 1280px) {
+		&__title{
+			font-size: 1.5rem;
+			line-height: 1.8rem;
+			padding: 20px 0;
+			&::before,
+			&::after{
+				width: 16px;
+			}
+		}
+		&__text{
+			max-width: 64%;
+		}
+	}
+	@media (max-width: 768px) {
+		&__title{
+			font-size: 1.6875rem;
+			line-height: 2.025rem;
+			padding: 24px 10% 24px 0;
+			&::before,
+			&::after{
+				width: 20px;
+				top: 38px;
+			}
+		}
+		&__text{
+			max-width: 90%;
+		}
+	}
+	@media (max-width: 375px) {
+
+		&__title{
+			font-size: 1.5rem;
+			line-height: 1.8rem;
+			padding: 20px 10% 20px 0;
+			&::before,
+			&::after{
+				width: 16px;
+				top: 34px;
+			}
+		}
+		&__text{
+			max-width: 90%;
+		}
+	}
+}

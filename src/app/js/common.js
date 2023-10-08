@@ -1,4 +1,5 @@
 import ExampleButton from "../../components/example-button/example-button";
+import AccordionItem from "../../components/accordion-item/accordion-item";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -7,6 +8,7 @@ import ExampleButton from "../../components/example-button/example-button";
  */
 const allComponents = {
     'example-button': ExampleButton,
+    'accordion-item': AccordionItem
 }
 
 
