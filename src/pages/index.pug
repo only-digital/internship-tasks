@@ -2,6 +2,37 @@ extends ../../build_modules/common
 
 
 block body
-    +example-button({text: 'example text'})
-    +example-button({text: 'disabled'})(disabled='')
-    //Your code here
+	div(style={display : 'flex', gap: '25px', 'flex-wrap': 'wrap'})
+		div(style={display : 'flex', gap: '10px', 'flex-direction': 'column'}) Кнопка с обводкой:
+			+blue-button({text: 'Кнопка'})
+			+blue-button({text: 'Кнопка'})(disabled='')
+
+		div(style={display : 'flex', gap: '10px', 'flex-direction': 'column'}) Кнопка с заливкой:
+			+red-button({text: 'Кнопка'})
+			+red-button({text: 'Кнопка'})(disabled='')
+
+		div(style={display : 'flex', gap: '10px', 'flex-direction': 'column'}) Кнопки слайдера:
+			+slider-buttons({current:'01', all: '04'})
+			+slider-buttons({current:'01', all: '04'})(disabled='')
+
+		div(style={display : 'flex', gap: '10px', 'flex-direction': 'column'}) Ссылка отдельно:
+			+link({text:'Sustainalytics.com', isShowIcon: true})(href='https://www.sustainalytics.com/')
+			+link({text:'Sustainalytics.com', isShowIcon: true})(tabindex='-1').disabled
+		
+		div(style={display : 'flex', gap: '10px', 'flex-direction': 'column', width: '300px'}) Ссылка в тексте:
+			p
+				| Для подключения сервиса добавьте  номер&nbsp;
+				+link({text:'+7(921)058-57-19'})(href='tel:+79210585719')
+				| &nbsp;в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже
+			p
+				| Цифровые продукты, направленные на создание&nbsp;
+				+link({text:'дополнительных сервисов'})(href='#')
+				| &nbsp;и устранение «проблемных точек» наших клиентов
+			p
+				| Цифровые продукты, направленные на создание&nbsp;
+				+link({text:'дополнительных сервисов'})(href='#',  tabindex='-1').disabled
+				| &nbsp;и устранение «проблемных точек» наших клиентов
+
+		div(style={display : 'flex', gap: '10px', 'flex-direction': 'column'}) Переключатель:
+			+toggle()
+			+toggle()(disabled='')
