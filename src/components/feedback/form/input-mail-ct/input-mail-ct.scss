@@ -4,7 +4,6 @@
     width: 100%;
     position: relative;
 
-
     &__name {
         content: "E-mail";
         font-size: 12px;
@@ -20,6 +19,16 @@
         }
     }
 
+    &__icon {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 16px;
+        display: none;
+    }
+
     &__alert-text {
         position: absolute;
         left: 20px;
@@ -30,6 +39,34 @@
         transform: 0.5s ease opacity;
     }
 
+
+    &_alert-active {
+        .input-mail-ct {
+            &__input {
+                border-color: $red;
+                border-radius: 29px;
+                background-color: #fff;
+            }
+
+            &__alert-text {
+                opacity: 1;
+            }
+        }
+    }
+
+    &_succses {
+        .input-mail-ct {
+            &__input {
+                border-color: #F4F4F4;
+                background-color: #F4F4F4;
+                border-radius: 29px;
+            }
+
+            &__icon {
+                display: block;
+            }
+        }
+    }
 
     &__input {
         border: 1px solid;
@@ -63,19 +100,8 @@
                 opacity: 1;
             }
         }
-    }
-
-    &_alert-active {
-        .input-mail-ct {
-            &__input {
-                border-color: $red;
-                border-radius: 29px;
-                background-color: #fff;
-            }
-
-            &__alert-text {
-                opacity: 1;
-            }
+        &:disabled::placeholder{
+            color: #DEDEDE;
         }
     }
 }
