@@ -3,6 +3,8 @@ $blue-color: #04306a;
 $black-color: #012b34;
 $cobolt-color: #0041a0;
 $text-error-color: #ef1c1c;
+$list-marker-color: #0DB274;
+
 
 .vacancy {
     $root: &;
@@ -68,6 +70,17 @@ $text-error-color: #ef1c1c;
             line-height: 34px;
             letter-spacing: 0em;
         }
+
+        // Add custom list markers
+        li::before {
+            content: "";
+            display: inline-block;
+            height: 1px;
+            width: 20px;
+            vertical-align: middle;
+            margin-right: 8px;
+            background-color: $list-marker-color;
+        }
     }
 
     &__contact {
@@ -124,7 +137,6 @@ $text-error-color: #ef1c1c;
                     display: none;
                 }
             }
-
         }
 
         &__input-container {
@@ -271,7 +283,6 @@ $text-error-color: #ef1c1c;
                 opacity: 0.3;
                 pointer-events: none;
             }
-
         }
     }
 
