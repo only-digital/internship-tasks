@@ -40,7 +40,6 @@ $text-error-color: #ef1c1c;
                 line-height: 21px;
                 margin-right: 36px;
                 color: $steel;
-
             }
         }
     }
@@ -81,10 +80,17 @@ $text-error-color: #ef1c1c;
             line-height: 38px;
         }
 
+        .vacancy__warning {
+            margin-top: 25px;
+            font-size: 14px;
+            line-height: 21px;
+            color: $text-error-color;
+        }
+
         form {
             margin-left: 81px;
 
-            button {
+            .vacancy__submit-button {
                 height: 48px;
                 margin-top: 30px;
                 padding-left: 18px;
@@ -107,7 +113,18 @@ $text-error-color: #ef1c1c;
                     width: 32px;
                     height: 22px;
                 }
+
+                .button-loader-container {
+                    display: none;
+                    width: 32px;
+                    height: 22px;
+                }
+
+                .loader {
+                    display: none;
+                }
             }
+
         }
 
         &__input-container {
@@ -128,14 +145,6 @@ $text-error-color: #ef1c1c;
                 border-radius: 24px;
                 padding: 8px 20px 14px 20px;
             }
-        }
-
-        &__warning {
-            visibility: hidden;
-            margin-top: 25px;
-            font-size: 14px;
-            line-height: 21px;
-            color: $text-error-color;
         }
 
         &__checkbox-container {
@@ -186,7 +195,7 @@ $text-error-color: #ef1c1c;
         }
 
         &__success {
-            display: flex;
+            display: none;
             gap: 21px;
             align-items: center;
             margin-top: 25px;
@@ -212,12 +221,64 @@ $text-error-color: #ef1c1c;
                 color: black;
             }
         }
+
+        // Style successful form
+        form.successful {
+            .vacancy__contact__input-container,
+            .vacancy__contact__checkbox-container {
+                opacity: 0.3;
+                pointer-events: none;
+                user-select: none;
+            }
+            .vacancy__submit-button {
+                display: none;
+            }
+            .vacancy__contact__success {
+                display: flex;
+            }
+            .vacancy__warning {
+                visibility: hidden;
+            }
+        }
+
+        //Style loading form
+        form.loading {
+            .vacancy__submit-button {
+                pointer-events: none;
+                svg {
+                    display: none;
+                }
+                .button-loader-container {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .loader {
+                    display: inline;
+                    top: 0;
+                    border-bottom-color: white;
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+            .vacancy__warning {
+                visibility: hidden;
+            }
+
+            .vacancy__contact__input-container,
+            .vacancy__contact__checkbox-container {
+                opacity: 0.3;
+                pointer-events: none;
+            }
+
+        }
     }
 
-    .loader_inline {
+    .loader {
         position: relative;
         top: 3px;
-        width : 16px;
+        width: 16px;
         height: 16px;
         padding-top: 4px;
         border: 3px solid $steel;
@@ -225,5 +286,5 @@ $text-error-color: #ef1c1c;
         border-radius: 50%;
         display: inline-block;
         animation: rotation 1s linear infinite;
-      }
+    }
 }

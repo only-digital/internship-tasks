@@ -37,21 +37,23 @@ mixin vacancy(props)
 				li Обучение в программах Корпоративного университета
 		section.vacancy__contact 
 			h3 Форма обратной связи
-			form(action='/form' method='post')
+			form(action='/form' method='post').vacancy__form
 				.vacancy__contact__input-container
 					label(for='email') E-mail
 					input(type="email", name="email")
-				.vacancy__contact__warning Поле E-mail обязательно
+				.vacancy__warning &nbsp;
 				.vacancy__contact__checkbox-container
 					label
-						input(type="checkbox", name="agreement")
+						input(type="checkbox", name="confirm")
 						.custom-checkbox 
 							+svg('checked')
 						span.custom-checkbox-text Вы подтверждаете, что ознакомились <a>с политикой  обработки персональных данных</a>
-				button(type="submit" style="display: none;") 
+				button(type="submit").vacancy__submit-button
 					span Отправить
 					+svg('arrow-right')
+					span.button-loader-container
+						span.loader
 				.vacancy__contact__success
 					.circle 
 						+svg('check-success')
-					span Форма успешно отправлена
+					span.vacancy__success-message
