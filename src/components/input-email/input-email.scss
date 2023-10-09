@@ -6,6 +6,17 @@
 	line-height: 150%; 
 	letter-spacing: -1px;
 
+	&__title {
+		color:  #909090;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 150%;
+		letter-spacing: -1px;
+		padding-left: 20px;
+		display: none;
+	}
+
 	&__input {
 		height: 36px;
 		max-width: 556px;
@@ -27,9 +38,22 @@
 		border: none;
 	}
 
+	&__input:focus {
+		border-radius: 24px;
+		border: 1px solid  #0041A0;
+	}
+
+	&__input:focus + .input-email__title {
+		display: inline-block;
+	}
+
 	&__input.input-email__input_error {
 		border-radius: 24px;
 		border: 1px solid #FF0000;
+	}
+	
+	&__input.input-email__input_error + .input-email__title {
+		display: inline-block;
 	}
 
 	&__input::placeholder {
@@ -40,7 +64,10 @@
 
 	&__wrapper {
 		position: relative;
-		width: max-content;
+		max-width: 556px;
+		width: 100%;
+		display: flex;
+		flex-direction: column-reverse;
 	}
 
 	&__svg {
@@ -58,6 +85,7 @@
 	&__error {
 		color: #F00;
 		font-size: 12px;
+		padding-left: 20px;
 	}
 
 }
