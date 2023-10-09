@@ -86,7 +86,7 @@ $list-marker-color: #0DB274;
     &__contact {
         display: flex;
         padding: 44px 217px 45px 103px;
-
+        
         h3 {
             color: $blue-color;
             font-size: 32px;
@@ -102,6 +102,7 @@ $list-marker-color: #0DB274;
 
         form {
             margin-left: 81px;
+            flex-grow: 1;
 
             .vacancy__submit-button {
                 height: 48px;
