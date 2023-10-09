@@ -2,9 +2,11 @@
 @import "../src/components/blue-button/blue-button";
 @import "../src/components/red-button/red-button";
 @import "../src/components/slider-buttons/slider-buttons";
+@import "../src/components/link/link";
 @import "../src/components/example-button/example-button";
 
 html {
+  font-family: Arial, sans-serif;
   font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

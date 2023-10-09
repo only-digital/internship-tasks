@@ -1,0 +1,50 @@
+.link {
+  $root: &;
+
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  height: 24px;
+
+  font-size: 14px;
+  @media (min-width: 1280px) {
+    font-size: 16px;
+  }
+  font-weight: 400;
+  line-height: 150%;
+  color: $cobalt;
+
+  transition: color 0.4s, background-color 0.4s;
+
+  &__svg {
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+    @media (min-width: 1280px) {
+      margin-left: 12px;
+    }
+  }
+
+  &:hover:active {
+    color: $burgundy;
+    background-color: transparent;
+  }
+
+  @media (min-width: 1280px) {
+    &:hover {
+      color: $red;
+      background-color: transparent;
+    }
+
+    &:focus-visible {
+      color: $cobalt;
+      background-color: $bg-blue;
+      outline: none;
+    }
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  color: $grey;
+}
