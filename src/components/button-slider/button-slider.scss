@@ -69,9 +69,9 @@
     }
     &:disabled {
       pointer-events: none;
+
       #{$root}__svg {
         fill: #bcbcbc;
-        opacity: 0.5;
       }
     }
     &:active {
@@ -85,13 +85,10 @@
   &__svg {
     width: 60px;
     height: 60px;
+    fill: #002f6c;
 
     &_left {
       transform: rotate(180deg);
     }
   }
-}
-
-.pagination-path {
-  fill: #002f6c;
 }
