@@ -4,7 +4,7 @@
 
     &__box {
         display: inline-block;
-        padding-right: 14px;
+        margin-right: 14px;
     }
 
     &__checkbox {
@@ -34,6 +34,7 @@
     &__text {
         font-size: 15px;
         color: $gray;
+        user-select: none;
     }
 
     &__link {
