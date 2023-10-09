@@ -267,7 +267,6 @@ $list-marker-color: #0DB274;
                 }
                 .loader {
                     display: inline;
-                    top: 0;
                     border-bottom-color: white;
                     width: 24px;
                     height: 24px;
@@ -287,15 +286,13 @@ $list-marker-color: #0DB274;
     }
 
     .loader {
-        position: relative;
-        top: 3px;
+        display: inline-block;
+        vertical-align: middle;
         width: 16px;
         height: 16px;
-        padding-top: 4px;
         border: 3px solid $steel;
         border-bottom-color: $blue-color;
         border-radius: 50%;
-        display: inline-block;
         animation: rotation 1s linear infinite;
     }
 }
