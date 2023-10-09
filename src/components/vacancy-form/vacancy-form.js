@@ -1,7 +1,8 @@
 import Component from '../../app/js/base/component';
 
+const URL = '/form';
+
 class VacancyForm extends Component {
-  URL;
   form;
   input;
   msg;
@@ -12,7 +13,6 @@ class VacancyForm extends Component {
 
   constructor(element) {
     super(element);
-    this.URL = '/form';
     this.form = this.getElement('form');
     this.input = this.getElement('input');
     this.msg = this.getElement('msg');
@@ -20,15 +20,12 @@ class VacancyForm extends Component {
     this.confirm = this.getElement('checkbox');
     this.submitBtn = this.getElement('btn');
     this.loader = this.getElement('loader');
-    console.log(this.loader);
 
     this.form.addEventListener('submit', this.submitForm);
   }
 
   submitForm = (e) => {
     e.preventDefault();
-    this.form.classList.add('success');
-    this.loader.classList.add('loader-visible');
 
     const email = this.input.value;
     const confirm = this.confirm.checked;
@@ -41,7 +38,9 @@ class VacancyForm extends Component {
     }
 
     if (email && confirm) {
-      fetch(this.URL, {
+      this.loader.classList.add('loader-visible');
+      this.form.classList.add('success');
+      fetch(URL, {
         method: 'POST',
         body: JSON.stringify({
           email: email,

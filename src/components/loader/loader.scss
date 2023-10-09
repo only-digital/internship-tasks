@@ -1,14 +1,32 @@
 .vacancy-form__loader {
-    display: none;
-
     width: 48px;
     height: 48px;
+    margin-top: 25px;
+
+    &::after {
+        width: 48px;
+        height: 48px;   
+    }
+}
+
+.vacancy-header__loader {
+    width: 18px;
+    height: 18px;
+
+    &::after {
+        width: 18px;
+        height: 18px;   
+    }
+}
+
+.vacancy-form__loader, .vacancy-header__loader {
+    display: none;
+
     border-radius: 50%;
     border-top: 4px solid $green;
     border-right: 4px solid transparent;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
-    margin-top: 25px;
 
     &::after {
         content: '';  
@@ -16,8 +34,6 @@
         position: absolute;
         left: 0;
         top: 0;
-        width: 48px;
-        height: 48px;
         border-radius: 50%;
         border-left: 4px solid $extraGray;
         border-bottom: 4px solid transparent;
