@@ -1,0 +1,63 @@
+.form {
+    $root: &;
+    display: flex;
+
+    padding: 26px 130px 60px 30px;
+    gap: 160px;
+
+    &__title {
+        font-size: 32px;
+        color: $blue;
+        font-weight: 700;
+        width: 30%;
+    }
+
+    & form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__group {
+        position: relative;
+        margin-top: 30px;
+    }
+
+    &__label {
+        position: absolute;
+        left: 0;
+        top: 10px;
+        color: $black;
+        background-color: #fff;
+        z-index: 2;
+        transition: transform 150ms ease-out, font-size 150ms ease-out;
+        pointer-events: none;
+    }
+
+    &__input {
+        position: relative;
+        padding: 12px 0px 5px 0;
+        width: 100%;
+        outline: 0;
+        border: 0;
+        border-bottom: 1px solid $extraGray;
+        transition: border 150ms ease-out;
+    }
+
+    &__error {
+      font-size: 12px;
+      margin: 2px 0 0 20px;
+      color: $red;
+      height: 18px;
+    }
+}
+
+.focused-input {
+    border: 1px solid $extraCobolt;
+    padding: 8px 20px 14px 20px;
+    border-radius: 24px;
+}
+
+.form__label-msg.focused-label {
+    font-size: 12px;
+    transform: translate(20%, -170%);
+}
