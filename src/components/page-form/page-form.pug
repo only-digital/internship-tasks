@@ -1,0 +1,21 @@
+mixin form-loader()
+	.form-loader
+
+mixin page-form(props)
+	.page-form(data-component='page-form')
+		h3.page-form__title= props.title 
+		form.page-form__form&attributes(attributes)
+			label(for="email").page-form__input-label E-mail 
+			input(type="email", id="email").page-form__input
+			span.page-form__err-message 
+			label(for="confirmation").page-form__checkbox-label 
+				input(type="checkbox" id="confirmation").page-form__checkbox
+				+svg("input-check-svg").page-form__checkbox-icon
+				span.page-form__checkbox-text Вы подтверждаете, что ознакомились 
+					a(href="#").page-form__link c политикой обработки персональных данных
+			button(type="submit").page-form__submit-btn Отправить
+				+svg("arrow-svg").page-form__submit-icon
+			.page-form__success-message
+				+svg("success-check-svg").page-form__success-icon
+				span.page-form__success-text Форма успешно отправлена
+			+form-loader()

@@ -1,4 +1,5 @@
 import ExampleButton from "../../components/example-button/example-button";
+import PageForm from "../../components/page-form/page-form";
 import PageHeader from "../../components/page-header/page-header";
 import PageList from "../../components/page-list/page-list";
 
@@ -11,6 +12,7 @@ const allComponents = {
   "example-button": ExampleButton,
   "page-header": PageHeader,
   "page-list": PageList,
+  "page-form": PageForm,
   
 };
 
