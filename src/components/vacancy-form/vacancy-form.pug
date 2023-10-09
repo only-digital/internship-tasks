@@ -1,0 +1,106 @@
+mixin vacancy-form(props)
+	.vacancy-form&attributes(attributes)(data-component='vacancy-form')
+		p.vacancy-form__date 18 декабря 2020
+		h1.vacancy-form__vacancy-header Консультант SAP PO
+		div.vacancy-form__views-and-responses
+			span.vacancy-form__views Просмотров:
+			span.vacancy-form__responses Откликов:
+		div.vacancy-form__responsibilities
+			h1.vacancy-form__block-header Вам предстоит
+			div.vacancy-form__responsibility
+				div.svg-container
+					+svg('dash').vacancy-form__svg
+				span.vacancy-form__main-text Участие в проектах в роли архитектора/консультанта по интеграции данных
+			div.vacancy-form__responsibility
+				div.svg-container
+					+svg('dash').vacancy-form__svg
+				span.vacancy-form__main-text Проектирование архитектуры интеграции по технологиям SAP (Process Orchestration 7.5, Data Services 4.2, RFC, IDOC)
+			div.vacancy-form__responsibility
+				div.svg-container
+					+svg('dash').vacancy-form__svg
+				span.vacancy-form__main-text Подбор способов взаимодействия с non-SAP системами (1C:ERP, Lotus и др.)
+			div.vacancy-form__responsibility
+				div.svg-container
+					+svg('dash').vacancy-form__svg
+				span.vacancy-form__main-text Подготовка проектной документации (ФТТ, ТЗ, АЗ, тех. проект, проектные решения по интеграции, спецификации на разработку, описания настроек)
+			div.vacancy-form__responsibility
+				div.svg-container
+					+svg('dash').vacancy-form__svg
+				span.vacancy-form__main-text Проведение аудита интеграционных сценариев и проектно-эксплуатационной документации, разработанных подрядными организациями
+			div.vacancy-form__responsibility
+				div.svg-container
+					+svg('dash').vacancy-form__svg
+				span.vacancy-form__main-text Разработка и поддержка интеграционных сценариев
+		div.vacancy-form__expectations
+			h1.vacancy-form__block-header Мы ожидаем
+			div.vacancy-form__expectation
+				div.svg-container
+					+svg('dash').vacancy-form__svg
+				span.vacancy-form__main-text Знание ASAP, MS Visio, SAP PI / SAP PO, SAP HANA, JSON, XML
+			div.vacancy-form__expectation
+				div.svg-container
+					+svg('dash').vacancy-form__svg
+				span.vacancy-form__main-text Опыт работы в сфере аналитики от 3-х лет в должности аналитика, ведущего аналитика, специалиста по внедрению информационных систем
+			div.vacancy-form__expectation
+				div.svg-container
+					+svg('dash').vacancy-form__svg
+				span.vacancy-form__main-text Опыт разработки технических заданий и постановок задач
+			div.vacancy-form__expectation
+				div.svg-container
+					+svg('dash').vacancy-form__svg
+				span.vacancy-form__main-text Опыт описания бизнес-процессов в нотациях BPMN и UML
+			div.vacancy-form__expectation
+				div.svg-container
+					+svg('dash').vacancy-form__svg
+				span.vacancy-form__main-text Опыт формирования требований к информационным системам
+			div.vacancy-form__expectation
+				div.svg-container
+					+svg('dash').vacancy-form__svg
+				span.vacancy-form__main-text Опыт составления проектной документации по ГОСТ
+		div.vacancy-form__offers
+			h1.vacancy-form__block-header Мы предлагаем
+			div.vacancy-form__offer
+				div.svg-container
+					+svg('dash').vacancy-form__svg
+				span.vacancy-form__main-text Оформление в соответствии с нормами ТК РФ, социальные гарантии
+			div.vacancy-form__offer
+				div.svg-container
+					+svg('dash').vacancy-form__svg
+				span.vacancy-form__main-text Крупные проекты в компании–лидере отрасли
+			div.vacancy-form__offer
+				div.svg-container
+					+svg('dash').vacancy-form__svg
+				span.vacancy-form__main-text Возможность модернизировать процессы реального производственного бизнеса в команде сильнейших экспертов
+			div.vacancy-form__offer
+				div.svg-container
+					+svg('dash').vacancy-form__svg
+				span.vacancy-form__main-text Полис ДМС (включая стоматологию)
+			div.vacancy-form__offer
+				div.svg-container
+					+svg('dash').vacancy-form__svg
+				span.vacancy-form__main-text Доступ к корпоративной OnLine библиотеке
+			div.vacancy-form__offer
+				div.svg-container
+					+svg('dash').vacancy-form__svg
+				span.vacancy-form__main-text Обучение в программах Корпоративного университета
+		h1.vacancy-form__form-header Форма обратной связи
+		form.vacancy-form__form-itself
+			div.vacancy-form__form-wrapper
+				label.vacancy-form__email(for='email-input') E-mail
+				input.vacancy-form__email-input#email-input(type='email')
+				span.vacancy-form__email-error Поле E-mail обязательно
+				div.vacancy-form__flex-container
+					label.vacancy-form__checkbox(for="privacy-policy")
+						+svg('checkbox').vacancy-form__checkbox-svg
+					input.vacancy-form__privacy-policy-check#privacy-policy(type='checkbox')
+					span.vacancy-form__privacy Вы подтверждаете, что ознакомились 
+					span.vacancy-form__privacy-blue c политикой обработки персональных данных
+				span.vacancy-form__privacy-policy-error Необходимо согласиться с политикой обработки персональных данных
+			button.vacancy-form__submit-btn
+				span.vacancy-form__btn-text Отправить
+				+svg('white_arrow').vacancy-form__button-svg
+				+svg('successful_submit').vacancy-form__successful-submit-svg
+			span.vacancy-form__successful-submit Форма успешно отправлена
+		div.vacancy-form__loader
+			section 
+				span.loader-5
