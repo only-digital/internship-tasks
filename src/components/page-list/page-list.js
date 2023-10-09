@@ -1,4 +1,4 @@
-import Component from '../../app/js/base/Component';
+import Component from '../../app/js/base/component';
 
 class PageList extends Component {
     constructor(element) {
