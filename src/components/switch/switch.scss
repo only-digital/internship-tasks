@@ -1,50 +1,83 @@
+$gray: #DEDEDE;
 $blue: #0041A0;
 $darkBlue: #002F6C;
-$gray: #DEDEDE;
 
 .switch {
+	position: relative;
+	display: inline-block;
 	width: 56px;
 	height: 28px;
-	border-radius: 14px;
-	background-color: $blue;
-	position: relative;
-	transition: background-color 0.3s;
-	&:hover {
-		background-color: $darkBlue;
-	}
+	outline: unset;
 	&:focus {
-		outline: 3px solid #C2DAFF;
-		background-color: $gray;
-		svg {
-			top: 6px;
-			right: 6px;
-			bottom: 9px;
+		.switch-slider {
+			outline: 3px solid #C2DAFF;
+		}
+		.switch-input {
+			&:checked {
+				+ {
+					.switch-slider {
+						outline: unset;
+					}
+				}
+			}
 		}
 	}
 }
-.switch-svg {
-	position: absolute;
-	top: 6px;
-	right: 6px;
-	bottom: 6px;
-	width: 16px;
-	height: 16px;
+.switch-input {
+	display: none;
+	&:checked {
+		+ {
+			.switch-slider {
+				background-color: $blue;
+				&:before {
+					transform: translateX(28px);
+				}
+			}
+		}
+	}
+	&:hover {
+		+ {
+			.switch-slider {
+				background-color: $darkBlue;
+			}
+		}
+	}
 }
-.switch[disabled] {
+.switch-slider {
+	position: absolute;
+	cursor: pointer;
+	border-radius: 14px;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	background-color: $gray;
-	pointer-events: none;
+	transition: .4s;
+	&:before {
+		position: absolute;
+		content: "";
+		border-radius: 50%;
+		height: 16px;
+		width: 16px;
+		left: 6px;
+		bottom: 6px;
+		background-color: white;
+		transition: .4s;
+	}
 }
 @media (max-width: 375px) {
 	.switch {
 		width: 40px;
 		height: 20px;
 	}
-	.switch-svg {
-		position: absolute;
-		top: 4px;
-		right: 4px;
-		bottom: 4px;
-		width: 12px;
-		height: 12px;
+	.switch-slider {
+		&:before {
+			height: 12px;
+			width: 12px;
+			left: 4px;
+			bottom: 4px;
+		}
 	}
 }
+
+

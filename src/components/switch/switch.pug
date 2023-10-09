@@ -1,3 +1,4 @@
 mixin switch(props)
-	button.switch&attributes(attributes)
-		+svg('toggleNob').switch-svg
+	label.switch&attributes(attributes)(tabindex="0" role="switch")
+		input.switch-input(type="checkbox")
+		span.switch-slider
