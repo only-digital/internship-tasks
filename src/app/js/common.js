@@ -1,3 +1,4 @@
+import inputMailCt from "../../components/feedback/form/input-mail-ct/input-mail-ct";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -5,6 +6,7 @@
  * Значение - JS-класс компонента (Импорт добавляется вручную)
  */
 const allComponents = {
+    "input-mail-ct":inputMailCt,
 }
 
 /**

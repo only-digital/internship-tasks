@@ -1,4 +1,5 @@
 mixin input-mail-ct(props)
-    .input-mail-ct&attributes(attributes)   
-        input.input-mail-ct__input(type="email" placeholder="E-mail")
+    .input-mail-ct&attributes(attributes)(data-component="input-mail-ct")   
         span.input-mail-ct__name="E-mail"
+        input.input-mail-ct__input(type="email" placeholder="E-mail")
+        span.input-mail-ct__alert-text="Сообщение ошибки"
