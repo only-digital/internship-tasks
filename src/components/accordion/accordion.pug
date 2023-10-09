@@ -1,0 +1,6 @@
+mixin accordion(number, title, content)
+	.accordion(data-component='accordion')
+		button.accordion__control
+			h3.accordion__title= `${number} ${title}`
+			+svg('accordion-icon').accordion__icon
+		.accordion__content= content
