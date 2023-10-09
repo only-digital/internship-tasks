@@ -1,0 +1,91 @@
+@mixin color($root, $color) {
+  color: $color;
+
+  #{$root}__svg {
+    fill: $color;
+  }
+}
+
+.blue-button {
+  $root: &;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  width: 327px;
+  height: 42px;
+  padding: 0px 14px 3px;
+
+  @media (min-width: 768px) {
+    gap: 14px;
+    width: 121px;
+    padding: 0px 14px 3px 18px;
+  }
+
+  border-radius: 24px;
+  border: 1px solid $grey;
+
+  transition: background-color 0.4s, color 0.4s, fill 0.4s;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+  color: $black;
+
+  @media (min-width: 1280px) {
+    gap: 12px;
+    width: 111px;
+    padding: 0px 14px 4px 16px;
+    font-size: 14px;
+
+    outline: transparent;
+    transition: outline-color 0.6s;
+
+    &:hover {
+      background-color: $cobalt;
+      @include color($root, $white);
+      border: none;
+    }
+
+    &:focus-visible {
+      outline: 3px solid $light-blue;
+
+      &:not(:hover) {
+        @include color($root, $cobalt);
+      }
+    }
+  }
+
+  @media (min-width: 1920px) {
+    gap: 14px;
+    width: 129px;
+    height: 48px;
+    padding: 0px 14px 2px 18px;
+    font-size: 16px;
+  }
+
+  &__svg {
+    width: 24px;
+    height: 24px;
+    fill: $blue;
+    margin-top: -1px;
+
+    @media (min-width: 1920px) {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &:disabled {
+    pointer-events: none;
+    @include color($root, $steel);
+  }
+
+  &:hover:active {
+    background-color: $blue;
+    @include color($root, $white);
+    border: none;
+  }
+}
