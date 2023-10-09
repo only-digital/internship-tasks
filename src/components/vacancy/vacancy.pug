@@ -5,10 +5,10 @@ mixin vacancy(props)
 			h1 Консультант SAP PO
 			.vacancy__header__stats 
 				span.text Просмотров: 
-					span.vacancy__views
+					span.vacancy__view-count
 					span.loader.vacancy__spinner-stats
 				span.text Откликов: 
-					span.vacancy__responses
+					span.vacancy__response-count
 					span.loader.vacancy__spinner-stats
 		section.vacancy__description
 			h2 Вам предстоит
@@ -41,7 +41,7 @@ mixin vacancy(props)
 				.vacancy__contact__input-container
 					label(for='email') E-mail
 					input(type="email", name="email")
-				.vacancy__warning &nbsp;
+				.vacancy__warning-message &nbsp;
 				.vacancy__contact__checkbox-container
 					label
 						input(type="checkbox", name="confirm")

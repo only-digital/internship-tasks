@@ -4,18 +4,18 @@ class Vacancy extends Component {
     constructor(element) {
         super(element);
 
-        this.viewsElement = this.getElement("views");
-        this.responsesElement = this.getElement("responses");
+        this.viewCountElement = this.getElement("view-count");
+        this.responseCountElement = this.getElement("response-count");
         this.statSpinners = document.querySelectorAll(
             ".vacancy__spinner-stats"
         );
-        this.warningMessageElement = this.getElement("warning");
-        this.successMessageElement = this.getElement("success-message");
 
+        this.warningMessageElement = this.getElement("warning-message");
+        this.successMessageElement = this.getElement("success-message");
         this.formElement = this.getElement("form");
-        this.formElement.addEventListener("submit", this.onSubmit);
 
         this.displayStats();
+        this.formElement.addEventListener("submit", this.onSubmit);
     }
 
     getStats = async () => {
@@ -27,8 +27,8 @@ class Vacancy extends Component {
     displayStats = async () => {
         const stats = await this.getStats();
 
-        this.viewsElement.textContent = stats.views;
-        this.responsesElement.textContent = stats.responses;
+        this.viewCountElement.textContent = stats.views;
+        this.responseCountElement.textContent = stats.responses;
         this.statSpinners.forEach(
             (spinner) => (spinner.style.display = "none")
         );

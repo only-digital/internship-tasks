@@ -93,7 +93,7 @@ $list-marker-color: #0DB274;
             line-height: 38px;
         }
 
-        .vacancy__warning {
+        .vacancy__warning-message {
             margin-top: 25px;
             font-size: 14px;
             line-height: 21px;
@@ -249,7 +249,7 @@ $list-marker-color: #0DB274;
             .vacancy__contact__success {
                 display: flex;
             }
-            .vacancy__warning {
+            .vacancy__warning-message {
                 visibility: hidden;
             }
         }
@@ -274,7 +274,7 @@ $list-marker-color: #0DB274;
                 }
             }
 
-            .vacancy__warning {
+            .vacancy__warning-message {
                 visibility: hidden;
             }
 
