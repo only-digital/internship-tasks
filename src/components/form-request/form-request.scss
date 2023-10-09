@@ -11,11 +11,18 @@ body {
     src: url('../src/assets/fonts/GrtskPeta-Regular.ttf');
 }
 
+.hide {
+	opacity: 30%;
+	transition: opacity .2s ease-in;
+	pointer-events: none;
+}
+
 .form-request {
 	$root: &;
 
 	//Your code here
 	&__header {
+		position: relative;
 		margin: 0 80px;
 		padding: 115px 0 28px 0;
 
@@ -34,10 +41,19 @@ body {
 			font-size: 16px;
     		color:#8F8F8F;
 			display: flex;
+			transition: opacity .2s ease-in;
+			opacity: 0;
 		}
 
 		&-views {
 			margin-right: 36px;
+		}
+		
+		&-loading {
+			position: absolute;
+			bottom: 15px;
+			left: 30px;
+			display: none;
 		}
 	}
 
@@ -103,6 +119,7 @@ body {
 			line-height: 18px;
 			color: #909090;
 			margin-left: 20px;
+			transition: opacity .2s ease-in;
 		}
 
 		&-email {
@@ -116,12 +133,18 @@ body {
 			font-size: 16px;
 			line-height: 24px;
 			color: #002F6C;
+			transition: opacity .2s ease-in;
+
+			&[disabled] {
+				opacity: 30%;
+				color: #BBBBBB;
+			}
 		}
 
 		&-error {
 			font-size: 14px;
 			line-height: 21px;
-			color: #EF1C1C;
+			color: transparent;
 			margin: 25px 0 14px 0;
 		}
 
@@ -168,6 +191,16 @@ body {
 			}
 		}
 
+		&-spinner {
+			position: absolute;
+			display: none;
+			top: 63px;
+			left: 50%;
+			transform: translateX(-50%);
+			width: 70px;
+			height: 70px;
+		}
+
 		&-checkbox-real:checked + &-checkbox-custom::before {
 			transform: translate(-50%, -50%) scale(1);
 		}
@@ -206,6 +239,7 @@ body {
 			left: 0;
 			bottom: 0;
 			z-index: 1;
+			opacity: 1;
 
 			&:active {
 				background-color: #002F6C;
@@ -219,6 +253,11 @@ body {
 
 			& img {
 				margin-left: 14px;
+			}
+
+			&[disabled] {
+				pointer-events: none;
+				opacity: 30%;
 			}
 		}
 

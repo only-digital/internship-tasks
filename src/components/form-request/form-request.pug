@@ -7,9 +7,11 @@ mixin form-request(props)
 			.form-request__header-logo Консультант SAP PO
 			.form-request__header-info 
 				p Просмотров: 
-					span.form-request__header-views 123
+					span.form-request__header-views 
 				p Откликов: 
-					span.form-request__header-responses 12
+					span.form-request__header-responses 
+			.form-request__header-loading 
+					img(src='../assets/images/spinner.svg')
 
 		// Content
 		.form-request__content
@@ -46,7 +48,7 @@ mixin form-request(props)
 			.form-request__footer-item
 				.form-request__footer-title Форма обратной связи
 			.form-request__footer-item
-				form(class='form-request__form' method='post')
+				form(class='form-request__form' id='form' method='POST')
 					.form-request__form-text E-mail
 					input(class='form-request__form-email' type='email' name='email')
 					.form-request__form-error Поле E-mail обязательно
@@ -63,3 +65,4 @@ mixin form-request(props)
 							div
 								img(src='../assets/images/Union.png')
 							span Форма успешно отправлена
+					img(class='form-request__form-spinner' src='../assets/images/spinner.svg')
