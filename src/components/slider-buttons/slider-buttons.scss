@@ -1,0 +1,98 @@
+.slider-buttons {
+  $root: &;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 60px;
+  @media (min-width: 1920px) {
+    height: 80px;
+  }
+
+  &__btn {
+    width: 60px;
+    @media (min-width: 1920px) {
+      width: 80px;
+    }
+
+    height: inherit;
+    border-radius: 50%;
+    border: 1px solid $grey2;
+    transition: background-color 0.4s;
+
+    &:hover:active {
+      background-color: $grey2;
+    }
+
+    &:disabled {
+      pointer-events: none;
+      #{$root}__svg {
+        fill: $grey;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      outline: transparent;
+      transition: outline-color 0.6s;
+
+      &:hover {
+        background-color: $grey3;
+        border-color: $grey3;
+      }
+
+      &:focus-visible {
+        outline: 3px solid $light-blue;
+      }
+    }
+  }
+
+  &__svg {
+    width: 22px;
+    height: inherit;
+    fill: $blue;
+
+    &_left {
+      margin-right: 4px;
+    }
+
+    &_right {
+      transform: rotate(180deg);
+      margin-left: 4px;
+    }
+
+    @media (min-width: 1920px) {
+      width: 30px;
+
+      &_left {
+        margin-right: 6px;
+      }
+
+      &_right {
+        margin-left: 6px;
+      }
+    }
+  }
+
+  &__content {
+    display: none;
+
+    @media (min-width: 768px) {
+      display: inline-block;
+      margin-left: 14px;
+
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 150%;
+      color: $steel;
+      opacity: 0.4;
+
+      #{$root}__btn:disabled + & {
+        color: $grey;
+      }
+    }
+
+    @media (min-width: 1920px) {
+      margin-left: 30px;
+    }
+  }
+}

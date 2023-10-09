@@ -1,0 +1,10 @@
+mixin slider-buttons(props)
+	.slider-buttons
+		button.slider-buttons__btn&attributes(attributes)
+			+svg('arrow-slider').slider-buttons__svg.slider-buttons__svg_left
+		button.slider-buttons__btn&attributes(attributes)
+			+svg('arrow-slider').slider-buttons__svg.slider-buttons__svg_right
+		span.slider-buttons__content
+			= props.current 
+			| &nbsp;/&nbsp;
+			= props.all
