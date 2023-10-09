@@ -16,6 +16,7 @@ $main-steel: #909090;
 
 	&__next {
 		transform: rotate(180deg);
+		margin-right: 30px;
 	}
 
 	&__pagination {
@@ -76,6 +77,7 @@ $main-steel: #909090;
 	&__btn:disabled {
 		background-color: $white;
 		outline: 1px solid $grey-1;
+		pointer-events: none;
 		#{$root}__arrow {
 			fill: $grey-3;
 		}

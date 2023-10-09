@@ -33,6 +33,7 @@ $disabled: #bcbcbc;
 
 	&[disabled] {
 		color: $disabled;
+		pointer-events: none;
 	}
 
 	&:focus-visible {
