@@ -1,17 +1,54 @@
-.input-mail-ct{
+@import "../../../../scssVariebles/color-varievles.scss";
+
+.input-mail-ct {
     width: 100%;
     position: relative;
-    &__input{
-        $grey:#F4F4F4;
-        border: 2px solid $grey;
-        border-color: transparent transparent $grey transparent;
-        transition: 0.8s ease all;
-        width: 100%;
-    }
-    &:before{
-        width: 40px;
-        height: 40px;
-        background-color: black;
+
+
+    &__name {
+        content: "E-mail";
         position: absolute;
+        font-size: 12px;
+        bottom: calc(100% + 2px);
+        left: 20px;
+        color: #DEDEDE;
+        opacity: 0;
+        transform: 0.5s ease opacity;
     }
+
+    &__input {
+        border: 1px solid;
+        border-color: transparent transparent #DEDEDE transparent;
+        transition: 0.8s ease background-color, 0.8s ease border-radius;
+        width: 100%;
+        padding: 13px 20px;
+
+        &::placeholder {
+            color: black;
+            transition: 0.4s ease color;
+        }
+
+        &:hover {
+            border-color: #F4F4F4;
+            background-color: #F4F4F4;
+            border-radius: 29px;
+        }
+
+        &:focus {
+
+            &::placeholder {
+                color: white;
+            }
+
+            border-radius: 29px;
+            background-color: white;
+            border-color: $blue;
+
+            &__name {
+                opacity: 1;
+            }
+        }
+    }
+
+
 }
