@@ -78,6 +78,17 @@ $darkBlue: #002F6C;
 			bottom: 4px;
 		}
 	}
+	.switch-input {
+		&:checked {
+			+ {
+				.switch-slider {
+					&:before {
+						transform: translateX(20px);
+					}
+				}
+			}
+		}
+	}
 }
 
 
