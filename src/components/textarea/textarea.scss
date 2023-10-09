@@ -2,21 +2,65 @@
 	$root: &;
 	display: flex;
 	flex-direction: column;
+	font-family: Arial, Helvetica, sans-serif;
 
-	// &__area:hover {
-	// 	height: 193px;
-	// 	border: none;
-	// 	background-color: #F4F4F4;
-	// }
+	&_inactive {
+		pointer-events: none;
+		opacity: 0.4;
+	}
+
+	&__area:hover {
+		border: none;
+		background-color: #F4F4F4;
+		border-radius: 24px; 
+		padding: 12px 20px 14px 20px;
+		height: 167px;
+	}
+
+	&__area:focus {
+		border: 1px solid #0041A0;
+		background-color: white;
+		border-radius: 24px; 
+		padding: 12px 20px 14px 20px;
+		height: 211px;
+	}
+
+	&_invisible_elem {
+		display: none;
+	}
 
 	&__area {
+		min-height: 36px;
+		resize: none;
+		width: 100%;
+		overflow: auto;
+		border: none;
+		border-bottom: 1px solid #DEDEDE;
+		padding-top: 30px;
+		padding-bottom: 19px;
+	}
+
+	&__area_correct_input {
+		padding: 12px 50px 16px 20px;
+		background-color: #F4F4F4;
+		resize: none;
+		overflow: auto;
+		border-radius: 24px; 
+		border: none;
+	}
+
+	&__wrapper {
+		position: relative;
 		max-width: 556px;
-	width: 100%;
-	height: 36px;
-	resize: none;
-	overflow: auto;
-	border: none;
-	border-bottom: 1px solid #DEDEDE;
+		width: 100%;
+	}
+
+	&__svg {
+		position: absolute;
+		width: 18px;
+		height: 14px;
+		right: 20px;
+		bottom: 16px;
 	}
 
 	&__area::placeholder {
@@ -27,6 +71,19 @@
 		font-weight: 400;
 		line-height: 100%;
 		letter-spacing: -1px;
+	}
+
+	&_area_error {
+		border: 1px solid #F00;
+	}
+	&__error {
+		color:  #F00;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 150%; 
+		letter-spacing: -1px;
+		padding-left: 20px;
 	}
 
 }

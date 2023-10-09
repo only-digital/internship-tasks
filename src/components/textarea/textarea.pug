@@ -1,4 +1,7 @@
-mixin textarea({ placeholder='Ваше сообщение',title='Ваше сообщение'}={})
-	.textarea&attributes(attributes)(data-component='textarea')
+mixin textarea({ placeholder='Ваше сообщение',title='Ваше сообщение',error='Длина сообщения более 1000 символов', active=true }={})
+	.textarea(class=active?'':'textarea_inactive')&attributes(attributes)(data-component='textarea')
 		span.textarea__title=title
-		textarea(placeholder=placeholder).textarea__area
+		.textarea__wrapper
+			textarea(placeholder=placeholder)&attributes(attributes).textarea__area
+			+svg('tip').textarea__svg.textarea_invisible_elem
+		span.textarea__error.textarea_invisible_elem=error
