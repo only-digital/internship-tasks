@@ -1,0 +1,91 @@
+$main-blue: #002f6c;
+$extra-cobolt: #0041a0;
+$main-steel: #909090;
+$main-white: #fff;
+$extra-grey-1: #bcbcbc;
+
+.contact-form {
+  $root: &;
+  padding: 44px 217px 45px 103px;
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+  font-family: Arial;
+  &__title {
+    color: $main-blue;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: -0.64px;
+    width: 363px;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  &__form {
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__email-label {
+    color: $main-steel;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.24px;
+    padding-left: 20px;
+  }
+
+  &__email-field {
+    padding: 8px 20px 14px 20px;
+    height: 48px;
+    border-radius: 24px;
+    border: 1px solid $extra-cobolt;
+    max-width: 836px;
+    width: 100%;
+  }
+  &__error-text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%; /* 21px */
+    padding: 25px 0 14px;
+    color: #ef1c1c;
+  }
+
+  &__checkbox-label {
+    color: $main-steel;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    padding-bottom: 30px;
+  }
+
+  &__checkbox {
+    width: 16px;
+    height: 16px;
+    border: 1px solid $extra-grey-1;
+    -webkit-appearance: auto;
+    margin-right: 18px;
+  }
+
+  &__policy-link {
+    color: $main-blue;
+  }
+
+  &__success {
+    display: flex;
+    align-items: center;
+    gap: 21px;
+  }
+
+  &__loader {
+    margin: 18px 0 18px 40px;
+  }
+}
+
+.disabled-form {
+  pointer-events: none;
+  opacity: 0.3;
+}

@@ -1,0 +1,199 @@
+$extra-grey-1: #bcbcbc;
+$main-blue: #002f6c;
+$extra-cobolt: #0041a0;
+$main-white: #ffffff;
+$main-steel: #909090;
+$system-text: #111;
+$light-blue: #99b3d8;
+$main-red: #f00;
+$medium-red: #bf1d26;
+$dark-red: #81080f;
+$extra-grey-3: #f4f4f4;
+
+.button {
+  $root: &;
+
+  display: inline-flex;
+  height: 48px;
+  padding: 0px 14px 0px 18px;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  border-radius: 25px;
+  border: 1px solid $extra-grey-1;
+  width: fit-content;
+  transition: color 0.3s;
+
+  @media (max-width: 1280px) {
+    height: 42px;
+    padding: 0px 14px 0px 16px;
+    gap: 12px;
+  }
+  @media (max-width: 768px) {
+    padding: 0px 14px 0px 18px;
+    gap: 14px;
+  }
+  @media (max-width: 375px) {
+    width: 100%;
+  }
+
+  &__text {
+    font-size: 16px;
+    font-family: Arial;
+    font-weight: 400;
+    letter-spacing: -0.32px;
+    user-select: none;
+    color: $system-text;
+    font-weight: 400;
+    @media (max-width: 1280px) {
+      font-size: 14px;
+    }
+    @media (max-width: 768px) {
+      font-size: 16px;
+    }
+  }
+
+  & svg {
+    width: 32px;
+    height: 32px;
+    transition: fill 0.3s;
+
+    @media (max-width: 1280px) {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  &:disabled {
+    pointer-events: none;
+    #{$root}__text {
+      color: $main-steel;
+    }
+    & svg path {
+      fill: $main-steel;
+    }
+  }
+
+  @media (min-width: 768px) and (hover: hover) {
+    &:hover {
+      border: none;
+      background-color: $extra-cobolt;
+
+      #{$root}__text {
+        color: $main-white;
+      }
+      & svg path {
+        fill: $main-white;
+      }
+    }
+  }
+
+  &:active {
+    border: none;
+    background-color: $main-blue;
+
+    #{$root}__text {
+      color: $main-white;
+    }
+    & svg path {
+      fill: $main-white;
+    }
+  }
+
+  @media (min-width: 768px) {
+    &:focus {
+      outline: 3px solid $light-blue;
+      background-color: none;
+
+      #{$root}__text {
+        color: $extra-cobolt;
+      }
+      & svg path {
+        fill: $extra-cobolt;
+      }
+    }
+  }
+
+  &.red-button {
+    background-color: $main-red;
+    border: none;
+
+    & .button__text {
+      color: $main-white;
+    }
+
+    & svg path {
+      fill: $main-white;
+    }
+
+    &:disabled {
+      pointer-events: none;
+      background-color: $extra-grey-3;
+      #{$root}__text {
+        color: $main-steel;
+      }
+      & svg path {
+        fill: $main-steel;
+      }
+    }
+
+    @media (min-width: 768px) and (hover: hover) {
+      &:hover {
+        border: none;
+        background-color: $medium-red;
+      }
+    }
+
+    &:active {
+      border: none;
+      background-color: $dark-red;
+    }
+
+    @media (min-width: 768px) {
+      &:focus {
+        outline: 3px solid $light-blue;
+      }
+    }
+  }
+
+  &.blue-button {
+    background-color: $extra-cobolt;
+    border: none;
+
+    & .button__text {
+      color: $main-white;
+    }
+
+    & svg path {
+      fill: $main-white;
+    }
+
+    &:disabled {
+      pointer-events: none;
+      background-color: $extra-grey-3;
+      #{$root}__text {
+        color: $main-steel;
+      }
+      & svg path {
+        fill: $main-steel;
+      }
+    }
+
+    @media (min-width: 768px) and (hover: hover) {
+      &:hover {
+        border: none;
+        background-color: $light-blue;
+      }
+    }
+
+    &:active {
+      border: none;
+      background-color: $main-blue;
+    }
+
+    @media (min-width: 768px) {
+      &:focus {
+        outline: 3px solid $light-blue;
+      }
+    }
+  }
+}

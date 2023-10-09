@@ -1,0 +1,5 @@
+mixin button(props)
+	- var colorClass = props.color === 'blue' ? 'blue-button' : '' 
+	button.button&attributes(attributes, {'class': colorClass}) 
+		span.button__text!= props.text
+		include ../../assets/icons/button_arrow.svg		

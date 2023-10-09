@@ -1,0 +1,20 @@
+mixin contact-form(props)
+	.contact-form&attributes(attributes)(data-component='contact-form')
+		.contact-form__title Форма обратной связи
+		.contact-form__wrapper 
+			form.contact-form__form
+				label.contact-form__email-label(for="email") Email
+				input.contact-form__email-field(type="email" id="email" name="email")
+				.contact-form__error-text 
+				.contact-form__checkbox-wrapper
+				label.contact-form__checkbox-label
+					input.contact-form__checkbox(type="checkbox" id="agree" name="agree", required)
+					| Вы подтверждаете, что ознакомились 
+					a.contact-form__policy-link(href="#link-to-policy") с политикой обработки персональных данных.
+				+button({text: 'Отправить', color: 'blue'}).contact-form__submit-button(type="submit") 
+			+loader.contact-form__loader
+			div.contact-form__success
+				include ../../assets/icons/button_success.svg	
+				span.contact-form__success-text Форма успешно отправлена
+
+

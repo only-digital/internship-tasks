@@ -1,0 +1,9 @@
+
+mixin header(props)
+	.header&attributes(attributes)(data-component='header')
+		.header__date 18 декабря 2020
+		.header__title #{props.title}
+		.header__wrapper
+			.header__views 
+			.header__feedback 
+			+loader.header__loader  

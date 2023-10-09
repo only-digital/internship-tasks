@@ -1,0 +1,6 @@
+mixin list(props)
+	- var items = props.items
+	.list&attributes(attributes)(data-component='list')
+		ul.list__title #{props.title}
+			each item in items
+				li.list__item= item

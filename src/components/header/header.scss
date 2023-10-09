@@ -1,0 +1,41 @@
+$steel: #8f8f8f;
+$blue: #04306a;
+
+.header {
+  $root: &;
+  display: flex;
+  flex-direction: column;
+  margin: 115px 80px 144px;
+  font-family: Arial;
+  font-weight: 400;
+
+  &__date {
+    padding-left: 9px;
+    color: $steel;
+    font-feature-settings: "ss08" on;
+    font-size: 20px;
+    line-height: 140%;
+    letter-spacing: -0.4px;
+  }
+  &__title {
+    margin: 20px 0 45px;
+    color: $blue;
+    font-feature-settings: "ss08" on;
+    font-size: 64px;
+    line-height: 100%;
+    letter-spacing: -1.28px;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 36px;
+    color: $steel;
+    font-size: 16px;
+    line-height: 130%;
+    letter-spacing: -0.32px;
+  }
+  &__views {
+  }
+  &__feedback {
+  }
+}
