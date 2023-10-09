@@ -1,6 +1,7 @@
 .checkbox {
 	$root: &;
 	position: relative;
+	font-family: Arial, Helvetica, sans-serif;
 
 	&_disabled {
 		opacity: .4;
@@ -72,6 +73,35 @@
     border-left: 2px solid white;
     border-bottom: 2px solid white;
     transform: rotate(-45deg);
+	}
+
+	&__error {
+		color: #EF1C1C;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 150%; 
+		margin-bottom: 14px;
+		display: block;
+	}
+
+	&__link {
+		color: #002F6C;
+		cursor: pointer;
+		font-size: 14px;
+		line-height: 21px;
+		letter-spacing: 0em;
+		text-align: left;
+	}
+
+	&__label {
+		font-size: 14px;
+		line-height: 21px;
+		letter-spacing: 0em;
+		text-align: left;
+		position: relative;
+		padding-left: 34px;
+		color: #909090;
+		cursor: pointer;
 	}
 
 }

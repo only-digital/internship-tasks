@@ -1,4 +1,5 @@
-mixin checkbox({ label='',id, disabled=false, checked=false}={})
+mixin checkbox({ label='',id, disabled=false, checked=false,link, ref,error }={})
 	.checkbox(class=disabled&&'checkbox_disabled')&attributes(attributes)(data-component='checkbox')
 		input.checkbox__input(type="checkbox" id=id name=id checked=checked)
 		label.checkbox__label(for=id)=label
+		a.checkbox__link(href=ref target="_blank" rel="noreferrer noopener")!=link
