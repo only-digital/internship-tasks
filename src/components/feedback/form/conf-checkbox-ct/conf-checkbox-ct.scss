@@ -1,0 +1,13 @@
+@import "../../../../scssVariebles/color-varievles.scss";
+
+.conf-checkbox-ct {
+    &__text {
+        font-size: 13px;
+        color: $gray;
+    }
+
+    &__link {
+        font-size: 13px;
+        color: $aqua;
+    }
+}

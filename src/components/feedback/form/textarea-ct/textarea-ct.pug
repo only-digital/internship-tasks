@@ -1,0 +1,6 @@
+mixin textarea-ct(props)
+    .textarea-ct&attributes(attributes)(data-component="textarea-ct")   
+        span.textarea-ct__name="Ваше сообщение"
+        textarea.textarea-ct__textarea(type="email" placeholder="Ваше сообщение")
+        +svg("input-confirm-svg")(class="textarea-ct__icon")
+        span.textarea-ct__alert-text="Заполните поле"

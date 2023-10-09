@@ -1,13 +1,13 @@
 include ./input-mail-ct/input-mail-ct
 include ./input-fyle/input-fyle
-include ./textarea/textarea
-include ./conf-checkbox/conf-checkbox
+include ./textarea-ct/textarea-ct
+include ./conf-checkbox-ct/conf-checkbox-ct
 include ./button/button
 
 mixin form(props)
     .form&attributes(attributes)
         +input-mail-ct
-        //- +textarea
+        +textarea-ct
         +input-fyle
-        +conf-checkbox
+        +conf-checkbox-ct
         +button

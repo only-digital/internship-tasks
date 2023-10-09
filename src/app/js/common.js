@@ -1,4 +1,6 @@
 import inputMailCt from "../../components/feedback/form/input-mail-ct/input-mail-ct";
+import textareaCt from "../../components/feedback/form/textarea-ct/textarea-ct";
+
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -7,6 +9,7 @@ import inputMailCt from "../../components/feedback/form/input-mail-ct/input-mail
  */
 const allComponents = {
     "input-mail-ct":inputMailCt,
+    "textarea-ct":textareaCt
 }
 
 /**

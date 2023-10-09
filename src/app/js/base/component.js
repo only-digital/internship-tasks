@@ -5,6 +5,7 @@ class Component {
     root;
     rootName;
     inputMailCondintion;
+    textareaCondintion;
 
     constructor({name, component}) {
         this.root = component;
