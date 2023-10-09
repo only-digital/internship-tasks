@@ -1,8 +1,11 @@
+
+
 //color palette
  $blue: #04306A;
  $black: #012B34;
  $gray: #8F8F8F;
 
+ //$svg: url('../../assets/icons/example-svg.svg');
 
 .vacancy {
 	font-family: Arial, Helvetica, sans-serif;
@@ -49,12 +52,33 @@
 			font-weight: 400;
 			line-height: 120%; /* 55.2px */
 			letter-spacing: -0.92px;
+			margin-bottom: 35px;
 		}
 
 		ul {
 			// does not work!
-			list-style-image: url('/Users/ekaterina/Desktop/internship-tasks-katerina-shche/src/assets/icons/list-icon.svg');
-			list-style-position: outside;
+			list-style: none;
+			li {
+				position: relative;
+				svg {
+					width: 20px;
+					height: 20px;
+					position: absolute;
+					top: 5px;
+				}
+				span {
+					display: block;
+					color: $black;	
+					font-family: Arial;
+					font-size: 24px;
+					font-weight: 400;
+					line-height: 140%; /* 33.6px */
+					margin: 6px 0 6px 28px;
+				}
+			}
+			//li:before {
+			//	content: $svg;
+			//}
 		}
 	}
 	& form {
