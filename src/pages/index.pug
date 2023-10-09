@@ -2,6 +2,32 @@ extends ../../build_modules/common
 
 
 block body
-    +example-button()
-    +example-button()
-    //Your code here
+    .container
+        h1.title Lorem ipsum dolor
+
+        .spoiler-container 
+            +spoiler({
+                index: 1,
+                title:  "Nullam tincidunt vestibulum porttitor",
+                text: "Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."
+            })
+            +spoiler({
+                index: 2,
+                title: "Class aptent taciti sociosqu ad litora",
+                text: "Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."
+            })
+            +spoiler({
+                index: 3,
+                title: "Nulla fringilla ligula elit, non laoreet ipsum rutrum eget",
+                text: "Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."
+            })
+            +spoiler({
+                index: 4,
+                title: "Mauris ut suscipit tellus",
+                text: "Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."
+            })
+            +spoiler({
+                index: 5,
+                title: "Nullam placerat porta libero, vel maximus augue euismod eget",
+                text: "Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit."
+            })

@@ -1,0 +1,9 @@
+mixin spoiler(props)
+	.spoiler&attributes(attributes)(data-component='spoiler')
+		.spoiler__header
+			.spoiler__title
+				span #{props.index}.
+				h2 #{props.title}
+			+svg('cross').spoiler__icon
+		.spoiler__body
+			p.spoiler__text #{props.text}
