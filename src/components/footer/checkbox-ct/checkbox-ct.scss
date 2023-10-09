@@ -1,13 +1,10 @@
 .checkbox-ct {
     padding-bottom: 32px;
     padding-top: 20px;
-    display: flex;
-    align-items: center;
 
     &__box {
-        display: block;
-        width: 20px;
-        height: 20px;
+        display: inline-block;
+        padding-right: 14px;
     }
 
     &__checkbox {
@@ -20,8 +17,8 @@
         align-items: center;
         justify-content: space-evenly;
         border: 1px solid $gray;
-        width: 100%;
-        height: 100%;
+        width: 20px;
+        height: 20px;
     }
 
     &__icon {
@@ -34,23 +31,27 @@
         border-color: $blue;
     }
 
-    &:disabled &__fake-checkbox {
-        opacity: 0.6;
-    }
-
     &__text {
-        margin-left: 20px;
+        font-size: 15px;
         color: $gray;
-        user-select: none;
     }
 
-    &__text_blue {
-        color: $blue;
+    &__link {
+        cursor: pointer;
+        font-size: 15px;
+        color: #0041a0;
     }
 
-    &_disabled{
-        .checkbox-ct__text,.checkbox-ct__fake-checkbox{
+    &_disabled {
+
+        .checkbox-ct__text,
+        .checkbox-ct__fake-checkbox {
             opacity: 0.4;
+        }
+
+        .checkbox-ct__fake-checkbox {
+            background-color: $blue;
+            border-color: $blue;
         }
     }
 }
