@@ -1,7 +1,4 @@
-mixin button({ common=true,text,disabled,type='submit'}={})
-	button.button(class=common?'button_common':'' class=disabled&&'button_disabled' type=type)&attributes(attributes)(data-component='button')
-		span.button__text(class=common&&'button__text_common')!=text
-		if common 
-			+svg('arrow').button__svg.button__svg_common
-		else 
-			+svg('cross').button__svg.button__svg_attach
+mixin button({ text,disabled,type='submit'}={})
+	button.button(class=disabled&&'button_disabled' type=type)&attributes(attributes)(data-component='button')
+		span.button__text!=text
+		+svg('arrow').button__svg.button__svg_common
