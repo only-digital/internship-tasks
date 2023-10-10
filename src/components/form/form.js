@@ -7,9 +7,11 @@ class Form extends Component {
     this.inputMsg = this.getElement('input-msg');
     this.labelMsg = this.getElement('label-msg');
     this.labelEmail = this.getElement('label-email');
+    this.indicator = this.getElements('input-indicator');
 
     this.setupLabelAnimation();
   }
+
 
   setupLabelAnimation() {
     this.inputEmail.addEventListener('focus', () =>
@@ -21,6 +23,7 @@ class Form extends Component {
 
     this.inputMsg.addEventListener('focus', () => this.handleFocus(this.inputMsg, this.labelMsg));
     this.inputMsg.addEventListener('blur', () => this.handleBlur(this.inputMsg, this.labelMsg));
+
   }
 
   handleFocus(input, label) {
@@ -29,9 +32,16 @@ class Form extends Component {
   }
 
   handleBlur(input, label) {
-    if (input.value === '') {
+    if (!input.value) {
       label.classList.remove('focused-label');
       input.classList.remove('focused-input');
+      input.classList.remove('filled-input');
+    }
+    else {
+      input.classList.add('filled-input');
+      this.indicator.forEach(indicator => {
+        indicator.classList.add('visible-indicator');
+      });
     }
   }
 }

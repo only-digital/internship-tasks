@@ -15,11 +15,16 @@
     & form {
         display: flex;
         flex-direction: column;
+        margin-top: 33px;
     }
 
     &__group {
         position: relative;
         margin-top: 30px;
+
+        &:hover label, &:hover span {
+            text-indent: 15px;
+        }
     }
 
     &__label {
@@ -27,10 +32,29 @@
         left: 0;
         top: 10px;
         color: $black;
-        background-color: #fff;
+        background-color: transparent;
         z-index: 2;
-        transition: transform 150ms ease-out, font-size 150ms ease-out;
+        text-indent: 0;
+        transition: transform 150ms ease-out, font-size 150ms ease-out, text-indent 150ms ease-out;
         pointer-events: none;
+
+        &-msg.focused-label, &-email.focused-label {
+            font-size: 12px;
+        }
+
+        &-msg.focused-label {
+            transform: translate(20%, -170%);
+            text-indent: 0 !important;
+        }
+
+        &-email.focused-label {
+            transform: translate(50%, -170%);
+            text-indent: 0 !important;
+        }
+
+        &.hovered-label {
+            text-indent: 15px;
+        }
     }
 
     &__input {
@@ -40,7 +64,64 @@
         outline: 0;
         border: 0;
         border-bottom: 1px solid $extraGray;
-        transition: border 150ms ease-out;
+        transition: border 150ms ease-out, border-bottom 150ms ease-out, padding 150ms ease-out, height .4s ease-out, background-color .4s ease-out, border-radius .4s ease-out, border-bottom .4s ease-out;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+
+        border-radius: 0;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $extraGray2;
+            border-radius: 24px;
+            border-bottom: 1px solid transparent;
+
+            .form__label {
+                transform: translate(20%, -170%);
+            }
+        }
+
+        &-msg {
+            resize: none;
+            height: 35px;
+            overflow-y: hidden;
+            padding-right: 32px !important;
+        
+            &:hover, &:focus {
+                height: 190px;
+            }
+
+            &.filled-input {
+                height: 190px;
+                border: none;
+                background-color: $extraGray2;
+            }
+        }
+
+        &.focused-input {
+            border: 1px solid $extraCobolt;
+            padding: 13px 0 20px 20px;
+            border-radius: 24px;
+        }
+
+        &.filled-input {
+            border: none;
+            background-color: $extraGray2;
+        }
+
+        &-indicator {
+            width: 18px;
+            height: 13px;
+            fill: $green;
+            position: absolute;
+            bottom: 35px;
+            right: 20px;
+            opacity: 0;
+
+            &.visible-indicator {
+                opacity: 1;
+            }
+        }
     }
 
     &__error {
@@ -49,15 +130,4 @@
       color: $red;
       height: 18px;
     }
-}
-
-.focused-input {
-    border: 1px solid $extraCobolt;
-    padding: 8px 20px 14px 20px;
-    border-radius: 24px;
-}
-
-.form__label-msg.focused-label {
-    font-size: 12px;
-    transform: translate(20%, -170%);
 }

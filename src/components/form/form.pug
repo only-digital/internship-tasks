@@ -1,14 +1,16 @@
 mixin form(props)
     section.form&attributes(attributes)(data-component='form')
-        h2.form__title Форма обратной связи
+        h2.form__title Форма обратной <br> связи
         form
             .form__group
                 label.form__label.form__label-email(for="email") E-mail
                 input(id="email" type="email" maxlength="255" name="email" required).form__input.form__input-email
+                +svg('success').form__input-indicator.form__input-indicator-email
                 span.form__error 123
             .form__group
                 span.form__label.form__label-msg(for="message") Ваше сообщение
                 textarea(id="message" name="message").form__input.form__input-msg
+                +svg('success').form__input-indicator.form__input-indicator-msg
                 span.form__error 123
             label.form__files(for="files")
                 input(type="file" name="files" multiple).form__files-btn
@@ -17,7 +19,6 @@ mixin form(props)
             span.form__error 123
             label.form__acceptance(for="confirm")
                 input(type='checkbox' name="confirm")
-                //- span.indicator
                 span Вы подтверждаете, что ознакомились 
                     a(href='/') c политикой обработки персональных данных
             button(type="submit" disabled='').form__submit Отправить
