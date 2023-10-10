@@ -1,0 +1,27 @@
+.header {
+	height: 80px;
+  width: 100%;
+  
+  border-bottom: solid 1px #D9E1EC;
+
+  
+  .logo {
+    width: 290px;
+    height: 100%;
+    padding-top: 29px;
+    padding-left: 45px;
+    display: flex;
+    gap: 9px;
+    border-right: solid 1px #D9E1EC;
+
+    .text {
+      width: 50px;
+      color: #213C57;
+      font-size: 7px;
+      font-weight: 500;
+      line-height: 120%;
+      text-transform: uppercase;
+    }
+  }
+}
+
