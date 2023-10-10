@@ -2,6 +2,7 @@ import styles from "../styles/index.module.scss";
 import ExampleButton from "../components/example-button/example-button";
 import { getIndexPage } from "../../lib/api";
 import Header from "@/components/Header/Header";
+import Sidebar from "@/components/sidebar/sidebar";
 
 function Index(props) {
   console.log(props);
@@ -9,7 +10,10 @@ function Index(props) {
   return (
     <>
       <Header />
-      <main className={styles.main}>{/* Your code here */}</main>
+      <main className={styles.main}>
+        {/* Your code here */}
+        <Sidebar />
+      </main>
     </>
   );
 }

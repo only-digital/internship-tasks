@@ -1,0 +1,18 @@
+.sidebarItem {
+	width: 100%;
+  padding: 13px 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-radius: 10px;
+  background: #E3EDF7;
+
+  .title{
+    color: #007FFF;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 160%;
+  }
+}
+
