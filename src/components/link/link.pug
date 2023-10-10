@@ -1,4 +1,4 @@
 mixin link(props)
-	a.link&attributes(attributes)= props.text
+	a.link(href=props.href target=props.isBlank ? '_blank' : '_self')&attributes(attributes)= props.text
 		if (props.isShowIcon)
 			+svg('link').link__svg

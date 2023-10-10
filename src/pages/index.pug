@@ -16,21 +16,21 @@ block body
 			+slider-buttons({current:'01', all: '04'})(disabled='')
 
 		div(style={display : 'flex', gap: '10px', 'flex-direction': 'column'}) Ссылка отдельно:
-			+link({text:'Sustainalytics.com', isShowIcon: true})(href='https://www.sustainalytics.com/')
-			+link({text:'Sustainalytics.com', isShowIcon: true})(tabindex='-1').disabled
+			+link({text:'Sustainalytics.com', isShowIcon: true, href: 'https://www.sustainalytics.com/', isBlank: true})
+			+link({text:'Sustainalytics.com', isShowIcon: true, href: '#'})(tabindex='-1').disabled
 		
 		div(style={display : 'flex', gap: '10px', 'flex-direction': 'column', width: '300px'}) Ссылка в тексте:
 			p
 				| Для подключения сервиса добавьте  номер&nbsp;
-				+link({text:'+7(921)058-57-19'})(href='tel:+79210585719')
+				+link({text:'+7(921)058-57-19', href: 'tel:+79210585719', isBlank: true})
 				| &nbsp;в ваши контакты и напишите любое сообщение, или перейдите по ссылке ниже
 			p
 				| Цифровые продукты, направленные на создание&nbsp;
-				+link({text:'дополнительных сервисов'})(href='#')
+				+link({text:'дополнительных сервисов', href: '#'})
 				| &nbsp;и устранение «проблемных точек» наших клиентов
 			p
 				| Цифровые продукты, направленные на создание&nbsp;
-				+link({text:'дополнительных сервисов'})(href='#',  tabindex='-1').disabled
+				+link({text:'дополнительных сервисов', href: '#'})(tabindex='-1').disabled
 				| &nbsp;и устранение «проблемных точек» наших клиентов
 
 		div(style={display : 'flex', gap: '10px', 'flex-direction': 'column'}) Переключатель:
