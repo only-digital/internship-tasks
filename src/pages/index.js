@@ -3,6 +3,7 @@ import ExampleButton from "../components/example-button/example-button";
 import { getIndexPage } from "../../lib/api";
 import Header from "@/components/Header/Header";
 import Sidebar from "@/components/sidebar/sidebar";
+import TaskPage from "@/components/task-page/task-page";
 
 function Index(props) {
   console.log(props);
@@ -13,6 +14,7 @@ function Index(props) {
       <main className={styles.main}>
         {/* Your code here */}
         <Sidebar />
+        <TaskPage {...props} />
       </main>
     </>
   );
