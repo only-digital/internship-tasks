@@ -82,6 +82,7 @@
 		line-height: 150%; 
 		margin-bottom: 14px;
 		display: block;
+		padding-left: 20px;
 	}
 
 	&__link {
@@ -102,6 +103,10 @@
 		padding-left: 34px;
 		color: #909090;
 		cursor: pointer;
+	}
+
+	&_invisible-elem {
+		display: none;
 	}
 
 }

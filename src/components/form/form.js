@@ -21,7 +21,6 @@ class Form extends Component {
 
         this.root.addEventListener('submit',this.handleFormSubmit);
         this.serverError = this.getElement('server-error');
-        this.policyError = this.getElement('policy-error');
         this.loader = this.root.querySelector('.loader');
         this.submitButton = this.root.querySelector('.button');
         this.inputEmailRoot = this.root.querySelector('.input-email');
@@ -29,6 +28,7 @@ class Form extends Component {
         this.errorEmail = this.inputEmailRoot.querySelector('.input-email__error');
         this.tipEmail = this.inputEmailRoot.querySelector('.input-email__svg');
         this.policyInput = this.root.querySelector('.checkbox__input');
+        this.policyError = this.root.querySelector('.checkbox__error');
         this.policyInput.addEventListener('change',this.handlePolicyInput);
         this.inputEmail.addEventListener('input',this.handleEmailInput);
         this.inputEmail.addEventListener('focus',this.handleEmailFocus);
@@ -110,11 +110,11 @@ class Form extends Component {
 
     handlePolicyInput = (event) => {
         if(event.target.checked) {
-            this.policyError.classList.add('form_invisible-elem');
+            this.policyError.classList.add('checkbox_invisible-elem');
             this.errors.set('policy',true);
         } else {
             this.errors.set('policy',false);
-            this.policyError.classList.remove('form_invisible-elem');
+            this.policyError.classList.remove('checkbox_invisible-elem');
         }
         this.checkErrors();
     }

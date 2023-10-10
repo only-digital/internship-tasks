@@ -9,7 +9,6 @@ mixin form({ title=''}={})
 			+textarea()
 			+input-file({id:'form-input-file'})
 			span.form__file-error.form_invisible-elem 
-			+checkbox({id:'policy',label:'Вы подтверждаете, что ознакомились',ref:'http://mock-address-change-me',link:' c политикой обработки персональных данныx'})
-			span.form__policy-error.form_invisible-elem='Ознакомтесь с политикой'
+			+checkbox({id:'policy',label:'Вы подтверждаете, что ознакомились',ref:'http://mock-address-change-me',link:' c политикой обработки персональных данныx',error:'Ознакомтесь с политикой'})
 			span.form__server-error.form_invisible-elem
 			+button({text:'Отправить'})

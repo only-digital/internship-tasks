@@ -3,3 +3,4 @@ mixin checkbox({ label='',id, disabled=false, checked=false,link, ref,error }={}
 		input.checkbox__input(type="checkbox" id=id name=id checked=checked)
 		label.checkbox__label(for=id)=label
 		a.checkbox__link(href=ref target="_blank" rel="noreferrer noopener")!=link
+		span.checkbox__error.checkbox_invisible-elem=error
