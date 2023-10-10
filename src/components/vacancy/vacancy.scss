@@ -2,8 +2,11 @@
 
 //color palette
  $blue: #04306A;
+ $dark-blue: #002F6C;
+ $cobolt: #0041A0;
  $black: #012B34;
  $gray: #8F8F8F;
+ $steel: #909090;
 
  //$svg: url('../../assets/icons/example-svg.svg');
 
@@ -56,7 +59,6 @@
 		}
 
 		ul {
-			// does not work!
 			list-style: none;
 			li {
 				position: relative;
@@ -76,13 +78,66 @@
 					margin: 6px 0 6px 28px;
 				}
 			}
-			//li:before {
-			//	content: $svg;
-			//}
+			
 		}
 	}
-	& form {
+	&__form {
+		display: flex;
+		flex-flow: row nowrap;
 		width: 100%;
 		padding: 23px 137px 0 23px;
+		&-title {
+			width: calc(547px - 103px);
+			color: $blue;
+			font-family: Arial;
+			font-size: 32px;
+			font-weight: 400;
+			line-height: 120%; /* 38.4px */
+			letter-spacing: -0.64px;
+		}
+		&-input-box {
+			width: 836px;
+			display: flex;
+			flex-flow: column nowrap;
+			label[for='email'] {
+				color: $gray;
+				font-family: Arial;
+				font-size: 12px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 150%; /* 18px */
+				letter-spacing: -0.24px;
+				margin-left: 20px;
+				margin-top: 24px;
+			}
+			input[type='email'] {
+				height: 48px;
+				width: 100%;
+				border-radius: 24px;
+				border: 1px $cobolt solid;
+				margin-bottom: 60px;
+				padding: 8px 20px 14px;
+			}
+			label[for='agreement'] {
+				font-family: Arial;
+				color: $steel;
+				font-size: 14px;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 100%; /* 21px */
+				display: flex;
+				flex-flow: row nowrap;
+				align-items: center;
+				input[type='checkbox'] {
+					width: 16px;
+					height: 16px;
+					border: 1px $gray solid;
+					margin-right: 18px;
+				}
+				a {
+					color: $dark-blue;
+				}
+		}
+		}
 	}
 }

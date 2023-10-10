@@ -70,12 +70,14 @@ mixin vacancy(props)
 					+svg('li') 
 					span  Обучение в программах Корпоративного университета
 
-		form(action="/submit" method="post")
-			h3 Форма обратной связи
-			label(for="email") E-mail
+		form(action="/submit" method="post").vacancy__form
+			h3.vacancy__form-title Форма обратной связи
+			.vacancy__form-input-box
+				label(for="email") E-mail
 				input(type="email" id="email" name="email" required)
 			
-			input(type="checkbox" id="agreement" name="agreement")
-			label(for="agreement") Вы подтверждаете, что ознакомились c 
-				a(href='/#') политикой обработки персональных данных 
+				label(for="agreement") 
+					input(type="checkbox" id="agreement" name="agreement")
+					| Вы подтверждаете, что ознакомились c&nbsp;  
+					a(href='/#')  политикой обработки персональных данных 
 		
