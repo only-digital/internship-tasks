@@ -1,0 +1,51 @@
+.TaskItem {
+  padding: 24px;
+  padding-bottom: 31px;
+	background-color: #FFFFFF;
+  border-radius: 10px;
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    padding-bottom: 17px;
+    border-bottom: solid 1px #E7EAEE;
+    
+    
+  }
+
+  .title {
+    color: rgba(22, 31, 62, 0.90);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 130%;
+  }
+
+  &:hover .title {
+    color: #007FFF;
+  }
+
+  &.completed .title {
+    color: rgba(22, 31, 62, 0.30);
+    text-decoration: line-through;
+  }
+
+
+  .text {
+    margin-top: 10px;
+    max-width: 734px;
+    color: rgba(22, 31, 62, 0.90);
+    font-feature-settings: 'clig' off, 'liga' off;     
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 175%;
+    letter-spacing: 0.15px;
+  }
+
+
+  .cross {
+    cursor: pointer;
+  }
+}
