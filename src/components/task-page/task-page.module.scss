@@ -1,0 +1,22 @@
+.taskPage {
+  min-height: 100%;
+	flex: 1 1 auto;
+  padding: 48px 40px;
+  background: #F3F6F9;
+
+  .header {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .title {
+    color: #213C57;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 123.5%;
+    letter-spacing: 0.25px;
+  }
+}
