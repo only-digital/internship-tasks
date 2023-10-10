@@ -8,10 +8,6 @@ const Search = ({ tasks, setTasks }) => {
   const [search, setSearch] = useState("");
   const { filteredTask, onSearchChange } = useSearch(tasks);
 
-  const onInputChange = (e) => {
-    setSearch(e.target.value);
-  };
-
   useEffect(() => {
     const timer = setTimeout(() => {
       onSearchChange(search);
@@ -22,8 +18,16 @@ const Search = ({ tasks, setTasks }) => {
   }, [search]);
 
   useEffect(() => {
+    onSearchChange(search);
+  }, [tasks]);
+
+  useEffect(() => {
     setTasks(filteredTask);
   }, [filteredTask]);
+
+  const onInputChange = (e) => {
+    setSearch(e.target.value);
+  };
 
   return (
     <div className={styled.Search}>
