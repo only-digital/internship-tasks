@@ -30,17 +30,6 @@
     width: 111px;
     padding: 0px 14px 4px 16px;
     font-size: 14px;
-
-    outline: transparent;
-    transition: outline-color 0.6s;
-
-    &:hover {
-      background-color: $burgundy;
-    }
-
-    &:focus-visible {
-      outline: 3px solid $light-blue;
-    }
   }
 
   @media (min-width: 1920px) {
@@ -73,7 +62,22 @@
     }
   }
 
-  &:hover:active {
+  @media (hover: hover) {
+    &:hover {
+      background-color: $burgundy;
+      transition: background-color 0.4s;
+    }
+  }
+
+  &:active {
     background-color: $dark-burgundy;
+    transition: background-color 0.4s;
+  }
+
+  outline: transparent;
+
+  &:focus-visible {
+    outline: 3px solid $light-blue;
+    transition: outline-color 0.6s;
   }
 }

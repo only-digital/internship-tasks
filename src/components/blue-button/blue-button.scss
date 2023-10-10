@@ -39,23 +39,6 @@
     width: 111px;
     padding: 0px 14px 4px 16px;
     font-size: 14px;
-
-    outline: transparent;
-    transition: outline-color 0.6s;
-
-    &:hover {
-      background-color: $cobalt;
-      @include color($root, $white);
-      border: none;
-    }
-
-    &:focus-visible {
-      outline: 3px solid $light-blue;
-
-      &:not(:hover) {
-        @include color($root, $cobalt);
-      }
-    }
   }
 
   @media (min-width: 1920px) {
@@ -83,9 +66,26 @@
     @include color($root, $steel);
   }
 
-  &:hover:active {
+  @media (hover: hover) {
+    &:hover {
+      background-color: $cobalt;
+      @include color($root, $white);
+      border: none;
+      transition: background-color 0.4s;
+    }
+  }
+
+  &:active {
     background-color: $blue;
     @include color($root, $white);
     border: none;
+    transition: background-color 0.4s;
+  }
+
+  outline: transparent;
+
+  &:focus-visible {
+    outline: 3px solid $light-blue;
+    transition: outline-color 0.6s;
   }
 }

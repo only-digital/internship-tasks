@@ -25,22 +25,22 @@
     }
   }
 
-  &:hover:active {
-    color: $burgundy;
-    background-color: transparent;
-  }
-
-  @media (min-width: 1280px) {
+  @media (hover: hover) {
     &:hover {
       color: $red;
-      background-color: transparent;
+      transition: color 0.4s;
     }
+  }
 
-    &:focus-visible {
-      color: $cobalt;
-      background-color: $bg-blue;
-      outline: none;
-    }
+  &:active {
+    color: $burgundy;
+    transition: color 0.4s;
+  }
+
+  &:focus-visible {
+    background-color: $bg-blue;
+    outline: none;
+    transition: background-color 0.4s;
   }
 }
 
