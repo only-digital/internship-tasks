@@ -3,6 +3,8 @@ import Textarea from "../../components/textarea/textarea";
 import Checkbox from "../../components/checkbox/checkbox";
 import Button from '../../components/button/button';
 import InputEmail from "../../components/input-email/input-email";
+import Form from '../../components/form/form';
+import InputFile from "../../components/input-file/input-file";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -16,6 +18,8 @@ const allComponents = {
     'checkbox': Checkbox,
     'button': Button,
     'input-email':InputEmail,
+    'form':Form,
+    'input-file':InputFile,
 }
 
 /**

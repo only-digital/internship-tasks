@@ -1,13 +1,21 @@
 import Component from '../../app/js/base/Component';
 
 class Form extends Component {
+    form;
+
     constructor(element) {
         super(element);
+        console.log(this.root)
 
-        // Your code here
+        this.root.addEventListener('submit',this.handleFormSubmit);
     }
 
-    // Your code here
+    handleFormSubmit = (event) => {
+        event.preventDefault();
+        const formData = new FormData(this.root);
+        console.log(formData);
+    }
+
 }
 
 export default Form

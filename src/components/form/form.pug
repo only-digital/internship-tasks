@@ -5,7 +5,8 @@ mixin form({ title=''}={})
 		.form__right-column
 			+input-email({placeholder:'Email',title:'Email'})
 			+textarea()
-			+button({text:'Прикрепить файл',common:false})
+			+input-file()
+			// +button({text:'Прикрепить файл',common:false})
 			span.form__file-error.form_invisible-elem 
 			+checkbox({id:'policy4',label:'Вы подтверждаете, что ознакомились',ref:'http://mock-address-change-me',link:' c политикой обработки персональных данныx'})
 			+button({text:'Отправить'})
