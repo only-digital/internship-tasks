@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.container {
+  color: #012b34;
+  font-family: "Roboto", sans-serif;
+  padding: 152px 24px 98px;
+
+  @media (min-width: 768px) {
+    padding: 174px 40px 213px;
+  }
+  @media (min-width: 1280px) {
+    padding: 167px 107px 48px;
+  }
+  @media (min-width: 1440px) {
+    padding: 179px 120px 141px;
+  }
+  @media (min-width: 1920px) {
+    padding: 183px 142px 138px 160px;
+  }
+}
+.title {
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: -0.6px;
+  margin-bottom: 40px;
+
+  @media (min-width: 768px) {
+    font-size: 42px;
+    letter-spacing: -0.84px;
+    margin-bottom: 50px;
+  }
+  @media (min-width: 1280px) {
+    margin-bottom: 56px;
+  }
+  @media (min-width: 1440px) {
+    font-size: 48px;
+    letter-spacing: -0.96px;
+    margin-bottom: 60px;
+  }
+  @media (min-width: 1920px) {
+    font-size: 64px;
+    letter-spacing: -1.28px;
+    margin-bottom: 80px;
+  }
+}

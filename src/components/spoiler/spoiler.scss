@@ -1,0 +1,143 @@
+.spoiler {
+	$root: &;
+  
+	border-bottom: 1px solid #e6e6e6;
+  
+	&_opened {
+	  #{$root}__link {
+  
+		@media (min-width: 1440px) {
+		  padding-bottom: 20px;
+		}
+		@media (min-width: 1920px) {
+		  padding-bottom: 30px;
+		}
+	  }
+  
+	  #{$root}__title {
+		color: #114c9a;
+	  }
+  
+	  #{$root}__svg {
+		transform: rotate(45deg);
+		width: 14px;
+		height: 14px;
+		top: 27px;
+		right: 1px;
+  
+		@media (min-width: 768px) {
+		  top: 31px;
+		}
+		@media (min-width: 1280px) {
+		  top: 27px;
+		}
+		@media (min-width: 1440px) {
+		  top: 33px;
+		}
+		@media (min-width: 1920px) {
+		  width: 20px;
+		  height: 20px;
+		  top: 35px;
+		}
+	  }
+	  #{$root}__text {
+		margin-bottom: 20px;
+		opacity: 1;
+	  }
+	}
+  
+	&__link {
+	  position: relative;
+	  padding: 20px 38px 20px 0;
+	  display: block;
+  
+	  @media (min-width: 768px) {
+		padding: 24px 44px 24px 0;
+	  }
+	  @media (min-width: 1280px) {
+		padding: 20px 80px 20px 0;
+	  }
+	  @media (min-width: 1440px) {
+		padding: 24px 214px 24px 0;
+	  }
+	  @media (min-width: 1920px) {
+		padding: 30px 282px 30px 0;
+	  }
+	}
+  
+	&__title {
+	  font-size: 24px;
+	  font-style: normal;
+	  font-weight: 400;
+	  line-height: 120%;
+  
+	  @media (min-width: 768px) {
+		font-size: 27px;
+	  }
+	  @media (min-width: 1280px) {
+		font-size: 24px;
+	  }
+	  @media (min-width: 1440px) {
+		font-size: 27px;
+	  }
+	  @media (min-width: 1920px) {
+		font-size: 36px;
+	  }
+	}
+  
+	&__svg {
+	  width: 16px;
+	  height: 16px;
+	  position: absolute;
+	  right: 0;
+	  top: 27px;
+	  transition: transform 0.3s ease;
+  
+	  @media (min-width: 768px) {
+		width: 20px;
+		height: 20px;
+		top: 30px;
+	  }
+	  @media (min-width: 1280px) {
+		width: 16px;
+		height: 16px;
+		top: 25px;
+	  }
+	  @media (min-width: 1440px) {
+		width: 20px;
+		height: 20px;
+		top: 30px;
+	  }
+	  @media (min-width: 1920px) {
+		width: 28px;
+		height: 28px;
+		top: 33px;
+	  }
+	}
+  
+	&__text {
+	  color: #000402;
+	  font-size: 15px;
+	  font-style: normal;
+	  font-weight: 400;
+	  line-height: 150%;
+	  opacity: 0;
+	  overflow: hidden;
+	  height: 0;
+	  transition: height 0.3s ease, opacity 0.3s ease-in-out;
+  
+	  @media (min-width: 768px) {
+		padding-right: 76px;
+	  }
+	  @media (min-width: 1280px) {
+		padding-right: 426px;
+	  }
+	  @media (min-width: 1440px) {
+		padding-right: 360px;
+	  }
+	  @media (min-width: 1920px) {
+		padding-right: 676px;
+	  }
+	}
+  }
+  

@@ -1,4 +1,6 @@
 import ExampleButton from "../../components/example-button/example-button";
+import Accordion from "../../components/accordion/accordion";
+import Spoiler from "../../components/spoiler/spoiler";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -6,7 +8,9 @@ import ExampleButton from "../../components/example-button/example-button";
  * Значение - JS-класс компонента (Импорт добавляется вручную)
  */
 const allComponents = {
-    'example-button': ExampleButton,
+    // 'example-button': ExampleButton,
+    'accordion': Accordion,
+    'spoiler': Spoiler,
 }
 
 

@@ -1,0 +1,4 @@
+mixin accordion(data)
+	ul.accordion&attributes(attribute)(data-component='accordion')
+		each item, index in data
+			+spoiler(index, item)

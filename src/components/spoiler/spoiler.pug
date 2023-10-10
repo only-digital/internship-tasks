@@ -1,0 +1,6 @@
+mixin spoiler(index, item)
+	li.spoiler(data-component='spoiler')
+		a(href="").spoiler__link
+			h3.spoiler__title= `${index+1}. ${item.title}`
+			+svg("plus").spoiler__svg
+		p.spoiler__text= item.text
