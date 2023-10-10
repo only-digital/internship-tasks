@@ -12,6 +12,9 @@ class Form extends Component {
     inputEmail;
     errorEmail;
     tipEmail;
+    textarea;
+    errorTextarea;
+    tipTextarea;
 
     constructor(element) {
         super(element);
@@ -29,12 +32,62 @@ class Form extends Component {
         this.policyInput.addEventListener('change',this.handlePolicyInput);
         this.inputEmail.addEventListener('input',this.handleEmailInput);
         this.inputEmail.addEventListener('focus',this.handleEmailFocus);
+        this.textarea = this.root.querySelector('.textarea__area');
+        this.errorTextarea = this.root.querySelector('.textarea__error');
+        this.tipTextarea = this.root.querySelector('.textarea__svg');
+        this.textarea.addEventListener('input',this.handleTextareaInput);
+        this.textarea.addEventListener('blur',this.handleTextareaCorrectInput);
         this.errors = new Map([
                                 ['email',  false],
                                 ['textarea', false],
                                 ['policy', false]
                             ]);
         this.disableSubmitButton();
+    }
+
+    handleTextareaCorrectInput = (event) => {
+        if (event.target.value.length >= 1 && event.target.value.length <=1000) {
+            this.showCorrectTextAreaInput();
+        } else {
+            this.hideCorrectTextareaInput();
+        }
+    }
+
+    showCorrectTextAreaInput = () => {
+        this.textarea.classList.add('textarea__area_correct_input');
+        this.tipTextarea.classList.remove('textarea_invisible_elem');
+        this.errors.set('textarea',true);
+        this.checkErrors();
+    }
+
+    hideCorrectTextareaInput = () => {
+        this.textarea.classList.remove('textarea__area_correct_input');
+        this.tipTextarea.classList.add('textarea_invisible_elem');
+        this.errors.set('textarea',false);
+        this.checkErrors();
+    }
+
+    showTextareaError = () => {
+        this.errorTextarea.classList.remove('textarea_invisible_elem');
+        this.textarea.classList.add('textarea_error');
+        this.errors.set('textarea',false);
+        this.checkErrors();
+    }
+
+    hideTextareaError = () => {
+        this.errorTextarea.classList.add('textarea_invisible_elem');
+        this.textarea.classList.remove('textarea_error');
+        this.errors.set('textarea',true);
+        this.checkErrors();
+    }
+
+    handleTextareaInput = (event) => {
+        if (event.target.value.length > 1000) {
+            this.showTextareaError();
+        } else this.hideTextareaError();
+        this.textarea.setAttribute('style', 'height:' + (event.target.scrollHeight) + 'px;overflow-y:hidden;');
+        this.textarea.style.height = 'auto';
+        this.textarea.style.height = event.target.scrollHeight+'px';
     }
 
     handleEmailInput = (event) => {
@@ -67,11 +120,12 @@ class Form extends Component {
     }
 
     checkErrors = () => {
-        let formIsValid = false;
+        let formIsValid = true;
         for (let value of this.errors.values()) {
-            if (value) {
-                formIsValid = true
-            } else formIsValid = false;
+            if (!value) {
+                formIsValid = false;
+                break;
+            }
         }
         if (formIsValid) {
             this.enableSubmitButton();
