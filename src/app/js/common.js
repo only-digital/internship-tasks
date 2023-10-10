@@ -5,6 +5,7 @@ import Button from '../../components/button/button';
 import InputEmail from "../../components/input-email/input-email";
 import Form from '../../components/form/form';
 import InputFile from "../../components/input-file/input-file";
+import Loader from '../../components/loader/loader';
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -20,6 +21,7 @@ const allComponents = {
     'input-email':InputEmail,
     'form':Form,
     'input-file':InputFile,
+    'loader':Loader,
 }
 
 /**
