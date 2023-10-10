@@ -1,0 +1,26 @@
+@import './variables.scss';
+
+@mixin adaptiveInlinePadding($inline_pad_l,$inline_pad_m,$inline_pad_s){
+    padding-inline: $inline_pad_l;
+
+    @media(max-width: 1280px){
+        padding-inline: $inline_pad_m;
+    }
+
+    @media (max-width:768px) {
+        padding-inline: $inline_pad_s;
+    }
+
+}
+
+@mixin fontSettings($letter_spacing, $font_size,$font_color,$line_height){
+    
+    font-family: $font-famaly;
+    font-weight: $font-weight;
+    font-style: $font-style;
+    letter-spacing: $letter_spacing;
+    font-size: $font_size;
+    color: $font_color;
+    line-height: $line_height;
+
+}

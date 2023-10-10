@@ -1,0 +1,9 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+@import '../../styles/transitions.scss';
+
+.only-interactive-header {
+	$root: &;
+
+	//Your code here
+}

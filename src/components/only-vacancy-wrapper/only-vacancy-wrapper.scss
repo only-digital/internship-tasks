@@ -1,0 +1,11 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+@import '../../styles/transitions.scss';
+
+.only-vacancy-wrapper {
+	$root: &;
+
+	@include adaptiveInlinePadding(80px,60px,50px);
+    padding-block:163px 45px;
+	//Your code here
+}

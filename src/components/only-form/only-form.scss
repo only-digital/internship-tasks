@@ -1,0 +1,9 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+@import '../../styles/transitions.scss';
+
+.only-form {
+	$root: &;
+
+	//Your code here
+}
