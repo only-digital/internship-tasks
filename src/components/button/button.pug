@@ -1,4 +1,4 @@
 mixin button({ text,disabled,type='submit'}={})
 	button.button(class=disabled&&'button_disabled' type=type)&attributes(attributes)(data-component='button')
 		span.button__text!=text
-		+svg('arrow').button__svg.button__svg_common
+		+svg('arrow').button__svg
