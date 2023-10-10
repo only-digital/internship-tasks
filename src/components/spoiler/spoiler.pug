@@ -8,7 +8,7 @@ mixin spoiler(index)
 			{title: "Задача организации,", text: "в особенности же постоянное информационно-пропагандистское обеспечение нашей деятельности способствует подготовки и реализации направлений прогрессивного развития. Равным образом новая модель организационной деятельности представляет собой интересный эксперимент проверки модели развития."},
 		]
 	- const item = textData[index]
-	.spoiler.active&attributes(attributes)(data-component='spoiler')
+	.spoiler&attributes(attributes)(data-component='spoiler')
 		h2.spoiler__title.spoiler-title
 			.spoiler-title__text= `${index+1}. ${item ? item.title : ''}`
 			.spoiler-title__icon
