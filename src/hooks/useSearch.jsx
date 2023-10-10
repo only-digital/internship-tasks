@@ -4,10 +4,15 @@ export default function useSearch(inputTasks) {
   const [filteredTask, setTasks] = useState(inputTasks);
 
   const onSearchChange = (search) => {
-    const matchedTasks = inputTasks.filter(
-      (task) => task.title.includes(search) || task.text.includes(search)
-    );
-    setTasks(matchedTasks);
+    if (inputTasks) {
+      const lowerSearch = search.toLowerCase();
+      const matchedTasks = inputTasks.filter(
+        (task) =>
+          task.title.toLowerCase().includes(lowerSearch) ||
+          task.text.toLowerCase().includes(lowerSearch)
+      );
+      setTasks(matchedTasks);
+    }
   };
 
   return { filteredTask, onSearchChange };
