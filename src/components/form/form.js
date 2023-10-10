@@ -12,7 +12,6 @@ class Form extends Component {
     this.setupLabelAnimation();
   }
 
-
   setupLabelAnimation() {
     this.inputEmail.addEventListener('focus', () =>
       this.handleFocus(this.inputEmail, this.labelEmail),
@@ -23,7 +22,6 @@ class Form extends Component {
 
     this.inputMsg.addEventListener('focus', () => this.handleFocus(this.inputMsg, this.labelMsg));
     this.inputMsg.addEventListener('blur', () => this.handleBlur(this.inputMsg, this.labelMsg));
-
   }
 
   handleFocus(input, label) {
@@ -36,10 +34,12 @@ class Form extends Component {
       label.classList.remove('focused-label');
       input.classList.remove('focused-input');
       input.classList.remove('filled-input');
-    }
-    else {
+      this.indicator.forEach((indicator) => {
+        indicator.classList.remove('visible-indicator');
+      });
+    } else {
       input.classList.add('filled-input');
-      this.indicator.forEach(indicator => {
+      this.indicator.forEach((indicator) => {
         indicator.classList.add('visible-indicator');
       });
     }

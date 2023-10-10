@@ -81,6 +81,10 @@
             }
         }
 
+        &:hover {
+            background-color: $extraGray2;
+        }
+        
         &-msg {
             resize: none;
             height: 35px;
@@ -102,11 +106,28 @@
             border: 1px solid $extraCobolt;
             padding: 13px 0 20px 20px;
             border-radius: 24px;
+
+            &:hover {
+                background-color: transparent;
+            }
         }
 
         &.filled-input {
             border: none;
             background-color: $extraGray2;
+
+            &:focus {
+                border: 1px solid $extraCobolt;
+                background-color: transparent;
+            }
+
+            &:focus:hover {
+                background-color: transparent;
+            }
+
+            &:hover {
+                background-color: $extraGray2;
+            }
         }
 
         &-indicator {
@@ -129,5 +150,80 @@
       margin: 2px 0 0 20px;
       color: $red;
       height: 18px;
+    }
+
+    &__files {
+        position: relative;
+        display: flex;
+        column-gap: 32px;
+        width: fit-content;
+        pointer-events: none;
+  
+        &-text {
+          pointer-events: all;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          column-gap: 16px;
+          position: relative;
+          cursor: pointer;
+          font-size: 16px;
+          letter-spacing: -0.32px;
+          color: $black;
+          border: 1px solid $extraGray;
+          padding: 14px 16px 16px 16px;
+          border-radius: 24px;
+          width: 200px;
+          height: 46px;
+
+          transition: background-color .4s ease, color .4s ease, fill .4s ease;
+  
+          & svg {
+            width: 14px;
+            height: 14px;
+          }
+  
+          &:hover {
+            border: 1px solid $extraCobolt;
+            background-color: $extraCobolt;
+            color: $white;
+
+            & svg {
+              fill: $white;
+            }
+          }
+  
+          &:active {
+            border: 1px solid $blue;
+            background-color: $blue;
+            color: $white;
+  
+            & svg path {
+              fill: $white;
+            }
+          }
+  
+          &:focus {
+            outline: 3px solid $lightBlue;
+          }
+  
+          &.disabled {
+            pointer-events: none;
+            border-color: $extraGray;
+            color: $steel;
+            & svg {
+              fill: $steel;
+            }
+          }
+        }
+
+        &-btn {
+            position: absolute;
+            opacity: 0;
+            display: block;
+            width: 0;
+            height: 0;
+            z-index: -1;
+        }
     }
 }
