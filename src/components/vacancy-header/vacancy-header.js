@@ -9,27 +9,26 @@ class VacancyHeader extends Component {
 
   constructor(element) {
     super(element);
-    this.URL = '/stats';
-    this.stats = this.getElement('stats');
     this.views = this.getElement('views');
     this.responses = this.getElement('responses');
-    this.loader = this.getElements('loader');
+    this.loader = this.getElement('loader');
 
     document.addEventListener('DOMContentLoaded', this.getStats);
   }
 
   getStats = () => {
-    this.loader.forEach((loader) => {
-      loader.classList.add('loader-visible');
-    });
+    this.loader.classList.add('loader-visible');
     fetch(URL)
       .then((response) => response.json())
       .then((stats) => {
-        this.views.textContent = stats.views;
-        this.responses.textContent = stats.responses;
-        this.loader.forEach((loader) => {
-          loader.classList.remove('loader-visible');
-        });
+        this.views.textContent = 'Просмотров: ' + stats.views;
+        this.responses.textContent = 'Откликов: ' + stats.responses;
+        this.loader.classList.remove('loader-visible');
+      })
+      .catch((error) => {
+        this.loader.classList.remove('loader-visible');
+        this.views.textContent = 'Сервер временно недоступен.';
+        this.views.style = 'color: red';
       });
   };
 }

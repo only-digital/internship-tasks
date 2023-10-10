@@ -3,9 +3,6 @@ mixin vacancy-header(props)
         .vacancy-header__date 18 декабря 2020
         h1.vacancy-header__title Консультант SAP PO
         p.vacancy-header__stats
-            span Просмотров:&nbsp;
-            +loader
+            +loader('Данные загружаются')
             span.vacancy-header__views
-            span Откликов:&nbsp;
-            +loader
             span.vacancy-header__responses

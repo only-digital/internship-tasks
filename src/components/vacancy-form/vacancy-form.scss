@@ -1,4 +1,5 @@
 .vacancy-form {
+    $root: &;
     display: flex;
     gap: 80px;
 
@@ -35,19 +36,33 @@
         color: $black;
     }
 
-    &__msg {
-        margin-top: 25px;
+    &__email-msg, &__accept-msg {
         color: $red;
         opacity: 0;
-        transition: opacity .2s;
+        transition: opacity .2s, margin-top .2s, line-height .2s;
+        line-height: 0;
+        margin-top: 0px;
+
+        &.visible-error {
+            margin-top: 25px;
+            line-height: unset;
+            opacity: 1;
+        }
+    }
+
+    &__email-msg.visible-error {
+        & + .vacancy-form__acceptance {
+            margin-top: 15px;
+        }
     }
 
     &__acceptance {
-        margin-top: 15px;
+        margin-top: 40px;
 
         display: flex;
         align-items: center;
         gap: 16px;
+        transition: margin-top .2s;
     }
 
     &__checkbox {
@@ -122,10 +137,6 @@
             pointer-events: none;
         }
     }
-}
-
-.visible-error {
-    opacity: 1;
 }
 
 .visible-success {

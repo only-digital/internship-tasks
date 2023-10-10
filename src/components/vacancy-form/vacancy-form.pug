@@ -4,11 +4,12 @@ mixin vacancy-form(props)
         form.vacancy-form__form
             label.vacancy-form__label E-mail
             input(type='email').vacancy-form__input
-            p.vacancy-form__msg msg
+            p.vacancy-form__email-msg msg
             .vacancy-form__acceptance
                 input#accept.vacancy-form__checkbox(type='checkbox')
                 label(for='accept').vacancy-form__acceptText Вы подтверждаете, что ознакомились
                     a(href='/') &nbsp;c политикой обработки персональных данных
+            p.vacancy-form__accept-msg msg
             button(type='submit').vacancy-form__btn Отправить
                 +svg('arrow-right')
             .vacancy-form__success

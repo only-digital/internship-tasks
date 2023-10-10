@@ -15,7 +15,8 @@ class VacancyForm extends Component {
     super(element);
     this.form = this.getElement('form');
     this.input = this.getElement('input');
-    this.msg = this.getElement('msg');
+    this.emailMsg = this.getElement('email-msg');
+    this.acceptMsg = this.getElement('accept-msg');
     this.success = this.getElement('success');
     this.confirm = this.getElement('checkbox');
     this.submitBtn = this.getElement('btn');
@@ -31,14 +32,17 @@ class VacancyForm extends Component {
     const confirm = this.confirm.checked;
 
     if (!email) {
-      this.msg.textContent = 'Поле E-email обязательно';
-      this.msg.classList.add('visible-error');
+      this.emailMsg.textContent = 'Поле E-email обязательно';
+      this.emailMsg.classList.add('visible-error');
       this.input.classList.add('input-error');
       return;
     }
 
     if (email && confirm) {
       this.loader.classList.add('loader-visible');
+      this.acceptMsg.classList.remove('visible-error');
+      this.emailMsg.classList.remove('visible-error');
+      this.input.classList.remove('input-error');
       this.form.classList.add('success');
       fetch(URL, {
         method: 'POST',
@@ -56,18 +60,24 @@ class VacancyForm extends Component {
         .then((res) => {
           if (res.status === 422) {
             res.json().then((response) => {
-              this.msg.textContent = response.message;
-              this.msg.classList.add('visible-error');
+              this.emailMsg.textContent = response.message;
+              this.emailMsg.classList.add('visible-error');
               this.input.classList.add('input-error');
               this.form.classList.remove('success');
             });
           } else if (res.status === 200) {
-            this.msg.classList.remove('visible-error');
+            this.emailMsg.classList.remove('visible-error');
             this.success.classList.add('visible-success');
             this.form.classList.add('success');
           }
           this.loader.classList.remove('loader-visible');
         });
+    }
+    else if (email && !confirm) {
+      this.emailMsg.classList.remove('visible-error');
+      this.input.classList.remove('input-error');
+      this.acceptMsg.textContent = 'Нет согласия на обработку данных!';
+      this.acceptMsg.classList.add('visible-error');
     }
   };
 }

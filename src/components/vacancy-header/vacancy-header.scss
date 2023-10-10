@@ -18,6 +18,10 @@
     &__stats {
         color: $steel;
         font-size: 16px;
+
+        & .loader-visible {
+            margin-top: -25px;
+        }
     }
 
     &__views {
