@@ -2,6 +2,18 @@ extends ../../build_modules/common
 
 
 block body
-    +example-button()
-    +example-button()
     //Your code here
+    - let number = 0
+    .spoilers
+        h1.spoilers__title Текст-рыба
+        hr
+        +spoiler(number++)
+        hr
+        +spoiler(number++)
+        hr
+        +spoiler(number++)
+        hr
+        +spoiler(number++)
+        hr
+        +spoiler(number++)
+        hr

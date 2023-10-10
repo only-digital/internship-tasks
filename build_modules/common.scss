@@ -1,66 +1,74 @@
-@import '../src/components/example-button/example-button';
+@import "../src/pages/index.scss";
+@import "../src/components/spoiler/spoiler";
+@import "../src/components/example-button/example-button";
 
 html {
-    font-weight: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    position: relative;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  position: relative;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    position: relative;
-    padding: 0;
-    margin: 0;
-    -webkit-tap-highlight-color: transparent;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
-h1, h2, h3, h4, h5, p, a {
-    color: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    text-decoration: inherit;
-    padding: 0;
-    margin: 0;
-    word-break: break-word;
-    word-wrap: break-word;
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a {
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-decoration: inherit;
+  padding: 0;
+  margin: 0;
+  word-break: break-word;
+  word-wrap: break-word;
 }
 
-ul, li {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 input {
-    border: none;
-    background: inherit;
-    font-size: inherit;
-    font-family: inherit;
-    -webkit-appearance: none;
-    color: inherit;
+  border: none;
+  background: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  -webkit-appearance: none;
+  color: inherit;
 
-    &:hover,
-    &:active,
-    &:focus {
-        outline: none;
-    }
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+  }
 }
 
 button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
 
-    &:hover,
-    &:active,
-    &:focus {
-        outline: none;
-    }
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+  }
 }
-
