@@ -1,7 +1,6 @@
 include ./input-ct/input-ct
 include ./checkbox-ct/checkbox-ct
 include ./button/button
-include ../loader/loader
 include ./sucsses-placeholder/sucsses-placeholder
 
 mixin footer(props)
@@ -10,4 +9,5 @@ mixin footer(props)
 		form.footer__form(action="/form" method="POST") 
 			+input-ct(class="footer__input-ct")
 			+checkbox-ct(class="footer__checkbox-ct")
+			+loader({size:"60px"})(class="footer__loader")
 			+button(class="footer__button")

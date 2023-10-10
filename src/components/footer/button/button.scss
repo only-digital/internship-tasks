@@ -26,6 +26,12 @@
         }
     }
 
+    &_unvise{
+        opacity: 0;
+        user-select: none;
+        cursor: auto;
+    }
+
     &__icon {
         margin-left: 14px;
         width: 40px;

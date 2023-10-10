@@ -4,6 +4,7 @@ mixin header(props)
 
 		h1.header__title="Консультант SAP PO"
 
-		.headr__vac-info
+		.header__vac-info
 			span.header__viewers.header__span
 			span.header__response.header__span 
+			+loader({size:"40px"})(class="header__loader loader_active")

@@ -2,9 +2,10 @@
 
 .header {
 	$root: &;
-	&__span{
+
+	&__span {
 		color: #8F8F8F;
-		font-size: 18px;	
+		font-size: 18px;
 	}
 
 	&__title {
@@ -14,8 +15,8 @@
 		padding: 28px 0px;
 	}
 
-	&__response{
+	&__response {
 		margin-left: 20px;
 	}
-	//Your code here
+
 }
