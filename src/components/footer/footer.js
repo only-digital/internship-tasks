@@ -63,25 +63,33 @@ class Footer extends Component {
         this.loader.classList.toggle("loader_active")
     }
 
-    toggleButton = () => {
+    toggleFormDisable = () => {
+        const inputClass = Array.from(this.inputCt.classList);
+        if (inputClass.includes("input-ct_disabled")) {
+            this.formElements.email.disabled = false;
+            this.formElements.checkbox.disabled = false;
+        }
+        else {
+
+            this.formElements.email.disabled = true;
+            this.formElements.checkbox.disabled = true;
+        }
+
+        this.inputCt.classList.toggle("input-ct_disabled");
+        this.checkboxCt.classList.toggle("checkbox-ct_disabled");
+
         this.button.classList.toggle("button_unvise");
     }
 
     changeForm = (response) => {
         if (response.status === 422) {
-            this.inputCt.children[2].innerText=response.statusText;
+            this.inputCt.children[2].innerText = response.statusText;
             this.inputCt.classList.add("input-ct__alert_active");
+            this.toggleFormDisable();
             return;
         }
         if (response.status === 200) {
             this.inputCt.classList.remove("input-ct__alert_active");
-
-            this.formElements.email.setAttribute("disabled", "true");
-            this.formElements.checkbox.setAttribute("disabled", "true");
-
-            this.inputCt.classList.add("input-ct_disabled");
-            this.checkboxCt.classList.add("checkbox-ct_disabled");
-
             this.button.remove();
             this.form.innerHTML += succsesHTML();
             return;
@@ -93,9 +101,8 @@ class Footer extends Component {
         const data = this.getData();
 
         this.toggleLoader();
-        this.toggleButton();
+        this.toggleFormDisable();
         const response = await this.sendData(data);
-        this.toggleButton();
         this.toggleLoader();
         this.changeForm(response);
     }
