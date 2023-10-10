@@ -1,9 +1,8 @@
 import Component from '../../app/js/base/Component';
 
 const errorsText = {
-    email: 'Поле E-mail обязательно',
-    confirm: 'Необходимо согласится с условиями',
-    server: 'Ошибка сервера'
+    server: 'Ошибка сервера',
+    validate: 'Ошибка валидации. Введите email корректно.'
 }
 class Form extends Component {
     controlEl;
@@ -12,8 +11,13 @@ class Form extends Component {
     errorEl;
     successEl;
     preLoaderEl;
+    values
     constructor(element) {
         super(element);
+        this.values = {
+            confirm: false, 
+            email: true,
+        }
         this.controlEl = this.getElement('control');
         this.checkedEl = this.getElement('input');
         this.submitBtn = this.getElement('submit');
@@ -21,31 +25,45 @@ class Form extends Component {
         this.successEl = this.getElement('success');
         this.preLoaderEl = this.getElement('preloder');
         this.root.addEventListener('submit', this.handleSubmit)
+        this.checkedEl.addEventListener('change', this.handleChecked);
+        this.controlEl.addEventListener('input', this.handleInput);
+        this.submitBtn.disabled = true;
+    }
+
+    handleChecked = (e) => {
+        this.values.confirm = e.target.checked;
+        this.submitBtn.disabled = !(this.values.confirm && this.values.email);
+    }
+
+    handleInput = (e) => {
+        this.values.email = e.target.value;
+        this.submitBtn.disabled = !(this.values.confirm && this.values.email);
+    }
+
+    isEmailValid = (email) => {
+        const email_regexp = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+        return email_regexp.test(email);
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
         this.clearError();
-        const formData = new FormData(e.target);
-        const values = Object.fromEntries(formData);
-        if(!values.email){
-            this.setError(errorsText.email);
-            return;
-        }
-
-        if(!values.confirm){
-            this.setError(errorsText.confirm);
+    
+        if(!this.isEmailValid(this.values.email)){
+            this.setError(errorsText.validate);
             return;
         }
 
         this.showPreloader();
-        this.postData(values).then((response) => {
+        this.postData(this.values).then((response) => {
             if (response.status === 200) {
                 this.setSuccess();
             } else if (response.status === 422) {
                 this.setError(errorsText.server);
             }
-        }).finally(() => this.hidePreloader()); 
+        })
+        .catch(console.log)
+        .finally(() => this.hidePreloader()); 
     }
 
     setError = (text) => {

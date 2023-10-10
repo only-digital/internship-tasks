@@ -17,11 +17,12 @@
 		opacity 0.3s;
 
 	&:disabled {
-		color: $main-steel;
+		color: $steel;
+		background-color: $grey;
 		pointer-events: none;
 
 		#{$root}__svg {
-			fill: $main-white;
+			fill: $main-steel;
 		}
 	}
 
@@ -32,11 +33,7 @@
 	}
 
 	&:focus:not(:hover){
-		color: $extra-cobolt;
 		outline: 3px solid $main-steel;
-		#{$root}__svg {
-			fill: $extra-cobolt;
-		}
 	}
 
 	&:active {

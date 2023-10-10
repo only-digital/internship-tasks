@@ -13,7 +13,9 @@ class VacancyPage extends Component {
         this.fetchData('/stats').then(data => {
             this.viewsEl.textContent = `Просмотров: ${data.views}`;
 			this.responsesEl.textContent = `Откликов: ${data.responses}`;
-        }).finally(()=> {
+        })
+        .catch(err => console.log('Данные не удалось загрузить.', err))
+        .finally(()=> {
             this.hidePreloader();
         })
     }
