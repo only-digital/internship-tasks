@@ -1,0 +1,17 @@
+mixin contact-form(props)
+	.contact-form&attributes(attributes)(data-component='contact-form')
+		//Your code here
+		.contact-form__item
+			.contact-form__title Форма обратной связи
+		.contact-form__item
+			form(class='contact-form__form' id='form' method='POST')
+				.contact-form__email-wrapper
+					input(class='contact-form__email-input' placeholder='E-mail')
+					.contact-form__email-text E-mail
+					img(class='contact-form__email-img' src='../assets/images/Union.png')
+					.contact-form__email-error Поле 'E-mail' обязательно
+				.contact-form__message-wrapper
+					textarea(class='contact-form__message-input' placeholder='Ваше сообщение' spellcheck="false")
+					.contact-form__message-text Ваше сообщение
+					img(class='contact-form__message-img' src='../assets/images/Union.png')
+					.contact-form__message-error Поле 'Ваше сообщение' обязательно
