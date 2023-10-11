@@ -1,0 +1,12 @@
+mixin form(props)
+	.form&attributes(attributes)(data-component='form')
+		.form__title Форма обратной связи
+		form.form__form(action='/form' method='POST')
+			.form__email.email
+				label(for='email') E-mail
+				input(type='email' name='email' requiered)
+			.form__checkbox
+				input(type='checkbox' name='agreement')
+				label(for='agreement') Вы подтверждаете, что ознакомились <span>c политикой обработки персональных данных</span> 
+			button.form__button(type='submit') SEND
+				

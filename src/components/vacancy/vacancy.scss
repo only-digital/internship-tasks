@@ -1,0 +1,50 @@
+@import '/src/pages/index.scss';
+
+.vacancy {
+	padding: 115px 0 0 80px;
+	font-family: Arial, sans-serif;
+	//header block
+	&__header {
+		margin-bottom: 144px;
+	}
+	
+	&__date,
+	&__stats {
+		color: $steel
+	}
+	&__title,
+	&__subtitle {
+		color: $blue;
+	}
+	&__list {
+		color: $black;
+	}
+	
+	&__date {
+		font-size: 20px;
+		line-height: 28px;
+		margin-bottom: 20px;
+	}
+	&__title {
+		font-size: 64px;
+		line-height: 100%;
+		margin-bottom: 45px;
+	}
+	
+	&__stats {
+		display: flex;
+		gap: 36px;
+	}
+	//main block
+	&__item {
+		margin-bottom: 130px;
+	}
+	&__subtitle {
+		font-size: 46px;
+		line-height: 120%;
+		margin-bottom: 35px;
+	}
+	&__list-item {
+		margin-bottom: 12px;
+	}
+}

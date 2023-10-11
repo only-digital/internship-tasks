@@ -1,0 +1,68 @@
+@import '/src/pages/index.scss';
+
+.form {
+	$root: &;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	
+
+	&__title {
+		flex: 1;
+		font-size: 32px;
+		color: $blue;
+		margin-top: 44px;
+	}
+	&__form {
+		flex: 2;
+		margin-top: 68px;
+	}
+	&__email {
+		margin-bottom: 60px;
+	}
+
+	label {
+		display: block;
+		color: $steel;
+	}
+	label[for=email] {
+		padding-left: 20px;
+		font-size: 12px;
+	}
+	
+
+	input[type=email] {
+		padding: 8px 20px 14px 20px;
+		width: 836px;
+		height: 48px;
+		border: 1px solid $cobolt;
+		border-radius: 24px;
+	}
+
+	&__checkbox {
+		display: flex;
+		align-items: center;
+		gap: 18px;
+		margin-bottom: 30px;
+	}
+	&__checkbox label {
+		color: $steel;
+		font-size: 14px;
+	}
+	&__checkbox span {
+		color: $blue;
+	}
+	input[type=checkbox] {
+		width: 16px;
+		height: 16px;
+		border: 1px solid $grey;
+	}
+	input[type=checkbox]:checked {
+		background-color: red;
+	}
+	&__button {
+		width: 70px;
+		height: 35px;
+		border: 1px solid $cobolt;
+	}
+}

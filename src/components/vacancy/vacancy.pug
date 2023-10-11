@@ -1,0 +1,55 @@
+mixin vacancy(props)
+	.vacancy&attributes(attributes)(data-component='vacancy')
+		.vacancy__header
+			.vacancy__date= props.date
+			h1.vacancy__title= props.title
+			.vacancy__stats.stats
+				.stats__item Просмотров: <span class='vacancy__views'></span>
+				.stats__item Откликов:	<span class='vacancy__responses'></span>
+		.vacancy__main
+			.vacancy__item
+				h2.vacancy__subtitle Вам предстоит
+				ul.vacancy__list
+					li.vacancy__list-item 
+						p Участие в проектах в роли архитектора/консультанта по интеграции данных
+					li.vacancy__list-item 
+						p Проектирование архитектуры интеграции по технологиям SAP (Process Orchestration 7.5, Data Services 4.2, RFC, IDOC)
+					li.vacancy__list-item 
+						p Подбор способов взаимодействия с non-SAP системами (1C:ERP, Lotus и др.)
+					li.vacancy__list-item 
+						p Подготовка проектной документации (ФТТ, ТЗ, АЗ, тех. проект, проектные решения по интеграции, спецификации на разработку, описания настроек)
+					li.vacancy__list-item 
+						p Проведение аудита интеграционных сценариев и проектно-эксплуатационной документации, разработанных подрядными организациями
+					li.vacancy__list-item 
+						p Разработка и поддержка интеграционных сценариев
+			.vacancy__item
+				h2.vacancy__subtitle Мы ожидаем
+				ul.vacancy__list
+					li.vacancy__list-item 
+						p Знание ASAP, MS Visio, SAP PI / SAP PO, SAP HANA, JSON, XML
+					li.vacancy__list-item 
+						p Опыт работы в сфере аналитики от 3-х лет в должности аналитика, ведущего аналитика, специалиста по внедрению информационных систем
+					li.vacancy__list-item 
+						p Опыт разработки технических заданий и постановок задач
+					li.vacancy__list-item 
+						p Опыт описания бизнес-процессов в нотациях BPMN и UML
+					li.vacancy__list-item 
+						p Опыт формирования требований к информационным системам
+					li.vacancy__list-item 
+						p Опыт составления проектной документации по ГОСТ
+			.vacancy__item
+				h2.vacancy__subtitle Мы предлагаем
+				ul.vacancy__list
+					li.vacancy__list-item 
+						p Оформление в соответствии с нормами ТК РФ, социальные гарантии
+					li.vacancy__list-item 
+						p Крупные проекты в компании–лидере отрасли
+					li.vacancy__list-item 
+						p Возможность модернизировать процессы реального производственного бизнеса в команде сильнейших экспертов
+					li.vacancy__list-item 
+						p Полис ДМС (включая стоматологию)
+					li.vacancy__list-item 
+						p Доступ к корпоративной OnLine библиотеке
+					li.vacancy__list-item 
+						p Обучение в программах Корпоративного университета
+		+form()
