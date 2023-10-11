@@ -127,7 +127,7 @@
 				display: flex;
 				flex-flow: row nowrap;
 				align-items: center;
-				
+
 				input[type='checkbox'] {
 					width: 16px;
 					height: 16px;
@@ -137,7 +137,32 @@
 				a {
 					color: $dark-blue;
 				}
-		}
+			}
+			.vacancy__button {
+				width: 155px;
+				height: 48px;
+				background: $cobolt;
+				color: white;
+				display: flex;
+				flex-flow: row nowrap;
+				gap: 14px;
+				align-items: center;
+				padding: 0 16px;
+				border-radius: 25px;
+				margin-top: 30px;
+				span {
+					font-family: Arial;
+					font-size: 16px;
+					font-weight: 400;
+					line-height: 100%; /* 16px */
+					letter-spacing: -0.32px;		
+				}
+				svg {
+					width: 32px;
+					height: 32px;
+				}
+			}
+		
 		}
 	}
 }
