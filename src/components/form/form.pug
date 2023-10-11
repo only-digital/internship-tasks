@@ -9,7 +9,7 @@ mixin form(props)
                 span.form__error.form__error-email
             .form__group
                 span.form__label.form__label-msg(for="message") Ваше сообщение
-                textarea(id="message" name="message").form__input.form__input-msg
+                textarea(id="message" name="message" required).form__input.form__input-msg
                 +svg('success').form__input-indicator.form__input-indicator-msg
                 span.form__error.form__error-msg
             .form__group-files
@@ -19,15 +19,17 @@ mixin form(props)
                         +svg('plus')                    
                 .form__files-list
                     ul#file-list
+                .form__files-error
+                    .form__files-error-wrapper
+                        span.form__files-error-text Вы можете загрузить только 2 документа
+                    .form__files-error-triangle
             span.form__error.form__error-files
-            .form__countfiles-error
-                .form__countfiles-error-wrapper
-                    span.form__countfiles-error-text Вы можете загрузить только 2 документа
-                .form__countfiles-error-triangle
             label.form__acceptance(for="confirm")
-                input(type='checkbox' name="confirm")
+                input(type='checkbox' name="confirm" required).form__acceptance-checkbox
+                span.form__acceptance-checkbox-indicator
                 span Вы подтверждаете, что ознакомились 
                     a(href='/') c политикой обработки персональных данных
             span.form__error.form__error-acceptance 
             button(type="submit" disabled='').form__submit Отправить
-                +svg('iconArrow')
+                +svg('arrow-right')
+            span.form__error.form__error-form
