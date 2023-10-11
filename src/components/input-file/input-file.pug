@@ -1,0 +1,7 @@
+mixin input-file(props)
+	.input-file&attributes(attributes)(data-component='input-file')
+		input(type='file' multiple id="file" hidden class='input-file__file' accept=".pdf, .doc, .docx")
+		label.input-file__label(for="file" ) Прикрепить файл
+			span.input-file__label__span +
+		.input-file__title Вы можете загрузить только 2 документа
+		+svg('tool').input-file__svg

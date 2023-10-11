@@ -1,0 +1,19 @@
+mixin form(props)
+	.form&attributes(attributes)(data-component='form')
+		+input-text('form__email', 'E-mail', 'email')
+		.form__email__error-email
+		.form__text-container
+			+text-area('form__text', 'message', 'Ваше сообщение')
+			.form__text__error-text
+		.form__file-area
+			+input-file(class='form__file-area__file')
+		.form__file-area__error-file
+		label.form__label-checkbox(for='policy') 
+			input(type='checkbox' class='form__checkbox' id='policy')
+			.form__label-checkbox__custom
+				svg(xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none" class="form__label-checkbox__custom__svg")
+					path(fill-rule="evenodd" clip-rule="evenodd" d="M6.64575 9.59405L4.12788 6.89904L3 8.09777L6.64575 12L13 5.19872L11.8801 4L6.64575 9.59405Z" fill="white")
+			span(class='form__label-checkbox__text') Вы подтверждаете, что ознакомились
+			a(href="#" class='form__label-checkbox__href') c политикой обработки персональных данных
+		.form__checkbox__error-checkbox
+		+button('Отправить')

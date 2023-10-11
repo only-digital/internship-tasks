@@ -1,0 +1,5 @@
+mixin text-area(classInput, idInput, labelText)
+	.text-area&attributes(attributes)(data-component='text-area')
+		textarea(name=idInput, class=`text-area__textarea ${classInput}-input` placeholder=" " id=idInput cols="10")
+		label(class=`text-area__label ${classInput}` for=idInput)=labelText
+		+svg('success-validation').form__text-area__success-validation

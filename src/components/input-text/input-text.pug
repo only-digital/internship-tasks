@@ -1,0 +1,5 @@
+mixin input-text(classInput, labelText, idInput)
+	.input-text&attributes(attributes)(data-component='input-text' class=classInput)
+		input(type='text' class=`input-text__input ${classInput}-input` placeholder=" " id=idInput)
+		label(class=`input-text__label ${classInput}` for=idInput)=labelText
+		+svg('success-validation').form__text-input__success-validation

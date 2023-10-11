@@ -1,0 +1,17 @@
+.form-container {
+	$root: &;
+	display: flex;
+
+	&__title{
+		color: var(--main-blue, #002F6C);
+		font-family: Arial;
+		font-size: 32px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 120%;
+		letter-spacing: -0.64px;
+		width: 268px;
+		margin-left: 30px;
+		margin-top: 26px;
+	}
+}

@@ -1,0 +1,86 @@
+.input-file {
+	$root: &;	
+	margin-top: 190px;
+	margin-bottom: 18px;
+	position: relative;
+
+	&__label{
+		color: #021F45;	
+		font-family: Grtsk Peta;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 100%; 
+		letter-spacing: -0.32px;
+		border-radius: 25px;
+		border: 1px solid #BCBCBC;
+		padding: 14px 48px 16px 16px;
+		width: 250px;		
+		position: relative;				
+		transition: color .3s, background-color .3s, border .3s;
+	}
+
+	&__label__span{
+		margin-left: 16px;
+		font-size: 30px;
+		padding: 0px;
+		position: absolute;
+		top: 14px;
+		right: 14px;
+	}
+
+	&__label:hover{
+		color: #fff;
+		background-color: #0041A0;
+	}
+
+	&__label:active{	
+		color: #fff;
+		background-color: #002F6C;
+	}
+
+	&__file:focus ~ &__label{	
+		border: 3px solid #99B3D8;
+	}
+
+	&__title{		
+		height: 92px;
+		width: 240px;
+		clip-path: polygon(0 0,100% 0, 100% 100%, 95% 80%, 0 80%);
+		color: #002F6C;
+		font-family: Arial;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 150%;
+		padding: 20px; 
+		box-shadow: 0px 10px 10px 0px rgba(107, 56, 56, 0.25);	
+		position: absolute;	
+		opacity: 0;
+		transition: opacity .3s;
+		z-index: -10;
+		left: -180px;
+		top: -102px;
+	}
+
+	&__svg{
+		position: absolute;	
+		opacity: 0;
+		transition: opacity .3s;
+		z-index: -20;
+		left: -225px;
+		top: -128px;
+	}
+
+	&__label:hover ~ &__svg{
+		transition-delay: 1s;
+		opacity: 1;
+		z-index: 10;
+	}
+
+	&__label:hover ~ &__title{
+		transition-delay: 1s;
+		opacity: 1;
+		z-index: 20;
+	}
+}

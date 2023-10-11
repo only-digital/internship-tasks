@@ -1,0 +1,71 @@
+.input-text {
+	$root: &;
+	position: relative;
+	margin-top: 31px;
+	margin-left: 20px;
+
+	&__input{
+		border-bottom: 2px solid #DEDEDE;
+		padding: 8px 20px 14px 20px;
+		width: 836px;
+		color: #111;
+		font-family: Arial;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 100%; 
+		letter-spacing: -0.32px;
+		transition: background-color .3s, border-radius .3s, border .3s;
+	}
+
+	&__label{
+		position: absolute;
+		color: #111;
+		font-family: Arial;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 100%;
+		letter-spacing: -0.32px;
+		top: 9px;
+		left: 19px;
+		transition: top .3s, font-size .3s, color .3s;
+	}
+
+	&__input:focus{
+		height: 48px;
+		border-radius: 24px;
+		border: 1px solid #0041A0;
+	}
+
+	&__input:hover{
+		background-color: #F4F4F4;
+		border-radius: 24px;
+	}
+
+	&__input:focus + &__label,
+	&__input:not(:placeholder-shown) + &__label	{
+		top: -20px;
+		color:  #909090;
+		font-family: Grtsk Peta;
+		font-size: 12px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 150%;
+		letter-spacing: -0.24px;
+	}
+
+	&__error{		
+		border: 1px solid  #F00;
+		border-radius: 24px;
+	}	
+}
+
+.form__text-input__success-validation{
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	display: none;
+	right: 20px;
+    top: 10px;
+}
