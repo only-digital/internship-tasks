@@ -1,9 +1,9 @@
 .spoiler {
   $root: &;
+  cursor: pointer;
+  border-bottom: 1px solid #e6e6e6;
 
-  //Your code here
-
-  &__title {
+  &__top {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -27,64 +27,7 @@
     }
   }
 
-  &__description {
-    font-size: 20px;
-    line-height: 30px;
-    letter-spacing: 0em;
-    color: #000402;
-    max-height: 0;
-    margin-bottom: 0;
-    overflow: hidden;
-    transition: max-height 0.5s, margin 0.5s;
-
-    @media (max-width: 1440px) {
-      font-size: 15px;
-      line-height: 22.5px;
-    }
-
-    @media (max-width: 1280px) {
-      font-size: 14px;
-      line-height: 21px;
-    }
-
-    @media (max-width: 768px) {
-      font-size: 15px;
-      line-height: 22.5px;
-    }
-  }
-
-  &.active {
-    #{$root}__description {
-      max-height: fit-content;
-      margin-bottom: 40px;
-
-      @media (max-width: 1440px) {
-        margin-bottom: 30px;
-      }
-
-      @media (max-width: 1280px) {
-        margin-bottom: 25px;
-      }
-
-      @media (max-width: 375px) {
-        margin-bottom: 20px;
-      }
-    }
-
-    .spoiler-title {
-      &__text {
-        color: #114c9a;
-      }
-
-      &__icon {
-        transform: rotate(0deg);
-      }
-    }
-  }
-}
-
-.spoiler-title {
-  &__text {
+  &__title {
     font-size: 36px;
     line-height: 43px;
     letter-spacing: 0em;
@@ -152,6 +95,59 @@
 
     &::after {
       transform: rotate(-45deg);
+    }
+  }
+
+  &__description {
+    font-size: 20px;
+    line-height: 30px;
+    letter-spacing: 0em;
+    color: #000402;
+    max-height: 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    transition: max-height 0.5s, margin 0.5s;
+
+    @media (max-width: 1440px) {
+      font-size: 15px;
+      line-height: 22.5px;
+    }
+
+    @media (max-width: 1280px) {
+      font-size: 14px;
+      line-height: 21px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 15px;
+      line-height: 22.5px;
+    }
+  }
+
+  &.active {
+    #{$root}__description {
+      max-height: 3000px;
+      margin-bottom: 40px;
+
+      @media (max-width: 1440px) {
+        margin-bottom: 30px;
+      }
+
+      @media (max-width: 1280px) {
+        margin-bottom: 25px;
+      }
+
+      @media (max-width: 375px) {
+        margin-bottom: 20px;
+      }
+    }
+
+    #{$root}__title {
+      color: #114c9a;
+    }
+
+    #{$root}__icon {
+      transform: rotate(0deg);
     }
   }
 }
