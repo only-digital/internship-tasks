@@ -3,6 +3,7 @@ import Component from '../../../../app/js/base/Component';
 class inputMailCt extends Component {
     input;
     name;
+    hekl;
 
     constructor(element) {
         super(element);
@@ -10,9 +11,13 @@ class inputMailCt extends Component {
         this.input = this.getElement("input");
         this.name = this.getElement("name");
 
-        this.input.addEventListener("focus", this.onInputFocus)
-        this.input.addEventListener("blur", this.onInputBlur)
-        this.input.addEventListener("input", this.onInputChange)
+        this.input.addEventListener("focus", this.onInputFocus);
+        this.input.addEventListener("blur", this.onInputBlur);
+        this.input.addEventListener("input", this.onInputChange);
+        // this.hekl.addEventListener("change", this.onChange)
+    }
+    onChange = () => {
+        console.log(this.hekl);
     }
 
     onInputFocus = () => {

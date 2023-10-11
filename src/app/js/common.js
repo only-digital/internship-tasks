@@ -8,8 +8,8 @@ import textareaCt from "../../components/feedback/form/textarea-ct/textarea-ct";
  * Значение - JS-класс компонента (Импорт добавляется вручную)
  */
 const allComponents = {
-    "input-mail-ct":inputMailCt,
-    "textarea-ct":textareaCt
+    "input-mail-ct": inputMailCt,
+    "textarea-ct": textareaCt
 }
 
 /**
@@ -17,7 +17,6 @@ const allComponents = {
  */
 try {
     const existedComponents = Array.from(document.querySelectorAll('[data-component]'));
-
     const components = existedComponents.map((component) => {
         try {
             return new allComponents[component.dataset.component]({
