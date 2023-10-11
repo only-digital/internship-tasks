@@ -22,6 +22,12 @@
         position: relative;
         margin-top: 30px;
 
+        &-files {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
         &:hover label, &:hover span {
             text-indent: 15px;
         }
@@ -104,7 +110,7 @@
 
         &.focused-input {
             border: 1px solid $extraCobolt;
-            padding: 13px 0 20px 20px;
+            padding: 13px 60px 20px 20px;
             border-radius: 24px;
 
             &:hover {
@@ -135,9 +141,10 @@
             height: 13px;
             fill: $green;
             position: absolute;
-            bottom: 35px;
+            bottom: 20px;
             right: 20px;
             opacity: 0;
+            transition: opacity .2s ease-out;
 
             &.visible-indicator {
                 opacity: 1;
@@ -150,6 +157,10 @@
       margin: 2px 0 0 20px;
       color: $red;
       height: 18px;
+
+      &-files {
+        margin: 7px 0 0 0 !important;
+      }
     }
 
     &__files {
@@ -159,7 +170,7 @@
         width: fit-content;
         pointer-events: none;
   
-        &-text {
+        & span {
           pointer-events: all;
           display: flex;
           align-items: center;
@@ -173,14 +184,14 @@
           border: 1px solid $extraGray;
           padding: 14px 16px 16px 16px;
           border-radius: 24px;
-          width: 200px;
-          height: 46px;
 
-          transition: background-color .4s ease, color .4s ease, fill .4s ease;
+          transition: background-color .4s ease, color .4s ease;
   
           & svg {
             width: 14px;
             height: 14px;
+            fill: $blue;
+            transition: fill .4s ease;
           }
   
           &:hover {
@@ -198,7 +209,7 @@
             background-color: $blue;
             color: $white;
   
-            & svg path {
+            & svg {
               fill: $white;
             }
           }
@@ -217,13 +228,87 @@
           }
         }
 
-        &-btn {
+        & input[type=file] {
             position: absolute;
+            z-index: -1;
             opacity: 0;
             display: block;
             width: 0;
             height: 0;
-            z-index: -1;
+        }
+
+        &-list ul li {
+            background-color: $extraGray3;
+            padding: 10px 18px;
+            border-radius: 27px;
+        }
+    }
+
+    &__countfiles {
+        &-error {
+            display: flex;
+            align-items: flex-end;
+            flex-direction: column;
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            z-index: -2;
+            opacity: 0;
+            transform: translateY(50%);
+            transition: transform .2s ease-in-out, opacity .2s ease-in-out;
+            cursor: pointer;
+        
+            &-wrapper {
+                background-color: $white;
+                padding: 16px 20px;
+                max-width: 240px;
+                filter: drop-shadow(0px 4px 40px rgba(0, 0, 0, 0.10));
+                position: relative;
+            }
+        
+            &-text {
+                font-size: 14px;
+                color: $blue;
+            }
+        
+            &-triangle {
+                width: 0;
+                height: 0;
+                border-top: 16px solid $white; 
+                border-left: 16px solid transparent;
+            }
+        
+            &.visible-countfiles-error {
+                z-index: 3;
+                display: block;
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+}
+
+#file-list {
+    display: flex;
+    gap: 30px;
+    
+    li {
+        display: flex;
+        gap: 4px;
+    }
+}
+
+.file {
+
+    &-info {
+
+        &__text {
+            color: $steel;
+            font-size: 16px;
+        }
+
+        &__text:nth-child(1) {
+            color: $black;
         }
     }
 }

@@ -6,20 +6,28 @@ mixin form(props)
                 label.form__label.form__label-email(for="email") E-mail
                 input(id="email" type="email" maxlength="255" name="email" required).form__input.form__input-email
                 +svg('success').form__input-indicator.form__input-indicator-email
-                span.form__error 123
+                span.form__error.form__error-email
             .form__group
                 span.form__label.form__label-msg(for="message") Ваше сообщение
                 textarea(id="message" name="message").form__input.form__input-msg
                 +svg('success').form__input-indicator.form__input-indicator-msg
-                span.form__error 123
-            label.form__files(for="files")
-                input(type="file" name="files" multiple).form__files-btn
-                span.form__files-text Прикрепить файл
-                    +svg('plus')
-            span.form__error 123
+                span.form__error.form__error-msg
+            .form__group-files
+                label.form__files(for="files")
+                    input(type="file" name="files" id="files" accept="application/msword, application/pdf, application/vnd.openxmlformats-officedocument.wordprocessingml.document" multiple).form__files-btn
+                    span.form__files-text Прикрепить файл
+                        +svg('plus')                    
+                .form__files-list
+                    ul#file-list
+            span.form__error.form__error-files
+            .form__countfiles-error
+                .form__countfiles-error-wrapper
+                    span.form__countfiles-error-text Вы можете загрузить только 2 документа
+                .form__countfiles-error-triangle
             label.form__acceptance(for="confirm")
                 input(type='checkbox' name="confirm")
                 span Вы подтверждаете, что ознакомились 
                     a(href='/') c политикой обработки персональных данных
+            span.form__error.form__error-acceptance 
             button(type="submit" disabled='').form__submit Отправить
                 +svg('iconArrow')
