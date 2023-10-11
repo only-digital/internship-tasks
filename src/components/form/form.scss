@@ -140,6 +140,10 @@
             }
         }
 
+        &-error {
+            border: 1px solid $red !important;
+        }
+
         &-indicator {
             width: 18px;
             height: 13px;
@@ -163,7 +167,11 @@
       height: 18px;
 
       &-files, &-form {
-        margin: 7px 0 0 0 !important;
+        margin: 7px 0 0 0;
+      }
+
+      &-acceptance {
+        margin: 7px 0 7px 0;
       }
     }
 

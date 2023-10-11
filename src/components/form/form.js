@@ -24,6 +24,7 @@ class Form extends Component {
     this.countFilesError = this.getElement('files-error');
     this.indicator = this.getElements('input-indicator');
     this.checkbox = this.getElement('acceptance-checkbox');
+    this.errorCheckbox = this.getElement('error-acceptance');
     this.fileInput = this.getElement('files-btn');
 
     this.formError = this.getElement('error-form');
@@ -32,6 +33,13 @@ class Form extends Component {
 
     this.setupLabelAnimation();
     this.setupFileList();
+  }
+
+  handleCheckboxChange() {
+    if (this.checkbox.checked) {
+      this.destroyError(this.errorCheckbox);
+    }
+    this.updateSubmitButton();
   }
 
   setupFileList() {
@@ -56,6 +64,7 @@ class Form extends Component {
     );
 
     this.submitButton.addEventListener('click', (event) => this.handleSubmit(event));
+    this.checkbox.addEventListener('change', () => this.handleCheckboxChange());
   }
 
   handleFocus(input, label) {
@@ -78,15 +87,20 @@ class Form extends Component {
       if (input.value && !this.isValidEmail(input.value)) {
         this.displayError(this.errorEmail, 'Неверный формат email');
         input.nextElementSibling.classList.remove('visible-indicator');
+        input.classList.add('form__input-error');
+        input.classList.remove('filled-input');
       } else if (input.value.length > MAX_EMAIL_LENGTH) {
         this.displayError(
           this.errorEmail,
           `Email не должен содержать более ${MAX_EMAIL_LENGTH} символов`,
         );
         input.nextElementSibling.classList.remove('visible-indicator');
+        input.classList.add('form__input-error');
+        input.classList.remove('filled-input');
       } else {
         this.destroyError(this.errorEmail);
         input.nextElementSibling.classList.add('visible-indicator');
+        input.classList.remove('form__input-error');
       }
     }
     if (input === this.inputMsg) {
@@ -96,14 +110,17 @@ class Form extends Component {
           `Сообщение не должно содержать более ${MAX_MESSAGE_LENGTH} символов`,
         );
         input.nextElementSibling.classList.remove('visible-indicator');
+        input.classList.add('form__input-error');
       } else {
         this.destroyError(this.errorMsg);
         input.nextElementSibling.classList.add('visible-indicator');
+        input.classList.remove('form__input-error');
       }
     }
 
     if (input.value === '') {
       input.nextElementSibling.classList.remove('visible-indicator');
+      input.classList.remove('form__input-error');
     }
 
     this.updateSubmitButton();
@@ -128,6 +145,7 @@ class Form extends Component {
     if (input === this.inputEmail && input.value.length > 255) {
       this.displayError(errorElement, 'Email не должен содержать более 255 символов');
       input.nextElementSibling.classList.remove('visible-indicator');
+      input.classList.add('form__input-error');
       this.submitButton.classList.add('disabled');
     } else {
       this.destroyError(errorElement);
@@ -137,6 +155,7 @@ class Form extends Component {
     if (input === this.inputMsg && input.value.length > 1000) {
       this.displayError(errorElement, 'Сообщение не должно содержать более 1000 символов');
       input.nextElementSibling.classList.remove('visible-indicator');
+      input.classList.add('form__input-error');
       this.submitButton.classList.add('disabled');
     } else {
       this.destroyError(errorElement);
@@ -148,7 +167,7 @@ class Form extends Component {
     const emailError = this.errorEmail.textContent;
     const msgError = this.errorMsg.textContent;
 
-    const hasErrors = emailError || msgError;
+    const hasErrors = emailError || msgError || !this.inputEmail.value || !this.inputMsg.value;
     this.submitButton.disabled = hasErrors;
   }
 
@@ -244,20 +263,17 @@ class Form extends Component {
   getFileType(file) {
     const allowedFormats = ['pdf', 'doc', 'docx'];
     const fileExtension = file.name.split('.').pop().toLowerCase();
-    return allowedFormats.includes(fileExtension)
-      ? fileExtension.toUpperCase()
-      : 'Недопустимый формат';
+    return allowedFormats.includes(fileExtension);
   }
 
   formatSize(bytes) {
     if (bytes === 0) return '0 B';
-    const sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
+    const sizes = ['B', 'kB', 'mB'];
     const i = Math.floor(Math.log(bytes) / Math.log(1024));
     return `${Math.round(bytes / Math.pow(1024, i))} ${sizes[i]}`;
   }
 
   clearForm() {
-    // Сброс значений полей и состояния формы
     this.inputEmail.value = '';
     this.inputMsg.value = '';
     this.uploadedFiles = [];
@@ -265,20 +281,27 @@ class Form extends Component {
     this.formError.textContent = 'Форма отправлена';
     this.formError.style.color = 'green';
 
-    // Убираем фокус с полей и сбрасываем стили
     this.inputEmail.classList.remove('focused-input', 'filled-input');
     this.inputEmail.nextElementSibling.classList.remove('visible-indicator');
     this.labelEmail.classList.remove('focused-label');
     this.inputMsg.classList.remove('focused-input', 'filled-input');
     this.labelMsg.classList.remove('focused-label');
     this.inputMsg.nextElementSibling.classList.remove('visible-indicator');
+    this.submitButton.classList.add('disabled');
 
-    // Обновляем список файлов
     this.updateFileList();
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
+
+    if (!this.checkbox.checked) {
+      this.displayError(this.errorCheckbox, 'Согласие на обработку является обязательным');
+      return;
+    } else {
+      this.destroyError(this.errorCheckbox);
+    }
+
     const data = {
       email: this.inputEmail.value,
       message: this.inputMsg.value,
