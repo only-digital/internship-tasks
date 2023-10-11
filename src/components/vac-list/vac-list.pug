@@ -1,0 +1,10 @@
+mixin vac-list(props)
+	.vac-list&attributes(attributes)(data-component='vac-list')
+		h2.vac-list__title= props.title
+		ul.vac-list__items
+			each item in props.items
+				li.vac-list__item
+					.vac-list__mark
+					.vac-list__text= item
+
+				

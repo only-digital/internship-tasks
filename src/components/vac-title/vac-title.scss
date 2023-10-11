@@ -1,0 +1,33 @@
+$steel: #8f8f8f;
+$blue: #04306a;
+
+.vac-title {
+  $root: &;
+
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 80px;
+  margin-top: 115px;
+
+  &__date {
+    font-size: 20px;
+    color: $steel;
+  }
+
+  &__title {
+    font-size: 64px;
+    color: $blue;
+    margin-top: 20px;
+  }
+
+  &__stats {
+    display: flex;
+    font-size: 16px;
+    color: $steel;
+    margin-top: 45px;
+    transition: 0.3s ease-in;
+
+    &-views {
+      margin-right: 36px;
+    }
+  }
+}

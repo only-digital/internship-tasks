@@ -1,0 +1,36 @@
+$grey-extra: #dedede;
+$blue: #002f6c;
+
+.loader {
+  $root: &;
+
+  display: none;
+  margin-top: 30px;
+  border: 8px solid $grey-extra;
+  border-top: 8px solid $blue;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.active {
+  display: block;
+}
+
+.small {
+  margin-top: 0;
+  border: 4px solid $grey-extra;
+  border-top: 4px solid $blue;
+  width: 20px;
+  height: 20px;
+}

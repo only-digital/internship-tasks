@@ -1,0 +1,170 @@
+$cobolt: #0041a0;
+$red: #ef1c1c;
+$steel: #909090;
+$grey: #bcbcbc;
+$grey-extra: #dedede;
+$blue: #002f6c;
+$white: #fff;
+
+.form {
+  $root: &;
+
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  padding-left: 547px;
+  padding-top: 68px;
+  margin-bottom: 45px;
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.3;
+  }
+
+  &__title {
+    position: absolute;
+    font-size: 32px;
+    line-height: 120%;
+    color: $blue;
+    top: 44px;
+    left: 104px;
+  }
+
+  &__input {
+    border: 1px solid $cobolt;
+    border-radius: 24px;
+    width: 830px;
+    height: 66px;
+    padding: 12px 20px;
+    font-size: 16px;
+
+    &[disabled] {
+      pointer-events: none;
+      opacity: 0.3;
+      user-select: none;
+    }
+  }
+
+  &__error {
+    font-size: 14px;
+    color: $red;
+    line-height: 150%;
+    margin-top: 25px;
+    transition: 0.3s ease-in;
+  }
+
+  &__checkbox {
+    &-wrap {
+      &[disabled] {
+        pointer-events: none;
+        opacity: 0.3;
+        cursor: default;
+      }
+    }
+
+    &-label {
+      display: flex;
+      cursor: pointer;
+      user-select: none;
+      margin-top: 14px;
+    }
+
+    &__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      margin-right: 18px;
+      border: 1px solid $grey;
+
+      &-svg {
+        opacity: 0;
+        fill: $white;
+        width: 10px;
+        height: 8px;
+      }
+    }
+
+    &-link {
+      color: $blue;
+      margin-left: 1ex;
+
+      &:hover {
+        color: $cobolt;
+      }
+    }
+
+    &:checked + .form__checkbox-label &__icon {
+      background-color: $cobolt;
+      #{$root}__checkbox__icon-svg {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__input-label {
+    color: $steel;
+    padding-left: 20px;
+  }
+
+  &__button {
+    display: flex;
+    column-gap: 14px;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 14px 7px 18px;
+    width: 150px;
+    height: 48px;
+    background-color: $cobolt;
+    color: $white;
+    border-radius: 24px;
+    margin-top: 30px;
+
+    &-svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    &:hover {
+      background-color: $blue;
+      transition: 0.3s ease-in;
+    }
+
+    &:active {
+      background-color: $cobolt;
+      transition: 0.3s ease-in;
+    }
+  }
+
+  &__success {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+
+    gap: 21px;
+
+    &-text {
+      font-size: 16px;
+      line-height: 124%;
+    }
+    &-svg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      outline: 2px solid $grey-extra;
+      border-radius: 50%;
+      svg {
+        width: 21px;
+        height: 15px;
+      }
+    }
+  }
+
+  .hidden {
+    display: none;
+  }
+}

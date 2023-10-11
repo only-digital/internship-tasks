@@ -1,0 +1,9 @@
+mixin vac-title(props)
+	.vac-title&attributes(attributes)(data-component='vac-title')
+		.vac-title__date= props.date
+		.vac-title__title Консультант SAP PO
+		.vac-title__stats 
+			+loader.vac-title__loader.small
+			.vac-title__stats-views
+			.vac-title__stats-responses
+				
