@@ -1,7 +1,23 @@
 $blue-color: #04306A;
 $black-color: #012B34;
 $green-color: #0DB274;
+$steel-color: #8F8F8F;
 
 @mixin fontFamily {
   font-family: Arial, sans-serif;
+}
+
+@mixin loader($size) {
+  width : $size;
+  height: $size;
+  border-radius: 50%;
+  display: inline-block;
+  border-top:3px solid $green-color;
+  border-right:3px solid transparent;
+  animation: rotation 1s linear infinite;
+
+  @keyframes rotation {
+    0% { transform: rotate(0deg) }
+    100% { transform: rotate(360deg) }
+  }
 }

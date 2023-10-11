@@ -28,6 +28,8 @@
 
 mixin vacancy-page(props)
 	.vacancy-page&attributes(attributes)(data-component='vacancy-page')
+		+vacancy-header
+
 		section.vacancy-page__description-container
 			+description-block({ items: items1, title: 'Вам предстоит' })
 			+description-block({ items: items2, title: 'Мы ожидаем' })

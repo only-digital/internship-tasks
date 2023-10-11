@@ -1,0 +1,9 @@
+mixin vacancy-header(props)
+	header.vacancy-header&attributes(attributes)(data-component='vacancy-header')
+		p.vacancy-header__date 18 декабря 2020
+		h1.vacancy-header__title Консультант SAP PO
+		ul.vacancy-header__stats-container
+			li.vacancy-header__stats-item Просмотров:&nbsp;
+				span(id='views').vacancy-header__stats-count_load
+			li.vacancy-header__stats-item Откликов:&nbsp;
+				span(id='responses').vacancy-header__stats-count_load

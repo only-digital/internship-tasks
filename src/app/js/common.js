@@ -1,4 +1,7 @@
 import ExampleButton from "../../components/example-button/example-button";
+import VacancyPage from "../../components/vacancy-page/vacancy-page";
+import VacancyHeader from "../../components/vacancy-header/vacancy-header";
+import DescriptionBlock from "../../components/description-block/description-block";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -7,6 +10,9 @@ import ExampleButton from "../../components/example-button/example-button";
  */
 const allComponents = {
     'example-button': ExampleButton,
+    'vacancy-page': VacancyPage,
+    'vacancy-header': VacancyHeader,
+    'description-block': DescriptionBlock,
 }
 
 /**

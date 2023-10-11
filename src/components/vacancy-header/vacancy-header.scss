@@ -1,0 +1,50 @@
+@import '../../scss';
+
+.vacancy-header {
+	$root: &;
+
+	@include fontFamily;
+	margin-bottom: 144px;
+
+	&__date {
+		margin-bottom: 20px;
+		color: $steel-color;
+		font-feature-settings: 'ss08' on;
+		font-size: 20px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 140%; /* 28px */
+		letter-spacing: -0.4px;
+	}
+
+	&__title {
+		margin-bottom: 45px;
+		color: $blue-color;
+		font-feature-settings: 'ss08' on;
+		font-size: 64px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 100%; /* 64px */
+		letter-spacing: -1.28px;
+	}
+
+	&__stats-container {
+		display: flex;
+		gap: 36px;
+	}
+
+	&__stats-item {
+		position: relative;
+		color: $steel-color;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 130%; /* 20.8px */
+		letter-spacing: -0.32px;
+	}
+
+	&__stats-count_load {
+		margin-left: 6px;
+		@include loader(13px);
+	}
+}
