@@ -7,5 +7,34 @@
 
 	@include adaptiveInlinePadding(80px,60px,50px);
     padding-block:163px 45px;
-	//Your code here
+
+	&__header{
+
+		#{$root}__date{
+
+
+		}
+
+		#{$root}__text{
+
+
+		}
+
+		#{$root}_stats{
+
+			#{$root}__views{
+
+
+			}
+		
+			#{$root}__references{
+		
+		
+			}
+
+		}
+
+	}
+
+
 }

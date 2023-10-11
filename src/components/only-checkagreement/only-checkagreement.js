@@ -1,6 +1,6 @@
 import Component from '../../app/js/base/component';
 
-class OnlyParag extends Component {
+class OnlyCheckagreement extends Component {
     constructor(element) {
         super(element);
 
@@ -10,4 +10,4 @@ class OnlyParag extends Component {
     // Your code here
 }
 
-export default OnlyParag
+export default OnlyCheckagreement

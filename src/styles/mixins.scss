@@ -1,6 +1,7 @@
 @import './variables.scss';
 
 @mixin adaptiveInlinePadding($inline_pad_l,$inline_pad_m,$inline_pad_s){
+    
     padding-inline: $inline_pad_l;
 
     @media(max-width: 1280px){

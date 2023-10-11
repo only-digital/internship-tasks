@@ -1,3 +1,5 @@
 mixin only-parag(props)
 	.only-parag&attributes(attributes)(data-component='only-parag')
-		//Your code here
+		.only-parag__header!=props.header
+		ul.only-parag__content-block
+			block

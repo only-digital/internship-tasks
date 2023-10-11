@@ -1,3 +1,5 @@
 mixin only-form(props)
 	.only-form&attributes(attributes)(data-component='only-form')
-		//Your code here
+		form.only-form__main 
+			.only-form__header!=props.header
+			block 

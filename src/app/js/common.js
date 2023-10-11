@@ -1,4 +1,12 @@
 import ExampleButton from "../../components/example-button/example-button";
+import OnlyButton from "../../components/only-button/only-button";
+import OnlyCheckAgreement from "../../components/only-checkagreement/only-checkagreement";
+import OnlyError from "../../components/only-error/only-error";
+import OnlyForm from "../../components/only-form/only-form";
+import OnlyInput from "../../components/only-input/only-input";
+import OnlyParag from "../../components/only-parag/only-parag";
+import OnlyPoint from "../../components/only-point/only-point";
+import OnlyVacancyWrapper from "../../components/only-vacancy-wrapper/only-vacancy-wrapper";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -7,6 +15,14 @@ import ExampleButton from "../../components/example-button/example-button";
  */
 const allComponents = {
     'example-button': ExampleButton,
+    'only-button': OnlyButton,
+    'only-checkagreement': OnlyCheckAgreement,
+    'only-error': OnlyError,
+    'only-form': OnlyForm,
+    'only-input': OnlyInput,
+    'only-parag': OnlyParag,
+    'only-point': OnlyPoint,
+    'only-vacancy-wrapper':OnlyVacancyWrapper
 }
 
 /**

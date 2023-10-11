@@ -1,0 +1,5 @@
+mixin only-input(props)
+	.only-input&attributes(attributes)(data-component='only-input')
+		label.only-input__label!=props.label 
+		input.only-input__field(attributes placeholder!=props.placeholder )
+		
