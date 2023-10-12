@@ -1,0 +1,84 @@
+.container {
+  $root: &;
+
+  margin: 0 auto;
+
+  h1 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  &:last-of-type {
+    border-bottom: 1px solid #e6e6e6;
+  }
+
+  @media (min-width: 375px) {
+    width: 327px;
+    padding-top: 152px;
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 40px;
+    }
+
+    &:last-of-type {
+      width: 327px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    width: 688px;
+    padding-top: 174px;
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 50px;
+    }
+
+    &:last-of-type {
+      width: 688px;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    width: 1066px;
+    padding-top: 167px;
+
+    h1 {
+      margin-bottom: 56px;
+    }
+
+    &:last-of-type {
+      width: 1066px;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    width: 1200px;
+    padding-top: 179px;
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 60px;
+    }
+
+    &:last-of-type {
+      width: 1200px;
+    }
+  }
+
+  @media (min-width: 1920px) {
+    width: 1600px;
+    padding-top: 183px;
+
+    h1 {
+      font-size: 64px;
+      margin-bottom: 80px;
+    }
+
+    &:last-of-type {
+      width: 1600px;
+    }
+  }
+}
