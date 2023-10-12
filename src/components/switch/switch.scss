@@ -12,7 +12,6 @@ $grey: #dedede;
 	margin: 15px;
 	width: 56px;
 	height: 28px;
-	background-color: $main-blue;
 	border-radius: 14px;
 	cursor: pointer;
 	transition: 0.3s;
@@ -24,6 +23,17 @@ $grey: #dedede;
 
 	&__control {
 		position: relative;
+		display: inline-block;
+		background-color: $main-blue;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		border-radius: 14px;
+		cursor: pointer;
+		transition: 0.3s;
 	}
 
 	&__control::before {
@@ -32,27 +42,41 @@ $grey: #dedede;
 		width: 16px;
 		height: 16px;
 		left: 31px;
-		bottom: -4px;
+		bottom: 6px;
 		background-color: $white;
 		border-radius: 50%;
 		transition: 0.3s;
 	}
 
+	&__input:checked + &__control::before {
+		left: 8px;
+	}
+
 	&:hover {
-		background-color: $dark-blue;
+		#{$root}__control {
+			background-color: $dark-blue;
+			@media (max-width: 375px) {
+				left: 5px;
+			}
+		}
 	}
 
 	&:focus {
-		background-color: $grey;
-		outline: 3px solid $light-blue;
+		#{$root}__control {
+			background-color: $grey;
+			outline: 3px solid $light-blue;
+		}
 		#{$root}__control::before {
 			left: 8px;
 		}
 	}
 
 	&[disabled] {
-		background-color: $grey;
 		pointer-events: none;
+		#{$root}__control {
+			background-color: $grey;
+			pointer-events: none;
+		}
 		#{$root}__control::before {
 			left: 8px;
 		}
@@ -64,10 +88,11 @@ $grey: #dedede;
 		#{$root}__control::before {
 			width: 12px;
 			height: 12px;
-			bottom: 2px;
+			bottom: 4px;
 			left: 23px;
 		}
-		&:focus {
+		&:focus,
+		&[disabled] {
 			#{$root}__control::before {
 				left: 5px;
 			}

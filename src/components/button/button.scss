@@ -21,7 +21,6 @@ $active-red: #81080f;
 	gap: 14px;
 	margin: 15px;
 	padding: 14px 16px;
-	width: 129px;
 	height: 48px;
 	background-color: $white;
 	outline: 1px solid $extra-grey-1;
@@ -55,8 +54,7 @@ $active-red: #81080f;
 
 	@media (max-width: 1280px) {
 		& {
-			padding: 13px 16px 15px;
-			width: 108px;
+			padding: 13px 15px;
 			height: 41px;
 			font-size: 14px;
 			letter-spacing: -0.28px;
@@ -69,7 +67,7 @@ $active-red: #81080f;
 
 	@media (max-width: 768px) {
 		& {
-			width: 119px;
+			padding: 13px 12px;
 			height: 42px;
 			font-size: 16px;
 			letter-spacing: -0.32px;
@@ -81,8 +79,7 @@ $active-red: #81080f;
 
 	@media (max-width: 375px) {
 		& {
-			padding: 13px 117px 15px;
-			width: 320px;
+			padding: 13px 117px;
 			height: 42px;
 			&__arrow {
 				width: 24px;
@@ -94,7 +91,7 @@ $active-red: #81080f;
 		background-color: $cobalt;
 		outline: 1px solid $cobalt;
 		color: $white;
-		&__arrow {
+		#{$root}__arrow {
 			fill: $white;
 		}
 	}
@@ -103,16 +100,17 @@ $active-red: #81080f;
 		background-color: $main-blue;
 		outline: 1px solid $main-blue;
 		color: $white;
-		&__arrow {
+		#{$root}__arrow {
 			fill: $white;
 		}
 	}
 
-	&:focus-visible {
+	&:focus-within,
+	&:focus {
 		background-color: $white;
 		outline: 3px solid $accent-blue;
 		color: $cobalt;
-		&__arrow {
+		#{$root}__arrow {
 			fill: $cobalt;
 		}
 	}
@@ -142,15 +140,27 @@ $active-red: #81080f;
 	&:hover {
 		background-color: $hover-red;
 		outline: 1px solid $hover-red;
+		.button__arrow {
+			fill: $white;
+		}
 	}
 
 	&:active {
 		background-color: $active-red;
 		outline: 1px solid $active-red;
+		color: $white;
+		.button__arrow {
+			fill: $white;
+		}
 	}
 
-	&:focus-visible {
+	&:focus-within,
+	&:focus {
 		background-color: $main-red;
 		outline: 3px solid $accent-blue;
+		color: $white;
+		.button__arrow {
+			fill: $white;
+		}
 	}
 }
