@@ -1,0 +1,24 @@
+mixin feedback-form(props)
+	- var disabled = props.disabled
+	form.feedback-form&attributes(attributes)(data-component='feedback-form')
+		.feedback-form__title Форма обратной связи
+		.feedback-form__content
+			.feedback-form__content__email(class=disabled)
+				input.feedback-form__content__email__input(type="email" id="email" placeholder="E-mail")
+				label(for='email' ) E-mail
+				.feedback-form__content__email__message 111
+			.feedback-form__content__message(class=disabled)
+				textarea.feedback-form__content__message__input( id="message" placeholder="Ваше сообщение")
+				label(for='message' ) Ваше сообщение
+				.feedback-form__content__message__message 111
+			.feedback-form__content__file-upload(class=disabled)
+				button.feedback-form__content__file-upload__button.button Прикрепить файл
+					+svg('icon-plus').feedback-form__content__file-upload__button__svg
+				.feedback-form__content__file-upload__message 111
+			.feedback-form__content__confirm(class=disabled)
+				input.feedback-form__content__checkbox__input(type='checkbox' id="confirm" checked="checked")
+				label(for="confirm") 
+					|	Вы подтверждаете, что ознакомились 
+					span c политикой обработки персональных данных 
+			button.feedback-form__content__submit.button(class=disabled) Отправить
+				+svg('icon-button').feedback-form__content__submit__svg

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Задание 5</title>
+  </head>
+  <body>
+    <button class="example-button" data-component="example-button"><span class="example-button__text">Clicked 0 times</span><span class="example-button__circle">
+        <svg class="example-button__svg" focusable="false">
+          <use xlink:href="#example-svg"></use>
+        </svg></span></button>
+    <button class="example-button" data-component="example-button"><span class="example-button__text">Clicked 0 times</span><span class="example-button__circle">
+        <svg class="example-button__svg" focusable="false">
+          <use xlink:href="#example-svg"></use>
+        </svg></span></button>
+    <form class="feedback-form" data-component="feedback-form">
+      <div class="feedback-form__title">Форма обратной связи</div>
+      <div class="feedback-form__content">
+        <div class="feedback-form__content__email">
+          <label for="email">E-mail</label>
+          <input class="feedback-form__content__email__input" type="email" id="email"/>
+        </div>
+        <div class="feedback-form__content__message"> </div>
+        <div class="feedback-form__content__confirm">
+          <input class="feedback-form__content__checkbox__input" type="checkbox" id="confirm"/>
+          <label for="confirm">
+             	Вы подтверждаете, что ознакомились <span>c политикой обработки персональных данных </span></label>
+        </div>
+        <button class="feedback-form__content__submit">Отправить
+          <svg class="feedback-form__content__submit__svg" focusable="false">
+            <use xlink:href="#submit-button"></use>
+          </svg>
+        </button><span class="feedback-form__content__loader"></span>
+      </div>
+    </form>
+    <form class="feedback-form" data-component="feedback-form">
+      <div class="feedback-form__title">Форма обратной связи</div>
+      <div class="feedback-form__content">
+        <div class="feedback-form__content__email disabled">
+          <label for="email">E-mail</label>
+          <input class="feedback-form__content__email__input" type="email" id="email"/>
+        </div>
+        <div class="feedback-form__content__message"> </div>
+        <div class="feedback-form__content__confirm">
+          <input class="feedback-form__content__checkbox__input" type="checkbox" id="confirm"/>
+          <label for="confirm">
+             	Вы подтверждаете, что ознакомились <span>c политикой обработки персональных данных </span></label>
+        </div>
+        <button class="feedback-form__content__submit">Отправить
+          <svg class="feedback-form__content__submit__svg" focusable="false">
+            <use xlink:href="#submit-button"></use>
+          </svg>
+        </button><span class="feedback-form__content__loader"></span>
+      </div>
+    </form>
+  </body>
+</html>

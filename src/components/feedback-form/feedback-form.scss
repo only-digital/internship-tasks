@@ -1,0 +1,259 @@
+$main-blue: #002f6c;
+$main-steel: #909090;
+$extra-cobolt: #0041a0;
+$icon-success: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52' viewBox='0 0 52 52' fill='none'%3e%3ccircle cx='26' cy='26' r='25' stroke='%23DEDEDE' stroke-width='2'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M36.503 19.4099L35.3267 18.2337L23.3798 30.1806L24.556 31.3569L36.503 19.4099ZM16.6457 26.1695L15.4695 27.3458L21.9503 33.8267L23.1266 32.6504L16.6457 26.1695Z' fill='%2327AE60'/%3e%3c/svg%3e");
+
+.feedback-form {
+  $root: &;
+  width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 26px 130px 60px 30px;
+  font-family: 'Arial';
+  min-height: 338px;
+  &__title {
+    color: $main-blue;
+    max-width: 285px;
+    font-size: 32px;
+    line-height: 120%;
+    letter-spacing: -0.64px;
+  }
+  &__content {
+    width: 836px;
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    &__email {
+      width: 100%;
+      height: 66px;
+      position: relative;
+      label {
+        visibility: hidden;
+        position: absolute;
+        top: 0px;
+        height: 18px;
+        color: #909090;
+        font-size: 12px;
+        letter-spacing: -0.24px;
+        padding-left: 20px;
+      }
+      #email {
+        width: 100%;
+        height: 48px;
+        height: 48px;
+        margin-top: 18px;
+        padding: 14px 20px 14px 0px;
+        display: flex;
+        align-items: flex-end;
+        align-self: stretch;
+        border-bottom: 1px solid #dedede;
+        &:hover {
+          border-radius: 24px;
+          background: var(--extra-grey-3, #f4f4f4);
+          padding: 14px 20px 14px 20px;
+          border-bottom: none;
+        }
+        &::placeholder {
+          color: #111;
+        }
+        &:focus {
+          border-radius: 24px;
+          border: 1px solid var(--extra-cobolt, #0041a0);
+          background: transparent;
+          padding: 14px 20px 14px 20px;
+          & + label {
+            visibility: visible;
+          }
+        }
+      }
+      &.disabled {
+        pointer-events: none;
+        #email::placeholder {
+          color: #bcbcbc;
+        }
+      }
+      &__message {
+        margin-left: 20px;
+        color: #ef1c1c;
+        font-size: 12px;
+        line-height: 150%;
+        letter-spacing: -0.24px;
+      }
+    }
+
+    &__message {
+      width: 100%;
+      height: 154px;
+      color: var(--system-text, #111);
+      margin-top: 10px;
+      position: relative;
+      label {
+        visibility: hidden;
+        position: absolute;
+        top: 0px;
+        height: 18px;
+        color: #909090;
+        font-size: 12px;
+        letter-spacing: -0.24px;
+        padding-left: 20px;
+      }
+      #message {
+        font-family: 'Arial';
+        font-size: 16px;
+        letter-spacing: -0.32px;
+        resize: none;
+        overflow: hidden;
+        width: 100%;
+        height: 48px;
+        display: inline-table;
+        margin-top: 18px;
+        padding: 12px 20px 16px 0px;
+        display: flex;
+        align-items: flex-end;
+        align-self: stretch;
+        border: none;
+        border-bottom: 1px solid #dedede;
+        &:hover {
+          border-radius: 24px;
+          background: #f4f4f4;
+          padding: 12px 20px 16px 20px;
+          border: none;
+          // min-height: 193px;
+        }
+        &::placeholder {
+          color: #111;
+        }
+        &:focus {
+          border-radius: 24px;
+          outline: none;
+          border: 1px solid #0041a0;
+
+          background: transparent;
+          padding: 12px 20px 16px 20px;
+          & + label {
+            visibility: visible;
+          }
+        }
+      }
+
+      &.disabled {
+        pointer-events: none;
+        #message::placeholder {
+          color: #bcbcbc;
+        }
+      }
+      &__message {
+        margin-left: 20px;
+        color: #ef1c1c;
+        font-size: 12px;
+        line-height: 150%;
+        letter-spacing: -0.24px;
+      }
+    }
+
+    &__confirm {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-top: 60px;
+      color: $main-steel;
+      font-size: 14px;
+      line-height: 150%;
+      span {
+        color: $main-blue;
+      }
+      #confirm {
+        width: 16px;
+        height: 16px;
+        border: 1px solid #bcbcbc;
+        margin: 0;
+        &:checked {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='8' viewBox='0 0 10 8' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M3.64575 5.59405L1.12788 2.89904L0 4.09777L3.64575 8L10 1.19872L8.88006 0L3.64575 5.59405Z' fill='white'/%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-color: #0041a0;
+          border: 1px solid #0041a0;
+        }
+        &:hover {
+          border: 1px solid #0041a0;
+        }
+        &:focus {
+          outline: 2px solid #99b3d8;
+        }
+      }
+      &.disabled {
+        pointer-events: none;
+        color: #bcbcbc;
+        #confirm {
+          opacity: 0.3;
+        }
+      }
+    }
+    .button {
+      $root-button: &;
+      margin-top: 30px;
+      display: flex;
+      gap: 14px;
+      height: 48px;
+      padding: 0px 14px 0px 18px;
+      align-items: center;
+      color: black;
+      font-size: 16px;
+      letter-spacing: -0.32px;
+      border-radius: 25px;
+      border: 1px solid var(--extra-grey-1, #bcbcbc);
+      svg {
+        fill: #002f6c;
+      }
+      &:hover {
+        color: white;
+        background-color: #0041a0;
+        svg {
+          fill: white;
+        }
+      }
+
+      &:focus {
+        color: #0041a0;
+        background-color: white;
+        outline: 3px solid #99b3d8;
+        svg {
+          fill: #0041a0;
+        }
+      }
+      &:active {
+        color: white;
+        background-color: #002f6c;
+        svg {
+          fill: white;
+        }
+      }
+      &.disabled {
+        color: #909090;
+        svg {
+          fill: #909090;
+        }
+      }
+    }
+    &__file-upload {
+      &__message {
+        color: var(--main-red, #f00);
+        font-size: 12px;
+        line-height: 150%;
+        letter-spacing: -0.24px;
+      }
+      &__button__svg {
+        height: 14px;
+        width: 14px;
+      }
+    }
+    &__submit__svg {
+      height: 14px;
+      width: 14px;
+    }
+  }
+}
