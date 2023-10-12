@@ -1,5 +1,15 @@
 .vacancy {
 	$root: &;
 
-	//Your code here
+	font-family: Arial, sans-serif;
+
+	.container {
+		max-width: 1600px;
+		width: 100%;
+		padding-left: 80px;
+		padding-right: 217px;
+		padding-top: 115px;
+		padding-bottom: 45px;
+		margin: 0 auto;
+	}
 }

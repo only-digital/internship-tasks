@@ -1,5 +1,36 @@
 .title {
 	$root: &;
+	
+	padding-bottom: 144px;
 
-	//Your code here
+	&__date {
+		margin-bottom: 20px;
+		margin-left: 9px;
+
+		font-size: 20px;
+		line-height: 140%;
+		letter-spacing: -0.4px;
+		color: $gray;
+	}
+
+	&__text {
+		margin-bottom: 45px;
+
+		font-size: 64px;
+		line-height: 100%;
+		letter-spacing: -1.28px;
+		color: $blue;
+	}
+
+	&__views {
+		margin-right: 36px;
+	}
+
+	&__views,
+	&__responses {
+		font-size: 16px;
+		line-height: 130%;
+		letter-spacing: -0.32px;
+		color: $gray;
+	}
 }
