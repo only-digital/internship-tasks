@@ -1,0 +1,5 @@
+mixin spoiler-list(props)
+	.spoiler-list&attributes(attributes)(data-component='spoiler-list')
+		h2.spoiler-list__title= props.title
+		each item in props.items
+			+spoiler({title: item.title, content: item.content})
