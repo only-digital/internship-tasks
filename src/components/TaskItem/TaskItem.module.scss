@@ -1,0 +1,43 @@
+.TaskItem {
+  height: 170px;
+  padding: 24px 24px 31px;
+  background: #fff;
+
+  &:hover {
+    & .title {
+      color: #007fff;
+    }
+  }
+}
+
+.title {
+  font-feature-settings: "clig" off, "liga" off;
+  font-size: 24px;
+  line-height: 130%;
+  color: rgba(22, 31, 62, 0.9);
+  &.completed {
+    text-decoration: line-through;
+    color: rgba(22, 31, 62, 0.3);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 17px;
+  border-bottom: 1px solid #e7eaee;
+  margin-bottom: 10px;
+}
+
+.deleteBtn {
+}
+
+.desc {
+  max-width: 733px;
+  font-feature-settings: "clig" off, "liga" off;
+  font-size: 16px;
+  line-height: 175%;
+  letter-spacing: 0.15px;
+  color: rgba(22, 31, 62, 0.9);
+}

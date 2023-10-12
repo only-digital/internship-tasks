@@ -1,0 +1,30 @@
+.nav {
+  //Your code here
+}
+
+.navItems {
+  width: 240px;
+  margin: 40px auto 0;
+}
+
+.navItem {
+  width: 240px;
+  height: 52px;
+  border-radius: 10px;
+  background: #e3edf7;
+  padding-left: 18px;
+  font-feature-settings: "clig" off, "liga" off;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
+  color: #007fff;
+}
+
+.navItem,
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}

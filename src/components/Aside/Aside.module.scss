@@ -1,0 +1,30 @@
+.aside {
+  width: 290px;
+  height: 1080px;
+  border-right: 1px solid #d9e1ec;
+  background: #fff;
+}
+
+.header {
+  height: 80px;
+	padding: 29px 115px 25px 45px;
+	border-bottom: 1px solid #d9e1ec;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  width: 49px;
+  height: 26px;
+  font-size: 7px;
+  font-weight: 500;
+  line-height: 120%;
+  text-transform: uppercase;
+  color: #213c57;
+}
