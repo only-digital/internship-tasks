@@ -191,6 +191,18 @@
 
 		background-color: $blue-3;
 		border-radius: 25px;
+
+		transition: background-color 0.3s;
+
+		@media (hover: hover) {
+			&:hover {
+				background-color: lighten($blue-3, 10%);
+			}
+
+			&:active {
+				background-color: darken($blue-3, 10%);
+			}
+		}
 	}
 
 	&__loader {
