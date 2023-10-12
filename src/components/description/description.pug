@@ -1,5 +1,5 @@
 mixin description(props)
-	section.description&attributes(attributes)(data-component='description')
+	section.description(class!= props.className)&attributes(attributes)(data-component='description')
 		h2.description__title!= props.title
 		ul.description__list
 			each item in props.items

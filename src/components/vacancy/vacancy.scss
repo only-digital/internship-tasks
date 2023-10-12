@@ -12,4 +12,23 @@
 		padding-bottom: 45px;
 		margin: 0 auto;
 	}
+
+	&__description-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 130px;
+		max-width: 988px;
+		margin-top: 144px;	
+		margin-bottom: 153px;
+	}
+
+	&__description {
+		.description__item:last-child {
+			gap: 98px;
+
+			&::before {
+				order: 2;
+			}
+		}
+	}
 }
