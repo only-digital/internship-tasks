@@ -1,0 +1,15 @@
+.link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding: 16px 18px;
+    border-radius: 10px;
+    
+    background-color: #E3EDF7;
+
+    &__text {
+        color: #007FFF;
+        font-size: 16px;
+    }
+}

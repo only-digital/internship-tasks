@@ -1,8 +1,25 @@
 .main {
+    padding: 48px 40px;
+
+    &__title {
+        font-size: 32px;
+        font-weight: 700;
+        color: #213C57;
+        margin-bottom: 28px;
+    }
+}
+
+.layout {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 6rem;
-    min-height: 100vh;
+
+    &__links {
+        border-right: 1px solid #D9E1EC;
+        height: 100vh;
+        padding: 40px 25px;
+        width: 290px;
+    }
+
+    &__tasks {
+        background-color: #F3F6F9;
+    }
 }

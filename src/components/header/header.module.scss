@@ -1,0 +1,11 @@
+.header {
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid rgba(217, 225, 236, 1);
+
+    &__logo {
+        width: fit-content;
+        padding: 30px 115px 24px 45px;
+        border-right: 1px solid rgba(217, 225, 236, 1);
+    }
+}
