@@ -1,0 +1,137 @@
+$black: #000402;
+$blue: #114c9a;
+
+.spoiler {
+  $root: &;
+
+  width: 327px;
+  padding: 20px 0px 4px 0px;
+
+  font-family: Roboto;
+
+  @media (min-width: 768px) {
+    width: 688px;
+    padding: 24px 0px 8px 0px;
+  }
+
+  @media (min-width: 1280px) {
+    width: 1066px;
+    padding: 20px 0px 4px 0px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 1200px;
+    padding: 24px 0px 4px 0px;
+  }
+
+  @media (min-width: 1920px) {
+    width: 1600px;
+    padding: 30px 0px 0px 0px;
+  }
+
+  display: flex;
+  flex-direction: column;
+
+  font-family: Roboto;
+  font-weight: 400;
+  color: $black;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    gap: 22px;
+    @media (min-width: 768px) {
+      gap: 11px;
+    }
+
+    cursor: pointer;
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 120%;
+    transition: color 0.3s;
+    width: 289px;
+    @media (min-width: 768px) {
+      width: 100%;
+      font-size: 27px;
+    }
+    @media (min-width: 1280px) {
+      font-size: 24px;
+    }
+    @media (min-width: 1440px) {
+      font-size: 27px;
+    }
+    @media (min-width: 1920px) {
+      font-size: 36px;
+    }
+  }
+
+  &__svg {
+    width: 23px;
+    height: 16px;
+    transition: transform 0.3s;
+    @media (min-width: 768px) {
+      height: 20px;
+    }
+    @media (min-width: 1280px) {
+      height: 16px;
+    }
+    @media (min-width: 1440px) {
+      height: 20px;
+    }
+  }
+
+  &__content {
+    font-size: 15px;
+    line-height: 150%;
+    opacity: 0.8;
+    padding-right: 16px;
+    margin-top: 16px;
+    @media (min-width: 768px) {
+      padding-right: 82px;
+    }
+    @media (min-width: 1280px) {
+      padding-right: 426px;
+      font-size: 14px;
+    }
+    @media (min-width: 1440px) {
+      padding-right: 360px;
+      font-size: 15px;
+      margin-top: 20px;
+    }
+    @media (min-width: 1920px) {
+      font-size: 20px;
+      margin-top: 30px;
+    }
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.9s ease-in-out, margin-bottom 2s;
+  }
+
+  &-show {
+    #{$root}__title {
+      color: $blue;
+    }
+
+    #{$root}__content {
+      margin-bottom: 16px;
+      transition: max-height 0.9s ease-in-out, margin-bottom 2s;
+
+      @media (min-width: 1280px) {
+        margin-bottom: 20px;
+      }
+      @media (min-width: 1440px) {
+        margin-bottom: 26px;
+      }
+      @media (min-width: 1920px) {
+        margin-bottom: 40px;
+      }
+    }
+
+    #{$root}__svg {
+      transform: rotate(45deg);
+    }
+  }
+}
