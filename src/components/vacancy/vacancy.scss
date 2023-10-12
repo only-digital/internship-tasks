@@ -24,6 +24,22 @@
 		padding-top: 115px;
 		padding-bottom: 45px;
 		margin: 0 auto;
+
+		@media (max-width: 980px) {
+			padding-right: 80px;
+		}
+
+		@media (max-width: 660px) {
+			padding-top: 50px;
+			padding-left: 40px;
+			padding-right: 40px;
+		}
+
+		@media (max-width: 540px) {
+			padding-top: 50px;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
 	}
 
 	&__description-wrapper {
@@ -33,14 +49,28 @@
 		max-width: 988px;
 		margin-top: 144px;	
 		margin-bottom: 153px;
+
+		@media (max-width: 830px) {
+			gap: 60px;
+			margin-top: 80px;	
+			margin-bottom: 80px;
+		}
 	}
 
 	&__description {
 		.description__item:last-child {
 			gap: 98px;
 
+			@media (max-width: 540px) {
+				gap: 38px;
+			}
+
 			&::before {
 				order: 2;
+
+				@media (max-width: 540px) {
+					margin-top: 10px;
+				}
 			}
 		}
 	}

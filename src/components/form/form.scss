@@ -4,6 +4,11 @@
 	display: flex;
 	gap: 117px;
 
+	@media (max-width: 1350px) {
+		flex-direction: column;
+		gap: 40px;
+	}
+
 	&__title {
 		padding-left: 23px;
 
@@ -11,6 +16,14 @@
 		font-size: 32px;
 		line-height: 120%;
 		letter-spacing: -0.64px;
+
+		@media (max-width: 1350px) {
+			padding-left: 0;
+		}
+
+		@media (max-width: 540px) {
+			font-size: 27px;
+		}
 	}	
 
 	&__inputs-wrapper {
@@ -59,6 +72,10 @@
 		position: absolute;
 		top: 85px;
 
+		@media (max-width: 480px) {
+			font-size: 12px;
+		}
+
 		#{$root}__user-info-circle {
 			display: none;
 		}
@@ -75,11 +92,16 @@
 			gap: 21px;
 			padding-bottom: 50px;
 
+			@media (max-width: 750px) {
+				top: 200px;
+			}
+
 			#{$root}__user-info-circle {
 				content: '';
 
 				display: flex;
 				align-items: center;
+				flex-shrink: 0;
 				justify-content: center;
 				width: 48px;
 				height: 48px;
@@ -121,6 +143,7 @@
 
 	&__checkbox {
 		display: flex;
+		flex-shrink: 0;
 		justify-content: center;
 		align-items: center;
 		width: 16px;

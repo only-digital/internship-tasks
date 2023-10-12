@@ -8,6 +8,14 @@
 		font-size: 46px;
 		line-height: 120%;
 		letter-spacing: -0.92px;
+
+		@media (max-width: 830px) {
+			font-size: 32px;
+		}
+
+		@media (max-width: 540px) {
+			font-size: 27px;
+		}
 	}
 
 	&__list {
@@ -23,6 +31,14 @@
 		color: $dark-aqua;
 		font-size: 24px;
 		line-height: 140%;
+
+		@media (max-width: 830px) {
+			font-size: 18px;
+		}
+
+		@media (max-width: 540px) {
+			font-size: 14px;
+		}
 
 		&::before {
 			content: '';

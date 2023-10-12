@@ -18,6 +18,14 @@
 		line-height: 100%;
 		letter-spacing: -1.28px;
 		color: $blue;
+
+		@media (max-width: 830px) {
+			font-size: 45px;
+		}
+
+		@media (max-width: 540px) {
+			font-size: 31px;
+		}
 	}
 
 	&__vacancy-data {
