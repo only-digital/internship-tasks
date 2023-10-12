@@ -201,14 +201,20 @@
 		display: flex;
 		font-size: 14px;
 		line-height: 21px;
-		color: #909090;
+		// color: #909090;
+		color: #111111;
 
 		&[disabled] {
 			pointer-events: none;
+			color: #BCBCBC;
 		}
 
 		&[disabled] &-custom {
 			opacity: 30%;
+		}
+
+		&[disabled] .contact-form__link {
+			color: #BCBCBC;
 		}
 
 		&-real {
@@ -268,5 +274,128 @@
 		color: #002F6C;
 		text-decoration: none;
 		cursor: pointer;
+	}
+
+	&__btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		height: 48px;
+		outline: none;
+		border: 1px solid #BCBCBC;
+		border-radius: 24px;
+		background-color: #fff;
+		margin: 30px 0 55px;
+		padding: 0 46px 0 18px;
+		transition: border-color .2s ease-in, background-color .2s ease-in;
+
+		&:hover {
+			background-color: #0041A0;
+			border-color: transparent;
+		}
+
+		&:hover &-text {
+			color: #fff;
+		}
+
+		&:hover &-img-grey,
+		&:hover &-img-light,
+		&:hover &-img-blue {
+			opacity: 0;
+		}
+
+		&:hover &-img-white {
+			opacity: 1;
+		}
+
+		&:active {
+			background-color: #002F6C;
+			border-color: transparent;
+		}
+
+		&:active &-text {
+			color: #fff;
+		}
+
+		&:active &-img-grey,
+		&:active &-img-light,
+		&:active &-img-blue {
+			opacity: 0;
+		}
+
+		&:active &-img-white {
+			opacity: 1;
+		}
+
+		&:focus {
+			border-color: transparent;
+			background-color: #fff;
+			outline: 3px solid #99B3D8;
+		}
+
+		&:focus &-text {
+			color: #0041A0;
+		}
+
+		&:focus &-img-grey,
+		&:focus &-img-white,
+		&:focus &-img-blue {
+			opacity: 0;
+		}
+
+		&:focus &-img-light {
+			opacity: 1;
+		}
+
+		&[disabled] {
+			pointer-events: none;
+			background-color: #fff;
+			border: 1px solid #BCBCBC;
+		}
+
+		&[disabled] &-text {
+			color: #909090;
+		}
+
+		&[disabled] &-img-white,
+		&[disabled] &-img-blue,
+		&[disabled] &-img-light {
+			opacity: 0;
+		}
+
+		&[disabled] &-img-grey {
+			opacity: 1;
+		}
+
+		&-text {
+			font-family: 'Grtsk Peta';
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 16px;
+			color: #111111;
+			margin-right: 14px;
+			padding-bottom: 2px;
+			transition: color .2s ease-in;
+		}
+
+		&-img {
+			&-grey,
+			&-light,
+			&-white,
+			&-blue {
+				transition: opacity .2s ease-in;
+				position: absolute;
+				right: 14px;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+
+			&-grey,
+			&-light,
+			&-white {
+				opacity: 0;
+			}
+		}
 	}
 }
