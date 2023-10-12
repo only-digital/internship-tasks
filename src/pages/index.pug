@@ -2,25 +2,6 @@ extends ../../build_modules/common
 
 
 block body
-    +spoiler-list({title: 'Lorem ipsum dolor', items: [
-		{
-			title: '1. Nullam tincidunt vestibulum porttitor',
-			content: 'Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.'
-		},
-		{
-			title: '2. Class aptent taciti sociosqu ad litora',
-			content: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam repellat odit, pariatur voluptatum ex nulla nesciunt perferendis porro vitae ullam. Harum non ipsum minima nihil vero ut repellat a aliquid?'
-		},
-		{
-			title: '3. Nulla fringilla ligula elit, non laoreet ipsum rutrum eget',
-			content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id repellendus, porro maiores magni suscipit velit facere eveniet totam quis. Tempore quo dolorem eum vero eos repudiandae incidunt. Exercitationem, alias ea excepturi cupiditate doloribus dolor ut sint earum nesciunt saepe animi fugit deserunt, vitae expedita dicta at! Animi totam molestiae ut corrupti aut illum rem, perferendis possimus odio natus eveniet, repellendus ipsa dolore vel quaerat sint incidunt blanditiis ullam tempore impedit sapiente atque doloribus! A quae, in, quidem quasi, architecto laborum enim voluptatibus nisi provident ad atque saepe officia temporibus necessitatibus fuga deserunt placeat esse corporis magnam harum omnis? Beatae, maxime.'
-		},
-		{
-			title: '4. Mauris ut suscipit tellus',
-			content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, suscipit eveniet labore excepturi obcaecati pariatur voluptatibus veniam impedit aliquam nulla id consectetur error corporis, accusantium quo recusandae distinctio dolorum totam! Quidem, placeat corrupti quo magnam autem incidunt dolores cumque iure sed quae, dolorum maxime veritatis exercitationem quas ex ipsa illum!'
-		},
-		{
-			title: '5. Nullam placerat porta libero, vel maximus augue euismod eget',
-			content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto eum doloribus quas hic quia cupiditate voluptatibus voluptatem ad in id! Cum possimus in repellat nostrum?'
-		}
-	]})
+	- let data = {title: 'Lorem ipsum dolor', items: [{title: '1. Nullam tincidunt vestibulum porttitor', content: 'Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.'},{title: '2. Class aptent taciti sociosqu ad litora', content: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam repellat odit, pariatur voluptatum ex nulla nesciunt perferendis porro vitae ullam. Harum non ipsum minima nihil vero ut repellat a aliquid?'},{title: '3. Nulla fringilla ligula elit, non laoreet ipsum rutrum eget', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id repellendus, porro maiores magni suscipit velit facere eveniet totam quis. Tempore quo dolorem eum vero eos repudiandae incidunt. Exercitationem, alias ea excepturi cupiditate doloribus dolor ut sint earum nesciunt saepe animi fugit deserunt, vitae expedita dicta at! Animi totam molestiae ut corrupti aut illum rem, perferendis possimus odio natus eveniet, repellendus ipsa dolore vel quaerat sint incidunt blanditiis ullam tempore impedit sapiente atque doloribus! A quae, in, quidem quasi, architecto laborum enim voluptatibus nisi provident ad atque saepe officia temporibus necessitatibus fuga deserunt placeat esse corporis magnam harum omnis? Beatae, maxime.'},{title: '4. Mauris ut suscipit tellus', content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, suscipit eveniet labore excepturi obcaecati pariatur voluptatibus veniam impedit aliquam nulla id consectetur error corporis, accusantium quo recusandae distinctio dolorum totam! Quidem, placeat corrupti quo magnam autem incidunt dolores cumque iure sed quae, dolorum maxime veritatis exercitationem quas ex ipsa illum!'},{title: '5. Nullam placerat porta libero, vel maximus augue euismod eget', content: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto eum doloribus quas hic quia cupiditate voluptatibus voluptatem ad in id! Cum possimus in repellat nostrum?'}]};
+	
+	+spoiler-list(data)
