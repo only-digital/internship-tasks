@@ -263,7 +263,12 @@ class Form extends Component {
   getFileType(file) {
     const allowedFormats = ['pdf', 'doc', 'docx'];
     const fileExtension = file.name.split('.').pop().toLowerCase();
-    return allowedFormats.includes(fileExtension);
+    
+    if(allowedFormats.includes(fileExtension)) {
+      return fileExtension.toUpperCase(); 
+    }
+
+    return;
   }
 
   formatSize(bytes) {
@@ -289,6 +294,9 @@ class Form extends Component {
     this.inputMsg.nextElementSibling.classList.remove('visible-indicator');
     this.submitButton.classList.add('disabled');
 
+    setTimeout(() => {
+      this.formError.textContent = '';
+    }, 3000);
     this.updateFileList();
   }
 
