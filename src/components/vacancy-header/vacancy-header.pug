@@ -1,0 +1,17 @@
+mixin header-loader()
+	.vacancy-header__header-loader
+
+mixin vacancy-header(props)
+	- const datetime = props.datetime || "";
+	.vacancy-header&attributes(attributes)(data-component='vacancy-header')
+		time.vacancy-header__date(datetime = datetime)!=props.date
+		h1.vacancy-header__title!=props.title
+		.vacancy-header__stats
+			.vacancy-header__stats__views
+				p Просмотров:&nbsp;
+				p(data-type='views')
+				+header-loader()
+			.vacancy-header__stats__responses
+				p Откликов:&nbsp;
+				p(data-type='responses')
+				+header-loader()
