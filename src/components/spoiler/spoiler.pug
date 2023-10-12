@@ -1,0 +1,7 @@
+mixin spoiler({title, items})
+	.spoiler&attributes(attributes)(data-component='spoiler')
+		.spoiler__title!= title
+		each item, index in items 
+				+element({subTitle: item.subTitle, text: item.text, index })
+
+		

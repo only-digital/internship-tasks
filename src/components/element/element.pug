@@ -1,0 +1,9 @@
+mixin element(props)
+	.element&attributes(attributes)(data-component='element') 
+		.element__title 
+			span!= `${props.index + 1}. ${props.subTitle}`
+			+svg('cross-icon').element__close 
+		.element__hided-text
+			p!= props.text
+		
+	
