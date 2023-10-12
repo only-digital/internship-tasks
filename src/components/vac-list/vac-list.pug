@@ -3,8 +3,6 @@ mixin vac-list(props)
 		h2.vac-list__title= props.title
 		ul.vac-list__items
 			each item in props.items
-				li.vac-list__item
-					.vac-list__mark
-					.vac-list__text= item
-
+				li.vac-list__item= item
+					
 				

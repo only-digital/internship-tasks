@@ -23,7 +23,7 @@ class Form extends Component {
         this.checkbox = this.getElement('checkbox')
         this.wrap = this.getElement('checkbox-wrap')
 
-        this.button.addEventListener('click', this.onClick)
+        this.form.addEventListener('submit', this.onClick)
     }
 
     async fetchPost () {

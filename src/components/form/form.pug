@@ -1,5 +1,5 @@
 mixin form(props)
-	.form&attributes(attributes)(data-component='form')
+	form.form&attributes(attributes)(data-component='form')
 		h2.form__title Форма обратной связи
 		label.form__input-label(for="email") E-mail 
 		input.form__input(type="email" name="email" id="email")
@@ -11,7 +11,7 @@ mixin form(props)
 					+svg('checkbox-svg').form__checkbox__icon-svg
 				| Вы подтверждаете, что ознакомились
 				a.form__checkbox-link(href="#") c политикой обработки персональных данных 
-		button.form__button Отправить
+		button.form__button(type='submit') Отправить
 			+svg('button-arrow').form__button-svg
 		+loader.form__loader
 		.form__success.hidden
