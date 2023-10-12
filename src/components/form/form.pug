@@ -1,12 +1,16 @@
 mixin form(props)
-	form.form&attributes(attributes)(data-component='form')
+	form(method='post').form&attributes(attributes)(data-component='form')
 		h2.form__title Форма обратной связи
-		.form__inputs__wrapper
+		.form__inputs-wrapper
 			p.form__email
 				label(for='email').form__email-label E-mail
 				input(type='email' id='email').form__email-input
+			p.form__user-info
+				span.form__user-info-circle
+					+svg('success').form__user-info-svg
+				span.form__user-info-text
 			p.form__confirmation
-				input(type='checkbox' id='confirmation').form__checkbox-input
+				input(type='checkbox' id='confirmation').form__checkbox-input.visually-hidden
 				label(for='confirmation').form__checkbox-label 
 					span.form__checkbox
 						+svg('check').form__checkbox-svg
@@ -14,3 +18,4 @@ mixin form(props)
 						a.form__link c политикой обработки персональных данных
 			button.form__button Отправить
 				include ../../assets/icons/arrow.svg
+			.form__loader
