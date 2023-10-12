@@ -2,10 +2,19 @@
     background-color: #FFFFFF;
     width: 100%;
     border-radius: 10px;
+    margin-bottom: 20px;
 
     cursor: pointer;
 
     padding: 24px 24px 30px 24px;
+
+    &:hover &__title {
+        color: #007FFF;
+
+        &_completed {
+            color: #161F3E;
+        }
+    }
 
     &__header {
         padding-bottom: 17px;
@@ -29,10 +38,6 @@
             opacity: 0.3;
             text-decoration: line-through;
         }
-
-        &:hover {
-            color: #007FFF;
-        }
     }
 
     &__text {
@@ -41,5 +46,11 @@
 
         color: #161F3E;
         font-size: 16px;
+    }
+
+    &__delete {
+        z-index: 10;
+        width: 30px;
+        height: 30px;
     }
 }
