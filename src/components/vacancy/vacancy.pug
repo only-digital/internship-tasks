@@ -70,14 +70,15 @@ mixin vacancy(props)
 					+svg('li') 
 					span  Обучение в программах Корпоративного университета
 
-		form.vacancy__form
+		form(id='form' autocomplete).vacancy__form
 			h3.vacancy__form-title Форма обратной связи
 			.vacancy__form-input-box
 				label(for="email") E-mail
-				input(type="email" id="email" name="email" required)
+				input(type="email" id="email" name="email" required value='').vacancy__email
 			
-				label(for="agreement") 
-					input(type="checkbox" id="agreement" name="agreement")
+				label(for="confirm") 
+					input(type="checkbox" id="confirm" name="confirm" required value='').vacancy__agreement
+					+svg('check-mark').vacancy__check-mark
 					| Вы подтверждаете, что ознакомились c&nbsp;  
 					a(href='/#')  политикой обработки персональных данных 
 				

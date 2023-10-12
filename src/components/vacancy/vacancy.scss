@@ -117,7 +117,7 @@
 				margin-bottom: 60px;
 				padding: 8px 20px 14px;
 			}
-			label[for='agreement'] {
+			label[for='confirm'] {
 				font-family: Arial;
 				color: $steel;
 				font-size: 14px;
@@ -127,12 +127,25 @@
 				display: flex;
 				flex-flow: row nowrap;
 				align-items: center;
-
+				position: relative;
+				svg {
+					display: none;
+				}
 				input[type='checkbox'] {
 					width: 16px;
 					height: 16px;
 					border: 1px $gray solid;
 					margin-right: 18px;
+					&:checked {
+						background-color:$cobolt;
+					}
+					&:checked + .vacancy__check-mark {
+						display: initial;
+						width: 8px;
+						height: 8px;
+						position: absolute;
+						left: 8px;
+					}
 				}
 				a {
 					color: $dark-blue;
