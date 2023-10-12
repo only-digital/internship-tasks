@@ -30,13 +30,13 @@ class Form extends Component {
                 confirm: this.checkbox.checked  
             }
 
-            this.sendData(data)
+            this.processForm(data)
         })
     }
 
-    sendData = async (data) => {
+    processForm = async (data) => {
         this.userInfoText.textContent = ''
-        this.submit.style.opacity = '0'
+        this.submit.classList.add('form__button--inactive')
         this.inputsWrapper.classList.add('form__inputs-wrapper--disabled')
         this.loader.classList.add('form__loader--active')
 
@@ -51,7 +51,7 @@ class Form extends Component {
         if (response.status === 422) {
             this.userInfo.classList.add('form__user-info--error')
             this.userInfo.classList.remove('form__user-info--success')
-            this.submit.style.opacity = '1'
+            this.submit.classList.remove('form__button--inactive')
             this.inputsWrapper.classList.remove('form__inputs-wrapper--disabled')
         } else {
             this.userInfo.classList.add('form__user-info--success') 

@@ -198,6 +198,10 @@
 
 		transition: background-color 0.3s;
 
+		&--inactive {
+			opacity: 0;
+		}
+
 		&:focus {
 			outline: 2px solid lighten($blue-3, 50%);
 		}

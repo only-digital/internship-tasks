@@ -15,7 +15,7 @@ mixin form(props)
 					span(tabindex='0').form__checkbox
 						+svg('check').form__checkbox-svg
 					span.form__confirmation-text Вы подтверждаете, что ознакомились 
-						a.form__link c политикой обработки персональных данных
+						a(target!= props.isBlank ? '_blank' : '_self').form__link c политикой обработки персональных данных
 			button.form__button Отправить
 				include ../../assets/icons/arrow.svg
 			.form__loader
