@@ -12,7 +12,7 @@ mixin form(props)
 			p.form__confirmation
 				input(type='checkbox' id='confirmation').form__checkbox-input.visually-hidden
 				label(for='confirmation').form__checkbox-label 
-					span.form__checkbox
+					span(tabindex='0').form__checkbox
 						+svg('check').form__checkbox-svg
 					span.form__confirmation-text Вы подтверждаете, что ознакомились 
 						a.form__link c политикой обработки персональных данных
