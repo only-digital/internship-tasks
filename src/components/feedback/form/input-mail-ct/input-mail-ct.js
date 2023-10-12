@@ -14,12 +14,7 @@ class inputMailCt extends Component {
         this.input.addEventListener("focus", this.onInputFocus);
         this.input.addEventListener("blur", this.onInputBlur);
         this.input.addEventListener("input", this.onInputChange);
-        // this.hekl.addEventListener("change", this.onChange)
     }
-    onChange = () => {
-        console.log(this.hekl);
-    }
-
     onInputFocus = () => {
         this.name.classList.add("input-mail-ct__name-active");
     }

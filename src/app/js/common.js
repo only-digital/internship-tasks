@@ -1,3 +1,4 @@
+import inputFileCt from "../../components/feedback/form/input-file-ct/input-file-ct";
 import inputMailCt from "../../components/feedback/form/input-mail-ct/input-mail-ct";
 import textareaCt from "../../components/feedback/form/textarea-ct/textarea-ct";
 
@@ -9,7 +10,8 @@ import textareaCt from "../../components/feedback/form/textarea-ct/textarea-ct";
  */
 const allComponents = {
     "input-mail-ct": inputMailCt,
-    "textarea-ct": textareaCt
+    "textarea-ct": textareaCt,
+    "input-file-ct": inputFileCt
 }
 
 /**
