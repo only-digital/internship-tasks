@@ -15,3 +15,9 @@ mixin contact-form(props)
 					.contact-form__message-text Ваше сообщение
 					img(class='contact-form__message-img' src='../assets/images/Union.png')
 					.contact-form__message-error Поле 'Ваше сообщение' обязательно
+				
+				label.contact-form__checkbox
+						input(class='contact-form__checkbox-real' type='checkbox' name='checkbox')
+						span.contact-form__checkbox-custom
+						p Вы подтверждаете, что ознакомились 
+							a(class='contact-form__link' href='#contact-form__checkbox') c политикой обработки персональных данныx
