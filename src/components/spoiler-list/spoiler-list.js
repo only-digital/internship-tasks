@@ -1,13 +1,24 @@
-import Component from '../../app/js/base/component';
+import Component from "../../app/js/base/component";
 
 class SpoilerList extends Component {
-    constructor(element) {
-        super(element);
+  constructor(element) {
+    super(element);
 
-        // Your code here
+    this.root.addEventListener("click", this.handleClick);
+  }
+
+  handleClick = () => {
+    const parent = event.target.closest(".spoiler");
+    const content = parent.lastElementChild;
+
+    if (parent.classList.contains("spoiler-show")) {
+      parent.classList.remove("spoiler-show");
+      content.style.maxHeight = "";
+    } else {
+      parent.classList.add("spoiler-show");
+      content.style.maxHeight = `${content.scrollHeight}px`;
     }
-
-    // Your code here
+  };
 }
 
-export default SpoilerList
+export default SpoilerList;

@@ -1,5 +1,4 @@
 import ExampleButton from "../../components/example-button/example-button";
-import Spoiler from "../../components/spoiler/spoiler";
 import SpoilerList from "../../components/spoiler-list/spoiler-list";
 
 /**
@@ -9,7 +8,6 @@ import SpoilerList from "../../components/spoiler-list/spoiler-list";
  */
 const allComponents = {
   "example-button": ExampleButton,
-  spoiler: Spoiler,
   "spoiler-list": SpoilerList,
 };
 
