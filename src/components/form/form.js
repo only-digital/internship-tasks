@@ -28,7 +28,11 @@ class Form extends Component {
 
     async fetchPost () {
         this.loader.classList.add('active')
-        this.button.classList.add('hidden')
+        this.email.setAttribute('disabled', '')
+        this.wrap.setAttribute('disabled', '')
+        this.button.setAttribute('disabled', '')
+        this.error.textContent = ''
+
         try {
             const res = await fetch("/form", {
                 method: "POST",
@@ -46,16 +50,17 @@ class Form extends Component {
                
             if(res.status === 422){
                 this.loader.classList.remove('active')
-                this.button.classList.remove('hidden')
+                this.button.removeAttribute('disabled', '')
+                this.email.removeAttribute('disabled', '')
+                this.wrap.removeAttribute('disabled', '')
                 this.error.textContent = data.message
             }
             else if(res.status === 200){
+                this.button.classList.add('hidden')
                 this.loader.classList.remove('active')
                 this.success.classList.remove('hidden')
                 this.error.textContent = ''
                 this.successMessage.textContent = data.message
-                this.email.setAttribute('disabled', '')
-                this.wrap.setAttribute('disabled', '')
             }
         } catch (error) {
             console.error(error)

@@ -17,7 +17,7 @@ $white: #fff;
   padding-top: 68px;
   margin-bottom: 45px;
 
-  &:disabled {
+  &[disabled] {
     pointer-events: none;
     opacity: 0.3;
   }
@@ -136,6 +136,18 @@ $white: #fff;
       background-color: $cobolt;
       transition: 0.3s ease-in;
     }
+
+    &[disabled] {
+      pointer-events: none;
+      opacity: 0.3;
+    }
+  }
+
+  &__loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 15;
   }
 
   &__success {
