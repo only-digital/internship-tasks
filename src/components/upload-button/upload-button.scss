@@ -1,0 +1,60 @@
+@import '/src/variables';
+
+.upload-button {
+	$root: &;
+
+	display: inline-flex;
+	align-items: center;
+	gap: 16px;
+	padding: 14px 16px 16px 16px;
+	outline: 1px solid $grey-1;
+	border-radius: 25px;
+
+	&:hover {
+		background-color: $cobolt-color;
+		outline: none;
+		#{$root}__icon {
+			fill: white;
+		}
+		#{$root}__text {
+			color: white;
+		}
+	}
+
+	&:active {
+		background-color: $blue-color;
+		#{$root}__text {
+			color: white;
+		}
+		#{$root}__icon {
+			fill: white;
+		}
+	}
+
+	&:focus {
+		outline: 3px solid $border-focus-color; 
+	}
+
+	&:disabled {
+		pointer-events: none;
+		#{$root}__text {
+			color: $steel-color;
+		}
+		#{$root}__icon {
+			fill: $steel-color;
+		}
+	}
+
+	&__text {
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 16px;
+		line-height: 16px;
+		color: $midnight-color;
+	}
+
+	&__icon {
+		width: 14px;
+		height: 14px;
+		fill: $blue-color;
+	}
+}
