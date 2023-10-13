@@ -1,0 +1,6 @@
+mixin vacancy-list(props)
+	.vacancy-list&attributes(attributes)(data-component='vacancy-list')
+		h2.vacancy-list__title!= props.title 
+		ul.vacancy-list__list
+			each item in props.items 
+				li.vacancy-list__list__item!=item

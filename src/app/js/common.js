@@ -1,5 +1,6 @@
-import ExampleButton from "../../components/example-button/example-button";
-import VacancyHeader from "../../components/vacancy-header/vacancy-header";
+import ExampleButton from '../../components/example-button/example-button';
+import VacancyHeader from '../../components/vacancy-header/vacancy-header';
+import VacancyList from '../../components/vacancy-list/vacancy-list';
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -7,26 +8,29 @@ import VacancyHeader from "../../components/vacancy-header/vacancy-header";
  * Значение - JS-класс компонента (Импорт добавляется вручную)
  */
 const allComponents = {
-    'example-button': ExampleButton,
-    'vacancy-header': VacancyHeader,
-}
+  'example-button': ExampleButton,
+  'vacancy-header': VacancyHeader,
+  'vacancy-list': VacancyList,
+};
 
 /**
  * Инициализация всех компонентов на странице
  */
 try {
-    const existedComponents = Array.from(document.querySelectorAll('[data-component]'));
+  const existedComponents = Array.from(document.querySelectorAll('[data-component]'));
 
-    const components = existedComponents.map((component) => {
-        try {
-            return new allComponents[component.dataset.component]({
-                name: component.dataset.component,
-                component: component,
-            });
-        } catch (e) {
-            console.error(`Ошибка во время инициализации компонента: ${component.dataset.component}\n\n${e}`);
-        }
-    });
+  const components = existedComponents.map((component) => {
+    try {
+      return new allComponents[component.dataset.component]({
+        name: component.dataset.component,
+        component: component,
+      });
+    } catch (e) {
+      console.error(
+        `Ошибка во время инициализации компонента: ${component.dataset.component}\n\n${e}`,
+      );
+    }
+  });
 } catch (e) {
-    console.error(e);
+  console.error(e);
 }

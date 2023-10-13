@@ -1,0 +1,52 @@
+$font: Arial, Helvetica, sans-serif;
+$color-black: #012B34;
+$color-steel: #8F8F8F;
+$color-blue: #04306A;
+$color-green-1: #0DB274;
+
+.vacancy-list {
+	$root: &;
+
+	font-family: $font;
+	font-weight: 400;
+	font-style: normal;
+	max-width: 1000px;
+	margin-bottom: 130px;
+
+	&__title {
+		font-size: 46px;
+		line-height: 120%;
+		letter-spacing: -0.92px;
+		color: $color-blue;
+		margin-bottom: 35px;
+	}
+
+	&__list {
+		&__item {
+			position: relative;
+			font-size: 24px;
+			line-height: 140%;
+			padding-left: 28px;
+			margin-bottom: 12px;
+
+			&::before {
+				position: absolute;
+				content: "";
+				width: 20px;
+				height: 1px;
+				background-color: $color-green-1;
+				left: 0;
+				top: 15px;
+			}
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&:last-of-type {
+		margin-bottom: 0;
+		padding-bottom: 109px;
+	}
+}
