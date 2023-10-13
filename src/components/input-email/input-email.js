@@ -7,7 +7,6 @@ class InputEmail extends Component {
     constructor(element) {
         super(element);
         this.eventName = this.root.dataset.event;
-        console.log(this.eventName)
         this.inputEmail = this.getElement('input');
         this.errorEmail = this.getElement('error');
         this.tipEmail = this.getElement('svg');

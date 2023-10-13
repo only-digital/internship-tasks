@@ -30,15 +30,18 @@ class Form extends Component {
         this.policyInput = this.root.querySelector('.checkbox__input');
         this.policyInput.addEventListener('formcheckbox',this.handleCheckbox);
         this.policyError = this.root.querySelector('.checkbox__error');
+
+
         this.textarea = this.root.querySelector('.textarea__area');
-        this.errorTextarea = this.root.querySelector('.textarea__error');
-        this.tipTextarea = this.root.querySelector('.textarea__svg');
+        this.textarea.addEventListener('formtextarea',this.handleTextarea);
+        // this.textarea.addEventListener('input',this.handleTextareaInput);
+        // this.textarea.addEventListener('blur',this.handleTextareaCorrectInput);
+
         this.inputFile = this.root.querySelector('.input-file__input');
         this.fileError = this.root.querySelector('.form__file-error');
         this.inputFile.addEventListener('input',this.handleInputFile);
         this.inputFileWrapper = this.root.querySelector('.form__input-file-wrapper');
-        this.textarea.addEventListener('input',this.handleTextareaInput);
-        this.textarea.addEventListener('blur',this.handleTextareaCorrectInput);
+
         this.errors = new Map([
                                 ['email',  false],
                                 ['textarea', false],
@@ -48,7 +51,18 @@ class Form extends Component {
         this.disableSubmitButton();
     }
 
-    handleEmail = () => {
+    handleTextarea = (event) => {
+        const textareaIsCorrect = event.detail.textarea
+        if (textareaIsCorrect) {
+            this.errors.set('textarea',true);
+            this.checkErrors();
+        } else {
+            this.errors.set('textarea',false);
+            this.checkErrors();
+        }
+    }
+
+    handleEmail = (event) => {
         this.errors.set('email',true);
         this.checkErrors();
     }
@@ -168,51 +182,6 @@ class Form extends Component {
         );
         iconSvg.appendChild(iconPath);
         return node.appendChild(iconSvg);
-    }
-
-    handleTextareaCorrectInput = (event) => {
-        if (event.target.value.length >= 1 && event.target.value.length <=1000) {
-            this.showCorrectTextAreaInput();
-        } else {
-            this.hideCorrectTextareaInput();
-        }
-    }
-
-    showCorrectTextAreaInput = () => {
-        this.textarea.classList.add('textarea__area_correct_input');
-        this.tipTextarea.classList.remove('textarea_invisible_elem');
-        this.errors.set('textarea',true);
-        this.checkErrors();
-    }
-
-    hideCorrectTextareaInput = () => {
-        this.textarea.classList.remove('textarea__area_correct_input');
-        this.tipTextarea.classList.add('textarea_invisible_elem');
-        this.errors.set('textarea',false);
-        this.checkErrors();
-    }
-
-    showTextareaError = () => {
-        this.errorTextarea.classList.remove('textarea_invisible_elem');
-        this.textarea.classList.add('textarea_error');
-        this.errors.set('textarea',false);
-        this.checkErrors();
-    }
-
-    hideTextareaError = () => {
-        this.errorTextarea.classList.add('textarea_invisible_elem');
-        this.textarea.classList.remove('textarea_error');
-        this.errors.set('textarea',true);
-        this.checkErrors();
-    }
-
-    handleTextareaInput = (event) => {
-        if (event.target.value.length > 1000) {
-            this.showTextareaError();
-        } else this.hideTextareaError();
-        this.textarea.setAttribute('style', 'height:' + (event.target.scrollHeight) + 'px;overflow-y:hidden;');
-        this.textarea.style.height = 'auto';
-        this.textarea.style.height = event.target.scrollHeight+'px';
     }
 
     checkErrors = () => {

@@ -6,7 +6,7 @@ mixin form({ title=''}={})
 			+loader({disabled:true})
 		.form__right-column
 			+input-email({placeholder:'Email',title:'Email'})(data-event='formemail')
-			+textarea()
+			+textarea()(data-event='formtextarea')
 			.form__input-file-wrapper
 				+input-file({id:'form-input-file'})(multiple='multiple' accept='.pdf, .doc, .docx')
 			span.form__file-error.form_invisible-elem
