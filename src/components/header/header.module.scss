@@ -1,0 +1,39 @@
+.header{
+    display: flex;
+    width: 100%;
+    height: 80px;
+
+    &__logo{
+        display: flex;
+        gap: 10px;
+        align-items: center;      
+        width: 290px;
+        padding-top: 29px;
+        padding-bottom: 29px;
+        border-bottom: 2px solid #D9E1EC;
+        border-right: 2px solid #D9E1EC;
+        flex-basis: 20%;
+       
+        
+    }
+
+    &__logo__title{
+        width: 49px;
+        color: #213C57;
+        font-family: Roboto;
+        font-size: 7px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%;
+        text-transform: uppercase;
+    }
+
+    &__area{
+        border-bottom: 2px solid #D9E1EC;
+        flex-basis: 80%;
+    }
+
+    &__svg{
+        margin-left: calc(100%*0.2 - 20px)
+    }
+}

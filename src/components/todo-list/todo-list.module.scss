@@ -1,0 +1,19 @@
+.todoList{
+    
+    width: 100%;
+    padding-top: 15px;   
+   
+    &__header{
+        color: #213C57;
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-family: Roboto;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 123.5%;
+        letter-spacing: 0.25px;
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
+    }
+}

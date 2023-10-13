@@ -1,0 +1,10 @@
+.main{
+    display: flex;
+
+    &__contentContainer{
+        flex-grow: 1;
+        background-color: #E7EAEE;
+        min-height: calc(100vh - 80px);
+        flex-basis: 80%;
+    }
+}

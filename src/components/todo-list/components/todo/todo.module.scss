@@ -1,0 +1,57 @@
+.todo{    
+    min-height: 170px;
+    background-color: #fff;
+    border-radius: 15px;
+    margin: 15px;
+    padding: 15px;
+    position: relative;   
+
+    &__close{
+        cursor: pointer;
+        color: #007FFF;
+        font-size: 26px;
+        position: absolute;
+        right: 17px;
+        top: 17px;        
+    }
+
+    &__todoArea__title, &__todoComplited{        
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-family: Roboto;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%; 
+        border-bottom: 2px solid #E7EAEE;
+        padding-bottom: 15px;
+    }
+
+    &__todoArea__text{  
+        color: rgba(22, 31, 62, 0.90);              
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-family: Roboto;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 175%; 
+        letter-spacing: 0.15px;
+        width: 70%;       
+    }
+
+    &__todoArea__text{
+        color: rgba(22, 31, 62, 0.90);
+    }
+
+    &__todoComplited{
+        text-decoration: line-through;
+        color: rgba(22, 31, 62, 0.30);       
+    }
+
+    &:hover &__todoArea__title{
+        color: #007FFF;
+
+    }
+
+
+}
+
