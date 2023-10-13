@@ -10,8 +10,6 @@ class Form extends Component {
     errors;
     inputEmailRoot;
     inputEmail;
-    errorEmail;
-    tipEmail;
     textarea;
     errorTextarea;
     tipTextarea;
@@ -28,13 +26,10 @@ class Form extends Component {
         this.submitButton = this.root.querySelector('.button');
         this.inputEmailRoot = this.root.querySelector('.input-email');
         this.inputEmail = this.inputEmailRoot.querySelector('.input-email__input');
-        this.errorEmail = this.inputEmailRoot.querySelector('.input-email__error');
-        this.tipEmail = this.inputEmailRoot.querySelector('.input-email__svg');
+        this.inputEmail.addEventListener('formemail',this.handleEmail);
         this.policyInput = this.root.querySelector('.checkbox__input');
         this.policyInput.addEventListener('formcheckbox',this.handleCheckbox);
         this.policyError = this.root.querySelector('.checkbox__error');
-        this.inputEmail.addEventListener('input',this.handleEmailInput);
-        this.inputEmail.addEventListener('focus',this.handleEmailFocus);
         this.textarea = this.root.querySelector('.textarea__area');
         this.errorTextarea = this.root.querySelector('.textarea__error');
         this.tipTextarea = this.root.querySelector('.textarea__svg');
@@ -51,6 +46,11 @@ class Form extends Component {
                                 ['file', true]
                             ]);
         this.disableSubmitButton();
+    }
+
+    handleEmail = () => {
+        this.errors.set('email',true);
+        this.checkErrors();
     }
 
     handleCheckbox = (event) => {
@@ -215,24 +215,6 @@ class Form extends Component {
         this.textarea.style.height = event.target.scrollHeight+'px';
     }
 
-    handleEmailInput = (event) => {
-        const emailRegExp = /^([a-zA-Z\-0-9_]+|([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)+)|(".+"))@(([a-zA-Z\-0-9]+\.)+[a-zA-Z\-0-9]{2,})$/;
-        if (!emailRegExp.test(event.target.value)) {
-            this.showEmailError('Введите email');
-            this.hideEmailTip();
-            this.errors.set('email',false);
-        } else if (event.target.value.length > 255) {
-            this.showEmailError('Введите значение менее 255 символов');
-            this.hideEmailTip();
-            this.errors.set('email',false);
-        } else {
-            this.hideEmailError();
-            this.showEmailTip();
-            this.errors.set('email',true);
-        }
-        this.checkErrors();
-    }
-
     checkErrors = () => {
         let formIsValid = true;
         for (let value of this.errors.values()) {
@@ -249,41 +231,6 @@ class Form extends Component {
     enableSubmitButton = () => {
         this.submitButton.classList.remove('button_disabled');
         this.submitButton.removeAttribute('disabled');
-    }
-
-    showEmailTip = () => {
-        this.tipEmail.classList.remove('input-email_invisible');
-    }
-
-    hideEmailTip = () => {
-        if (!this.tipEmail.classList.contains('input-email_invisible')) {
-            this.tipEmail.classList.add('input-email_invisible');
-        }
-    }
-
-    showEmailError = (error) =>{
-        this.errorEmail.classList.remove('input-email_invisible');
-        this.inputEmail.classList.add('input-email__input_error');
-        const prevError = this.errorEmail.innerText;
-        if (!prevError.includes(error)) {
-            this.errorEmail.innerText = prevError + ' ' + error;
-        }
-    }
-
-    hideEmailError = () => {
-        this.errorEmail.innerText = '';
-        this.errorEmail.classList.add('input-email_invisible');
-        this.inputEmail.classList.remove('input-email__input_error');
-    }
-
-    handleEmailFocus = () => {
-        this.hideEmailError();
-    }
-
-    hideEmailError = () => {
-        this.errorEmail.innerText = '';
-        this.errorEmail.classList.add('input-email_invisible');
-        this.inputEmail.classList.remove('input-email__input_error');
     }
 
     showLoader = () => {

@@ -5,7 +5,7 @@ mixin form({ title=''}={})
 			h3.form__title=title
 			+loader({disabled:true})
 		.form__right-column
-			+input-email({placeholder:'Email',title:'Email'})
+			+input-email({placeholder:'Email',title:'Email'})(data-event='formemail')
 			+textarea()
 			.form__input-file-wrapper
 				+input-file({id:'form-input-file'})(multiple='multiple' accept='.pdf, .doc, .docx')

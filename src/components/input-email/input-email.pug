@@ -1,5 +1,5 @@
 mixin input-email({ placeholder='',disabled=false,title='',name='email'}={})
-	.input-email(class=disabled&&'input-email_disabled')(data-component='input-email')
+	.input-email(class=disabled&&'input-email_disabled')&attributes(attributes)(data-component='input-email')
 		.input-email__wrapper
 			input.input-email__input(type="text" placeholder=placeholder name=name)&attributes(attributes)
 			span.input-email__title=title
