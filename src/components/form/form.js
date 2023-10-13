@@ -87,7 +87,7 @@ class Form extends Component {
       if (input.value && !this.isValidEmail(input.value)) {
         this.displayError(this.errorEmail, 'Неверный формат email');
         input.nextElementSibling.classList.remove('visible-indicator');
-        input.classList.add('form__input-error');
+        input.classList.add('error-input');
         input.classList.remove('filled-input');
       } else if (input.value.length > MAX_EMAIL_LENGTH) {
         this.displayError(
@@ -95,12 +95,12 @@ class Form extends Component {
           `Email не должен содержать более ${MAX_EMAIL_LENGTH} символов`,
         );
         input.nextElementSibling.classList.remove('visible-indicator');
-        input.classList.add('form__input-error');
+        input.classList.add('error-input');
         input.classList.remove('filled-input');
       } else {
         this.destroyError(this.errorEmail);
         input.nextElementSibling.classList.add('visible-indicator');
-        input.classList.remove('form__input-error');
+        input.classList.remove('error-input');
       }
     }
     if (input === this.inputMsg) {
@@ -110,17 +110,17 @@ class Form extends Component {
           `Сообщение не должно содержать более ${MAX_MESSAGE_LENGTH} символов`,
         );
         input.nextElementSibling.classList.remove('visible-indicator');
-        input.classList.add('form__input-error');
+        input.classList.add('error-input');
       } else {
         this.destroyError(this.errorMsg);
         input.nextElementSibling.classList.add('visible-indicator');
-        input.classList.remove('form__input-error');
+        input.classList.remove('error-input');
       }
     }
 
     if (input.value === '') {
       input.nextElementSibling.classList.remove('visible-indicator');
-      input.classList.remove('form__input-error');
+      input.classList.remove('error-input');
     }
 
     this.updateSubmitButton();
@@ -145,7 +145,7 @@ class Form extends Component {
     if (input === this.inputEmail && input.value.length > 255) {
       this.displayError(errorElement, 'Email не должен содержать более 255 символов');
       input.nextElementSibling.classList.remove('visible-indicator');
-      input.classList.add('form__input-error');
+      input.classList.add('error-input');
       this.submitButton.classList.add('disabled');
     } else {
       this.destroyError(errorElement);
@@ -155,7 +155,7 @@ class Form extends Component {
     if (input === this.inputMsg && input.value.length > 1000) {
       this.displayError(errorElement, 'Сообщение не должно содержать более 1000 символов');
       input.nextElementSibling.classList.remove('visible-indicator');
-      input.classList.add('form__input-error');
+      input.classList.add('error-input');
       this.submitButton.classList.add('disabled');
     } else {
       this.destroyError(errorElement);
