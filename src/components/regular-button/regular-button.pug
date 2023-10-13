@@ -1,0 +1,4 @@
+mixin regular-button(props)
+	button.regular-button&attributes(attributes)(data-component='regular-button')
+		.regular-button__text!= props.text
+		+svg(props.icon).regular-button__icon
