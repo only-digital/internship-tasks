@@ -75,9 +75,11 @@ mixin vacancy(props)
 			.vacancy__form-input-box
 				label(for="email") E-mail
 				input(type="email" id="email" name="email" required value='').vacancy__email
+
+				p.vacancy__message 
 			
 				label(for="confirm") 
-					input(type="checkbox" id="confirm" name="confirm" required value='').vacancy__agreement
+					input(type="checkbox" id="confirm" name="confirm" required value='').vacancy__confirm
 					+svg('check-mark').vacancy__check-mark
 					| Вы подтверждаете, что ознакомились c&nbsp;  
 					a(href='/#')  политикой обработки персональных данных 
