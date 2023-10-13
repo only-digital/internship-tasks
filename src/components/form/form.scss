@@ -24,14 +24,11 @@
 
         &-files {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             position: relative;
             gap: 30px;
             margin-top: 30px;
-        }
-
-        &:hover label, &:hover span {
-            text-indent: 15px;
         }
     }
 
@@ -41,8 +38,8 @@
         top: 10px;
         color: $black;
         background-color: transparent;
-        z-index: 2;
         text-indent: 0;
+        z-index: 2;
         transition: transform 150ms ease-out, font-size 150ms ease-out, text-indent 150ms ease-out;
         pointer-events: none;
 
@@ -52,16 +49,12 @@
 
         &-msg.focused-label {
             transform: translate(20%, -170%);
-            text-indent: 0 !important;
+            text-indent: 0;
         }
 
         &-email.focused-label {
             transform: translate(50%, -170%);
-            text-indent: 0 !important;
-        }
-
-        &.hovered-label {
-            text-indent: 15px;
+            text-indent: 0;
         }
     }
 
@@ -77,15 +70,24 @@
         font-size: 16px;
 
         border-radius: 0;
-        cursor: pointer;
+
+        &.form__input-msg.focused-input {
+            padding: 13px 32px 20px 20px;
+        }
+
+        &:focus:hover {
+            ~ .form__label {
+                text-indent: 0px;
+            }
+        }
 
         &:hover {
             background-color: $extraGray2;
             border-radius: 24px;
             border-bottom: 1px solid transparent;
 
-            .form__label {
-                transform: translate(20%, -170%);
+            ~ .form__label {
+                text-indent: 15px;
             }
         }
 
@@ -98,8 +100,6 @@
             resize: none;
             height: 35px;
             overflow-y: hidden;
-            padding-right: 32px !important;
-            padding-bottom: 20px !important;
         
             &:hover, &:focus {
                 height: 190px;
@@ -110,15 +110,39 @@
                 border: none;
                 background-color: $extraGray2;
             }
+
+            &.focused-input {
+                overflow-y: visible;
+
+                &::-webkit-scrollbar {
+                    width: 10px;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background: transparent;
+                    margin: 20px 0;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: $blue;
+                    border-radius: 20px;
+                    border: 3px solid $white;
+                  }
+            }
         }
 
-        &.focused-input {
+        &.focused-input{
             border: 1px solid $extraCobolt;
-            padding: 13px 60px 20px 20px;
+            padding: 13px 60px 13px 20px;
+            line-height: 1;
             border-radius: 24px;
 
             &:hover {
                 background-color: transparent;
+            }
+
+            ~ .form__label {
+                text-indent: 0px;
             }
         }
 
@@ -137,11 +161,19 @@
 
             &:hover {
                 background-color: $extraGray2;
+
+                + .form__label {
+                    text-indent: 0;
+                }
+            }
+
+            ~ .form__label {
+                text-indent: 0px;
             }
         }
 
-        &-error {
-            border: 1px solid $red !important;
+        &.error-input {
+            border: 1px solid $red;
         }
 
         &-indicator {
@@ -149,7 +181,7 @@
             height: 13px;
             fill: $green;
             position: absolute;
-            bottom: 20px;
+            bottom: 15px;
             right: 20px;
             opacity: 0;
             transition: opacity .2s ease-out;
@@ -292,7 +324,7 @@
                 z-index: 3;
                 display: block;
                 opacity: 1;
-                transform: translate(-175%, -80%);
+                transform: translate(-145%, -120%);
             }
         }
     }
@@ -307,7 +339,10 @@
             color: $blue;
         }
         &-checkbox {
+            margin: 0;
+            padding: 0;
             margin-right: 16px;
+            position: relative;
             height: 16px;
             width: 16px;
             cursor: pointer;
@@ -332,8 +367,6 @@
 
             &-indicator {
                 position: absolute;
-                left: 0;
-                top: 0;
                 width: 16px;
                 height: 16px;
                 border: 1px solid $extraGray;
@@ -399,10 +432,12 @@
 
 #file-list {
     display: flex;
+    flex-wrap: wrap;
     gap: 30px;
     
     li {
         display: flex;
+        align-items: center;
         gap: 4px;
     }
 }
@@ -423,6 +458,13 @@
 }
 
 .delete-icon {
-    line-height: 100%;
-    cursor: pointer;
-}
+    width: 10px;
+    height: 10px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 10 10'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0.774947 10L5.07412 5.70082L9.22505 9.85175L9.85175 9.22505L5.70082 5.07412L10 0.774946L9.3733 0.148249L5.07412 4.44742L0.626699 0L0 0.6267L4.44742 5.07412L0.148248 9.3733L0.774947 10Z' fill='%23000000'/%3E%3C/svg%3E") no-repeat;
+    background-size: cover;
+  
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  

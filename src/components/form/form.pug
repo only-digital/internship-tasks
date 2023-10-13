@@ -3,14 +3,14 @@ mixin form(props)
         h2.form__title Форма обратной <br> связи
         form
             .form__group
-                label.form__label.form__label-email(for="email") E-mail
                 input(id="email" type="email" maxlength="255" name="email" required).form__input.form__input-email
                 +svg('success').form__input-indicator.form__input-indicator-email
+                label.form__label.form__label-email(for="email") E-mail
                 span.form__error.form__error-email
             .form__group
-                span.form__label.form__label-msg(for="message") Ваше сообщение
                 textarea(id="message" name="message" required).form__input.form__input-msg
                 +svg('success').form__input-indicator.form__input-indicator-msg
+                span.form__label.form__label-msg(for="message") Ваше сообщение
                 span.form__error.form__error-msg
             .form__group-files
                 label.form__files(for="files")
@@ -28,7 +28,7 @@ mixin form(props)
                 input(type='checkbox' name="confirm" required).form__acceptance-checkbox
                 span.form__acceptance-checkbox-indicator
                 span Вы подтверждаете, что ознакомились 
-                    a(href='/') c политикой обработки персональных данных
+                    a(href='/' target="_blank") c политикой обработки персональных данных
             span.form__error.form__error-acceptance 
             button(type="submit" disabled='').form__submit Отправить
                 +svg('arrow-right')

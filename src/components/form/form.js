@@ -230,8 +230,7 @@ class Form extends Component {
         fileInfo.appendChild(span);
       }
 
-      const deleteIcon = document.createElement('span');
-      deleteIcon.textContent = '✕';
+      const deleteIcon = document.createElement('div');
       deleteIcon.classList.add('delete-icon');
       deleteIcon.addEventListener('click', () => this.deleteFile(li, file));
 
@@ -258,14 +257,15 @@ class Form extends Component {
     this.uploadedFiles = this.uploadedFiles.filter((uploadedFile) => uploadedFile !== file);
     this.updateFileList();
     this.updateSubmitButton();
+    this.fileInput.value = '';
   }
 
   getFileType(file) {
     const allowedFormats = ['pdf', 'doc', 'docx'];
     const fileExtension = file.name.split('.').pop().toLowerCase();
-    
-    if(allowedFormats.includes(fileExtension)) {
-      return fileExtension.toUpperCase(); 
+
+    if (allowedFormats.includes(fileExtension)) {
+      return fileExtension.toUpperCase();
     }
 
     return;
@@ -293,6 +293,8 @@ class Form extends Component {
     this.labelMsg.classList.remove('focused-label');
     this.inputMsg.nextElementSibling.classList.remove('visible-indicator');
     this.submitButton.classList.add('disabled');
+    this.fileInput.value = '';
+    this.countFilesError.classList.remove('visible-files-error');
 
     setTimeout(() => {
       this.formError.textContent = '';
