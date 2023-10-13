@@ -1,0 +1,21 @@
+mixin form-loader()
+	.form-loader
+
+mixin vacancy-form(props)
+	.vacancy-form&attributes(attributes)(data-component='vacancy-form')
+		h3.vacancy-form__title!= props.title 
+		form.vacancy-form__form&attributes(attributes)
+			label(for="email").vacancy-form__input-label E-mail 
+			input(type="email", id="email").vacancy-form__input
+			span.vacancy-form__err-message 
+			label(for="confirmation").vacancy-form__checkbox-label 
+				input(type="checkbox" id="confirmation").vacancy-form__checkbox
+				+svg("checkbox-check-svg").vacancy-form__checkbox-icon
+				span.vacancy-form__checkbox-text Вы подтверждаете, что ознакомились 
+					a(href="#").vacancy-form__link c политикой обработки персональных данных
+			button(type="submit").vacancy-form__submit-btn Отправить
+				+svg("arrow-svg").vacancy-form__submit-icon
+			.vacancy-form__success-message
+				+svg("success-check-svg").vacancy-form__success-icon
+				span.vacancy-form__success-text Форма успешно отправлена
+			+form-loader()
