@@ -19,13 +19,27 @@ class InputEmail extends Component {
         if (!emailRegExp.test(event.target.value)) {
             this.showEmailError('Введите email');
             this.hideEmailTip();
+            this.inputEmail.dispatchEvent(new CustomEvent(this.eventName,{
+                detail:{
+                    email:false
+                }
+            }));
         } else if (event.target.value.length > 255) {
             this.showEmailError('Введите значение менее 255 символов');
             this.hideEmailTip();
+            this.inputEmail.dispatchEvent(new CustomEvent(this.eventName,{
+                detail:{
+                    email:false
+                }
+            }));
         } else {
             this.hideEmailError();
             this.showEmailTip();
-            this.inputEmail.dispatchEvent(new CustomEvent(this.eventName));
+            this.inputEmail.dispatchEvent(new CustomEvent(this.eventName,{
+                detail:{
+                    email:true
+                }
+            }));
         }
     }
 

@@ -52,7 +52,7 @@ class Form extends Component {
     }
 
     handleTextarea = (event) => {
-        const textareaIsCorrect = event.detail.textarea
+        const textareaIsCorrect = event.detail.textarea;
         if (textareaIsCorrect) {
             this.errors.set('textarea',true);
             this.checkErrors();
@@ -63,8 +63,14 @@ class Form extends Component {
     }
 
     handleEmail = (event) => {
-        this.errors.set('email',true);
-        this.checkErrors();
+        const emailIsCorrect = event.detail.email;
+        if (emailIsCorrect) {
+            this.errors.set('email',true);
+            this.checkErrors();
+        } else {
+            this.errors.set('email',false);
+            this.checkErrors();
+        }
     }
 
     handleCheckbox = (event) => {
