@@ -25,13 +25,17 @@
   background: #002F6C;
 }
 
+#switcher-input:checked + .switcher {
+  background: #002F6C;
+}
+
+#switcher-input:checked + .switcher:after {
+  right: 34px;
+}
+
 #switcher-input:focus + .switcher {
   background: #DEDEDE;
   border: 3px solid #C2DAFF;
-}
-
-#switcher-input:focus + .switcher:after {
-  right: 34px;
 }
 
 #switcher-disabled {
