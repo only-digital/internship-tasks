@@ -2,4 +2,6 @@ extends ../../build_modules/common
 
 block body
     div(style="margin: 20px")
-        +regular-button({text: "Отправить", icon: "arrow-right"})
+        +checkbox({text: "Пункт"})
+        +checkbox({text: "Пункт 2"})(disabled)
+        +checkbox({text: "Пункт 3"})(disabled checked)
