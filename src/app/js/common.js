@@ -6,6 +6,7 @@ import InputEmail from "../../components/input-email/input-email";
 import Form from '../../components/form/form';
 import InputFile from "../../components/input-file/input-file";
 import Loader from '../../components/loader/loader';
+import FileInfo from '../../components/file-info/file-info';
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -22,6 +23,7 @@ const allComponents = {
     'form':Form,
     'input-file':InputFile,
     'loader':Loader,
+    'file-info':FileInfo,
 }
 
 /**

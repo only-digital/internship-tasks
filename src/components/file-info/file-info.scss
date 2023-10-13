@@ -1,7 +1,8 @@
 .file-info {
 	$root: &;
 
-	width: 214px;
+	min-width: 214px;
+	width: max-content;
 	height: 40px;
 	border-radius: 27px;
 	background:  #F4F4F4; 

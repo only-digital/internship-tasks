@@ -15,6 +15,8 @@ class Form extends Component {
     textarea;
     errorTextarea;
     tipTextarea;
+    inputFile;
+    inputFileWrapper;
 
     constructor(element) {
         super(element);
@@ -35,6 +37,9 @@ class Form extends Component {
         this.textarea = this.root.querySelector('.textarea__area');
         this.errorTextarea = this.root.querySelector('.textarea__error');
         this.tipTextarea = this.root.querySelector('.textarea__svg');
+        this.inputFile = this.root.querySelector('.input-file__input');
+        this.inputFile.addEventListener('input',this.handleInputFile);
+        this.inputFileWrapper = this.root.querySelector('.form__input-file-wrapper');
         this.textarea.addEventListener('input',this.handleTextareaInput);
         this.textarea.addEventListener('blur',this.handleTextareaCorrectInput);
         this.errors = new Map([
@@ -43,6 +48,60 @@ class Form extends Component {
                                 ['policy', false]
                             ]);
         this.disableSubmitButton();
+    }
+
+    handleInputFile = (event) => {
+        const file = event.target.files[0]
+        const fileName = file['name'].split('.')[0];
+        const fileExtension = file['name'].split('.')[1];
+        this.appendFileInfo(fileName,fileExtension,1);
+    }
+
+    appendFileInfo = (fileName,fileExtension,dataId) => {
+        const fileInfoFragment = document.createDocumentFragment();
+        const fileInfoRoot = document.createElement('div');
+        fileInfoRoot.dataset.file=dataId;
+        fileInfoRoot.classList.add('file-info');
+        const spanDoc = document.createElement('span');
+        spanDoc.classList.add('file-info__span');
+        spanDoc.innerText = 'Документ ';
+        const spanName = document.createElement('span');
+        spanName.classList.add('file-info__span');
+        spanName.innerText = fileName+', ';
+        spanName.classList.add('file-info__text_gray');
+        const spanExt = document.createElement('span');
+        spanExt.classList.add('file-info__span');
+        spanExt.classList.add('file-info__text_gray');
+        spanExt.innerText = fileExtension;
+        fileInfoRoot.appendChild(spanDoc);
+        fileInfoRoot.appendChild(spanName);
+        fileInfoRoot.appendChild(spanExt);
+        fileInfoFragment.appendChild(fileInfoRoot);
+        const svgRoot = document.createElement('div');
+        svgRoot.classList.add('file-info__svg');
+        svgRoot.addEventListener('click',this.handleFileInfoClick);
+        this.renderIcon(svgRoot);
+        fileInfoRoot.appendChild(svgRoot);
+        this.inputFileWrapper.appendChild(fileInfoFragment);
+    }
+
+    handleFileInfoClick = (event) => {
+        console.log(event);
+    }
+
+    renderIcon = (node) => {
+        const iconSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        const iconPath = document.createElementNS(
+            'http://www.w3.org/2000/svg',
+            'path'
+        );
+        iconSvg.setAttribute('viewBox', '0 0 20 20');
+        iconPath.setAttribute(
+            'd',
+            'M5.77495 15L10.0741 10.7008L14.2251 14.8518L14.8518 14.2251L10.7008 10.0741L15 5.77495L14.3733 5.14825L10.0741 9.44742L5.6267 5L5 5.6267L9.44742 10.0741L5.14825 14.3733L5.77495 15Z'
+        );
+        iconSvg.appendChild(iconPath);
+        return node.appendChild(iconSvg);
     }
 
     handleTextareaCorrectInput = (event) => {

@@ -2,5 +2,5 @@ mixin input-file({ name='file',text='Прикрепить файл',id}={})
 	.input-file&attributes(attributes)(data-component='input-file')
 		input.input-file__input(type="file", name=name id=id)
 		label.input-file__label(for=id)=text
-			+svg('cross').input-file__svg
+			+svg('plus').input-file__svg
 		
