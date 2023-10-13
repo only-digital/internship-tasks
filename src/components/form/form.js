@@ -31,8 +31,8 @@ class Form extends Component {
         this.errorEmail = this.inputEmailRoot.querySelector('.input-email__error');
         this.tipEmail = this.inputEmailRoot.querySelector('.input-email__svg');
         this.policyInput = this.root.querySelector('.checkbox__input');
+        this.policyInput.addEventListener('formcheckbox',this.handleCheckbox);
         this.policyError = this.root.querySelector('.checkbox__error');
-        this.policyInput.addEventListener('change',this.handlePolicyInput);
         this.inputEmail.addEventListener('input',this.handleEmailInput);
         this.inputEmail.addEventListener('focus',this.handleEmailFocus);
         this.textarea = this.root.querySelector('.textarea__area');
@@ -51,6 +51,17 @@ class Form extends Component {
                                 ['file', true]
                             ]);
         this.disableSubmitButton();
+    }
+
+    handleCheckbox = (event) => {
+        if(event.target.checked) {
+            this.policyError.classList.add('checkbox_invisible-elem');
+            this.errors.set('policy',true);
+        } else {
+            this.errors.set('policy',false);
+            this.policyError.classList.remove('checkbox_invisible-elem');
+        }
+        this.checkErrors();
     }
 
     showInputFilesError = (errorDescription) => {
@@ -218,17 +229,6 @@ class Form extends Component {
             this.hideEmailError();
             this.showEmailTip();
             this.errors.set('email',true);
-        }
-        this.checkErrors();
-    }
-
-    handlePolicyInput = (event) => {
-        if(event.target.checked) {
-            this.policyError.classList.add('checkbox_invisible-elem');
-            this.errors.set('policy',true);
-        } else {
-            this.errors.set('policy',false);
-            this.policyError.classList.remove('checkbox_invisible-elem');
         }
         this.checkErrors();
     }

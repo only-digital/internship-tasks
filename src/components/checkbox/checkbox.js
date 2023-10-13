@@ -3,11 +3,15 @@ import Component from '../../app/js/base/Component';
 class Checkbox extends Component {
     constructor(element) {
         super(element);
-
-        // Your code here
+        this.eventName = this.root.dataset.event;
+        this.input = this.getElement('input')
+        this.input.addEventListener('change',this.handleCheckboxClick);
     }
 
-    // Your code here
+    handleCheckboxClick = () => {
+        this.input.dispatchEvent(new CustomEvent(this.eventName));
+    }
+
 }
 
 export default Checkbox
