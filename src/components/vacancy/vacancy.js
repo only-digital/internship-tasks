@@ -12,6 +12,8 @@ class Vacancy extends Component {
     email;
     confirm;
     message;
+    messageSpan;
+    overlay;
 
     constructor(element) {
         super(element);
@@ -23,6 +25,8 @@ class Vacancy extends Component {
         this.confirm = this.getElement('confirm');
         this.button = this.getElement('button');
         this.message = this.getElement('message');
+        this.messageSpan = this.getElement('message-span');
+        this.overlay = this.getElement('overlay');
         // setting header inner content
         this.date.innerText = new Intl.DateTimeFormat('ru', { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date());
         this.views.innerText = 'Просмотров:';
@@ -41,24 +45,10 @@ class Vacancy extends Component {
             .catch(error => console.log(error))
 
         // form submit listener
-        // this.button.addEventListener('click', (e) => this.onButtonClick(e))
+      
         this.root.addEventListener('submit', (e) => this.onSubmit(e))
     }
-    //handle ButtonCLick to check the inputs and set custom messeges
-    // onButtonClick = (e) => {
-    //     console.log('button clicked');
-    //     e.preventDefault();
-    //     // set custom validity messeges
-    //     if (!this.email.checkValidity()) {
-    //         this.email.setCustomValidity('Введите верный E-mail');
-    //     }
-    //     if (this.email.value.length === 0) {
-    //         this.email.setCustomValidity('Поле E-mail обязательно');
-    //     }
-        
-    // }
-
-    
+   
     // handle Submit
     onSubmit = (e) => {
         console.log('submited');
@@ -87,14 +77,18 @@ class Vacancy extends Component {
       // Handle the response here
        console.log(response)
         if (response.status === 200 ) {
-            this.message.style.color = 'green';
+            this.message.classList.add('success');
+            this.button.style.opacity = '0';
+            this.button.disabled = true;
+            this.overlay.style.display = 'block';
         } else if (response.status === 422 ) {
             this.message.style.color = 'red';
         }
         return response.json();
         })
         .then( data => {
-            this.message.innerText = data.message;
+            this.messageSpan.innerText = data.message;
+            
         })
         .catch(error => {
       // Handle errors here

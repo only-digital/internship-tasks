@@ -76,7 +76,9 @@ mixin vacancy(props)
 				label(for="email") E-mail
 				input(type="email" id="email" name="email" required value='').vacancy__email
 
-				p.vacancy__message 
+				.vacancy__message
+					+svg('success').vacancy__message-svg
+					span.vacancy__message-span 
 			
 				label(for="confirm") 
 					input(type="checkbox" id="confirm" name="confirm" required value='').vacancy__confirm
@@ -87,4 +89,4 @@ mixin vacancy(props)
 				button.vacancy__button 
 					span Отправить
 					+svg('btn')
-		
+			.vacancy__overlay
