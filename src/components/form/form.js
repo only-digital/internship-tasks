@@ -232,7 +232,7 @@ class Form extends Component {
             this.hideLoader();
             if (!response.ok) {
                 this.setError(response.statusText);
-            }
+            } else this.root.reset();
         } catch (error) {
             console.error(error);
         }

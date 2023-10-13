@@ -1,0 +1,7 @@
+mixin file-info({ extension='PDF',size='106kB'}={})
+	.file-info&attributes(attributes)(data-component='file-info')
+		span.file-info__text='Документ '
+		span.file-info__text.file-info__text_gray=extension+', '
+		span.file-info__text.file-info__text_gray=size
+		.file-info__svg 
+			+svg('cross')
