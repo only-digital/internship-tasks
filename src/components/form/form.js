@@ -11,8 +11,6 @@ class Form extends Component {
     inputEmailRoot;
     inputEmail;
     textarea;
-    errorTextarea;
-    tipTextarea;
     inputFile;
     inputFileWrapper;
     fileError;
@@ -30,17 +28,16 @@ class Form extends Component {
         this.policyInput = this.root.querySelector('.checkbox__input');
         this.policyInput.addEventListener('formcheckbox',this.handleCheckbox);
         this.policyError = this.root.querySelector('.checkbox__error');
-
-
         this.textarea = this.root.querySelector('.textarea__area');
         this.textarea.addEventListener('formtextarea',this.handleTextarea);
-        // this.textarea.addEventListener('input',this.handleTextareaInput);
-        // this.textarea.addEventListener('blur',this.handleTextareaCorrectInput);
+
 
         this.inputFile = this.root.querySelector('.input-file__input');
         this.fileError = this.root.querySelector('.form__file-error');
-        this.inputFile.addEventListener('input',this.handleInputFile);
+        // this.inputFile.addEventListener('input',this.handleInputFile);
+        this.inputFile.addEventListener('formfile',this.handleFile);
         this.inputFileWrapper = this.root.querySelector('.form__input-file-wrapper');
+
 
         this.errors = new Map([
                                 ['email',  false],
@@ -51,26 +48,34 @@ class Form extends Component {
         this.disableSubmitButton();
     }
 
+    handleFile = (event) => {
+        const fileIsCorrect = event.detail.file;
+        if (fileIsCorrect) {
+            this.errors.set('textarea',true);
+        } else {
+            this.errors.set('textarea',false);
+        }
+        this.checkErrors();
+    }
+
     handleTextarea = (event) => {
         const textareaIsCorrect = event.detail.textarea;
         if (textareaIsCorrect) {
             this.errors.set('textarea',true);
-            this.checkErrors();
         } else {
             this.errors.set('textarea',false);
-            this.checkErrors();
         }
+        this.checkErrors();
     }
 
     handleEmail = (event) => {
         const emailIsCorrect = event.detail.email;
         if (emailIsCorrect) {
             this.errors.set('email',true);
-            this.checkErrors();
         } else {
             this.errors.set('email',false);
-            this.checkErrors();
         }
+        this.checkErrors();
     }
 
     handleCheckbox = (event) => {
@@ -82,112 +87,6 @@ class Form extends Component {
             this.policyError.classList.remove('checkbox_invisible-elem');
         }
         this.checkErrors();
-    }
-
-    showInputFilesError = (errorDescription) => {
-        this.fileError.classList.remove('form_invisible-elem');
-        this.fileError.textContent = errorDescription;
-    }
-
-    hideInputFilesError = () => {
-        this.fileError.textContent = '';
-        this.fileError.classList.add('form_invisible-elem');
-    }
-
-    removeFileInfoNodes = () => {
-        const filesInfo = this.root.querySelectorAll('.file-info');
-        for (const fileInfo of filesInfo) {
-            const parentNode = fileInfo.parentNode;
-            parentNode.removeChild(fileInfo);
-        }
-    }
-
-    handleInputFile = (event) => {
-        this.hideInputFilesError();
-        this.removeFileInfoNodes();
-        const files = event.target.files;
-        let correctSize = true;
-        let correctNumber = false;
-        if (files.length>2) {
-            this.showInputFilesError('Максимум 2 файла');
-        } else correctNumber = true;
-
-        for (const file of files){
-            console.log('filesize=' + file.size)
-            if (file.size>5000000) {
-                this.showInputFilesError('Максимальный размер файла не более 5мб');
-                correctSize = false;
-                break;
-            }
-        }
-        
-        const fileInputIsCorrect = correctSize && correctNumber;
-
-        if (fileInputIsCorrect) {
-            this.errors.set('file',true);
-            for (const file of files) {
-                const fileSize = file['size'];
-                const fileExtension = file['name'].split('.')[1];
-                this.appendFileInfo(fileExtension,fileSize);
-            }
-        } else this.errors.set('file',false);
-        this.checkErrors();
-    }
-
-    appendFileInfo = (fileExtension,fileSize) => {
-        const fileInfoFragment = document.createDocumentFragment();
-        const fileInfoRoot = document.createElement('div');
-        fileInfoRoot.dataset.file=Date.now()+fileSize+fileExtension;
-        fileInfoRoot.classList.add('file-info');
-        const spanDoc = document.createElement('span');
-        spanDoc.classList.add('file-info__span');
-        spanDoc.innerText = 'Документ ';
-        const spanExtension = document.createElement('span');
-        spanExtension.classList.add('file-info__span');
-        spanExtension.innerText = fileExtension+', ';
-        spanExtension.classList.add('file-info__text_gray');
-        const spanSize = document.createElement('span');
-        spanSize.classList.add('file-info__span');
-        spanSize.classList.add('file-info__text_gray');
-        spanSize.innerText = this.bytesToKb(fileSize)+'kB';
-        fileInfoRoot.appendChild(spanDoc);
-        fileInfoRoot.appendChild(spanExtension);
-        fileInfoRoot.appendChild(spanSize);
-        fileInfoFragment.appendChild(fileInfoRoot);
-        const svgRoot = document.createElement('div');
-        svgRoot.classList.add('file-info__svg');
-        svgRoot.addEventListener('pointerdown',this.handleFileInfoClick);
-        this.renderIcon(svgRoot);
-        fileInfoRoot.appendChild(svgRoot);
-        this.inputFileWrapper.appendChild(fileInfoFragment);
-    }
-
-    handleFileInfoClick = (event) => {
-        const fileClickedId = event.target.parentNode.parentNode.dataset.file;
-        const filesInfo = this.root.querySelectorAll('.file-info');
-        for (const fileInfo of filesInfo) {
-            if (fileInfo.dataset.file === fileClickedId) {
-                const parentNode = fileInfo.parentNode;
-                const svgRoot = fileInfo.querySelector('.file-info__svg');
-                svgRoot.removeEventListener('pointerdown',this.handleFileInfoClick);
-                parentNode.removeChild(fileInfo);
-            }
-        }
-    }
-
-    renderIcon = (node) => {
-        const iconSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-        const iconPath = document.createElementNS(
-            'http://www.w3.org/2000/svg',
-            'path'
-        );
-        iconSvg.setAttribute('viewBox', '0 0 20 20');
-        iconPath.setAttribute(
-            'd',
-            'M5.77495 15L10.0741 10.7008L14.2251 14.8518L14.8518 14.2251L10.7008 10.0741L15 5.77495L14.3733 5.14825L10.0741 9.44742L5.6267 5L5 5.6267L9.44742 10.0741L5.14825 14.3733L5.77495 15Z'
-        );
-        iconSvg.appendChild(iconPath);
-        return node.appendChild(iconSvg);
     }
 
     checkErrors = () => {
@@ -230,7 +129,6 @@ class Form extends Component {
     handleFormSubmit = (event) => {
         event.preventDefault();
         const formData = new FormData(this.root);
-        console.log(formData);
         if (!formData.get('policy')) {
             this.setPolicyError();
         } else {

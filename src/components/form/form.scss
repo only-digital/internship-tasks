@@ -83,6 +83,9 @@
 	}
 	
 	@media (max-width:768px) {
+		& {
+			padding: 30px;
+		}
 		&__input-file-wrapper {
 			flex-direction: column;
 		}

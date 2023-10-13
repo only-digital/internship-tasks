@@ -7,8 +7,7 @@ mixin form({ title=''}={})
 		.form__right-column
 			+input-email({placeholder:'Email',title:'Email'})(data-event='formemail')
 			+textarea()(data-event='formtextarea')
-			.form__input-file-wrapper
-				+input-file({id:'form-input-file'})(multiple='multiple' accept='.pdf, .doc, .docx')
+			+input-file({id:'form-input-file'})(multiple='multiple' accept='.pdf, .doc, .docx')(data-event='formfile')
 			span.form__file-error.form_invisible-elem
 			+checkbox({id:'policy',label:'Вы подтверждаете, что ознакомились',ref:'http://mock-address-change-me',link:' c политикой обработки персональных данныx',error:'Ознакомтесь с политикой'})(data-event='formcheckbox')
 			span.form__server-error.form_invisible-elem
