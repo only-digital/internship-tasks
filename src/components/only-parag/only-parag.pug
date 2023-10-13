@@ -1,5 +1,5 @@
 mixin only-parag(props)
 	.only-parag&attributes(attributes)(data-component='only-parag')
-		.only-parag__header!=props.header
+		.only-parag__header(class='only-parag_color-main')!=props.header
 		ul.only-parag__content-block
 			block

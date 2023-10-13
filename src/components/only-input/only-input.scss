@@ -1,18 +1,41 @@
 .only-input {
 	$root: &;
-
+	display: grid;
+	
 	&__label{
+
+		padding-left: 20px;
+		@include fontSettings(-0.24px,$add-mini-s,150%)
 
 	}
 
 	&__field{
-
+		
+		display: flex;
+		align-items: center;
+		height: 48px;
+		
+		align-self: stretch;
+		border-radius: 24px;
+		border-color: $light-blue;
+		border-style: solid;
+		border-width: 1px;
+		width: 100%;
+		padding: 8px 20px 14px 20px;
 
 	}
 
 	&_color-main{
 
+		color:$black;
 		
+	}
+
+
+	&_color-addictive{
+
+		color:$grey;
+
 	}
 
 	//Your code here

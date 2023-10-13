@@ -3,16 +3,34 @@
 @import '../../styles/transitions.scss';
 
 .only-form {
+	
 	$root: &;
+	padding-inline: 23px 137px;
+	
+	&__main{
 
-	&__header{
+		display: grid;
+		justify-content: space-between;
+		gap: 0px 81px;
+		grid-template-columns: 1fr 2fr;
 
+		#{$root}__header{
 
+			@include fontSettings(-0.64px, $m-size, 120%);
+	
+		}
+
+		#{$root}__input-block{
+			display: grid;
+			padding-top: calc(38px/2);
+			gap:14px 0px;
+		}
 	}
 
 	&_color-main{
-
+		
+		color:$blue;
 		
 	}
-	//Your code here
+
 }

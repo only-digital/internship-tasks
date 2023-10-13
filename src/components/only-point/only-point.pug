@@ -1,3 +1,5 @@
 mixin only-point(props)
 	.only-point&attributes(attributes)(data-component='only-point')
-		span.only-point__text!=props.text
+		.only-point__icon 
+			include ../../assets/icons/dash.svg
+		span.only-point__text(class='only-point_color-main')!=props.text

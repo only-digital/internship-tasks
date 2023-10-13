@@ -1,9 +1,11 @@
 .only-checkagreement {
 	$root: &;
+	display: flex;
+	align-items: center;
 
 	&__checkbox{
-
-
+		padding-right: 18px;
+		appearance:auto;
 	}
 
 	&__text{
@@ -14,6 +16,16 @@
 	&__link{
 
 		
+	}
+
+	&_color-main{
+
+
+	}
+
+	&_color-addictive{
+
+
 	}
 
 	//Your code here

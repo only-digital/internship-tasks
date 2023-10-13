@@ -1,5 +1,5 @@
 mixin only-input(props)
 	.only-input&attributes(attributes)(data-component='only-input')
-		label.only-input__label!=props.label 
-		input.only-input__field(attributes placeholder!=props.placeholder )
+		label.only-input__label(class='only-input_color-addictive')!=props.label 
+		input.only-input__field(class='only-input_color-main')(attributes placeholder!=props.placeholder )
 		

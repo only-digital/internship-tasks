@@ -1,5 +1,6 @@
 mixin only-form(props)
 	.only-form&attributes(attributes)(data-component='only-form')
-		form.only-form__main 
+		form.only-form__main(class='only-form_color-main') 
 			.only-form__header!=props.header
-			block 
+			.only-form__input-block
+				block 

@@ -1,9 +1,9 @@
 mixin only-vacancy-wrapper(props)
 	.only-vacancy-wrapper&attributes(attributes)(data-component='only-vacancy-wrapper')
-		.only-vacancy-wrapper__header
-			span.only-vacancy-wrapper__date
+		.only-vacancy-wrapper__header(class='only-vacancy-wrapper_color-main')
+			span.only-vacancy-wrapper__date(class='only-vacancy-wrapper_color-addictive')!='18 декабря 2020'
 			h1.only-vacancy-wrapper__text!=props.header 
 			.only-vacancy-wrapper__stats 	
-				span.only-vacancy-wrapper__views 
-				span.only-vacancy-wrapper__references
+				span.only-vacancy-wrapper__views(class='only-vacancy-wrapper_color-addictive')!='Просмотров 123'
+				span.only-vacancy-wrapper__references(class='only-vacancy-wrapper_color-addictive')!='Откликов 12'
 		block

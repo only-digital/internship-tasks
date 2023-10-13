@@ -5,15 +5,29 @@
 .only-parag {
 	
 	$root: &;
-	
-	&__header{
+	padding-bottom: 130px;
+	padding-right: 532px;
 
+	&__header{
+		
+		padding-bottom: 35px;
+		@include fontSettings(-0.92px,$l-size,120%);
 
 	}
 
 	&__content-block{
-
+		display: grid;
+		gap:12px 0px;
 		
 	}
-	
+
+	&_color-main{
+		color:$dark-blue;
+	}
+
+	&_color-addictive{
+
+		color:$black;
+	}
+
 }

@@ -6,35 +6,56 @@
 	$root: &;
 
 	@include adaptiveInlinePadding(80px,60px,50px);
-    padding-block:163px 45px;
+    padding-block:115px 45px;
 
 	&__header{
 
+		padding-bottom: 144px;
+
 		#{$root}__date{
 
+			padding-bottom: 20px;
+			padding-left: 9px;
+			@include fontSettings(-0.4px,$xs-size,140%)
 
 		}
 
 		#{$root}__text{
 
+			padding-bottom: 45px;
+			@include fontSettings(-1.28px,$xl-size,100%)
 
 		}
 
-		#{$root}_stats{
-
+		#{$root}__stats{
+			display: flex;
+			gap: 0px 36px;
 			#{$root}__views{
 
+				@include fontSettings(-0.32px,$add-mini-l,130%)
 
 			}
 		
 			#{$root}__references{
-		
-		
+
+				@include fontSettings(-0.32px,$add-mini-l,130%)
+
 			}
 
 		}
 
 	}
 
+	&_color-main{
+
+		color:$dark-blue;
+
+	}
+
+	&_color-addictive{
+
+		color:$dark-grey;
+
+	}
 
 }

@@ -1,12 +1,29 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/transitions.scss";
+@import "../../styles/variables.scss";
 .only-point {
 	$root: &;
+	display: flex;
+	gap:0px 8px;
+	
+	&__icon{
+
+		display: flex;
+		align-items: center;
+		width: 22px;
+		height: 30px;
+		svg{
+			fill:$green;
+		}
+		
+	}
 
 	&__text{
-
+		@include fontSettings(0px,$s-size,140%);	
 	}
 
 	&_color-main{
-		
+		color:$black;
 	}
-	//Your code here
+
 }

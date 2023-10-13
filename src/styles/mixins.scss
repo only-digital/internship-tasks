@@ -14,14 +14,13 @@
 
 }
 
-@mixin fontSettings($letter_spacing, $font_size,$font_color,$line_height){
+@mixin fontSettings($letter_spacing, $font_size,$line_height){
     
     font-family: $font-famaly;
     font-weight: $font-weight;
     font-style: $font-style;
     letter-spacing: $letter_spacing;
     font-size: $font_size;
-    color: $font_color;
     line-height: $line_height;
 
 }
