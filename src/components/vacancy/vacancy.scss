@@ -1,5 +1,3 @@
-
-
 //color palette
  $blue: #04306A;
  $dark-blue: #002F6C;
@@ -7,6 +5,11 @@
  $black: #012B34;
  $gray: #8F8F8F;
  $steel: #909090;
+ //laoder styles
+ $base: #263238;
+ $lite:  $gray;
+ $brand: $cobolt;
+ $size: 60px;
  
 
 
@@ -222,5 +225,16 @@
 		z-index: 10;
 		width: 100%;
 		height: 100%;
+
 	}
+	&__loader {
+		width : $size;
+		height: $size;
+		border: 5px solid $lite;
+		border-bottom-color: $brand;
+		border-radius: 50%;
+		display: inline-block;
+		animation: rotation 1s linear infinite;
+		margin: 100px auto;
+	  }
 }

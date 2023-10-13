@@ -14,6 +14,7 @@ class Vacancy extends Component {
     message;
     messageSpan;
     overlay;
+    loader;
 
     constructor(element) {
         super(element);
@@ -27,6 +28,7 @@ class Vacancy extends Component {
         this.message = this.getElement('message');
         this.messageSpan = this.getElement('message-span');
         this.overlay = this.getElement('overlay');
+        this.loader = this.getElement('loader');
         // setting header inner content
         this.date.innerText = new Intl.DateTimeFormat('ru', { year: 'numeric', month: 'long', day: 'numeric' }).format(new Date());
         this.views.innerText = 'Просмотров:';
@@ -57,15 +59,18 @@ class Vacancy extends Component {
         // Collect form data
         this.form = this.getElement('form');
         this.formData = new FormData(form);
-        this.formData.set('confirm', true); //changing 'on' to true
+        console.log(this.formData.get('confirm'));
+        this.formData.set('confirm', true); //changing ''/'on' to true (without :checked form would not be submited)
         console.log(this.formData.get('email'), this.formData.get('confirm') )
         
-        // Perform the POST request using fetch()
         this.formDataAsObject = {};
         for (const [key, value] of this.formData.entries()) {
         this.formDataAsObject[key] = value;
         }
-
+        //loader and overlay apear
+        this.overlay.style.display = 'block';
+        this.loader.style.display = 'block';
+        // Perform the POST request using fetch()
         fetch(`/form`, {
                 method: 'POST',
                 headers: {
@@ -76,13 +81,16 @@ class Vacancy extends Component {
         .then(response => {
       // Handle the response here
        console.log(response)
+       //loader disapear
+       this.loader.style.display = 'none';
         if (response.status === 200 ) {
             this.message.classList.add('success');
             this.button.style.opacity = '0';
             this.button.disabled = true;
-            this.overlay.style.display = 'block';
+            
         } else if (response.status === 422 ) {
             this.message.style.color = 'red';
+            this.overlay.style.display = 'none';
         }
         return response.json();
         })
