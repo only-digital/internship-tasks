@@ -17,6 +17,7 @@ class Form extends Component {
     tipTextarea;
     inputFile;
     inputFileWrapper;
+    fileError;
 
     constructor(element) {
         super(element);
@@ -38,6 +39,7 @@ class Form extends Component {
         this.errorTextarea = this.root.querySelector('.textarea__error');
         this.tipTextarea = this.root.querySelector('.textarea__svg');
         this.inputFile = this.root.querySelector('.input-file__input');
+        this.fileError = this.root.querySelector('.form__file-error');
         this.inputFile.addEventListener('input',this.handleInputFile);
         this.inputFileWrapper = this.root.querySelector('.form__input-file-wrapper');
         this.textarea.addEventListener('input',this.handleTextareaInput);
@@ -45,48 +47,101 @@ class Form extends Component {
         this.errors = new Map([
                                 ['email',  false],
                                 ['textarea', false],
-                                ['policy', false]
+                                ['policy', false],
+                                ['file', true]
                             ]);
         this.disableSubmitButton();
     }
 
-    handleInputFile = (event) => {
-        const file = event.target.files[0]
-        const fileName = file['name'].split('.')[0];
-        const fileExtension = file['name'].split('.')[1];
-        this.appendFileInfo(fileName,fileExtension,1);
+    showInputFilesError = (errorDescription) => {
+        this.fileError.classList.remove('form_invisible-elem');
+        this.fileError.textContent = errorDescription;
     }
 
-    appendFileInfo = (fileName,fileExtension,dataId) => {
+    hideInputFilesError = () => {
+        this.fileError.textContent = '';
+        this.fileError.classList.add('form_invisible-elem');
+    }
+
+    removeFileInfoNodes = () => {
+        const filesInfo = this.root.querySelectorAll('.file-info');
+        for (const fileInfo of filesInfo) {
+            const parentNode = fileInfo.parentNode;
+            parentNode.removeChild(fileInfo);
+        }
+    }
+
+    handleInputFile = (event) => {
+        this.hideInputFilesError();
+        this.removeFileInfoNodes();
+        const files = event.target.files;
+        let correctSize = true;
+        let correctNumber = false;
+        if (files.length>2) {
+            this.showInputFilesError('Максимум 2 файла');
+        } else correctNumber = true;
+
+        for (const file of files){
+            console.log('filesize=' + file.size)
+            if (file.size>5000000) {
+                this.showInputFilesError('Максимальный размер файла не более 5мб');
+                correctSize = false;
+                break;
+            }
+        }
+        
+        const fileInputIsCorrect = correctSize && correctNumber;
+
+        if (fileInputIsCorrect) {
+            this.errors.set('file',true);
+            for (const file of files) {
+                const fileSize = file['size'];
+                const fileExtension = file['name'].split('.')[1];
+                this.appendFileInfo(fileExtension,fileSize);
+            }
+        } else this.errors.set('file',false);
+        this.checkErrors();
+    }
+
+    appendFileInfo = (fileExtension,fileSize) => {
         const fileInfoFragment = document.createDocumentFragment();
         const fileInfoRoot = document.createElement('div');
-        fileInfoRoot.dataset.file=dataId;
+        fileInfoRoot.dataset.file=Date.now()+fileSize+fileExtension;
         fileInfoRoot.classList.add('file-info');
         const spanDoc = document.createElement('span');
         spanDoc.classList.add('file-info__span');
         spanDoc.innerText = 'Документ ';
-        const spanName = document.createElement('span');
-        spanName.classList.add('file-info__span');
-        spanName.innerText = fileName+', ';
-        spanName.classList.add('file-info__text_gray');
-        const spanExt = document.createElement('span');
-        spanExt.classList.add('file-info__span');
-        spanExt.classList.add('file-info__text_gray');
-        spanExt.innerText = fileExtension;
+        const spanExtension = document.createElement('span');
+        spanExtension.classList.add('file-info__span');
+        spanExtension.innerText = fileExtension+', ';
+        spanExtension.classList.add('file-info__text_gray');
+        const spanSize = document.createElement('span');
+        spanSize.classList.add('file-info__span');
+        spanSize.classList.add('file-info__text_gray');
+        spanSize.innerText = this.bytesToKb(fileSize)+'kB';
         fileInfoRoot.appendChild(spanDoc);
-        fileInfoRoot.appendChild(spanName);
-        fileInfoRoot.appendChild(spanExt);
+        fileInfoRoot.appendChild(spanExtension);
+        fileInfoRoot.appendChild(spanSize);
         fileInfoFragment.appendChild(fileInfoRoot);
         const svgRoot = document.createElement('div');
         svgRoot.classList.add('file-info__svg');
-        svgRoot.addEventListener('click',this.handleFileInfoClick);
+        svgRoot.addEventListener('pointerdown',this.handleFileInfoClick);
         this.renderIcon(svgRoot);
         fileInfoRoot.appendChild(svgRoot);
         this.inputFileWrapper.appendChild(fileInfoFragment);
     }
 
     handleFileInfoClick = (event) => {
-        console.log(event);
+        const fileClickedId = event.target.parentNode.parentNode.dataset.file;
+        const filesInfo = this.root.querySelectorAll('.file-info');
+        for (const fileInfo of filesInfo) {
+            if (fileInfo.dataset.file === fileClickedId) {
+                const parentNode = fileInfo.parentNode;
+                const svgRoot = fileInfo.querySelector('.file-info__svg');
+                svgRoot.removeEventListener('pointerdown',this.handleFileInfoClick);
+                parentNode.removeChild(fileInfo);
+            }
+        }
     }
 
     renderIcon = (node) => {
@@ -193,6 +248,7 @@ class Form extends Component {
 
     enableSubmitButton = () => {
         this.submitButton.classList.remove('button_disabled');
+        this.submitButton.removeAttribute('disabled');
     }
 
     showEmailTip = () => {
@@ -241,7 +297,12 @@ class Form extends Component {
     disableSubmitButton = () => {
         if (!this.submitButton.classList.contains('button_disabled')) {
             this.submitButton.classList.add('button_disabled');
+            this.submitButton.setAttribute('disabled', '');
         }
+    }
+
+    bytesToKb = (bytes) => {
+        return (bytes / 1024).toFixed(1);
     }
 
     handleFormSubmit = (event) => {

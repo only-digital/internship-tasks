@@ -20,8 +20,8 @@
 		font-size: 32px;
 		font-style: normal;
 		font-weight: 700;
-		line-height: 120%; /* 38.4px */
-		letter-spacing: -0.64px;
+		line-height: 120%;
+		letter-spacing: -1px;
 	}
 
 	&__right-column {
@@ -41,6 +41,7 @@
 		font-weight: 400;
 		line-height: 150%; 
 		letter-spacing: -1px;
+		padding-left: 20px;
 	}
 
 	.input-email {
@@ -67,6 +68,8 @@
 		display: flex;
 		gap: 16px;
 		align-items: center;
+		max-width: 836px;
+		width: 100%;
 	}
 
 	@media (max-width:1280px) {
@@ -75,6 +78,13 @@
 		align-items: center;
 		&__right-side {
 			padding: 0 20px;
+			margin: 0 auto;
+		}
+	}
+	
+	@media (max-width:768px) {
+		&__input-file-wrapper {
+			flex-direction: column;
 		}
 	}
 

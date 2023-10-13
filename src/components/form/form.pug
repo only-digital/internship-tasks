@@ -8,8 +8,8 @@ mixin form({ title=''}={})
 			+input-email({placeholder:'Email',title:'Email'})
 			+textarea()
 			.form__input-file-wrapper
-				+input-file({id:'form-input-file'})
-			span.form__file-error.form_invisible-elem 
+				+input-file({id:'form-input-file'})(multiple='multiple' accept='.pdf, .doc, .docx')
+			span.form__file-error.form_invisible-elem
 			+checkbox({id:'policy',label:'Вы подтверждаете, что ознакомились',ref:'http://mock-address-change-me',link:' c политикой обработки персональных данныx',error:'Ознакомтесь с политикой'})
 			span.form__server-error.form_invisible-elem
 			+button({text:'Отправить'})
