@@ -1,7 +1,7 @@
 mixin title(props)
 	section.title&attributes(attributes)(data-component='title')
-		.title__date 18 декабря 2020
-		h1.title__name Консультант SAP PO
+		.title__date= props.date
+		h1.title__name= props.name
 		.title__info
 			.title__info-item Просмотров:&nbsp;
 				span.title__view-count

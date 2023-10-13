@@ -1,0 +1,42 @@
+.feedback {
+  $root: &;
+
+  margin: 44px 103px;
+  max-width: 1280px;
+  display: flex;
+  gap: 80px;
+
+  &__title {
+    font-size: 32px;
+    line-height: 38px;
+    color: $blue;
+  }
+
+  &__form {
+    flex-grow: 1;
+    padding-top: 24px;
+  }
+
+  &__form-button {
+    display: flex;
+  }
+
+  &__form-response {
+    display: none;
+  }
+
+  &.sent {
+    #{$root}__form-email,
+    #{$root}__form-confirm {
+      opacity: 0.3;
+    }
+
+    #{$root}__form-response {
+      display: flex;
+    }
+
+    #{$root}__form-button {
+      display: none;
+    }
+  }
+}

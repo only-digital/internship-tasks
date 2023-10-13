@@ -1,0 +1,5 @@
+mixin input-checkbox(props)
+	.input-checkbox&attributes(attributes)(data-component='input-checkbox')
+		input(type="checkbox" id=props.id required=props.required).input-checkbox__input
+		label(for=props.id).input-checkbox__label= props.labelBasic
+			span= " "+props.labelHighlight

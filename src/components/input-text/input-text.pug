@@ -1,0 +1,5 @@
+mixin input-text(props)
+	.input-text&attributes(attributes)(data-component='input-text')
+		label(for=props.id).input-text__label= props.label
+		input(type=props.type id=props.id required=props.required).input-text__input
+		.input-text__error
