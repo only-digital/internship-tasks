@@ -1,0 +1,43 @@
+.Task {
+	background-color: white;
+	max-width: 1550px;
+	width: 100%;
+	min-height: 170px; 
+	font-family: Roboto,sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-feature-settings: 'clig' off, 'liga' off;
+	padding: 24px 24px 31px 24px;
+}
+
+.TaskDelimeter {
+	height: 1px;
+	width: 100%;
+	background: #E7EAEE;
+}
+
+.TaskTitle {
+	color: rgba(22, 31, 62, 0.90);
+	font-size: 24px;
+	line-height: 130%; 
+	margin-bottom: 17px;
+}
+
+.TaskDescription {
+	margin-top: 10px;
+	color: rgba(22, 31, 62, 0.90);
+	font-size: 16px;
+	line-height: 175%;
+	letter-spacing: 1px;
+	max-width: 734px;
+	width: 100%;
+}
+
+.TaskTitleWrapper {
+	display: flex;
+	justify-content: space-between;
+}
+
+.TaskImage {
+	cursor: pointer;
+}
