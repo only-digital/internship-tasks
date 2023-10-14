@@ -1,6 +1,11 @@
 import ExampleButton from "../../components/example-button/example-button";
 import Title from "../../components/title/title";
 import Description from "../../components/description/description";
+import Feedback from "../../components/feedback/feedback";
+import FormButton from "../../components/form-button/form-button";
+import FormResponse from "../../components/form-response/form-response";
+import InputCheckbox from "../../components/input-checkbox/input-checkbox";
+import InputText from "../../components/input-text/input-text";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -11,6 +16,11 @@ const allComponents = {
   "example-button": ExampleButton,
   title: Title,
   description: Description,
+  feedback: Feedback,
+  "form-button": FormButton,
+  "form-response": FormResponse,
+  "input-checkbox": InputCheckbox,
+  "input-text": InputText,
 };
 
 /**
