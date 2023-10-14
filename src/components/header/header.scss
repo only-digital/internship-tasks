@@ -1,0 +1,25 @@
+.header {
+  $root: &;
+
+  color: #8f8f8f;
+  font-family: Arial;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+
+  &__inner {
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+  }
+
+  &__title {
+    color: #04306a;
+    font-size: 64px;
+    margin-bottom: 46px;
+  }
+
+  &__date {
+    margin-bottom: 20px;
+  }
+}

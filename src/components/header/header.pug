@@ -1,0 +1,8 @@
+mixin header(props)
+
+	.header&attributes(attributes)(data-component='header')
+		.header__date!=props.date
+		h1.header__title!=props.title
+		.header__inner
+			.header__views Просмотров: 0
+			.header__responses Откликов: 0
