@@ -5,7 +5,40 @@
         font-size: 32px;
         font-weight: 700;
         color: #213C57;
-        margin-bottom: 28px;
+    }
+
+    &__header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        margin-bottom: 20px;
+    }
+
+    &__search {
+        background-color: #fff;
+        padding: 16px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        width: 600px;
+
+        & input {
+            width: 100%;
+
+            &::placeholder {
+                color: #213C5766;
+                font-size: 16px;
+            }
+        }
+
+        & img {
+            width: 14px;
+            height: 14px;
+        }
     }
 }
 
