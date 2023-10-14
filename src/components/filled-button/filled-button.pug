@@ -1,0 +1,4 @@
+mixin filled-button(props)
+	button.filled-button&attributes(attributes)
+		p.filled-button__text!= props.text
+		+svg('blue-arrow').filled-button__svg

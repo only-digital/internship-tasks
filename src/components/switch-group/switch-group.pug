@@ -1,0 +1,15 @@
+mixin switch-group(props)
+	.switch-group&attributes(attributes)
+		- let isChecked = props.checked;
+		- let isDisabled = props.disabled;
+		- let uncheckedClass = "";
+		label(class="switch-group__label" disabled=isDisabled) 
+			input(type="checkbox" class="switch-group__label__input" checked=isChecked disabled=isDisabled)
+			if !isDisabled
+				svg(class=uncheckedClass class="switch-group__label__svg" xmlns="http://www.w3.org/2000/svg" width="56" height="28" viewBox="0 0 56 28" fill="none")
+					rect(width="56" height="28" rx="14" fill="#0041A0")
+					circle(cx="42" cy="14" r="8.00003" fill="white")
+			else 
+				svg(class=uncheckedClass disabled=isDisabled class="switch-group__label__svg" xmlns="http://www.w3.org/2000/svg" width="56" height="28" viewBox="0 0 56 28" fill="none")
+					rect(width="56" height="28" rx="14" fill="#0041A0")
+					circle(cx="42" cy="14" r="8.00003" fill="white")

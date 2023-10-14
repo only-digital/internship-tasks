@@ -1,0 +1,61 @@
+.switch-group {
+	$root: &;
+
+	display: flex;
+
+	&__label {
+		&__input {
+			width: 10px;
+			height: 10px;
+			background-color: blue;
+	
+			position: absolute;
+			z-index: -1;
+			opacity: 0;
+
+			& ~ .switch-group__label__svg {
+				circle {
+					cx:42;
+					transition: all 0.3s;
+				}
+
+				rect {
+					transition: all 0.3s;
+				}
+			}
+
+			&:checked ~ .switch-group__label__svg {
+				circle {
+					cx: 14;
+					transition: all 0.3s;
+				}
+			}
+
+			&:hover ~ .switch-group__label__svg {
+				rect {
+					fill: #002F6C;
+				}
+			}
+
+			&:focus ~ .switch-group__label__svg {
+				rect {
+					fill: #DEDEDE;
+					stroke: #C2DAFF;
+				}
+			}
+
+			&:disabled ~ .switch-group__label__svg {
+				pointer-events: none;
+				rect {
+					fill: #DEDEDE;
+					stroke: none;
+				}
+			}
+		}
+
+		&__svg {
+			width: fit-content;
+			height: fit-content;
+		}
+	}
+}

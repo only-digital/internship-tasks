@@ -1,0 +1,123 @@
+.slider-group {
+	$root: &;
+
+	display: flex;
+	align-items: center;
+
+	.disabled {
+
+		cursor: default;
+
+		svg {
+			width: 80px;
+			height: 80px;
+			pointer-events: none;
+	
+			g circle {
+				stroke: #DEDEDE;
+			}
+
+			g path {
+				fill: #BCBCBC;
+			}
+		}
+
+		color: #BCBCBC;
+	}
+
+	&__button-left {
+
+		margin-right: 10px;
+
+		&__svg {
+			width: 80px;
+			height: 80px;
+
+			g circle {
+				fill: none;
+				stroke: #DEDEDE;
+				transition: all 0.5s;
+			}
+
+			&:hover {
+				g circle {
+					fill: #F4F4F4;
+					stroke: none;
+					transition: all 0.5s;
+				}
+			}
+
+			&:active {
+				g circle {
+					fill: #DEDEDE;
+					stroke: none;
+				}
+			}
+
+			&:focus {
+				#{$root} g {
+					circle {
+						fill: none;
+						stroke: #DEDEDE;
+					}
+					rect {
+						stroke: #99B3D8;
+					}
+				}
+			}
+		}
+	}
+
+	&__button-right {
+
+		margin-right: 40px;
+
+		&__svg {
+			width: 80px;
+			height: 80px;
+			transform: rotate(180deg);
+
+			g circle {
+				transition: fill 0.3s;
+			}
+
+			&:hover {
+				g circle {
+					fill: #f4f4f4;
+					stroke: none;
+					transition: all 0.3s;
+				}
+			}
+
+			&:active {
+				g circle {
+					fill: #DEDEDE;
+					stroke: none;
+				}
+			}
+
+			&:focus {
+				#{$root} g {
+					circle {
+						fill: none;
+						stroke: #DEDEDE;
+					}
+					rect {
+						stroke: #99B3D8;
+					}
+				}
+			}
+		}
+	}
+
+	&__text {
+		color: var(--main-steel, #909090);
+		font-family: Grtsk Peta;
+		font-size: 16px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: 150%;
+		letter-spacing: -0.32px;
+		opacity: 0.4;
+	}
+}
