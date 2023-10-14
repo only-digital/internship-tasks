@@ -12,8 +12,6 @@ class Form extends Component {
     inputEmail;
     textarea;
     inputFile;
-    inputFileWrapper;
-    fileError;
 
     constructor(element) {
         super(element);
@@ -30,15 +28,8 @@ class Form extends Component {
         this.policyError = this.root.querySelector('.checkbox__error');
         this.textarea = this.root.querySelector('.textarea__area');
         this.textarea.addEventListener('formtextarea',this.handleTextarea);
-
-
         this.inputFile = this.root.querySelector('.input-file__input');
-        this.fileError = this.root.querySelector('.form__file-error');
-        // this.inputFile.addEventListener('input',this.handleInputFile);
         this.inputFile.addEventListener('formfile',this.handleFile);
-        this.inputFileWrapper = this.root.querySelector('.form__input-file-wrapper');
-
-
         this.errors = new Map([
                                 ['email',  false],
                                 ['textarea', false],
@@ -172,7 +163,15 @@ class Form extends Component {
             this.hideLoader();
             if (!response.ok) {
                 this.setError(response.statusText);
-            } else this.root.reset();
+            } else {
+                this.root.reset();
+                this.errors = new Map([
+                                ['email',  false],
+                                ['textarea', false],
+                                ['policy', false],
+                                ['file', true]
+                            ]);
+            }
         } catch (error) {
             console.error(error);
         }

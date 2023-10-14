@@ -12,6 +12,11 @@ class InputEmail extends Component {
         this.tipEmail = this.getElement('svg');
         this.inputEmail.addEventListener('input',this.handleEmailInput);
         this.inputEmail.addEventListener('focus',this.handleEmailFocus);
+        document.addEventListener('reset',this.handleReset);
+    }
+
+    handleReset = () => {
+        this.hideEmailTip();
     }
 
     handleEmailInput = (event) => {

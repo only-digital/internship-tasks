@@ -11,6 +11,11 @@ class Textarea extends Component {
         this.tipTextarea = this.getElement('svg');
         this.textarea.addEventListener('input',this.handleTextareaInput);
         this.textarea.addEventListener('blur',this.handleTextareaCorrectInput);
+        document.addEventListener('reset',this.handleReset);
+    }
+
+    handleReset = () => {
+        this.hideCorrectTextareaInput();
     }
 
     handleTextareaInput = (event) => {
