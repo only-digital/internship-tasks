@@ -172,16 +172,22 @@
 			}
 		}
 
-		input {
+		&-input {
 			width: 16px;
 			height: 16px;
 
 			outline: 1px solid #BCBCBC;
 
+			transition: outline 0.5s, background-color 0.5s;
 			&:hover {
-				outline: 1px solid  $blue;
+				outline: 1px solid  #0041A0;
 				cursor: pointer;
 			}
+
+			&:focus {
+				outline: 2px solid #99B3D8;
+			}
+
 		}
 
 		&-yes {
@@ -217,3 +223,10 @@
 .hidden {
 	display: none;
 }
+
+.agree {
+	background-color: #0041A0;
+	outline: none;
+	border: none;
+}
+
