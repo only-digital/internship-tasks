@@ -7,6 +7,7 @@ import OnlyInput from "../../components/only-input/only-input";
 import OnlyParag from "../../components/only-parag/only-parag";
 import OnlyPoint from "../../components/only-point/only-point";
 import OnlyVacancyWrapper from "../../components/only-vacancy-wrapper/only-vacancy-wrapper";
+import OnlyLoader from "../../components/only-loader/only-loader";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -22,7 +23,8 @@ const allComponents = {
     'only-input': OnlyInput,
     'only-parag': OnlyParag,
     'only-point': OnlyPoint,
-    'only-vacancy-wrapper':OnlyVacancyWrapper
+    'only-vacancy-wrapper':OnlyVacancyWrapper,
+    'only-loader':OnlyLoader
 }
 
 /**

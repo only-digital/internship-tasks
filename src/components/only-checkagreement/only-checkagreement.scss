@@ -1,8 +1,9 @@
 .only-checkagreement {
 	$root: &;
 	display: flex;
+	flex-wrap: nowrap;
 	align-items: center;
-	margin-bottom: 16px;
+	margin-bottom: 11px;
 
 	&__checkbox{
 		margin-right: 18px;

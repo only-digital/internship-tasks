@@ -4,10 +4,7 @@ class OnlyCheckagreement extends Component {
     constructor(element) {
         super(element);
 
-        // Your code here
     }
-
-    // Your code here
 }
 
 export default OnlyCheckagreement

@@ -1,10 +1,8 @@
 extends ../../build_modules/common
 
 
-block body
-    +example-button()
-    +example-button()
-
+block body    
+    +only-loader()
     +only-vacancy-wrapper({header:'Консультант SAP PO'})
         +only-parag({header:'Вам предстоит'})
             +only-point({text:'Участие в проектах в роли архитектора/консультанта по интеграции данных'}) 
@@ -32,10 +30,10 @@ block body
 
         +only-form({header:'Форма обратной связи'})
             +only-input({label:'Email',placeholder:''})(email required)
-            +only-error({text:'Поле E-mail обязательно'})(email)
+            +only-error()(email)
             +only-checkagreement({
                 text:'Вы подтверждаете, что ознакомились', 
                 linkText:'c политикой обработки персональных данных',
                 href:'#'})(pers-policy required)
             +only-button({text:'Отправить'})
-    //Your code here
+

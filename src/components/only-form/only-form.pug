@@ -3,4 +3,9 @@ mixin only-form(props)
 		form.only-form__main(class='only-form_color-main') 
 			.only-form__header!=props.header
 			.only-form__input-block
-				block 
+				.only-form__form-block
+					block
+				.only-form__successfull
+					.only-form__circle-icon 
+						include ../../assets/icons/successfull.svg
+					.only-form__successfull-text(class='only-form_color-addictive')

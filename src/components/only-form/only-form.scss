@@ -27,10 +27,57 @@
 		}
 	}
 
+	&__form-block{
+
+		display: grid;
+		gap:14px 0px;
+
+	}
+
+	&__successfull{
+		
+		display: none;
+		gap:0px 21px;
+		align-items: center;
+
+		#{$root}__circle-icon{
+			
+			width: 48px;
+			height: 48px;
+			
+		}
+
+		#{$root}__successfull-text{
+
+			@include fontSettings(-0.32px,$add-mini-l,124%);
+
+		}
+
+	}
+
+	&_successfull{
+
+		#{$root}__form-block{
+			opacity: 50%;
+		}
+
+		#{$root}__successfull{
+			
+			display: flex;
+		}
+		
+	}
+
 	&_color-main{
 		
 		color:$blue;
 		
+	}
+
+	&_color-addictive{
+
+		color:$black_1;
+
 	}
 
 }

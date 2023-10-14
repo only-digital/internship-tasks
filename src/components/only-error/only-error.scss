@@ -1,6 +1,7 @@
 .only-error {
 	$root: &;
 	visibility: inherit;
+	height: 21px;
 
 	&__text{
 
@@ -15,5 +16,5 @@
 	&_hidden{
 		visibility: hidden;
 	}
-	//Your code here
+	
 }

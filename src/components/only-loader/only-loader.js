@@ -1,10 +1,11 @@
 import Component from '../../app/js/base/component';
 
-class OnlyInput extends Component {
+class OnlyLoader extends Component {
     constructor(element) {
         super(element);
+
     }
 
 }
 
-export default OnlyInput
+export default OnlyLoader

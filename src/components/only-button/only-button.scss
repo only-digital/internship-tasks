@@ -1,5 +1,7 @@
 .only-button {
 	width: max-content;
+	height: 48px;
+	
 	$root: &;
 	display: flex;
 	box-sizing: border-box;
@@ -11,7 +13,10 @@
 	justify-content: center;
 	transition: $background-color-fast-transition;
 	cursor: pointer;
-
+	margin-top: 5px;
+	padding-inline: 18px 14px;
+	gap: 14px;
+	
 	&__text{
 		
 		@include fontSettings(-0.32px,$add-mini-l,100%);
@@ -37,7 +42,7 @@
 		&:hover{
 
 			/* color: $text-color-hover-main; */
-			background-color: $black;
+			background-color: $dark-blue;
 			svg{
 				/* fill: $arrow-color-hover-main; */
 			}
@@ -63,10 +68,15 @@
 		
 		&:active{
 
-			background-color: $dark-blue;
-
+			background-color: $blue;
+			opacity: 90%;
 		}
 
+	}
+
+	&_hidden{
+		
+		display: none;
 	}
 
 }
