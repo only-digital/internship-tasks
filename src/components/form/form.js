@@ -12,6 +12,7 @@ class Form extends Component {
 
         this.email.addEventListener("input", this.emailFocus)
         this.msg.addEventListener("input", this.msgFocus)
+        this.msg.addEventListener("input", this.msgCalculateHeight)
     }
 
     emailFocus = () => {
@@ -27,12 +28,10 @@ class Form extends Component {
 
     msgCalculateHeight = () => {
         this.msg.style.height = "1px";
-        this.msg.style.height = (25+this.msg.scrollHeight)+"px";
+        this.msg.style.height = (16+this.msg.scrollHeight)+"px";
     }
 
     msgFocus = () => {
-
-        this.msgCalculateHeight();
 
         if (this.msg.value!='') {
             this.msg.classList.add('activeMsg');

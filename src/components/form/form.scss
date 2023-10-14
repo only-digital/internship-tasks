@@ -68,7 +68,53 @@
 		font-size: 16px;
 		letter-spacing: -0.32px;
 
-		color: $darkGrey;
+		background-color: transparent;
+
+		outline: 1px solid #BCBCBC;
+
+		color: #021F45;
+
+		transition: background-color 0.5s, outline 0.5s, color 0.5s;
+
+
+		#{$root}__svg {
+			transition: fill 0.5s;
+
+			fill: $blue;
+		}
+
+		&:disabled {
+			color: $darkGrey;
+
+			#{$root}__svg {
+				fill: $darkGrey;
+			}
+		}
+
+		&:hover {
+			background-color: #0041A0;
+			color: white;
+
+			#{$root}__svg {
+				fill: white;
+			}
+
+		}
+
+		&:active {
+			background-color: $darkBlue;
+		}
+
+		&:focus {
+			outline: 3px solid #99B3D8;
+			background-color: transparent;
+
+			color: #021F45;
+
+			#{$root}__svg {
+				fill: $blue;
+			}
+		}
 	}
 
 	&__add-file {
@@ -76,9 +122,6 @@
 		margin-bottom: 30px;
 
 		gap: 16px;
-
-		border: 1px solid #BCBCBC;
-
 	}
 
 	&__send {
@@ -86,7 +129,11 @@
 
 		gap: 14px;
 
-		background-color: #f4f4f4;
+		&:disabled {
+			background-color: #f4f4f4;
+			outline: none;
+		}
+
 		min-width: 155px;
 
 		span {
