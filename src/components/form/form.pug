@@ -2,7 +2,9 @@ mixin form(props)
 	.form&attributes(attributes)(data-component='form')
 		h1.form__title Форма обратной #[br] связи
 		.form__container
+			p.form__input-name.hidden.form__email-name E-mail
 			input.form__email.form__passive(type="email" placeholder="E-mail")
+			p.form__input-name.hidden.form__msg-name Ваше сообщение
 			textarea.form__msg.form__passive(type="text" placeholder="Ваше сообщение")
 			button.form__add-file.form__btn(disabled)
 				span Прикрепить файл

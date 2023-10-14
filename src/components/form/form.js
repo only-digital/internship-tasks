@@ -4,10 +4,23 @@ class Form extends Component {
     constructor(element) {
         super(element);
 
-        // Your code here
+        this.email = this.getElement('email');
+        this.emailName = this.getElement('email-name');
+
+        this.email.addEventListener("input", this.emailFocus)
+        //this.email.addEventListener("keyup", this.emailFocus)
     }
 
-    // Your code here
+    emailFocus = () => {
+        if (this.email.value!='') {
+            this.email.classList.add('active');
+            this.emailName.classList.remove('hidden');
+        }
+        else {
+            this.email.classList.remove('active');
+            this.emailName.classList.add('hidden')
+        }
+    }
 }
 
 export default Form

@@ -9,6 +9,7 @@
 	&__container {
 		width: 840px;
 	}
+
 	&__title {
 		color: $blue;
 
@@ -47,13 +48,15 @@
 		&:hover {
 			border-bottom: 1px solid #0041A0;
 		}
+	}
 
-		&:focus, &:active {
-			border-radius: 24px;
-			border: 1px solid #0041A0;
+	&__input-name {
+		font-size: 12px;
+		color: $darkGrey;
+		line-height: 1.5;
 
-			padding: 14px 20px;
-		}
+		margin-left: 20px;
+
 	}
 
 	&__passive {
@@ -156,4 +159,13 @@
 
 	//Your code here
 }
+.active {
+	border-radius: 24px;
+	border: 1px solid #0041A0;
 
+	padding: 14px 20px;
+}
+
+.hidden {
+	display: none;
+}
