@@ -28,17 +28,44 @@
 		margin-bottom: 116px;
 		resize: none;
 
-		overflow: hidden;
+		//overflow: hidden;
+
+		transition: outline 0.5s, background-color 0.5s, border-radius 0.5s, height 0.5s, padding 0.5s;
+		&:hover {
+			height: 193px;
+			background-color: #F4F4F4;
+
+			cursor: pointer;
+
+			border-radius: 24px;
+
+			outline: none;
+			border: none;
+
+			padding: 12px 230px 16px 20px;
+		}
+
 	}
 
 	&__email {
 		margin-bottom: 10px;
 
-		transition: border 0.5s, border-bottom 0.5s, border-radius 0.3s;
+		transition: border 0.5s, border-bottom 0.5s, border-radius 0.3s, background-color 0.5s;
 
-		&:hover {
-			border-bottom: 1px solid #0041A0;
+		&:disabled {
+			&::placeholder { /* Most modern browsers support this now. */
+				color: #BCBCBC;
+			}
 		}
+
+		&:hover:not([disabled="disabled"])  {
+			border-radius: 24px;
+			cursor: pointer;
+			border: none ;
+			background-color: #F4F4F4;
+			padding: 14px 20px;
+		}
+
 	}
 
 	&__input-name {
@@ -211,13 +238,20 @@
 }
 
 .activeMsg {
+	height: 193px;
 	background-color: #F4F4F4;
+
 	border-radius: 24px;
 
 	outline: none;
 	border: none;
 
-	padding: 12px 230px 16px 20px;
+	padding: 12px 20px 16px 20px;
+
+	&:focus {
+		outline: 1px solid #0041A0;
+		background-color: transparent;
+	}
 }
 
 .hidden {

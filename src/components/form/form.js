@@ -15,11 +15,11 @@ class Form extends Component {
 
         this.email.addEventListener("input", this.emailFocus)
         this.msg.addEventListener("input", this.msgFocus)
-        this.msg.addEventListener("input", this.msgCalculateHeight)
+       // this.msg.addEventListener("input", this.msgCalculateHeight)
         this.checkBox.addEventListener("change", this.checkBoxChange)
     }
 
-    checkBoxChange = () => {
+   checkBoxChange = () => {
         this.yesCheckBox.classList.toggle("hidden");
         this.checkBox.classList.toggle("agree");
 
@@ -35,10 +35,10 @@ class Form extends Component {
         }
     }
 
-    msgCalculateHeight = () => {
+   /* msgCalculateHeight = () => {
         this.msg.style.height = "1px";
         this.msg.style.height = (16+this.msg.scrollHeight)+"px";
-    }
+    }*/
 
     msgFocus = () => {
 
