@@ -2,6 +2,8 @@ extends ../../build_modules/common
 
 block body
     div(style="margin: 20px")
-        +checkbox({text: "Пункт"})
-        +checkbox({text: "Пункт 2"})(disabled)
-        +checkbox({text: "Пункт 3"})(disabled checked)
+        +input-field({type: "email", caption: "E-mail", error: "Error message"})
+    div(style="margin: 20px")
+        +input-field({type: "email", caption: "E-mail", error: "Error message"}).input-field_valid
+    div(style="margin: 20px")
+        +input-field({type: "email", caption: "E-mail", error: "Error message"}).input-field_invalid
