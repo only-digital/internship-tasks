@@ -1,0 +1,159 @@
+@import "src/pages/main";
+.form {
+	$root: &;
+	padding: 26px 130px 60px 30px;
+
+	display: flex;
+	gap: 159px;
+
+	&__container {
+		width: 840px;
+	}
+	&__title {
+		color: $blue;
+
+		font-size: 32px;
+		font-weight: 700;
+		letter-spacing: -0.64px;
+
+	}
+
+	&__email, &__msg {
+		width: 836px;
+		border: 0;
+	}
+
+	&__msg {
+		margin-bottom: 116px;
+		resize: none;
+
+		&:focus, &active {
+			background-color: #F4F4F4;
+			border-radius: 24px;
+
+			outline: none;
+			border: none;
+
+			padding: 12px 230px 16px 20px;
+
+			//overflow:hidden;
+		}
+	}
+
+	&__email {
+		margin-bottom: 10px;
+
+		transition: border 0.5s, border-bottom 0.5s, border-radius 0.3s;
+		&:hover {
+			border-bottom: 1px solid #0041A0;
+		}
+
+		&:focus, &:active {
+			border-radius: 24px;
+			border: 1px solid #0041A0;
+
+			padding: 14px 20px;
+		}
+	}
+
+	&__passive {
+		color: black;
+
+		padding-bottom: 19px;
+		padding-top: 30px;
+
+		border-bottom: 1px solid $gray;
+	}
+
+	&__btn {
+		border-radius: 25px;
+
+		display: flex;
+		align-items: center;
+
+		font-size: 16px;
+		letter-spacing: -0.32px;
+
+		color: $darkGrey;
+	}
+
+	&__add-file {
+		padding: 14px 16px 16px 16px;
+		margin-bottom: 30px;
+
+		gap: 16px;
+
+		border: 1px solid #BCBCBC;
+
+	}
+
+	&__send {
+		padding: 7px 14px 9px 18px;
+
+		gap: 14px;
+
+		background-color: #f4f4f4;
+		min-width: 155px;
+
+		span {
+
+		}
+	}
+
+	&__svg-add {
+		width: 14px;
+		height: 14px;
+	}
+
+	&__svg-arrow {
+		width: 32px;
+		height: 32px;
+	}
+
+	&__checkbox {
+
+		display: flex;
+		align-items: center;
+		gap: 18px;
+
+		position: relative;
+
+		cursor: pointer;
+
+		margin-bottom: 30px;
+
+		label {
+			font-size: 14px;
+			color: $darkGrey;
+
+			span {
+				color: $blue;
+			}
+		}
+
+		input {
+			width: 16px;
+			height: 16px;
+
+			outline: 1px solid #BCBCBC;
+
+			&:hover {
+				outline: 1px solid  $blue;
+				cursor: pointer;
+			}
+		}
+
+		&-yes {
+			width: 10px;
+			height: 8px;
+
+			position: absolute;
+
+			left: 7px;
+		}
+
+	}
+
+	//Your code here
+}
+

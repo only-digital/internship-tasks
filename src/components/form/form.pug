@@ -1,0 +1,16 @@
+mixin form(props)
+	.form&attributes(attributes)(data-component='form')
+		h1.form__title Форма обратной #[br] связи
+		.form__container
+			input.form__email.form__passive(type="email" placeholder="E-mail")
+			textarea.form__msg.form__passive(type="text" placeholder="Ваше сообщение")
+			button.form__add-file.form__btn(disabled)
+				span Прикрепить файл
+				+svg('add').form__svg-add
+			.form__checkbox
+				+svg('agree').form__checkbox-yes.hidden
+				input(type='checkbox')
+				label Вы подтверждаете, что ознакомились #[span с политикой обработки персональных данных ]
+			button.form__send.form__btn(disabled)
+				span Отправить
+				+svg("arrow").form__svg-arrow

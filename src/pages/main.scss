@@ -1,0 +1,36 @@
+$blue: #002F6C;
+$gray: #DEDEDE;
+$darkGrey: #909090;
+
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+textarea {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color:    black;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:    black;
+  opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    black;
+  opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color:    black;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+  color:    black;
+}
+
+::placeholder { /* Most modern browsers support this now. */
+  color:    black;
+}
