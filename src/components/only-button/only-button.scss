@@ -1,5 +1,5 @@
 .only-button {
-	
+	width: max-content;
 	$root: &;
 	display: flex;
 	box-sizing: border-box;
@@ -9,73 +9,35 @@
 	
 	align-items: center;
 	justify-content: center;
-	/* transition: $background-color-fast-transition; */
+	transition: $background-color-fast-transition;
 	cursor: pointer;
 
-	@media (max-width:1920px){
-		width: 129px;
-		height: 48px;
-		padding: 0px 14px 0px 18px;
-		gap: 14px;
-		&__icon{
-			width: 32px;
-			height: 34px;
-		}
-	}
-	@media (max-width:1280px){
-		width: 111px;
-		height: 42px;
-		padding: 0px 14px 0px 16px;
-		gap:12px;
-	}
-	@media(max-width:768px){
-		width: 121px;
-		height: 42px;
-		padding: 0px 14px 0px 18px;
-		gap: 14px;
-	}
-	@media(max-width:375px){
-		width: 327px;
-		height: 42px;
-		padding: 0px 14px 0px 14px;
-		gap: 12px;
-	}
-
 	&__text{
-		display: flex;
-		gap:10px;
-		/* font-family: $main-font-family;
-		font-weight: $main-font-weight;
-		font-size: $main-font-size;
-		transition: $color-fast-transition; */
 		
+		@include fontSettings(-0.32px,$add-mini-l,100%);
+	
 	}
 
 	&__icon{
 
 		display: flex;
-		width: 24px;
-		height: 26px;
-		gap:10px;
+		width: 32px;
+		height: 32px;
 		justify-content: center;
 		align-items: center;
-		svg{
-			/* transition: $fill-fast-transition; */
-		}
-		
 	
 	}
 
 	&_main-btn{
 
-		/* color: $text-color-main;
-		background-color: $background-color-main;
-		border-color: $border-color-main; */
-		
+		color: $white;
+		background-color: $light-blue;
+		border-color: $light-blue;
+
 		&:hover{
 
-			/* color: $text-color-hover-main;
-			background-color: $background-color-hover-main; */
+			/* color: $text-color-hover-main; */
+			background-color: $black;
 			svg{
 				/* fill: $arrow-color-hover-main; */
 			}
@@ -89,35 +51,22 @@
 			background-color: $background-color-disabled-main;
 			border-color: $border-color-main; */
 			cursor: default;
-			svg{
-				/* fill:$arrow-color-disabled-main; */
-			}
+
 		}
 
 		&:focus{
 
 			border-width: 3px;
-			/* border-color: $border-color-focus;
-			color: $text-color-focus-main; */
-			svg{
-				/* fill: $arrow-color-focus-main; */
-			}
+
 		}	
 
 		
 		&:active{
 
-			/* color:$text-color-click-main;
-			background-color: $background-color-click-main; */
-			svg{
-				/* fill: $arrow-color-click-main; */
-			}
+			background-color: $dark-blue;
 
 		}
 
-		svg{
-			/* fill: $arrow-color-main; */
-		}
 	}
 
 }

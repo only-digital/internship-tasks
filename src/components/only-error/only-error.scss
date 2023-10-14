@@ -1,13 +1,19 @@
 .only-error {
 	$root: &;
+	visibility: inherit;
 
 	&__text{
 
+		@include fontSettings(0px,$add-mini-m,150%);
 
 	}
 
-	&_color-error{
+	&_color-main{
+		color:$light-red;
+	}
 
+	&_hidden{
+		visibility: hidden;
 	}
 	//Your code here
 }

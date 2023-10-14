@@ -3,4 +3,4 @@ mixin only-checkagreement(props)
 		input.only-checkagreement__checkbox(type='checkbox')
 		span.only-checkagreement__text(class='only-checkagreement_color-main')!=props.text
 		if props.href||props.link-text
-			a.only-checkagreement__link(href=props.href class='only-checkagreement_color-addictive')!=props.linkText
+			a.only-checkagreement__link(href=props.href class='only-checkagreement_color-addictive')!= `&nbsp${props.linkText}`

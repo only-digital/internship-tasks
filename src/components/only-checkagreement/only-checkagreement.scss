@@ -2,29 +2,41 @@
 	$root: &;
 	display: flex;
 	align-items: center;
+	margin-bottom: 16px;
 
 	&__checkbox{
-		padding-right: 18px;
+		margin-right: 18px;
 		appearance:auto;
 	}
 
 	&__text{
 
+		@include fontSettings(0px,$add-mini-m,150%);
 
 	}
 
 	&__link{
 
-		
+		@include fontSettings(0px,$add-mini-m,150%);
+
+		&:hover{
+			color:$light-blue;
+		}
+		&:visited{
+			color:$red;
+		}
+
 	}
 
 	&_color-main{
 
+		color:$grey;
 
 	}
 
 	&_color-addictive{
 
+		color:$blue;
 
 	}
 

@@ -32,9 +32,9 @@ block body
 
         +only-form({header:'Форма обратной связи'})
             +only-input({label:'Email',placeholder:''})(email required)
-            +only-error({text:'Поле E-mail обязательно'})(email hidden)
+            +only-error({text:'Поле E-mail обязательно'})(email)
             +only-checkagreement({
-                text:'Вы подтверждаете, что ознакомились ', 
+                text:'Вы подтверждаете, что ознакомились', 
                 linkText:'c политикой обработки персональных данных',
                 href:'#'})(pers-policy required)
             +only-button({text:'Отправить'})
