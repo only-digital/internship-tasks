@@ -1,13 +1,13 @@
-import Component from '../../app/js/base/Component';
+import Component from "../../app/js/base/component";
 
 class InputCheckbox extends Component {
-    constructor(element) {
-        super(element);
-
-        // Your code here
-    }
+  constructor(element) {
+    super(element);
 
     // Your code here
+  }
+
+  // Your code here
 }
 
-export default InputCheckbox
+export default InputCheckbox;

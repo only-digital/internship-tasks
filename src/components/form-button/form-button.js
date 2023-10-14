@@ -1,13 +1,13 @@
-import Component from '../../app/js/base/Component';
+import Component from "../../app/js/base/component";
 
 class FormButton extends Component {
-    constructor(element) {
-        super(element);
-
-        // Your code here
-    }
+  constructor(element) {
+    super(element);
 
     // Your code here
+  }
+
+  // Your code here
 }
 
-export default FormButton
+export default FormButton;
