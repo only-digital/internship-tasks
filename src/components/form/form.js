@@ -13,12 +13,28 @@ class Form extends Component {
         this.checkBox = this.getElement('checkbox-input');
         this.yesCheckBox = this.getElement("checkbox-yes");
 
+        this.addFile = this.getElement('file');
+        this.addFile.addEventListener("input", this.showInputFile)
+
         this.email.addEventListener("input", this.emailFocus)
         this.msg.addEventListener("input", this.msgFocus)
         this.msg.addEventListener("input", this.msgCalculateHeight)
         this.checkBox.addEventListener("change", this.checkBoxChange)
     }
 
+   showInputFile = () => {
+
+        if (this.addFile.value)
+        {
+
+
+            //console.log(this.document)
+           let file = this.createNewElement('div');
+            console.log(file)
+           // file.textContent = ';'
+        }
+            console.log(this.addFile.value);
+   }
    checkBoxChange = () => {
         this.yesCheckBox.classList.toggle("hidden");
         this.checkBox.classList.toggle("agree");

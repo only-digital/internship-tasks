@@ -6,9 +6,11 @@ mixin form(props)
 			input.form__email.form__passive(type="email" placeholder="E-mail")
 			p.form__input-name.hidden.form__msg-name Ваше сообщение
 			textarea.form__msg.form__passive(type="text" placeholder="Ваше сообщение")
-			button.form__add-file.form__btn
-				span Прикрепить файл
-				+svg('add').form__svg-add.form__svg
+			.form__add-block
+				button.form__add-file.form__btn
+					span Прикрепить файл
+					+svg('add').form__svg-add.form__svg
+					input(type="file").form__file
 			.form__checkbox
 				+svg('agree').form__checkbox-yes.hidden
 				input(type='checkbox').form__checkbox-input

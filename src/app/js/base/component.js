@@ -25,6 +25,10 @@ class Component {
         return this.root.querySelector(`.${this.rootName}__${name}`) ?? undefined;
     };
 
+    createNewElement = (name) => {
+        return document.createElement(name);
+    };
+
     /**
      * @description Поиск внутренних элементов компонента в соответствии с правилами наименования элементов
      * @param name - имя класса элемента после символов "__"
