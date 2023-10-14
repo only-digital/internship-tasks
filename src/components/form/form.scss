@@ -16,64 +16,167 @@
 		}
 	}
 
-	// &__email {
-	// 	width: 836px;
-	// 	border-bottom: 1px solid #DEDEDE;
-	// 	padding: 14px 20px 14px 0px;
-	// 	border-radius: 0;
-	// 	cursor: pointer;
-	// 	transition: background 1s ease, padding 1s ease, border-radius 1s ease;
+	&__agreement {
+		margin-top: 30px;
+		display: flex;
+		align-items: center;
+		
+		.agreement__input {
+			width: 1em;
+			height: 1em;
+			border: 1px solid $grey;
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
 
-	// 	&:hover {
-	// 		background-color: $lightGrey;
-	// 		border-radius: 24px;
-	// 		padding: 14px 20px 14px 20px;
-	// 		border-bottom: none;
-	// 		transition: background 1s ease, padding 1s ease, border-radius 1s ease;
-	// 	}	
+			@include media(580px, 1024px) {
+				width: 1.5em;
+				height: 1.5em;
+			}
 
-	// 	&:focus-visible {
-	// 		border-radius: 24px;
-	// 		border: 1px solid $blue;
-	// 		padding: 14px 20px 14px 20px;
+			@include media(500px, 1024px) {
+				width: 2em;
+			}
 
-	// 		&__label {
-	// 			display: block;
-	// 		}
-	// 	}
-	// }
+			&:checked {
+				background-color: $blue;	
+				border: 1px solid $blue;
+				background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M3.64575 5.59405L1.12788 2.89904L0 4.09777L3.64575 8L10 1.19872L8.88006 0L3.64575 5.59405Z' fill='white'/%3e%3c/svg%3e");
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+			
+		}
 
-	// &__text {
-	// 	width: 836px;
-	// 	border-bottom: 1px solid #DEDEDE;
-	// 	padding: 14px 20px 14px 0px;
-	// 	margin-top: 20px;
-	// }
+		.agreement__input._error {
+			border: 1px solid $red;
+		}
+
+		.agreement__label {
+			@include text-style(400, 14px, $grey, 21px);
+			margin-left: 18px;
+
+			@include media(580px, 1024px) {
+				font-size: 13px;
+			}
+		}
+
+		.agreement__link {
+			@include text-style(400, 14px, $blue, 21px);
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.email-block {
+		position: relative;
+	}
+
+	&__email-check {
+		display: none;
+		position: absolute;
+		top: 32px;
+		right: 22px;
+	}
+
+	&__button-add {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 15px 20px;
+		border: 1px solid $grey;
+		border-radius: 25px;
+		max-width: 250px;
+		transition: background 0.2s ease, color 0.2s ease;
+
+		svg {
+			margin-left: 14px;
+			path {
+				transition: fill 0.2s ease;
+			}	
+		}
+
+		@include text-style(400, 16px, $darkBlue, 16px);
+
+		&:hover {
+			background-color: $blue;
+			color: #fff;
+
+			svg {
+				path {
+					fill: #fff;
+				}
+			}
+		}
+
+		&:active {
+			background-color: $darkBlue;
+		}
+
+		&:focus-visible {
+			border: 3px solid #99B3D8;
+		}
+
+		&:disabled {
+			color: $grey;
+			border: 1px solid #BCBCBC;
+
+			svg {
+				path {
+					fill: $grey;
+				}
+			}
+		}
+	}
 }
 
 .input {
 	width: 836px;
-		border-bottom: 1px solid #DEDEDE;
-		padding: 14px 20px 14px 0px;
-		border-radius: 0;
-		cursor: pointer;
+	border-bottom: 1px solid #DEDEDE;
+	padding: 14px 20px 14px 0px;
+	border-radius: 0;
+	cursor: pointer;
+	transition: background 1s ease, padding 1s ease, border-radius 1s ease;
+
+	&:hover {
+		background-color: $lightGrey;
+		border-radius: 24px;
+		padding: 14px 20px 14px 20px;
+		border-bottom: none;
 		transition: background 1s ease, padding 1s ease, border-radius 1s ease;
+	}	
 
-		&:hover {
-			background-color: $lightGrey;
-			border-radius: 24px;
-			padding: 14px 20px 14px 20px;
-			border-bottom: none;
-			transition: background 1s ease, padding 1s ease, border-radius 1s ease;
-		}	
+	&:focus-visible {
+		border-radius: 24px;
+		border: 1px solid $blue;
+		padding: 14px 20px 14px 20px;
 
-		&:focus-visible {
-			border-radius: 24px;
-			border: 1px solid $blue;
-			padding: 14px 20px 14px 20px;
-
-			&__label {
-				display: block;
-			}
+		&__label {
+			display: block;
 		}
+	}
+
+	&:disabled {
+		color: #BCBCBC;
+		border-bottom: 1px solid #BCBCBC;
+	}
+}
+
+.files-block {
+	margin-top: 28px;
+}
+
+.text-block {
+	margin-top: 40px;
+}
+
+
+.error {
+	display: block;
+	@include text-style(400, 12px, $red, 18px);
+	margin-top: 5px;
 }
