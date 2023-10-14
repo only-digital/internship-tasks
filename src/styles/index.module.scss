@@ -5,4 +5,25 @@
     align-items: center;
     padding: 6rem;
     min-height: 100vh;
+    font-family: Roboto,sans-serif;
+}
+
+.mainTitle {
+    color: #213C57;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 123.5%;
+    letter-spacing: 1px;
+    text-align: left;
+    width: 100%;
+}
+
+.mainTasks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    
 }
