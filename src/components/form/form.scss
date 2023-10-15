@@ -5,12 +5,10 @@
 	width: 100%;
 	display: flex;
 	flex-direction: row;
-	
+	gap: 120px;
 	&__title {
-		flex: 1;
 		font-size: 32px;
 		color: $blue;
-		margin-top: 44px;
 	}
 	&__form {
 		flex: 2;
@@ -72,6 +70,11 @@
 		border: 1px solid $cobolt;
 		
 	}
+	&__button:disabled {
+		pointer-events: none;
+		background-color: $grey;
+		border-color: $grey;
+	}
 	.button__text {
 		color: #fff;
 		padding: 0 14px 0 18px;
@@ -91,6 +94,7 @@
 		margin-bottom: 25px;
 	}
 	&__error {
+		font-size: 24px;
 		color: $red;
 		margin-bottom: 14px;
 	}
@@ -105,7 +109,10 @@
 		border-radius: 50%;
 		animation: rotation 1s linear infinite;
 	}
-
+	.confirmed {
+		pointer-events: none;
+		opacity: 0.3;
+	}
 	@keyframes rotation {
 		100% {
 			transform: rotate(360deg);

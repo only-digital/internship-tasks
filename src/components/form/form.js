@@ -18,11 +18,13 @@ const form = document.querySelector('.form__form');
 const loader = document.querySelector('.form__loader')
 const errorEl = document.querySelector('.form__error');
 const successEl = document.querySelector('.form__success');
+const formButton = document.querySelector('button')
+
+form.addEventListener('input', checkValidity);
 form.addEventListener('submit', handeFormSubmit);
 
 async function handeFormSubmit(event) {
     event.preventDefault()
-    
 
     const data = serializeForm(form);
     toggleLoader()
@@ -34,6 +36,7 @@ async function handeFormSubmit(event) {
         onSuccess(message)
         errorEl.classList.add('hidden');
         errorEl.textContent = '';
+        document.querySelector('.form__main').classList.add('confirmed')
     } else {
         onError(message)
         successEl.classList.add('hidden');
@@ -65,15 +68,21 @@ async function sendData(data) {
 function toggleLoader() {
     loader.classList.toggle('hidden')
 }
+
 function onSuccess(message) {
     successEl.textContent = message;
-    successEl.classList.remove('hidden')
-
-    
+    successEl.classList.remove('hidden')  
 }
+
 function onError(message) {
     errorEl.textContent = message;
     errorEl.classList.remove('hidden')
 }
 
+function checkValidity(event) {
+    const formNode = event.target.form
+    const isValid = formNode.checkValidity()
+
+    formButton.disabled = !isValid;
+}
 export default Form

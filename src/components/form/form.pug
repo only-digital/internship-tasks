@@ -1,20 +1,20 @@
 mixin form(props)
-	.form&attributes(attributes)(data-component='form')
+	.vacancy__form.form&attributes(attributes)(data-component='form')
 		.form__title Форма обратной связи
 		form.form__form
-			.form__email.email
-				label(for='email') E-mail
-				input(type='email' name='email' requiered)
-			.form__error.hidden
-			.form__checkbox.checkbox
-				input(type='checkbox'  name='confirm')
-				label(for='confirm') Вы подтверждаете, что ознакомились <span>c политикой обработки персональных данных</span> 
+			.form__main 
+				.form__email.email
+					label(for='email') E-mail
+					input(type='email' name='email' required)
+				.form__error.hidden
+				.form__checkbox.checkbox
+					input(type='checkbox'  name='confirm' required)
+					label(for='confirm') Вы подтверждаете, что ознакомились <span>c политикой обработки персональных данных</span> 
 			.form__footer
-				button.form__button.button(type='submit') 
+				button.form__button.button(type='submit', disabled='true') 
 					p.button__text Отправить
 					//- +svg('arrow').button__svg
 					+svg('arrow').button__svg
-				
 				.form__loader.hidden
 				.form__success.hidden 
 			
