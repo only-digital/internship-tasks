@@ -6,8 +6,19 @@ class ContactForm extends Component {
 
         this.state = {
             email: false,
-            message: false
+            message: false,
+            checkbox: false,
+
+            validation() {
+                if (this.email && this.message && this.checkbox) {
+                    document.querySelector('.contact-form__btn').removeAttribute('disabled');
+                } else {
+                    document.querySelector('.contact-form__btn').setAttribute('disabled', '');
+                }
+            }
         }
+
+        this.state.validation();
 
         // Email input
         this.email = document.querySelector('.contact-form__email-input');
@@ -17,6 +28,7 @@ class ContactForm extends Component {
         this.emailText = document.querySelector('.contact-form__email-text');
         this.emailError = document.querySelector('.contact-form__email-error');
         this.emailImg = document.querySelector('.contact-form__email-img');
+        this.email.value = '';
 
         // Message input
         this.message = document.querySelector('.contact-form__message-input');
@@ -26,16 +38,18 @@ class ContactForm extends Component {
         this.messageText = document.querySelector('.contact-form__message-text');
         this.messageError = document.querySelector('.contact-form__message-error');
         this.messageImg = document.querySelector('.contact-form__message-img');
+        this.message.value = '';
+
+        // Checkbox
+        this.checkbox = document.querySelector('.contact-form__checkbox-real');
+        this.checkbox.addEventListener('change', (e) => this.changeCheckbox(e))
     }
 
     changeInputValue(errorClass) {
-        console.log('input');
         errorClass.style.opacity = '0';
     }
 
     focusInput(e, img) {
-        console.log('focus');
-
         if (e.target.nodeName === 'INPUT') {
             e.target.style.cssText = `
                 padding: 0 20px;
@@ -47,23 +61,19 @@ class ContactForm extends Component {
             img.style.opacity = '0';
         } else {
             e.target.style.cssText = `
-                padding: 12px 20px 16px 20px;
+                padding: 12px 50px 16px 20px;
                 background-color: #fff;
                 border-color: #0041A0;
             `;
             img.style.opacity = '0';
-        }
-
-        
+        }  
     }
 
     // Email input
     validationEmailInput(e) {
-        console.log('blur email');
         let value = e.target.value;
 
         if (/^([a-zA-Z\-0-9_]+|([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)+)|(".+"))@(([a-zA-Z\-0-9]+\.)+[a-zA-Z\-0-9]{2,})$/.test(value) && value.length && value.length <= 255) {
-            console.log('true');
             this.emailText.style.opacity = '1';
             this.email.style.cssText = `
                 border-radius: 24px;
@@ -74,7 +84,6 @@ class ContactForm extends Component {
             this.emailImg.style.opacity = '1';
             this.state.email = true;
         } else {
-            console.log('не правда')
             if (value.length === 0) {
                 this.emailError.textContent = "Поле 'E-mail' обязательно";
             } else if (value.length > 255) {
@@ -95,22 +104,22 @@ class ContactForm extends Component {
             this.state.email = false;
         }
 
-        console.log(`State Email: ${this.state.email}`);
+        this.state.validation();
     }
 
     // Message input
     validationMessageInput(e) {
-        console.log('blur textarea');
         const value = e.target.value;
 
         if (value.length > 0 && value.length <= 1000) {
             this.messageText.style.opacity = '1';
             this.message.style.cssText = `
                 border: 1px solid transparent;
-                padding: 12px 20px 16px 20px;
+                padding: 12px 50px 16px 20px;
                 border-radius: 24px;
                 background-color: #F4F4F4;
                 height: 193px;
+                overflow: hidden;
             `;
             this.messageImg.style.opacity = '1';
             this.state.message = true;
@@ -124,15 +133,26 @@ class ContactForm extends Component {
             this.message.style.cssText = `
                 border: 1px solid #FF0000;
                 border-radius: 24px;
-                padding: 12px 20px 16px 20px;
+                padding: 12px 50px 16px 20px;
                 background-color: #fff;
                 height: 193px;
             `;
             this.messageError.style.opacity = '1';
             this.state.message = false;
         }
+        
+        this.state.validation();
+    }
 
-        console.log(`State Text: ${this.state.message}`);
+    // Checkbox
+    changeCheckbox(e) {
+        if (e.target.checked) {
+            this.state.checkbox = true;
+        } else {
+            this.state.checkbox = false;
+        }
+
+        this.state.validation();
     }
 }
 
