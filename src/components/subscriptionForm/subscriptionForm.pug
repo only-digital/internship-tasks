@@ -1,0 +1,27 @@
+mixin subscriptionForm(props)
+	.subscriptionForm&attributes(attributes)(data-component='subscriptionForm')
+		h2.subscriptionForm__title Форма обратной связи
+		form.subscriptionForm__form
+			div.subscriptionForm__form_email
+				label.subscriptionForm__form_email_label E-mail
+				input(type='email', name='email', placeholder='E-mail').subscriptionForm__form_email_input
+				p.subscriptionForm__form_email_errorText 
+			div.subscriptionForm__form_textarea
+				label.subscriptionForm__form_textarea_label Ваше сообщение
+				textarea(name='textarea', placeholder='Ваше сообщение').subscriptionForm__form_textarea_txt
+				p.subscriptionForm__form_textarea_errorText
+			div.subscriptionForm__form_files
+				.subscriptionForm__form_files_wrapper
+					input(type='file' name="file" id="file" accept="application/pdf, .doc, .docx, application/msword" multiple ).subscriptionForm__form_files_input
+					label(for="file" ).subscriptionForm__form_files_label Прикрепить файл
+						+svg('plus-svg')
+				p.subscriptionForm__form_files_errorText
+			div.subscriptionForm__checkbox
+				input(type='checkbox',id='checkbox', name='checkbox').subscriptionForm__checkbox_input
+				label(for="checkbox").subscriptionForm__checkbox_label
+					+svg('check-checkbox-svg')
+				p.subscriptionForm__checkbox_p Вы подтверждаете, что ознакомились c <a href="#">политикой обработки персональных данных</a>
+			div
+				button.subscriptionForm__submit(type='submit' disabled) Отправить
+					+loader.subscriptionForm__loader
+					+svg('arrow-svg').subscriptionForm__arrow
