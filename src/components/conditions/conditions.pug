@@ -1,0 +1,6 @@
+mixin conditions(props)
+	.conditions&attributes(attributes)(data-component='conditions')
+		h2.conditions__title!=props.title
+		ul.conditions__list
+			each item in props.list_conditions
+				li= item

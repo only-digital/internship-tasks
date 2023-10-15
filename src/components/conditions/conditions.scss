@@ -1,0 +1,35 @@
+.conditions {
+  $root: &;
+
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 400;
+  margin-bottom: 130px;
+
+  &__title {
+    color: #04306a;
+    font-size: 46px;
+    margin-bottom: 35px;
+  }
+
+  &__list {
+    padding-left: 35px;
+  }
+
+  &__list li {
+    position: relative;
+    color: #012b34;
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  &__list li::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 13px;
+    width: 20px;
+    height: 1px;
+    background-color: #0db274;
+  }
+}
