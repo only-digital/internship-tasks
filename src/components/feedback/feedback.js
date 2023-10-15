@@ -22,8 +22,6 @@ class Feedback extends Component {
     const emailValue = document.getElementById("email").value;
     const isConfirm = document.getElementById("confirm").checked;
 
-    this.showEmailValidity(emailValue);
-
     let response = await fetch("/form", {
       method: "POST",
       headers: {
@@ -35,29 +33,14 @@ class Feedback extends Component {
       }),
     });
 
-    if (response.status === 200) {
-      this.formResponse.style.color = "green";
-    } else if (response.status === 422) {
-      this.formResponse.style.color = "red";
-    }
-
     let result = await response.json();
 
-    this.feedBackForm.classList.add("sent");
-    this.formResponse.textContent = result.message;
-  };
-
-  showEmailValidity = (value) => {
-    if (!value.length) {
-      this.emailError.textContent = "Поле E-mail обязательно";
-    } else if (
-      value.length < 6 &&
-      !value.includes("@") &&
-      !value.includes(".")
-    ) {
-      this.emailError.textContent = "Введите корректный Email";
-    } else {
+    if (response.status === 200) {
+      this.feedBackForm.classList.add("sent");
       this.emailError.textContent = "";
+      this.formResponse.textContent = result.message;
+    } else if (response.status === 422) {
+      this.emailError.textContent = result.message;
     }
   };
 }
