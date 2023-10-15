@@ -1,0 +1,109 @@
+.input-field {
+	$root: &;
+
+	position: relative;
+	font-family: Arial;
+	font-style: normal;
+	font-weight: 400;
+	padding-top: 15px;
+
+	&__item {
+		font-size: 16px;
+		width: 100%;
+		height: 48px;
+		line-height: 1;
+		color: #111;
+		padding: 0 30px 0 20px;
+		border-bottom: 1px solid #DEDEDE;
+		background-color: #fff;
+		transition: background-color 0.3s linear, border-radius 0.3s linear;
+		&::placeholder {
+			opacity: 0;
+		}
+		// &:hover,
+		// &.success &__item {
+		// 	border: 1px solid #F4F4F4;
+		// 	border-radius: 24px;
+		// 	background-color: #F4F4F4;
+		// }
+		&:focus {
+			border: 1px solid #0041A0;
+			border-radius: 24px;
+			background-color: #fff;
+		}
+	}
+	&__item:hover,
+	&.success &__item {
+		border: 1px solid #F4F4F4;
+		border-radius: 24px;
+		background-color: #F4F4F4;
+	}
+	&.error &__item {
+		border: 1px solid #FF0000;
+		border-radius: 24px;
+		background-color: #fff;
+	}
+	&__item:disabled,
+	&.disabled &__item {
+		pointer-events: none;
+		border-radius: 0px;
+		border-color: transparent;
+		border-bottom: 1px solid #DEDEDE;
+		background-color: #fff;
+	}
+
+	&__label {
+		font-size: 16px;
+		line-height: 1;
+		color: #111;
+		position: absolute;
+		top: 30px;
+		left: 0;
+		white-space: nowrap;
+		user-select: none;
+		padding: 0;
+		transition: color 0.3s linear, font-size 0.3s linear, top 0.3s linear, padding 0.3s linear;
+	}
+	&__item:hover + &__label {
+		padding-left: 20px;
+	}
+	&__item:focus + &__label,
+	&.success &__label,
+	&.error &__label {
+		padding-left: 20px;
+		font-size: 12px;
+		top: 0;
+		color: #909090;
+	}
+	&__item:disabled + &__label,
+	&.disabled + &__label {
+		padding: 0;
+		color: #BCBCBC;
+	}
+
+	&__icon {
+		display: block;
+		position: absolute;
+		top: 30px;
+		right: 20px;
+		width: 18px;
+		height: 13px;
+		color: transparent;
+	}
+	&.success &__icon {
+		color: #27AE60;
+	}
+
+	&__error{
+		color: #FF0000;
+		font-size: 12px;
+		line-height: 1.5;
+		min-height: 20px;
+		display: block;
+		padding: 2px 0 0 20px;
+		visibility: hidden;
+	}
+	&.error &__error {
+		visibility: visible;
+	}
+}
