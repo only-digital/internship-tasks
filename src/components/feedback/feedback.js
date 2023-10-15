@@ -50,11 +50,15 @@ class Feedback extends Component {
   showEmailValidity = (value) => {
     if (!value.length) {
       this.emailError.textContent = "Поле E-mail обязательно";
-    }
-    if (value.length < 6 && !value.includes("@") && !value.includes(".")) {
+    } else if (
+      value.length < 6 &&
+      !value.includes("@") &&
+      !value.includes(".")
+    ) {
       this.emailError.textContent = "Введите корректный Email";
+    } else {
+      this.emailError.textContent = "";
     }
-    this.emailError.textContent = "";
   };
 }
 
