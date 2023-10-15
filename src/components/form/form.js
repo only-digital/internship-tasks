@@ -1,19 +1,11 @@
 import Component from '../../app/js/base/Component';
 
 class Form extends Component {
-    formButton;
-    form;
-    loader;
     constructor(element) {
         super(element);
-        // this.form = this.getElement('form');
-        // this.formButton = this.getElement('button')
-        // this.loader = this.getElement('loader')
-
-        // this.form.addEventListener('submit', this.handleFormSubmit)
     }
-
 }
+
 const form = document.querySelector('.form__form');
 const loader = document.querySelector('.form__loader')
 const errorEl = document.querySelector('.form__error');
@@ -51,7 +43,6 @@ function serializeForm(formNode) {
         email: formData.get('email'),
         confirm: formData.get('confirm') === 'on' ? true : false
     }
-    console.log(data)
     return data
 
 }
