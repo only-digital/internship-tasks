@@ -16,11 +16,28 @@
 	background: #E7EAEE;
 }
 
+.TaskTitleCompleted {
+	color: rgba(22, 31, 62, 0.30);
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 130%;
+	text-decoration-line: line-through;
+	margin-bottom: 17px;
+	cursor: pointer;
+}
+
 .TaskTitle {
 	color: rgba(22, 31, 62, 0.90);
 	font-size: 24px;
 	line-height: 130%; 
 	margin-bottom: 17px;
+	width: 100%;
+	cursor: pointer;
+}
+
+.TaskTitle:hover {
+	color: #007FFF;
 }
 
 .TaskDescription {
@@ -31,6 +48,7 @@
 	letter-spacing: 1px;
 	max-width: 734px;
 	width: 100%;
+	cursor: pointer;
 }
 
 .TaskTitleWrapper {

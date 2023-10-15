@@ -4,21 +4,31 @@ import {getIndexPage} from "../../lib/api";
 import { useEffect, useState } from 'react';
 import tasks from '../../data/index.json';
 
-const Index = (props) => {
+const Index = () => {
 
-    const [tasksState,setTasksState] = useState({});
-    useEffect(()=>{
-        setTasksState(tasks);
-    },[])
+    const [tasksState,setTasksState] = useState(tasks);
 
-    const handlerDeleteTask = (title) => {
-        const newState = {
-            title:tasksState.title,
-            tasks:tasksState.tasks.filter((task)=>{
-                return task.title!==title
-            })
+    const handleTask = (title,typeOfClick) => {
+        if (typeOfClick==='delete') {
+            const newState = {
+                title:tasksState.title,
+                tasks:tasksState.tasks.filter((task)=>{
+                    return task.title!==title
+                })
+            }
+            setTasksState(newState);
+        } else if (typeOfClick==='complete') {
+            const newState = {
+                title:tasksState.title,
+                tasks:tasksState.tasks.map((task)=>{
+                    if (task.title === title) {
+                        task.isCompleted = !task.isCompleted
+                        return task
+                    } else return task
+                })
+            }
+            setTasksState(newState);
         }
-        setTasksState(newState);
     }
 
     return (
@@ -27,7 +37,7 @@ const Index = (props) => {
             <div className={styles.mainTasks}>
                 {
                     tasksState.tasks.map((task)=>{
-                        return <Task key={task.title} handlerCrossClick={handlerDeleteTask} title={task.title} description={task.text}/>
+                        return <Task key={task.title} handlerClick={handleTask} title={task.title} description={task.text} isCompleted={task.isCompleted}/>
                     })
                 }
             </div>
