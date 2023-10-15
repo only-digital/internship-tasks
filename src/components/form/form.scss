@@ -6,7 +6,6 @@
 	display: flex;
 	flex-direction: row;
 	
-
 	&__title {
 		flex: 1;
 		font-size: 32px;
@@ -18,7 +17,7 @@
 		margin-top: 68px;
 	}
 	&__email {
-		margin-bottom: 60px;
+		margin-bottom: 25px;
 	}
 
 	label {
@@ -30,7 +29,6 @@
 		font-size: 12px;
 	}
 	
-
 	input[type=email] {
 		padding: 8px 20px 14px 20px;
 		width: 836px;
@@ -50,19 +48,67 @@
 		font-size: 14px;
 	}
 	&__checkbox span {
-		color: $blue;
+		color: $cobolt;
 	}
+
 	input[type=checkbox] {
 		width: 16px;
 		height: 16px;
-		border: 1px solid $grey;
+		// border: 1px solid $grey;
+		appearance: auto;
 	}
 	input[type=checkbox]:checked {
-		background-color: red;
+		// appearance: auto;
+		background-color: $grey;
+		
 	}
 	&__button {
-		width: 70px;
-		height: 35px;
+		display: flex;
+		align-items: center;
+		width: 155px;
+		height: 48px;
+		border-radius: 25px;
+		background-color: $cobolt;
 		border: 1px solid $cobolt;
+		
+	}
+	.button__text {
+		color: #fff;
+		padding: 0 14px 0 18px;
+	}
+	.button__svg {
+		width: 33px;
+		height: 22px;
+		fill: white;
+	}
+	.hidden {
+		display: none;
+	}
+	&__footer { 
+		display: flex;
+		align-items: center;
+		gap: 30px;
+		margin-bottom: 25px;
+	}
+	&__error {
+		color: $red;
+		margin-bottom: 14px;
+	}
+	&__success {
+		color: $green;
+	}
+	&__loader {
+		width : 48px;
+		height: 48px;
+		border: 5px solid rgba(0, 65, 160, 0.4);
+		border-left-color: $cobolt;
+		border-radius: 50%;
+		animation: rotation 1s linear infinite;
+	}
+
+	@keyframes rotation {
+		100% {
+			transform: rotate(360deg);
+		}
 	}
 }
