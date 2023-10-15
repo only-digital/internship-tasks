@@ -40,21 +40,12 @@
 		border-color: $light-blue;
 
 		&:hover{
-
-			/* color: $text-color-hover-main; */
 			background-color: $dark-blue;
-			svg{
-				/* fill: $arrow-color-hover-main; */
-			}
-			
 		}
 
 		&:disabled,
 		&:disabled:active{
 
-			/* color: $text-color-disabled-main;
-			background-color: $background-color-disabled-main;
-			border-color: $border-color-main; */
 			cursor: default;
 
 		}

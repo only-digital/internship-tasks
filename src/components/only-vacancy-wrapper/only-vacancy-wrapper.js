@@ -32,7 +32,7 @@ class OnlyVacancyWrapper extends Component {
         this.loader = document.body.querySelector('.only-loader');
         this.loader.classList.remove('only-loader_hide');
         this.root.style.opacity='80%';
-        console.log(this.loader);
+  
         fetch('/stats')
             .catch(e=>console.log(e))
             .then(res=>res.json())
@@ -45,8 +45,6 @@ class OnlyVacancyWrapper extends Component {
 
         
         setInterval(()=>this.getDate(),10000);
-
-        
     }
 
     getDate = ()=>{

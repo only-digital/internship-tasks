@@ -29,11 +29,11 @@ block body
             +only-point({text:'Обучение в программах Корпоративного университета'})
 
         +only-form({header:'Форма обратной связи'})
-            +only-input({label:'Email',placeholder:''})(email required)
-            +only-error()(email)
+            +only-input({label:'Email',placeholder:''})
+            +only-error()
             +only-checkagreement({
                 text:'Вы подтверждаете, что ознакомились', 
                 linkText:'c политикой обработки персональных данных',
-                href:'#'})(pers-policy required)
-            +only-button({text:'Отправить'})
+                href:'#'})
+            +only-button({text:'Отправить'})(method='post')
 

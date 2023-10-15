@@ -5,6 +5,15 @@
 	align-items: center;
 	margin-bottom: 11px;
 
+	@media(max-width:1280px){
+		display: grid;
+		grid-template-columns: min-content auto;
+		grid-template-rows: auto auto;
+		#{$root}__link{
+			grid-column:span 2;
+		}
+	}
+
 	&__checkbox{
 		margin-right: 18px;
 		appearance:auto;
@@ -40,6 +49,4 @@
 		color:$blue;
 
 	}
-
-	//Your code here
 }
