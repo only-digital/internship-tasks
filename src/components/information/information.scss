@@ -1,0 +1,40 @@
+.information {
+  $root: &;
+
+  font-family: Arial;
+  font-weight: 400;
+
+  width: 988px;
+  &__title {
+    color: $blue;
+    font-size: 46px;
+    line-height: 120%;
+    letter-spacing: -1px;
+
+    margin-bottom: 35px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__item {
+    position: relative;
+    color: $black1;
+    font-size: 24px;
+    line-height: 140%;
+    padding-left: 28px;
+
+    &::before {
+      content: "—";
+      position: absolute;
+      color: $green1;
+      font-size: 20px;
+      top: 0;
+      margin-top: -1px;
+      left: 0;
+    }
+  }
+}

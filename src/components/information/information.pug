@@ -1,0 +1,6 @@
+mixin information(props)
+	.information&attributes(attributes)(data-component='information')
+		h2.information__title= props.title
+		ul.information__list
+			each item in props.items
+				li.information__item= item
