@@ -2,6 +2,7 @@ import ExampleButton from "../../components/example-button/example-button";
 import Loader from "../../components/loader/loader";
 import Header from "../../components/header/header";
 import Information from "../../components/information/information";
+import Button from "../../components/button/button";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -13,6 +14,7 @@ const allComponents = {
   loader: Loader,
   header: Header,
   information: Information,
+  button: Button,
 };
 
 /**
