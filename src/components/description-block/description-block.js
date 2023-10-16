@@ -1,4 +1,4 @@
-import Component from '../../app/js/base/Component';
+import Component from '../../app/js/base/component';
 
 class DescriptionBlock extends Component {
     constructor(element) {

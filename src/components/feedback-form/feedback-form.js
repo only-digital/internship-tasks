@@ -1,4 +1,4 @@
-import Component from '../../app/js/base/Component';
+import Component from '../../app/js/base/component';
 
 class FeedbackForm extends Component {
     form;
@@ -39,7 +39,7 @@ class FeedbackForm extends Component {
         if (res.ok) {
             return resJson;
         }
-        console.log(resJson)
+
         return Promise.reject(resJson.message);
     }
 
