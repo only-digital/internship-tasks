@@ -4,6 +4,7 @@ import Header from "../../components/header/header";
 import Information from "../../components/information/information";
 import Button from "../../components/button/button";
 import Success from "../../components/success/success";
+import Form from "../../components/form/form";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -17,6 +18,7 @@ const allComponents = {
   information: Information,
   button: Button,
   success: Success,
+  form: Form,
 };
 
 /**

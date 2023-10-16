@@ -1,0 +1,14 @@
+mixin form(props)
+	.form&attributes(attributes)(data-component='form')
+		h3.form__title Форма обратной связи
+		form.form__container
+			label.form__caption E-mail
+			input.form__email(type="email")
+			span.form__message
+			.form__accept
+				label#accept.form__accept-text Вы подтверждаете, что ознакомились 
+					a.form__link(href='/') &nbsp;c политикой обработки персональных данных 
+				input.form__checkbox(for='accept', type="checkbox")
+			+loader()
+			+button({text: 'Кнопка', isSubmit: true})
+			+success({text: 'Форма успешно отправлена'})

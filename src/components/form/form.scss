@@ -1,0 +1,108 @@
+.form {
+  $root: &;
+
+  width: 1600px;
+  height: 338px;
+  padding: 44px 217px 45px 103px;
+
+  display: flex;
+  gap: 81px;
+
+  font-family: Arial;
+  font-weight: 400;
+  line-height: 150%;
+  font-size: 14px;
+
+  &__title {
+    width: 363px;
+    color: $blue1;
+
+    font-size: 32px;
+    line-height: 120%;
+    letter-spacing: -1px;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 24px;
+  }
+
+  &__caption {
+    color: $steel;
+    font-size: 12px;
+    padding-left: 20px;
+
+    &_disabled {
+      opacity: 0.3;
+    }
+  }
+
+  &__email {
+    width: 836px;
+    min-height: 48px;
+    padding: 8px 20px 14px 20px;
+    border-radius: 24px;
+    border: 1px solid $blue1;
+
+    font-size: 16px;
+    margin-bottom: 25px;
+
+    &_disabled {
+      opacity: 0.3;
+    }
+  }
+
+  &__message {
+    height: 21px;
+
+    &_color_red {
+      color: $red;
+    }
+
+    &_color_green {
+      color: $green;
+    }
+  }
+
+  &__accept {
+    display: flex;
+    gap: 18px;
+    margin: 14px 0px 30px;
+    &-text {
+      order: 2;
+      color: $steel;
+      &_disabled {
+        opacity: 0.3;
+      }
+    }
+  }
+
+  &__link {
+    color: $blue1;
+
+    &_disabled {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+  }
+
+  &__checkbox {
+    order: 1;
+  }
+
+  &__checkbox {
+    appearance: auto;
+    width: 16px;
+    height: 16px;
+    border: 1px solid $grey1;
+    margin-left: 0px;
+
+    cursor: pointer;
+
+    &_disabled {
+      opacity: 0.3;
+      cursor: auto;
+    }
+  }
+}
