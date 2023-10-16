@@ -1,0 +1,13 @@
+include ../vacancy-paragraph/vacancy-paragraph.pug
+
+mixin vacancy(props)
+	.vacancy&attributes(attributes)(data-component='vacancy')
+		p.vacancy__date=`${props.date}`
+		h1.vacancy__title=`${props.name}`
+		p.vacancy__qty-views
+		p.vacancy__qty-responses
+		//- +vacancy-paragraph(youWillHaveTo)
+		//- +vacancy-paragraph(expectations)
+		//- +vacancy-paragraph(offer)
+		div( class="vacancy__loader vacancy__loader-visible")
+			+svg('loader').vacancy__loader-svg

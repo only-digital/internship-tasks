@@ -1,9 +1,6 @@
 .vacancy-paragraph {
-  margin-top: 130px;
   font-family: Arial, Helvetica, sans-serif;
-  &:first-of-type {
-    margin-top: 0;
-  }
+
   $root: &;
   &__title {
     font-size: 46px;
@@ -35,4 +32,7 @@
       margin-bottom: 0;
     }
   }
+}
+.vacancy-paragraph:first-of-type {
+  color: red;
 }
