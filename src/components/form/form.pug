@@ -1,0 +1,33 @@
+mixin form(props)
+	.form&attributes(attributes)(data-component='form')
+		.form-caption
+			.form-caption__date!="18 декабря 2020" 
+			h1.form-caption__title!="Консультант SAP PO"
+			.form-caption__info
+				.form-caption__info__views!="Просмотров: " 
+				.form-caption__info__responses!="Откликов: "  
+		each list, index in props
+			.form-description 
+				h2.form-description__title!=list[0]
+				ul.form-description__list 
+					each  item, index in list 
+						if index === 0
+							li.form-description__list__item!=list[index + 1]
+						else 
+							li.form-description__list__item!=list[index]
+		.form-feedback__wrapper
+			h3.form-feedback__title!="Форма обратной связи"
+			form.form-feedback__form
+					p.form-feedback__name!="E-mail"
+					input.form-feedback__email(type='email' name="email")
+					span.form-feedback__error(class="error")!="Поле E-mail обязательно"
+					.form-feedback__checkbox__wrapper
+						input.form-feedback__checkbox(type="checkbox" name="checkbox")
+						p.form-feedback__checkbox__desc!="Вы подтверждаете, что ознакомились " 
+							a(href='').form-feedback__checkbox__desc__span!="c политикой обработки персональных данных" 
+					button.form-feedback__submit(type="submit")!="Открыть"
+						+svg("arrow").form-field__submit__svg
+					.form-feedback__success
+						+svg('circle')
+						span.form-feedback__success-message(class='success')!="Форма успешно отправлена"
+
