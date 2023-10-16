@@ -10,10 +10,33 @@
 		]
 	}
 
+	var expectations={
+			title:"Мы ожидаем",
+		items:["Знание ASAP, MS Visio, SAP PI / SAP PO, SAP HANA, JSON, XML",
+		"Опыт работы в сфере аналитики от 3-х лет в должности аналитика, ведущего аналитика, специалиста по внедрению информационных систем",
+		"Опыт разработки технических заданий и постановок задач",
+		"Опыт описания бизнес-процессов в нотациях BPMN и UML",
+		"Опыт формирования требований к информационным системам",
+		"Опыт составления проектной документации по ГОСТ"
+		]
+	}
+
+		var offer={
+			title:"Мы предлагаем",
+		items:["Оформление в соответствии с нормами ТК РФ, социальные гарантии",
+		"Крупные проекты в компании–лидере отрасли",
+		"Возможность модернизировать процессы реального производственного бизнеса в команде сильнейших экспертов",
+		"Полис ДМС (включая стоматологию)",
+		"Доступ к корпоративной OnLine библиотеке",
+		"Обучение в программах Корпоративного университета"
+		]
+	}
+
 mixin vacancy-paragraph(props)
 	.vacancy-paragraph&attributes(attributes)(data-component='vacancy-paragraph')
 		h2.vacancy-paragraph__title=`${props.title}`
 		ol.vacancy-paragraph__list
 			each item, index in props.items
-				li.vacancy-paragraph__list=`- ${item}`
+				li.vacancy-paragraph__list-item &ndash;
+					p.vacancy-paragraph__text=`${item}`
 		//Your code here
