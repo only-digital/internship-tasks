@@ -3,6 +3,7 @@ import Loader from "../../components/loader/loader";
 import Header from "../../components/header/header";
 import Information from "../../components/information/information";
 import Button from "../../components/button/button";
+import Success from "../../components/success/success";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -15,6 +16,7 @@ const allComponents = {
   header: Header,
   information: Information,
   button: Button,
+  success: Success,
 };
 
 /**

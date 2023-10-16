@@ -1,0 +1,4 @@
+mixin success(props)
+	.success&attributes(attributes)(data-component='success')
+		+svg('success').success__svg
+		span.success__text= props.text
