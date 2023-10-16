@@ -1,0 +1,15 @@
+.layout {
+    display: flex;
+
+    &__links {
+        border-right: 1px solid #D9E1EC;
+        height: 100vh;
+        padding: 40px 25px;
+        width: 290px;
+    }
+
+    &__tasks {
+        background-color: #F3F6F9;
+        width: calc(100% - 290px);
+    }
+}
