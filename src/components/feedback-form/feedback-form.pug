@@ -1,13 +1,12 @@
 mixin feedback-form(props)
-	.feedback-form&attributes(attributes)(data-component='feedback-form')
+	form.feedback-form&attributes(attributes)(data-component='feedback-form')
 		h1.feedback-form__title 
 			| Форма обратной
 			br
 			| связи
 		.feedback-form__input-container 
-			label(for="email").feedback-form__email-label E-mail
-			input(type="email" id='email' name='email' placeholder='E-mail').feedback-form__email-input
-			span.feedback-form__email-error
+			+email()
+			+email(disabled='')
 			label(for="message").feedback-form__message-label
 			input(type='text' id='message' name='message' placeholder='Ваше сообщение').feedback-form__message-input
 			span.feedback-form__message-error

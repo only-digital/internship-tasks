@@ -1,14 +1,16 @@
 import Component from '../../app/js/base/component';
 
-class FeedbackForm extends Component {
-    
+class Email extends Component {
+    emailInput;
     constructor(element) {
         super(element);
-        
+
+        this.emailInput = this.getElement('email-input');
+        console.log(this.email);
         // Your code here
     }
 
     // Your code here
 }
 
-export default FeedbackForm
+export default Email
