@@ -1,0 +1,48 @@
+.header {
+  $root: &;
+
+  width: 1600px;
+  height: 437px;
+  padding: 115px 80px 0px;
+
+  font-family: Arial;
+  font-weight: 400;
+  color: $steel1;
+
+  &__date {
+    font-feature-settings: "ss08" on;
+    font-size: 20px;
+    line-height: 140%;
+    padding-left: 9px;
+  }
+
+  &__title {
+    margin: 20px 0px 45px;
+
+    color: $blue;
+    font-feature-settings: "ss08" on;
+    font-size: 64px;
+    line-height: 100%;
+    letter-spacing: -1px;
+  }
+
+  &__stats {
+    display: inline-flex;
+    gap: 36px;
+
+    font-size: 16px;
+    line-height: 130%;
+  }
+
+  &__error {
+    display: none;
+    color: $red;
+
+    font-size: 14px;
+    line-height: 150%;
+
+    &_show {
+      display: inline-block;
+    }
+  }
+}

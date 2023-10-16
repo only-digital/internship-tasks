@@ -1,0 +1,9 @@
+mixin header(props)
+	header.header&attributes(attributes)(data-component='header')
+		span.header__date= props.date
+		h1.header__title= props.title
+		p.header__stats
+			+loader()
+			span.header__error
+			span.header__views 
+			span.header__responses
