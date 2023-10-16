@@ -1,0 +1,37 @@
+@keyframes animloader115 {
+  0% {
+    box-shadow: 7px 0 rgba($steel1, 0), 14px 0 rgba($steel1, 0);
+  }
+  50% {
+    box-shadow: 7px 0 rgba($steel1, 1), 14px 0 rgba($steel1, 0);
+  }
+  100% {
+    box-shadow: 7px 0 rgba($steel1, 1), 14px 0 rgba($steel1, 1);
+  }
+}
+
+.loader {
+  $root: &;
+
+  color: $steel1;
+  position: relative;
+  font-size: 16px;
+  font-family: Arial;
+  width: 57px;
+  &::after {
+    content: "";
+    width: 3px;
+    height: 3px;
+    background: currentColor;
+    position: absolute;
+    right: -5px;
+    bottom: 5px;
+    animation: animloader115 1s linear infinite;
+  }
+
+  display: none;
+
+  &_show {
+    display: inline-block;
+  }
+}
