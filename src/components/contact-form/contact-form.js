@@ -8,9 +8,10 @@ class ContactForm extends Component {
             email: false,
             message: false,
             checkbox: false,
+            files: true,
 
             validation() {
-                if (this.email && this.message && this.checkbox) {
+                if (this.email && this.message && this.checkbox && this.files) {
                     document.querySelector('.contact-form__btn').removeAttribute('disabled');
                 } else {
                     document.querySelector('.contact-form__btn').setAttribute('disabled', '');
@@ -40,9 +41,18 @@ class ContactForm extends Component {
         this.messageImg = document.querySelector('.contact-form__message-img');
         this.message.value = '';
 
+        // Input files
+        this.filesInput = document.querySelector('.contact-form__files-input-real');
+        this.filesInput.addEventListener('change', (e) => this.changeInputFiles(e));
+        this.filesWindow = document.querySelector('.contact-form__files-window');
+        this.filesError = document.querySelector('.contact-form__files-error');
+        this.items = document.querySelectorAll('.contact-form__files-input-item');
+        
+
         // Checkbox
         this.checkbox = document.querySelector('.contact-form__checkbox-real');
         this.checkbox.addEventListener('change', (e) => this.changeCheckbox(e))
+        this.checkbox.checked = false;
     }
 
     changeInputValue(errorClass) {
@@ -141,6 +151,57 @@ class ContactForm extends Component {
             this.state.message = false;
         }
         
+        this.state.validation();
+    }
+
+    // Input files
+    changeInputFiles(e) {
+        console.log('change files');
+        this.filesWindow.style.opacity = '0';
+        this.filesError.style.opacity = '0';
+        this.items.forEach(item => item.style.opacity = '0');
+
+
+        const target = e.target;
+        if (target.files.length > 2) {
+            this.filesWindow.style.opacity = '1';
+            this.state.files = false;
+        }
+        if (target.files.length > 0 && target.files.length <= 2) {
+            let res = false;
+            for (let i = 0; i < target.files.length; i++) {
+                if (target.files[i].size > 5000000) {
+                    res = false;
+                    this.filesWindow.style.opacity = '0';
+                    this.filesError.style.opacity = '1';
+                    this.state.files = false;
+                    break;
+                } else res = true;
+            }
+            if (res) {
+                for (let i = 0; i < target.files.length; i++) {
+                    let size = target.files[i].size < 1000000 ? Math.floor(target.files[i].size / 1000) + ' kB' : Math.floor(target.files[i].size / 1000000) + ' MB',
+                          type = '',
+                          item = this.items[i];
+
+                    switch (target.files[i].type) {
+                        case 'application/msword':
+                                type = 'DOC';
+                                break;
+                        case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
+                                type = 'DOCX';
+                                break;
+                        case 'application/pdf':
+                                type = 'PDF';
+                                break;
+                    }
+                    item.querySelector('span').textContent = `${type}, ${size}`;
+                    item.style.opacity = '1';
+                    this.state.files = true;    
+                }
+            }
+            
+        }
         this.state.validation();
     }
 

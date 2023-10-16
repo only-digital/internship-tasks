@@ -15,6 +15,23 @@ mixin contact-form(props)
 					.contact-form__message-text Ваше сообщение
 					img(class='contact-form__message-img' src='../assets/images/Union.png')
 					.contact-form__message-error Поле 'Ваше сообщение' обязательно
+					
+				.contact-form__files-wrapper
+					.contact-form__files-input
+						input(class='contact-form__files-input-real' type="file" name="file" id="file" accept=".pdf,.doc,.docx" multiple)
+						label(class='contact-form__files-input-custom' for='file')
+							span Прикрепить файл
+						div(class='contact-form__files-input-item' data-file='1') Документ 
+							span DOCS, 106 kB
+							img(class='contact-form__files-input-img' src='../assets/images/Group.png')
+						div(class='contact-form__files-input-item' data-file='2') Документ 
+							span PDF, 106 kB
+							img(class='contact-form__files-input-img' src='../assets/images/Group.png')
+					.contact-form__files-error Максимальный размер файла 5 MB
+					.contact-form__files-window
+						.contact-form__files-window-content Вы можете загрузить только 2 документа
+
+
 				label.contact-form__checkbox
 						input(class='contact-form__checkbox-real' type='checkbox' name='checkbox')
 						span.contact-form__checkbox-custom
