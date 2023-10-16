@@ -6,6 +6,7 @@ import FormButton from "../../components/form-button/form-button";
 import FormResponse from "../../components/form-response/form-response";
 import InputCheckbox from "../../components/input-checkbox/input-checkbox";
 import InputText from "../../components/input-text/input-text";
+import Loader from "../../components/loader/loader";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -21,6 +22,7 @@ const allComponents = {
   "form-response": FormResponse,
   "input-checkbox": InputCheckbox,
   "input-text": InputText,
+  loader: Loader,
 };
 
 /**

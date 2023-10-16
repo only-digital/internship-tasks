@@ -15,6 +15,7 @@
   &__form {
     flex-grow: 1;
     padding-top: 24px;
+    position: relative;
 
     &.sent {
       #{$root}__form-email,
@@ -37,6 +38,10 @@
   }
 
   &__form-response {
+    display: none;
+  }
+
+  &__form-loader {
     display: none;
   }
 }

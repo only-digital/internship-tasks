@@ -5,6 +5,7 @@ class Feedback extends Component {
   submitButton;
   emailError;
   formResponse;
+  formLoader;
 
   constructor(element) {
     super(element);
@@ -13,6 +14,7 @@ class Feedback extends Component {
     this.submitButton = this.getElement("form-button");
     this.emailError = this.feedBackForm.querySelector(".input-text__error");
     this.formResponse = this.feedBackForm.querySelector(".form-response__text");
+    this.formLoader = this.getElement("form-loader");
 
     this.submitButton.addEventListener("click", this.sendForm);
   }
@@ -21,6 +23,8 @@ class Feedback extends Component {
     e.preventDefault();
     const emailValue = document.getElementById("email").value;
     const isConfirm = document.getElementById("confirm").checked;
+
+    this.formLoader.style.display = "flex";
 
     let response = await fetch("/form", {
       method: "POST",
@@ -34,6 +38,8 @@ class Feedback extends Component {
     });
 
     let result = await response.json();
+
+    this.formLoader.style.display = "none";
 
     if (response.status === 200) {
       this.feedBackForm.classList.add("sent");

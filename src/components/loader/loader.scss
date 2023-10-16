@@ -1,0 +1,63 @@
+@use "sass:math";
+
+.loader {
+  $root: &;
+
+  $base: #263238;
+  $lite: #fff;
+  $brand: #ff3d00;
+  $size: 48px;
+
+  *,
+  *:after,
+  *:before {
+    box-sizing: border-box;
+  }
+
+  min-width: 200px;
+  width: 100%;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  color: #ccc;
+  cursor: pointer;
+  transition: 0.3s linear;
+  &:nth-child(2n + 1) {
+    background: rgba($white, 0.7);
+  }
+
+  &__item {
+    width: $size;
+    height: $size;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 4px solid $base;
+    border-right: 4px solid transparent;
+    animation: rotation 1s linear infinite;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: $size;
+      height: $size;
+      border-radius: 50%;
+      border-bottom: 4px solid $brand;
+      border-left: 4px solid transparent;
+    }
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
