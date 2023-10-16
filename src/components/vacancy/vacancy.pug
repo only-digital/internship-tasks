@@ -1,0 +1,7 @@
+mixin vacancy(props)
+	.vacancy&attributes(attributes)(data-component='vacancy')
+		+header({date: props.date, title: props.title})
+		.vacancy__information
+			each item in props.info
+				+information(item)
+		+form()

@@ -1,0 +1,12 @@
+.vacancy {
+  $root: &;
+
+  &__information {
+    display: flex;
+    flex-direction: column;
+    gap: 130px;
+
+    padding-left: 80px;
+    margin-bottom: 109px;
+  }
+}

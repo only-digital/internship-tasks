@@ -5,6 +5,7 @@ import Information from "../../components/information/information";
 import Button from "../../components/button/button";
 import Success from "../../components/success/success";
 import Form from "../../components/form/form";
+import Vacancy from "../../components/vacancy/vacancy";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -19,6 +20,7 @@ const allComponents = {
   button: Button,
   success: Success,
   form: Form,
+  vacancy: Vacancy,
 };
 
 /**
