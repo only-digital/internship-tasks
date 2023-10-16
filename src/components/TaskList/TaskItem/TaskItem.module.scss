@@ -1,0 +1,41 @@
+@import "@/styles/variables.scss";
+
+.TaskItem {
+  border-radius: 10px;
+  padding: 24px;
+  background-color: $white;
+  width: 100%;
+  margin: 0 40px 20px 0;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $borderTitle;
+    margin-bottom: 10px;
+    padding-bottom: 17px;
+    gap: 10px;
+    .title {
+      cursor: pointer;
+      width: 100%;
+      color: $blackTask;
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 130%;
+      transition: color .3s, opacity 0.3s;
+      &:hover {
+        color: $blue;
+      }
+    }
+    .done {
+      color: #161f3e;
+      opacity: 0.3;
+      text-decoration: line-through;
+    }
+  }
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 170%;
+    letter-spacing: 0, 15px;
+  }
+}

@@ -1,0 +1,25 @@
+@import "@/styles/variables.scss";
+
+.TaskList {
+	width: 100%;
+	background-color: $background;
+	padding: 48px 40px;
+
+	.header{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 28px;
+		gap: 10px;
+		.title{
+			color: $black;
+			font-weight: 600;
+			font-size: 32px;
+			line-height: 120%;
+			letter-spacing: 0.25px;
+		}
+	}
+	.tasks{
+		position: relative;
+	}
+}

@@ -1,0 +1,21 @@
+@import "@/styles/variables.scss";
+
+.Header {
+  height: $heightHeader;
+  width: 100%;
+  border-bottom: 1px solid $border;
+  .logo {
+    padding: 29px 45px;
+    width: $widthSidebar;
+    border-right: 1px solid $border;
+    height: 100%;
+    display: flex;
+    gap: 9px;
+    p {
+      font-weight: 500;
+      font-size: 7px;
+	  line-height: 120%;
+      text-transform: uppercase;
+    }
+  }
+}
