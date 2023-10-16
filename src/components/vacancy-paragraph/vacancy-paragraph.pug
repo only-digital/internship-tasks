@@ -1,0 +1,19 @@
+-
+	var youWillHaveTo={
+		title:"Вам предстоит",
+		items:["Участие в проектах в роли архитектора/консультанта по интеграции данных",
+		"Проектирование архитектуры интеграции по технологиям SAP (Process Orchestration 7.5, Data Services 4.2, RFC, IDOC)",
+		"Подбор способов взаимодействия с non-SAP системами (1C:ERP, Lotus и др.)",
+		"Подготовка проектной документации (ФТТ, ТЗ, АЗ, тех. проект, проектные решения по интеграции, спецификации на разработку, описания настроек)",
+		"Проведение аудита интеграционных сценариев и проектно-эксплуатационной документации, разработанных подрядными организациями",
+		"Разработка и поддержка интеграционных сценариев"
+		]
+	}
+
+mixin vacancy-paragraph(props)
+	.vacancy-paragraph&attributes(attributes)(data-component='vacancy-paragraph')
+		h2.vacancy-paragraph__title=`${props.title}`
+		ol.vacancy-paragraph__list
+			each item, index in props.items
+				li.vacancy-paragraph__list=`- ${item}`
+		//Your code here

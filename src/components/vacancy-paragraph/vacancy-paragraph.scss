@@ -1,0 +1,25 @@
+.vacancy-paragraph {
+  margin-top: 130px;
+  font-family: Arial, Helvetica, sans-serif;
+  &:first-of-type {
+    margin-top: 0;
+  }
+  $root: &;
+  &__title {
+    font-size: 46px;
+    line-height: 1.2;
+    font-weight: 400;
+    letter-spacing: -0.92px;
+    margin-bottom: 35px;
+    padding: 0;
+    color: #04306a;
+  }
+  &__list {
+    margin-top: 35px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+  }
+}
