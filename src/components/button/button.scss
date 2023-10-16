@@ -1,0 +1,131 @@
+// color palette
+$white: #fff;
+$black: #111111;
+$gray: #BCBCBC;
+$light-gray: #F4F4F4;
+$dark-gray-steel: #909090;
+$dark-blue: #002F6C;
+$cobolt: #0041A0;
+$light-blue: #99B3D8;
+$light-red: #F00;
+$red: #BF1D26;
+$dark-red: #81080F;
+
+
+
+
+@mixin btn {
+	//settings for all btns and all media-q
+	display: flex;
+	height: 48px;
+	justify-content: center;
+	align-items: center;
+	border-radius: 24px;
+	transition: all 0.3s;
+	
+	//settings for all btns for media-q 1920px
+	width: 155px;
+	gap: 14px;
+	padding-left: 14px;
+	padding-right: 14px;
+	font-size: 16px;
+	
+	&__svg {
+		width: 32px;
+		height: 32px;
+	}
+
+	@media (max-width: 1280px) {
+		width: 111px;
+		gap: 12px;
+		font-size: 14px;
+		&__svg {
+			width: 24px;
+			height: 24px;
+		}
+	}
+	@media (max-width: 768px) {
+		width: 121px;
+		gap: 14px;
+		font-size: 16px;
+	}	
+	@media (max-width: 375px) {
+		width: 100%;
+		gap: 12px;
+	}
+}
+.btn {
+	@include btn;
+}
+// кнопка с обводкой
+.button-outlined {
+	@include btn;
+	border: 1px solid $gray;
+	color: $black;
+	background-color: none;
+	.btn__svg {
+		fill: $dark-blue;
+	}
+	&:focus {
+		color: $cobolt;
+	    background-color: $white;
+		box-shadow: 0 0 0 3px $light-blue;
+		.btn__svg {
+			fill: $cobolt;
+		}
+	}
+	&:hover {
+		color: $white;
+	    background-color: $cobolt;
+		border: none;
+		box-shadow: none;
+		.btn__svg {
+			fill: $white;
+		}
+	}
+	&:active {
+		color: $white;
+	    background-color: $dark-blue;
+		border: none;
+		.btn__svg {
+			fill: $white;
+		}
+	}
+	&:disabled {
+		color: $gray;
+	    background-color: $white;
+		border: 1px solid $gray;
+		.btn__svg {
+			fill: $gray;
+		}
+	}
+}
+
+// кнопка с заливкой
+.button-filled {
+	@include btn;
+	border: none;
+	color: $white;
+	background-color: $light-red;
+	.btn__svg {
+		fill: $white;
+	}
+	&:focus {
+		box-shadow: 0 0 0 3px $light-blue;
+	}
+	&:hover {
+	    background-color: $red;
+		box-shadow: none;
+	}
+	&:active {
+	    background-color: $dark-red;
+	}
+	&:disabled {
+		color: $dark-gray-steel;
+	    background-color: $light-gray;
+		.btn__svg {
+			fill: $dark-gray-steel;
+		}
+	}
+
+}

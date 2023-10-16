@@ -1,0 +1,21 @@
+mixin feedback-form(props)
+	.feedback-form&attributes(attributes)(data-component='feedback-form')
+		h1.feedback-form__title 
+			| Форма обратной
+			br
+			| связи
+		.feedback-form__input-container 
+			label(for="email").feedback-form__email-label E-mail
+			input(type="email" id='email' name='email' placeholder='E-mail').feedback-form__email-input
+			span.feedback-form__email-error
+			label(for="message").feedback-form__message-label
+			input(type='text' id='message' name='message' placeholder='Ваше сообщение').feedback-form__message-input
+			span.feedback-form__message-error
+			label(for='files') Прикрепить файл
+				input(type='file' id='files' name='files' placeholder='Прикрепить файл')
+			label(for="confirm").feedback-form__confirm-label
+					input(type="checkbox" id="confirm" name="confirm" required value='').feedback-form__confirm-input
+					+svg('check-mark').feedback-form__check-mark
+					| Вы подтверждаете, что ознакомились c&nbsp;  
+					a(href='/#')  политикой обработки персональных данных 
+			+button({text: 'Отправить'})(class="button-outlined")
