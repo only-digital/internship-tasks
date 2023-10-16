@@ -1,92 +1,87 @@
+$gray: #8F8F8F;
+$darkBlue: #04306A;
+$darkGreen: #012B34;
+$grayLight: #909090;
+$blue: #002F6C;
+$white: white;
+$red: #EF1C1C;
+$black: #111111;
+$blueLight: #0041A0;
+
 .form {
 	padding: 115px 80px 45px 80px;
 }
-
-.form-caption{
+.form-caption {
 	margin-bottom: 144px;
-	color: #8F8F8F;
+	color: $gray;
 }
-
-.form-caption__date{
+.form-caption__date {
 	font-size: 1.25rem;
 	line-height: 1.75rem;
 	margin-bottom: 20px;
 }
-
-.form-caption__title{
+.form-caption__title {
 	font-size: 4rem;
 	line-height: 4rem;
-	color: #04306A;
+	color: $darkBlue;
 	margin-bottom: 45px;
 }
-
-.form-caption__info{
+.form-caption__info {
 	font-size: 1rem;
 	line-height: 1.3rem;
 }
-
-.form-description{
+.form-description {
 	margin-bottom: 130px;
-	color: #012B34;
+	color:$darkGreen;
 	font-size: 1.5rem;
 	line-height: 2.1rem;
 }
-
-.form-description__title{
+.form-description__title {
 	margin-bottom: 35px;
-	color: #04306A;
+	color: $darkBlue;
 	font-size: 2.875rem;
 	line-height: 3.45rem;
 }
-
-.form-description__list{
+.form-description__list {
 	list-style-type: none;
+	.form-description__list__item {
+		padding-left: 30px;
+		background: url(https://res.cloudinary.com/dyvmnrk8q/image/upload/v1697029319/Vector_2198_ijlmyy.svg) no-repeat left center;
+	}
 }
-
-.form-description__list .form-description__list__item {
-	padding-left: 30px;
-	background: url(https://res.cloudinary.com/dyvmnrk8q/image/upload/v1697029319/Vector_2198_ijlmyy.svg) no-repeat left center;
-  }
-
-  .form-feedback__wrapper{
+.form-feedback__wrapper {
 	display: grid;
 	grid-template-columns: 363px auto;
 	gap: 81px;
-  }
-
-  .form-feedback__form{
+}
+.form-feedback__form {
 	margin-top: 38px;
-  }
-
-  .form-feedback__title{
+}
+.form-feedback__title {
 	font-size: 2rem;
 	line-height: 2.4rem;
-	color: #04306A;
+	color:$darkBlue;
 	max-width: 363px;
-  }
-
-  .form-feedback__name{
+}
+.form-feedback__name {
 	margin-left: 20px;
-	color: #909090;
+	color: $grayLight;
 	font-size: 0.75rem;
-	line-height: 1.125rem;;
-  }
-
-  .form-feedback__email{
+	line-height: 1.125rem;
+}
+.form-feedback__email {
 	border: 1px solid #0041A0;
 	padding: 8px 20px 14px 20px;
 	border-radius: 24px;
 	margin-bottom: 60px;
 	width: 836px;
-  }
-
-  .form-feedback__checkbox__wrapper{
+}
+.form-feedback__checkbox__wrapper {
 	display: flex;
 	gap: 18px;
 	margin-bottom: 30px;
-  }
-
-  .form-feedback__checkbox{
+}
+.form-feedback__checkbox {
 	border: 1px solid #BCBCBC;
 	width: 16px;
 	height: 16px;
@@ -94,65 +89,51 @@
 	align-self: center;
 	cursor: pointer;
 	appearance: checkbox;
-  }
-
-  .form-feedback__checkbox__desc{
+}
+.form-feedback__checkbox__desc {
 	font-size: 0.875rem;
 	line-height: 1.313rem;
-	color: #909090;
-  }
-
-  .form-feedback__checkbox__desc__span{
-	color: #002F6C;
-  }
-
-  .form-feedback__submit{
+	color: $grayLight;
+}
+.form-feedback__checkbox__desc__span {
+	color: $blue;
+}
+.form-feedback__submit {
 	width: 155px;
 	height: 48px;
 	border-radius: 24px;
-	background-color: #0041A0;
+	background-color: $blueLight;
 	display: flex;
 	align-items: center;
 	gap: 14px;
 	justify-content: center;
 	font-size: 1rem;
 	line-height: 1rem;
-	color: white;
-  }
-
-  .form-field__submit__svg{
+	color: $white;
+}
+.form-field__submit__svg {
 	width: 32px;
 	height: 32px;
-  }
-
-  .error{
+}
+.error {
 	font-size: 0.875rem;
 	line-height: 1.313rem;
-	color: #EF1C1C;
+	color: $red;
 	display: block;
 	margin-bottom: 14px;
 	margin-top: -35px;
 	display: none;
-  }
-
-  .form-feedback__success{
+}
+.form-feedback__success {
 	font-size: 1rem;
 	line-height: 1.24;
-	color: #111111;
+	color: $black;
 	display: flex;
 	align-items: center;
 	display: none;
-  }
-
-  .form-feedback__success svg{
-	width: 48px;
-	height: 48px;
-	margin-right: 21px;
-  }
-  
-
-
-
-
-
-
+	svg {
+		width: 48px;
+		height: 48px;
+		margin-right: 21px;
+	}
+}
