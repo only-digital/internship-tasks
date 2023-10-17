@@ -7,11 +7,11 @@ class inputFileCt extends Component {
     clue;
     fileCt;
     files = {};
-    onFilesChange;
+    sendDataToForm;
 
     constructor(element) {
         super(element);
-        this.onFilesChange = element.onUpdate;
+        this.sendDataToForm = element.sendDataToForm;
         this.input = this.getElement("input");
         this.alert = this.getElement("alert");
         this.clue = this.getElement("clue");
@@ -66,7 +66,7 @@ class inputFileCt extends Component {
             fileId: file.name
         }
         this.createFileHTML(fileProps);
-        this.onFilesChange(Object.values(this.files));
+        this.sendDataToForm(Object.values(this.files));
     }
 
     createFileHTML = (fileProps) => {
@@ -83,7 +83,7 @@ class inputFileCt extends Component {
         delete this.files[FileKey];
         this.input.disabled = false;
         this.sendBt.classList.remove("input-file-ct__send-bt_disabled");
-        this.onFilesChange(Object.values(this.files));
+        this.sendDataToForm(Object.values(this.files));
     }
 }
 

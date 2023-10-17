@@ -4,13 +4,12 @@ const emailRegex = /^([a-zA-Z\-0-9_]+|([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:
 class inputMailCt extends Component {
     input;
     name;
-    onMailUpdate;
-
+    sendDataToForm;
     constructor(element) {
         super(element);
         this.input = this.getElement("input");
         this.name = this.getElement("name");
-        this.onMailUpdate = element.onUpdate;
+        this.sendDataToForm = element.sendDataToForm;
 
         this.input.addEventListener("focus", this.onInputFocus);
         this.input.addEventListener("input", this.onInputChange);
@@ -35,10 +34,10 @@ class inputMailCt extends Component {
     valueTest = (value) => {
         if (emailRegex.test(value)) {
             this.root.classList.add("input-mail-ct_succses");
-            this.onMailUpdate(value);
+            this.sendDataToForm(value);
             return
         }
-        this.onMailUpdate(false);
+        this.sendDataToForm(false);
         this.root.classList.add("input-mail-ct_alert-active");
     }
 }

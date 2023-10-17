@@ -2,12 +2,12 @@ import Component from "../../../../app/js/base/Component";
 
 class confCheckboxCt extends Component {
     input;
-    onCeckboxUpdate;
+    sendDataToForm;
     fakeCheckbox;
 
     constructor(element) {
         super(element)
-        this.onCeckboxUpdate = element.onUpdate;
+        this.sendDataToForm = element.sendDataToForm;
         this.input = this.getElement("checkbox");
         this.fakeCheckbox = this.getElement("fake-checkbox")
 
@@ -16,7 +16,7 @@ class confCheckboxCt extends Component {
 
     onCheck = () => {
         this.fakeCheckbox.classList.toggle("conf-checkbox-ct__fake-checkbox_checked")
-        this.onCeckboxUpdate(this.input.checked);
+        this.sendDataToForm(this.input.checked);
     }
 }
 

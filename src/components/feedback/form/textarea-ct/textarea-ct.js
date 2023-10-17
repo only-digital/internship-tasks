@@ -3,13 +3,13 @@ import Component from '../../../../app/js/base/Component';
 class textareaCt extends Component {
     input;
     name;
-    onMessageUpdate;
+    sendDataToForm;
 
     constructor(element) {
         super(element);
         this.input = this.getElement("textarea");
         this.name = this.getElement("name");
-        this.onMessageUpdate = element.onUpdate;
+        this.sendDataToForm = element.sendDataToForm;
 
         this.input.addEventListener("focus", this.onInputFocus)
         this.input.addEventListener("blur", this.onInputBlur)
@@ -35,12 +35,12 @@ class textareaCt extends Component {
     valueTest = (value) => {
         if (value === "") {
             this.root.classList.add("textarea-ct_alert-active");
-            this.onMessageUpdate(false)
+            this.sendDataToForm(false)
             return
         }
         
         this.root.classList.add("textarea-ct_succses");
-        this.onMessageUpdate(value)
+        this.sendDataToForm(value)
     }
 }
 
