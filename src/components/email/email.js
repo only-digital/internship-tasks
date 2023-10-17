@@ -6,7 +6,7 @@ class Email extends Component {
         super(element);
 
         this.emailInput = this.getElement('email-input');
-        console.log(this.email);
+        console.log(this.emailInput);
         // Your code here
     }
 
