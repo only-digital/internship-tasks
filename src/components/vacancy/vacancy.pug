@@ -1,4 +1,5 @@
 include ../vacancy-paragraph/vacancy-paragraph.pug
+include ../response-form/response-form.pug
 
 mixin vacancy(props)
 	.vacancy&attributes(attributes)(data-component='vacancy')
@@ -9,5 +10,6 @@ mixin vacancy(props)
 		//- +vacancy-paragraph(youWillHaveTo)
 		//- +vacancy-paragraph(expectations)
 		//- +vacancy-paragraph(offer)
-		div( class="vacancy__loader vacancy__loader-visible")
+		+response-form()
+		div( class="vacancy__loader vacancy__loader-visibl")
 			+svg('loader').vacancy__loader-svg

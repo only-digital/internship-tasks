@@ -1,3 +1,18 @@
 mixin response-form(props)
 	.response-form&attributes(attributes)(data-component='response-form')
+		form.response-form__form
+			h2.response-form__title Форма обратной связи
+			label.response-form__label-email(for="email") E-mail
+			input.response-form__input(name= "email" type="email" id='email' required)
+			p.response-form__error-message  
+			input.response-form__checkbox( name="confirm" type="checkbox" id="checkbox" required)
+			label.response-form__label-checkbox(name= "confirm" for="checkbox") Вы подтверждаете, что ознакомились c
+				a.response-form__link(href="#" target="blanck")  политикой обработки персональных данных
+			button.response-form__submit(type="submit")(disabled='') Отправить
+				+svg('arrow').response-form__submit-image
+			p.response-form__success-message Форма успешно отправлена
+				+svg('submit_success').response-form__success-image
+			
+		
+
 		//Your code here

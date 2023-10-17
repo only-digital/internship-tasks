@@ -1,5 +1,131 @@
 .response-form {
-	$root: &;
+  $root: &;
+  width: 100%;
+  &__form {
+    padding: 44px 217px 45px 23px;
 
-	//Your code here
+    display: grid;
+    grid-template-columns: 0.27fr 0.021fr 0.71fr;
+    grid-template-areas:
+      'title email email'
+      'title input input'
+      'title error error'
+      'title checkbox link'
+      'title submit submit';
+    justify-items: start;
+  }
+  &__title {
+    grid-area: title;
+    font-size: 32px;
+    line-height: 1.2;
+    letter-spacing: -0.64px;
+    color: #002f6c;
+  }
+  &__label-email {
+    margin-left: 20px;
+    grid-area: email;
+    margin-top: 24px;
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: -0.24px;
+    color: #909090;
+    display: flex;
+    flex-direction: column;
+  }
+  &__input {
+    grid-area: input;
+    border: 1px solid #0041a0;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.32px;
+    padding: 8px 20px 14px 20px;
+    border-radius: 24px;
+    width: 100%;
+    &:disabled {
+      color: #909090;
+      border-color: #909090;
+    }
+    &:disabled + .response-form__error-message {
+      color: green;
+    }
+  }
+  &__error-message {
+    white-space: pre;
+    margin: 25px 0 14px;
+    grid-area: error;
+    margin-top: 24px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #ef1c1c;
+  }
+  &__label-checkbox {
+    margin-left: 18px;
+    display: flex;
+    align-items: center;
+    grid-area: link;
+    color: #909090;
+    font-size: 14px;
+    line-height: 1.5;
+    flex-wrap: wrap;
+  }
+  &__link {
+    white-space: pre;
+    color: #002f6c;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  &__checkbox {
+    grid-area: checkbox;
+    appearance: checkbox;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    padding: 0;
+    &:disabled + .response-form__label-checkbox .response-form__link {
+      color: #909090;
+      pointer-events: none;
+    }
+  }
+  &__submit {
+    grid-area: submit;
+    background-color: #0041a0;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1;
+    letter-spacing: -0.32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 14px 9px 18px;
+    border-radius: 25px;
+    gap: 14px;
+    margin: 45px 0 30px;
+    &:disabled {
+      background-color: #909090;
+      pointer-events: none;
+    }
+    &-image {
+      width: 32px;
+      aspect-ratio: 1;
+    }
+
+    &_success:disabled {
+      display: none;
+    }
+  }
+  &__success-message {
+    display: none;
+    flex-direction: row-reverse;
+    align-items: center;
+    grid-area: submit;
+    padding: 25px 0 50px;
+    &_visible {
+      display: flex;
+    }
+  }
+  &__success-image {
+    width: 48px;
+    aspect-ratio: 1;
+    margin-right: 21px;
+  }
 }
