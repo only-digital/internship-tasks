@@ -6,10 +6,13 @@ import tasks from '../../data/index.json';
 import Header from '@/components/header/header';
 import Aside from '@/components/aside/aside';
 import Search from '@/components/search/search';
+import useSearch from '@/hooks/useSearch';
 
 const Index = () => {
 
     const [tasksState,setTasksState] = useState(tasks);
+    const [searchState,setSearchState] = useState('');
+    const [searchedTasks] = useSearch(tasks.tasks,searchState);
 
     const handleTask = (title,typeOfClick) => {
         if (typeOfClick==='delete') {
@@ -35,7 +38,7 @@ const Index = () => {
     }
 
     const handleSearch = (event) => {
-        console.log(event.target.value);
+        setSearchState(event.target.value);
     }
 
     return (
@@ -50,7 +53,7 @@ const Index = () => {
                 </div>
                 <div className={styles.mainTasks}>
                     {
-                        tasksState.tasks.map((task)=>{
+                        searchedTasks.map((task)=>{
                             return <Task key={task.title} handlerClick={handleTask} title={task.title} description={task.text} isCompleted={task.isCompleted}/>
                         })
                     }
