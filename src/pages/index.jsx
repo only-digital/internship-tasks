@@ -4,6 +4,7 @@ import {getIndexPage} from "../../lib/api";
 import { useEffect, useState } from 'react';
 import tasks from '../../data/index.json';
 import Header from '@/components/header/header';
+import Aside from '@/components/aside/aside';
 
 const Index = () => {
 
@@ -36,15 +37,17 @@ const Index = () => {
         <>
         <Header logoText='Creative Digital Production'/>
         <main className={styles.main}>
-            <h1 className={styles.mainTitle}>{tasksState.title}</h1>
-            <div className={styles.mainTasks}>
-                {
-                    tasksState.tasks.map((task)=>{
-                        return <Task key={task.title} handlerClick={handleTask} title={task.title} description={task.text} isCompleted={task.isCompleted}/>
-                    })
-                }
-            </div>
-
+            <Aside logoText='Список задач'/>
+            <section className={styles.tasksWrapper}>
+                <h2 className={styles.mainTitle}>{tasksState.title}</h2>
+                <div className={styles.mainTasks}>
+                    {
+                        tasksState.tasks.map((task)=>{
+                            return <Task key={task.title} handlerClick={handleTask} title={task.title} description={task.text} isCompleted={task.isCompleted}/>
+                        })
+                    }
+                </div>
+            </section>
         </main>
         </>
     )
