@@ -222,7 +222,7 @@ class ContactForm extends Component {
     postData = async (e, url) => {
         e.preventDefault();
 
-        const formData = new FormData(this.form);
+        const formData = new FormData(e.target);
 
         const res = await fetch(url, {
             method: "POST",
