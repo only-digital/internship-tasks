@@ -5,7 +5,11 @@ mixin form(props)
 			h1.form-caption__title!="Консультант SAP PO"
 			.form-caption__info
 				.form-caption__info__views!="Просмотров: " 
-				.form-caption__info__responses!="Откликов: "  
+					.loader-wrapper 
+						span.loader
+				.form-caption__info__responses!="Откликов: "
+					.loader-wrapper 
+						span.loader  
 		each list, index in props
 			.form-description 
 				h2.form-description__title!=list[0]
@@ -25,8 +29,11 @@ mixin form(props)
 						input.form-feedback__checkbox(type="checkbox" name="checkbox")
 						p.form-feedback__checkbox__desc!="Вы подтверждаете, что ознакомились " 
 							a(href='').form-feedback__checkbox__desc__span!="c политикой обработки персональных данных" 
-					button.form-feedback__submit(type="submit")!="Открыть"
-						+svg("arrow").form-field__submit__svg
+					.form-feedback__submit__wrapper
+						button.form-feedback__submit(type="submit")!="Открыть"
+							+svg("arrow").form-field__submit__svg
+						.loader-wrapper__button
+							span.loader__button
 					.form-feedback__success
 						+svg('circle')
 						span.form-feedback__success-message(class='success')!="Форма успешно отправлена"

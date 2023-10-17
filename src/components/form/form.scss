@@ -7,6 +7,8 @@ $white: white;
 $red: #EF1C1C;
 $black: #111111;
 $blueLight: #0041A0;
+$lite:  #FFF;
+$brand: #FF3D00;
 
 .form {
 	padding: 115px 80px 45px 80px;
@@ -14,106 +16,153 @@ $blueLight: #0041A0;
 .form-caption {
 	margin-bottom: 144px;
 	color: $gray;
+	.form-caption__date {
+		font-size: 1.25rem;
+		line-height: 1.75rem;
+		margin-bottom: 20px;
+	}
+	.form-caption__title {
+		font-size: 4rem;
+		line-height: 4rem;
+		color: $darkBlue;
+		margin-bottom: 45px;
+	}
+	.form-caption__info {
+		font-size: 1rem;
+		line-height: 1.3rem;
+		.form-caption__info__views, .form-caption__info__responses{
+			display: flex;
+			align-items: center;
+			.loader-wrapper {
+				display: flex;
+				align-items: center;
+				transition: 0.3s linear;
+			
+				.loader {
+					border: 4px solid #f3f3f3;
+					border-radius: 50%;
+					border-top: 4px solid #3498db;
+					width: 15px;
+					height: 15px;
+					animation: spin 2s linear infinite;
+				  }
+			  }
+			  
+			  @keyframes spin {
+				0% { transform: rotate(0deg); }
+				100% { transform: rotate(360deg); }
+			  }
+		}
+	}
 }
-.form-caption__date {
-	font-size: 1.25rem;
-	line-height: 1.75rem;
-	margin-bottom: 20px;
-}
-.form-caption__title {
-	font-size: 4rem;
-	line-height: 4rem;
-	color: $darkBlue;
-	margin-bottom: 45px;
-}
-.form-caption__info {
-	font-size: 1rem;
-	line-height: 1.3rem;
-}
+
+
 .form-description {
 	margin-bottom: 130px;
 	color:$darkGreen;
 	font-size: 1.5rem;
 	line-height: 2.1rem;
-}
-.form-description__title {
-	margin-bottom: 35px;
-	color: $darkBlue;
-	font-size: 2.875rem;
-	line-height: 3.45rem;
-}
-.form-description__list {
-	list-style-type: none;
-	.form-description__list__item {
-		padding-left: 30px;
-		background: url(https://res.cloudinary.com/dyvmnrk8q/image/upload/v1697029319/Vector_2198_ijlmyy.svg) no-repeat left center;
+	.form-description__title {
+		margin-bottom: 35px;
+		color: $darkBlue;
+		font-size: 2.875rem;
+		line-height: 3.45rem;
+	}
+	.form-description__list {
+		list-style-type: none;
+		.form-description__list__item {
+			padding-left: 30px;
+			background: url(https://res.cloudinary.com/dyvmnrk8q/image/upload/v1697029319/Vector_2198_ijlmyy.svg) no-repeat left center;
+		}
 	}
 }
 .form-feedback__wrapper {
 	display: grid;
 	grid-template-columns: 363px auto;
 	gap: 81px;
-}
-.form-feedback__form {
-	margin-top: 38px;
-}
-.form-feedback__title {
-	font-size: 2rem;
-	line-height: 2.4rem;
-	color:$darkBlue;
-	max-width: 363px;
-}
-.form-feedback__name {
-	margin-left: 20px;
-	color: $grayLight;
-	font-size: 0.75rem;
-	line-height: 1.125rem;
-}
-.form-feedback__email {
-	border: 1px solid #0041A0;
-	padding: 8px 20px 14px 20px;
-	border-radius: 24px;
-	margin-bottom: 60px;
-	width: 836px;
-}
-.form-feedback__checkbox__wrapper {
-	display: flex;
-	gap: 18px;
-	margin-bottom: 30px;
-}
-.form-feedback__checkbox {
-	border: 1px solid #BCBCBC;
-	width: 16px;
-	height: 16px;
-	margin: 0;
-	align-self: center;
-	cursor: pointer;
-	appearance: checkbox;
-}
-.form-feedback__checkbox__desc {
-	font-size: 0.875rem;
-	line-height: 1.313rem;
-	color: $grayLight;
-}
-.form-feedback__checkbox__desc__span {
-	color: $blue;
-}
-.form-feedback__submit {
-	width: 155px;
-	height: 48px;
-	border-radius: 24px;
-	background-color: $blueLight;
-	display: flex;
-	align-items: center;
-	gap: 14px;
-	justify-content: center;
-	font-size: 1rem;
-	line-height: 1rem;
-	color: $white;
-}
-.form-field__submit__svg {
-	width: 32px;
-	height: 32px;
+	.form-feedback__form {
+		margin-top: 38px;
+		.form-feedback__title {
+			font-size: 2rem;
+			line-height: 2.4rem;
+			color:$darkBlue;
+			max-width: 363px;
+		}
+		.form-feedback__name {
+			margin-left: 20px;
+			color: $grayLight;
+			font-size: 0.75rem;
+			line-height: 1.125rem;
+		}
+		.form-feedback__email {
+			border: 1px solid #0041A0;
+			padding: 8px 20px 14px 20px;
+			border-radius: 24px;
+			margin-bottom: 60px;
+			width: 836px;
+		}
+	}
+	.form-feedback__checkbox__wrapper {
+		display: flex;
+		gap: 18px;
+		margin-bottom: 30px;
+		.form-feedback__checkbox {
+			border: 1px solid #BCBCBC;
+			width: 16px;
+			height: 16px;
+			margin: 0;
+			align-self: center;
+			cursor: pointer;
+			appearance: checkbox;
+		}
+		.form-feedback__checkbox__desc {
+			font-size: 0.875rem;
+			line-height: 1.313rem;
+			color: $grayLight;
+			.form-feedback__checkbox__desc__span {
+				color: $blue;
+			}
+		}
+	}
+
+	.form-feedback__submit__wrapper{
+		display: flex;
+		align-items: center;
+		gap: 15px;
+	
+		.form-feedback__submit {
+			width: 155px;
+			height: 48px;
+			border-radius: 24px;
+			background-color: $blueLight;
+			display: flex;
+			align-items: center;
+			gap: 14px;
+			justify-content: center;
+			font-size: 1rem;
+			line-height: 1rem;
+			color: $white;
+			.form-field__submit__svg {
+				width: 32px;
+				height: 32px;
+			}
+		}
+		.loader-wrapper__button {
+			display: none;
+			align-items: center;
+			transition: 0.3s linear;
+		
+			.loader__button {
+				border: 10px solid #f3f3f3;
+				border-radius: 50%;
+				border-top: 10px solid #3498db;
+				width: 40px;
+				height: 40px;
+				animation: spin 2s linear infinite;
+			  }
+		  }
+	}
+	
 }
 .error {
 	font-size: 0.875rem;
@@ -137,3 +186,14 @@ $blueLight: #0041A0;
 		margin-right: 21px;
 	}
 }
+
+.form-feedback__submit__wrapper{
+	display: flex;
+	align-items: center;
+	gap: 15px;
+
+}
+
+
+
+  

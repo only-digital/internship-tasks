@@ -8,6 +8,9 @@ class Form extends Component {
     buttonElement;
     errorElement;
     successElement;
+    loaderElement;
+    loaderButtonElement;
+
     constructor(element) {
         super(element);
         this.formElement = document.querySelector('.form-feedback__form');
@@ -16,46 +19,65 @@ class Form extends Component {
         this.buttonElement = document.querySelector('.form-feedback__submit');
         this.viewsElement = document.querySelector('.form-caption__info__views');
         this.responsesElement = document.querySelector('.form-caption__info__responses');
+        this.loaderElement = document.querySelector('.loader-wrapper');
+        this.loaderButtonElement = document.querySelector('.loader-wrapper__button');
 
 
-fetch('/stats') 
-.then(response => response.json()) 
-.then(data => {
-  this.viewsElement.textContent += data.views; 
-  this.responsesElement.textContent += data.responses; 
-})
-.catch(error => console.error(error)); 
-console.log(this.buttonElement);
-this.formElement.addEventListener('submit', (event) => { 
-    console.log(event);
+        this.getStats();
 
-event.preventDefault(); 
- 
- const email = this.formElement.elements.email.value;
- const confirm = this.formElement.elements.checkbox.checked;
- const data = {email, confirm};
-fetch('/form', { 
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json' 
-  },
-  body: JSON.stringify(data) 
-})
-  .then(response => {
-    console.log(response)
-    if (response.status === 200) { 
-        this.buttonElement.style.display = 'none';
-        this.successElement.style.display = 'flex'; 
-    } else if (response.status === 422) { 
-        this.errorElement.style.display = 'block'; 
-    }
-  })
-  .catch(error => console.error(error)); 
-});
-// Your code here
+        this.formElement.addEventListener('submit', (event) => { 
+          event.preventDefault(); 
+
+          this.buttonElement.style.pointerEvents = 'none';
+          this.buttonElement.style.opacity = '0.5';
+          this.loaderButtonElement.style.display = 'flex';
+          const email = this.formElement.elements.email.value;
+          const confirm = this.formElement.elements.checkbox.checked;
+          const data = {email, confirm};
+
+          this.submitForm(data);
+      });
     }
 
+    async getStats() {
+        try {
+            const response = await fetch('/stats');
+            const data = await response.json();
+            this.viewsElement.textContent += data.views; 
+            this.responsesElement.textContent += data.responses; 
+        } catch (error) {
+            console.error(error);
+        } finally{
+          this.loaderElement.style.display = 'none';
+        }
+    }
 
+    async submitForm(data) {
+        try {
+            const response = await fetch('/form', { 
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json' 
+                },
+                body: JSON.stringify(data) 
+            });
+
+            console.log(response);
+
+            if (response.status === 200) { 
+                this.loaderButtonElement.style.display = 'none';
+                this.buttonElement.style.display = 'none';
+                this.successElement.style.display = 'flex'; 
+            } else if (response.status === 422) { 
+                this.errorElement.style.display = 'block'; 
+                this.loaderButtonElement.style.display = 'none';
+                this.buttonElement.style.pointerEvents = 'all';
+                this.buttonElement.style.opacity = '1';
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    }
+    
 }
-
 export default Form
