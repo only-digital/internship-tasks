@@ -1,0 +1,30 @@
+.Search {
+	position: relative;
+	width: 100%;
+	max-width: 608px;
+}
+
+.SearchInput {
+	border-radius: 10px;
+	background: #FFF;
+	height: 56px;
+	width: 100%;
+	padding: 15px 40px 15px 16px;
+}
+
+.SearchImage {
+	position: absolute;
+	right: 16px;
+	top: 15px;
+}
+
+.Search::placeholder {
+	color: rgba(33, 60, 87, 0.40);
+	font-feature-settings: 'clig' off, 'liga' off;
+	font-family: 'Roboto',sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 150%; /* 24px */
+	letter-spacing: 0.15px;
+}

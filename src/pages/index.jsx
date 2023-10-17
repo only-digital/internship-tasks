@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import tasks from '../../data/index.json';
 import Header from '@/components/header/header';
 import Aside from '@/components/aside/aside';
+import Search from '@/components/search/search';
 
 const Index = () => {
 
@@ -33,13 +34,20 @@ const Index = () => {
         }
     }
 
+    const handleSearch = (event) => {
+        console.log(event.target.value);
+    }
+
     return (
         <>
         <Header logoText='Creative Digital Production'/>
         <main className={styles.main}>
             <Aside logoText='Список задач'/>
             <section className={styles.tasksWrapper}>
-                <h2 className={styles.mainTitle}>{tasksState.title}</h2>
+                <div className={styles.titleWrapper}>
+                    <h2 className={styles.mainTitle}>{tasksState.title}</h2>
+                    <Search handleSearch={handleSearch}/>
+                </div>
                 <div className={styles.mainTasks}>
                     {
                         tasksState.tasks.map((task)=>{
