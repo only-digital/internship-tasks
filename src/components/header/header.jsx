@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Header = ({logoText}) => {
     return (
-        <div className={styled.Header}>
+        <header className={styled.Header}>
             <Image
                 className={styled.HeaderImage}
                 src="/logo.svg"
@@ -12,7 +12,7 @@ const Header = ({logoText}) => {
                 alt="logo"
             />
             <span className={styled.HeaderText}>{logoText}</span>
-        </div>
+        </header>
     )
 }
 
