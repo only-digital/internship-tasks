@@ -36,5 +36,7 @@
 .tasksWrapper {
     display: flex;
     flex-direction: column;
-    padding-left: 40px;
+    padding: 0 40px;
+    max-width: 1630px;
+    width: 100%;
 }

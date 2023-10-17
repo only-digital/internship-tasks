@@ -12,7 +12,15 @@ const Index = () => {
 
     const [tasksState,setTasksState] = useState(tasks);
     const [searchState,setSearchState] = useState('');
-    const [searchedTasks] = useSearch(tasks.tasks,searchState);
+    const [searchedTasks] = useSearch(tasksState.tasks,searchState);
+console.log(searchedTasks)
+    // useEffect(() => {
+    //     const newState = {
+    //         title:tasksState.title,
+    //         tasks:searchedTasks
+    //     }
+    //     setTasksState(newState);
+    // },[searchedTasks])
 
     const handleTask = (title,typeOfClick) => {
         if (typeOfClick==='delete') {
@@ -26,7 +34,7 @@ const Index = () => {
         } else if (typeOfClick==='complete') {
             const newState = {
                 title:tasksState.title,
-                tasks:tasksState.tasks.map((task)=>{
+                tasks:searchedTasks.map((task)=>{
                     if (task.title === title) {
                         task.isCompleted = !task.isCompleted
                         return task
