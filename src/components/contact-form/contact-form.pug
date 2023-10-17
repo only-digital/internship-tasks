@@ -6,16 +6,15 @@ mixin contact-form(props)
 		.contact-form__item
 			form(class='contact-form__form' id='form' method='POST')
 				.contact-form__email-wrapper
-					input(class='contact-form__email-input' placeholder='E-mail')
+					input(class='contact-form__email-input' type='email' name='email' placeholder='E-mail')
 					.contact-form__email-text E-mail
 					img(class='contact-form__email-img' src='../assets/images/Union.png')
 					.contact-form__email-error Поле 'E-mail' обязательно
 				.contact-form__message-wrapper
-					textarea(class='contact-form__message-input' placeholder='Ваше сообщение' spellcheck="false")
+					textarea(class='contact-form__message-input' type='text' name='text' placeholder='Ваше сообщение' spellcheck="false")
 					.contact-form__message-text Ваше сообщение
 					img(class='contact-form__message-img' src='../assets/images/Union.png')
-					.contact-form__message-error Поле 'Ваше сообщение' обязательно
-					
+					.contact-form__message-error Поле 'Ваше сообщение' обязательно	
 				.contact-form__files-wrapper
 					.contact-form__files-input
 						input(class='contact-form__files-input-real' type="file" name="file" id="file" accept=".pdf,.doc,.docx" multiple)
@@ -30,8 +29,6 @@ mixin contact-form(props)
 					.contact-form__files-error Максимальный размер файла 5 MB
 					.contact-form__files-window
 						.contact-form__files-window-content Вы можете загрузить только 2 документа
-
-
 				label.contact-form__checkbox
 						input(class='contact-form__checkbox-real' type='checkbox' name='checkbox')
 						span.contact-form__checkbox-custom

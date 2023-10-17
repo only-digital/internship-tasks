@@ -53,6 +53,10 @@ class ContactForm extends Component {
         this.checkbox = document.querySelector('.contact-form__checkbox-real');
         this.checkbox.addEventListener('change', (e) => this.changeCheckbox(e))
         this.checkbox.checked = false;
+
+        // Request
+        this.form = document.querySelector('.contact-form__form');
+        this.form.addEventListener('submit', (e) => this.postData(e, '/form').then(res => console.log(res)));
     }
 
     changeInputValue(errorClass) {
@@ -156,11 +160,9 @@ class ContactForm extends Component {
 
     // Input files
     changeInputFiles(e) {
-        console.log('change files');
         this.filesWindow.style.opacity = '0';
         this.filesError.style.opacity = '0';
         this.items.forEach(item => item.style.opacity = '0');
-
 
         const target = e.target;
         if (target.files.length > 2) {
@@ -214,6 +216,20 @@ class ContactForm extends Component {
         }
 
         this.state.validation();
+    }
+
+    // Request
+    postData = async (e, url) => {
+        e.preventDefault();
+
+        const formData = new FormData(this.form);
+
+        const res = await fetch(url, {
+            method: "POST",
+            body: formData
+        });
+
+        return res;
     }
 }
 
