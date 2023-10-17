@@ -20,7 +20,7 @@ class Vacancy extends Component {
       })
       .catch((err) => console.log(err))
       .finally(() => {
-        this.loader.classList.remove('vacancy__loader-visible');
+        this.loader.classList.add('vacancy__loader_invisible');
       });
   }
 }

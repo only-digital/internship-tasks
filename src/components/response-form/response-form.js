@@ -9,6 +9,7 @@ class ResponseForm extends Component {
     this.checkbox = this.getElement('checkbox');
     this.submit = this.getElement('submit');
     this.successMessage = this.getElement('success-message');
+    this.loader = this.getElement('loader');
     this.responseData = {};
 
     this.emailInput.addEventListener('keyup', (evt) => {
@@ -33,7 +34,8 @@ class ResponseForm extends Component {
   }
 
   sendResponse = () => {
-    console.log(JSON.stringify(this.responseData));
+    this.loader.classList.add('response-form__loader_visible');
+    this.submit.setAttribute('disabled', '');
     fetch('/form', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -51,13 +53,14 @@ class ResponseForm extends Component {
         this.setFormDisabled();
       })
       .catch((err) => {
-        console.log(err);
-        // err.json().then((err) => this.setMesasge(err.message));
+        err.json().then((err) => this.setMesasge(err.message));
+      })
+      .finally(() => {
+        this.loader.classList.remove('response-form__loader_visible');
       });
   };
 
   checkFormValidity = () => {
-    console.log(!this.submit.hasAttribute('disabled'));
     if (this.form.checkValidity()) {
       this.submit.removeAttribute('disabled');
     } else {

@@ -10,6 +10,7 @@ mixin response-form(props)
 				a.response-form__link(href="#" target="blanck")  политикой обработки персональных данных
 			button.response-form__submit(type="submit")(disabled='') Отправить
 				+svg('arrow').response-form__submit-image
+				+loader.response-form__loader
 			p.response-form__success-message Форма успешно отправлена
 				+svg('submit_success').response-form__success-image
 			

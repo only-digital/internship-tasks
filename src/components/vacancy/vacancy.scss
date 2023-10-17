@@ -2,18 +2,16 @@
   $root: &;
   font-family: Arial, Helvetica, sans-serif;
   $root: &;
-  // display: grid;
   display: flex;
   flex-wrap: wrap;
   grid-template-columns: max-content 1fr;
-  padding: 115px 0 144px 0;
+  padding: 115px 80px 0 80px;
+
   &__date {
     font-size: 20px;
     color: #8f8f8f;
     letter-spacing: -0.4px;
     line-height: 1.4;
-    // grid-column-start: 1;
-    // grid-column-end: 3;
     width: 100%;
   }
   &__title {
@@ -40,18 +38,12 @@
     letter-spacing: -0.32px;
   }
   &__loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba($color: #000000, $alpha: 0.2);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    &-visible {
-      display: flex;
+    &_invisible {
+      display: none;
     }
+  }
+  &__form {
+    margin-top: 109px;
   }
   //Your code here
 }

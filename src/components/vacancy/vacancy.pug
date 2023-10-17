@@ -7,9 +7,7 @@ mixin vacancy(props)
 		h1.vacancy__title=`${props.name}`
 		p.vacancy__qty-views
 		p.vacancy__qty-responses
-		//- +vacancy-paragraph(youWillHaveTo)
-		//- +vacancy-paragraph(expectations)
-		//- +vacancy-paragraph(offer)
-		+response-form()
-		div( class="vacancy__loader vacancy__loader-visibl")
-			+svg('loader').vacancy__loader-svg
+		each paragraph, index in vacancy 
+			+vacancy-paragraph(paragraph).vacancy__paagraph
+		+response-form().vacancy__form
+		+loader.vacancy__loader

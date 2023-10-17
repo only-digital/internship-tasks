@@ -2,6 +2,7 @@ import ExampleButton from '../../components/example-button/example-button';
 import Vacancy from '../../components/vacancy/vacancy';
 import VacancyParagraph from '../../components/vacancy-paragraph/vacancy-paragraph';
 import ResponseForm from '../../components/response-form/response-form';
+import Loader from '../../components/loader/loader';
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -13,6 +14,7 @@ const allComponents = {
   'vacancy-paragraph': VacancyParagraph,
   vacancy: Vacancy,
   'response-form': ResponseForm,
+  loader: Loader,
 };
 
 /**

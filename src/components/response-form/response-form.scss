@@ -2,10 +2,10 @@
   $root: &;
   width: 100%;
   &__form {
-    padding: 44px 217px 45px 23px;
+    padding: 44px 137px 45px 23px;
 
     display: grid;
-    grid-template-columns: 0.27fr 0.021fr 0.71fr;
+    grid-template-columns: 0.35fr 0.028fr 0.65fr;
     grid-template-areas:
       'title email email'
       'title input input'
@@ -59,7 +59,6 @@
     color: #ef1c1c;
   }
   &__label-checkbox {
-    margin-left: 18px;
     display: flex;
     align-items: center;
     grid-area: link;
@@ -87,6 +86,7 @@
     }
   }
   &__submit {
+    position: relative;
     grid-area: submit;
     background-color: #0041a0;
     color: #fff;
@@ -127,5 +127,12 @@
     width: 48px;
     aspect-ratio: 1;
     margin-right: 21px;
+  }
+  &__loader {
+    position: absolute;
+    display: none;
+    &_visible {
+      display: flex;
+    }
   }
 }
