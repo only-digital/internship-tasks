@@ -14,7 +14,10 @@ class Form extends Component {
         this.yesCheckBox = this.getElement("checkbox-yes");
 
         this.addFile = this.getElement('file');
-        this.addFile.addEventListener("input", this.showInputFile)
+        this.wrapperAddFile = this.getElement('add-file');
+        this.fileError = this.getElement('file-error');
+
+        this.addFile.addEventListener("input", this.checkFileSize)
 
         this.email.addEventListener("input", this.emailFocus)
         this.msg.addEventListener("input", this.msgFocus)
@@ -22,19 +25,49 @@ class Form extends Component {
         this.checkBox.addEventListener("change", this.checkBoxChange)
     }
 
-   showInputFile = () => {
+   showFile = (fileSize, fileType) => {
+
+        const fileElSize = this.getElement('newFile').querySelector('.form__fileSize');
+        const fileElType = this.getElement('newFile').querySelector('.form__fileType');
+        fileElSize.textContent = ' ' + fileSize + ' kB';
+
+        if (fileType.includes('/pdf'))
+            fileElType.textContent = '.PDF';
+        else if (fileType.includes('/msword'))
+            fileElType.textContent = '.doc';
+        else
+            fileElType.textContent = '.docx';
+
+    }
+
+   checkFileSize = () => {
+
+       this.fileError.classList.add('hidden');
+       this.wrapperAddFile.classList.remove('error');
+
+       const fileSize = this.addFile.files[0].size;
+       const fileType = this.addFile.files[0].type;
 
         if (this.addFile.value)
         {
+            if (fileSize > 5_242_880) //5МБ в байтах
+            {
+                this.fileError.classList.toggle('hidden');
+                this.wrapperAddFile.classList.toggle('error');
 
+                console.log('here')
+                return; //добавить удаление этого файла
+            }
 
-            //console.log(this.document)
-           let file = this.createNewElement('div');
-            console.log(file)
-           // file.textContent = ';'
+            else
+            {
+                const sizeToShow =  Math.round((fileSize / 1024) * 10) / 10;
+                console.log('gere')
+                this.showFile(sizeToShow, fileType);
+            }
+
         }
-            console.log(this.addFile.value);
-   }
+    }
    checkBoxChange = () => {
         this.yesCheckBox.classList.toggle("hidden");
         this.checkBox.classList.toggle("agree");

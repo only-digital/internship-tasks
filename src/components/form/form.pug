@@ -7,10 +7,17 @@ mixin form(props)
 			p.form__input-name.hidden.form__msg-name Ваше сообщение
 			textarea.form__msg.form__passive(type="text" placeholder="Ваше сообщение")
 			.form__add-block
-				button.form__add-file.form__btn
-					span Прикрепить файл
-					+svg('add').form__svg-add.form__svg
-					input(type="file").form__file
+				.form__addBtns
+					button.form__add-file.form__btn
+						span Прикрепить файл
+						+svg('add').form__svg-add.form__svg
+						input(type="file" accept=".pdf, .docx, .doc").form__file
+					div.form__newFile
+						span Документ&nbsp
+						span.form__fileType PDF,
+						span.form__fileSize 106kB
+						+svg('add').form__closeFile
+				p.form__file-error.hidden Максимальный размер файла 5МБ
 			.form__checkbox
 				+svg('agree').form__checkbox-yes.hidden
 				input(type='checkbox').form__checkbox-input
