@@ -15,7 +15,6 @@ $dark-red: #81080F;
 
 
 @mixin btn {
-	//settings for all btns and all media-q
 	display: flex;
 	height: 48px;
 	justify-content: center;
@@ -23,7 +22,6 @@ $dark-red: #81080F;
 	border-radius: 24px;
 	transition: all 0.3s;
 	
-	//settings for all btns for media-q 1920px
 	width: 155px;
 	gap: 14px;
 	padding-left: 14px;
@@ -34,25 +32,6 @@ $dark-red: #81080F;
 		width: 32px;
 		height: 32px;
 	}
-
-	// @media (max-width: 1280px) {
-	// 	width: 111px;
-	// 	gap: 12px;
-	// 	font-size: 14px;
-	// 	&__svg {
-	// 		width: 24px;
-	// 		height: 24px;
-	// 	}
-	// }
-	// @media (max-width: 768px) {
-	// 	width: 121px;
-	// 	gap: 14px;
-	// 	font-size: 16px;
-	// }	
-	// @media (max-width: 375px) {
-	// 	width: 100%;
-	// 	gap: 12px;
-	// }
 }
 .btn {
 	@include btn;
@@ -101,31 +80,3 @@ $dark-red: #81080F;
 	}
 }
 
-// кнопка с заливкой
-.button-filled {
-	@include btn;
-	border: none;
-	color: $white;
-	background-color: $light-red;
-	.btn__svg {
-		fill: $white;
-	}
-	&:focus {
-		box-shadow: 0 0 0 3px $light-blue;
-	}
-	&:hover {
-	    background-color: $red;
-		box-shadow: none;
-	}
-	&:active {
-	    background-color: $dark-red;
-	}
-	&:disabled {
-		color: $dark-gray-steel;
-	    background-color: $light-gray;
-		.btn__svg {
-			fill: $dark-gray-steel;
-		}
-	}
-
-}

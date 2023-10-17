@@ -18,10 +18,20 @@ $main-red: #F00;
 	font-family: Arial;
 	padding-left: 20px;
 }
+:root {
+	box-sizing: border-box;
+}
+//overwriting browser settings
+input[type="email" i] {
+    padding-block: unset;
+    padding-inline: unset;
+	padding-left: 20px;
+}
 
 .email {
 	display: flex;
 	flex-flow: column nowrap;
+	gap: 0;
 	width: 100%;
 	&-span {
 		height: 10px;
@@ -42,11 +52,13 @@ $main-red: #F00;
 		width: 100%;
 		height: 48px;
 		border-bottom: 1px $extra-gray-2 solid;
+		border-top: 1px transparent solid;
 		color: $black;
-		padding-left: 20px;
+		padding: 0 0 0 20px;
 		display: flex;
 		flex-flow: row nowrap;
 		align-items: center;
+		
 		&::placeholder {
 			color: $black;
 			font-size: 16px;
@@ -62,6 +74,7 @@ $main-red: #F00;
 		background-color: $white;
 		border: 1px $cobolt solid;
 		outline: none;
+		transition: border 0.3s ease;
 	}
 	&-input:focus + &-label,
 	&-input:focus-visible + &-label {

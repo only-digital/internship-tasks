@@ -12,9 +12,5 @@ mixin feedback-form(props)
 			span.feedback-form__message-error
 			label(for='files') Прикрепить файл
 				input(type='file' id='files' name='files' placeholder='Прикрепить файл')
-			label(for="confirm").feedback-form__confirm-label
-					input(type="checkbox" id="confirm" name="confirm" required value='').feedback-form__confirm-input
-					+svg('check-mark').feedback-form__check-mark
-					| Вы подтверждаете, что ознакомились c&nbsp;  
-					a(href='/#')  политикой обработки персональных данных 
+			+confirm()
 			+button({text: 'Отправить'})(class="button-outlined")
