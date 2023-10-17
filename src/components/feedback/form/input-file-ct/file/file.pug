@@ -1,0 +1,5 @@
+mixin file(props)
+    span.file&attributes(attributes)
+        span.file__text=props.fileName
+            span.file__text_gray=` ${props.fileType}, ${props.fileSize}` 
+        +svg("plusIcon-svg").file__icon

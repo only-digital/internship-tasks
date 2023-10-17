@@ -1,0 +1,38 @@
+@import "../../../../../scssVariebles/color-varievles.scss";
+
+.file {
+    display: flex;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 8px 20px;
+    border-radius: 22px;
+    margin-left: 16px;
+    margin-top: 10px;
+
+    &__icon {
+        cursor: pointer;
+        width: 14px;
+        height: 14px;
+        transform: rotate(45deg);
+        margin-left: 12px;
+        fill: $blue;
+        transition: .8s ease fill, .8s ease scale;
+
+        &:hover {
+            scale: 1.2;
+            fill: rgb(188, 11, 11);
+        }
+
+        &:active {
+            fill: rgb(152, 9, 9);
+        }
+    }
+
+    &__text {
+        font-size: 15px;
+
+        &_gray {
+            color: $gray ;
+        }
+    }
+}

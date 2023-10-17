@@ -3,8 +3,21 @@
 @import "./input-file-ct/input-file-ct.scss";
 @import "./conf-checkbox-ct/conf-checkbox-ct.scss";
 @import "./button/button.scss";
+@import "../../.././scssVariebles/color-varievles.scss";
 
-.form{
-    padding-top: 2em;    
+.form {
+    padding-top: 2em;
     padding-right: 6em;
+    position: relative;
+
+    &__alert {
+        position: absolute;
+        color: $red;
+        top: calc(100% + 10px);
+        opacity: 0;
+        transition: 0.6s ease opacity;
+        &_active{
+            opacity: 1;
+        }
+    }
 }

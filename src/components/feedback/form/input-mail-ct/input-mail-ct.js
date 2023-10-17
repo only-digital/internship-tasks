@@ -3,17 +3,17 @@ import Component from '../../../../app/js/base/Component';
 class inputMailCt extends Component {
     input;
     name;
-    hekl;
+    onMailUpdate;
 
     constructor(element) {
         super(element);
-        this.inputMailCondintion = false;
         this.input = this.getElement("input");
         this.name = this.getElement("name");
+        this.onMailUpdate = element.onUpdate;
 
         this.input.addEventListener("focus", this.onInputFocus);
-        this.input.addEventListener("blur", this.onInputBlur);
         this.input.addEventListener("input", this.onInputChange);
+        this.input.addEventListener("blur", this.onInputBlur);
     }
     onInputFocus = () => {
         this.name.classList.add("input-mail-ct__name-active");
@@ -33,11 +33,11 @@ class inputMailCt extends Component {
 
     valueTest = (value) => {
         if (value === "1") {
-            this.inputMailCondintion = true;
             this.root.classList.add("input-mail-ct_succses");
+            this.onMailUpdate(value);
             return
         }
-        this.inputMailCondintion = false;
+        this.onMailUpdate(false);
         this.root.classList.add("input-mail-ct_alert-active");
     }
 }

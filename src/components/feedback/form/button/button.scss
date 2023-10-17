@@ -4,20 +4,18 @@
     align-items: center;
     border: 1px solid #BCBCBC;
     border-radius: 32px;
-    padding: 0px 18px;
+    padding: 12px 22px;
     outline: 4px solid transparent;
-    height: 46px;
     transition: .6s ease background-color, .3s ease outline;
 
     &__text {
-        display: inline;
-        font-size: 15px;
+        font-size: 16px;
         transition: .4s ease color;
     }
 
     &__icon {
-        width: 28px;
-        height: 32px;
+        width: 22px;
+        height: 24px;
         margin-left: 10px;
         fill: $aqua;
         transition: .4s ease fill;
@@ -62,4 +60,13 @@
         }
     }
 
+    &:disabled{
+        user-select: none;
+        pointer-events: none;
+        .button{
+            &__icon{
+                fill: $gray;
+            }
+        }
+    }
 }

@@ -1,7 +1,4 @@
-import inputFileCt from "../../components/feedback/form/input-file-ct/input-file-ct";
-import inputMailCt from "../../components/feedback/form/input-mail-ct/input-mail-ct";
-import textareaCt from "../../components/feedback/form/textarea-ct/textarea-ct";
-
+import form from "../../components/feedback/form/form";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -9,9 +6,7 @@ import textareaCt from "../../components/feedback/form/textarea-ct/textarea-ct";
  * Значение - JS-класс компонента (Импорт добавляется вручную)
  */
 const allComponents = {
-    "input-mail-ct": inputMailCt,
-    "textarea-ct": textareaCt,
-    "input-file-ct": inputFileCt
+    "form":form,
 }
 
 /**

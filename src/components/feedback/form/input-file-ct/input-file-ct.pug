@@ -1,3 +1,13 @@
+include file/file
+
 mixin input-file-ct(props)
-    .input-file-ct&attributes(attributes)(data-component="input-file-ct")
-        input.input-file-ct__input(type="file" )
+    .input-file-ct&attributes(attributes)
+        label.input-file-ct__send-bt
+            input.input-file-ct__input(type="file" name="file")
+            //- accept=".pdf, .doc, .docx"
+            span.input-file-ct__fake-input
+                span.input-file-ct__send-text="Прикрепить файл"
+                +svg("plusIcon-svg").input-file-ct__send-icon
+            .input-file-ct__clue="Вы можете загрузить только 2 документа"
+            span.input-file-ct__alert
+        .input-file-ct__file-ct

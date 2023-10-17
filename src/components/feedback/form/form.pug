@@ -5,9 +5,10 @@ include ./conf-checkbox-ct/conf-checkbox-ct
 include ./button/button
 
 mixin form(props)
-    .form&attributes(attributes)
-        +input-mail-ct
-        +textarea-ct
-        +input-file-ct
-        +conf-checkbox-ct
-        +button
+    form.form&attributes(attributes)(data-component="form" method="POST" action="/form")
+        +input-mail-ct.form__input-mail-ct
+        +textarea-ct.form__textarea-ct
+        +input-file-ct.form__input-file-ct
+        +conf-checkbox-ct.form__conf-checkbox-ct
+        +button.form__button
+        span.form__alert
