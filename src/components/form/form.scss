@@ -31,7 +31,7 @@
 		//overflow: hidden;
 
 		transition: outline 0.5s, background-color 0.5s, border-radius 0.5s, height 0.5s, padding 0.5s;
-		&:hover {
+		&:hover:enabled {
 			height: 120px;
 			background-color: #F4F4F4;
 
@@ -116,9 +116,12 @@
 			#{$root}__svg {
 				fill: $darkGrey;
 			}
+
+			cursor: default;
+			outline: 1px solid #BCBCBC;
 		}
 
-		&:hover {
+		&:hover:enabled {
 			background-color: #0041A0;
 			color: white;
 
@@ -128,11 +131,11 @@
 
 		}
 
-		&:active {
+		&:active:enabled {
 			background-color: $darkBlue;
 		}
 
-		&:focus {
+		&:focus:enabled {
 			outline: 3px solid #99B3D8;
 			background-color: transparent;
 
@@ -154,7 +157,7 @@
 	&__file {
 		opacity: 0;
 		position: absolute;
-		left: 452px;
+		left: 392px;
 		top: 323px;
 		//z-index: -1;
 		width: 190px;
@@ -168,6 +171,8 @@
 			font-size: 12px;
 			letter-spacing: -0.24px;
 		}
+
+		cursor: default;
 	}
 
 	&__newFile {
@@ -209,9 +214,28 @@
 
 		fill: #002F6C;
 
-		margin-bottom: 3px;
+		margin-top: 4px;
 	}
 
+	&__twoFiles {
+		position: absolute;
+
+		left: 180px;
+		top: 190px;
+
+		p {
+			position: absolute;
+			left: 58px;
+			top: 45px;
+
+			font-size: 13px;
+			line-height: 1.5;
+			color: #002F6C;
+
+			width: 200px;
+		}
+
+	}
 	&__add-file {
 		padding: 14px 16px 16px 16px;
 		margin-bottom: 30px;
@@ -227,6 +251,7 @@
 		&:disabled {
 			background-color: #f4f4f4;
 			outline: none;
+			pointer-events: none;
 		}
 
 		min-width: 155px;
@@ -274,12 +299,12 @@
 			outline: 1px solid #BCBCBC;
 
 			transition: outline 0.5s, background-color 0.5s;
-			&:hover {
+			&:hover:enabled{
 				outline: 1px solid  #0041A0;
 				cursor: pointer;
 			}
 
-			&:focus {
+			&:focus:enabled {
 				outline: 2px solid #99B3D8;
 			}
 

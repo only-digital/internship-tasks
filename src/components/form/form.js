@@ -4,6 +4,10 @@ class Form extends Component {
     constructor(element) {
         super(element);
 
+
+        this.fileList = [];
+        this.countFiles = 0;
+
         this.email = this.getElement('email');
         this.emailName = this.getElement('email-name');
 
@@ -13,22 +17,67 @@ class Form extends Component {
         this.checkBox = this.getElement('checkbox-input');
         this.yesCheckBox = this.getElement("checkbox-yes");
 
-        this.addFile = this.getElement('file');
-        this.wrapperAddFile = this.getElement('add-file');
-        this.fileError = this.getElement('file-error');
+        this.addFile = this.getElement('file'); //настоящий input-file
+        this.wrapperAddFile = this.getElement('add-file'); //кнопка на экране для добавления файла
+        this.fileError = this.getElement('file-error'); //сообщение об ошибке
+        this.newFile = this.getElements('newFile'); //кнопка с добавленным файлом
+        this.closeFile = this.getElements('delFile');
+        this.countFilesError = this.getElement('twoFiles');
 
-        this.addFile.addEventListener("input", this.checkFileSize)
+        this.addFile.addEventListener("input", this.checkFileSize);
 
-        this.email.addEventListener("input", this.emailFocus)
-        this.msg.addEventListener("input", this.msgFocus)
-        this.msg.addEventListener("input", this.msgCalculateHeight)
-        this.checkBox.addEventListener("change", this.checkBoxChange)
+        this.email.addEventListener("input", this.emailFocus);
+        this.msg.addEventListener("input", this.msgFocus);
+        this.msg.addEventListener("input", this.msgCalculateHeight);
+        this.checkBox.addEventListener("change", this.checkBoxChange);
+        this.closeFile[0].addEventListener('click', this.deleteFile);
+        this.closeFile[1].addEventListener('click', this.deleteFile);
     }
 
-   showFile = (fileSize, fileType) => {
+   checkCountFiles = () => {
+        if (this.countFiles < 2)
+            return;
 
-        const fileElSize = this.getElement('newFile').querySelector('.form__fileSize');
-        const fileElType = this.getElement('newFile').querySelector('.form__fileType');
+        this.countFilesError.classList.remove('hidden');
+        this.addFile.setAttribute('disabled','');
+        this.wrapperAddFile.setAttribute('disabled','');
+   }
+
+   deleteFile = () => {
+
+        console.log(this.closeFile)
+        console.log(event.target.parentNode);
+
+        let index = 0;
+        if (event.target.parentNode === this.closeFile[1])
+            index = 1;
+
+        console.log("Удаляем - ", index)
+
+        this.newFile[index].classList.toggle('hidden');
+        this.countFiles--;
+
+        if (this.countFiles) //значит было 2
+        {
+            this.countFilesError.classList.toggle('hidden');
+            this.addFile.removeAttribute('disabled');
+            this.wrapperAddFile.removeAttribute('disabled');
+        }
+   }
+
+   showFile = (fileSize, fileType, file) => {
+
+        let currentFile;
+
+        if (this.countFiles === 0)
+            currentFile = this.newFile[0];
+        else {
+            currentFile = this.newFile[1];
+        }
+
+        const fileElSize = currentFile.querySelector('.form__fileSize');
+        const fileElType = currentFile.querySelector('.form__fileType');
+
         fileElSize.textContent = ' ' + fileSize + ' kB';
 
         if (fileType.includes('/pdf'))
@@ -38,10 +87,16 @@ class Form extends Component {
         else
             fileElType.textContent = '.docx';
 
+        currentFile.classList.toggle('hidden');
+        this.fileList.push(file);
+        this.countFiles++;
+
+        this.checkCountFiles();
     }
 
    checkFileSize = () => {
 
+        console.log('d')
        this.fileError.classList.add('hidden');
        this.wrapperAddFile.classList.remove('error');
 
@@ -52,28 +107,29 @@ class Form extends Component {
         {
             if (fileSize > 5_242_880) //5МБ в байтах
             {
+
+                this.addFile.files = '';
                 this.fileError.classList.toggle('hidden');
                 this.wrapperAddFile.classList.toggle('error');
 
-                console.log('here')
                 return; //добавить удаление этого файла
             }
 
             else
             {
                 const sizeToShow =  Math.round((fileSize / 1024) * 10) / 10;
-                console.log('gere')
-                this.showFile(sizeToShow, fileType);
+                this.showFile(sizeToShow, fileType, this.addFile.files[0]);
             }
-
+            console.log(this.addFile.files)
         }
     }
+
    checkBoxChange = () => {
         this.yesCheckBox.classList.toggle("hidden");
         this.checkBox.classList.toggle("agree");
+   }
 
-    }
-    emailFocus = () => {
+   emailFocus = () => {
         if (this.email.value!='') {
             this.email.classList.add('activeEmail');
             this.emailName.classList.remove('hidden');
@@ -84,7 +140,7 @@ class Form extends Component {
         }
     }
 
-    msgCalculateHeight = () => {
+   msgCalculateHeight = () => {
         console.log(this.msg.scrollHeight)
         if (this.msg.scrollHeight > 120) {
             this.msg.style.height = "1px";
@@ -92,7 +148,7 @@ class Form extends Component {
         }
     }
 
-    msgFocus = () => {
+   msgFocus = () => {
 
         if (this.msg.value!='') {
             this.msg.classList.add('activeMsg');

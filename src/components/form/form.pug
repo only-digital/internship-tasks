@@ -12,11 +12,21 @@ mixin form(props)
 						span Прикрепить файл
 						+svg('add').form__svg-add.form__svg
 						input(type="file" accept=".pdf, .docx, .doc").form__file
-					div.form__newFile
+					div.form__newFile.hidden
 						span Документ&nbsp
 						span.form__fileType PDF,
 						span.form__fileSize 106kB
-						+svg('add').form__closeFile
+						button.form__delFile
+							+svg('add').form__closeFile
+					div.form__newFile.hidden
+						span Документ&nbsp
+						span.form__fileType PDF,
+						span.form__fileSize 106kB
+						button.form__delFile
+							+svg('add').form__closeFile
+				div.form__twoFiles.hidden
+					+svg('twofiles')
+					p Вы можете загрузить только 2 документа
 				p.form__file-error.hidden Максимальный размер файла 5МБ
 			.form__checkbox
 				+svg('agree').form__checkbox-yes.hidden
