@@ -2,6 +2,7 @@ extends ../../build_modules/common
 
 
 block body
-    +example-button()
-    +example-button()
-    //Your code here
+    .feedback
+        h1.feedback__title Форма обратной связи
+        form.feedback__form
+            +email-input({label: "E-mail"})

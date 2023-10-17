@@ -1,0 +1,19 @@
+.feedback {
+  padding: 26px 130px 60px 30px;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  display: flex;
+  gap: 160px;
+
+  &__title {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+    color: $blue;
+  }
+
+  &__form {
+    flex: 1 1 0;
+  }
+}
