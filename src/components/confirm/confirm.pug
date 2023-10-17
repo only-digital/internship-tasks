@@ -1,7 +1,13 @@
 mixin confirm(props)
 	.confirm&attributes(attributes)(data-component='confirm')
-		label(for="confirm").confirm__label
-					input(type="checkbox" id="confirm" name="confirm" required value='').confirm-input
+		label&attributes(attributes)(for="confirm").confirm__label
+					input&attributes(attributes)(type="checkbox" id="confirm" name="confirm" required value='').confirm-input
 					+svg('check-mark').confirm__svg
 					| Вы подтверждаете, что ознакомились c&nbsp;  
 					a(href='/#')  политикой обработки персональных данных 
+
+
+//- to make disable styles work: add .disable class to label and :disable atribute to input
+//- to realy disable link - add a.addEventListener('click', function(event) {
+//-  event.preventDefault();
+//- });

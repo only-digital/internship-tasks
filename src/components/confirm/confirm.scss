@@ -26,7 +26,7 @@ $main-red: #F00;
 	margin: 30px 0;
 	&__label {
 		font-family: Arial;
-		color: $steel;
+		color: $black;
 		font-size: 14px;
 		font-style: normal;
 		font-weight: 400;
@@ -55,15 +55,34 @@ $main-red: #F00;
 		.confirm-input:hover {
 			border: 1px $cobolt solid;
 		}
+		.confirm-input:checked {
+			border: none;
+		}
 		.confirm-input:checked + .confirm__svg {
 				display: initial;
 				width: 16px;
 				height: 16px;
 				position: absolute;
-				// left: 4px;
 			}
+		.confirm-input:disabled {
+			border: 1px $extra-gray-1 solid;
+		}
+		.confirm-input:checked:disabled {
+			border: none;
+		}
+		.confirm-input:disabled + .confirm__svg {
+			opacity: 0.5;
+			box-shadow: none;
+		}
 		a {
 			color: $main-blue;
+		}
+	}
+	
+	.confirm__label.disabled {
+		color: $extra-gray-1;
+		a {
+			color: $day-blue;
 		}
 	}
 }

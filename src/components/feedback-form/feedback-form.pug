@@ -13,4 +13,6 @@ mixin feedback-form(props)
 			label(for='files') Прикрепить файл
 				input(type='file' id='files' name='files' placeholder='Прикрепить файл')
 			+confirm()
+			+confirm(disabled='')
+			+confirm(checked='' disabled='')
 			+button({text: 'Отправить'})(class="button-outlined")
