@@ -1,3 +1,20 @@
 mixin form(props)
 	.form&attributes(attributes)(data-component='form')
-		//Your code here
+		.form-feedback__wrapper
+			h3.form-feedback__title!="Форма обратной связи"
+			form.form-feedback__form
+					p.form-feedback__name!="E-mail"
+					input.form-feedback__email(type='email' name="email")
+					span.form-feedback__error(class="error")!="Поле E-mail обязательно"
+					.form-feedback__checkbox__wrapper
+						input.form-feedback__checkbox(type="checkbox" name="checkbox")
+						p.form-feedback__checkbox__desc!="Вы подтверждаете, что ознакомились " 
+							a(href='').form-feedback__checkbox__desc__span!="c политикой обработки персональных данных" 
+					.form-feedback__submit__wrapper
+						button.form-feedback__submit(type="submit")!="Открыть"
+							+svg("arrow").form-field__submit__svg
+						.loader-wrapper__button
+							span.loader__button
+					.form-feedback__success
+						+svg('circle')
+						span.form-feedback__success-message(class='success')!="Форма успешно отправлена"

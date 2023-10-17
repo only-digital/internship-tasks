@@ -1,5 +1,135 @@
+$gray: #8F8F8F;
+$darkBlue: #04306A;
+$darkGreen: #012B34;
+$grayLight: #909090;
+$blue: #002F6C;
+$white: white;
+$red: #EF1C1C;
+$black: #111111;
+$blueLight: #0041A0;
+$lite:  #FFF;
+$brand: #FF3D00;
+
 .form {
 	$root: &;
 
-	//Your code here
+	.form-feedback__wrapper {
+		display: grid;
+		grid-template-columns: 363px auto;
+		gap: 81px;
+		.form-feedback__title {
+			font-size: 2rem;
+			line-height: 2.4rem;
+			color:$darkBlue;
+			max-width: 363px;
+		}
+		.form-feedback__form {
+			margin-top: 38px;
+			.form-feedback__name {
+				margin-left: 20px;
+				color: $grayLight;
+				font-size: 0.75rem;
+				line-height: 1.125rem;
+			}
+			.form-feedback__email {
+				border: 1px solid #0041A0;
+				padding: 8px 20px 14px 20px;
+				border-radius: 24px;
+				margin-bottom: 60px;
+				width: 836px;
+			}
+		}
+		.form-feedback__checkbox__wrapper {
+			display: flex;
+			gap: 18px;
+			margin-bottom: 30px;
+			.form-feedback__checkbox {
+				border: 1px solid #BCBCBC;
+				width: 16px;
+				height: 16px;
+				margin: 0;
+				align-self: center;
+				cursor: pointer;
+				appearance: checkbox;
+			}
+			.form-feedback__checkbox__desc {
+				font-size: 0.875rem;
+				line-height: 1.313rem;
+				color: $grayLight;
+				.form-feedback__checkbox__desc__span {
+					color: $blue;
+				}
+			}
+		}
+	
+		.form-feedback__submit__wrapper{
+			display: flex;
+			align-items: center;
+			gap: 15px;
+	
+			.form-feedback__submit {
+				width: 155px;
+				height: 48px;
+				border-radius: 24px;
+				background-color: $blueLight;
+				display: flex;
+				align-items: center;
+				gap: 14px;
+				justify-content: center;
+				font-size: 1rem;
+				line-height: 1rem;
+				color: $white;
+				.form-field__submit__svg {
+					width: 32px;
+					height: 32px;
+				}
+			}
+			.loader-wrapper__button {
+				display: none;
+				align-items: center;
+				transition: 0.3s linear;
+	
+				.loader__button {
+					border: 10px solid #f3f3f3;
+					border-radius: 50%;
+					border-top: 10px solid #3498db;
+					width: 40px;
+					height: 40px;
+					animation: spin 2s linear infinite;
+				  }
+			  }
+		}
+	
+	}
+	.error {
+		font-size: 0.875rem;
+		line-height: 1.313rem;
+		color: $red;
+		display: block;
+		margin-bottom: 14px;
+		margin-top: -35px;
+		display: none;
+	}
+	.form-feedback__success {
+		font-size: 1rem;
+		line-height: 1.24;
+		color: $black;
+		display: flex;
+		align-items: center;
+		display: none;
+		svg {
+			width: 48px;
+			height: 48px;
+			margin-right: 21px;
+		}
+	}
+	
+	.form-feedback__submit__wrapper{
+		display: flex;
+		align-items: center;
+		gap: 15px;
+	
+	}
+	
+	
 }
