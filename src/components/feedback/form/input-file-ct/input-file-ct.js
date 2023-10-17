@@ -1,31 +1,6 @@
 import Component from '../../../../app/js/base/Component';
 import File from "./file/file";
 
-function generateFileCtHTML(props) {
-    return `
-        <span class="file__text">
-            ${props.fileName}
-            <span class="file__text_gray"> 
-                ${props.fileType}, ${props.fileSize}
-            </span>
-        </span>
-      ${generateSVG("plusIcon-svg", { "class": "file__icon", "focusable": "false" })}
-  `;
-}
-
-function generateSVG(id, attributes) {
-    const attrString = Object.entries(attributes)
-        .map(([attr, value]) => `${attr}="${value}"`)
-        .join(" ");
-    return `<svg ${attrString}>
-                <use xlink:href="#${id}"></use>
-            </svg>`;
-}
-
-//Я не стал вручную jade компоненту перевадить в html а просто попросил 
-//у ChatGPT сделать функцию которая возврашает html. Подправил его косяки
-//и дописал onClcik для иконок
-
 class inputFileCt extends Component {
     input;
     alert;
@@ -111,6 +86,24 @@ class inputFileCt extends Component {
         this.onFilesChange(Object.values(this.files));
     }
 }
+
+function generateFileCtHTML(props) {
+    return `
+        <span class="file__text">
+            ${props.fileName}
+            <span class="file__text_gray"> 
+                ${props.fileType}, ${props.fileSize}
+            </span>
+        </span>
+        <svg class="file__icon", "focusable"="false">
+            <use xlink:href="#plusIcon-svg""></use>
+        </svg>;     
+  `;
+}
+
+//Я не стал вручную jade компоненту перевадить в html а просто попросил 
+//у ChatGPT сделать функцию которая возврашает html. Подправил его косяки
+//укоротил под себя и добавил функционал который мне нужен.
 
 export default inputFileCt
 

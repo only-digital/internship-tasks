@@ -1,17 +1,16 @@
-@import "../../app/scss/variables.scss";
+@import "../../scssVariebles/color-varievles.scss";
 
 .loader {
     position: absolute;
-    display: none;
-
+    display: block;
+    
+    --loaderRadiues: 55px;
     width: var(--loaderRadiues);
     height: var(--loaderRadiues);
+
     
-    &_active{
-        display: block;
-        animation: rotation 1s linear infinite;
-    }
     &-17 {
+        display: block;
         width: var(--loaderRadiues);
         height: var(--loaderRadiues);
         border-radius: 50%;
@@ -19,6 +18,7 @@
         z-index: 1;
         border-top: 3px solid $blue;
         border-right: 3px solid transparent;
+        animation: rotation 1s linear infinite;
     }
 }
 

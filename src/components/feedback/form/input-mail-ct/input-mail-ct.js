@@ -1,5 +1,6 @@
 import Component from '../../../../app/js/base/Component';
 
+const emailRegex = /^([a-zA-Z\-0-9_]+|([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)+)|(".+"))@(([a-zA-Z\-0-9]+\.)+[a-zA-Z\-0-9]{2,})$/;
 class inputMailCt extends Component {
     input;
     name;
@@ -32,7 +33,7 @@ class inputMailCt extends Component {
     }
 
     valueTest = (value) => {
-        if (value === "1") {
+        if (emailRegex.test(value)) {
             this.root.classList.add("input-mail-ct_succses");
             this.onMailUpdate(value);
             return

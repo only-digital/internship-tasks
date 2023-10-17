@@ -1,0 +1,17 @@
+.succses-send {
+    display: flex;
+    align-items: center;
+
+    &_icon {
+        width: 55px;
+        height: 55px;
+        border: 2px solid rgb(204, 204, 204);
+        border-radius: 50%;
+        padding: 14px;
+    }
+
+    &_text {
+        font-size: 18px;
+        margin-left: 18px;
+    }
+}

@@ -19,6 +19,7 @@ class form extends Component {
     formElements;
     updateEvents;
     allert;
+    loader;
     formStates = {
         "conf-checkbox-ct": false,
         "input-file-ct": false,
@@ -56,7 +57,7 @@ class form extends Component {
                     new childClass[key]({
                         name: key,
                         component: this.childElementsLink[key],
-                        onUpdate: this.updateEvents[key]
+                        sendDataToForm: this.updateEvents[key]
                     })
                 )
         });
@@ -64,7 +65,7 @@ class form extends Component {
 
     onMailUpdate = (value) => {
         this.formStates[childKeys.mail] = value;
-        this.MailMessageControle();
+        const mailState = value;
     }
 
     onMesegeUpdate = (value) => {
@@ -113,6 +114,38 @@ class form extends Component {
         return
     }
 
+    onSubmit = async (event) => {
+        event.preventDefault();
+        this.toogleLoader("add");
+        this.buttonChange("addUnvise");
+        if (!this.formStates[childKeys.checkbox]) {
+            this.allert.innerText = "Примите пользовательское соглошение";
+            this.allert.classList.add("form__alert_active");
+            this.buttonChange("removeUnvise");
+            return
+        }
+        if (!this.formStates[childKeys.mail]) {
+            this.allert.innerText = "Поле почты должно быть заполнено";
+            this.allert.classList.add("form__alert_active");
+            this.buttonChange("removeUnvise");
+            return
+        }
+        if (!this.formStates[childKeys.message]) {
+            this.allert.innerText = "Поле сообшение должно быть заполнено";
+            this.allert.classList.add("form__alert_active");
+            this.buttonChange("removeUnvise");
+            return
+        }
+        //Проверку message и mail можно было и не делать но считайте это подстроховкой 
+        //на случай если кто то будет играться с inspect и обойдет ограничение кнопки
+        this.allert.classList.remove("form__alert_active");
+
+        const reponse = await this.senData();
+        this.toogleLoader("remove");
+        this.buttonChange("removeButton");
+        this.createSuccsesMessage();
+    }
+
     senData = async () => {
         return fetch("/form", {
             method: "POST",
@@ -121,27 +154,54 @@ class form extends Component {
         })
     }
 
-    onSubmit = async (event) => {
-        event.preventDefault();
-        if (!this.formStates[childKeys.checkbox]) {
-            this.allert.innerText = "Примите пользовательское соглошение";
-            this.allert.classList.add("form__alert_active");
+    toogleLoader = (action) => {
+        if (action === "add") {
+            const loaderHTML = document.createElement("span");
+            loaderHTML.classList = "loader form__loader";
+            this.root.appendChild(loaderHTML);
+            this.loader = this.getElement("loader");
+            this.loader.innerHTML += "<span class=loader-17></span>";
             return
         }
-        if (!this.formStates[childKeys.mail]) {
-            this.allert.innerText = "Поле почты должно быть заполнено";
-            this.allert.classList.add("form__alert_active");
+        this.loader.remove()
+    }
+
+    buttonChange = (action) => {
+        if (action === "AddUnvise") {
+            this.childElementsLink[childKeys.button]
+                .classList.add("button_unvise")
             return
         }
-        if (!this.formStates[childKeys.message]) {
-            this.allert.innerText = "Поле сообшение должно быть заполнено";
-            this.allert.classList.add("form__alert_active");
+        if (action === "removeUnvise") {
+            this.childElementsLink[childKeys.button]
+                .classList.remove("button_unvise")
             return
         }
-        this.allert.classList.remove("form__alert_active");
-        
-        const reponse = this.senData();
+        if (action === "removeButton") {
+            this.childElementsLink[childKeys.button].remove()
+            return
+        }
+        //можно было его намного короче написать при помоши toggleCLass но ради,
+        //читабельности кода написал вот так.
+    }
+
+    createSuccsesMessage = () => {
+        const succsesHTML = document.createElement("div");
+        succsesHTML.classList = "succses-send form__succses-send";
+        this.root.appendChild(succsesHTML);
+        const succsesLink = this.getElement("succses-send");
+        succsesLink.innerHTML += genereteSucssesHTML();
     }
 }
 
+function genereteSucssesHTML(props) {
+    return `
+        <svg class=succses-send_icon focusable=false>
+            <use xlink:href="#input-confirm-svg""></use>
+        </svg>
+        <span class=succses-send_text>
+            Форма успешно отправлена
+        </span>         
+    `
+}
 export default form
