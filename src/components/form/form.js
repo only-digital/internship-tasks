@@ -10,6 +10,8 @@ class Form extends Component {
 
         this.email = this.getElement('email');
         this.emailName = this.getElement('email-name');
+        this.emailError = this.getElement('email-errorText');
+        this.emailGood = this.getElement('svg-goodEmail');
 
         this.msg = this.getElement('msg');
         this.msgName = this.getElement('msg-name');
@@ -27,6 +29,8 @@ class Form extends Component {
         this.addFile.addEventListener("input", this.checkFileSize);
 
         this.email.addEventListener("input", this.emailFocus);
+        this.email.addEventListener("focusout", this.emailValidation);
+        this.email.addEventListener("focusin", this.emailValidDel);
         this.msg.addEventListener("input", this.msgFocus);
         this.msg.addEventListener("input", this.msgCalculateHeight);
         this.checkBox.addEventListener("change", this.checkBoxChange);
@@ -56,6 +60,7 @@ class Form extends Component {
 
         this.newFile[index].classList.toggle('hidden');
         this.countFiles--;
+        this.fileList.splice(index,index);
 
         if (this.countFiles) //значит было 2
         {
@@ -92,6 +97,7 @@ class Form extends Component {
         this.countFiles++;
 
         this.checkCountFiles();
+        console.log(this.fileList)
     }
 
    checkFileSize = () => {
@@ -127,6 +133,31 @@ class Form extends Component {
    checkBoxChange = () => {
         this.yesCheckBox.classList.toggle("hidden");
         this.checkBox.classList.toggle("agree");
+   }
+
+   emailValidation = () => {
+        const regexpEmail = /^([a-zA-Z\-0-9_]+|([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)+)|(".+"))@(([a-zA-Z\-0-9]+\.)+[a-zA-Z\-0-9]{2,})$/;
+
+        if(!regexpEmail.test(this.email.value)) {
+            this.email.classList.add('form__email-error');
+            this.emailError.classList.remove('hidden');
+        }
+
+        else {
+            this.email.classList.add('form__email-good');
+            this.emailGood.classList.remove('hidden');
+            this.emailError.classList.add('hidden');
+        }
+
+   }
+
+   emailValidDel = () => {
+
+       this.email.classList.remove('form__email-error');
+       this.email.classList.remove('form__email-good');
+
+       this.emailError.classList.add('hidden');
+       this.emailGood.classList.add('hidden');
    }
 
    emailFocus = () => {

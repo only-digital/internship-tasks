@@ -4,7 +4,9 @@ mixin form(props)
 		.form__container
 			p.form__input-name.hidden.form__email-name E-mail
 			input.form__email.form__passive(type="email" placeholder="E-mail")
+			p.form__email-errorText.hidden Некорректный email
 			p.form__input-name.hidden.form__msg-name Ваше сообщение
+			+svg('good-email').form__svg-goodEmail.hidden
 			textarea.form__msg.form__passive(type="text" placeholder="Ваше сообщение")
 			.form__add-block
 				.form__addBtns

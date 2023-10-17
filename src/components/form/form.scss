@@ -65,7 +65,15 @@
 			background-color: #F4F4F4;
 			padding: 14px 20px;
 		}
+	}
 
+	&__svg-goodEmail {
+		position: absolute;
+		right: 150px;
+		top: 62px;
+
+		width: 18px;
+		height: 13px;
 	}
 
 	&__input-name {
@@ -328,6 +336,30 @@
 	border: 1px solid #0041A0;
 
 	padding: 14px 20px;
+}
+
+.form__email {
+
+	&-error {
+		border: 1px solid red;
+
+		margin-bottom: 2px;
+
+		&Text {
+			font-size: 12px;
+			margin-left: 20px;
+
+			color: red;
+
+			margin-bottom: 10px;
+		}
+	}
+
+	&-good {
+		background-color: #f4f4f4;
+		border: none;
+	}
+
 }
 
 .activeMsg {
