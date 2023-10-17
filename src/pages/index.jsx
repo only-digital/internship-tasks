@@ -3,6 +3,7 @@ import Task from "../components/task/task";
 import {getIndexPage} from "../../lib/api";
 import { useEffect, useState } from 'react';
 import tasks from '../../data/index.json';
+import Header from '@/components/header/header';
 
 const Index = () => {
 
@@ -32,6 +33,8 @@ const Index = () => {
     }
 
     return (
+        <>
+        <Header logoText='Creative Digital Production'/>
         <main className={styles.main}>
             <h1 className={styles.mainTitle}>{tasksState.title}</h1>
             <div className={styles.mainTasks}>
@@ -43,6 +46,7 @@ const Index = () => {
             </div>
 
         </main>
+        </>
     )
 }
 

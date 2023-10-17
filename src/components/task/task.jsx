@@ -1,5 +1,5 @@
 import styled from './task.module.scss';
-import Image from 'next/image'
+import Image from 'next/image';
 
 const Task = ({title,description,handlerClick,isCompleted}) => {
     return (

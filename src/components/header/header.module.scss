@@ -1,0 +1,27 @@
+.Header {
+	height: 80px;
+	max-width: 1920px;
+	width: 100%;
+	display: flex;
+	gap: 9px;
+	align-items: center;
+	padding-left: 45px;
+	border-bottom: 1px solid #D9E1EC;
+	background-color: white;
+}
+
+.HeaderImage {
+	width: 72px;
+	height: 27px;
+}
+
+.HeaderText {
+	color: #213C57;
+	font-family: Roboto,sans-serif;
+	font-size: 7px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 120%; 
+	text-transform: uppercase;
+	width: 49px;
+}
