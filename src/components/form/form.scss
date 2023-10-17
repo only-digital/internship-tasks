@@ -80,14 +80,14 @@ $brand: #FF3D00;
 	display: grid;
 	grid-template-columns: 363px auto;
 	gap: 81px;
+	.form-feedback__title {
+		font-size: 2rem;
+		line-height: 2.4rem;
+		color:$darkBlue;
+		max-width: 363px;
+	}
 	.form-feedback__form {
 		margin-top: 38px;
-		.form-feedback__title {
-			font-size: 2rem;
-			line-height: 2.4rem;
-			color:$darkBlue;
-			max-width: 363px;
-		}
 		.form-feedback__name {
 			margin-left: 20px;
 			color: $grayLight;
