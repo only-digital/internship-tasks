@@ -1,0 +1,38 @@
+@import '/src/variables.scss';
+
+.contact-form {
+	$root: &;
+
+	display: flex;
+	font-family: $font-body;
+	max-width: 1440px;
+	margin: auto;
+
+	&__heading {
+		max-width: 345px;
+		color: $blue-color;
+		font-weight: 700;
+		font-size: 32px;
+		line-height: 38px;
+		padding: 26px 30px;
+	}
+
+	&__body {
+		flex-grow: 1;
+		margin: auto;
+		.input-field {
+			margin-top: 50px;
+			margin-bottom: 10px;
+		}
+		
+		.upload-button {
+			margin-top: 10px;
+			margin-bottom: 30px;
+		}
+
+		.regular-button {
+			margin-top: 30px;
+			margin-bottom: 60px;
+		}
+	}
+}

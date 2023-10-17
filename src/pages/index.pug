@@ -1,11 +1,4 @@
 extends ../../build_modules/common
 
 block body
-    div(style="margin: 20px")
-        +textarea({caption: "Ваше сообщение"})
-    div(style="margin: 20px")
-        +textarea({caption: "Ваше сообщение", "error": "Вы ошиблись."}).textarea_invalid
-    div(style="margin: 20px")
-        +textarea({caption: "Ваше сообщение"}).textarea_valid
-    div(style="margin: 20px")
-        +textarea({caption: "Ваше сообщение"})(disabled)
+    +contact-form

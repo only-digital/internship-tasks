@@ -1,0 +1,9 @@
+mixin contact-form(props)
+	.contact-form&attributes(attributes)(data-component='contact-form')
+		h1.contact-form__heading Форма обратной связи
+		.contact-form__body
+			+input-field({type: "email", caption: "E-mail"})
+			+textarea({caption: "Ваше сообщение"})
+			+upload-button()(disabled)
+			+checkbox({text: `Вы подтверждаете, что ознакомились <a href='/'>с политикой обработки персональных данных</a>`})(disabled)
+			+regular-button({text: "Отправить", icon: "arrow-right"})(disabled)
