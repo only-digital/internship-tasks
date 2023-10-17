@@ -1,0 +1,33 @@
+@import "../../app/scss/variables.scss";
+
+.loader {
+    position: absolute;
+    display: none;
+
+    width: var(--loaderRadiues);
+    height: var(--loaderRadiues);
+    
+    &_active{
+        display: block;
+        animation: rotation 1s linear infinite;
+    }
+    &-17 {
+        width: var(--loaderRadiues);
+        height: var(--loaderRadiues);
+        border-radius: 50%;
+        display: inline-block;
+        z-index: 1;
+        border-top: 3px solid $blue;
+        border-right: 3px solid transparent;
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
