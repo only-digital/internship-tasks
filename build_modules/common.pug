@@ -1,4 +1,10 @@
-include ../src/components/example-button/example-button
+include ../src/components/loader/loader
+include ../src/components/check-button/check-button
+include ../src/components/button/button
+include ../src/components/feedback/feedback
+include ../src/components/vacancy-page/vacancy-page
+include ../src/components/list/list
+
 
 mixin svg(id)
     svg(focusable = 'false')&attributes(attributes)
@@ -11,6 +17,6 @@ html(lang="ru")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Задание 4
-
+        
     body
         block body

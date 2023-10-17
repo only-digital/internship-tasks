@@ -1,0 +1,32 @@
+@import '../styles/roots.scss';
+
+$root: &;
+*, *:after, *:before {
+	box-sizing: border-box;
+  }
+
+  .loader-71 {
+	width: 90%;
+	height: calc($size / 10);
+	display: inline-block;
+	position: relative;
+	background: rgba($blue, 0.15);
+	overflow: hidden;
+	&::after {
+	  content: '';
+	  width: calc($size * 4);
+	  height: calc($size / 10);
+	  background: $lite;
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  animation: animloader71 2s linear infinite;
+		
+	}
+}
+	@keyframes animloader71 {
+		0% { left:0 ;  transform: translateX(-100%)}
+		100% { left:100% ;  transform: translateX(0%)}
+	   }
+	  
+

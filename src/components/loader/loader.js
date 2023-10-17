@@ -1,13 +1,13 @@
 import Component from '../../app/js/base/component';
 
-class ${componentClassName} extends Component {
+class Loader extends Component {
     constructor(element) {
         super(element);
-
-        // Your code here
+        setTimeout(() => {
+        this.root.style.display = 'none'},5050)
     }
 
     // Your code here
 }
 
-export default ${componentClassName}
+export default Loader

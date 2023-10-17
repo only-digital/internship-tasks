@@ -1,6 +1,6 @@
 import Component from '../../app/js/base/component';
 
-class ${componentClassName} extends Component {
+class List extends Component {
     constructor(element) {
         super(element);
 
@@ -10,4 +10,4 @@ class ${componentClassName} extends Component {
     // Your code here
 }
 
-export default ${componentClassName}
+export default List

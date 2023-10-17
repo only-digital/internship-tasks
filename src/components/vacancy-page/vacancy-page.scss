@@ -1,0 +1,48 @@
+@import '../styles/roots.scss';
+
+.vacancy-page {
+	$root: &;
+
+	& {
+		width: 1600px;
+		padding: 115px 0 0 80px;
+		margin: 0 auto;
+		background-color: #FFFFFF;
+	}
+
+	&__date {
+		padding-left: 9px;
+		margin-bottom: 20px;
+		color: $steel;
+		font-family: Arial;
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 140%;
+		letter-spacing: -0.4px;
+	}
+
+	&__title {
+		margin-bottom: 45px;
+		color: $blue;
+		font-family: Arial;
+		font-size: 64px;
+		font-weight: 400;
+		line-height: 100%;
+		letter-spacing: -1.28px;
+	}
+
+	&__stat {
+		margin-bottom: 144px;
+
+		span {
+			margin-right: 36px;
+			color: $steel;
+			font-family: Arial;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 130%;
+			letter-spacing: -0.32px;
+		
+		}
+	}
+}

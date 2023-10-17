@@ -1,14 +1,23 @@
-import ExampleButton from "../../components/example-button/example-button";
-
+import Feedback from '../../components/feedback/feedback';
+import Button from '../../components/button/button';
+import List from '../../components/list/list';
+import VacancyPage from '../../components/vacancy-page/vacancy-page';
+import CheckButton from '../../components/check-button/check-button';
+import Loader from '../../components/loader/loader';
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
  * Ключ объекта - Название компонента, которое было указано во время его создания (совпадает с именем файлов)
  * Значение - JS-класс компонента (Импорт добавляется вручную)
  */
 const allComponents = {
-    'example-button': ExampleButton,
-}
-
+    'feedback': Feedback,
+    'button': Button,
+    'list': List,
+    'vacancy-page': VacancyPage,
+    'check-button': CheckButton,
+    'loader': Loader
+};
+ 
 /**
  * Инициализация всех компонентов на странице
  */
@@ -28,3 +37,14 @@ try {
 } catch (e) {
     console.error(e);
 }
+
+document.addEventListener('DOMContentLoaded',()=>{
+    fetch('/stats')
+           .then(res => res.json())
+           .then(data =>{ 
+            localStorage.setItem('statData',JSON.stringify(data)),
+            localStorage.setItem('checkCount',JSON.stringify(1))
+        } )
+
+})
+

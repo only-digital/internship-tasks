@@ -1,0 +1,13 @@
+mixin feedback(props)
+	.feedback&attributes(attributes)(data-component='feedback')
+		h4.feedback__title Форма обратной связи
+		.feedback__block
+			form(action="submit", method="post").feedback__form
+				label(for="mail").feedback__label E-mail
+				input(type="mail", id="mail", name="mail", placeholder='').feedback__inpt
+				span.feedback__span-error Поле E-mail обязательно
+				+check-button()
+				+button({text: 'Отправить'})
+			.feedback__form-done
+				+svg('form-done')
+				span Форма успешно отправлена
