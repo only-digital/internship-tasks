@@ -1,0 +1,140 @@
+@import "/src/variables.scss";
+
+.textarea {
+    $root: &;
+
+    font-family: $font-body;
+	position: relative;
+
+    &__label {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+
+        &__caption {
+			order: 1;
+            padding-left: 20px;
+            visibility: hidden;
+            color: $steel-color;
+            font-size: 12px;
+            line-height: 18px;
+        }
+
+        &__input {
+			resize: none;
+			background-color: transparent;
+			font-family: $font-body;
+			order: 2;
+			border: 1px solid transparent;
+			border-radius: 24px;
+			height: 48px;
+			padding: 12px 50px 16px 20px;
+			width: 100%;
+			min-height: 193px;
+			outline: none;
+
+            font-size: 16px;
+            line-height: 24px;
+            color: $text-color;
+
+            &::placeholder {
+				font-family: $font-body;
+                color: $text-color;
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+			&:focus {
+				border-color: $cobolt-color;
+				+ #{$root}__label__caption {
+					visibility: visible;
+				}
+			}
+			
+        }
+
+		&__underline {
+			position: absolute;
+			width: calc(100% - 40px);
+			margin-left: 20px;
+			top: 65px;
+			z-index: -1;
+			border-top: 1px solid $grey-2;
+		}
+
+		&__icon {
+			position: absolute;
+			visibility: hidden;
+			width: 18px;
+			height: 13px;
+			right: 16px;
+			bottom: 16px;
+		}
+
+        &:hover {
+            #{$root}__label__input {
+				cursor: pointer;
+                background-color: $grey-3;
+				padding-left: 20px;
+            }
+			#{$root}__label__underline {
+				visibility: hidden;
+			}
+        }
+    }
+
+    &__error {
+        visibility: hidden;
+        padding-left: 20px;
+        padding-top: 2px;
+        color: red;
+        font-size: 12px;
+        line-height: 18px;
+    }
+}
+
+.textarea_valid {
+	background-color: white;
+	.textarea__label {
+		&__caption {
+			visibility: visible;
+		}
+
+		&__icon {
+			visibility: visible;
+		}
+
+		&__input {
+			background-color: $grey-3;
+		}
+		&__underline {
+			visibility: hidden;
+		}
+	}
+}
+
+.textarea_invalid {
+	
+	.textarea__label {
+		&__caption {
+			visibility: visible;
+		}
+		&__input {
+			border-color: red;
+		}
+		&__underline {
+			visibility: hidden;
+		}
+	}
+
+	.textarea__error {
+		visibility: visible;
+	}
+}
+
+.textarea[disabled] {
+	pointer-events: none;
+	.textarea__label__input::placeholder, .textarea__label__input {
+		color: $grey-1;
+	}
+}

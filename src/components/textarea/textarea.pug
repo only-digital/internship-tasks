@@ -1,0 +1,8 @@
+mixin textarea(props)
+	.textarea&attributes(attributes)(data-component='textarea')
+		label.textarea__label
+			textarea&attributes(attributes).textarea__label__input(placeholder=props.caption)
+			.textarea__label__caption!= props.caption
+			+svg("done").textarea__label__icon
+			.textarea__label__underline
+		.textarea__error!= props.error
