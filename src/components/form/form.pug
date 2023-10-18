@@ -4,10 +4,13 @@ mixin form(props)
 		.form__container
 			p.form__input-name.hidden.form__email-name E-mail
 			input.form__email.form__passive(type="email" placeholder="E-mail")
-			p.form__email-errorText.hidden Некорректный email
+			p.form__errorText.hidden Некорректный email
 			p.form__input-name.hidden.form__msg-name Ваше сообщение
 			+svg('good-email').form__svg-goodEmail.hidden
-			textarea.form__msg.form__passive(type="text" placeholder="Ваше сообщение")
+			.form__msgBlock
+				textarea.form__msg.form__passive(type="text" placeholder="Ваше сообщение")
+				+svg('good-email').form__svg-goodMsg.hidden
+			p.form__errorText.hidden Размер сообщения не должен превышать 1000 символов
 			.form__add-block
 				.form__addBtns
 					button.form__add-file.form__btn
@@ -34,6 +37,6 @@ mixin form(props)
 				+svg('agree').form__checkbox-yes.hidden
 				input(type='checkbox').form__checkbox-input
 				label Вы подтверждаете, что ознакомились #[span с политикой обработки персональных данных ]
-			button.form__send.form__btn
+			button.form__send.form__btn(disabled)
 				span Отправить
 				+svg("arrow").form__svg-arrow.form__svg

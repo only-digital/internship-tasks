@@ -76,6 +76,22 @@
 		height: 13px;
 	}
 
+	&__msgBlock {
+		position: relative;
+		
+	}
+
+	&__svg-goodMsg {
+		width: 18px;
+		height: 13px;
+
+		position: absolute;
+		top: 92px;
+		right: 15px;
+
+
+	}
+
 	&__input-name {
 		font-size: 12px;
 		color: $darkGrey;
@@ -338,30 +354,6 @@
 	padding: 14px 20px;
 }
 
-.form__email {
-
-	&-error {
-		border: 1px solid red;
-
-		margin-bottom: 2px;
-
-		&Text {
-			font-size: 12px;
-			margin-left: 20px;
-
-			color: red;
-
-			margin-bottom: 10px;
-		}
-	}
-
-	&-good {
-		background-color: #f4f4f4;
-		border: none;
-	}
-
-}
-
 .activeMsg {
 	height: 120px;
 	background-color: #F4F4F4;
@@ -378,6 +370,32 @@
 		background-color: transparent;
 	}
 }
+
+
+
+	.form__error {
+		border: 1px solid red;
+
+		margin-bottom: 2px;
+		background-color: transparent;
+
+		&Text {
+			font-size: 12px;
+			margin-left: 20px;
+
+			color: red;
+
+			margin-bottom: 10px;
+		}
+	}
+
+	.form__email-good {
+		background-color: #f4f4f4;
+		border: none;
+	}
+
+
+
 
 .hidden {
 	display: none;

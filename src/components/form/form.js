@@ -6,15 +6,22 @@ class Form extends Component {
 
 
         this.fileList = [];
+        this.textValidation = {
+            'email': false,
+            'msg': true
+        };
+
+        this.oldScrollHeight = 120;
         this.countFiles = 0;
 
         this.email = this.getElement('email');
         this.emailName = this.getElement('email-name');
-        this.emailError = this.getElement('email-errorText');
+        this.errorText = this.getElements('errorText');
         this.emailGood = this.getElement('svg-goodEmail');
 
         this.msg = this.getElement('msg');
         this.msgName = this.getElement('msg-name');
+        this.msgGood = this.getElement('svg-goodMsg');
 
         this.checkBox = this.getElement('checkbox-input');
         this.yesCheckBox = this.getElement("checkbox-yes");
@@ -26,13 +33,19 @@ class Form extends Component {
         this.closeFile = this.getElements('delFile');
         this.countFilesError = this.getElement('twoFiles');
 
+        this.sendInfo = this.getElement('send');
+
         this.addFile.addEventListener("input", this.checkFileSize);
 
         this.email.addEventListener("input", this.emailFocus);
         this.email.addEventListener("focusout", this.emailValidation);
         this.email.addEventListener("focusin", this.emailValidDel);
+
         this.msg.addEventListener("input", this.msgFocus);
         this.msg.addEventListener("input", this.msgCalculateHeight);
+        this.msg.addEventListener("focusout", this.msgValidation);
+        this.msg.addEventListener("focusin", this.msgValidDel);
+
         this.checkBox.addEventListener("change", this.checkBoxChange);
         this.closeFile[0].addEventListener('click', this.deleteFile);
         this.closeFile[1].addEventListener('click', this.deleteFile);
@@ -135,18 +148,33 @@ class Form extends Component {
         this.checkBox.classList.toggle("agree");
    }
 
+   checkTextFields = () => {
+        if (this.textValidation.email === false || this.textValidation.msg === false)
+            this.sendInfo.setAttribute('disabled', '');
+        else
+            this.sendInfo.removeAttribute('disabled');
+   }
+
    emailValidation = () => {
         const regexpEmail = /^([a-zA-Z\-0-9_]+|([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)+)|(".+"))@(([a-zA-Z\-0-9]+\.)+[a-zA-Z\-0-9]{2,})$/;
 
-        if(!regexpEmail.test(this.email.value)) {
-            this.email.classList.add('form__email-error');
-            this.emailError.classList.remove('hidden');
+        if(!regexpEmail.test(this.email.value) || (this.email.value.length > 255)) {
+            this.email.classList.add('form__error');
+            this.errorText[0].classList.remove('hidden');
+
+            this.textValidation.email = false;
+            this.sendInfo.setAttribute('disabled', '');
         }
 
         else {
             this.email.classList.add('form__email-good');
             this.emailGood.classList.remove('hidden');
-            this.emailError.classList.add('hidden');
+            this.errorText[0].classList.add('hidden');
+
+
+            this.textValidation.email = true;
+
+            this.checkTextFields();
         }
 
    }
@@ -156,7 +184,7 @@ class Form extends Component {
        this.email.classList.remove('form__email-error');
        this.email.classList.remove('form__email-good');
 
-       this.emailError.classList.add('hidden');
+       this.errorText[0].classList.add('hidden');
        this.emailGood.classList.add('hidden');
    }
 
@@ -171,12 +199,41 @@ class Form extends Component {
         }
     }
 
-   msgCalculateHeight = () => {
-        console.log(this.msg.scrollHeight)
-        if (this.msg.scrollHeight > 120) {
-            this.msg.style.height = "1px";
-            this.msg.style.height = (16 + this.msg.scrollHeight) + "px";
+   msgValidDel = () => {
+       this.msg.classList.remove('form__error');
+       this.errorText[1].classList.add('hidden');
+       this.msgGood.classList.add('hidden');
+   }
+
+   msgValidation = () => {
+        if (this.msg.value.length > 1000) {
+            this.msg.classList.add('form__error');
+            this.errorText[1].classList.remove('hidden');
+            this.msgGood.classList.add('hidden');
         }
+
+        else {
+            const styles = window.getComputedStyle(this.msg);
+            const currentMsgHeight = styles.height.substr(0,styles.height.indexOf('p'));
+            this.msgGood.style.top = (Number(currentMsgHeight) - 25) + 'px';
+
+            this.msgGood.classList.remove('hidden');
+        }
+   }
+
+   msgCalculateHeight = () => {
+        
+        console.log('1' , this.msg.scrollHeight ,'and', this.oldScrollHeight)
+    
+        if ((this.msg.scrollHeight - this.oldScrollHeight) > 10) {
+                
+            this.msg.style.height = "1px";
+            this.msg.style.height = (10 + this.msg.scrollHeight) + "px";
+                
+            this.oldScrollHeight = this.msg.scrollHeight;
+        }
+
+        console.log('2', this.msg.scrollHeight ,'and', this.oldScrollHeight)
     }
 
    msgFocus = () => {
