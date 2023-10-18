@@ -111,8 +111,7 @@ class Form extends Component {
 
    deleteFile = () => {
 
-       this.fileError.classList.add('hidden');
-       this.wrapperAddFile.classList.remove('error');
+        this.delFileSizeError();
 
         let index = 0;
         if (event.target.parentNode === this.closeFile[1])
@@ -123,6 +122,7 @@ class Form extends Component {
         this.newFile[index].classList.toggle('hidden');
         this.countFiles--;
         this.fileList.splice(index,index);
+        console.log("После удаления", this.fileList)
 
         if (this.countFiles) //значит было 2
         {
@@ -165,12 +165,18 @@ class Form extends Component {
         console.log(this.fileList)
     }
 
+   delFileSizeError = () => {
+
+        this.fileError.classList.add('hidden');
+        this.wrapperAddFile.classList.remove('error');
+        this.wrapperAddFile.classList.remove('error');
+        this.newFile[0].classList.remove('error');
+        this.newFile[1].classList.remove('error');
+
+   } 
+
    checkFileSize = () => {
-
-       console.log(this.fileList);
-
-       this.fileError.classList.add('hidden');
-       this.wrapperAddFile.classList.remove('error');
+       this.delFileSizeError();
 
        const fileSize = this.addFile.files[0].size;
        const fileType = this.addFile.files[0].type;
@@ -183,6 +189,9 @@ class Form extends Component {
                // this.addFile.files = '';
                 this.fileError.classList.toggle('hidden');
                 this.wrapperAddFile.classList.toggle('error');
+                
+                this.newFile[0].classList.toggle('error');
+                this.newFile[1].classList.toggle('error');
 
                 this.textValidation.files = false;
                 this.checkTextFields();

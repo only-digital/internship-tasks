@@ -16,7 +16,7 @@ mixin form(props)
 					button.form__add-file.form__btn
 						span Прикрепить файл
 						+svg('add').form__svg-add.form__svg
-						input(type="file" accept=".pdf, .docx, .doc").form__file
+						input(type="file" accept=".pdf, .docx, .doc" title="").form__file
 					div.form__newFile.hidden
 						span Документ&nbsp
 						span.form__fileType PDF,

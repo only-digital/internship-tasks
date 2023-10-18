@@ -4,7 +4,8 @@
 	padding: 26px 130px 60px 30px;
 
 	display: flex;
-	gap: 159px;
+	//gap: 159px;
+	justify-content: space-between;
 
 	&__container {
 		width: 840px;
@@ -181,17 +182,29 @@
 		gap: 32px;
 	}
 
+	&__add-file {
+		padding: 14px 16px 16px 16px;
+		margin-bottom: 30px;
+
+		gap: 16px;
+
+		position: relative;
+	}
+
 	&__file {
 		opacity: 0;
 		position: absolute;
-		left: 385px;
-		top: 315px;
+		top: 0px;
+		left: 0px;
 		border-radius: 25px;
 		//z-index: -1;
 		width: 190px;
 		height: 46px;
 
+		color: transparent;
+
 		cursor: pointer;
+
 		&-error {
 			color: red;
 
@@ -201,7 +214,9 @@
 			letter-spacing: -0.24px;
 		}
 
-		cursor: default;
+		&:disabled {
+			cursor: default;
+		}
 	}
 
 	&__newFile {
@@ -263,13 +278,6 @@
 
 			width: 200px;
 		}
-
-	}
-	&__add-file {
-		padding: 14px 16px 16px 16px;
-		margin-bottom: 30px;
-
-		gap: 16px;
 
 	}
 
