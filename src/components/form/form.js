@@ -6,10 +6,19 @@ class Form extends Component {
 
 
         this.fileList = [];
+        
         this.textValidation = {
             'email': false,
-            'msg': true
+            'msg': false,
+            "checkbox": false,
+            'files': true
         };
+
+        this.sendingData = {
+            'email': '',
+            'msg': '',
+            'files': ' '
+        }
 
         this.oldScrollHeight = 120;
         this.countFiles = 0;
@@ -34,6 +43,9 @@ class Form extends Component {
         this.countFilesError = this.getElement('twoFiles');
 
         this.sendInfo = this.getElement('send');
+        this.sendResult = this.getElement('result');
+
+        console.log(this.sendResult)
 
         this.addFile.addEventListener("input", this.checkFileSize);
 
@@ -49,7 +61,41 @@ class Form extends Component {
         this.checkBox.addEventListener("change", this.checkBoxChange);
         this.closeFile[0].addEventListener('click', this.deleteFile);
         this.closeFile[1].addEventListener('click', this.deleteFile);
+
+        this.sendInfo.addEventListener("click", this.sendData);
     }
+
+   sendData = () => {
+
+    const self = this;
+
+    this.sendingData.files = this.fileList;
+    
+    console.log(this.sendingData);
+    
+    fetch('http://localhost:3000/form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json;charset=utf-8'},
+        body: JSON.stringify(this.sendingData)
+    })
+
+    .then(function (response) {
+            if (response.ok) { 
+                self.sendResult.classList.remove('hidden');
+                self.sendResult.textContent = 'Данные успешно отправлены';
+                self.sendResult.classList.remove('form__result-bad');
+            }
+            else {
+                self.sendResult.classList.remove('hidden');
+                self.sendResult.classList.add('form__result-bad');
+                self.sendResult.textContent = 'Произошла ошибка при отправке данных, попробуйте еще раз';
+            }
+    })
+
+    .catch(function (error) {
+        console.error(error);
+    });
+   } 
 
    checkCountFiles = () => {
         if (this.countFiles < 2)
@@ -58,12 +104,15 @@ class Form extends Component {
         this.countFilesError.classList.remove('hidden');
         this.addFile.setAttribute('disabled','');
         this.wrapperAddFile.setAttribute('disabled','');
+        
+        this.textValidation.files = false;
+        this.checkTextFields();
    }
 
    deleteFile = () => {
 
-        console.log(this.closeFile)
-        console.log(event.target.parentNode);
+       this.fileError.classList.add('hidden');
+       this.wrapperAddFile.classList.remove('error');
 
         let index = 0;
         if (event.target.parentNode === this.closeFile[1])
@@ -81,6 +130,9 @@ class Form extends Component {
             this.addFile.removeAttribute('disabled');
             this.wrapperAddFile.removeAttribute('disabled');
         }
+
+        this.textValidation.files = true;
+        this.checkTextFields();
    }
 
    showFile = (fileSize, fileType, file) => {
@@ -115,7 +167,8 @@ class Form extends Component {
 
    checkFileSize = () => {
 
-        console.log('d')
+       console.log(this.fileList);
+
        this.fileError.classList.add('hidden');
        this.wrapperAddFile.classList.remove('error');
 
@@ -127,10 +180,12 @@ class Form extends Component {
             if (fileSize > 5_242_880) //5МБ в байтах
             {
 
-                this.addFile.files = '';
+               // this.addFile.files = '';
                 this.fileError.classList.toggle('hidden');
                 this.wrapperAddFile.classList.toggle('error');
 
+                this.textValidation.files = false;
+                this.checkTextFields();
                 return; //добавить удаление этого файла
             }
 
@@ -138,21 +193,33 @@ class Form extends Component {
             {
                 const sizeToShow =  Math.round((fileSize / 1024) * 10) / 10;
                 this.showFile(sizeToShow, fileType, this.addFile.files[0]);
+
+                this.textValidation.files = true;
+                this.checkTextFields();
             }
+
             console.log(this.addFile.files)
         }
     }
 
-   checkBoxChange = () => {
-        this.yesCheckBox.classList.toggle("hidden");
-        this.checkBox.classList.toggle("agree");
-   }
-
    checkTextFields = () => {
-        if (this.textValidation.email === false || this.textValidation.msg === false)
+        if (this.textValidation.email === false || this.textValidation.msg === false || this.textValidation.checkbox === false || this.textValidation.files === false)
             this.sendInfo.setAttribute('disabled', '');
         else
             this.sendInfo.removeAttribute('disabled');
+   }
+
+   checkBoxChange = () => {
+        
+        this.yesCheckBox.classList.toggle("hidden");
+        this.checkBox.classList.toggle("agree");
+
+        if (this.checkBox.classList.contains('agree'))
+            this.textValidation.checkbox = true; 
+        else
+            this.textValidation.checkbox = false; 
+        
+        this.checkTextFields();
    }
 
    emailValidation = () => {
@@ -173,9 +240,10 @@ class Form extends Component {
 
 
             this.textValidation.email = true;
-
-            this.checkTextFields();
+            this.sendingData.email = this.email.value;
         }
+
+        this.checkTextFields();
 
    }
 
@@ -206,11 +274,19 @@ class Form extends Component {
    }
 
    msgValidation = () => {
+        
         if (this.msg.value.length > 1000) {
+            
             this.msg.classList.add('form__error');
+            
             this.errorText[1].classList.remove('hidden');
             this.msgGood.classList.add('hidden');
+
+            this.textValidation.msg = false;
         }
+
+        else if (this.msg.value.length === 0) 
+            this.textValidation.msg = false;
 
         else {
             const styles = window.getComputedStyle(this.msg);
@@ -218,12 +294,17 @@ class Form extends Component {
             this.msgGood.style.top = (Number(currentMsgHeight) - 25) + 'px';
 
             this.msgGood.classList.remove('hidden');
+
+            this.textValidation.msg = true;
+            this.sendingData.msg = this.msg.value;
         }
+
+        this.checkTextFields();
+
    }
 
    msgCalculateHeight = () => {
         
-        console.log('1' , this.msg.scrollHeight ,'and', this.oldScrollHeight)
     
         if ((this.msg.scrollHeight - this.oldScrollHeight) > 10) {
                 
@@ -233,7 +314,6 @@ class Form extends Component {
             this.oldScrollHeight = this.msg.scrollHeight;
         }
 
-        console.log('2', this.msg.scrollHeight ,'and', this.oldScrollHeight)
     }
 
    msgFocus = () => {
@@ -242,6 +322,7 @@ class Form extends Component {
             this.msg.classList.add('activeMsg');
             this.msgName.classList.remove('hidden');
         }
+
         else {
             this.msg.classList.remove('activeMsg');
             this.msgName.classList.add('hidden')
