@@ -6,13 +6,9 @@ mixin feedback-form(props)
 			| связи
 		.feedback-form__input-container 
 			+email()
-			+email(disabled='')
-			label(for="message").feedback-form__message-label
-			input(type='text' id='message' name='message' placeholder='Ваше сообщение').feedback-form__message-input
-			span.feedback-form__message-error
+			+textfield()
+			
 			label(for='files') Прикрепить файл
 				input(type='file' id='files' name='files' placeholder='Прикрепить файл')
 			+confirm()
-			+confirm(disabled='')
-			+confirm(checked='' disabled='')
 			+button({text: 'Отправить'})(class="button-outlined")

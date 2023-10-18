@@ -1,0 +1,5 @@
+mixin textfield(props)
+	.textfield&attributes(attributes)(data-component='textfield')
+		label(for="message").textfield__label Ваше сообщение
+		textarea&attributes(attributes)(id='message' name="message" cols="30" rows="10" placeholder='Ваше сообщение' maxlength="1000" required).textfield__input 
+		span.textfield__span 

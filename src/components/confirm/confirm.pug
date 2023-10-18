@@ -1,7 +1,7 @@
 mixin confirm(props)
 	.confirm&attributes(attributes)(data-component='confirm')
 		label&attributes(attributes)(for="confirm").confirm__label
-					input&attributes(attributes)(type="checkbox" id="confirm" name="confirm" required value='').confirm-input
+					input&attributes(attributes)(type="checkbox" id="confirm" name="confirm" required).confirm__input
 					+svg('check-mark').confirm__svg
 					| Вы подтверждаете, что ознакомились c&nbsp;  
 					a(href='/#').confirm__link  политикой обработки персональных данных 

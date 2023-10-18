@@ -19,24 +19,9 @@ $success: #27AE60;
 	font-family: Arial;
 	padding-left: 20px;
 }
-:root {
-	box-sizing: border-box;
-}
-//overwriting browser settings
-input[type="email" i] {
-    padding-block: unset;
-    padding-inline: unset;
-	padding-left: 20px;
-}
-// browser settings should be overwritten:
-#email.email__input:-internal-autofill-selected {
-	appearance: menulist-button;
-	background-image: unset !important;
-	background-color: unset !important;
-	color: $black !important;
-}
 
-.email {
+
+.textfield {
 	display: flex;
 	flex-flow: column nowrap;
 	gap: 0;
@@ -54,14 +39,6 @@ input[type="email" i] {
 		font-weight: 400;
 		letter-spacing: -0.24px;
 		padding-left: 20px;
-		opacity: 0;
-	}
-	&__svg {
-		position: absolute;
-		width: 18px;
-		height: 13px;
-		right: 20px;
-		top: 35px;
 		opacity: 0;
 	}
 	&__input {
@@ -101,15 +78,15 @@ input[type="email" i] {
 	
 	
 	&:hover {
-		.email__label {
+		.textfield__label {
 			opacity: 0;
 		}
-		.email__input {
+		.textfield__input {
+			height: 193px;
 			border: none;
 			border-radius: 24px;
 			background-color: $extra-gray-3;
 		}
-		.email__input:disabled {
 			border: none;
 			border-radius: 0;
 			border-bottom: 1px $extra-gray-2 solid;
@@ -119,7 +96,7 @@ input[type="email" i] {
 				color: $extra-gray-1; 
 			}
 		}
-	}
+	
 	&__input:disabled {
 		border: none;
 		border-radius: none;
@@ -130,8 +107,8 @@ input[type="email" i] {
 			color: $extra-gray-1; 
 		}
 	}
+}	
 	
 	
 
 
-}

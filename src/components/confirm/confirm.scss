@@ -39,7 +39,7 @@ $main-red: #F00;
 		.confirm__svg {
 			display: none;
 		}
-		.confirm-input {
+		.confirm__input {
 			width: 16px;
 			height: 16px;
 			border: 1px $extra-gray-1 solid;
@@ -47,30 +47,30 @@ $main-red: #F00;
 			transition: box-shadow 0.3s ease;
 		}
 		
-		.confirm-input:focus,
-		.confirm-input:focus-visible {
+		.confirm__input:focus,
+		.confirm__input:focus-visible {
 			outline: none;
 			box-shadow: 0 0 0 3px $day-blue;
 		}
-		.confirm-input:hover {
+		.confirm__input:hover {
 			border: 1px $cobolt solid;
 		}
-		.confirm-input:checked {
+		.confirm__input:checked {
 			border: none;
 		}
-		.confirm-input:checked + .confirm__svg {
+		.confirm__input:checked + .confirm__svg {
 				display: initial;
 				width: 16px;
 				height: 16px;
 				position: absolute;
 			}
-		.confirm-input:disabled {
+		.confirm__input:disabled {
 			border: 1px $extra-gray-1 solid;
 		}
-		.confirm-input:checked:disabled {
+		.confirm__input:checked:disabled {
 			border: none;
 		}
-		.confirm-input:disabled + .confirm__svg {
+		.confirm__input:disabled + .confirm__svg {
 			opacity: 0.5;
 			box-shadow: none;
 		}
@@ -81,8 +81,9 @@ $main-red: #F00;
 	
 	.confirm__label.disabled {
 		color: $extra-gray-1;
-		a {
+		.confirm__link.disabled {
 			color: $day-blue;
+			cursor: not-allowed;
 		}
 	}
 }

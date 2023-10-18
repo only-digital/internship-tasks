@@ -1,16 +1,13 @@
 import Component from '../../app/js/base/component';
 
-class Email extends Component {
-    emailInput;
+class Textfield extends Component {
     constructor(element) {
         super(element);
 
-        this.emailInput = this.getElement('input');
-        console.log(this.emailInput);
         // Your code here
     }
 
     // Your code here
 }
 
-export default Email
+export default Textfield
