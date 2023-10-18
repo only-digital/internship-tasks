@@ -119,7 +119,7 @@ class Form extends Component {
         
         this.newFile[index].classList.toggle('hidden');
         this.countFiles--;
-        console.log('Удаляем - ', index);
+        //console.log('Удаляем - ', index);
         if (this.fileList.length === 2)
             this.fileList.splice(index,1);
         else 
@@ -134,7 +134,7 @@ class Form extends Component {
 
         this.textValidation.files = true;
         this.checkTextFields();
-        console.log("list:", this.fileList)
+        //console.log("list:", this.fileList)
    }
 
    showFile = (fileSize, fileType, file) => {
