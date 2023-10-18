@@ -85,8 +85,8 @@ input[type="email" i] {
 			letter-spacing: -0.32px;
 		}
 	}
-	&__input:focus,
-	&__input:focus-visible {
+	&:focus-within {
+	.email__input {
 		border-bottom: none;
 		border-radius: 24px;
 		background-color: $white;
@@ -94,10 +94,10 @@ input[type="email" i] {
 		outline: none;
 		transition: border 0.3s ease;
 	}
-	&__input:focus + &__label,
-	&__input:focus-visible + &__label {
+	.email__label {
 		opacity: 1;
 	}
+	}	
 	
 	
 	&:hover {
