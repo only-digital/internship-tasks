@@ -1,0 +1,9 @@
+mixin file-input(props)
+	label.file-input&attributes(attributes)(data-component='file-input')
+		input(type="file" accept=".pdf,.doc,.docx" id=props.id).file-input__input
+		.file-input__body
+			span.file-input__body__text Прикрепить файл
+			span.file-input__body__file-data
+			+svg("add").file-input__body__icon
+			button.file-input__body__remove-button
+				+svg("close")

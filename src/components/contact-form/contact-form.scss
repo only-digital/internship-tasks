@@ -25,9 +25,13 @@
 			margin-bottom: 10px;
 		}
 		
-		.upload-button {
+		.file-input-container {
 			margin-top: 10px;
 			margin-bottom: 30px;
+
+			.file-input {
+				margin-right: 20px;
+			}
 		}
 
 		.regular-button {

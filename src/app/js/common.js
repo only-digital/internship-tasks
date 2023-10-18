@@ -1,4 +1,6 @@
 import ExampleButton from "../../components/example-button/example-button";
+import FileInput from "../../components/file-input/file-input";
+import ContactForm from "../../components/contact-form/contact-form"
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -7,6 +9,8 @@ import ExampleButton from "../../components/example-button/example-button";
  */
 const allComponents = {
     'example-button': ExampleButton,
+    'file-input': FileInput,
+    'contact-form': ContactForm
 }
 
 /**
