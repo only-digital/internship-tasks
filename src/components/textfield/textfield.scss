@@ -59,14 +59,23 @@ $success: #27AE60;
 		flex-flow: row nowrap;
 		align-items: center;
 		background-color: $white;
+		transition: height 0.3s ease;
 		
-		&__input::placeholder {
+		&::placeholder {
 			color: $black;
 			font-size: 16px;
 			font-weight: 400;
-			line-height: 100%; /* 16px */
+			line-height: 150%; /* 16px */
 			letter-spacing: -0.32px;
 		}
+	}
+	&__svg {
+		position: absolute;
+		width: 18px;
+		height: 13px;
+		right: 20px;
+		bottom: calc(13px + 16px);
+		opacity: 0;
 	}
 	&:focus-within {
 		.textfield__input {
@@ -110,6 +119,19 @@ $success: #27AE60;
 		&::placeholder {
 			color: $extra-gray-1; 
 		}
+	}
+	&.filled {
+		.textfield__label {
+			opacity: 1;
+		}
+		.textfield__input {
+			height: 193px;
+		}
+		.textfield__svg {
+			opacity: 1;
+		}
+		
+
 	}
 }	
 	

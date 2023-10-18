@@ -1,5 +1,6 @@
 mixin textfield(props)
 	.textfield&attributes(attributes)(data-component='textfield')
 		label(for="message").textfield__label Ваше сообщение
-		textarea&attributes(attributes)(id='message' placeholder="Ваше сообщение" name="message"  maxlength="1000" required).textfield__input Ваше сообщение
+		textarea&attributes(attributes)(id='message' placeholder="Ваше сообщение" name="message"  maxlength="1000" required).textfield__input
+		+svg('success').textfield__svg 
 		span.textfield__span 
