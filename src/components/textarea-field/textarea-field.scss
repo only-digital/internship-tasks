@@ -45,7 +45,8 @@
     background: none;
     color: $black;
     resize: none;
-    transition: border-color 0.3s, border-radius 0.3s, background 0.3s;
+    transition: border-color 0.3s, border-radius 0.3s, background 0.3s,
+      min-height 0.3s;
 
     &::-webkit-scrollbar {
       width: 0px;
@@ -84,6 +85,8 @@
 
     &:disabled {
       border-color: $grey-2;
+      min-height: 48px;
+      max-height: 48px;
       background: none;
       border-radius: 0;
       cursor: auto;
