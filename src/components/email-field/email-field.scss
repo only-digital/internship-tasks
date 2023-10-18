@@ -1,7 +1,8 @@
-.email-input {
+.email-field {
   $root: &;
 
   padding: 18px 0 0 0;
+  margin: 24px 0 10px;
   position: relative;
 
   &__check-mark {
@@ -16,11 +17,9 @@
   &__error-message {
     font-size: 12px;
     line-height: 18px;
+    padding: 0 0 0 20px;
     color: $red;
     display: none;
-    position: absolute;
-    left: 20px;
-    bottom: -18px;
   }
 
   &__label {
@@ -38,7 +37,7 @@
     font-size: 16px;
     line-height: 16px;
     height: 48px;
-    padding: 13px 20px 19px 20px;
+    padding: 13px 50px 19px 20px;
     border-color: $grey-2;
     border-width: 0 0 1px 0;
     border-style: solid;

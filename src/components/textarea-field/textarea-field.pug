@@ -1,0 +1,6 @@
+mixin textarea-field(props)
+	.textarea-field&attributes(attributes)(data-component='textarea-field')
+		textarea(id=props.id).textarea-field__field
+		label(for=props.id).textarea-field__label= props.label
+		+svg('check-mark').textarea-field__check-mark
+		span.textarea-field__error-message

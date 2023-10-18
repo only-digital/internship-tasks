@@ -5,4 +5,5 @@ block body
     .feedback
         h1.feedback__title Форма обратной связи
         form.feedback__form
-            +email-input({label: "E-mail"})
+            +email-field({label: "E-mail", id: "email"})
+            +textarea-field({label: "Ваше сообщение", id: "message"})

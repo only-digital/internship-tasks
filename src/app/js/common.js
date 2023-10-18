@@ -1,5 +1,6 @@
 import ExampleButton from "../../components/example-button/example-button";
-import EmailInput from "../../components/email-input/email-input";
+import EmailInput from "../../components/email-field/email-field";
+import MessageTextarea from "../../components/textarea-field/textarea-field";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -8,7 +9,8 @@ import EmailInput from "../../components/email-input/email-input";
  */
 const allComponents = {
   "example-button": ExampleButton,
-  "email-input": EmailInput,
+  "email-field": EmailInput,
+  "textarea-field": MessageTextarea,
 };
 
 /**
