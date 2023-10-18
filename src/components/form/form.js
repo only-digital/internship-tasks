@@ -45,8 +45,6 @@ class Form extends Component {
         this.sendInfo = this.getElement('send');
         this.sendResult = this.getElement('result');
 
-        console.log(this.sendResult)
-
         this.addFile.addEventListener("input", this.checkFileSize);
 
         this.email.addEventListener("input", this.emailFocus);
@@ -95,6 +93,7 @@ class Form extends Component {
     .catch(function (error) {
         console.error(error);
     });
+
    } 
 
    checkCountFiles = () => {
@@ -117,13 +116,15 @@ class Form extends Component {
         if (event.target.parentNode === this.closeFile[1])
             index = 1;
 
-        console.log("Удаляем - ", index)
-
+        
         this.newFile[index].classList.toggle('hidden');
         this.countFiles--;
-        this.fileList.splice(index,index);
-        console.log("После удаления", this.fileList)
-
+        console.log('Удаляем - ', index);
+        if (this.fileList.length === 2)
+            this.fileList.splice(index,1);
+        else 
+            this.fileList.splice(0,1);
+        
         if (this.countFiles) //значит было 2
         {
             this.countFilesError.classList.toggle('hidden');
@@ -133,10 +134,12 @@ class Form extends Component {
 
         this.textValidation.files = true;
         this.checkTextFields();
+        console.log("list:", this.fileList)
    }
 
    showFile = (fileSize, fileType, file) => {
 
+        console.log("list:", this.fileList)
         let currentFile;
 
         if (this.countFiles === 0)
@@ -162,7 +165,6 @@ class Form extends Component {
         this.countFiles++;
 
         this.checkCountFiles();
-        console.log(this.fileList)
     }
 
    delFileSizeError = () => {
@@ -176,6 +178,7 @@ class Form extends Component {
    } 
 
    checkFileSize = () => {
+       
        this.delFileSizeError();
 
        const fileSize = this.addFile.files[0].size;
@@ -193,9 +196,11 @@ class Form extends Component {
                 this.newFile[0].classList.toggle('error');
                 this.newFile[1].classList.toggle('error');
 
-                this.textValidation.files = false;
-                this.checkTextFields();
-                return; //добавить удаление этого файла
+                //Можем отправить данные, просто без этого файла
+               // this.textValidation.files = false;
+              //  this.checkTextFields();
+              //  return; 
+              
             }
 
             else
@@ -207,8 +212,8 @@ class Form extends Component {
                 this.checkTextFields();
             }
 
-            console.log(this.addFile.files)
         }
+        
     }
 
    checkTextFields = () => {
@@ -234,19 +239,27 @@ class Form extends Component {
    emailValidation = () => {
         const regexpEmail = /^([a-zA-Z\-0-9_]+|([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)+)|(".+"))@(([a-zA-Z\-0-9]+\.)+[a-zA-Z\-0-9]{2,})$/;
 
-        if(!regexpEmail.test(this.email.value) || (this.email.value.length > 255)) {
+        if (this.email.value.length === 0) {
+            this.textValidation.msg = false;
+
+            this.email.classList.remove('form__error');
+            this.errorText[0].classList.add('hidden');
+
+            this.sendInfo.setAttribute('disabled', '');
+        }
+        
+        else if (!regexpEmail.test(this.email.value) || (this.email.value.length > 255)) {
             this.email.classList.add('form__error');
             this.errorText[0].classList.remove('hidden');
 
             this.textValidation.email = false;
             this.sendInfo.setAttribute('disabled', '');
         }
-
+        
         else {
             this.email.classList.add('form__email-good');
             this.emailGood.classList.remove('hidden');
             this.errorText[0].classList.add('hidden');
-
 
             this.textValidation.email = true;
             this.sendingData.email = this.email.value;
@@ -267,11 +280,11 @@ class Form extends Component {
 
    emailFocus = () => {
         if (this.email.value!='') {
-            this.email.classList.add('activeEmail');
+            this.email.classList.add('form__activeEmail');
             this.emailName.classList.remove('hidden');
         }
         else {
-            this.email.classList.remove('activeEmail');
+            this.email.classList.remove('form__activeEmail');
             this.emailName.classList.add('hidden')
         }
     }
@@ -328,12 +341,12 @@ class Form extends Component {
    msgFocus = () => {
 
         if (this.msg.value!='') {
-            this.msg.classList.add('activeMsg');
+            this.msg.classList.add('form__activeMsg');
             this.msgName.classList.remove('hidden');
         }
 
         else {
-            this.msg.classList.remove('activeMsg');
+            this.msg.classList.remove('form__activeMsg');
             this.msgName.classList.add('hidden')
         }
     }

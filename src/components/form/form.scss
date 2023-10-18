@@ -4,7 +4,6 @@
 	padding: 26px 130px 60px 30px;
 
 	display: flex;
-	//gap: 159px;
 	justify-content: space-between;
 
 	&__container {
@@ -29,9 +28,8 @@
 		margin-bottom: 116px;
 		resize: none;
 
-		//overflow: hidden;
-
 		transition: outline 0.5s, background-color 0.5s, border-radius 0.5s, height 0.5s, padding 0.5s;
+
 		&:hover:enabled {
 			height: 120px;
 			background-color: #F4F4F4;
@@ -79,7 +77,6 @@
 
 	&__msgBlock {
 		position: relative;
-		
 	}
 
 	&__svg-goodMsg {
@@ -89,8 +86,6 @@
 		position: absolute;
 		top: 92px;
 		right: 15px;
-
-
 	}
 
 	&__input-name {
@@ -197,7 +192,7 @@
 		top: 0px;
 		left: 0px;
 		border-radius: 25px;
-		//z-index: -1;
+
 		width: 190px;
 		height: 46px;
 
@@ -227,8 +222,6 @@
 
 		border-radius: 27px;
 		background-color: #F4F4F4;
-
-		//width: 214px;
 
 		margin-bottom: 33px;
 
@@ -309,8 +302,6 @@
 
 	}
 
-	
-
 	&__svg-add {
 		width: 14px;
 		height: 14px;
@@ -371,56 +362,52 @@
 
 	}
 
-	//Your code here
-}
-.activeEmail {
-	border-radius: 24px;
-	border: 1px solid #0041A0;
-
-	padding: 14px 20px;
-}
-
-.activeMsg {
-	height: 120px;
-	background-color: #F4F4F4;
-
-	border-radius: 24px;
-
-	outline: none;
-	border: none;
-
-	padding: 12px 20px 16px 20px;
-
-	&:focus {
-		outline: 1px solid #0041A0;
-		background-color: transparent;
+	&__activeEmail {
+		border-radius: 24px;
+		border: 1px solid #0041A0;
+	
+		padding: 14px 20px;
 	}
-}
-
-
-
-	.form__error {
+	
+	&__activeMsg {
+		height: 120px;
+		background-color: #F4F4F4;
+	
+		border-radius: 24px;
+	
+		outline: none;
+		border: none;
+	
+		padding: 12px 20px 16px 20px;
+	
+		&:focus {
+			outline: 1px solid #0041A0;
+			background-color: transparent;
+		}
+	}
+	
+	&__error {
 		border: 1px solid red;
-
+	
 		margin-bottom: 2px;
 		background-color: transparent;
-
+	
 		&Text {
 			font-size: 12px;
 			margin-left: 20px;
-
+	
 			color: red;
-
+	
 			margin-bottom: 10px;
 		}
 	}
-
-	.form__email-good {
+	
+	&__email-good {
 		background-color: #f4f4f4;
 		border: none;
 	}
 
-
+}
 
 
 .hidden {
