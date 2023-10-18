@@ -1,0 +1,90 @@
+$color_white: #fff;
+// на случай, если кнопки часто красить: 
+$btn_color: #021F45;
+$btn_color_h: $color_white;
+$btn_color_a: $btn_color_h;
+$btn_color_f: $btn_color;
+$btn_color_d: #909090;
+
+$btn_icon_color: #002F6C;
+$btn_icon_color_h: $color_white;
+$btn_icon_color_a: $color_white;
+$btn_icon_color_f: $btn_icon_color;
+$btn_icon_color_d: $btn_color_d;
+
+$btn_bg_color: transparent;
+$btn_bg_color_h: #0041A0;
+$btn_bg_color_a: #002F6C;
+$btn_bg_color_f: $btn_bg_color;
+$btn_bg_color_d: $btn_bg_color;
+
+$btn_border_color: #BCBCBC;
+$btn_border_color_h: $btn_bg_color_h;
+$btn_border_color_a: $btn_bg_color_a;
+$btn_border_color_f: $btn_bg_color;
+$btn_border_color_d: $btn_border_color;
+
+.btn {
+	$root: &;
+
+	font-family: Arial;
+	font-style: normal;
+	font-weight: 400;
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	padding: 0 14px 0 18px;
+	line-height: 1;
+	font-size: 16px;
+	height: 48px;
+	border-radius: 24px;
+	cursor: pointer;
+	outline: none;
+	white-space: nowrap;
+	user-select: none;
+	color: $btn_color;
+	background-color: $btn_bg_color;
+	border: 1px solid $btn_border_color;
+	transition: color .3s linear, background-color .3s linear, border .3s linear;
+	&:hover {
+		color: $btn_color_h;
+		border-color: $btn_border_color_h;
+		background-color: $btn_bg_color_h;
+	}
+	&:active {
+		color: $btn_color_a;
+		border-color: $btn_border_color_a;
+		background-color: $btn_bg_color_a;
+	}
+	&:focus-visible {
+		color: $btn_color_f;
+		border-color: $btn_border_color_f;
+		background-color: $btn_bg_color_f;
+		outline: 3px solid #99B3D8;
+	}
+	&:disabled {
+		color: $btn_color_d;
+		border-color: $btn_border_color_d;
+		background-color: $btn_bg_color_d;
+		pointer-events: none;
+	}
+	
+	&__icon {
+		width: 32px;
+		height: 22px;
+		color: $btn_icon_color;
+		transition: color .3s linear;
+		#{$root}:hover & {
+			color: $btn_icon_color_h;
+		}
+		#{$root}:active & {
+			color: $btn_icon_color_a;
+		}
+		#{$root}:focus-visible & {
+			color: $btn_icon_color_f;
+		}
+		#{$root}:disabled & {
+			color: $btn_icon_color_d;
+		}
+	}
+}

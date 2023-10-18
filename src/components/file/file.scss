@@ -1,0 +1,217 @@
+$color_green: #27AE60;
+$color_blue: #0041A0;
+$border_default_color: #DEDEDE;
+
+$color_red: #FF0000;
+$color_black: #111;
+$bg_light_gray: #F4F4F4;
+$color_white: #fff;
+// на случай, если кнопки часто красить: 
+$btn_color: #021F45;
+$btn_color_h: $color_white;
+$btn_color_a: $btn_color_h;
+$btn_color_f: $btn_color;
+$btn_color_d: #909090;
+
+$btn_icon_color: #002F6C;
+$btn_icon_color_h: $color_white;
+$btn_icon_color_a: $color_white;
+$btn_icon_color_f: $btn_icon_color;
+$btn_icon_color_d: $btn_color_d;
+
+$btn_bg_color: transparent;
+$btn_bg_color_h: #0041A0;
+$btn_bg_color_a: #002F6C;
+$btn_bg_color_f: $btn_bg_color;
+$btn_bg_color_d: $btn_bg_color;
+
+$btn_border_color: #BCBCBC;
+$btn_border_color_h: $btn_bg_color_h;
+$btn_border_color_a: $btn_bg_color_a;
+$btn_border_color_f: $btn_bg_color;
+$btn_border_color_d: $btn_border_color;
+
+.file {
+	$root: &;
+
+	font-family: Arial;
+	font-style: normal;
+	font-weight: 400;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	row-gap: 7px;
+	@media screen and (max-width: 768px) {
+		row-gap: 20px;
+	}
+
+	&__input {
+		// display: none;
+		// хочу, чтобы фокус остался у input[type="file"] 
+		overflow: hidden;
+		width: 0;
+		height: 0;
+	}
+	&__label {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		padding: 14px 16px 16px;
+		margin-right: 20px;
+		line-height: 1;
+		font-size: 16px;
+		height: 46px;
+		border-radius: 24px;
+		position: relative;
+		cursor: pointer;
+		outline: none;
+		white-space: nowrap;
+		user-select: none;
+		color: $btn_color;
+		background-color: $btn_bg_color;
+		border: 1px solid $btn_border_color;
+		transition: color .3s linear,
+					border .3s linear,
+					background-color .3s linear;
+		&::before,
+		&::after {
+			position: absolute;
+			display: block;
+			z-index: 2;
+			visibility: hidden;
+			opacity: 0;
+			transition: opacity .3s linear;
+		}
+		#{$root}__input:disabled + &:hover::before,
+		#{$root}__input:disabled + &:hover::after {
+			visibility: visible;
+			opacity: 1;
+		}
+		&::before {
+			content: attr(data-msg);
+			background-color: $color_white;
+			font-size: 14px;
+			line-height: 1.5;
+			left: -225px;
+			bottom: 74px;
+			max-width: 240px;
+			white-space: normal;
+			color: $btn_icon_color;
+			padding: 16px 20px;
+			box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.1);
+		}
+		&::after {
+			content: '';
+			border: 10px solid transparent;
+			border-top: 10px solid $color_white;
+			border-right: 10px solid $color_white;
+			bottom: 55px;
+			left: 35px;
+		}
+		&:hover {
+			color: $btn_color_h;
+			border-color: $btn_border_color_h;
+			background-color: $btn_bg_color_h;
+		}
+		&:active {
+			color: $btn_color_a;
+			border-color: $btn_border_color_a;
+			background-color: $btn_bg_color_a;
+		}
+		#{$root}__input:focus-visible + & {
+			color: $btn_color_f;
+			border-color: $btn_border_color_f;
+			background-color: $btn_bg_color_f;
+			outline: 3px solid #99B3D8;
+		}
+		#{$root}__input:disabled + &,
+		#{$root}.disabled & {
+			color: $btn_color_d;
+			border-color: $btn_border_color_d;
+			background-color: $btn_bg_color_d;
+			// pointer-events: none;
+			cursor: default;
+		}
+		
+		&_icon {
+			width: 14px;
+			height: 14px;
+			color: $btn_icon_color;
+			transition: color .3s linear;
+		}
+		&:hover &_icon {
+			color: $btn_icon_color_h;
+		}
+		&:active &_icon {
+			color: $btn_icon_color_a;
+		}
+		#{$root}__input:focus-visible + & &_icon {
+			color: $btn_icon_color_f;
+		}
+		#{$root}__input:disabled + & &_icon,
+		#{$root}.disabled &_icon {
+			color: $btn_icon_color_d;
+		}
+	}
+
+	&__list {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+	&__item {
+		display: flex;
+		align-items: center;
+		border-radius: 27px;
+		background-color: $bg_light_gray;
+		padding: 10px 13px 10px 18px;
+		user-select: none;
+		white-space: nowrap;
+		cursor: pointer;
+		&_name {
+			color: $color_black;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			max-width: 100px;
+		}
+		&_info {
+			color: $btn_color_d;
+			margin-left: 5px;
+		}
+		&_btn {
+			color: $btn_icon_color;
+			line-height: 1;
+			height: 20px;
+			margin-left: 0px;
+			padding: 0;
+			width: 0;
+			overflow: hidden;
+			transition: width .3s, margin .3s;
+		}
+		&:hover &_btn {
+			margin-left: 8px;
+			width: 20px;
+		}
+		&_icon {
+			display: block;
+			height: 10px;
+			width: 10px;
+			margin: -3px 0 0 4px;
+		}
+
+	}
+
+	&__error {
+		width: 100%;
+		font-size: 12px;
+		color: $color_red;
+		visibility: hidden;
+		opacity: 0;
+		transition: opacity .3s linear;
+		#{$root}.error & {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+}
