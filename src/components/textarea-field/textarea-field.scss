@@ -45,6 +45,7 @@
     background: none;
     color: $black;
     resize: none;
+    transition: border-color 0.3s, border-radius 0.3s, background 0.3s;
 
     &::-webkit-scrollbar {
       width: 0px;
