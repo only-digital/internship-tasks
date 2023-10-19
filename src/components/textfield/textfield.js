@@ -16,15 +16,12 @@ class Textfield extends Component {
     }
 
     handleInput = () => {
-        console.log('inputing!!!')
-        console.log("Textarea value changed: " + this.input.value);
         if (this.input.value.length >= 10 && !this.root.classList.contains('filled')) {
             this.root.classList.add('filled');
-            console.log('filled');
         } else if (this.input.value.length < 10 && this.root.classList.contains('filled')) {
             this.root.classList.remove('filled');
         }
-    }    // Your code here
+    }    
 }
 
 export default Textfield

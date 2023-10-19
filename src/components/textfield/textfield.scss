@@ -143,6 +143,21 @@ $success: #27AE60;
 		}
 
 	}
+	&.disabled {
+		.textfield__label {
+			opacity: 0;
+		}
+		.textfield__input:disabled {
+			height: 48px;
+			background-color: $white;
+			border-radius: 0;
+			border-bottom: 1px $extra-gray-2 solid;
+			border-top: 1px transparent solid;
+		}
+		.textfield__svg {
+			opacity: 0;
+		}
+	}
 }	
 	
 	

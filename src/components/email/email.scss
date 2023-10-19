@@ -18,6 +18,10 @@ $success: #27AE60;
 	color: $main-red;
 	font-family: Arial;
 	padding-left: 20px;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 150%; /* 18px */
+	letter-spacing: -0.24px;	
 }
 :root {
 	box-sizing: border-box;
@@ -131,7 +135,19 @@ input[type="email" i] {
 		}
 	}
 	
-	
+&.valid {
+	.email__svg {
+		opacity: 1;
+	}
+}
+&.invalid {
+	.email__span {
+		@include error();
+	}
+	.email__svg {
+		opacity: 0;
+	}
+}	
 
 
 }
