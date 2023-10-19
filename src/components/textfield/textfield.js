@@ -7,8 +7,8 @@ class Textfield extends Component {
     constructor(element) {
         super(element);
         // how to select a whole component itself??
-        this.textfield = this.getElement('');
-        console.log('this is' + this.textfield);
+       
+        console.log('this is ' + this.root.outerHTML);
         this.input = this.getElement('input');
         console.log(this.input, this.input.value);
         // Your code here
@@ -18,9 +18,11 @@ class Textfield extends Component {
     handleInput = () => {
         console.log('inputing!!!')
         console.log("Textarea value changed: " + this.input.value);
-        if (this.input.value.length > 10) {
-            this.classList.add('filled');
+        if (this.input.value.length >= 10 && !this.root.classList.contains('filled')) {
+            this.root.classList.add('filled');
             console.log('filled');
+        } else if (this.input.value.length < 10 && this.root.classList.contains('filled')) {
+            this.root.classList.remove('filled');
         }
     }    // Your code here
 }

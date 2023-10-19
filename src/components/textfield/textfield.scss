@@ -90,7 +90,7 @@ $success: #27AE60;
 		.textfield__label {
 			opacity: 1;
 		}
-}
+	}
 	
 	
 	
@@ -126,11 +126,21 @@ $success: #27AE60;
 		}
 		.textfield__input {
 			height: 193px;
+			background-color: $extra-gray-3;
+			border-radius: 24px;
+			border: none;
 		}
 		.textfield__svg {
 			opacity: 1;
 		}
-		
+		&:focus-within {
+			.textfield__input {
+			background-color: $white;
+			border: 1px $cobolt solid;
+			outline: none;
+			transition: border 0.3s ease;
+		}
+		}
 
 	}
 }	
