@@ -84,6 +84,7 @@ $bg_color: $border_color_h;
 		margin-top: 5px;
 		color: $color_red;
 		visibility: hidden;
+		min-height: 16px;
 		opacity: 0;
 		transition: opacity .3s linear;
 		#{$root}.error & {

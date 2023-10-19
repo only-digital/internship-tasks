@@ -1,27 +1,19 @@
 mixin file(props)
 	.file(data-component='file')
-		input.file__input&attributes(attributes)(type="file" multiple id= props.id)
-		label.file__label(for= props.id data-msg= props.maxCountFileMsg)= props.label
+		input.file__input&attributes(attributes)(type="file")
+		label.file__label(for= attributes.id data-msg= props.maxCountFileMsg)= props.label
 			span.file__label_icon
 				<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M0 6.53333V7.46667H14V6.53333H0Z" fill="currentColor"/>
 					<path d="M7.46667 4.07974e-08L6.53333 0L6.53333 14H7.46667L7.46667 4.07974e-08Z" fill="currentColor"/>
 				</svg>
 		.file__list
-			.file__item
-				span.file__item_name name
-				span.file__item_info doc, 14kb
-				button.file__item_btn(tabindex="-1")
-					span.file__item_icon
-						<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" clip-rule="evenodd" d="M0.774947 10L5.07412 5.70082L9.22505 9.85175L9.85175 9.22505L5.70082 5.07412L10 0.774946L9.3733 0.148249L5.07412 4.44742L0.626699 0L0 0.6267L4.44742 5.07412L0.148248 9.3733L0.774947 10Z" fill="currentColor"/>
-						</svg>
-			.file__item
-				span.file__item_name namename
-				span.file__item_info doc, 14kb
-				button.file__item_btn(tabindex="-1")
-					span.file__item_icon
-						<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path fill-rule="evenodd" clip-rule="evenodd" d="M0.774947 10L5.07412 5.70082L9.22505 9.85175L9.85175 9.22505L5.70082 5.07412L10 0.774946L9.3733 0.148249L5.07412 4.44742L0.626699 0L0 0.6267L4.44742 5.07412L0.148248 9.3733L0.774947 10Z" fill="currentColor"/>
-						</svg>
+			//- .file__item
+			//- 	span.file__item_name namename
+			//- 	span.file__item_info doc, 14kb
+			//- 	button.file__item_btn(tabindex="-1")
+			//- 		span.file__item_icon
+			//- 			<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+			//- 				<path fill-rule="evenodd" clip-rule="evenodd" d="M0.774947 10L5.07412 5.70082L9.22505 9.85175L9.85175 9.22505L5.70082 5.07412L10 0.774946L9.3733 0.148249L5.07412 4.44742L0.626699 0L0 0.6267L4.44742 5.07412L0.148248 9.3733L0.774947 10Z" fill="currentColor"/>
+			//- 			</svg>
 		.file__error Сообщение ошибки

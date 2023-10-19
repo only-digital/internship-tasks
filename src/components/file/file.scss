@@ -99,6 +99,9 @@ $btn_border_color_d: $btn_border_color;
 			color: $btn_icon_color;
 			padding: 16px 20px;
 			box-shadow: 0px 4px 40px 0px rgba(0, 0, 0, 0.1);
+			@media screen and (max-width: 1280px) {
+				left: 0;
+			}
 		}
 		&::after {
 			content: '';
@@ -107,6 +110,11 @@ $btn_border_color_d: $btn_border_color;
 			border-right: 10px solid $color_white;
 			bottom: 55px;
 			left: 35px;
+			@media screen and (max-width: 1280px) {
+				left: 88px;
+				border: 10px solid transparent;
+				border-top: 10px solid $color_white;
+			}
 		}
 		&:hover {
 			color: $btn_color_h;
@@ -169,6 +177,10 @@ $btn_border_color_d: $btn_border_color;
 		user-select: none;
 		white-space: nowrap;
 		cursor: pointer;
+		#{$root}.disabled & {
+			pointer-events: none;
+			opacity: 0.7;
+		}
 		&_name {
 			color: $color_black;
 			text-overflow: ellipsis;

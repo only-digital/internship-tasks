@@ -3,14 +3,14 @@ mixin form(props)
 	.form&attributes(attributes)(data-component='form')
 		.form__title Форма обратной связи
 		form.form__form
-			+input-field(type="email" id="email_01" placeholder="E-mail")
-			+textarea(id="msg_01" placeholder="Ваше сообщение")
-			+file({id: "file_01", label: "Прикрепить файл", maxCountFileMsg: "Вы можете загрузить только 2 документа"})
-			+checkbox({id: "policy", label: "Вы подтверждаете, что ознакомились ", link: "/policy", linkText: " c политикой обработки персональных данных ", error: "Подтвердите обработку персональных данных"})
+			+input-field(type="email" id="email_01" placeholder="E-mail" name="email" autocomplete="off")
+			+textarea(id="msg_01" placeholder="Ваше сообщение" name="msg")
+			+file({label: "Прикрепить файл", maxCountFileMsg: "Вы можете загрузить только 2 документа"})(id="file_01" name="files" multiple accept=".pdf, .doc, .docx")
+			+checkbox({label: "Вы подтверждаете, что ознакомились ", link: "/policy", linkText: " c политикой обработки персональных данных ", error: "Подтвердите обработку персональных данных"})(id="policy" name="checkbox")
 			.form__success 
 				span.icon
 					<svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path fill-rule="evenodd" clip-rule="evenodd" d="M21.503 1.40993L20.3267 0.233673L8.37976 12.1806L9.55602 13.3569L21.503 1.40993ZM1.64574 8.16954L0.469482 9.34579L6.95034 15.8267L8.1266 14.6504L1.64574 8.16954Z" fill="#27AE60"/>
 					</svg>
 				span.text Форма успешно отправлена
-			+btn({text: "Отправить"})
+			+btn({text: "Отправить"})(id="btn" disabled)

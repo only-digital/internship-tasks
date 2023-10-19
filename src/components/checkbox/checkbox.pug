@@ -1,7 +1,7 @@
 mixin checkbox(props)
 	.checkbox(data-component='checkbox')
-		input.checkbox__input&attributes(attributes)(type="checkbox" id= props.id)
-		label.checkbox__label(for= props.id)= props.label
+		input.checkbox__input&attributes(attributes)(type="checkbox")
+		label.checkbox__label(for= attributes.id)= props.label
 			if props.link
 				a.checkbox__link(href= props.link target="_blank" tabindex="-1")= props.linkText
 		if props.error
