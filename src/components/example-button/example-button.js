@@ -1,4 +1,4 @@
-import Component from '../../app/js/base/component'
+import Component from '../../app/js/base/Component';
 
 class ExampleButton extends Component {
   textElement
