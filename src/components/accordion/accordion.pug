@@ -1,0 +1,11 @@
+mixin accordion(props)
+	.accordion&attributes(attributes)(data-component='accordion')
+		h1.accordion-title!=props.title
+		+spoiler({caption: "1. Nullam tincidunt vestibulum porttitor",
+    description: "Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit. "})
+		+spoiler({caption: "2. Nullam tincidunt vestibulum porttitor",
+    description: "Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit. "})
+		+spoiler({caption: "3. Nullam tincidunt vestibulum porttitor",
+    description: "Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit. "})
+		+spoiler({caption: "4. Nullam tincidunt vestibulum porttitor",
+    description: "Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit. "})
