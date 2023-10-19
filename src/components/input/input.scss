@@ -1,0 +1,106 @@
+$grey: #dedede;
+$common-text-color: #111;
+$hovered: #f4f4f4;
+$focused: #0041a0;
+$invalid: #ff0000;
+$field-background-color: white;
+$valid-background-color: #f4f4f4;
+.input {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  position: relative;
+  display: block;
+  &__field-name {
+    position: absolute;
+    left: 0;
+    top: 33px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: -0.32px;
+    color: $common-text-color;
+  }
+  &__field {
+    font-size: 16px;
+    line-height: 1.25;
+    color: $common-text-color;
+    width: 100%;
+    margin-top: 18px;
+    padding: 13px 20px 13px 20px;
+    // border-radius: 24px;
+    border-bottom: 1px solid #dedede;
+    &:hover {
+      background-color: $hovered;
+      border: none;
+      border-radius: 24px;
+      & + .input__field-name {
+        margin-left: 20px;
+      }
+    }
+    &:focus {
+      background-color: none;
+      border: 1px solid $focused;
+      border-radius: 24px;
+      background-color: $field-background-color;
+    }
+
+    &_invalid {
+      border: 1px solid $invalid;
+      border-radius: 24px;
+      & + .input__field-name {
+        margin-left: 20px;
+      }
+      &:hover {
+        border: 1px solid $invalid;
+        border-radius: 24px;
+        background-color: $field-background-color;
+      }
+    }
+    &_valid {
+      background-color: $valid-background-color;
+      border: 1px solid $valid-background-color;
+      border-radius: 24px;
+
+      &:hover {
+        background-color: $valid-background-color;
+        border: 1px solid $valid-background-color;
+        border-radius: 24px;
+      }
+      & ~ .input__success-image {
+        display: block;
+      }
+      & ~ .input__error-message {
+        visibility: hidden;
+      }
+    }
+
+    &:focus + .input__field-name,
+    &:not(:placeholder-shown) + .input__field-name {
+      position: absolute;
+      top: 0;
+      margin-left: 20px;
+      font-size: 12px;
+      line-height: 1.5;
+      letter-spacing: -0.24px;
+      color: $grey;
+    }
+  }
+  &__error-message {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: -0.24px;
+    color: $invalid;
+    white-space: pre;
+  }
+  &__success-image {
+    width: 18px;
+    height: 13px;
+    position: absolute;
+    top: 33px;
+    right: 20px;
+    display: none;
+  }
+}
