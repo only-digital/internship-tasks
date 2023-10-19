@@ -5,6 +5,7 @@
 	display: flex;
 	flex-direction: column;
 	padding-top: 40px;
+	width: 836px;
 
 	&__email-label, &__text-label {
 		display: block;
@@ -18,76 +19,22 @@
 		}
 	}
 
-	&__agreement {
-		margin-top: 30px;
-		display: flex;
-		align-items: center;
-
-		&:disabled {
-			opacity: 0.3;
-		}
-		
-		.agreement__input {
-			width: 1em;
-			height: 1em;
-			border: 1px solid $grey;
-			position: relative;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			cursor: pointer;
-
-			@include media(580px, 1024px) {
-				width: 1.5em;
-				height: 1.5em;
-			}
-
-			@include media(500px, 1024px) {
-				width: 2em;
-			}
-
-			&:checked {
-				background-color: $lightBlue;	
-				border: 1px solid $lightBlue;
-				background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M3.64575 5.59405L1.12788 2.89904L0 4.09777L3.64575 8L10 1.19872L8.88006 0L3.64575 5.59405Z' fill='white'/%3e%3c/svg%3e");
-				background-position: center;
-				background-repeat: no-repeat;
-			}
-
-			&:hover {
-				border: 1px solid $lightBlue;
-			}
-
-			&:focus-visible {
-				border: 2px solid #99B3D8;
-			}
-			
-		}
-
-		.agreement__input._error {
-			border: 1px solid $red;
-		}
-
-		.agreement__label {
-			@include text-style(400, 14px, $grey, 21px);
-			margin-left: 18px;
-
-			@include media(580px, 1024px) {
-				font-size: 13px;
-			}
-		}
-
-		.agreement__link {
-			@include text-style(400, 14px, $blue, 21px);
-
-			&:hover {
-				text-decoration: underline;
-			}
-		}
-	}
-
 	.email-block, .text-block {
 		position: relative;
+	}
+
+	&__email {
+		background-color: #fff;
+		border: none;
+		border-bottom: 1px solid #DEDEDE;
+		border-radius: 0;
+
+		&.checked {
+			background-color: $lightGrey;
+			border: none;
+			padding: 14px 20px;
+			border-radius: 24px;
+		}	
 	}
 
 	&__email-check {
@@ -105,53 +52,7 @@
 	}
 
 	&__button-add {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		padding: 15px 20px;
-		border: 1px solid $grey;
-		border-radius: 25px;
-		max-width: 250px;
-		transition: background 0.2s ease, color 0.2s ease;
-
-		svg {
-			margin-left: 14px;
-			path {
-				transition: fill 0.2s ease;
-			}	
-		}
-
-		@include text-style(400, 16px, $darkBlue, 16px);
-
-		&:hover {
-			background-color: $lightBlue;
-			color: #fff;
-
-			svg {
-				path {
-					fill: #fff;
-				}
-			}
-		}
-
-		&:active {
-			background-color: $darkBlue;
-		}
-
-		&:focus-visible {
-			border: 3px solid #99B3D8;
-		}
-
-		&:disabled {
-			color: $grey;
-			border: 1px solid #BCBCBC;
-
-			svg {
-				path {
-					fill: $grey;
-				}
-			}
-		}
+		display: none;
 	}
 
 	&__button-remove {
@@ -160,6 +61,10 @@
 		background-color: $lightGrey;
 		padding: 10px 15px;
 		border-radius: 27px;
+
+		&:not(:first-child) {
+			margin-left: 10px;
+		}
 
 		.pdf {
 			color: $grey;
@@ -262,6 +167,136 @@
 			}
 		}
 	}
+
+	&__result {
+		margin-top: 10px;
+	}
+}
+
+.agreement-block {
+	margin-top: 30px;
+	display: flex;
+	align-items: center;
+
+	&:disabled {
+		opacity: 0.3;
+	}
+	
+	.agreement__input {
+		width: 1em;
+		height: 1em;
+		border: 1px solid $grey;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+
+		@include media(580px, 1024px) {
+			width: 1.5em;
+			height: 1.5em;
+		}
+
+		@include media(500px, 1024px) {
+			width: 2em;
+		}
+
+		&:checked {
+			background-color: $lightBlue;	
+			border: 1px solid $lightBlue;
+			background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M3.64575 5.59405L1.12788 2.89904L0 4.09777L3.64575 8L10 1.19872L8.88006 0L3.64575 5.59405Z' fill='white'/%3e%3c/svg%3e");
+			background-position: center;
+			background-repeat: no-repeat;
+		}
+
+		&:hover {
+			border: 1px solid $lightBlue;
+		}
+
+		&:focus-visible {
+			border: 2px solid #99B3D8;
+		}
+		
+	}
+
+	.agreement__input._error {
+		border: 1px solid $red;
+	}
+
+	.agreement__label {
+		@include text-style(400, 14px, $grey, 21px);
+		margin-left: 18px;
+
+		@include media(580px, 1024px) {
+			font-size: 13px;
+		}
+	}
+
+	.agreement__link {
+		@include text-style(400, 14px, $blue, 21px);
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.file-label {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 15px 20px;
+	border: 1px solid $grey;
+	border-radius: 25px;
+	max-width: 250px;
+	transition: background 0.2s ease, color 0.2s ease;
+	cursor: pointer;
+
+	svg {
+		margin-left: 14px;
+		path {
+			transition: fill 0.2s ease;
+		}	
+	}
+
+	@include text-style(400, 16px, $darkBlue, 16px);
+
+	&:hover {
+		background-color: $lightBlue;
+		color: #fff;
+
+		svg {
+			path {
+				fill: #fff;
+			}
+		}
+	}
+
+	&:active {
+		background-color: $darkBlue;
+	}
+
+	&:focus-visible {
+		border: 3px solid #99B3D8;
+	}
+
+	&:disabled {
+		color: $grey;
+		border: 1px solid #BCBCBC;
+
+		svg {
+			path {
+				fill: $grey;
+			}
+		}
+	}
+}
+
+.file-info {
+	display: block;
+	@include text-style(400, 14px, $grey, 21px);
+	margin-top: 10px;
+	cursor: default;
 }
 
 .input {
@@ -300,20 +335,27 @@ textarea {
 	border-bottom: 1px solid #DEDEDE;
 	resize: none;
 	border: none;
-    background: transparent;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 16px;
 	color: #000;
-	// overflow: hidden;
 	height: 48px;
 	outline: none;
 
 	&:hover {
 		height: 172px;
+		border-bottom: none;
 	}
 
 	&:focus-visible {
 		height: 172px;
+	}
+
+	&.checked {
+		height: 172px;
+		background-color: #F4F4F4;
+		border-radius: 24px;
+		padding: 12px 50px 16px 20px;
+		border-bottom: none;
 	}
 
 	&.error {
@@ -335,9 +377,10 @@ textarea {
 		display: flex;
 	}
 
-	.files {
+	.preview {
 		margin-left: 32px;
 		cursor: default;
+		display: flex;
 	}
 }
 

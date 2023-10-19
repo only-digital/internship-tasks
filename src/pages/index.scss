@@ -5,6 +5,7 @@ $black: #111111;
 $grey: #909090;
 $lightGrey: #F4F4F4;
 $red: #FF0000;
+$green: #27AE60;
 
 @mixin text-style($font-weight, $font-size, $color, $line-height) {
 	font-weight: $font-weight;
@@ -29,6 +30,10 @@ body {
 	padding: 30px;
 	display: flex;
 	justify-content: space-between;
+
+	@include media(1280px, 990px) {
+		flex-direction: column;
+	}
 }
 
 .title {
