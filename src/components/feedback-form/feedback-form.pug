@@ -6,19 +6,32 @@ mixin feedback-form(props)
 			.feedback-form__content__email(class=disabled)
 				input.feedback-form__content__email__input(type="email" id="email" placeholder="E-mail")
 				label(for='email' ) E-mail
-				.feedback-form__content__email__message 111
-			.feedback-form__content__message(class=disabled)
-				textarea.feedback-form__content__message__input( id="message" placeholder="Ваше сообщение")
-				label(for='message' ) Ваше сообщение
-				.feedback-form__content__message__message 111
+				+svg('icon-succes-input').feedback-form__content__email__icon 
+				.feedback-form__content__email__message 
+			.feedback-form__content__text(class=disabled)
+				textarea.feedback-form__content__text__input( id="text" placeholder="Ваше сообщение")
+				label(for='text' ) Ваше сообщение
+				+svg('icon-succes-input').feedback-form__content__text__icon 
+				.feedback-form__content__text__message 
 			.feedback-form__content__file-upload(class=disabled)
-				button.feedback-form__content__file-upload__button.button Прикрепить файл
-					+svg('icon-plus').feedback-form__content__file-upload__button__svg
-				.feedback-form__content__file-upload__message 111
+				input.feedback-form__content__file-upload__input(type='file' multiple )
+				//- accept=".pdf, .doc, .docx" 
+				.feedback-form__content__file-upload__block
+					button.feedback-form__content__file-upload__button.button(class=disabled) Прикрепить файл
+						+svg('icon-plus').feedback-form__content__file-upload__button__svg
+					button.feedback-form__content__file-upload__file(id='file-1') 
+						span.name-file 
+						span.file-format  
+						+svg('icon-cross').feedback-form__content__file-upload__file__svg
+					button.feedback-form__content__file-upload__file(id='file-2') 
+						span.name-file 
+						.file-format 
+						+svg('icon-cross').feedback-form__content__file-upload__file__svg
+				.feedback-form__content__file-upload__message 
 			.feedback-form__content__confirm(class=disabled)
-				input.feedback-form__content__checkbox__input(type='checkbox' id="confirm" checked="checked")
+				input.feedback-form__content__checkbox__input(type='checkbox' id="confirm")
 				label(for="confirm") 
 					|	Вы подтверждаете, что ознакомились 
 					span c политикой обработки персональных данных 
-			button.feedback-form__content__submit.button(class=disabled) Отправить
+			button.feedback-form__content__submit.button.disabled(class=disabled) Отправить
 				+svg('icon-button').feedback-form__content__submit__svg

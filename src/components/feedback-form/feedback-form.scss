@@ -1,7 +1,6 @@
 $main-blue: #002f6c;
 $main-steel: #909090;
 $extra-cobolt: #0041a0;
-$icon-success: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='52' height='52' viewBox='0 0 52 52' fill='none'%3e%3ccircle cx='26' cy='26' r='25' stroke='%23DEDEDE' stroke-width='2'/%3e%3cpath fill-rule='evenodd' clip-rule='evenodd' d='M36.503 19.4099L35.3267 18.2337L23.3798 30.1806L24.556 31.3569L36.503 19.4099ZM16.6457 26.1695L15.4695 27.3458L21.9503 33.8267L23.1266 32.6504L16.6457 26.1695Z' fill='%2327AE60'/%3e%3c/svg%3e");
 
 .feedback-form {
   $root: &;
@@ -29,7 +28,6 @@ $icon-success: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3
     position: relative;
     &__email {
       width: 100%;
-      height: 66px;
       position: relative;
       label {
         visibility: hidden;
@@ -69,7 +67,51 @@ $icon-success: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3
             visibility: visible;
           }
         }
+
+        &.error-input {
+          border-radius: 24px;
+          border: 1px solid var(--extra-cobolt, #ff0000);
+          background: transparent;
+          padding: 14px 20px 14px 20px;
+          &:focus {
+            border: 1px solid #0041a0;
+          }
+          & + label {
+            visibility: visible;
+          }
+          & ~ .feedback-form__content__email__message {
+            height: 18px;
+          }
+        }
+        &.validation-succes {
+          border-radius: 24px;
+          background: var(--extra-grey-3, #f4f4f4);
+          padding: 14px 20px 14px 20px;
+          border-bottom: none;
+          &:focus {
+            border: 1px solid #0041a0;
+            background: transparent;
+            & ~ svg {
+              visibility: hidden;
+            }
+          }
+          & + label {
+            visibility: visible;
+          }
+          & ~ svg {
+            visibility: visible;
+          }
+        }
       }
+      svg {
+        visibility: hidden;
+        position: absolute;
+        width: 18px;
+        height: 13px;
+        right: 20px;
+        bottom: 17px;
+      }
+
       &.disabled {
         pointer-events: none;
         #email::placeholder {
@@ -77,6 +119,7 @@ $icon-success: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3
         }
       }
       &__message {
+        height: 0px;
         margin-left: 20px;
         color: #ef1c1c;
         font-size: 12px;
@@ -85,9 +128,8 @@ $icon-success: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3
       }
     }
 
-    &__message {
+    &__text {
       width: 100%;
-      height: 154px;
       color: var(--system-text, #111);
       margin-top: 10px;
       position: relative;
@@ -101,7 +143,7 @@ $icon-success: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3
         letter-spacing: -0.24px;
         padding-left: 20px;
       }
-      #message {
+      #text {
         font-family: 'Arial';
         font-size: 16px;
         letter-spacing: -0.32px;
@@ -122,27 +164,63 @@ $icon-success: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3
           background: #f4f4f4;
           padding: 12px 20px 16px 20px;
           border: none;
-          // min-height: 193px;
         }
         &::placeholder {
           color: #111;
         }
         &:focus {
-          border-radius: 24px;
           outline: none;
+          border-radius: 24px;
           border: 1px solid #0041a0;
-
           background: transparent;
           padding: 12px 20px 16px 20px;
           & + label {
             visibility: visible;
           }
         }
+        &.error-input {
+          border-radius: 24px;
+          border: 1px solid var(--extra-cobolt, #ff0000);
+          background: transparent;
+          padding: 12px 20px 16px 20px;
+          &:focus {
+            border: 1px solid #0041a0;
+          }
+          & + label {
+            visibility: visible;
+          }
+        }
+        &.validation-succes {
+          border-radius: 24px;
+          background: var(--extra-grey-3, #f4f4f4);
+          padding: 12px 20px 16px 20px;
+          border: none;
+          &:focus {
+            border: 1px solid #0041a0;
+            background: transparent;
+            & ~ svg {
+              visibility: hidden;
+            }
+          }
+          & + label {
+            visibility: visible;
+          }
+          & ~ svg {
+            visibility: visible;
+          }
+        }
       }
-
+      svg {
+        visibility: hidden;
+        position: absolute;
+        width: 18px;
+        height: 13px;
+        right: 20px;
+        bottom: 17px;
+      }
       &.disabled {
         pointer-events: none;
-        #message::placeholder {
+        #text::placeholder {
           color: #bcbcbc;
         }
       }
@@ -195,7 +273,6 @@ $icon-success: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3
     }
     .button {
       $root-button: &;
-      margin-top: 30px;
       display: flex;
       gap: 14px;
       height: 48px;
@@ -234,6 +311,7 @@ $icon-success: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3
       }
       &.disabled {
         color: #909090;
+        pointer-events: none;
         svg {
           fill: #909090;
         }
@@ -250,10 +328,48 @@ $icon-success: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3
         height: 14px;
         width: 14px;
       }
+      &__input {
+        display: none;
+      }
+      &__block {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        margin-top: 30px;
+      }
+      &__file {
+        display: none;
+        gap: 5px;
+        height: 40px;
+        padding: 0px 13px 0px 18px;
+        align-items: center;
+        color: black;
+        font-size: 16px;
+        letter-spacing: -0.32px;
+        border-radius: 25px;
+        background-color: #f4f4f4;
+        .file-format {
+          color: #909090;
+        }
+
+        svg {
+          display: none;
+        }
+        &:hover {
+          svg {
+            display: block;
+            height: 20px;
+            width: 20px;
+          }
+        }
+      }
     }
-    &__submit__svg {
-      height: 14px;
-      width: 14px;
+    &__submit {
+      margin-top: 30px;
+      &__svg {
+        height: 14px;
+        width: 14px;
+      }
     }
   }
 }
