@@ -19,6 +19,10 @@ class Form extends Component {
     this.button = this.form.querySelector(".button");
     this.success = this.form.querySelector(".success");
 
+    this.validError = {
+      email: "",
+      accept: "",
+    };
     this.validationForm();
     this.checkbox.addEventListener("click", this.checkboxValidation);
     this.email.addEventListener("blur", this.emailValidation);
@@ -127,9 +131,9 @@ class Form extends Component {
     const value = event.target.value;
 
     if (!this.isEmailValid(value)) {
-      this.setMessage("Некорректный email", "red");
+      this.validError.email = "Некорректный email.";
     } else {
-      this.deleteMessage("red");
+      this.validError.email = "";
     }
 
     this.validationForm();
@@ -139,12 +143,10 @@ class Form extends Component {
     const checked = event.target.checked;
 
     if (checked) {
-      this.deleteMessage("red");
+      this.validError.accept = "";
     } else {
-      this.setMessage(
-        "Политика обработки персональных данных является обязательной",
-        "red"
-      );
+      this.validError.accept =
+        "Политика обработки персональных данных является обязательной.";
     }
 
     this.validationForm();
@@ -152,8 +154,11 @@ class Form extends Component {
 
   validationForm = () => {
     if (this.isEmailValid(this.email.value) && this.checkbox.checked) {
+      this.deleteMessage("red");
       this.button.removeAttribute("disabled");
     } else {
+      let message = `${this.validError.email} ${this.validError.accept}`;
+      this.setMessage(message, "red");
       this.button.setAttribute("disabled", "");
     }
   };
