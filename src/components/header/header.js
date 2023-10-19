@@ -1,5 +1,7 @@
 import Component from "../../app/js/base/component";
 
+const URL = "/stats";
+
 class Header extends Component {
   constructor(element) {
     super(element);
@@ -12,7 +14,7 @@ class Header extends Component {
   getStats = async () => {
     try {
       this.showLoader(true);
-      const response = await fetch("/stats");
+      const response = await fetch(URL);
 
       if (!response.ok) {
         const message = `An error has occurred: ${response.status}`;

@@ -3,6 +3,8 @@ import Component from "../../app/js/base/component";
 const EMAIL_REGEXP =
   /^([a-zA-Z\-0-9_]+|([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)+)|(".+"))@(([a-zA-Z\-0-9]+\.)+[a-zA-Z\-0-9]{2,})$/;
 
+const URL = "/form";
+
 class Form extends Component {
   constructor(element) {
     super(element);
@@ -41,13 +43,15 @@ class Form extends Component {
       this.message.textContent = "";
       this.makeDisabled();
 
-      const response = await fetch("/form", {
+      const response = await fetch(URL, {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(data),
       });
 
-      if (!response.ok && response.status !== 422) {
+      if (response.status === 404) {
+        this.setMessage("Сервер временно недоступен", "red");
+      } else if (!response.ok && response.status !== 422) {
         const message = `An error has occurred: ${response.status}`;
         throw new Error(message);
       }
