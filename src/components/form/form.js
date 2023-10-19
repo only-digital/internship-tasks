@@ -1,5 +1,8 @@
 import Component from "../../app/js/base/component";
 
+const EMAIL_REGEXP =
+  /^([a-zA-Z\-0-9_]+|([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)+)|(".+"))@(([a-zA-Z\-0-9]+\.)+[a-zA-Z\-0-9]{2,})$/;
+
 class Form extends Component {
   constructor(element) {
     super(element);
@@ -14,6 +17,9 @@ class Form extends Component {
     this.button = this.form.querySelector(".button");
     this.success = this.form.querySelector(".success");
 
+    this.validationForm();
+    this.checkbox.addEventListener("click", this.checkboxValidation);
+    this.email.addEventListener("blur", this.emailValidation);
     this.form.addEventListener("submit", this.handleSubmit);
   }
 
@@ -70,6 +76,11 @@ class Form extends Component {
     this.message.classList.add(`form__message_color_${color}`);
   };
 
+  deleteMessage = (color) => {
+    this.message.textContent = "";
+    this.message.classList.remove(`form__message_color_${color}`);
+  };
+
   makeDisabled = () => {
     this.caption.classList.toggle("form__caption_disabled");
     this.email.classList.toggle("form__email_disabled");
@@ -101,6 +112,45 @@ class Form extends Component {
       this.success.classList.add("success_show");
     } else {
       this.success.classList.remove("success_show");
+    }
+  };
+
+  isEmailValid = (value) => {
+    return EMAIL_REGEXP.test(value);
+  };
+
+  emailValidation = () => {
+    const value = event.target.value;
+
+    if (!this.isEmailValid(value)) {
+      this.setMessage("Некорректный email", "red");
+    } else {
+      this.deleteMessage("red");
+    }
+
+    this.validationForm();
+  };
+
+  checkboxValidation = () => {
+    const checked = event.target.checked;
+
+    if (checked) {
+      this.deleteMessage("red");
+    } else {
+      this.setMessage(
+        "Политика обработки персональных данных является обязательной",
+        "red"
+      );
+    }
+
+    this.validationForm();
+  };
+
+  validationForm = () => {
+    if (this.isEmailValid(this.email.value) && this.checkbox.checked) {
+      this.button.removeAttribute("disabled");
+    } else {
+      this.button.setAttribute("disabled", "");
     }
   };
 }

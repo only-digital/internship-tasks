@@ -22,10 +22,22 @@
   &__svg {
     width: 32px;
     height: 32px;
+    fill: $white;
     margin-top: -1px;
   }
 
   &_hide {
     display: none;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    color: $steel;
+    background: transparent;
+    border: 1px solid $steel;
+
+    #{$root}__svg {
+      fill: $steel;
+    }
   }
 }
