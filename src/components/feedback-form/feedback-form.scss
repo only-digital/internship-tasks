@@ -60,7 +60,7 @@ $extra-cobolt: #0041a0;
         }
         &:focus {
           border-radius: 24px;
-          border: 1px solid var(--extra-cobolt, #0041a0);
+          border: 1px solid $extra-cobolt;
           background: transparent;
           padding: 14px 20px 14px 20px;
           & + label {
@@ -70,11 +70,11 @@ $extra-cobolt: #0041a0;
 
         &.error-input {
           border-radius: 24px;
-          border: 1px solid var(--extra-cobolt, #ff0000);
+          border: 1px solid #ff0000;
           background: transparent;
           padding: 14px 20px 14px 20px;
           &:focus {
-            border: 1px solid #0041a0;
+            border: 1px solid $extra-cobolt;
           }
           & + label {
             visibility: visible;
@@ -85,11 +85,11 @@ $extra-cobolt: #0041a0;
         }
         &.validation-succes {
           border-radius: 24px;
-          background: var(--extra-grey-3, #f4f4f4);
+          background: #f4f4f4;
           padding: 14px 20px 14px 20px;
           border-bottom: none;
           &:focus {
-            border: 1px solid #0041a0;
+            border: 1px solid $extra-cobolt;
             background: transparent;
             & ~ svg {
               visibility: hidden;
