@@ -1,6 +1,6 @@
 mixin email-field(props)
 	.email-field&attributes(attributes)(data-component='email-field')
-		input(id=props.id type="email").email-field__field
+		input(id=props.id type="email").email-field__input
 		label(for=props.id).email-field__label= props.label
 		+svg('check-mark').email-field__check-mark
 		span.email-field__error-message

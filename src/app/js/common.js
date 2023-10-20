@@ -1,6 +1,7 @@
 import ExampleButton from "../../components/example-button/example-button";
-import EmailInput from "../../components/email-field/email-field";
-import MessageTextarea from "../../components/textarea-field/textarea-field";
+import EmailField from "../../components/email-field/email-field";
+import TextareaField from "../../components/textarea-field/textarea-field";
+import FileField from "../../components/file-field/file-field";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -9,8 +10,9 @@ import MessageTextarea from "../../components/textarea-field/textarea-field";
  */
 const allComponents = {
   "example-button": ExampleButton,
-  "email-field": EmailInput,
-  "textarea-field": MessageTextarea,
+  "email-field": EmailField,
+  "textarea-field": TextareaField,
+  "file-field": FileField,
 };
 
 /**

@@ -1,0 +1,7 @@
+mixin file-field(props)
+	.file-field&attributes(attributes)(data-component='file-field')
+		input(type="file" id=props.id accept=props.accept multiple).file-field__input
+		label(for=props.id).file-field__label
+			span Прикрепить&nbsp;файл
+			+svg('add-icon').file-field__label-icon
+		.file-field__files

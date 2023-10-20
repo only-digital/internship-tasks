@@ -31,7 +31,7 @@
     transition: left 0.3s, top 0.3s, color 0.3s;
   }
 
-  &__field {
+  &__input {
     display: block;
     width: 100%;
     font-size: 16px;
@@ -87,7 +87,7 @@
   }
 
   &.fill {
-    #{$root}__field {
+    #{$root}__input {
       border-color: $grey-3;
       background: $grey-3;
       border-radius: 24px;
@@ -108,7 +108,7 @@
   }
 
   &.error {
-    #{$root}__field {
+    #{$root}__input {
       border-width: 1px;
       border-color: $red;
       border-radius: 24px;

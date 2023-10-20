@@ -1,0 +1,63 @@
+.file-field {
+  $root: &;
+
+  display: flex;
+  gap: 32px;
+
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 16px 16px 16px;
+    height: 46px;
+    border-radius: 25px;
+    border: 1px solid $grey-1;
+    gap: 16px;
+    color: $midnight;
+    cursor: pointer;
+  }
+
+  &__label-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__files {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  &__file {
+    height: 40px;
+    padding: 10px 13px 10px 18px;
+    border-radius: 27px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: $grey-3;
+    cursor: pointer;
+  }
+
+  &__file-name {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: $black;
+  }
+
+  &__file-info {
+    white-space: nowrap;
+    color: $steel;
+  }
+
+  &__file-icon {
+    min-width: 10px;
+    height: 10px;
+    background: url("/src/assets/icons/close-icon.png");
+  }
+}
