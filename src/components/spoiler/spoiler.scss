@@ -1,0 +1,33 @@
+.spoiler {
+	$root: &;
+
+	& {
+		border-top: 1px solid #E6E6E6;
+	}
+
+	&__heading {
+		display: flex;
+		font-size: 36px;
+		justify-content: space-between;
+		margin: 30px 0;
+	}
+
+	&__heading.blue {
+		color: #114C9A;
+	}
+
+	&__paragraph {
+		display: none;
+		margin-bottom: 40px;
+	}
+
+	&__paragraph.shown {
+		display: flex;
+		font-size: 20px;
+	}
+
+	&__button-image {
+		width: 20px;
+		height: 20px;
+	}
+}

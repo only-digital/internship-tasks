@@ -1,0 +1,13 @@
+.spoilers {
+  display: grid;
+  gap: 80px;
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-size: 64px;
+  padding: 183px 141px 138px 160px;
+}
+
+.spoiler:last-child {
+  border-bottom: 1px solid #E6E6E6;
+}
+

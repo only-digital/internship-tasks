@@ -1,0 +1,7 @@
+mixin spoiler(props)
+	.spoiler&attributes(attributes)(data-component='spoiler')
+		div.spoiler__heading
+			h3= props.text
+			button.spoiler__toggle-button
+				+svg('plus').spoiler__button-image
+		p.spoiler__paragraph Cras vel nibh ac nisi dignissim molestie et sit amet dui. Quisque pulvinar vulputate mollis. Curabitur tempor risus turpis, ut condimentum arcu volutpat vitae. Curabitur in dolor eu justo viverra suscipit.

@@ -4,4 +4,11 @@ extends ../../build_modules/common
 block body
     +example-button()
     +example-button()
-    //Your code here
+    section.spoilers
+        h1 Lorem ipsum dolor
+        div.spoilers-container
+            +spoiler({text: '1. Nullam tincidunt vestibulum porttitor'})
+            +spoiler({text: '2. Class aptent taciti sociosqu ad litora'})
+            +spoiler({text: '3. Nulla fringilla ligula elit, non laoreet ipsum rutrum eget'})
+            +spoiler({text: '4. Mauris ut suscipit tellus'})
+            +spoiler({text: '5. Nullam placerat porta libero, vel maximus augue euismod eget'})
