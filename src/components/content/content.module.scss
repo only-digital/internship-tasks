@@ -1,0 +1,19 @@
+.Content {
+	&__emptiness {
+		height: 80px;
+		width: calc(100vw - 307px);
+		border-bottom: 1px solid #D9E1EC;
+	}
+
+	&__wrapper {
+		position: relative;
+		height: 1000px;
+		background-color: #F3F6F9;
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+}

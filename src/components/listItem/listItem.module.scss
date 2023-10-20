@@ -1,0 +1,49 @@
+.ListItem {
+	width: 1550px;
+    height: 170px;
+    background-color: #fff;
+    border-radius: 15px;
+    margin-top: 20px;
+    padding: 24px 24px 0 24px;
+
+	&:hover &__title {
+		color: #007FFF;
+	}
+
+	&__header {
+		position: relative;
+		padding-bottom: 17px;
+		border-bottom: 1px solid #E7EAEE;
+		cursor: pointer;
+	}
+
+	&__title {
+		font-family: Arial, Helvetica, sans-serif;
+		font-weight: 400;
+		font-size: 24px;
+		line-height: 31px;
+		color: #161F3E;
+		opacity: .9;
+	}
+
+	&__btn {
+		cursor: pointer;
+		position: absolute;
+		right: 0;
+		top: 3px;
+		outline: none;
+		border: none;
+		background: transparent;
+	}
+
+	&__text {
+		font-family: Arial, Helvetica, sans-serif;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 28px;
+		color: #161F3E;
+		opacity: .9;
+		margin-top: 10px;
+		width: 732px;
+	}
+}

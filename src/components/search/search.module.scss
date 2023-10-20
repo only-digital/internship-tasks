@@ -1,0 +1,53 @@
+.Search {
+	height: 96px;
+    padding-top: 48px;
+
+	&__title {
+		font-family: Arial, Helvetica, sans-serif;
+		font-weight: 600;
+		font-size: 32px;
+		line-height: 40px;
+		color: #213C57;
+		margin-left: 40px;
+	}
+
+	&__wrapper {
+		margin: 40px 40px 0 0;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	&__content {
+		position: relative;
+	}
+
+	&__input {
+		outline: none;
+		border-radius: 10px;
+		border: none;
+		width: 608px;
+		height: 56px;
+		padding: 15px 16px 15px 16px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 24px;
+		background: #fff;
+
+		&::placeholder {
+			opacity: 40%;
+		}
+	}
+
+	&__btn {
+		background: transparent;
+		padding-top: 5px;
+		position: absolute;
+		border: none;
+		cursor: pointer;
+		right: 20px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
