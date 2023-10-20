@@ -10,10 +10,43 @@
     padding: 14px 16px 16px 16px;
     height: 46px;
     border-radius: 25px;
-    border: 1px solid $grey-1;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $grey-1;
     gap: 16px;
     color: $midnight;
     cursor: pointer;
+    transition: border-color 0.3s, color 0.3s, background 0.3s,
+      border-width 0.3s;
+
+    svg {
+      color: $blue;
+    }
+
+    &:hover {
+      border-color: $cobolt;
+      background: $cobolt;
+      color: $white;
+
+      svg {
+        color: $white;
+      }
+    }
+
+    &:active {
+      border-color: $blue;
+      background: $blue;
+      color: $white;
+
+      svg {
+        color: $white;
+      }
+    }
+
+    &:focus {
+      border-color: $blue-light;
+      border-width: 3px;
+    }
   }
 
   &__label-icon {
@@ -23,6 +56,17 @@
 
   &__input {
     display: none;
+
+    &:disabled + #{$root}__label {
+      border-color: $grey-1;
+      color: $steel;
+      pointer-events: none;
+
+      svg {
+        color: $steel;
+        cursor: auto;
+      }
+    }
   }
 
   &__files {
