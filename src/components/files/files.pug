@@ -1,0 +1,7 @@
+mixin files(props)
+	.files&attributes(attributes)(data-component='files')
+		label(for='files').button-outlined.files__label
+			span.files__span Прикрепить файл
+			+svg('plus').btn__svg.files__svg
+		input(type='file' accept=".pdf, .doc, .docx" id='files' name='files' placeholder='Прикрепить файл').files__input
+		span.files__span

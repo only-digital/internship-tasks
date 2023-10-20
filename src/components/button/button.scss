@@ -37,7 +37,7 @@ $dark-red: #81080F;
 	@include btn;
 }
 // кнопка с обводкой
-.button-outlined {
+@mixin button-outlined {
 	@include btn;
 	border: 1px solid $gray;
 	color: $black;
@@ -78,5 +78,9 @@ $dark-red: #81080F;
 			fill: $gray;
 		}
 	}
+}
+
+.button-outlined {
+	@include button-outlined;
 }
 

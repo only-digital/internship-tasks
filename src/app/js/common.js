@@ -4,6 +4,7 @@ import FeedbackForm from '../../components/feedback-form/feedback-form';
 import Email from '../../components/email/email';
 import Confirm from '../../components/confirm/confirm';
 import Textfield from '../../components/textfield/textfield';
+import Files from '../../components/files/files';
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -17,6 +18,7 @@ const allComponents = {
     'email': Email,
     'confirm': Confirm,
     'textfield': Textfield,
+    'files': Files,
 }
 
 /**

@@ -8,7 +8,6 @@ mixin feedback-form(props)
 			+email()
 			+textfield()
 			
-			label(for='files') Прикрепить файл
-				input(type='file' id='files' name='files' placeholder='Прикрепить файл')
+			+files()
 			+confirm()
 			+button({text: 'Отправить'})(class="button-outlined")

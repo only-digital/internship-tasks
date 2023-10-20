@@ -1,0 +1,17 @@
+@import '../button/button.scss';
+
+.files {
+	.files__input {
+		display: none;
+	}
+	.button-outlined {
+		@include button-outlined;
+		font-family: Arial, Helvetica, sans-serif;
+		width: 207px;
+		margin-top: 30px;
+			.btn__svg {
+				width: 14px;
+				height: 14px;
+			}
+	}
+}
