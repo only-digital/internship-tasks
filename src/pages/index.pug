@@ -2,5 +2,5 @@ extends ../../build_modules/common
 
 
 block body
-    +input({name:"Email", id:'email', pattern:emailPattern}).email(required="" placeholder='' type="email" )
-    //Your code here
+    +input({type:'email',name:"Email", id:'email', pattern:emailPattern}).form__email-input(required="" placeholder='' maxlength=255 )
+    +input({type:'textarea',name:"Ваше сообщение", id:'message', pattern:textPattern}).form__textarea-input(spellcheck=true required="" placeholder=''  minlength=10 maxlength=1000 validate='' rows=5 )
