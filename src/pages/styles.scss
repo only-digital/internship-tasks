@@ -5,6 +5,26 @@
   font-weight: 400;
   font-size: 64px;
   padding: 183px 141px 138px 160px;
+
+  @media (max-width: 1400px) {
+    padding: 179px 108px 141px 120px;
+    font-size: 48px;
+    gap: 60px;
+  }
+
+  @media (max-width: 1280px) {
+    padding: 167px 107px 48px;
+    font-size: 42px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 174px 40px 213px;
+  }
+
+  @media (max-width: 320px) {
+    padding: 152px 24px 98px;
+    font-size: 30px;
+  }
 }
 
 .spoiler:last-child {

@@ -34,4 +34,58 @@
 			transform: rotate(45deg);
 		}
 	}
+
+	@media (max-width: 1400px) {
+		&__heading {
+			font-size: 27px;
+			margin: 24px 0;
+		}
+		&__paragraph {
+			font-size: 15px;
+			margin-bottom: 30px;
+		}
+		&__button-image {
+			width: 14px;
+			height: 14px;
+		}
+	}
+
+	@media (max-width: 1280px) {
+		&__heading {
+			font-size: 24px;
+			margin: 20px 0;
+		}
+		&__paragraph {
+			font-size: 14px;
+			margin-bottom: 24px;
+		}
+	}
+
+	@media (max-width: 768px) {
+		&__heading {
+			font-size: 27px;
+			margin: 24px 0;
+		}
+		&__paragraph {
+			font-size: 15px;
+		}
+		&__button-image {
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+	@media (max-width: 320px) {
+		&__heading {
+			font-size: 24px;
+			margin: 20px 0;
+		}
+		&__paragraph {
+			margin-bottom: 20px;
+		}
+		&__button-image {
+			width: 14px;
+			height: 14px;
+		}
+	}
 }
