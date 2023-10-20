@@ -1,4 +1,9 @@
-@import '../src/components/example-button/example-button';
+@import '../src/components/loader/loader';
+@import '../src/components/feedback/feedback';
+@import '../src/components/list/list';
+@import '../src/components/header/header';
+@import '../src/components/main/main';
+@import '../src/pages/index.scss';
 
 html {
     font-weight: normal;

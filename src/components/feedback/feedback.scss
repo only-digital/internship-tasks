@@ -1,0 +1,140 @@
+@import "../../const/colors.scss";
+
+.feedback {
+  $root: &;
+
+  padding: 44px 217px 45px 103px;
+  display: flex;
+  justify-content: space-between;
+  gap: 81px;
+
+  &__title {
+    color: $colorMainBlue;
+    font-size: 32px;
+    line-height: 120%;
+    letter-spacing: -0.64px;
+    width: 363px;
+  }
+  &__form {
+    position: relative;
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+  &__email-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+  &__label-email {
+    color: $colorMainSteel;
+    font-size: 12px;
+    line-height: 150%;
+    letter-spacing: -0.24px;
+    margin-left: 20px;
+  }
+  &__input-email {
+    color: $colorMainSteel;
+    height: 48px;
+    padding: 11px 20px;
+    margin-bottom: 25px;
+    align-self: stretch;
+    border-radius: 24px;
+    border: 1px solid $colorExtraCobolt;
+  }
+  &__input-error {
+    color: #ef1c1c;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: 14px;
+  }
+  &__cb-wrap {
+    margin-bottom: 30px;
+  }
+
+  &__label-cb {
+    display: inline-block;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    top: 3px;
+    margin-right: 18px;
+    cursor: pointer;
+  }
+  &__cb {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    border: 1px solid $colorExtraGray;
+    cursor: pointer;
+
+    &:checked {
+      border: none;
+    }
+
+    &:checked + #{$root}__cb-svg {
+      display: block;
+    }
+  }
+  &__cb-svg {
+    width: 16px;
+    height: 16px;
+    overflow: visible;
+    display: none;
+  }
+
+  &__cb-text {
+    color: $colorMainSteel;
+    font-size: 14px;
+    line-height: 150%;
+
+    &_color {
+      color: $colorMainBlue;
+    }
+  }
+  &__btn {
+    display: flex;
+    padding: 7px 14px 9px 18px;
+    align-items: center;
+    gap: 14px;
+    width: fit-content;
+    border-radius: 25px;
+    background: $colorExtraCobolt;
+  }
+  &__btn-text {
+    color: $colorWhite;
+  }
+  &__btn-svg {
+    width: 32px;
+    height: 32px;
+    fill: $colorWhite;
+  }
+
+  &__message {
+    display: flex;
+    align-items: center;
+    gap: 21px;
+  }
+  &__message-svg {
+    width: 48px;
+    height: 48px;
+  }
+  &__message-text {
+    color: $colorBlack2;
+    font-size: 16px;
+    line-height: 124%;
+    letter-spacing: -0.32px;
+  }
+}
+.visibility-hidden {
+  visibility: hidden;
+}
+.disabled,
+[disabled] {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.3;
+}

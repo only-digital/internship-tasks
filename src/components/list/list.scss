@@ -1,0 +1,32 @@
+@import "../../const/colors.scss";
+
+.list {
+  max-width: 988px;
+
+  &__title {
+    color: $colorBlue;
+    font-size: 46px;
+    line-height: 120%;
+    letter-spacing: -0.92px;
+    margin-bottom: 35px;
+  }
+  &__item {
+    color: $colorBlack;
+    font-size: 24px;
+    font-size: 1.5rem;
+    line-height: 140%;
+    padding-left: 28px;
+    margin-bottom: 12px;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      left: 0;
+      top: 16px;
+      content: "";
+      width: 20px;
+      height: 1px;
+      background-color: $colorGreen;
+    }
+  }
+}

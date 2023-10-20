@@ -1,0 +1,6 @@
+mixin list(title, items)
+	.list&attributes(attributes)(data-component='list')
+		h3.list__title= title
+		ul.list__ul
+			each item in items
+				li.list__item= item 

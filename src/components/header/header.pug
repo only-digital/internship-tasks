@@ -1,0 +1,9 @@
+mixin header
+	header.header&attributes(attributes)(data-component='header')
+		.header__wrap.header__wrap_opacity
+			.header__date 18 декабря 2020
+			h2.header__title Консультант SAP PO
+			.header__info.header__info_hidden
+				.info__views Просмотров: #[span.info__views_number ]
+				.info__response Откликов: #[span.info__response_number ]
+		+loader

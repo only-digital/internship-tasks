@@ -1,0 +1,20 @@
+mixin feedback(props)
+	.feedback&attributes(attributes)(data-component='feedback')
+		h3.feedback__title Форма обратной связи
+		form.feedback__form
+			.feedback__email-wrap
+				label.feedback__label-email E-mail
+				input(type="email").feedback__input-email
+			.feedback__input-error.visibility-hidden Ошибка E-mail
+			.feedback__cb-wrap
+				label(for="form__checkbox").feedback__label-cb
+					input(id="form__checkbox" type="checkbox").feedback__cb
+					+svg('cb').feedback__cb-svg
+				span.feedback__cb-text Вы подтверждаете, что ознакомились #[a(href="/politics").feedback__cb-text.feedback__cb-text_color c политикой обработки персональных данных]
+			button.feedback__btn
+				span.feedback__btn-text Отправить
+				+svg('icon-button-large').feedback__btn-svg
+			.feedback__message.hidden
+				+svg('icon-ok').feedback__message-svg
+				.feedback__message-text Форма успешно отправлена
+			+loader(class="feedback__loader hidden")
