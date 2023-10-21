@@ -12,7 +12,6 @@ function Index(props) {
             <ExampleButton initialValue={10}/> */}
 
             {<Tasks {...props}/>}
-
         </main>
     )
 }
