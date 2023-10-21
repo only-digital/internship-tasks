@@ -1,0 +1,25 @@
+mixin feedback-form(props)
+	.feedback-form&attributes(attributes)(data-component='feedback-form')
+		h1.feedback-form__form-header Форма обратной связи
+		form.feedback-form__form-itself
+			div.feedback-form__email-input-wrapper
+				span.feedback-form__email-input-header E-mail
+				input(type='text' placeholder='E-mail' maxlength='255').feedback-form__email-input
+			div.feedback-form__message-input-wrapper
+				span.feedback-form__message-input-header Ваше сообщение
+				textarea(placeholder='Ваше сообщение' maxlength='1000').feedback-form__message-input
+			label.feedback-form__file-input
+				span.feedback-form__file-input__file-span Прикрепить файл
+				+svg('plus').feedback-form__file-input__svg
+				input(type='file')
+			div.feedback-form__policy-check-wrapper
+				label.feedback-form__policy-checkbox-label
+					+svg('check')
+					input(type='checkbox').feedback-form__policy-checkbox
+				span.feedback-form__policy-agreement-gray Вы подтверждаете, что ознакомились
+				span.feedback-form__policy-agreement-blue с политикой обработки персональных данных
+			button.feedback-form__submit-btn 
+				span.feedback-form__btn-text Отправить
+				+svg('button-arrow')
+				
+			

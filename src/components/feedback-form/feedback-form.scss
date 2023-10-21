@@ -1,0 +1,341 @@
+.feedback-form {
+	$root: &;
+	width: 1440px;
+	margin: 0 auto;
+	font-family: Arial;
+	position: relative;
+	padding: 50px 474px;
+	
+	&__form-header {
+		display: inline-block;
+		width: 285px;
+		position: absolute;
+		top: 26px;
+		left: 30px;
+		color: #002F6C;
+		font-size: 32px;
+		font-weight: 700;
+		line-height: 120%;
+		letter-spacing: -0.64px;
+	}
+
+	&__form-itself {
+
+		.feedback-form__email-input, .feedback-form__message-input {
+			display: block;
+			border-bottom: 1px solid #DEDEDE;
+			width: 836px;
+			height: 48px;
+			margin-bottom: 10px;
+			font-size: 16px;
+			letter-spacing: -0.32px;
+			line-height: 150%;
+		}
+
+		textarea {
+			overflow: hidden;
+			border: none;
+			font-family: arial;
+			resize: none;
+			padding-top: 14px;
+			outline: none;
+		}
+
+		textarea::placeholder {
+			color: #111;
+		}
+
+		input::placeholder {
+			color: #111;
+		}
+
+		.feedback-form__email-input-wrapper {
+			$root: &;
+			display: flex;
+			flex-direction: column;
+			
+			span {
+				visibility: hidden;
+				font-size: 12px;
+				line-height: 150%;
+				letter-spacing: -0.24px;
+				color: #909090;
+				margin-left: 20px;
+			}
+
+			.feedback-form__email-input {
+				transition: 300ms ease-in-out;
+			}
+
+			.feedback-form__email-input:hover {
+				background-color: #F4F4F4;
+				border-radius: 24px;
+				border: none;
+				padding: 8px 20px 7px 20px;
+				transition: 300ms ease-in-out;
+			}
+			
+			&:has(.feedback-form__email-input:focus) > span {
+				visibility: visible;
+			} 
+
+			.feedback-form__email-input:focus {
+				transition: none;
+				border: 1px solid #0041A0;
+				border-radius: 24px;
+				padding: 8px 20px 7px 20px;
+			} 
+
+			.feedback-form__email-input:disabled {
+				color: #BCBCBC;
+				pointer-events: none;
+			}
+		}
+		
+		.feedback-form__message-input-wrapper {
+			$root: &;
+			display: flex;
+			flex-direction: column;
+
+			.feedback-form__message-input {
+				transition: 300ms ease-in-out;
+			}
+
+			span {
+				visibility: hidden;
+				font-size: 12px;
+				line-height: 150%;
+				letter-spacing: -0.24px;
+				color: #909090;
+				margin-left: 20px;
+			}
+
+			.feedback-form__message-input:hover {
+				background: #F4F4F4;
+				border-radius: 24px;
+				border: none;
+				padding: 12px 20px 7px 20px;
+				height: 193px;
+				transition: 300ms ease-in-out;
+			}
+
+			.feedback-form__message-input:focus {
+				transition: none;
+				border: 1px solid #0041A0;
+				border-radius: 24px;
+				padding: 8px 20px 7px 20px;
+			}
+
+			&:has(.feedback-form__message-input:focus) > span {
+				visibility: visible;
+			}
+
+			.feedback-form__message-input:disabled {
+				color: #BCBCBC;
+				pointer-events: none;
+			}
+		}
+
+		.feedback-form__file-input {
+			$root: &;
+
+			display: inline-flex;
+			gap: 16px;
+			height: 46px;
+			border: 1px solid #BCBCBC;
+			border-radius: 25px	;
+			padding: 14px 16px 16px 16px;
+			color: #021F45;
+			font-size: 16px;
+			letter-spacing: -0.32px;
+			line-height: 100%;
+			margin: 116px 0 30px 0;
+			transition: color background-color 300ms ease-in-out;
+			cursor: pointer;
+
+			svg {
+				width: 14px;
+				height: 14px;
+				fill: #002F6C;
+				transition: 300ms ease-in-out;
+			}
+
+			input {
+				width: 0;
+				height: 0;
+			}
+
+			&:hover {
+				background-color: #0041A0;
+				color: #FFFFFF;
+				transition: 300ms ease-in-out;
+
+				svg {
+					fill: #FFFFFF;
+					transition: 300ms ease-in-out;
+				}
+			}
+
+			&:active {
+				background-color: #002F6C;
+			}
+
+			&:has(input:focus) {
+				border: 3px solid #99B3D8;
+			}
+
+			&:has(input:disabled) {
+				color: #909090;
+				pointer-events: none;
+
+				svg {
+					fill: #909090;
+				}
+			}
+		}
+
+		.feedback-form__policy-check-wrapper {
+			display: flex;
+			width: 590px;
+			font-size: 14px;
+			line-height: 150%;
+			position: relative;
+			margin-bottom: 30px;
+			align-items: center;
+			
+
+			.feedback-form__policy-checkbox-label {
+				$root: &;
+				display: inline-block;
+				width: 16px;
+				height: 16px;
+				margin-right: 12px;
+				border: 1px solid #BCBCBC;
+
+				svg {
+					position: absolute;
+					width: 10.5px;
+					height: 7.5px;
+					top: 7px;
+					left: 3px;
+				}
+	
+				svg:hover + input {
+					border: 1px solid #0041A0;
+				}
+
+				&:hover {
+					border: 1px solid #0041A0;
+				}
+
+				&:has(input:checked) {
+					border: 1px solid #0041A0;
+					background-color: #0041A0;
+				}
+
+				&:has(input:focus) {
+					outline: 2px solid #99B3D8;
+				}
+
+				&:has(input:disabled) {
+					pointer-events: none;
+					&:has(input:checked) {
+						opacity: 0.3;
+					}
+				}
+			}
+
+			
+
+			.feedback-form__policy-agreement-gray {
+				color: #909090;
+				margin-right: 5px;
+			}
+
+			.feedback-form__policy-agreement-blue {
+				color: #002F6C;
+			}
+		}
+
+		.feedback-form__submit-btn {
+			$root: &;
+
+			width: 155px;
+			height: 48px;
+			border-radius: 25px;
+			color: #111;
+			display: flex;
+			font-size: 16px;
+			letter-spacing: -0.32px;
+			line-height: 100%;
+			align-items: center;
+			padding: 0 14px 0 18px;
+			gap: 14px;
+			border: 1px solid #BCBCBC;
+			transition: color background-color 300ms ease-in-out;
+
+			svg {
+				width: 32px;
+				height: 22px;
+				fill: #002F6C;
+				transition: 300ms ease-in-out;
+			}
+
+			&:hover {
+				background: #0041A0;
+				color: #FFF;
+				transition: 300ms ease-in-out;
+				svg {
+					fill: #FFF;
+					transition: 300ms ease-in-out;
+				}
+			}
+
+			&:active {
+				background: #002F6C;
+				color: #fff;
+
+				&:focus {
+					background: #002F6C;
+					color: #fff;
+					border: none;
+
+					svg {
+						fill: #FFF;
+					}
+
+					&:hover {
+						background: #002F6C;
+					}
+				}
+			}
+
+			&:focus {
+				border: 3px solid #99B3D8;
+				color: #0041A0;
+
+				svg {
+					fill: #0041A0;
+				}
+
+				&:hover {
+					background: #0041A0;
+					color: #FFF;
+					transition: 300ms ease-in-out;
+					svg {
+						fill: #FFF;
+						transition: 300ms ease-in-out;
+					}
+				}
+			}
+
+			&:disabled {
+				color: #909090;
+
+				svg {
+					fill: #909090;
+				}
+			}
+		}
+	}
+}
