@@ -1,14 +1,33 @@
 @import '../button/button.scss';
-
+//its not focusable, because its not a button
 .files {
+	position: relative;
 	.files__input {
-		display: none;
+		//position: absolute;
+		top: 30px;
+		width: 207px;
+		height: 48px;
+		border-radius: 24px;
+		opacity: 1;
+		z-index: -10;
+		cursor: pointer;
+	}
+	&:focus-within {
+		.button-outlined {
+			color: $cobolt;
+	    	background-color: $white;
+			box-shadow: 0 0 0 3px $light-blue;
+			.btn__svg {
+				fill: $cobolt;
+		}
+		}
 	}
 	.button-outlined {
 		@include button-outlined;
 		font-family: Arial, Helvetica, sans-serif;
 		width: 207px;
 		margin-top: 30px;
+		cursor: pointer;
 			.btn__svg {
 				width: 14px;
 				height: 14px;

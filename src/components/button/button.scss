@@ -41,7 +41,7 @@ $dark-red: #81080F;
 	@include btn;
 	border: 1px solid $gray;
 	color: $black;
-	background-color: none;
+	background-color: $white;
 	.btn__svg {
 		fill: $dark-blue;
 	}

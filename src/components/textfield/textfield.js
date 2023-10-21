@@ -10,7 +10,6 @@ class Textfield extends Component {
        
         console.log('this is ' + this.root.outerHTML);
         this.input = this.getElement('input');
-        console.log(this.input, this.input.value);
         // Your code here
         this.input.addEventListener('input', this.handleInput)
     }
