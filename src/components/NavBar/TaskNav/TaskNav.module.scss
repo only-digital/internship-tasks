@@ -1,0 +1,46 @@
+@import "../../../scssVariables/colorVariabled.scss";
+
+.TaskNav {
+    display: flex;
+    background-color: $aqua;
+    padding: 15px 18px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    width: 100%;
+    align-items: center;
+    transition: .8s ease background-color;
+
+    &__title {
+        color: $blue;
+        font-size: 15px;
+        margin-left: 6px;
+        transition: .8s ease color;
+    }
+
+    &__icon {
+        fill: $blue;
+        transition: .8s ease fill;
+    }
+
+    &:hover {
+        background-color: rgb(208, 228, 249);
+    }
+
+    &:focus {
+        background-color: $blue;
+    }
+
+    &_active {
+        background-color: $blue;
+        .TaskNav {
+            &__title {
+                color: #fff;
+            }
+
+            &__icon {
+                fill: #fff;
+            }
+        }
+    }
+
+}

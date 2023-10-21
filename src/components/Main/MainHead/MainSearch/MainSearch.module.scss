@@ -1,0 +1,27 @@
+@import "../../../../scssVariables/colorVariabled.scss";
+
+.MainSearch {
+    width: 40%;
+    display: flex;
+    --borderRadiues:12px;
+    &__input {
+        font-size: 14px;
+        padding: 0px 15px;
+        width: 100%;
+        background-color: #fff;
+        height: 100%;
+        border-top-left-radius: var(--borderRadiues);
+        border-bottom-left-radius: var(--borderRadiues);
+    }
+    &__searchButton{
+        padding: 0px 15px 0px 10px;
+        border-left: 1px solid $grey;
+        background-color: #fff;
+        border-top-right-radius: var(--borderRadiues);
+        border-bottom-right-radius: var(--borderRadiues);
+    }
+    &__icon{
+        width: 14px;
+        height: 14px;
+    }
+}

@@ -1,0 +1,11 @@
+import styled from './${componentName}.module.scss';
+
+const ${componentClassName} = () => {
+    return (
+        <div className={styled.${componentClassName}}>
+            {/* Your code here */}
+        </div>
+    )
+}
+
+export default ${componentClassName};

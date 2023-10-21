@@ -1,0 +1,55 @@
+@import "../../../../scssVariables/colorVariabled.scss";
+
+.Task {
+    margin-top: 25px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 20px;
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 15px;
+        border-bottom: 1px solid $grey;
+        align-items: center;
+    }
+
+    &__icon {
+        stroke: $blue;
+        transition: .6s ease stroke, .6s ease scale;
+
+        &:hover {
+            scale: 1.2;
+            stroke: red;
+        }
+    }
+
+    &__delete {
+        width: 12px;
+        height: 12px;
+    }
+
+    &__title {
+        font-size: 22px;
+        width: 40%;
+        transition: .6S ease color;
+        cursor: pointer;
+        user-select: none;
+
+        &:hover {
+            color: $blue;
+        }
+
+        &_complete{
+            color: #161F3E4D;
+            text-decoration: line-through;
+        }
+    }
+
+    &__text {
+        padding-top: 15px;
+        font-size: 12px;
+        line-height: 1.8;
+        width: 70%;
+    }
+}

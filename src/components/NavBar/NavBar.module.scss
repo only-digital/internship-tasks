@@ -1,0 +1,10 @@
+@import "../../scssVariables/colorVariabled.scss";
+
+.NavBar {
+	width: 22%;
+	border-right:1px solid $grey;
+	min-height: calc(100vh - 80px);
+	position: fixed;
+	background-color: #fff;
+	padding: 50px 30px;
+}

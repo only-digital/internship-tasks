@@ -1,0 +1,11 @@
+@import "../../../scssVariables/colorVariabled.scss";
+
+.MainHead {
+    display: flex;
+    justify-content: space-between; 
+    &__title{
+        color: $moon;
+        font-weight: 600;
+        font-size: 32px;
+    }
+}
