@@ -1,11 +1,10 @@
 mixin contact-form(props)
 	.contact-form&attributes(attributes)(data-component='contact-form')
 		h1.contact-form__heading Форма обратной связи
-		.contact-form__body
-			+input-field({type: "email", caption: "E-mail"})
-			+textarea({caption: "Ваше сообщение"})
-			.file-input-container
-				+file-input({id: "input_1"})()
-				+file-input({id: "input_2"})()
-			+checkbox({text: `Вы подтверждаете, что ознакомились <a href='/'>с политикой обработки персональных данных</a>`})(disabled)
-			+regular-button({text: "Отправить", icon: "arrow-right"})(disabled)
+		form.contact-form__form
+			+input-field({type: "email", caption: "E-mail", name: "email"}).contact-form__email
+			+textarea({caption: "Ваше сообщение", name: "message"}).contact-form__message
+			.file-inputs
+				+file-input({id: "input_1", name: "file1"}).contact-form__file
+			+checkbox({text: `Вы подтверждаете, что ознакомились <a href='/'>с политикой обработки персональных данных</a>`}).contact-form__agreement
+			+regular-button({text: "Отправить", icon: "arrow-right"})(disabled type="button").contact-form__submit-button

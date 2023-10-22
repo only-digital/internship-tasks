@@ -1,6 +1,6 @@
 mixin checkbox(props)
 	label.checkbox&attributes(attributes)(data-component='checkbox')
-		input.checkbox__input&attributes(attributes)(type="checkbox", tabindex=props.tabindex)
+		input.checkbox__input&attributes(attributes)(type="checkbox")
 		span.checkbox__square
 			+svg('check').checkbox__square__check-mark
 		span.checkbox__text!= props.text

@@ -1,8 +1,8 @@
 mixin input-field(props)
 	.input-field&attributes(attributes)(data-component='input-field')
 		label.input-field__label
-			input&attributes(attributes).input-field__label__input(type=props.type placeholder=props.caption)
+			input&attributes(attributes).input-field__label__input(type=props.type placeholder=props.caption name=props.name)
 			.input-field__label__caption!= props.caption
 			+svg("done").input-field__label__icon
 			.input-field__label__underline
-		.input-field__error!= props.error
+		.input-field__error &nbsp;
