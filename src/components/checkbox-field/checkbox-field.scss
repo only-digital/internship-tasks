@@ -1,0 +1,74 @@
+.checkbox-field {
+  $root: &;
+
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+
+  &__label {
+    user-select: none;
+    font-size: 14px;
+    line-height: 21px;
+    color: $steel;
+    position: relative;
+    transition: color 0.3s, opacity 0.3s;
+
+    span {
+      color: $blue;
+    }
+
+    &::before {
+      content: "";
+      width: 16px;
+      height: 16px;
+      border: 1px solid $grey-1;
+      background-repeat: no-repeat;
+      background-position: center center;
+      box-sizing: border-box;
+      position: absolute;
+      left: -28px;
+      top: 4px;
+      transition: border 0.3s, background 0.3s;
+    }
+
+    &::after {
+      content: "";
+      width: 20px;
+      height: 20px;
+      border: 2px solid transparent;
+      box-sizing: border-box;
+      position: absolute;
+      left: -30px;
+      top: 2px;
+      transition: border 0.3s;
+    }
+  }
+
+  &__input {
+    width: 16px;
+
+    &:checked + #{$root}__label::before {
+      border-color: $cobolt;
+      background-color: $cobolt;
+      background-image: url("/src/assets/icons/checkbox-icon.png");
+    }
+
+    &:disabled {
+      pointer-events: none;
+
+      + #{$root}__label {
+        color: $grey-1;
+        opacity: 0.3;
+        pointer-events: none;
+      }
+    }
+
+    &:hover + #{$root}__label::before {
+      border-color: $cobolt;
+    }
+
+    &:focus + #{$root}__label::after {
+      border-color: $blue-light;
+    }
+  }
+}

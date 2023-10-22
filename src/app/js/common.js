@@ -2,6 +2,7 @@ import ExampleButton from "../../components/example-button/example-button";
 import EmailField from "../../components/email-field/email-field";
 import TextareaField from "../../components/textarea-field/textarea-field";
 import FileField from "../../components/file-field/file-field";
+import CheckboxField from "../../components/checkbox-field/checkbox-field";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -13,6 +14,7 @@ const allComponents = {
   "email-field": EmailField,
   "textarea-field": TextareaField,
   "file-field": FileField,
+  "checkbox-field": CheckboxField,
 };
 
 /**
