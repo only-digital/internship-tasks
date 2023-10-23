@@ -1,5 +1,4 @@
 import styles from '../styles/index.module.scss'
-import ExampleButton from "../components/example-button/example-button";
 import {getIndexPage} from "../../lib/api";
 import TodoList from '@/components/todo-list/todo-list';
 
