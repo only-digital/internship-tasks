@@ -16,7 +16,6 @@ class FileField extends Component {
 
   showFiles = () => {
     this.filesList.innerHTML = "";
-    console.log(this.fileField.files);
     for (let file of this.fileField.files) {
       const fileNameArr = file.name.split(".");
       const fileFormat = fileNameArr.pop().toUpperCase();

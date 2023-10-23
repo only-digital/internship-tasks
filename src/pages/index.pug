@@ -4,7 +4,7 @@ extends ../../build_modules/common
 block body
     .feedback
         h1.feedback__title Форма обратной связи
-        form(enctype="multipart/form-data" method="post").feedback__form
+        form(enctype="multipart/form-data" method="post" id="feedback").feedback__form
             +email-field({label: "E-mail", id: "email"})
             +textarea-field({label: "Ваше сообщение", id: "message"})
             +file-field({accept: ".pdf,.doc,.docx", id: "textfiles"})
