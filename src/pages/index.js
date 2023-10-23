@@ -1,19 +1,13 @@
 import styles from '../styles/index.module.scss'
 import ExampleButton from "../components/example-button/example-button";
 import {getIndexPage} from "../../lib/api";
+import TodoList from '@/components/todo-list/todo-list';
 
 function Index(props) {
 
-    console.log(props)
-
     return (
         <main className={styles.main}>
-            <ExampleButton/>
-
-            <ExampleButton initialValue={10}/>
-
-            {/* Your code here */}
-
+            <TodoList props={props.tasks}/>
         </main>
     )
 }
