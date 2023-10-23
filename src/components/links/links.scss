@@ -1,0 +1,46 @@
+.links {
+  $root: &;
+
+  //Your code here
+  display: flex;
+  width: 200px;
+  cursor: pointer;
+  margin: 10px;
+
+  &:focus {
+    background-color: #0041a026;
+  }
+
+  &__text {
+    color: #0041a0;
+    font-size: 16px;
+    font-weight: 400;
+    text-decoration: none;
+
+    &:hover {
+      color: #ff0000;
+      transition: 0.3s;
+    }
+    &:active {
+      color: #bf1d26;
+    }
+  }
+  &__union {
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.links.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .links {
+    &__text {
+      font-size: 14px;
+    }
+  }
+}

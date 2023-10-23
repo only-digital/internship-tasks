@@ -2,6 +2,24 @@ extends ../../build_modules/common
 
 
 block body
-    +example-button({text: 'example text'})
-    +example-button({text: 'disabled'})(disabled='')
+    //- +example-button({text: 'example text'})
+    //- +example-button({text: 'disabled'})(disabled='')
     //Your code here
+    
+    ul 
+        li 
+            +redbutton
+        li 
+            +redbutton(disabled='')
+        li 
+            +bluebutton
+        li 
+            +bluebutton(disabled='')
+        li 
+            +example-button({text: 'example text'})
+        li 
+            +example-button({text: 'disabled'})(disabled='')
+        li 
+            +links
+        li 
+            +switch

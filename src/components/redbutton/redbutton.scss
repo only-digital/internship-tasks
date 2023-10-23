@@ -1,0 +1,76 @@
+.redbutton {
+  $root: &;
+
+  //Your code here
+  width: 129px;
+  height: 48px;
+  border: none;
+  background-color: #ff0000;
+  color: #ffffff;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+
+  &:disabled {
+		opacity: 0.5;
+		pointer-events: none;
+    background-color: rgb(235, 235, 235);
+    color: black;
+	}
+
+  &:focus {
+    border: 3px solid #99b3d8;
+  }
+  &:hover {
+    transition: 0.3s;
+    background-color: #bf1d26;
+
+  }
+  &:active {
+    background-color: #81080f;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+  }
+
+  &__arrow {
+    width: 32px;
+    height: 22px;
+    margin-left: 5px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .redbutton {
+    width: 111px;
+    height: 42px;
+
+    &__text {
+      font-size: 14px;
+    }
+
+    &__arrow {
+      width: 24px;
+      height: 16px;
+    }
+  }
+}
+@media (max-width: 720px) {
+  .redbutton {
+    width: 121px;
+    &__text {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .redbutton {
+    width: 327px;
+  }
+}

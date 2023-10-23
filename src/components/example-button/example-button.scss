@@ -5,6 +5,7 @@
 	align-items: center;
 	color: white;
 	transition: color 0.3s, opacity 0.3s;
+	margin: 10px;
 
 	&:disabled {
 		opacity: 0.5;

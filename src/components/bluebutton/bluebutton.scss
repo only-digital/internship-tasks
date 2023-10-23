@@ -1,0 +1,84 @@
+.bluebutton {
+  $root: &;
+
+  //Your code here
+  width: 129px;
+  height: 48px;
+  border: 1px solid #bcbcbc;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  margin: 10px;
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &:focus {
+    border: 3px solid #99b3d8;
+    color: #0041a0;
+  }
+
+  &:hover {
+    background-color: #0041a0;
+    color: #ffffff;
+    transition: 0.3s;
+    .bluebutton__arrow {
+      color: white;
+      transition: 0.3s;
+    }
+  }
+
+  &:active {
+    background-color: #002f6c;
+    color: #ffffff;
+  }
+  
+
+  &__text {
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+  }
+
+  &__arrow {
+    width: 32px;
+    height: 22px;
+    margin-left: 5px;
+    color: #002f6c;
+  }
+}
+
+@media (max-width: 1280px) {
+  .bluebutton {
+    width: 111px;
+    height: 42px;
+
+    &__text {
+      font-size: 14px;
+    }
+
+    &__arrow {
+      width: 24px;
+      height: 16px;
+    }
+  }
+}
+@media (max-width: 720px) {
+  .bluebutton {
+    width: 121px;
+
+    &__text {
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .bluebutton {
+    width: 327px;
+  }
+}
