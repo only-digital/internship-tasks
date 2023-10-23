@@ -1,7 +1,7 @@
-import SearchSvg from "@/asserts/svg/SearchSvg";
-import styled from "./MainSearch.module.scss"
-import { useSearch } from "@/hooks/useSearch";
 import { useState } from "react";
+import Image from "next/image";
+import { useSearch } from "@/hooks/useSearch";
+import styled from "./MainSearch.module.scss"
 
 
 const MainSearch = () => {
@@ -16,7 +16,11 @@ const MainSearch = () => {
             />
             <button className={styled.MainSearch__searchButton}
             >
-                <SearchSvg className={styled.MainSearch__icon} />
+                <Image src={"/svg/search-svg.svg"}
+                    width={"14"}
+                    height={"14"}
+                    className={styled.MainSearch__icon}
+                />
             </button>
         </div>
     )

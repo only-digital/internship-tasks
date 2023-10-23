@@ -1,18 +1,17 @@
 @import "../../../scssVariables/colorVariabled.scss";
 
-.HeaderLogo{
+.HeaderLogo {
     width: 22%;
     height: 100%;
     border-right: 1px solid $grey;
     display: flex;
     align-items: center;
     padding-left: 40px;
-    &__text{
+    &__text {
         font-weight: 700;
         color: $moon;
         width: 20px;
         font-size: 10px;
         margin-left: 12px;
     }
-    
 }

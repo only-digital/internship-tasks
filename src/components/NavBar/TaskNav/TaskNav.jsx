@@ -1,7 +1,7 @@
-import PageIconSvg from "@/asserts/svg/PageIconSvg"
+import { useContext } from 'react'
 import styles from "./TaskNav.module.scss"
-import React, { useContext } from 'react'
 import { TaskContext } from "@/contexts/TaksContext";
+import PageIconSvg from "@/asserts/svg/PageIconSvg"
 
 function TaskNav({ title, id }) {
   const { selectedTasksListId, setSelectedTasksListId } = useContext(TaskContext);
