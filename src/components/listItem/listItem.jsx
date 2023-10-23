@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import cross from '/public/cross-big.png';
 
-const ListItem = ({title, text, isCompleted}) => {
+const ListItem = ({title, text, isCompleted, onDelete}) => {
 
     const [complete, setComplete] = useState(isCompleted);
 
@@ -22,7 +22,7 @@ const ListItem = ({title, text, isCompleted}) => {
         <div className={styled.ListItem}>
             <div className={styled.ListItem__header} onClick={(e) => changeState(e)}>
                 <div className={classNames}>{title}</div>
-                <button className={styled.ListItem__btn}>
+                <button className={styled.ListItem__btn} onClick={onDelete}>
                     <Image src={cross}></Image>
                 </button>
             </div>

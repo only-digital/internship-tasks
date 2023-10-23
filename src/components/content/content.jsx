@@ -2,10 +2,13 @@ import styled from './content.module.scss';
 import Search from '../search/search';
 import ListItem from '../listItem/listItem';
 
-const Content = ({title, tasks}) => {
+const Content = ({title, tasks, onDelete}) => {
 
     const items = tasks.map((item, i) => {
-        return <ListItem key={i} {...item}/>
+        return <ListItem 
+                    key={i} 
+                    {...item} 
+                    onDelete={() => onDelete(i)}/>
     });
 
     return (

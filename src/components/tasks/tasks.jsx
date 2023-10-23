@@ -1,14 +1,23 @@
 import styled from './tasks.module.scss';
 import Info from '../info/info';
 import Content from '../content/content';
+import { useState } from 'react';
 
 const Tasks = (props) => {
-    const {title} = props;
+    const {title, tasks} = props;
+
+    const [listItem, setListItem] = useState(tasks);
+
+    const deleteItem = (id) => {
+        setListItem((listItem) => {
+            return listItem.filter(item => item !== listItem[id]);
+        });
+    }
 
     return (
         <div className={styled.Tasks}>
             <Info title={title}/>
-            <Content {...props}/>
+            <Content title={title} tasks={listItem} onDelete={id => deleteItem(id)}/>
         </div>
     )
 }
