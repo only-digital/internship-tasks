@@ -4,11 +4,12 @@ import ListItem from '../listItem/listItem';
 
 const Content = ({title, tasks, onDelete}) => {
 
-    const items = tasks.map((item, i) => {
+    const items = tasks.map(item => {
+        const {id, ...itemProps} = item;
         return <ListItem 
-                    key={i} 
-                    {...item} 
-                    onDelete={() => onDelete(i)}/>
+                    key={id} 
+                    {...itemProps} 
+                    onDelete={() => onDelete(id)}/>
     });
 
     return (

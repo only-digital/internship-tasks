@@ -10,7 +10,7 @@ const Tasks = (props) => {
 
     const deleteItem = (id) => {
         setListItem((listItem) => {
-            return listItem.filter(item => item !== listItem[id]);
+            return listItem.filter(item => item.id !== id);
         });
     }
 
