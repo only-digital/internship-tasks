@@ -1,0 +1,73 @@
+@use '../../pages//index.scss' as var;
+
+.vacancy {
+	$root: &;
+
+	&__header {
+		margin-bottom: 144px;
+	}
+
+	&__data {
+		font-size: 20px;
+		line-height: 28px;
+		color: var.$gray;
+		margin-bottom: 20px;
+	}
+
+	&__views, &__responses {
+		font-size: 16px;
+		line-height: 20px;
+		color: var.$gray;
+	}
+
+	&__views {
+		margin-right: 36px;
+	}
+
+	&__title {
+		font-size: 64px;
+		line-height: 64px;
+		color: var.$primary-color;
+		margin-bottom: 45px;
+	}
+
+	&__content {
+		margin-bottom: 153px;
+	}
+
+	&__block {
+		max-width: 988px;
+		margin-bottom: 130px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__block-title {
+		font-size: 46px;
+		line-height: 55px;
+		color: var.$primary-color;
+		margin-bottom: 35px;
+	}
+
+	&__block-text {
+		font-size: 24px;
+		line-height: 33px;
+		color: var.$secondary-color;
+		position: relative;
+
+		&:not(:last-child) {
+			margin-bottom: 12px;
+		}
+
+		&::before {
+			content: '';
+			width: 20px;
+			display: inline-block;
+			border-bottom: 1px solid var.$text-pointer;
+			position: absolute;
+			top: 15px;
+			left: -30px;
+		}
+	}
+}

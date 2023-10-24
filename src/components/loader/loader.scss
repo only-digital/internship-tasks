@@ -1,0 +1,61 @@
+@use '../../pages//index.scss' as var;
+
+.loader {
+	$root: &;
+	width: 880px;
+	height: 300px;
+	padding: 10px;
+	background: rgba(#fff, 0.8);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #ccc;
+	cursor: pointer;
+	transition: 0.3s linear;
+	position: absolute;
+	left: 620px;
+	bottom: 0;
+	z-index: 3;
+}
+
+.flames-container {
+	position: relative;
+	width: 100px;
+	height: 100px;
+}
+
+.flame {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 10px;
+	height: 50px;
+	background-color: var.$light-blue;
+	border-radius: 5px;
+	animation: flameAnimation 1s ease-in-out infinite;
+
+	&:nth-child(2) {
+		left: 30%;
+		animation-delay: 0.2s;
+	}
+	
+	&:nth-child(3) {
+		left: 70%;
+		animation-delay: 0.4s;
+	}
+
+	@keyframes flameAnimation {
+		0%,
+		100% {
+			transform: translateY(0);
+		}
+	
+		50% {
+			transform: translateY(-50px);
+		}
+	}
+}
+
+.hidden {
+	display: none;
+}
