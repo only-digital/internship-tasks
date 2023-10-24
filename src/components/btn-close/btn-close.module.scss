@@ -1,0 +1,15 @@
+.BtnClose {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 26px;
+	height: 26px;
+	outline: none;
+	border: none;
+	background-color: transparent;
+	color: #007FFF;
+	cursor: pointer;
+	&:hover {
+		opacity: 0.7;
+	}
+}

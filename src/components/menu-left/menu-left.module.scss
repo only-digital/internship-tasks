@@ -1,0 +1,22 @@
+$bg_a: #E3EDF7;
+$color_a: #007FFF;
+
+.MenuLeft {
+	li a {
+		display: flex;
+		align-items: center;
+		padding: 0 20px;
+		height: 52px;
+		border-radius: 10px;
+
+		&.active {
+			background-color: $bg_a;
+			color: $color_a;
+		}
+
+		img {
+			display: block;
+			margin-right: 16px;
+		}
+	}
+}

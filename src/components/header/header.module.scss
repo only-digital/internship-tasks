@@ -1,0 +1,19 @@
+$leftColWidth: 290px;
+$borderColor: #D9E1EC;
+
+.Header {
+	display: flex;
+	align-items: stretch;
+	background-color: #fff;
+	border-bottom: 1px solid $borderColor;
+	height: 80px;
+	width: 100%;
+
+	&__left {
+		width: $leftColWidth;
+		border-right: 1px solid $borderColor;
+		display: flex;
+		align-items: center;
+		padding-left: 45px;
+	}
+}

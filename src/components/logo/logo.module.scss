@@ -1,0 +1,20 @@
+.Logo {
+	display: flex;
+	align-items: center;
+
+	img {
+		display: block;
+	}
+
+	&__text {
+		color: #213C57;
+		font-size: 7px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 1.2;
+		text-transform: uppercase;
+		display: block;
+		width: 49px;
+		margin-left: 9px;
+	}
+}

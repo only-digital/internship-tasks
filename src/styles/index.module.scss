@@ -1,8 +1,50 @@
+$leftColWidth: 290px;
+$borderColor: #D9E1EC;
+$colorTitle: #213C57;
+
 .main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 6rem;
+    padding: 0;
     min-height: 100vh;
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    align-items: stretch;
+    flex-grow: 1;
+    
+    &__left {
+        padding: 40px 25px;
+        border-right: 1px solid $borderColor;
+        width: $leftColWidth;
+        min-width: $leftColWidth;
+    }
+
+    &__item {
+        padding: 48px 40px;
+        background-color: #F3F6F9;
+        flex-grow: 1;
+    }
+
+    &__head {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+    }
+
+    &__title {
+        color: $colorTitle;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 1.235;
+        margin-bottom: 8px;
+    }
+}
+
+.notData {
+    padding: 25px;
 }

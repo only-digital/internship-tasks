@@ -1,0 +1,28 @@
+.InputSearch {
+	flex-basis: 608px;
+	position: relative;
+
+	&__input {
+		display: block;
+		width: 100%;
+		background-color: #fff;
+		border-radius: 10px;
+		color: rgba(22, 31, 62, 0.9);
+		height: 56px;
+		padding: 0 46px 0 16px;
+		&::placeholder {
+			color: rgba(33, 60, 87, 0.4);
+		}
+	}
+
+	&__icon {
+		user-select: none;
+		// cursor: pointer;
+		display: block;
+		position: absolute;
+		z-index: 2;
+		right: 19px;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
