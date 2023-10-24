@@ -1,0 +1,10 @@
+mixin file-input(props)
+	label.file-input(data-component='file-input' type="file" for=props.id)
+		input.file-input__button&attributes(attributes)( type="file" id=props.id name=props.name data-max-size=props.maxSize data-max-qty=props.maxQty data-allowed=props.allowed accept=props.allowed)
+		.file-input__file-container
+		template.file-input__template
+			.file-input__file-image
+				p.file-input__file-name
+				p.file-input__file-size
+				button.file-input__file-delete-button(type='button') delete
+		//Your code here

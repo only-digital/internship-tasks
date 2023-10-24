@@ -1,6 +1,7 @@
 extends ../../build_modules/common
 
-
 block body
-    +input({type:'email',name:"Email", id:'email', pattern:emailPattern}).form__email-input(required="" placeholder='' maxlength=255 )
-    +input({type:'textarea',name:"Ваше сообщение", id:'message', pattern:textPattern}).form__textarea-input(spellcheck=true required="" placeholder=''  minlength=10 maxlength=1000 validate='' rows=5 )
+    +form
+    //- +input({parent:"form",type:'email',name:"Email", id:'email', pattern:emailPattern})(required="" maxlength=255 )
+    //- +input({parent:"form",type:'textarea',name:"Ваше сообщение", id:'message', pattern:textPattern})(spellcheck=true required=""  maxlength=1000)
+    //- +file-input({name:"file", type:'file', id:file, allowed:".pdf,.doc,.docx", maxSize:5, maxQty:2}).form__file-input(multiple="")
