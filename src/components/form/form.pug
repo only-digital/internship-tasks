@@ -2,6 +2,6 @@ mixin form(props)
 	form.form&attributes(attributes)(data-component='form')
 		+input({parent:"form",type:'email',name:"Email", id:'email', pattern:emailPattern})(required="" maxlength=255 )
 		+input({parent:"form",type:'textarea',name:"Ваше сообщение", id:'message', pattern:textPattern})(spellcheck=true required=""  maxlength=1000)
-		+file-input({name:"file", type:'file', id:file, allowed:".pdf,.doc,.docx", maxSize:"5mb", maxQty:6}).form__file-input(multiple="multuple")
+		+file-input({ parent:"form", name:"file", type:'file', id:"file", allowed:".pdf,.doc,.docx", maxSize:"5mb", maxQty:6}).form__file-input(multiple="multuple")
 		
 		//Your code here 

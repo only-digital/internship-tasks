@@ -1,5 +1,112 @@
+$borderColor: #002f6c;
+$hoveredButtonColor: #0041a0;
+$hoveredTextColor: #fff;
+$TextColor: #021f45;
+$activeButtonColor: #002f6c;
+$activeTextColor: #fff;
+$focusedButtonColor: #fff;
+$focusedTextColor: #021f45;
+$focusedOutline: #99b3d8;
+$disabledButtonColor: #bcbcbc;
+$disabledTextColor: #bcbcbc;
+$hoveredFileInput: #f4f4f4;
+$fileImageColor: #f4f4f4;
+$fileImageInfoColor: #909090;
+@mixin button-behavior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 24px;
+  border: 1px solid $borderColor;
+  font-size: 16px;
+  letter-spacing: -0.32px;
+  &:hover {
+    background-color: $hoveredButtonColor;
+    color: $hoveredTextColor;
+    border-color: $hoveredButtonColor;
+    & svg {
+      fill: $hoveredTextColor;
+    }
+  }
+  &:focus {
+    background-color: $focusedButtonColor;
+    color: $focusedTextColor;
+    outline: 2px solid $focusedOutline;
+    border: none;
+    & svg {
+      fill: $focusedTextColor;
+    }
+  }
+  &:active {
+    background-color: $activeButtonColor;
+    color: $activeTextColor;
+    border-color: $activeButtonColor;
+    & svg {
+      fill: $activeTextColor;
+    }
+  }
+  &:disabled {
+    color: $disabledTextColor;
+    border-color: $disabledButtonColor;
+    pointer-events: none;
+    & svg {
+      fill: $disabledButtonColor;
+    }
+  }
+}
 .file-input {
-	$root: &;
-
-	//Your code here
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  $root: &;
+  display: block;
+  &__button {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    clip-path: circle(0 at 0 0);
+  }
+  &__pseudo-button {
+    @include button-behavior;
+    padding: 14px 16px 16px;
+    gap: 16px;
+  }
+  &__svg {
+    width: 14px;
+    aspect-ratio: 1;
+    // fill: $borderColor;
+  }
+  &__file-image {
+    max-height: 40px;
+    background-color: $fileImageColor;
+    display: flex;
+    width: fit-content;
+    font-size: 16px;
+    letter-spacing: -0.32px;
+    padding: 10px 13px 10px 18px;
+    line-height: 1.24;
+    gap: 4px;
+    border-radius: 27px;
+    &:hover .file-input__close-btn {
+      cursor: pointer;
+      display: block;
+    }
+  }
+  &__file-ext,
+  &__file-size {
+    color: $fileImageInfoColor;
+  }
+  &__close-btn {
+    width: 14px;
+    aspect-ratio: 1;
+    transform: rotate(45deg);
+    display: none;
+  }
+  &__file-container {
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    display: flex;
+  }
 }

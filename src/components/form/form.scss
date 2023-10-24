@@ -1,5 +1,8 @@
 .form {
-	$root: &;
+  $root: &;
+  &__file-input {
+    margin-top: 28px;
+  }
 
-	//Your code here
+  //Your code here
 }

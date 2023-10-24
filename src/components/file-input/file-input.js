@@ -6,6 +6,7 @@ class FileInput extends Component {
     // элементы страницы
     this.fileInput = this.getElement('button');
     this.fileContainer = this.getElement('file-container');
+    this.filePseudoButton = this.getElement('pseudo-button');
 
     // переменные с параметрами валидации
 
@@ -44,25 +45,28 @@ class FileInput extends Component {
 
     // слушатели
     this.fileInput.addEventListener('change', this._checkValidity);
+    this.filePseudoButton.addEventListener('click', () =>
+      this.fileInput.click()
+    );
   }
 
   _createFileImage = (file) => {
     const fileImage = this.getElement('template').content.cloneNode(true);
     // const fileItem = fileImage.querySelector('.file-input__file-image');
-    const fileNameParagraph = fileImage.querySelector('.file-input__file-name');
+    const fileExtParagraph = fileImage.querySelector('.file-input__file-ext');
     const fileSizeParagraph = fileImage.querySelector('.file-input__file-size');
     const fileDeleteButton = fileImage.querySelector(
       '.file-input__file-delete-button'
     );
     fileDeleteButton.setAttribute('data-name', file.name);
-    fileNameParagraph.textContent = file.name;
-    fileSizeParagraph.textContent = `${file.size / 1024} kB`;
+    fileExtParagraph.textContent =
+      file.name.match(/\..+$/i).toString().slice(1).toUpperCase() + ',';
+    fileSizeParagraph.textContent = `${Math.round(file.size / 1024)} kB`;
     fileDeleteButton.addEventListener('click', this._deleteFile);
     this.fileContainer.append(fileImage);
   };
   _deleteFile = (evt) => {
-    evt.preventDefault();
-    const { name } = evt.target.dataset;
+    const { name } = evt.currentTarget.dataset;
     this.addedFiles = this.addedFiles.filter((file) => file.name !== name);
     evt.target.closest('.file-input__file-image').remove();
     this._checkQty();
@@ -90,13 +94,13 @@ class FileInput extends Component {
   };
 
   _checkQty = () => {
-    if (this.addedFiles.length >= this.maxQty) {
+    if (this.addedFiles.length > this.maxQty) {
       console.log('файлов больше 2-х');
-      this.fileInput.setAttribute('disabled', '');
+      this.filePseudoButton.setAttribute('disabled', '');
 
       return false;
     } else {
-      this.fileInput.removeAttribute('disabled', '');
+      this.filePseudoButton.removeAttribute('disabled');
       return true;
     }
   };
