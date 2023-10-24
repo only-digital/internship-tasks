@@ -65,3 +65,10 @@ button {
     }
 }
 
+.container {
+    display: flex;
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 26px 130px 60px 30px;
+}
