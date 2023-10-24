@@ -1,3 +1,19 @@
 mixin form(props)
-	.form&attributes(attributes)(data-component='form')
-		//Your code here
+	form.form&attributes(attributes)(data-component='form')
+		p.form__email-wrap
+			input(
+				placeholder='E-mail'
+				type='email'
+			).form__email-input.input
+		p.form__message-wrap 
+			textarea(placeholder='Ваше сообщение').form__message-input.input
+		p.form__file-wrap 
+			input(type='file').form__file-input
+		p.form__checkbox-wrap 
+			input(
+				type='checkbox'
+				id='formCheckbox'
+			).form__checkbox-hidden-input
+			label(for='formCheckbox').form__checkbox-input
+			label(for='formCheckbox').form__checkbox-text Вы подтверждаете, что ознакомились c политикой обработки персональных данных
+		button(type='button').form__submit Отправить
