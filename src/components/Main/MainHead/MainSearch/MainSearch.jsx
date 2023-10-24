@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useSearch } from "@/hooks/useSearch";
 import styled from "./MainSearch.module.scss"
 
-
 const MainSearch = () => {
     const [search, setSearch] = useState("");
     console.log(useSearch(search));
@@ -14,12 +13,12 @@ const MainSearch = () => {
                 className={styled.MainSearch__input}
                 onChange={(e) => setSearch(e.target.value)}
             />
-            <button className={styled.MainSearch__searchButton}
-            >
+            <button className={styled.MainSearch__searchButton}>
                 <Image src={"/svg/search-svg.svg"}
                     width={"14"}
                     height={"14"}
                     className={styled.MainSearch__icon}
+                    alt="search"
                 />
             </button>
         </div>

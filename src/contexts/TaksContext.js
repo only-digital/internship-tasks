@@ -8,6 +8,20 @@ function TaskProvider(props) {
     const [selectedTasksListId, setSelectedTasksListId] = useState(0);
     const [selectedTaskList, setSelectedTaskList] = useState();
 
+    useEffect(() => {
+        const getData = async () => {
+            const data = await getIndexPage();
+            setTaskData(getIndexPage)
+        }
+        getData();
+    }, []);
+
+    useEffect(() => {
+        if (taskData !== undefined) {
+            setSelectedTaskList(taskData.find((data) => data.id === selectedTasksListId))
+        }
+    }, [selectedTasksListId, taskData]);
+
     const deleteTask = (id) => {
         setTaskData(taskData.map((tasksList) =>
             tasksList.id === selectedTasksListId ?
@@ -36,16 +50,6 @@ function TaskProvider(props) {
                 : tasksList
         ))
     }
-
-    useEffect(() => {
-        setTaskData(getIndexPage())
-    }, []);
-
-    useEffect(() => {
-        if (taskData !== undefined) {
-            setSelectedTaskList(taskData.find((data) => data.id === selectedTasksListId))
-        }
-    }, [selectedTasksListId, taskData]);
 
     return (
         <TaskContext.Provider
