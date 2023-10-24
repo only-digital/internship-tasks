@@ -3,9 +3,7 @@ import Info from '../info/info';
 import Content from '../content/content';
 import { useState } from 'react';
 
-const Tasks = (props) => {
-    const {title, tasks} = props;
-
+const Tasks = ({title, tasks}) => {
     const [listItem, setListItem] = useState(tasks);
 
     const deleteItem = (id) => {
