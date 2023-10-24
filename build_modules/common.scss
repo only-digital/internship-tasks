@@ -20,6 +20,8 @@ body {
     padding: 0;
     margin: 0;
     -webkit-tap-highlight-color: transparent;
+
+    font-family: Arial;
 }
 
 h1, h2, h3, h4, h5, p, a {
@@ -69,8 +71,37 @@ button {
 
 .container {
     display: flex;
+    gap: 159px;
+    justify-content: space-between;
     max-width: 1440px;
     width: 100%;
     margin: 0 auto;
     padding: 26px 130px 60px 30px;
+
+    .form {
+        flex-grow: 1;
+    }
+}
+
+.title {
+    max-width: 285px;
+
+    font-size: 32px;
+    font-weight: 700;
+    color: $blue1;
+}
+
+.input {
+    padding: 18px 0;
+
+    border: none;
+    resize: none;
+
+    border-bottom: 1px solid $gray1;
+
+    &::placeholder {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        color: $black1;
+    }
 }
