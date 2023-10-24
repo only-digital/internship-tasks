@@ -14,8 +14,7 @@ mixin feedback-form(props)
 				+svg('icon-succes-input').feedback-form__content__text__icon 
 				.feedback-form__content__text__message 
 			.feedback-form__content__file-upload(class=disabled)
-				input.feedback-form__content__file-upload__input(type='file' multiple )
-				//- accept=".pdf, .doc, .docx" 
+				input.feedback-form__content__file-upload__input(type='file' multiple accept=".pdf, .doc, .docx")
 				.feedback-form__content__file-upload__block
 					button.feedback-form__content__file-upload__button.button(class=disabled) Прикрепить файл
 						+svg('icon-plus').feedback-form__content__file-upload__button__svg
