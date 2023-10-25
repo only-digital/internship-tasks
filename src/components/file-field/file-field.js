@@ -17,13 +17,17 @@ class FileField extends Component {
   showFiles = () => {
     this.filesList.innerHTML = "";
     for (let file of this.fileField.files) {
+      const fileSize = (file.size / 1024).toFixed();
+      if (fileSize > 5000) continue;
+
       const fileNameArr = file.name.split(".");
       const fileFormat = fileNameArr.pop().toUpperCase();
       const fileName = fileNameArr.join();
-      const fileSize = (file.size / 1024).toFixed();
 
       const newFile = this.createFile(fileName, fileFormat, fileSize);
       this.filesList.append(newFile);
+
+      if (this.filesList.children.length === 2) break;
     }
   };
 
