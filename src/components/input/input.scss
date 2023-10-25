@@ -11,8 +11,8 @@ $disabled: #bcbcbc;
   font-weight: 400;
   position: relative;
   display: block;
-  &_type_textarea .input__field {
-    height: 128px;
+  &_type_textarea {
+    height: 138px;
   }
   &__field-name {
     position: absolute;

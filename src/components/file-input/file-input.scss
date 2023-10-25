@@ -12,6 +12,8 @@ $disabledTextColor: #bcbcbc;
 $hoveredFileInput: #f4f4f4;
 $fileImageColor: #f4f4f4;
 $fileImageInfoColor: #909090;
+$errorColor: #ff0000;
+$qtyMessageColor: #002f6c;
 @mixin button-behavior {
   display: flex;
   justify-content: space-between;
@@ -20,14 +22,7 @@ $fileImageInfoColor: #909090;
   border: 1px solid $borderColor;
   font-size: 16px;
   letter-spacing: -0.32px;
-  &:hover {
-    background-color: $hoveredButtonColor;
-    color: $hoveredTextColor;
-    border-color: $hoveredButtonColor;
-    & svg {
-      fill: $hoveredTextColor;
-    }
-  }
+
   &:focus {
     background-color: $focusedButtonColor;
     color: $focusedTextColor;
@@ -45,20 +40,29 @@ $fileImageInfoColor: #909090;
       fill: $activeTextColor;
     }
   }
+  &:hover {
+    background-color: $hoveredButtonColor;
+    color: $hoveredTextColor;
+    border-color: $hoveredButtonColor;
+    & svg {
+      fill: $hoveredTextColor;
+    }
+  }
   &:disabled {
     color: $disabledTextColor;
     border-color: $disabledButtonColor;
-    pointer-events: none;
+    cursor: default;
     & svg {
       fill: $disabledButtonColor;
     }
   }
 }
 .file-input {
+  // margin-top: 18px;
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
-  $root: &;
-  display: block;
+  display: flex;
+  gap: 32px;
   &__button {
     width: 1px;
     height: 1px;
@@ -69,8 +73,47 @@ $fileImageInfoColor: #909090;
   }
   &__pseudo-button {
     @include button-behavior;
+    min-width: 192px;
     padding: 14px 16px 16px;
     gap: 16px;
+    position: relative;
+    &:disabled:hover {
+      background-color: white;
+      border-color: $disabledTextColor;
+    }
+    &:disabled:hover ~ .file-input__qty-message::after {
+      position: absolute;
+      content: '';
+      top: 0px;
+      left: 0px;
+      width: 240px;
+      height: 92px;
+      background-color: white;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 93% 85%, 0 85%, 0 100%);
+
+      z-index: -1;
+    }
+    &:disabled:hover ~ .file-input__qty-message {
+      display: block;
+    }
+  }
+
+  &__qty-message {
+    display: none;
+    padding: 16px 20px 34px 20px;
+    position: absolute;
+    left: -180px;
+    top: -90px;
+    width: 240px;
+    height: 92px;
+    filter: drop-shadow(0px 4px 40px rgba(0, 0, 0, 0.1));
+    color: var(--blue, #002f6c);
+    color: $qtyMessageColor;
+    font-size: 14px;
+    line-height: 1.5;
+    @media screen and (max-width: 500px) {
+      left: -100px;
+    }
   }
   &__svg {
     width: 14px;
@@ -78,6 +121,7 @@ $fileImageInfoColor: #909090;
     // fill: $borderColor;
   }
   &__file-image {
+    margin-top: 5px;
     max-height: 40px;
     background-color: $fileImageColor;
     display: flex;
@@ -104,9 +148,16 @@ $fileImageInfoColor: #909090;
     display: none;
   }
   &__file-container {
-    align-items: center;
     flex-wrap: wrap;
     gap: 20px;
     display: flex;
+  }
+  &__error-message {
+    max-width: 196px;
+    margin-top: 7px;
+    color: $errorColor;
+    font-size: 12px;
+    line-height: 1.5;
+    letter-spacing: -0.24px;
   }
 }

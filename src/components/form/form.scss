@@ -1,5 +1,7 @@
 .form {
   $root: &;
+  flex-grow: 1;
+
   &__file-input {
     margin-top: 28px;
   }

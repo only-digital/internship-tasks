@@ -7,7 +7,9 @@ class FileInput extends Component {
     this.fileInput = this.getElement('button');
     this.fileContainer = this.getElement('file-container');
     this.filePseudoButton = this.getElement('pseudo-button');
-
+    this.errorMessage = this.getElement('error-message');
+    this.qtYMessage = this.getElement('qty-message');
+    console.log(this.qtYMessage);
     // переменные с параметрами валидации
 
     this.allowedFiles = this.fileInput.dataset.allowed.split(',');
@@ -73,6 +75,7 @@ class FileInput extends Component {
     console.log(this.addedFiles);
   };
   _checkValidity = () => {
+    this.errorMessage.textContent = '';
     const addedFilesName = this.addedFiles.map((file) => file.name);
     const inputFiles = Array.from(this.fileInput.files).filter(
       (file) => !addedFilesName.includes(file.name)
@@ -94,20 +97,26 @@ class FileInput extends Component {
   };
 
   _checkQty = () => {
-    if (this.addedFiles.length > this.maxQty) {
-      console.log('файлов больше 2-х');
+    if (this.addedFiles.length >= this.maxQty) {
       this.filePseudoButton.setAttribute('disabled', '');
-
+      this._setQtyMessage(
+        `Вы можете загрузить только ${this.maxQty} документа`
+      );
+    }
+    if (this.addedFiles.length < this.maxQty) {
+      this.filePseudoButton.removeAttribute('disabled');
+      this._setQtyMessage('');
+    }
+    if (this.addedFiles.length > this.maxQty) {
       return false;
     } else {
-      this.filePseudoButton.removeAttribute('disabled');
       return true;
     }
   };
 
   _checkSize = (file) => {
     if (file.size > this.maxSize) {
-      console.log(
+      this._setErrorMessage(
         `Максимальный размер файла ${
           this.maxSizeMeaning
         } ${this.maxSizeUnits.toUpperCase()}`
@@ -121,9 +130,25 @@ class FileInput extends Component {
     if (this.regex.test(file.name)) {
       return true;
     } else {
-      console.log(`Допустимые форматы фалйов:  ${this.allowedFiles} `);
+      this._setErrorMessage(
+        `Допустимые форматы файлов:  ${this.allowedFiles
+          .toString()
+          .replace(/\./g, '')
+          .toUpperCase()} `
+      );
       return false;
     }
+  };
+  _setErrorMessage = (message) => {
+    const currentMessage = this.errorMessage.textContent;
+    if (currentMessage) {
+      this.errorMessage.textContent = `${currentMessage}, ${message}`;
+    } else {
+      this.errorMessage.textContent = message;
+    }
+  };
+  _setQtyMessage = (message) => {
+    this.qtYMessage.textContent = message;
   };
 
   // Your code here

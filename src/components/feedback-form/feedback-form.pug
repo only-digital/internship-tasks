@@ -1,0 +1,4 @@
+mixin feedback-form(props)
+	.feedback-form&attributes(attributes)(data-component='feedback-form')
+		h1.feedback-form__title=props.title
+		+form.feedback-form__form
