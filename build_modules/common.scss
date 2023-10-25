@@ -56,6 +56,19 @@ input {
     }
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
 button {
     background: transparent;
     border: none;
@@ -78,8 +91,13 @@ button {
     margin: 0 auto;
     padding: 26px 130px 60px 30px;
 
-    .form {
-        flex-grow: 1;
+    @media (max-width: 975px) {
+        flex-direction: column;
+        gap: 70px;
+    }
+
+    @media (max-width: 650px) {
+        padding: 26px 30px 60px 30px;
     }
 }
 
@@ -93,6 +111,10 @@ button {
 
 .input {
     padding: 18px 0;
+
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: $black1;
 
     border: none;
     resize: none;
