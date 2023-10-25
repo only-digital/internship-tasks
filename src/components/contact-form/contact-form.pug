@@ -4,7 +4,6 @@ mixin contact-form(props)
 		form.contact-form__form
 			+input-field({type: "email", caption: "E-mail", name: "email"}).contact-form__email
 			+textarea({caption: "Ваше сообщение", name: "message"}).contact-form__message
-			.file-inputs
-				+file-input({id: "input_1", name: "file1"}).contact-form__file
+			+file-input({name: "files", maxFiles: 2, maxSize: 5000000, accept: ".pdf,.doc,.docx"}).contact-form__file
 			+checkbox({text: `Вы подтверждаете, что ознакомились <a href='/'>с политикой обработки персональных данных</a>`}).contact-form__agreement
 			+regular-button({text: "Отправить", icon: "arrow-right"})(disabled type="button").contact-form__submit-button

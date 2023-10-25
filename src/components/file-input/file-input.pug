@@ -1,9 +1,18 @@
 mixin file-input(props)
-	label.file-input&attributes(attributes)(data-component='file-input')
-		input&attributes(attributes)(type="file" accept=".pdf,.doc,.docx" name=props.name).file-input__input
-		.file-input__body
-			span.file-input__body__text Прикрепить файл
-			span.file-input__body__file-data
-			+svg("add").file-input__body__icon
-			button.file-input__body__remove-button
+	mixin attachment
+		.file-input__attachment
+			span.file-input__attachment__name Document&nbsp;
+			span.file-input__attachment__file-data pdf, 8kb
+			button.file-input__attachment__remove-button(type="button")
 				+svg("close")
+
+	.file-input&attributes(attributes)(data-component='file-input')
+		.file-input__flex-container
+			label
+				input&attributes(attributes)(type="file" accept=props.accept name=props.name multiple data-max-size=props.maxSize data-max-files=props.maxFiles).file-input__input
+				.file-input__body
+					span.file-input__body__text Прикрепить файл
+					+svg("add").file-input__body__icon
+			- for (let i = 0; i < props.maxFiles; i++)
+				+attachment
+		.file-input__error

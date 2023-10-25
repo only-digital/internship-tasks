@@ -3,119 +3,115 @@
 .file-input {
     $root: &;
 
-    position: relative;
-
-    &__input {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 0;
-        height: 0;
-
-        &:active + .file-input__body {
-            background-color: $blue-color;
-            #{$root}__body__text {
-                color: white;
-            }
-            #{$root}__body__icon {
-                fill: white;
-            }
-        }
-
-        &:focus + .file-input__body {
-            outline: 3px solid $border-focus-color;
-        }
-
-        &:disabled + .file-input__body {
-            pointer-events: none;
-            #{$root}__body__text {
-                color: $steel-color;
-            }
-            #{$root}__body__icon {
-                fill: $steel-color;
-            }
-        }
-    }
-
-    &__body {
-        display: inline-flex;
+    &__flex-container {
+        display: flex;
         align-items: center;
-        padding: 14px 16px 16px 16px;
-        outline: 1px solid $grey-1;
-        border-radius: 24px;
 
-        &:hover {
-            cursor: pointer;
-            background-color: $cobolt-color;
-            outline: none;
-            #{$root}__body__icon {
-                fill: white;
-            }
-            #{$root}__body__text {
-                color: white;
-            }
-        }
+        .file-input {
+            &__input {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 0;
+                height: 0;
 
-        &__text {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 16px;
-            line-height: 16px;
-            color: $midnight-color;
-        }
-        &__file-data {
-            display: none;
-            white-space: pre;
-            color: $steel-color;
-        }
+                &:active + .file-input__body {
+                    background-color: $blue-color;
+                    #{$root}__body__text {
+                        color: white;
+                    }
+                    #{$root}__body__icon {
+                        fill: white;
+                    }
+                }
 
-        &__icon {
-            width: 14px;
-            height: 14px;
-            margin-left: 16px;
-            fill: $blue-color;
-        }
+                &:focus + .file-input__body {
+                    outline: 3px solid $border-focus-color;
+                }
 
-        &__remove-button {
-            cursor: pointer;
-            display: none;
-            padding-left: 9px;
-            svg {
-                fill: $blue-color;
-                width: 10px;
-                height: 10px;
+                &:disabled + .file-input__body {
+                    pointer-events: none;
+                    #{$root}__body__text {
+                        color: $steel-color;
+                    }
+                    #{$root}__body__icon {
+                        fill: $steel-color;
+                    }
+                }
             }
 
-            &:hover {
-                svg {
-                    fill: red;
+            &__body {
+                display: inline-flex;
+                align-items: center;
+                padding: 14px 16px 16px 16px;
+                margin-right: 19px;
+                outline: 1px solid $grey-1;
+                border-radius: 24px;
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: $cobolt-color;
+                    outline: none;
+                    #{$root}__body__icon {
+                        fill: white;
+                    }
+                    #{$root}__body__text {
+                        color: white;
+                    }
+                }
+
+                &__text {
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 16px;
+                    line-height: 16px;
+                    color: $midnight-color;
+                }
+                &__icon {
+                    width: 14px;
+                    height: 14px;
+                    margin-left: 16px;
+                    fill: $blue-color;
+                }
+            }
+
+            &__attachment {
+                display: none;
+                padding: 10px 13px 10px 18px;
+                user-select: none;
+                margin-right: 19px;
+                border-radius: 24px;
+                background-color: $grey-3;
+                outline: none;
+
+                &__file-data {
+                    white-space: pre;
+                    color: $steel-color;
+                }
+
+                &__remove-button {
+                    cursor: pointer;
+                    padding-left: 9px;
+                    svg {
+                        pointer-events: none;
+                        fill: $blue-color;
+                        width: 10px;
+                        height: 10px;
+                    }
+
+                    &:hover {
+                        svg {
+                            fill: red;
+                        }
+                    }
                 }
             }
         }
     }
 
-    // input with attached file
-    &__body_attachment {
-        padding: 10px 13px 10px 18px;
-        background-color: $grey-3;
-        outline: none;
-
-        .file-input__body__icon {
-            display: none;
-        }
-
-        .file-input__body__file-data {
-            display: block;
-        }
-
-        .file-input__body__remove-button {
-            display: block;
-        }
-
-        &:hover {
-            background-color: $grey-3;
-            .file-input__body__text {
-                color: black;
-            }
-        }
+    &__error {
+        margin-top: 7px;
+        color: red;
+        font-size: 12px;
+        line-height: 18px;
     }
 }
