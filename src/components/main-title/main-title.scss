@@ -1,0 +1,16 @@
+.main-title {
+  $root: &;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 115px 0 144px 80px;
+  &__title {
+    color: #04306a;
+    font-size: 64px;
+    margin-bottom: 45px;
+  }
+  &__date {
+    color: #8f8f8f;
+    font-size: 20px;
+    opacity: 0.7;
+    margin-bottom: 20px;
+  }
+}

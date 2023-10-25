@@ -1,0 +1,5 @@
+mixin main-title({date, title})
+	.main-title&attributes(attributes)(data-component='main-title')
+		.main-title__date!= date
+		.main-title__title!= title
+		+loader()

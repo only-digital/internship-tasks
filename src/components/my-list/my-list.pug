@@ -1,0 +1,8 @@
+mixin my-list({title, items})
+	.my-list&attributes(attributes)(data-component='my-list')
+		.my-list__title!= title
+		each item in items 
+			.my-list__item
+				+svg('dash').my-list__icon
+				p.my-list__text!= item
+				
