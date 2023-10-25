@@ -4,16 +4,26 @@ mixin form(props)
 			input(
 				placeholder='E-mail'
 				type='email'
-			).form__email-input.input
+			).form__input.form__email-input.input
 		p.form__message-wrap 
-			textarea(placeholder='Ваше сообщение').form__message-input.input
+			textarea(placeholder='Ваше сообщение').form__input.form__message-input.input
 		p.form__file-wrap 
-			input(type='file').form__file-input
+			input(
+				type='file'
+				id='fileInput'
+			).form__file-hidden-input.visually-hidden
+			label(for='fileInput').form__file-input Прикрепить файл
+				span.form__plus
 		p.form__checkbox-wrap 
 			input(
 				type='checkbox'
 				id='formCheckbox'
-			).form__checkbox-hidden-input
+			).form__checkbox-hidden-input.visually-hidden
 			label(for='formCheckbox').form__checkbox-input
-			label(for='formCheckbox').form__checkbox-text Вы подтверждаете, что ознакомились c политикой обработки персональных данных
+			label(for='formCheckbox').form__checkbox-text Вы подтверждаете, что ознакомились 
+				a(
+					href='#'
+					target='__blank'
+				).form__checkbox-link c политикой обработки персональных данных
 		button(type='button').form__submit Отправить
+			+svg('arrow').form__arrow

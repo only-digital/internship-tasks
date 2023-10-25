@@ -1,5 +1,123 @@
 .form {
 	$root: &;
 
-	//Your code here
+	margin-top: 37px;
+
+	&__input {
+		box-sizing: content-box;
+
+		width: 100%;
+		height: 16px;
+	}
+
+	&__email-wrap {
+		margin-bottom: 22px;
+	}
+
+	&__message-input {
+		overflow: hidden;
+	}
+
+	&__file-wrap {
+		margin-top: 116px;
+		margin-bottom: 30px;
+	}
+
+	&__file-input {
+		display: flex;
+		width: max-content;
+		align-items: center;
+		padding: 14px 16px 16px 16px;
+		gap: 16px;
+
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 100%;
+		letter-spacing: -0.32px;
+		color: $gray2;
+
+		border: 1px solid $gray3;
+		border-radius: 25px;
+		cursor: pointer;
+	}
+
+	&__plus {
+		position: relative;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 14px;
+		height: 14px;
+
+		&::before,
+		&::after {
+			position: absolute;
+			content: '';
+
+			display: block;
+			width: 1px;
+			height: 100%;
+
+			background-color: $gray2;
+		}
+
+		&::after {
+
+			width: 100%;
+			height: 1px;
+		}
+	}
+
+	&__checkbox-wrap {
+		display: flex;
+		align-items: center;
+		gap: 18px;
+		margin-bottom: 30px;
+	}
+
+	&__checkbox-input  {
+		display: block;
+		flex-shrink: 0;
+		
+		width: 16px;
+		height: 16px;
+
+		border: 1px solid $gray3;
+		cursor: pointer;
+	}
+
+	&__checkbox-text {
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 150%;
+		color: $gray2;
+
+		cursor: pointer;
+	}
+
+	&__checkbox-link {
+		color: $blue1;
+	}
+
+	&__submit {
+		display: flex;
+		align-items: center;
+		gap: 14px;
+		padding: 7px 14px 9px 18px;
+
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 100%;
+		letter-spacing: -0.32px;
+		color: $gray2;
+
+		background-color: $gray4;
+		border-radius: 25px;
+	}
+
+	&__arrow {
+		width: 32px;
+		height: 32px;
+	}
 }
