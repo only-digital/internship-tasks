@@ -1,0 +1,122 @@
+@import "../../pages/index.scss";
+
+.input-email {
+  $root: &;
+
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  height: 66px;
+  max-width: 600px;
+  margin-bottom: 20px;
+  position: relative;
+
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &__label {
+    position: absolute;
+    left: 0px;
+    top: 28px;
+    font-size: 16px;
+    line-height: 100%;
+    color: $black;
+    pointer-events: none;
+    transition: 0.3s ease-in;
+    user-select: none;
+  }
+
+  &__icon {
+    display: none;
+    position: absolute;
+    top: 35%;
+    left: calc(100% - 40px);
+    width: 18px;
+    height: 13px;
+  }
+
+  &__input {
+    position: relative;
+    padding: 13px 58px 19px 20px;
+    width: 100%;
+    height: 48px;
+    border-bottom: 1px solid $extraGrey2;
+    font-size: 16px;
+    font-weight: 400;
+    color: $black;
+    line-height: 150%;
+
+    &:focus {
+      outline: 1px solid $cobolt;
+      border-radius: 24px;
+    }
+
+    &:hover {
+      background-color: $lightGrey;
+      border-radius: 24px;
+      cursor: pointer;
+    }
+
+    &:hover + #{$root}__label {
+      left: 20px;
+    }
+
+    &:focus + #{$root}__label {
+      left: 20px;
+      top: -10px;
+      font-size: 12px;
+      line-height: 150%;
+      color: $steel;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    left: 20px;
+    top: 55px;
+    color: $red;
+    font-size: 12px;
+    line-height: 150%;
+  }
+
+  &.error {
+    #{$root}__input {
+      outline: 1px solid $red;
+      border-radius: 24px;
+    }
+
+    #{$root}__label {
+      left: 20px;
+      top: -10px;
+      font-size: 12px;
+      line-height: 150%;
+      color: $steel;
+    }
+
+    #{$root}__icon {
+      display: none;
+    }
+  }
+
+  &.valid {
+    #{$root}__input {
+      outline: none;
+      background-color: $lightGrey;
+      border-radius: 24px;
+    }
+
+    #{$root}__label {
+      left: 20px;
+      top: -10px;
+      font-size: 12px;
+      line-height: 150%;
+      color: $steel;
+    }
+
+    #{$root}__icon {
+      display: flex;
+    }
+  }
+}

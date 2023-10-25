@@ -1,0 +1,27 @@
+@import "../../pages/index.scss";
+
+.form {
+  $root: &;
+  position: relative;
+
+  &__wrap {
+    margin-left: 474px;
+    margin-top: 50px;
+
+    &.disabled {
+      pointer-events: none;
+      opacity: 0.3;
+    }
+  }
+
+  &__title {
+    position: absolute;
+    color: $blue;
+    max-width: 280px;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 120%;
+    top: -26px;
+    left: 30px;
+  }
+}

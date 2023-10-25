@@ -1,0 +1,9 @@
+mixin form(props)
+	.form&attributes(attributes)(data-component='form')
+		h1.form__title!=props.text
+		form.form__wrap
+			+input-email({text: "Email"})
+			+input-textarea({text: "Ваше сообщение"})
+			+file-button({text: "Прикрепить файл"})
+			+checkbox()
+			+button({text: "Отправить"}) 

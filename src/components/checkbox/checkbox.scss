@@ -1,0 +1,65 @@
+@import "../../pages/index.scss";
+
+.checkbox {
+  $root: &;
+  margin-bottom: 30px;
+  height: 21px;
+
+  &[disabled] {
+    pointer-events: none;
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  &__input {
+    position: absolute;
+    &:checked + .checkbox__label #{$root}__icon {
+      background-color: $cobolt;
+      #{$root}__icon-svg {
+        opacity: 1;
+      }
+    }
+
+    &:focus + .checkbox__label #{$root}__icon {
+      border: 1px solid $extraGrey;
+      outline: 2px solid $lightBlue;
+    }
+
+    &:hover + .checkbox__label #{$root}__icon {
+      border: 1px solid $cobolt;
+    }
+  }
+
+  &__label {
+    display: flex;
+    cursor: pointer;
+    width: fit-content;
+    user-select: none;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    margin-right: 18px;
+    border: 1px solid $extraGrey;
+
+    &-svg {
+      opacity: 0;
+      fill: $white;
+      width: 10px;
+      height: 8px;
+    }
+  }
+
+  &__link {
+    color: $cobolt;
+    margin-left: 1ex;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

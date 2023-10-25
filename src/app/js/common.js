@@ -1,4 +1,10 @@
 import ExampleButton from "../../components/example-button/example-button";
+import Button from "../../components/button/button";
+import Checkbox from "../../components/checkbox/checkbox";
+import InputEmail from "../../components/input-email/input-email";
+import InputTextarea from "../../components/input-textarea/input-textarea";
+import FileButton from "../../components/file-button/file-button";
+import Form from "../../components/form/form";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -7,6 +13,12 @@ import ExampleButton from "../../components/example-button/example-button";
  */
 const allComponents = {
     'example-button': ExampleButton,
+    'button': Button,
+    'checkbox': Checkbox,
+    'input-email': InputEmail,
+    'input-textarea': InputTextarea,
+    'file-button': FileButton,
+    'form': Form,
 }
 
 /**

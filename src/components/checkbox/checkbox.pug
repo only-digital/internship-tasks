@@ -1,0 +1,8 @@
+mixin checkbox(props)
+	.checkbox&attributes(attributes)(data-component='checkbox')
+		input.checkbox__input(type="checkbox" id="checkbox")
+		label.checkbox__label(for="checkbox")
+				span.checkbox__icon
+					+svg('checkbox-svg').checkbox__icon-svg
+				| Вы подтверждаете, что ознакомились
+				a.checkbox__link(href="#" target="_blank") c политикой обработки 

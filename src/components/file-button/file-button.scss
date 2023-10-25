@@ -1,0 +1,126 @@
+@import "../../pages/index.scss";
+
+.file-button {
+  $root: &;
+
+  display: flex;
+  column-gap: 32px;
+  align-items: center;
+  margin-bottom: 30px;
+  position: relative;
+
+  &__button {
+    display: flex;
+    align-items: center;
+    user-select: none;
+    column-gap: 16px;
+    padding: 14px 16px 16px 16px;
+    border-radius: 24px;
+    border: 1px solid $extraGrey;
+
+    &.disabled {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+  }
+
+  &__icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  &__input {
+    position: absolute;
+    overflow: hidden;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  &__modal {
+    display: none;
+    position: absolute;
+    top: -100px;
+    left: -230px;
+
+    &.active {
+      display: block;
+    }
+
+    &-text {
+      position: absolute;
+      top: 44px;
+      left: 52px;
+      width: 200px;
+      color: $blue;
+      font-size: 14px;
+      line-height: 150%;
+    }
+
+    &-icon {
+      position: absolute;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 150%;
+    color: $red;
+    top: 100%;
+    left: 0;
+  }
+
+  &__tab {
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+    &-item {
+      display: flex;
+      align-items: center;
+      column-gap: 5px;
+      user-select: none;
+      cursor: pointer;
+      padding: 10px 13px 10px 18px;
+      background-color: $lightGrey;
+      border-radius: 27px;
+
+      &__name {
+        font-size: 16px;
+        line-height: 124%;
+        color: $black;
+      }
+
+      &__format {
+        font-size: 16px;
+        line-height: 124%;
+        color: $steel;
+      }
+
+      &__remove {
+        position: relative;
+
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+
+        &::after,
+        &::before {
+          content: "";
+          position: absolute;
+          width: 10px;
+          height: 1px;
+          background-color: $blue;
+        }
+        &::after {
+          rotate: 45deg;
+        }
+
+        &::before {
+          rotate: -45deg;
+        }
+      }
+    }
+  }
+}

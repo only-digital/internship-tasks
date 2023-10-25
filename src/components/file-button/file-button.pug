@@ -1,0 +1,11 @@
+mixin file-button(props)
+	.file-button&attributes(attributes)(data-component='file-button')
+		button.file-button__button
+			span.file-button__text!= props.text 
+			+svg('file-button__svg').file-button__icon
+		input.file-button__input(type='file' name='file' accept='.pdf, .doc, .docx, .svg, .zip' multiple)
+		.file-button__tab
+		.file-button__modal
+			+svg('modal-svg').file-button__modal-icon
+			span.file-button__modal-text Вы можете загрузить только 2 документа
+		.file-button__error 

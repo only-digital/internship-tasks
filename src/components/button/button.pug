@@ -1,0 +1,4 @@
+mixin button(props)
+	button(type="submit").button&attributes(attributes)(data-component='button')
+		span.button__text!= props.text 
+		+svg("button-arrow").button__svg

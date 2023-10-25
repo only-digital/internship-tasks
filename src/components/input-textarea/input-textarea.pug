@@ -1,0 +1,6 @@
+mixin input-textarea(props)
+	.input-textarea&attributes(attributes)(data-component='input-textarea')
+		textarea.input-textarea__input(type='text', name='message', id='message')
+		label.input-textarea__label(for="message")!=props.text
+		+svg('input-icon').input-textarea__icon
+		span.input-textarea__error 

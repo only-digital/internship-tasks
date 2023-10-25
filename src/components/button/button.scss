@@ -1,0 +1,75 @@
+.button {
+  $root: &;
+
+  margin-bottom: 20px;
+
+  display: flex;
+  align-items: center;
+  column-gap: 14px;
+  height: 48px;
+  padding: 0 18px 0 14px;
+  border-radius: 24px;
+  border: 1px solid #bcbcbc;
+
+  &__text {
+    font-size: 16px;
+    user-select: none;
+  }
+
+  &__svg {
+    height: 32px;
+    width: 32px;
+    fill: #002f6c;
+  }
+
+  &:focus {
+    outline: 2px solid #99b3d8;
+
+    #{$root}__text {
+      color: #0041a0;
+    }
+
+    #{$root}__svg {
+      fill: #0041a0;
+    }
+  }
+
+  &:hover {
+    background-color: #0041a0;
+    border: none;
+
+    #{$root}__text {
+      color: white;
+    }
+
+    #{$root}__svg {
+      fill: white;
+    }
+  }
+
+  &:active {
+    background-color: #002f6c;
+    border: none;
+
+    #{$root}__text {
+      color: white;
+    }
+
+    #{$root}__svg {
+      fill: white;
+    }
+  }
+
+  &:disabled {
+    pointer-events: none;
+    user-select: none;
+
+    #{$root}__text {
+      color: #909090;
+    }
+
+    #{$root}__svg {
+      fill: #909090;
+    }
+  }
+}
