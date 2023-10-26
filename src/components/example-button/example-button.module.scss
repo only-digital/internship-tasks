@@ -1,0 +1,11 @@
+.ExampleButton {
+    border-radius: 3rem;
+    padding: 1rem 1.5rem;
+    margin: 1rem 0;
+    border: 1px solid black;
+
+
+    &__text {
+        font-size: 3rem;
+    }
+}
