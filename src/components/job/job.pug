@@ -1,0 +1,25 @@
+mixin job(props)
+	.job&attributes(attributes)(data-component='job')
+		section.job__heading
+			p.job__date 18 декабря 2020
+			h1 Консультант SAP PO
+			div.job__data
+				p.job__views Просмотров&nbsp;
+				p.job__responses Откликов&nbsp;
+		section.job__description
+		section.job__form-section
+			h3 Форма обратной связи
+			form.job__form
+				div.job__email
+					label(for='e-mail').job__label Email
+					input(type='email', id='e-mail').job__input
+				button(type='submit').job__submit-button
+					span Отправить
+					+svg('vector').job__vector
+				div.job__checkbox
+					input(type='checkbox', id='checkbox-input')
+					label(for='checkbox-input') Вы подтверждаете, что ознакомились c политикой обработки персональных данных
+
+
+
+

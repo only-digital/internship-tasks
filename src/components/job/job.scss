@@ -1,0 +1,100 @@
+.job {
+  $root: &;
+
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+
+  h1, h2, h3 {
+    color: #04306A;
+  }
+
+  h1 {
+    font-size: 64px;
+  }
+
+  h3 {
+    font-size: 32px;
+  }
+
+  &__heading {
+    padding: 115px 80px 144px;
+
+    h1 {
+      margin: 20px 0 45px;
+    }
+  }
+
+  &__date {
+    font-size: 16px;
+    color: #8F8F8F;
+  }
+
+  &__data {
+    display: flex;
+    gap: 36px;
+    font-size: 16px;
+    color: #8F8F8F;
+  }
+
+  &__form-section {
+    padding: 44px 217px 45px 103px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 81px;
+  }
+
+  &__form {
+    padding-top: 24px;
+    padding-bottom: 45px;
+    display: grid;
+    gap: 30px;
+  }
+
+  &__email {
+    display: grid;
+  }
+
+  &__label {
+    font-size: 12px;
+    color: #909090;
+    padding-left: 20px;
+  }
+
+  &__input {
+    width: 836px;
+    height: 48px;
+    border: 1px solid #0041A0;
+    border-radius: 24px;
+  }
+
+  &__submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    width: 155px;
+    height: 48px;
+    background: #0041A0;
+    color: #FFFFFF;
+    border-radius: 25px;
+    font-size: 16px;
+  }
+
+  &__vector {
+    width: 32px;
+    height: 22px;
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 14px;
+
+    #checkbox-input {
+      width: 16px;
+      height: 16px;
+      border: 1px solid #BCBCBC;
+    }
+  }
+}
