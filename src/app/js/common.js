@@ -2,6 +2,7 @@ import ExampleButton from "../../components/example-button/example-button";
 import Button from "../../components/button/button";
 import InputEmail from "../../components/input-email/input-email";
 import TextArea from "../../components/text-area/text-area";
+import InputFile from "../../components/input-file/input-file";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -13,6 +14,7 @@ const allComponents = {
 	button: Button,
 	'input-email': InputEmail,
 	'text-area': TextArea,
+	'input-file': InputFile,
 }
 
 /**

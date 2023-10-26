@@ -1,0 +1,199 @@
+.input-file {
+  $root: &;
+
+  position: relative;
+
+  display: flex;
+  align-items: baseline;
+
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 100%;
+
+  &__wrapper {
+    margin-bottom: 30px;
+  }
+
+  &__list {
+    display: inline-flex;
+    gap: 19px;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__plus {
+    width: 14px;
+    height: 14px;
+    fill: $blue;
+    transition: fill 0.3s;
+  }
+
+  &__label {
+    cursor: pointer;
+    width: 207px;
+    height: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    outline: 3px solid transparent;
+    margin-bottom: 7px;
+    color: $midnight;
+
+    border-radius: 25px;
+    border: 1px solid $grey1;
+    background-color: transparent;
+    transition: border 0.3s, background-color 0.3s, color 0.3s;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: $cobalt;
+        border: 1px solid transparent;
+        color: $white;
+
+        transition: border 0.3s, background-color 0.3s, color 0.3s;
+        #{$root}__plus {
+          fill: $white;
+          transition: fill 0.3s;
+        }
+      }
+    }
+
+    &:active {
+      background: $blue;
+      color: $white;
+
+      transition: border 0.3s, background-color 0.3s, color 0.3s;
+      #{$root}__plus {
+        fill: $white;
+        transition: fill 0.3s;
+      }
+    }
+
+    &:focus-visible {
+      outline: 3px solid $light-blue;
+      color: $midnight;
+
+      transition: color 0.3s;
+      #{$root}__plus {
+        fill: $blue;
+        transition: fill 0.3s;
+      }
+    }
+  }
+
+  &__message {
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.6s;
+
+    position: absolute;
+    top: -100px;
+    left: -195px;
+    width: 240px;
+    height: 76px;
+
+    color: $blue;
+    background-color: $white;
+    font-size: 14px;
+    line-height: 150%;
+    padding: 16px 20px 18px;
+
+    filter: drop-shadow(0px 4px 40px $shadow);
+
+    &::after {
+      position: absolute;
+      right: 0;
+      bottom: -16px;
+      content: "";
+      border: 8px solid transparent;
+      border-top: 8px solid $white;
+      border-right: 8px solid $white;
+    }
+
+    &_show {
+      opacity: 1;
+      transition: opacity 0.6s;
+    }
+  }
+
+  &__error {
+    display: none;
+    color: $red;
+    font-size: 12px;
+    line-height: 150%;
+    padding-left: 3px;
+    &_show {
+      display: inline-block;
+      margin-bottom: 18px;
+    }
+  }
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    height: 40px;
+    gap: 5px;
+
+    border-radius: 27px;
+    background: $grey3;
+    padding: 10px 13px 10px 18px;
+
+    &-close {
+      display: none;
+      align-items: center;
+
+      #{$root}__item-svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    &-name,
+    &-size {
+      font-family: Arial;
+      font-weight: 400;
+      line-height: 124%;
+      font-size: 16px;
+    }
+
+    &-name {
+      color: $black;
+      max-width: 75px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    &-size {
+      color: $steel;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        cursor: pointer;
+
+        #{$root}__item-close {
+          display: inline-flex;
+        }
+      }
+    }
+  }
+}
+
+.disabled {
+  pointer-events: none;
+
+  .input-file {
+    &__label {
+      color: $steel;
+    }
+    &__plus {
+      fill: $steel;
+    }
+  }
+}
