@@ -10,7 +10,7 @@ class InputEmail extends Component {
     this.email = this.getElement("input");
     this.error = this.getElement("error");
 
-    this.email.addEventListener("blur", this.validation);
+    this.email.addEventListener("change", this.validation);
     this.email.addEventListener("input", this.clear);
   }
 

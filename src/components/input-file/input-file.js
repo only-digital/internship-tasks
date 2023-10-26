@@ -15,6 +15,9 @@ class InputFile extends Component {
     this.template = document.querySelector(".template");
 
     this.file.addEventListener("change", this.fileValidation);
+
+    this.form = document.querySelector(".feedback-form__form");
+    this.form.addEventListener("reset", this.reset);
   }
 
   fileValidation = () => {
@@ -114,6 +117,12 @@ class InputFile extends Component {
     } else if (number >= 1048576) {
       return `${(number / 1048576).toFixed(1)} MB`;
     }
+  };
+
+  reset = () => {
+    this.list.innerHTML = "";
+    this.wrapper.classList.remove("disabled");
+    this.filesList.items.clear();
   };
 }
 

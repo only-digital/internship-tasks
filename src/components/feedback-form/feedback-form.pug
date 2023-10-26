@@ -1,0 +1,10 @@
+mixin feedback-form(props)
+	.feedback-form&attributes(attributes)(data-component='feedback-form')
+		h3.feedback-form__title= props.title
+		form.feedback-form__form
+			+input-email()
+			+text-area()
+			+input-file({text: 'Прикрепить файл'})
+			+input-checkbox({title: 'Вы подтверждаете, что ознакомились', href: "/" , link: 'c политикой обработки персональных данных' })
+			+button({text: "Кнопка", isSubmit: true})
+			span.feedback-form__status

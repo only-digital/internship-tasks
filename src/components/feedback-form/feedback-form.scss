@@ -1,0 +1,44 @@
+.feedback-form {
+  $root: &;
+
+  display: flex;
+  gap: 159px;
+
+  width: 1440px;
+  height: fit-content;
+  padding: 26px 130px 55px 30px;
+
+  &__title {
+    width: 285px;
+    color: $blue;
+    font-family: Arial;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -1px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+    margin-top: 24px;
+
+    & > div {
+      &:first-child {
+        margin-bottom: 10px;
+      }
+      &:nth-child(3) {
+        margin-top: 28px;
+      }
+      &:nth-child(4) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__status {
+    display: inline-block;
+    margin-top: 10px;
+  }
+}

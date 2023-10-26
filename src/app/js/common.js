@@ -4,6 +4,7 @@ import InputEmail from "../../components/input-email/input-email";
 import TextArea from "../../components/text-area/text-area";
 import InputFile from "../../components/input-file/input-file";
 import InputCheckbox from "../../components/input-checkbox/input-checkbox";
+import FeedbackForm from "../../components/feedback-form/feedback-form";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -17,6 +18,7 @@ const allComponents = {
 	'text-area': TextArea,
 	'input-file': InputFile,
 	'input-checkbox': InputCheckbox,
+	'feedback-form': FeedbackForm,
 }
 
 /**
