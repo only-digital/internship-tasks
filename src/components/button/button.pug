@@ -1,0 +1,3 @@
+mixin button(props)
+	button.button(type=props.isSubmit ? 'submit' : 'button' )&attributes(attributes)(data-component='button')= props.text
+		+svg('arrow-btn').button__svg
