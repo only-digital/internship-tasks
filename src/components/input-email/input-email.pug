@@ -1,0 +1,6 @@
+mixin input-email(props)
+	.input-email(data-component='input-email')
+		input.input-email__input(id='email', type="email", required)&attributes(attributes)
+		label.input-email__title(for="email") E-mail
+		+svg('success').input-email__svg
+		span.input-email__error

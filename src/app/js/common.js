@@ -1,5 +1,6 @@
 import ExampleButton from "../../components/example-button/example-button";
 import Button from "../../components/button/button";
+import InputEmail from "../../components/input-email/input-email";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -9,6 +10,7 @@ import Button from "../../components/button/button";
 const allComponents = {
     'example-button': ExampleButton,
 	button: Button,
+	'input-email': InputEmail,
 }
 
 /**
