@@ -1,0 +1,62 @@
+$borderColor: #002f6c;
+$hoveredButtonColor: #0041a0;
+$hoveredTextColor: #fff;
+$TextColor: #021f45;
+$activeButtonColor: #002f6c;
+$activeTextColor: #fff;
+$focusedButtonColor: #fff;
+$focusedTextColor: #021f45;
+$focusedOutline: #99b3d8;
+$disabledButtonColor: #bcbcbc;
+$disabledTextColor: #bcbcbc;
+$hoveredFileInput: #f4f4f4;
+$fileImageColor: #f4f4f4;
+$fileImageInfoColor: #909090;
+$errorColor: #ff0000;
+$qtyMessageColor: #002f6c;
+@mixin button-behavior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 24px;
+  border: 1px solid $borderColor;
+  font-size: 16px;
+  letter-spacing: -0.32px;
+
+  &:focus {
+    background-color: $focusedButtonColor;
+    color: $focusedTextColor;
+    outline: 2px solid $focusedOutline;
+    border: none;
+    & svg {
+      fill: $focusedTextColor;
+    }
+  }
+  &:active {
+    background-color: $activeButtonColor;
+    color: $activeTextColor;
+    border-color: $activeButtonColor;
+    & svg {
+      fill: $activeTextColor;
+    }
+  }
+  &:hover {
+    background-color: $hoveredButtonColor;
+    color: $hoveredTextColor;
+    border-color: $hoveredButtonColor;
+    & svg {
+      fill: $hoveredTextColor;
+    }
+  }
+  &:disabled {
+    color: $disabledTextColor;
+    border-color: $disabledButtonColor;
+    cursor: default;
+    & svg {
+      fill: $disabledButtonColor;
+    }
+  }
+  & svg {
+    fill: $borderColor;
+  }
+}

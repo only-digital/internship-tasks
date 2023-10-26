@@ -1,6 +1,6 @@
 mixin file-input(props)
-	div(class=`file-input ${props.parent}__file-input`)(data-component='file-input')
-		input.file-input__button&attributes(attributes)( type="file" id=props.id name=props.name data-max-size=props.maxSize data-max-qty=props.maxQty data-allowed=props.allowed accept=props.allowed)
+	div(class=`file-input ${props.parent}__file-input `)(data-component='file-input')
+		input(class =`file-input__button ${props.parent}__item ` )&attributes(attributes)( type="file" id=props.id name=props.name data-max-size=props.maxSize data-max-qty=props.maxQty data-allowed=props.allowed accept=props.allowed)
 		.file-input__file-container
 			.file-input__pseudo-btn-container
 				button.file-input__pseudo-button(type='button') Прикрепить файл
@@ -9,7 +9,7 @@ mixin file-input(props)
 				p.file-input__qty-message
 		template.file-input__template
 			.file-input__file-image
-				p.file-input__file-title Документ
+				p.file-input__file-title
 				p.file-input__file-ext
 				p.file-input__file-size
 				button.file-input__file-delete-button(type='button')

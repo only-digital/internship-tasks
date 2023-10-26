@@ -1,0 +1,88 @@
+$checkboxColor: #bcbcbc;
+$checkboxActiveColor: #0041a0;
+$checkboxFocusedColor: #99b3d8;
+$checkboxCheckedDisabledColor: #8eb2ec;
+$checkboxTextColor: #909090;
+$checkboxLinkColor: #002f6c;
+$checkboxDisabledColor: #bcbcbc;
+.input-checkbox {
+  $root: &;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 1.5;
+  &__checkbox {
+    appearance: checkbox;
+    width: 1px;
+    height: 1px;
+    clip-path: circle(0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    &:disabled {
+      border-color: $checkboxDisabledColor;
+      & + .input-checkbox__pseudo-checkbox {
+        pointer-events: none;
+      }
+      & ~ .input-checkbox__text,
+      ~ .input-checkbox__text .input-checkbox__link {
+        color: $checkboxDisabledColor;
+        pointer-events: none;
+      }
+    }
+    &:checked {
+      &:disabled + .input-checkbox__pseudo-checkbox {
+        background-color: $checkboxCheckedDisabledColor;
+        border: none;
+        & .input-checkbox__svg {
+          fill: white;
+        }
+      }
+      & + .input-checkbox__pseudo-checkbox .input-checkbox__svg {
+        display: block;
+      }
+      & + .input-checkbox__pseudo-checkbox:hover {
+        background-color: $checkboxActiveColor;
+        & .input-checkbox__svg {
+          fill: white;
+        }
+      }
+    }
+    &:focus + .input-checkbox__pseudo-checkbox {
+      background-color: white;
+      border: none;
+      outline: 2px solid $checkboxFocusedColor;
+    }
+  }
+  &__pseudo-checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    aspect-ratio: 1;
+    border: 1px solid $checkboxColor;
+    &:hover {
+      border-color: $checkboxActiveColor;
+    }
+  }
+  &__svg {
+    display: none;
+    width: 14px;
+    aspect-ratio: 1;
+    fill: $checkboxActiveColor;
+  }
+  &__text {
+    color: $checkboxTextColor;
+  }
+  &__link {
+    margin-left: 3px;
+    color: $checkboxLinkColor;
+    cursor: pointer;
+  }
+
+  //Your code here
+}

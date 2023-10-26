@@ -8,10 +8,13 @@ class FileInput extends Component {
     this.fileContainer = this.getElement('file-container');
     this.filePseudoButton = this.getElement('pseudo-button');
     this.errorMessage = this.getElement('error-message');
-    this.qtYMessage = this.getElement('qty-message');
-    console.log(this.qtYMessage);
-    // переменные с параметрами валидации
+    this.qtyMessage = this.getElement('qty-message');
 
+    // переменные с параметрами валидации
+    this.isRequared = this.fileInput.hasAttribute('required');
+    if (!this.isRequared) {
+      this._setIsValid(true);
+    }
     this.allowedFiles = this.fileInput.dataset.allowed.split(',');
     this.maxSizeUnits = this.fileInput.dataset.maxSize
       .match(/[a-z]{1,2}$/i)[0]
@@ -40,27 +43,29 @@ class FileInput extends Component {
         .join()
         .replace(/,/g, '|')
     );
-    this.inputValid = false;
-    this.formData = new FormData();
+
     this.addedFiles = [];
-    this.count = 0;
 
     // слушатели
     this.fileInput.addEventListener('change', this._checkValidity);
     this.filePseudoButton.addEventListener('click', () =>
       this.fileInput.click()
     );
+    this.filePseudoButton.addEventListener('blur', () =>
+      this._setErrorMessage('')
+    );
   }
 
   _createFileImage = (file) => {
     const fileImage = this.getElement('template').content.cloneNode(true);
-    // const fileItem = fileImage.querySelector('.file-input__file-image');
+    const fileTitle = fileImage.querySelector('.file-input__file-title');
     const fileExtParagraph = fileImage.querySelector('.file-input__file-ext');
     const fileSizeParagraph = fileImage.querySelector('.file-input__file-size');
     const fileDeleteButton = fileImage.querySelector(
       '.file-input__file-delete-button'
     );
     fileDeleteButton.setAttribute('data-name', file.name);
+    fileTitle.textContent = file.name.replace(/\..+$/, '');
     fileExtParagraph.textContent =
       file.name.match(/\..+$/i).toString().slice(1).toUpperCase() + ',';
     fileSizeParagraph.textContent = `${Math.round(file.size / 1024)} kB`;
@@ -72,10 +77,15 @@ class FileInput extends Component {
     this.addedFiles = this.addedFiles.filter((file) => file.name !== name);
     evt.target.closest('.file-input__file-image').remove();
     this._checkQty();
-    console.log(this.addedFiles);
+    this._setFileInputFiles();
+    if (this.isRequared) {
+      this.addedFiles.length > 0
+        ? this._setIsValid(true)
+        : this._setIsValid(false);
+    }
   };
   _checkValidity = () => {
-    this.errorMessage.textContent = '';
+    this._setErrorMessage('');
     const addedFilesName = this.addedFiles.map((file) => file.name);
     const inputFiles = Array.from(this.fileInput.files).filter(
       (file) => !addedFilesName.includes(file.name)
@@ -93,7 +103,12 @@ class FileInput extends Component {
         }
       }
     });
-    console.log(this.addedFiles);
+    this._setFileInputFiles();
+    if (this.isRequared) {
+      this.addedFiles.length > 0
+        ? this._setIsValid(true)
+        : this._setIsValid(false);
+    }
   };
 
   _checkQty = () => {
@@ -140,18 +155,25 @@ class FileInput extends Component {
     }
   };
   _setErrorMessage = (message) => {
-    const currentMessage = this.errorMessage.textContent;
-    if (currentMessage) {
-      this.errorMessage.textContent = `${currentMessage}, ${message}`;
-    } else {
-      this.errorMessage.textContent = message;
-    }
-  };
-  _setQtyMessage = (message) => {
-    this.qtYMessage.textContent = message;
+    this.errorMessage.textContent = message;
   };
 
-  // Your code here
+  _setQtyMessage = (message) => {
+    this.qtyMessage.textContent = message;
+  };
+
+  _setFileInputFiles = () => {
+    const dataTransfer = new DataTransfer();
+    this.addedFiles.forEach((file) => dataTransfer.items.add(file));
+    this.fileInput.files = dataTransfer.files;
+  };
+  _setIsValid = (isValid) => {
+    if (isValid) {
+      this.fileInput.setAttribute('data-valid', '');
+    } else {
+      this.fileInput.removeAttribute('data-valid');
+    }
+  };
 }
 
 export default FileInput;

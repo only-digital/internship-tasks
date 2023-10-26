@@ -2,6 +2,9 @@ import ExampleButton from '../../components/example-button/example-button';
 import Input from '../../components/input/input';
 import FileInput from '../../components/file-input/file-input';
 import Form from '../../components/form/form';
+import feedbackForm from '../../components/feedback-form/feedback-form';
+import inputCheckbox from '../../components/input-checkbox/input-checkbox';
+import inputSubmit from '../../components/input-submit/input-submit';
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
  * Ключ объекта - Название компонента, которое было указано во время его создания (совпадает с именем файлов)
@@ -12,6 +15,9 @@ const allComponents = {
   input: Input,
   'file-input': FileInput,
   form: Form,
+  'feedback-form': feedbackForm,
+  'input-checkbox': inputCheckbox,
+  'input-submit': inputSubmit,
 };
 
 /**

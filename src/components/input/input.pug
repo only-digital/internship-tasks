@@ -2,11 +2,11 @@
 -var textPattern = /[^]/;
 
 mixin input(props)
-	label(class=`input input_type_${props.type} ${props.parent}__input_type_${props.type}`)(data-component='input')(for=props.id)
+	label(class=`input input_type_${props.type} ${props.parent}__input_type_${props.type} `)(data-component='input')(for=props.id)
 		if (props.type ==="textarea")
-			textarea(class=`input__field input__field_type_${props.type}  ${props.parent}__input-fileld_type_${props.type}`)&attributes(attributes)( spellcheck=true id=props.id  placeholder=''  name=props.id data-pattern=props.pattern.toString().slice(1,-1))
+			textarea(class=`input__field input__field_type_${props.type}  ${props.parent}__item`)&attributes(attributes)( spellcheck=true id=props.id  placeholder=''  name=props.id data-pattern=props.pattern.toString().slice(1,-1))
 		else
-			input(class =`input__field input_type_${props.type} ${props.parent}__input-fileld_type_${props.type}`)&attributes(attributes)(id=props.id  placeholder='' type=props.type name=props.id data-pattern=props.pattern.toString().slice(1,-1))
+			input(class =`input__field input_type_${props.type} ${props.parent}__item`)&attributes(attributes)(id=props.id  placeholder='' type=props.type name=props.id data-pattern=props.pattern.toString().slice(1,-1))
 		span.input__field-name=props.name
 		+svg('valid_input').input__success-image
 		p.input__error-message

@@ -14,7 +14,7 @@ $titleSize: 32px;
     line-height: 1.2;
     letter-spacing: -0.64px;
     margin: 26px 0 0 30px;
-    margin-right: calc(0px + (176 - 0) * (100% - 750px) / (1440 - 750));
+    margin-right: calc(0px + (176 - 0) * (100% - 500px) / (1440 - 500));
     @media screen and (max-width: 750px) {
       margin-right: 0;
       font-size: 20px;

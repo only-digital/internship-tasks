@@ -1,10 +1,21 @@
 .form {
   $root: &;
   flex-grow: 1;
-
+  padding: 50px 130px 55px 0;
   &__file-input {
     margin-top: 28px;
   }
+  &__input-checkbox {
+    margin-top: 30px;
+  }
+  &__input-submit {
+    margin-top: 30px;
+  }
 
-  //Your code here
+  &__input_type_email .input__field:placeholder-shown:not(:focus) {
+    margin-top: 0;
+    & + .input__field-name {
+      top: 15px;
+    }
+  }
 }

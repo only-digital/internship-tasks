@@ -32,16 +32,22 @@ class Input extends Component {
   };
   _setIsvalid = (valid) => {
     if (valid) {
-      this.inputField.classList.remove('input__field_invalid');
-      this.inputField.classList.add('input__field_valid');
+      // this.inputField.classList.remove('input__field_invalid');
+      // this.inputField.classList.add('input__field_valid');
+      this.inputField.setAttribute('data-valid', '');
+      this.inputField.removeAttribute('data-invalid');
     } else {
-      this.inputField.classList.remove('input__field_valid');
-      this.inputField.classList.add('input__field_invalid');
+      // this.inputField.classList.remove('input__field_valid');
+      // this.inputField.classList.add('input__field_invalid');
+      this.inputField.removeAttribute('data-valid');
+      this.inputField.setAttribute('data-invalid', '');
     }
   };
   _setInputFocused = () => {
-    this.inputField.classList.remove('input__field_valid');
-    this.inputField.classList.remove('input__field_invalid');
+    this.inputField.removeAttribute('data-valid');
+    this.inputField.removeAttribute('data-invalid');
+    // this.inputField.classList.remove('input__field_valid');
+    // this.inputField.classList.remove('input__field_invalid');
     this._setErrorMessage(' ');
   };
   // Your code here

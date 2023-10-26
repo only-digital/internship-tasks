@@ -1,0 +1,4 @@
+mixin input-submit(props)
+	button(class = `input-submit ${props.parent}__input-submit`)&attributes(attributes)(data-component='input-submit' type="submit") Отправить
+		+svg('arrow').input-submit__svg
+	

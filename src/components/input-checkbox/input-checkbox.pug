@@ -1,0 +1,8 @@
+mixin input-checkbox(props)
+	label(class=`input-checkbox ${props.parent}__input-checkbox `)(for=props.id  data-component='input-checkbox')
+		input(class=`input-checkbox__checkbox ${props.parent}__item`)(type="checkbox" id=props.id)&attributes(attributes)
+		.input-checkbox__pseudo-checkbox
+			+svg('checkbox').input-checkbox__svg
+		p.input-checkbox__text Вы подтверждаете, что ознакомились
+			a.input-checkbox__link(href="#" target="blanck") c политикой обработки персональных данных
+		//Your code here

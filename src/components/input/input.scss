@@ -39,6 +39,11 @@ $disabled: #bcbcbc;
       height: 128px;
       resize: none;
       outline: none;
+      scrollbar-width: none;
+      background-color: white;
+      &::-webkit-scrollbar {
+        width: 0;
+      }
       &:placeholder-shown {
         height: 48px;
         &:hover,
@@ -47,18 +52,6 @@ $disabled: #bcbcbc;
         }
       }
     }
-    &:disabled {
-      color: $disabled;
-      border-color: $disabled;
-      pointer-events: none;
-      &:hover {
-        border-color: $disabled;
-      }
-      & ~ .input__error-message {
-        display: none;
-      }
-    }
-
     &:hover {
       background-color: $hovered;
       border: none;
@@ -69,6 +62,19 @@ $disabled: #bcbcbc;
         margin-left: 20px;
       }
     }
+    &:disabled {
+      color: $disabled;
+      border-color: $disabled;
+      pointer-events: none;
+      background-color: white;
+      pointer-events: none;
+      border-bottom: 1px solid;
+      border-radius: 0;
+      & ~ .input__error-message {
+        display: none;
+      }
+    }
+
     &:focus {
       background-color: $field-background-color;
       border: 1px solid $focused;
@@ -77,7 +83,7 @@ $disabled: #bcbcbc;
       cursor: text;
     }
 
-    &_invalid {
+    &[data-invalid] {
       border: 1px solid $invalid;
       border-radius: 24px;
       & + .input__field-name {
@@ -89,7 +95,7 @@ $disabled: #bcbcbc;
         background-color: $field-background-color;
       }
     }
-    &_valid {
+    &[data-valid] {
       background-color: $valid-background-color;
       border: 1px solid $valid-background-color;
       border-radius: 24px;

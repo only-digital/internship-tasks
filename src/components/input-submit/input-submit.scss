@@ -1,0 +1,15 @@
+@import '../file-input/btn-behavior-mixin.scss';
+.input-submit {
+  @include button-behavior;
+  padding: 6px 14px 6px 18px;
+  gap: 14px;
+  &__svg {
+    width: 32px;
+    aspect-ratio: 1;
+  }
+  &:disabled {
+    pointer-events: none;
+  }
+
+  //Your code here
+}
