@@ -1,0 +1,6 @@
+mixin text-area(props)
+	.text-area(data-component='text-area')
+		textarea.text-area__message(id="message", required)&attributes(attributes)
+		label.text-area__title(for="message") Ваше сообщение
+		+svg('success').text-area__svg
+		span.text-area__error
