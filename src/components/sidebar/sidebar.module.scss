@@ -1,0 +1,54 @@
+@import "/src/styles/variables.scss";
+
+.Sidebar {
+    width: 290px;
+    border-right: 1px solid $border-color;
+    min-height: 100vh;
+
+    &__header {
+        padding-left: 45px;
+        padding-top: 29px;
+        height: 80px;
+        border-bottom: 1px solid $border-color;
+
+		&__logo {
+			display: flex;
+			align-items: center;
+			max-width: fit-content;
+		}
+
+        &__text {
+			text-transform: uppercase;
+			margin-left: 9px;
+			width: 50px;
+			height: 26px;
+            color: $dark-blue-color;
+            font-size: 7px;
+            line-height: 8px;
+            font-weight: 500;
+
+        }
+    }
+
+    &__body {
+        padding: 40px 25px;
+    }
+
+    &__button {
+        padding-left: 18px;
+        display: flex;
+        align-items: center;
+        background-color: $button-active;
+        border-radius: 10px;
+		user-select: none;
+
+        height: 52px;
+        color: $blue-color;
+        font-size: 16px;
+        line-height: 25px;
+
+        img {
+            margin-right: 16px;
+        }
+    }
+}

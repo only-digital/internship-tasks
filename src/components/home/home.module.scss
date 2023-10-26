@@ -1,0 +1,23 @@
+@import "/src/styles/variables.scss";
+.Home {
+    flex-grow: 1;
+
+    background-color: $background-color;
+    &__white {
+        background-color: white;
+        height: 80px;
+        border-bottom: 1px solid $border-color;
+    }
+    &__header {
+        margin-top: 48px;
+        margin-bottom: 28px;
+        padding: 0 40px;
+        h1 {
+            color: $dark-blue-color;
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 39px;
+            letter-spacing: 0.25px;
+        }
+    }
+}

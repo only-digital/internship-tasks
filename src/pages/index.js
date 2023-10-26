@@ -1,21 +1,20 @@
-import styles from '../styles/index.module.scss'
-import ExampleButton from "../components/example-button/example-button";
-import {getIndexPage} from "../../lib/api";
+import styles from "../styles/index.module.scss";
+import Sidebar from "@/components/sidebar/sidebar";
+import Home from "@/components/home/home";
+import { getIndexPage } from "../../lib/api";
+import { useState } from "react";
 
 function Index(props) {
-
-    console.log(props)
+    console.log(props);
+    const title = props.title;
+    const [tasks, setTasks] = useState(props.tasks);
 
     return (
         <main className={styles.main}>
-            <ExampleButton/>
-
-            <ExampleButton initialValue={10}/>
-
-            {/* Your code here */}
-
+            <Sidebar />
+            <Home title={title} />
         </main>
-    )
+    );
 }
 
 export const getStaticProps = async () => {
@@ -23,7 +22,7 @@ export const getStaticProps = async () => {
 
     return {
         props: indexPage,
-        revalidate: 1
+        revalidate: 1,
     };
 };
 
