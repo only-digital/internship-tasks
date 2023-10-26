@@ -1,0 +1,20 @@
+@import "../../styles/colors.scss";
+
+.wrapper {
+  display: flex;
+  gap: 9px;
+}
+
+.text {
+  font-size: 7px;
+  font-weight: 500;
+  line-height: 8px;
+  width: 49px;
+  text-transform: uppercase;
+  color: $blue-dark;
+}
+
+.icon {
+  width: 72px;
+  height: 27px;
+}

@@ -1,8 +1,37 @@
+@import "./colors.scss";
+@import "../../public/roboto-font/roboto.css";
+
 .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 6rem;
-    min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  //   padding: 6rem;
+  min-height: calc(100vh - 80px);
+  background: $grey-background;
+}
+
+.header {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  padding: 0 29px;
+  height: 80px;
+  background: $white-background;
+  border-bottom: 1px solid $grey-border;
+}
+
+.aside {
+  width: 290px;
+  top: 0;
+  bottom: 0;
+  padding-top: 80px;
+  position: absolute;
+  border-right: 1px solid $grey-border;
+}
+
+.menu {
+  background: $white-background;
+  height: 100%;
 }
