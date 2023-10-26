@@ -1,0 +1,9 @@
+mixin input-checkbox(props)
+	.input-checkbox(data-component='input-checkbox')
+		.input-checkbox__wrapper
+			input.input-checkbox__accept(id='accept', type="checkbox")&attributes(attributes)
+			label.input-checkbox__title(for="accept")= props.title
+				if(props.link && props.href)
+					a.input-checkbox__link(href=props.href, target="_blank") &nbsp;
+						= props.link
+		span.input-checkbox__error Поле подтверждения обработки персональных данных является обязательным
