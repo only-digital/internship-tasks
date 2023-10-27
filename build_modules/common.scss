@@ -110,20 +110,55 @@ button {
 }
 
 .input {
-    padding: 18px 0;
+    position: relative;
+
+    padding: 13px 0;
 
     font-family: Arial, sans-serif;
     font-size: 16px;
+    line-height: 100%;
     color: $black1;
 
     border: none;
     resize: none;
 
     border-bottom: 1px solid $gray1;
+    border-radius: 0;
+    cursor: pointer;
+
+    transition: padding .3s, border .3s, background .3s, border-radius .3s;
 
     &::placeholder {
         font-family: Arial, sans-serif;
         font-size: 16px;
         color: $black1;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            padding-left: 20px;
+
+            border-bottom: 1px solid $gray4;
+            border-radius: 24px;
+            background-color: $gray4;
+        }
+    }
+
+    &:focus {
+        padding-left: 20px;
+
+        outline: 1px solid $blue2;
+        border-radius: 24px;
+        background-color: $white;
+
+
+    }
+
+    &--disabled {
+        pointer-events: none;
+
+        &::placeholder {
+            color:  $gray3;
+        }
     }
 }

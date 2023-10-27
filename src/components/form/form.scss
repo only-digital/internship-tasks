@@ -1,6 +1,7 @@
 .form {
 	$root: &;
 
+	flex-grow: 1;
 	margin-top: 37px;
 
 	&__input {
@@ -11,7 +12,34 @@
 	}
 
 	&__email-wrap {
+		position: relative;
+
 		margin-bottom: 22px;
+	}
+
+	&__input-text {
+		position: absolute;
+		top: -18px;
+		left: 20px;
+
+		display: block;
+
+		font-family: 'Arial';
+		font-size: 12px;
+		line-height: 150%;
+		letter-spacing: -0.24px;
+		color: $gray2;
+
+		opacity: 0;
+		transition: opacity .3s;
+	}
+
+	&__input:focus ~ &__input-text {
+		opacity: 1;
+	}
+
+	&__message-wrap {
+		position: relative;
 	}
 
 	&__message-input {
@@ -34,11 +62,61 @@
 		font-weight: 400;
 		line-height: 100%;
 		letter-spacing: -0.32px;
-		color: $gray2;
+		color: $blue3;
 
 		border: 1px solid $gray3;
 		border-radius: 25px;
 		cursor: pointer;
+		background-color: transparent;
+
+		transition: background-color .3s, color .3s, border .3s;
+
+		&--disabled {
+			color: $gray2;
+
+			pointer-events: none;
+
+			#{$root}__plus {
+				&::before,
+				&::after {
+					background-color: $gray2;
+				}
+			}
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				color: $white;
+
+				background-color: $blue2;
+				border-color: $blue2;
+	
+				#{$root}__plus {
+					&::before,
+					&::after {
+						background-color: $white;
+					}
+				}
+			}
+
+			&:focus {
+				outline: 3px solid $light-blue;
+			}
+		}
+
+		&:active {
+			color: $white;
+
+			background-color: $blue1;
+			border-color: $blue1;
+
+			#{$root}__plus {
+				&::before,
+				&::after {
+					background-color: $white;
+				}
+			}
+		}
 	}
 
 	&__plus {
@@ -59,7 +137,9 @@
 			width: 1px;
 			height: 100%;
 
-			background-color: $gray2;
+			background-color: $blue1;
+
+			transition: background-color .3s;
 		}
 
 		&::after {
@@ -72,32 +152,81 @@
 	&__checkbox-wrap {
 		display: flex;
 		align-items: center;
-		gap: 18px;
+		width: max-content;
 		margin-bottom: 30px;
+
+		&--disabled {
+			pointer-events: none;
+
+			#{$root}__checkbox-text {
+				color: $gray3;
+			}
+
+			#{$root}__checkbox-link,
+			#{$root}__checkbox-input {
+				opacity: 0.3;
+			}
+		}
 	}
 
 	&__checkbox-input  {
-		display: block;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		flex-shrink: 0;
+		order: 1;
 		
 		width: 16px;
 		height: 16px;
+		margin-right: 18px;
 
 		border: 1px solid $gray3;
 		cursor: pointer;
+
+		transition: border .3s, background-color .3s;
+	}
+
+	&__checkbox-icon {
+		width: 11px;
+		height: 8px;
+	}
+
+	&__checkbox-hidden-input:checked ~ &__checkbox-input {
+		background-color: $blue2;
+		border: 1px solid $blue2;
 	}
 
 	&__checkbox-text {
+		order: 2;
+
 		font-size: 14px;
 		font-weight: 400;
 		line-height: 150%;
-		color: $gray2;
+		color: $black1;
 
 		cursor: pointer;
 	}
+	
+	@media (hover: hover) {
+		&__checkbox-text:hover + &__checkbox-input,
+		&__checkbox-input:hover {
+			border: 1px solid $blue2;
+		}
+
+		&__checkbox-text:focus + &__checkbox-input,
+		&__checkbox-input:focus {
+			outline: 2px solid $light-blue;
+		}
+	}	
 
 	&__checkbox-link {
+		order: 3;
+		margin-left: 4px;
+
 		color: $blue1;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
 	}
 
 	&__submit {
@@ -110,14 +239,59 @@
 		font-weight: 400;
 		line-height: 100%;
 		letter-spacing: -0.32px;
-		color: $gray2;
+		color: $black1;
 
-		background-color: $gray4;
+		background-color: $white;
 		border-radius: 25px;
+		border: 1px solid $gray3;
+
+		transition: background .3s, color .3s, border .3s;
+
+		&--disabled {
+			color: $gray2;
+
+			pointer-events: none;
+
+			#{$root}__arrow {
+				fill: $gray2;
+			}
+		}
+
+		@media (hover: hover) {
+			&:hover {
+				color: $white;
+
+				background-color: $blue2;
+				border: 1px solid $blue2; 
+
+				#{$root}__arrow {
+					fill: $white;
+				}
+			}
+
+			&:active {
+				color: $white;
+
+				background-color: $blue1;
+				border: 1px solid $blue1; 
+
+				#{$root}__arrow {
+					fill: $white;
+				}
+			}
+
+			&:focus {
+				outline: 3px solid $light-blue;
+			}
+		}
 	}
 
 	&__arrow {
 		width: 32px;
 		height: 32px;
+
+		fill: $blue1;
+
+		transition: fill .3s;
 	}
 }
