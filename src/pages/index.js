@@ -2,6 +2,7 @@ import styles from "../styles/index.module.scss";
 import ExampleButton from "../components/example-button/example-button";
 import { getIndexPage } from "../../lib/api";
 import Logo from "@/components/logo/logo";
+import MenuItem from "@/components/menu-item/menu-item";
 
 function Index(props) {
   console.log(props);
@@ -16,7 +17,9 @@ function Index(props) {
         <Logo />
       </header>
       <aside className={styles.aside}>
-        <nav className={styles.menu}></nav>
+        <nav className={styles.menu}>
+          <MenuItem title="Список задач" icon="/list-icon.svg" />
+        </nav>
       </aside>
       <main className={styles.main}></main>
     </>
