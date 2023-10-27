@@ -1,0 +1,15 @@
+@import "../../styles/colors.scss";
+
+.wrapper {
+  padding: 48px 40px;
+  font-family: "Roboto", sans-serif;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 40px;
+  letter-spacing: 0.25px;
+  color: $blue-dark;
+  margin-bottom: 28px;
+}

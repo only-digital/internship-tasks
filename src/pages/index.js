@@ -3,6 +3,7 @@ import ExampleButton from "../components/example-button/example-button";
 import { getIndexPage } from "../../lib/api";
 import Logo from "@/components/logo/logo";
 import MenuItem from "@/components/menu-item/menu-item";
+import TodoList from "@/components/todo-list/todo-list";
 
 function Index(props) {
   console.log(props);
@@ -21,7 +22,9 @@ function Index(props) {
           <MenuItem title="Список задач" icon="/list-icon.svg" />
         </nav>
       </aside>
-      <main className={styles.main}></main>
+      <main className={styles.main}>
+        <TodoList title={props.title} items={props.tasks} />
+      </main>
     </>
   );
 }

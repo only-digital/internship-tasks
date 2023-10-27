@@ -2,11 +2,12 @@
 @import "../../public/roboto-font/roboto.css";
 
 .main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
   //   padding: 6rem;
+  margin-left: 290px;
   min-height: calc(100vh - 80px);
   background: $grey-background;
 }
