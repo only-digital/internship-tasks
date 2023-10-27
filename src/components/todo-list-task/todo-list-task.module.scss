@@ -1,0 +1,45 @@
+.TodoListTask {
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 10px;
+  font-family: 'Roboto';
+  position: relative;
+  &:hover &__title {
+    color: #007fff;
+  }
+  &__title {
+    color: rgba(22, 31, 62, 0.9);
+    font-size: 24px;
+    line-height: 130%;
+    padding-bottom: 17px;
+    border-bottom: 1px solid #e7eaee;
+    font-family: 'Roboto';
+    cursor: default;
+    &_comleted {
+      color: #babcc6;
+      font-size: 24px;
+      line-height: 130%; /* 31.2px */
+      text-decoration: line-through;
+      padding-bottom: 17px;
+      border-bottom: 1px solid #e7eaee;
+      cursor: default;
+    }
+  }
+  &__cross {
+    position: absolute;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26' fill='none'%3E%3Cpath d='M20 6L6 20' stroke='%23007FFF' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M6 6L20 20' stroke='%23007FFF' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+    width: 26px;
+    height: 26px;
+    top: 27px;
+    right: 24px;
+  }
+  &__text {
+    margin-top: 10px;
+    font-family: 'Roboto';
+    color: rgba(22, 31, 62, 0.9);
+    font-size: 16px;
+    line-height: 175%;
+    letter-spacing: 0.15px;
+    cursor: default;
+  }
+}

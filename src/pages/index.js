@@ -1,30 +1,30 @@
 import styles from '../styles/index.module.scss'
-import ExampleButton from "../components/example-button/example-button";
-import {getIndexPage} from "../../lib/api";
+import ExampleButton from '../components/example-button/example-button'
+import { getIndexPage } from '../../lib/api'
+import Header from './../components/header/header'
+import TodoList from './../components/todo-list/todo-list'
 
 function Index(props) {
+  return (
+    <main className={styles.main}>
+      <Header />
+      <TodoList data={props} />
+      {/* <ExampleButton />
 
-    console.log(props)
+      <ExampleButton initialValue={10} />
 
-    return (
-        <main className={styles.main}>
-            <ExampleButton/>
-
-            <ExampleButton initialValue={10}/>
-
-            {/* Your code here */}
-
-        </main>
-    )
+      Your code here */}
+    </main>
+  )
 }
 
 export const getStaticProps = async () => {
-    const indexPage = await getIndexPage();
+  const indexPage = await getIndexPage()
 
-    return {
-        props: indexPage,
-        revalidate: 1
-    };
-};
+  return {
+    props: indexPage,
+    revalidate: 1,
+  }
+}
 
-export default Index;
+export default Index

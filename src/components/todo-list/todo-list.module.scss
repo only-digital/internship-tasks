@@ -1,0 +1,71 @@
+.TodoList {
+  font-family: 'Roboto';
+  min-height: calc(100vh - 80px);
+  display: flex;
+  &__menu {
+    height: 100%;
+    width: 289px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding-top: 40px;
+    &__item {
+      display: flex;
+      align-items: center;
+      width: 240px;
+      height: 52px;
+      border-radius: 10px;
+      background: #e3edf7;
+      color: #007fff;
+      font-size: 16px;
+      padding-left: 18px;
+      &::before {
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.3989 1H7.685C3.62429 1 2 2.80476 2 7.31667V12.731C2 17.2429 3.62429 19.0476 7.685 19.0476H12.5579C16.6186 19.0476 18.2429 17.2429 18.2429 12.731V7.63395H15.1889C13.9191 7.63395 12.9218 7.42842 12.2631 6.76976C11.6045 6.1111 11.3989 5.11378 11.3989 3.84395V1ZM17.6757 6.68645L12.5579 1H12.3464V3.84395C12.3464 5.06129 12.5554 5.72211 12.9331 6.09977C13.3108 6.47744 13.9716 6.68645 15.1889 6.68645H17.6757Z' fill='%23007FFF'/%3E%3C/svg%3E");
+        width: 20px;
+        height: 20px;
+        padding-right: 16px;
+      }
+    }
+  }
+  &__content {
+    flex-grow: 1;
+    padding: 48px 40px;
+    background: #f3f6f9;
+    position: relative;
+    border-left: 1px solid #d9e1ec;
+    &__title {
+      font-family: 'Roboto';
+      color: #213c57;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 123.5%;
+      letter-spacing: 0.25px;
+    }
+    &__search {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+      display: flex;
+      width: 608px;
+      height: 56px;
+      padding: 15px 16px;
+      align-items: center;
+      align-content: center;
+      border-radius: 10px;
+      background: #fff;
+      ::after {
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='11' cy='11' r='6.25' stroke='%23007FFF' stroke-width='1.5'/%3E%3Cpath d='M15.9058 16.021L20.1944 19.697' stroke='%23007FFF' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+      }
+      &__input {
+        width: 550px;
+      }
+    }
+    &__tasks {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}
