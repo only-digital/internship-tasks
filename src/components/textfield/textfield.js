@@ -8,7 +8,6 @@ class Textfield extends Component {
         super(element);
         // how to select a whole component itself??
        
-        console.log('this is ' + this.root.outerHTML);
         this.input = this.getElement('input');
         // Your code here
         this.input.addEventListener('input', this.handleInput)
