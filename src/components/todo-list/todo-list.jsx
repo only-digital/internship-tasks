@@ -4,7 +4,20 @@ import styled from "./todo-list.module.scss";
 
 const TodoList = ({ title, items }) => {
   const [todos, setTodos] = React.useState(items);
-  console.log(todos);
+
+  const removeTodo = (item) => {
+    setTodos(todos.filter((todo) => todo.title != item.title));
+  };
+
+  const completeTodo = (item) => {
+    const index = todos.indexOf(item);
+    const updatedTodos = [...todos];
+    updatedTodos[index] = {
+      ...updatedTodos[index],
+      isCompleted: !updatedTodos[index].isCompleted,
+    };
+    setTodos(updatedTodos);
+  };
 
   return (
     <div className={styled.wrapper}>
@@ -12,9 +25,9 @@ const TodoList = ({ title, items }) => {
       {todos.map((todo, i) => (
         <TodoItem
           key={i}
-          title={todo.title}
-          text={todo.text}
-          isCompleted={todo.isCompleted}
+          item={todo}
+          remove={removeTodo}
+          complete={completeTodo}
         />
       ))}
     </div>

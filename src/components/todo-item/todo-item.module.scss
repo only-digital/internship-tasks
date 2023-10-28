@@ -6,6 +6,21 @@
   background: $white-background;
   margin-bottom: 20px;
   padding: 0 24px;
+
+  &:hover .title {
+    color: $blue-bright;
+  }
+
+  &.completed {
+    .title {
+      color: rgba($blue-black, 0.3);
+      text-decoration: line-through;
+    }
+
+    &:hover .title {
+      color: rgba($blue-black, 0.3);
+    }
+  }
 }
 
 .header {
@@ -21,6 +36,7 @@
   font-weight: 400;
   line-height: 31px;
   color: rgba($blue-black, 0.9);
+  transition: color 0.3s, text-decoration 0.3s;
 }
 
 .text {
@@ -30,4 +46,13 @@
   letter-spacing: 0.15px;
   max-width: 734px;
   padding: 10px 0 30px 0;
+}
+
+.icon {
+  cursor: pointer;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }

@@ -2,14 +2,10 @@
 @import "../../public/roboto-font/roboto.css";
 
 .main {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-  //   padding: 6rem;
   margin-left: 290px;
   min-height: calc(100vh - 80px);
   background: $grey-background;
+  cursor: url("../../public/cursor-triangle.svg"), auto;
 }
 
 .header {
@@ -19,6 +15,7 @@
   height: 80px;
   background: $white-background;
   border-bottom: 1px solid $grey-border;
+  cursor: url("../../public/cursor-triangle.svg"), auto;
 }
 
 .aside {
@@ -28,6 +25,7 @@
   padding-top: 80px;
   position: absolute;
   border-right: 1px solid $grey-border;
+  cursor: url("../../public/cursor-triangle.svg"), auto;
 }
 
 .menu {
