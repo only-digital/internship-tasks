@@ -1,0 +1,156 @@
+.only-text-area {
+	$root: &;
+	display: grid;
+	box-sizing: border-box;
+	&__header{
+
+		@include fontSettings(-0.24px,$add-mini-s,150%);
+		padding-left: 20px;
+		visibility: hidden;
+
+	}
+
+	&__text-block{
+		box-sizing: border-box;
+		display: flex;
+		align-items: center;
+		position: relative;
+		width: 100%;
+		justify-content: space-between;
+		border-width: 1px;
+		border-color: transparent;
+		border-style: solid;
+		
+		::placeholder{
+			color: $black_1;
+		}
+
+		&:after{
+			position: absolute;
+			content: '';
+			top: 46px;
+			left: 20px;
+			right: 20px;
+			height: 1px;
+			background: $soft-grey;
+		}
+		
+		#{$root}__text{
+			@include fontSettings(-0.32px,$add-mini-l,100%);
+
+			padding: 14px 50px 14px 20px;
+			align-items: center;
+			border-radius: 24px;
+			border-width: 1px;
+			border-color: transparent;
+			background:transparent;
+			resize: none;
+			width: 100%;
+			&:focus-visible{
+				outline: 0px;
+			}
+		}
+
+		#{$root}__icon{
+			position: absolute;
+			bottom: 16px;
+			right:20px;
+			visibility: hidden;
+		}
+
+	}
+
+	&__error{
+		padding-top: 2px;
+		padding-left: 20px;
+		display: inline;
+		@include fontSettings(-0.24px,$add-mini-s,150%);
+		visibility: hidden;
+	}
+
+
+	&_main-color{
+		color: $black_1;
+	}
+
+	&_addictive-color{
+		color:$grey;
+	}
+
+	&_error-color{
+		color: $red_1;
+	}
+
+
+
+	&:hover{
+		
+		#{$root}__text-block{
+			border-radius: 24px;
+			background-color: $soft-grey;
+		}
+
+	}
+
+	&_focus{
+
+		#{$root}__text-block{
+			border-radius: 24px;
+			border-color: $light-blue;
+			&:after{
+				visibility: hidden;
+			}
+		}
+
+		#{$root}__header{
+			visibility: visible;
+		}
+	}
+
+	&_disabled,&_disabled:hover{
+		
+		#{$root}_main-color{
+			color:$light-grey;
+		}
+
+		#{$root}__text-block{
+			background-color: transparent;
+		}
+	}
+
+	&_validate{
+		#{$root}__text-block{
+			border-radius: 24px;
+			background-color: $grey_3;
+			&:after{
+				visibility: hidden;
+			}
+		}
+		#{$root}__icon{
+			visibility: visible;
+		}
+
+		#{$root}__header{
+			visibility: visible;
+		}
+	}
+
+	&_invalidate{
+
+		#{$root}__text-block{
+			border-radius: 24px;
+			border-color: $red_1;
+			&:after{
+				visibility: hidden;
+			}	
+		}
+
+		#{$root}__header{
+			visibility: visible;
+		}
+
+		#{$root}__error{
+			visibility: visible;
+		}
+	}
+}

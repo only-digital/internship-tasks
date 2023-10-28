@@ -1,0 +1,5 @@
+mixin only-btn(props)
+	button.only-btn&attributes(attributes)(data-component='only-btn')
+		span.only-btn__text!=props.text	
+		span.only-btn__icon 
+			include ../../assets/icons/arrow.svg

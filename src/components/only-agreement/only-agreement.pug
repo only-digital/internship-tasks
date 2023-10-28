@@ -1,0 +1,6 @@
+mixin only-agreement(props)
+	.only-agreement&attributes(attributes)(data-component='only-agreement')
+		input.only-agreement__input(type="checkbox")
+		span.only-agreement__text!=props.text
+		if props.href||props.linkText 
+			a.only-agreement__link(href=props.href)!=`&nbsp${props.linkText}`

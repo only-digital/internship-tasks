@@ -1,0 +1,31 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/transitions.scss";
+@import "../../styles/variables.scss";
+
+.only-form {
+	$root: &;
+
+	display: grid;
+	padding-inline: 30px 130px;
+	padding-block: 25px 74px;
+	grid-template-columns: 276px 1fr;
+	gap: 168px;
+	justify-content: space-between;
+
+	&__header{
+		@include fontSettings(-0.64px,$m-size,120%,700);
+		
+	}
+
+	&__input-block{
+		display: grid;
+		grid-template-columns: 1fr;
+		padding-top: 24px;
+		gap:10px;
+	}
+
+	&_main-color{
+
+		color:$blue;
+	}
+}

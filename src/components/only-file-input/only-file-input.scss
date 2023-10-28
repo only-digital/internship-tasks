@@ -1,0 +1,106 @@
+
+@import "../../styles/mixins.scss";
+@import "../../styles/transitions.scss";
+@import "../../styles/variables.scss";
+
+.only-file-input {
+	$root: &;
+	display: flex;
+	&__select{
+		display: flex;
+		padding: 16px 14px 16px 16px;
+		border-radius: 25px;
+		border-width: 1px;
+		border-style: solid;
+		border-color: $light-grey;
+		width: max-content;
+		box-sizing: border-box;
+		gap: 16px;
+		
+		#{$root}__hidden{
+
+			display: none;
+		}
+		
+		#{$root}__text{
+			@include fontSettings(-0.32px,$add-mini-l,100%);
+		}
+	
+		#{$root}__icon{
+			display: flex;
+			align-items: center;
+			svg{
+				fill: $blue;
+			}
+		}
+
+		&:hover{
+			background-color: $light-blue;
+			
+			#{$root}_main-color{
+				color:$white;
+			}
+	
+			#{$root}__icon{
+				svg{
+					fill: $white;
+				}
+			}
+		}
+	
+		&:active{
+			background-color: $blue;
+		}
+	
+		&:focus{
+			outline-color:$soft-blue;
+			outline-style: solid;
+			outline-width: 3px;
+		}
+	
+		&:disabled{
+			#{$root}_main-color{
+				color:$grey;
+			}
+			#{$root}__icon{
+				svg{
+					fill: $grey;
+				}
+			}
+			border-color: $light-grey;
+		}
+	}
+
+	&__file{
+		display: flex;
+		width: max-content;
+		padding: 18px 10px 13px 10px;
+		border-radius: 25px;
+		background-color: $grey_3;
+		margin-inline:32px;
+
+		#{$root}__file-text{
+			@include fontSettings(-0.32px,$add-mini-l,124%);
+			color:$black_1;
+		}
+		#{$root}__file-desc{
+			margin-left: 4px;
+			@include fontSettings(-0.32px,$add-mini-l,124%);
+			color:$grey;
+		}
+		
+		#{$root}__file-icon{
+			margin-left: 4px;
+			cursor: pointer;
+			background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0%206.53333V7.46667H14V6.53333H0Z%22%20%2F%3E%3Cpath%20d%3D%22M7.46667%204.07974e-08L6.53333%200L6.53333%2014H7.46667L7.46667%204.07974e-08Z%22%20%2F%3E%3C%2Fsvg%3E');
+			svg{
+				fill:$blue;
+				transform: rotate(45deg);
+			}
+		}
+	}
+
+	&_main-color{
+		color:$double-dark;
+	}
+}

@@ -1,0 +1,8 @@
+mixin only-text-area(props)
+	.only-text-area()&attributes(attributes)(data-component='only-text-area')
+		.only-text-area__header(class='only-text-area_addictive-color')!=props.header 
+		.only-text-area__text-block 
+			textarea.only-text-area__text(class='only-text-area_main-color' placeholder=props.placeholder rows=4 required )
+			.only-text-area__icon 
+				include ../../assets/icons/successfull.svg
+		.only-text-area__error(class='only-text-area_error-color')!='error'
