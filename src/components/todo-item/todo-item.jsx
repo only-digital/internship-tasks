@@ -6,7 +6,11 @@ const TodoItem = ({ item, remove, complete }) => {
       className={`${styled.card}${
         item.isCompleted ? " " + styled.completed : ""
       }`}
-      onClick={() => complete(item)}
+      onClick={(e) => {
+        if (!e.target.closest(`.${styled.icon}`)) {
+          complete(item);
+        }
+      }}
     >
       <div className={styled.header}>
         <h5 className={styled.title}>{item.title}</h5>
