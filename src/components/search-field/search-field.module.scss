@@ -1,0 +1,27 @@
+@import "../../styles/colors.scss";
+
+.field {
+  width: calc((608 / 1550) * 100%);
+  height: 56px;
+  padding: 15px 16px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  background: $white-background;
+}
+
+.input {
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba($blue-dark, 0.9);
+  min-width: 0;
+  flex: 1;
+
+  &::placeholder {
+    color: rgba($blue-dark, 0.4);
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+  }
+}

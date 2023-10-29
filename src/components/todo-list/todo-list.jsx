@@ -1,9 +1,14 @@
 import React from "react";
 import TodoItem from "../todo-item/todo-item";
 import styled from "./todo-list.module.scss";
+import SearchField from "../search-field/search-field";
+import useSearch from "@/hooks/useSearch";
 
 const TodoList = ({ title, items }) => {
   const [todos, setTodos] = React.useState(items);
+  const [searchString, setSearchString] = React.useState("");
+
+  const filteredTodos = useSearch(searchString, todos);
 
   const removeTodo = (item) => {
     setTodos(todos.filter((todo) => todo.title != item.title));
@@ -21,8 +26,11 @@ const TodoList = ({ title, items }) => {
 
   return (
     <div className={styled.wrapper}>
-      <h2 className={styled.title}>{title}</h2>
-      {todos.map((todo, i) => (
+      <div className={styled.header}>
+        <h2 className={styled.title}>{title}</h2>
+        <SearchField setString={setSearchString} />
+      </div>
+      {filteredTodos.map((todo, i) => (
         <TodoItem
           key={i}
           item={todo}
