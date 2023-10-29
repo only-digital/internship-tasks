@@ -2,7 +2,7 @@ mixin input-file(props)
 	.input-file&attributes(attributes)(data-component='input-file')
 		.input-file__wrapper
 			label.input-file__label(tabindex="0")= props.text
-				input.input-file__input(type="file", accept='.pdf,.doc,.docx', multiple)
+				input.input-file__input(type="file", id="file", accept='.pdf,.doc,.docx', multiple)
 				+svg('plus').input-file__plus
 			span.input-file__error
 		.input-file__message Вы можете загрузить только 2 документа

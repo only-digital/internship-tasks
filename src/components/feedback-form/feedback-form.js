@@ -35,13 +35,19 @@ class FeedbackForm extends Component {
   sendForm = async () => {
     event.preventDefault();
     const formData = new FormData();
+    const elements = event.target.elements;
 
-    formData.append("email", this.email.value);
-    formData.append("message", this.message.value);
-    for (const file of this.file.files) {
-      formData.append("file", file);
-    }
-    formData.append("accept", this.accept.checked);
+    Array.from(elements).forEach((element) => {
+      const { id, value } = element;
+      if (id === "") return;
+      if (id === "file") {
+        for (const file of element.files) {
+          formData.append(id, file);
+        }
+        return;
+      }
+      formData.append(id, id === "accept" ? element.checked : value);
+    });
 
     try {
       const response = await fetch(URL, {
