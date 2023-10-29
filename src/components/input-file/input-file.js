@@ -14,14 +14,58 @@ class InputFile extends Component {
     this.list = this.getElement("list");
     this.template = document.querySelector(".template");
 
+    this.dropFileZone = this.getElement("label");
+    this.dropFileZone.addEventListener("dragover", this.dragover);
+    this.dropFileZone.addEventListener("dragenter", this.dragenter);
+    this.dropFileZone.addEventListener("dragleave", this.dragleave);
+    this.dropFileZone.addEventListener("drop", this.dropFile);
+
     this.file.addEventListener("change", this.fileValidation);
 
     this.form = document.querySelector(".feedback-form__form");
     this.form.addEventListener("reset", this.reset);
   }
 
+  dragover = () => {
+    event.preventDefault();
+    return false;
+  };
+
+  dragenter = () => {
+    this.dropFileZone.classList.add("input-file__label_drop");
+  };
+
+  dragleave = () => {
+    this.dropFileZone.classList.remove("input-file__label_drop");
+  };
+
+  dropFile = () => {
+    event.preventDefault();
+    this.dropFileZone.classList.remove("input-file__label_drop");
+
+    const names = [];
+    const dataTransfer = new DataTransfer();
+
+    for (const file of event.dataTransfer.files) {
+      dataTransfer.items.add(file);
+      names.push(file.name);
+    }
+
+    let index = 0;
+    for (const file of this.file.files) {
+      if (names.includes(file.name)) {
+        dataTransfer.items.remove(index);
+      }
+      index++;
+    }
+
+    this.file.files = dataTransfer.files;
+
+    this.fileValidation();
+  };
+
   fileValidation = () => {
-    const files = event.target.files;
+    const files = this.file.files;
     this.error.classList.remove("input-file__error_show");
     this.error.textContent = "";
 
