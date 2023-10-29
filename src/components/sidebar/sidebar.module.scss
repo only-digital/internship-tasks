@@ -4,6 +4,7 @@
     width: 290px;
     border-right: 1px solid $border-color;
     min-height: 100vh;
+    flex-shrink: 0;
 
     &__header {
         padding-left: 45px;
