@@ -8,10 +8,20 @@ function Index(props) {
     const title = props.title;
     const [tasks, setTasks] = useState(props.tasks);
 
+    const handleToggleTask = (taskId) => {
+        const updatedTasks = tasks.map(task => task.title === taskId ? {...task, isCompleted: !task.isCompleted} : task)
+        setTasks(updatedTasks);
+    }
+
+    const handleDeleteTask = (taskId) => {
+        const updatedTasks = tasks.filter(task => task.title !== taskId)
+        setTasks(updatedTasks)
+    }
+
     return (
         <main className={styles.main}>
             <Sidebar title={title} />
-            <Home tasks={tasks} title={title} />
+            <Home tasks={tasks} title={title} onToggleTask={handleToggleTask} onDeleteTask={handleDeleteTask} />
         </main>
     );
 }

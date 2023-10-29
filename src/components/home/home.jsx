@@ -9,7 +9,7 @@ const Home = (props) => {
                 <h1>{props.title}</h1>
             </div>
             <div className={styled.Home__taskContainer}>
-                <Tasks tasks={props.tasks} />
+                <Tasks tasks={props.tasks} onToggleTask={props.onToggleTask} onDeleteTask={props.onDeleteTask} />
             </div>
         </div>
     );
