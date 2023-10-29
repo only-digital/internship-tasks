@@ -13,14 +13,6 @@ const Index = () => {
     const [tasksState,setTasksState] = useState(tasks);
     const [searchState,setSearchState] = useState('');
     const [searchedTasks] = useSearch(tasksState.tasks,searchState);
-console.log(searchedTasks)
-    // useEffect(() => {
-    //     const newState = {
-    //         title:tasksState.title,
-    //         tasks:searchedTasks
-    //     }
-    //     setTasksState(newState);
-    // },[searchedTasks])
 
     const handleTask = (title,typeOfClick) => {
         if (typeOfClick==='delete') {
