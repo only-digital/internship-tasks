@@ -9,15 +9,23 @@
         border-bottom: 1px solid $border-color;
     }
     &__header {
-        margin-top: 48px;
-        margin-bottom: 28px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 40px;
+        margin-bottom: 20px;
         padding: 0 40px;
-        h1 {
+        &__title {
             color: $dark-blue-color;
             font-size: 32px;
             font-weight: 600;
             line-height: 39px;
             letter-spacing: 0.25px;
+            flex-grow: 1;
+        }
+        &__input {
+            max-width: 608px;
+            flex-grow: 1;
         }
     }
     &__taskContainer {

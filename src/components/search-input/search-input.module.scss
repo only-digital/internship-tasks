@@ -1,0 +1,27 @@
+@import '/src//styles/variables.scss';
+
+.SearchInput {
+	position: relative;
+	input {
+		width: 100%;
+		background-color: white;
+		padding: 16px;
+		border-radius: 10px;
+
+		color: $text-body-color;
+		font-size: 16px;
+		line-height: 24px;
+		letter-spacing: 0.15px;
+
+		&::placeholder {
+			opacity: 0.4;
+		}
+	}
+	img {
+		position: absolute;
+		padding: 4px;
+		right: 16px;
+		top: 16px;
+		pointer-events: none;
+	}
+}
