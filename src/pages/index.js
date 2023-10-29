@@ -5,14 +5,13 @@ import { getIndexPage } from "../../lib/api";
 import { useState } from "react";
 
 function Index(props) {
-    console.log(props);
     const title = props.title;
     const [tasks, setTasks] = useState(props.tasks);
 
     return (
         <main className={styles.main}>
-            <Sidebar />
-            <Home title={title} />
+            <Sidebar title={title} />
+            <Home tasks={tasks} title={title} />
         </main>
     );
 }

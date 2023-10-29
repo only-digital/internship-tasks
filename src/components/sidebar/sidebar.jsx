@@ -1,6 +1,6 @@
 import styled from "./sidebar.module.scss";
 
-const Sidebar = () => {
+const Sidebar = (props) => {
     return (
         <div className={styled.Sidebar}>
             <div className={styled.Sidebar__header}>
@@ -22,7 +22,7 @@ const Sidebar = () => {
             <div className={styled.Sidebar__body}>
                 <div className={styled.Sidebar__button}>
                     <img src="file.svg" />
-                    Список задач
+                    {props.title}
                 </div>
             </div>
         </div>

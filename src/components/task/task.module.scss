@@ -1,0 +1,61 @@
+@import "/src/styles/variables.scss";
+
+.Task {
+	position: relative;
+	
+	&__input {
+		position: absolute;
+
+		&:hover + .Task__body {
+			.Task__body__title {
+				color: $blue-color;
+			}
+		}
+		&:checked + .Task__body {
+			.Task__body__title {
+				opacity: 0.3;
+				text-decoration: line-through;
+			}
+		}
+		&:focus + .Task__body {
+			outline: 2px solid $light-blue-color;
+		}
+
+	}
+	&__deleteButton {
+		position: absolute;
+		display: inline-flex;
+		align-items: center;
+		padding: 6px;
+		justify-content: center;
+		top: 27px;
+		right: 24px;
+
+		&:focus img{
+			outline: 2px solid $light-blue-color;
+		}
+	}
+
+	&__body {
+		background-color: white;
+		border-radius: 12px;
+		padding: 24px;
+		padding-bottom: 31px;
+		margin-bottom: 20px;
+		&__title {
+			color: $text-body-color;
+			font-size: 24px;
+			line-height: 31px;
+		}
+		&__divider {
+			border-bottom: 1px solid $divider-color;
+			margin: 17px 0;
+		}
+		&__text {
+			font-size: 16px;
+			line-height: 28px;
+			letter-spacing: 0.15px;
+			color: $text-body-color;
+		}
+	}
+}
