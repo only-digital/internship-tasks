@@ -37,7 +37,10 @@ class InputFile extends Component {
     }
 
     for (const file of files) {
-      if (file.size > MAX_MB) {
+      if (this.isNotAllowedType(file.type)) {
+        this.error.classList.add("input-file__error_show");
+        this.error.textContent = "Допустимые форматы файлов: .pdf, .doc, .docx";
+      } else if (file.size > MAX_MB) {
         this.error.classList.add("input-file__error_show");
         this.error.textContent = "Максимальный размер файла 5 MB";
       } else {
@@ -96,6 +99,18 @@ class InputFile extends Component {
     element.remove();
     this.wrapper.style.marginRight = "32px";
     this.wrapper.classList.remove("disabled");
+  };
+
+  isNotAllowedType = (type) => {
+    if (
+      type === "application/pdf" ||
+      type === "application/msword" ||
+      type ===
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    ) {
+      return false;
+    }
+    return true;
   };
 
   returnTypeFile = (type) => {
