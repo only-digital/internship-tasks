@@ -1,18 +1,54 @@
 .only-agreement {
 	$root: &;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	margin-bottom: 11px;
 
-	&__input{
+	@media(max-width:1280px){
+		display: grid;
+		grid-template-columns: min-content auto;
+		grid-template-rows: auto auto;
+		#{$root}__link{
+			grid-column:span 2;
+		}
+	}
 
-
+	&__checkbox{
+		margin-right: 18px;
+		appearance:auto;
 	}
 
 	&__text{
-
-
+		@include fontSettings(0px,$add-mini-m,150%);
 	}
 
 	&__link{
 
+		@include fontSettings(0px,$add-mini-m,150%);
+
+		&:hover{
+			color:$light-blue;
+		}
+		&:visited{
+			color:$red;
+		}
+
+	}
+
+	&_color-main{
+		color:$grey;
+	}
+
+	&_color-addictive{
+		color:$blue;
+	}
+
+	&_validate{
+		
+	}
+
+	&_invalidate{
 		
 	}
 }

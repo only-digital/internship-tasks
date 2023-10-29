@@ -5,8 +5,11 @@
 
 .only-file-input {
 	$root: &;
-	display: flex;
+	display: grid;
+	grid-template-columns: max-content auto;
+	grid-template-rows: 1fr 20px;
 	&__select{
+		grid-row: 1;
 		display: flex;
 		padding: 16px 14px 16px 16px;
 		border-radius: 25px;
@@ -18,7 +21,6 @@
 		gap: 16px;
 		
 		#{$root}__hidden{
-
 			display: none;
 		}
 		
@@ -59,25 +61,30 @@
 		}
 	
 		&:disabled{
-			#{$root}_main-color{
-				color:$grey;
-			}
-			#{$root}__icon{
-				svg{
-					fill: $grey;
+			&,&:focus,&:active,&:hover{
+				#{$root}_main-color{
+					color:$grey;
 				}
-			}
-			border-color: $light-grey;
+				#{$root}__icon{
+					svg{
+						fill: $grey;
+					}
+				}
+				border-color: $light-grey;
+			}	
 		}
 	}
 
 	&__file{
 		display: flex;
 		width: max-content;
-		padding: 18px 10px 13px 10px;
+		padding-inline: 18px 13px;
+		padding-block: 10px;
 		border-radius: 25px;
 		background-color: $grey_3;
-		margin-inline:32px;
+		margin-left:32px;
+		grid-row: 1;
+		align-items: center;
 
 		#{$root}__file-text{
 			@include fontSettings(-0.32px,$add-mini-l,124%);
@@ -89,18 +96,80 @@
 			color:$grey;
 		}
 		
-		#{$root}__file-icon{
+		#{$root}__file-icon-container{
+			display: flex;
+			align-items: center;
 			margin-left: 4px;
+			height: 20px;
+			width: 20px;
 			cursor: pointer;
-			background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20viewBox%3D%220%200%2014%2014%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M0%206.53333V7.46667H14V6.53333H0Z%22%20%2F%3E%3Cpath%20d%3D%22M7.46667%204.07974e-08L6.53333%200L6.53333%2014H7.46667L7.46667%204.07974e-08Z%22%20%2F%3E%3C%2Fsvg%3E');
-			svg{
-				fill:$blue;
-				transform: rotate(45deg);
-			}
+		}
+
+		#{$root}__file-icon{
+			transform: rotate(45deg);
+			width: 14px;
+			height: 14px;
+			background-repeat: no-repeat;
+			background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAxNCAxNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMCA2LjUzMzMzVjcuNDY2NjdIMTRWNi41MzMzM0gwWiIgZmlsbD0iIzAwMkY2QyIgLz48cGF0aCBkPSJNNy40NjY2NyA0LjA3OTc0ZS0wOEw2LjUzMzMzIDBMNi41MzMzMyAxNEg3LjQ2NjY3TDcuNDY2NjcgNC4wNzk3NGUtMDgiIGZpbGw9IiMwMDJGNkMiIC8+PC9zdmc+');
 		}
 	}
 
 	&_main-color{
 		color:$double-dark;
 	}
+
+	&_error-color{
+		color:$red_1;
+	}
+
+	&__error{
+		grid-row: 2;
+		grid-column: span 2;
+		padding-top: 7px;
+		padding-left: 20px;
+		display: block;
+		@include fontSettings(-0.24px,$add-mini-s,150%);
+		visibility: hidden;
+	}
+
+	&__notify{
+		padding-inline: 20px;
+		padding-block: 16px 34px;
+		position: absolute;
+		display: none;
+		background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMjEiIGhlaWdodD0iMTcyIiB2aWV3Qm94PSIwIDAgMzIxIDE3MiIgZmlsbD0ibm9uZSI+PGcgZmlsdGVyPSJ1cmwoI2ZpbHRlcjBfZF8xXzEwNTIpIj48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTI4MC41IDM2SDQwLjVWMTEySDI2NC40OTlMMjgwLjQ5OSAxMjhWMTEySDI4MC41VjM2WiIgZmlsbD0id2hpdGUiLz48L2c+PGRlZnM+PGZpbHRlciBpZD0iZmlsdGVyMF9kXzFfMTA1MiIgeD0iMC41IiB5PSIwIiB3aWR0aD0iMzIwIiBoZWlnaHQ9IjE3MiIgZmlsdGVyVW5pdHM9InVzZXJTcGFjZU9uVXNlIiBjb2xvci1pbnRlcnBvbGF0aW9uLWZpbHRlcnM9InNSR0IiPjxmZUZsb29kIGZsb29kLW9wYWNpdHk9IjAiIHJlc3VsdD0iQmFja2dyb3VuZEltYWdlRml4Ii8+PGZlQ29sb3JNYXRyaXggaW49IlNvdXJjZUFscGhhIiB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMTI3IDAiIHJlc3VsdD0iaGFyZEFscGhhIi8+PGZlT2Zmc2V0IGR5PSI0Ii8+PGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMjAiLz48ZmVDb2xvck1hdHJpeCB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMC4xIDAiLz48ZmVCbGVuZCBtb2RlPSJub3JtYWwiIGluMj0iQmFja2dyb3VuZEltYWdlRml4IiByZXN1bHQ9ImVmZmVjdDFfZHJvcFNoYWRvd18xXzEwNTIiLz48ZmVCbGVuZCBtb2RlPSJub3JtYWwiIGluPSJTb3VyY2VHcmFwaGljIiBpbjI9ImVmZmVjdDFfZHJvcFNoYWRvd18xXzEwNTIiIHJlc3VsdD0ic2hhcGUiLz48L2ZpbHRlcj48L2RlZnM+PC9zdmc+');
+		background-position: center;
+		background-repeat: no-repeat;
+		z-index: 1;
+		width: 240px;
+		height: 92px;
+		top:200px;
+		right: 700px;
+		filter: drop-shadow(0px 4px 40px rgba(0, 0, 0, 0.10));
+		@include fontSettings(0px,$add-mini-m,150%);
+
+	}
+
+	&_notify-color{
+		color:$blue;
+	}
+
+	&_show{
+		#{$root}__notify{
+			display:block;
+		}
+	}
+
+	&_validate{
+		#{$root}__error{
+			visibility: hidden;
+		}
+	}
+
+	&_invalidate{
+		#{$root}__error{
+			visibility: visible;
+		}
+	}
+
 }

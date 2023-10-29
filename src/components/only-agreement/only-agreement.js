@@ -1,13 +1,19 @@
 import Component from '../../app/js/base/component';
 
 class OnlyAgreement extends Component {
+    checkbox;
     constructor(element) {
         super(element);
 
-        // Your code here
+        this.checkbox = this.getElement('checkbox');
+        this.checkbox.addEventListener('click',this.checkedAgreement);
     }
 
-    // Your code here
+    checkedAgreement=()=>{
+        (this.checkbox.checked)
+            ?this.root.classList.add('only-agreement_validate')
+            :this.root.classList.remove('only-agreement_validate');
+    }
 }
 
 export default OnlyAgreement

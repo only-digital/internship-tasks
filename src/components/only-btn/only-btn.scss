@@ -1,14 +1,102 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/transitions.scss";
+@import "../../styles/variables.scss";
+
 .only-btn {
 	$root: &;
+	display: flex;
+	box-sizing: border-box;
+	border-radius: 24px;
+	border-width: 1px;
+	border-style: solid;
+	padding-inline: 18px 14px;
+	width: max-content;
+	gap:14px;
+	height: 48px;
+	align-items: center;
+	justify-content: center;
+	background-color: $white;
+	border-color: $light-grey;
+	//transition: $background-color-fast-transition;
+	cursor: pointer;
 
 	&__text{
-
-
+		@include fontSettings(-0.32px,$add-mini-l,100%);
+		//transition: $color-fast-transition;
 	}
 
 	&__icon{
+		display: flex;
+		align-items: center;
+		svg{
+			fill:$blue;
+			//transition: $fill-fast-transition;
+		}
+	}
 
+	&:hover{
+		#{$root}_main-color{
+			color: $white;
+		}
 
+		background-color: $light-blue;
+
+		#{$root}__icon{
+			svg{
+				fill: $white;
+			}
+		}
+	}
+
+	&:disabled,
+	&:disabled:active{
+		#{$root}_main-color{
+			color: $grey;
+		}
+
+		#{$root}__icon{
+			svg{
+				fill:$grey;
+			}
+		}
+
+		background-color: $white;
+		border-color: $light-grey;
+		cursor: default;		
+	}
+
+	&:focus{
+		outline-style:solid;
+		outline-width:3px;
+		outline-color: $soft-blue;
+		
+		#{$root}_main-color{
+			color: $light-blue;
+		}
+
+		#{$root}__icon{
+			svg{
+				fill:$light-blue;
+			}
+		}
+	}	
+
+	
+	&:active{
+		background-color: $blue;
+			
+		#{$root}_main-color{
+			color:$white;
+		}
+
+		#{$root}__icon{
+			svg{
+				fill: $white;
+			}
+		}	
 	}
 	
+	&_main-color{
+		color:$black_1;
+	}
 }

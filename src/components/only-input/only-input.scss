@@ -75,19 +75,14 @@
 		color: $red_1;
 	}
 
-
-
-	&:hover{
-		
+	&:hover{	
 		#{$root}__input-block{
 			border-radius: 24px;
 			background-color: $soft-grey;
 		}
-
 	}
 
 	&_focus{
-
 		#{$root}__input-block{
 			border-radius: 24px;
 			border-color: $light-blue;
@@ -101,15 +96,16 @@
 		}
 	}
 
-	&_disabled,&_disabled:hover{
-		
-		#{$root}_main-color{
-			color:$light-grey;
-		}
-
-		#{$root}__input-block{
-			background-color: transparent;
-		}
+	&_disabled{
+		&,&:hover,&:active,&:focus{
+			#{$root}_main-color{
+				color:$light-grey;
+			}
+	
+			#{$root}__input-block{
+				background-color: transparent;
+			}
+		}	
 	}
 
 	&_validate{

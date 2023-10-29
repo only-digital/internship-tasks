@@ -3,6 +3,7 @@ import Component from '../../app/js/base/component';
 class OnlyTextArea extends Component {
     textarea;
     error;
+
     constructor(element) {
         super(element);
 
@@ -11,6 +12,7 @@ class OnlyTextArea extends Component {
 
         this.root.addEventListener('click',this.focus);
         this.textarea.addEventListener('blur',this.blur);
+        this.textarea.addEventListener('input',this.reset);
     }
 
     focus = ()=>{
@@ -18,13 +20,22 @@ class OnlyTextArea extends Component {
         this.textarea.focus();
     }
 
+    reset=()=>{  
+        this.root.classList.remove('only-text-area_invalidate');
+    }
+
+    showError = (message)=>{
+        this.root.classList.add('only-text-area_invalidate');
+        this.root.classList.remove('only-text-area_validate');
+        this.error.textContent=message;
+    }
+
     blur=()=>{
         this.root.classList.remove('only-text-area_focus');
    
         if(this.textarea.value.length>1000){
-            this.error.textContent = "Message must be more than 0 and less than 1000 characters!"
-            this.root.classList.add('only-text-area_invalidate');
-            this.root.classList.remove('only-text-area_validate');
+            this.showError("Message must be more than 0 and less than 1000 characters!");
+            return;
         }
         else if(this.textarea.value===''){
             this.root.classList.remove('only-text-area_validate');
