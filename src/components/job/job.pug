@@ -9,22 +9,7 @@ mixin job(props)
 		section.job__description
 		section.job__form-section
 			h3 Форма обратной связи
-			form.job__form
-				div.job__email
-					label(for='e-mail').job__label Email
-					input(type='email', id='e-mail', required).job__email__input
-					div.job__validity__message__wrapper
-						span.job__email__validity__message
-				div.job__checkbox
-					input(type='checkbox', id='checkbox-input', required).job__checkbox__input
-					label(for='checkbox-input') Вы подтверждаете, что ознакомились c политикой обработки персональных данных
-					div.job__checkbox__validity__message
-				button(type='submit').job__submit-button
-					span Отправить
-					+svg('vector').job__vector
-				div.job__form__sent__message
-					div.job__circle
-						+svg('union').job__union
-					p.job__message__text Форма успешно отправлена
+			+form()
+
 
 

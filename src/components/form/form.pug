@@ -1,0 +1,19 @@
+mixin form(props)
+	.form&attributes(attributes)(data-component='form')
+		form.form__form
+			div.form__email
+				label(for='e-mail').form__label Email
+				input(type='email', id='e-mail', required).form__email__input
+				div.form__validity__message__wrapper
+					span.form__email__validity__message
+			div.form__checkbox
+				input(type='checkbox', id='checkbox-input', required).form__checkbox__input
+				label(for='checkbox-input') Вы подтверждаете, что ознакомились c политикой обработки персональных данных
+				div.form__checkbox__validity__message
+			button(type='submit').form__submit-button
+				span Отправить
+				+svg('vector').form__vector
+			div.form__form__sent__message
+				div.form__circle
+					+svg('union').form__union
+				p.form__message__text Форма успешно отправлена
