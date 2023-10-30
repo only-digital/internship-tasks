@@ -143,6 +143,19 @@ input[type="email" i] {
 	.email__svg {
 		opacity: 1;
 	}
+	&:hover {
+		.email__label {
+			opacity: 1;
+		}
+		.email__input {
+			border: none;
+			border-radius: 24px;
+			background-color: $extra-gray-3;
+		}
+		.email__svg {
+			opacity: 1;
+		}
+	}
 }
 &.invalid {
 	.email__span {
