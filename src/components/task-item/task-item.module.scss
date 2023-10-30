@@ -1,0 +1,47 @@
+@import "../../styles/colors.scss";
+
+.TaskItem {
+  padding: 24px 24px 31px;
+  background-color: $white;
+  border-radius: 12px;
+  color: $dark;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 17px;
+    border-bottom: 1px solid $light-gray2;
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 130%;
+    transition: color 0.3s;
+
+    &_completed {
+      color: $opacity-gray;
+      text-decoration-line: line-through;
+    }
+  }
+
+  &__remove {
+    width: 26px;
+    height: 26px;
+  }
+
+  &__text {
+    width: 734px;
+    font-size: 16px;
+    line-height: 175%;
+    letter-spacing: 0.15px;
+    margin-top: 10px;
+  }
+
+  @media (hover: hover) {
+    &:hover &__title {
+      color: $azure;
+      transition: color 0.3s;
+    }
+  }
+}
