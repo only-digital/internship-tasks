@@ -14,7 +14,7 @@
 	&__email-wrap {
 		position: relative;
 
-		margin-bottom: 22px;
+		margin-bottom: 42px;
 	}
 
 	&__input-text {
@@ -30,12 +30,36 @@
 		letter-spacing: -0.24px;
 		color: $gray2;
 
+		pointer-events: none;
 		opacity: 0;
 		transition: opacity .3s;
+
+		&--shown {
+			opacity: 1;
+		}
 	}
 
-	&__input:focus ~ &__input-text {
-		opacity: 1;
+	&__email-error-text {
+		position: absolute;
+		bottom: -20px;
+		left: 0;
+
+		font-size: 12px;
+		color: $red;
+	}
+
+	&__success-arrow {
+		position: absolute;
+		right: 20px;
+		top: calc(50% - 6.5px);
+
+		width: 18px;
+		height: 13px;
+
+		opacity: 0;
+
+		transition: opacity .3s;
+		pointer-events: none;
 	}
 
 	&__message-wrap {

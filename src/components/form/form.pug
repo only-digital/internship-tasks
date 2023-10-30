@@ -1,11 +1,17 @@
 mixin form(props)
-	form.form&attributes(attributes)(data-component='form')
+	form.form&attributes(attributes)(
+		data-component='form'
+		id='form'
+	)
 		p.form__email-wrap
 			input(
 				placeholder='E-mail'
 				type='email'
+				data-reg='^([a-zA-Z\-0-9_]+|([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)+)|(".+"))@(([a-zA-Z\-0-9]+\.)+[a-zA-Z\-0-9]{2,})$'
 			).form__input.form__email-input.input
 			span.form__input-text E-mail
+			span.form__email-error-text
+			+svg('success-arrow').form__success-arrow
 		p.form__message-wrap 
 			textarea(placeholder='Ваше сообщение').form__input.form__message-input.input
 			span.form__input-text Ваше сообщение
