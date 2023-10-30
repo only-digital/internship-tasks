@@ -1,8 +1,6 @@
 .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 6rem;
-    min-height: 100vh;
+  display: flex;
+  max-width: 1920px;
+  margin: 0 auto;
+  min-height: 100vh;
 }
