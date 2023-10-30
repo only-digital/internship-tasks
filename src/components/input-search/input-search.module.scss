@@ -1,0 +1,27 @@
+@import "../../styles/colors.scss";
+
+.InputSearch {
+  position: relative;
+
+  &__input {
+    width: 608px;
+    height: 56px;
+    padding: 15px 56px 15px 16px;
+    border-radius: 10px;
+    background: $white;
+
+    color: $opacity-blue;
+    font-size: 16px;
+    line-height: 150%;
+
+    &::-webkit-search-cancel-button {
+      display: none;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    right: 16px;
+    top: 15px;
+  }
+}
