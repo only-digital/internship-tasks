@@ -16,7 +16,7 @@
 			display: none;
 		}
 
-		.form__form__sent__message {
+		.form__form-sent-message {
 			display: flex;
 			align-items: center;
 			gap: 21px;
@@ -38,7 +38,7 @@
 		}
 	}
 
-	&__form__sent__message {
+	&__form-sent-message {
 		display: none;
 	}
 
@@ -52,7 +52,7 @@
 		padding-left: 20px;
 	}
 
-	&__email__input {
+	&__email-input {
 		width: 836px;
 		height: 48px;
 		border: 1px solid #0041A0;
@@ -78,14 +78,13 @@
 		height: 22px;
 	}
 
-	&__validity__message__wrapper {
+	&__validity-message-wrapper {
 		height: 60px;
 		padding-top: 25px;
 		padding-bottom: 14px;
 	}
 
-	&__email__validity__message {
-		visibility: hidden;
+	&__email-validity-message, &__checkbox-validity-message {
 		color: #EF1C1C;
 	}
 

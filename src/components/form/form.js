@@ -9,8 +9,8 @@ class Form extends Component {
         super(element);
 
         const submitButton = this.getElement('submit-button');
-        this.emailInput = this.getElement('email__input');
-        this.checkboxInput = this.getElement('checkbox__input');
+        this.emailInput = this.getElement('email-input');
+        this.checkboxInput = this.getElement('checkbox-input');
         this.form = this.getElement('form');
 
         submitButton.onclick = (event) => this.submitForm(event);
@@ -44,10 +44,10 @@ class Form extends Component {
     }
 
     checkEmailValidity() {
-        const emailValidityMessage = this.getElement('email__validity__message');
+        const emailValidityMessage = this.getElement('email-validity-message');
 
         if (this.emailInput.validity.typeMismatch) {
-            this.setErrorMessage('Email должен содержать символ @', emailValidityMessage)
+            this.setErrorMessage('Не валидный формат email', emailValidityMessage)
         } else if (this.emailInput.validity.valueMissing) {
             this.setErrorMessage('Поле email обязательно', emailValidityMessage);
         } else {
@@ -56,7 +56,7 @@ class Form extends Component {
     }
 
     checkCheckboxValidity() {
-        const checkboxValidityMessage = this.getElement('checkbox__validity__message')
+        const checkboxValidityMessage = this.getElement('checkbox-validity-message')
 
         if (this.checkboxInput.validity.valid) {
             checkboxValidityMessage.style.visibility = 'hidden';
