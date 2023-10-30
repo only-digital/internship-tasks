@@ -1,0 +1,7 @@
+.grid {
+  $root: &;
+
+  display: grid;
+  grid-template-rows: auto;
+  row-gap: 130px;
+}

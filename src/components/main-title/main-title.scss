@@ -7,10 +7,47 @@
     font-size: 64px;
     margin-bottom: 45px;
   }
-  &__date {
+  &__date,
+  &__info {
     color: #8f8f8f;
     font-size: 20px;
     opacity: 0.7;
     margin-bottom: 20px;
+  }
+
+  &__info {
+    font-size: 16px;
+    display: flex;
+    :first-child {
+      margin-right: 16px;
+    }
+  }
+}
+
+// loader
+
+$lite: #8f8f8f;
+$size: 48px;
+
+.loader {
+  $root: &;
+
+  width: calc($size/3);
+  height: calc($size/3);
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  background: $lite;
+  animation: shadowExpandX 2s linear infinite alternate;
+}
+
+@keyframes shadowExpandX {
+  0% {
+    box-shadow: 0 0, 0 0;
+    color: rgba($lite, 0.2);
+  }
+  100% {
+    box-shadow: calc(($size / 2) * -1) 0, calc($size/2) 0;
+    color: rgba($lite, 0.8);
   }
 }

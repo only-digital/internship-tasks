@@ -1,5 +1,7 @@
 import ExampleButton from "../../components/example-button/example-button";
+import Grid from "../../components/grid/grid";
 import MainTitle from "../../components/main-title/main-title";
+import MyForm from "../../components/my-form/my-form";
 import MyList from "../../components/my-list/my-list";
 
 /**
@@ -11,6 +13,8 @@ const allComponents = {
   "example-button": ExampleButton,
   "my-list": MyList,
   "main-title": MainTitle,
+  "my-form": MyForm,
+  grid: Grid,
 };
 
 /**
