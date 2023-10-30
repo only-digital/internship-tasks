@@ -18,6 +18,10 @@ $success: #27AE60;
 	color: $main-red;
 	font-family: Arial;
 	padding-left: 20px;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 150%; /* 18px */
+	letter-spacing: -0.24px;	
 }
 
 
@@ -28,7 +32,9 @@ $success: #27AE60;
 	width: 100%;
 	position: relative;
 	&__span {
+		@include error();
 		height: 10px;
+
 	}
 	&__label {
 		font-family: Arial;
@@ -120,11 +126,30 @@ $success: #27AE60;
 			color: $extra-gray-1; 
 		}
 	}
+	&.disabled {
+		.textfield__label {
+			opacity: 0;
+		}
+		.textfield__input {
+			border: none;
+			border-radius: none;
+			border-bottom: 1px $extra-gray-2 solid;
+			color: $extra-gray-1;
+			background-color: $white;
+			&::placeholder {
+				color: $extra-gray-1; 
+			}
+		}
+		.textfield__svg {
+			opacity: initial;
+		}
+	}
 	&.filled {
 		.textfield__label {
 			opacity: 1;
 		}
 		.textfield__input {
+			color: $black;
 			height: 193px;
 			background-color: $extra-gray-3;
 			border-radius: 24px;
@@ -143,21 +168,7 @@ $success: #27AE60;
 		}
 
 	}
-	&.disabled {
-		.textfield__label {
-			opacity: 0;
-		}
-		.textfield__input:disabled {
-			height: 48px;
-			background-color: $white;
-			border-radius: 0;
-			border-bottom: 1px $extra-gray-2 solid;
-			border-top: 1px transparent solid;
-		}
-		.textfield__svg {
-			opacity: 0;
-		}
-	}
+	
 }	
 	
 	

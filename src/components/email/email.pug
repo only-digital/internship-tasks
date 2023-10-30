@@ -1,6 +1,7 @@
 mixin email(props)
 	.email&attributes(attributes)(data-component='email')
 		label(for="email").email__label E-mail
-		input&attributes(attributes)(type="email" id='email' name='email' placeholder='E-mail' required).email__input 
+		input&attributes(attributes)(type="email" maxlength='255' id='email' name='email' placeholder='E-mail' required).email__input 
 		+svg('success').email__svg 
 		span.email__span 
+		

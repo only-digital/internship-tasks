@@ -74,6 +74,7 @@ $dark-red: #81080F;
 		color: $gray;
 	    background-color: $white;
 		border: 1px solid $gray;
+		cursor: not-allowed;
 		.btn__svg {
 			fill: $gray;
 		}

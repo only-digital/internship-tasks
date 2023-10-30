@@ -1,13 +1,13 @@
 mixin feedback-form(props)
-	form.feedback-form&attributes(attributes)(data-component='feedback-form')
+	.feedback-form&attributes(attributes)(data-component='feedback-form')
 		h1.feedback-form__title 
 			| Форма обратной
 			br
 			| связи
-		.feedback-form__input-container 
+		form(id='form').feedback-form__input-container 
 			+email()
 			+textfield()
 			
 			+files()
 			+confirm()
-			+button({text: 'Отправить'})(class="button-outlined")
+			+button({text: 'Отправить'})(class="button-outlined" disabled='true')

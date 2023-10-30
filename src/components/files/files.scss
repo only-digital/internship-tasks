@@ -67,14 +67,23 @@ $success: #27AE60;
 					height: 14px;
 				}
 		}
+		.files__label.disabled {
+			border: 1px $steel solid;
+			color: $extra-gray-1;
+			background-color: $white;
+			cursor: not-allowed;
+			.btn__svg {
+				fill: $steel;
+			}
+		}
 		.files__names {
 			display: flex;
 			flex-flow: row;
 			align-items: center;
+			gap: 32px;
 			div {
 				width: 214px;
 				height: 40px;
-				color: #27AE60;
 				background-color: $extra-gray-3;
 				border-radius: 26px;
 				padding: 10px 13px 10px 18px;
@@ -84,6 +93,12 @@ $success: #27AE60;
 				font-weight: 400;
 				line-height: 124%; /* 19.84px */
 				letter-spacing: -0.32px;
+				.files__name-span {
+					color: $black;
+				}
+				.files__info-span {
+					color: $steel;
+				}
 			}
 
 		}
