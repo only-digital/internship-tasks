@@ -1,0 +1,28 @@
+@import "../../styles/colors.scss";
+
+.Header {
+  width: 100%;
+  border-bottom: 1px solid $light-gray;
+
+  &__container {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+
+  &__logo {
+    display: inline-flex;
+    gap: 9px;
+    padding: 29px 115px 24px 45px;
+    border-right: 1px solid $light-gray;
+  }
+
+  &__title {
+    display: inline-block;
+    width: 49px;
+    color: $navy-blue;
+    font-size: 7px;
+    font-weight: 500;
+    line-height: 120%;
+    text-transform: uppercase;
+  }
+}
