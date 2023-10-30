@@ -1,0 +1,90 @@
+.feedback {
+  $root: &;
+
+  display: flex;
+  gap: 81px;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 400;
+  width: 1600px;
+
+  &__title {
+    color: #002f6c;
+    font-size: 32px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    padding-top: 25px;
+  }
+
+  &__form label {
+    color: #909090;
+  }
+
+  &__form label[for='email'] {
+    font-size: 12px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+  }
+
+  &__form label[for='policy'] {
+    font-size: 14px;
+  }
+
+  &__form input[type='email'] {
+    width: 796px;
+    padding: 10px 20px 14px 20px;
+    margin-bottom: 60px;
+    border-radius: 24px;
+    border: 1px solid #0041a0;
+  }
+
+  &__email {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__policy {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 30px;
+  }
+
+  &__policy-input {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #bcbcbc;
+  }
+
+  &__policy-input:checked {
+    background-color: #2196f3;
+  }
+
+  &__policy-input::after {
+    content: '';
+    position: absolute;
+    display: none;
+  }
+
+  &__policy-input:checked::after {
+    display: block;
+  }
+
+  &__policy-input:checked::after {
+    left: 4px;
+    top: 0;
+    width: 3px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  &__policy-label a {
+    color: #002f6c;
+  }
+}
