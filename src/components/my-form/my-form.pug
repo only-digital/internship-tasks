@@ -1,3 +1,19 @@
-mixin my-form(props)
+mixin my-form({title})
 	.my-form&attributes(attributes)(data-component='my-form')
-		//Your code here
+		.my-form__title!= title
+		form.my-form__form.form(action='/form', method='POST')
+			.my-form__inputs
+				.my-form__input
+					span.badge E-mail
+					input(type='email', name='email', value='' class='my-form__email my-input')
+				.my-form__error
+				.my-form__checkbox 					
+					input(type='checkbox' name='agreement' class='my-checkbox')
+					| Вы подтверждаете, что ознакомились c #[span политикой обработки персональных данных] 
+				button.btn.my-form__btn 
+					| Отправить
+					+svg('arrow').my-form__arrow-icon
+				.my-form__response.hidden 
+					.my-form__response-btn 
+						+svg('ok').my-form__ok-icon
+					.my-form__response-message 

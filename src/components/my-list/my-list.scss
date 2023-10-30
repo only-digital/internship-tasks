@@ -1,8 +1,6 @@
 .my-list {
   $root: &;
 
-  padding-left: 80px;
-  font-family: Arial, sans-serif;
   width: 66%;
   &__item {
     display: flex;
@@ -25,4 +23,10 @@
     max-height: 20px;
     margin-right: 8px;
   }
+}
+
+#kekw {
+  width: 30px;
+  height: 30px;
+  border: 1px solid red;
 }

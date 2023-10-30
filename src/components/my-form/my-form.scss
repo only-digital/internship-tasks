@@ -1,5 +1,119 @@
 .my-form {
-	$root: &;
+  $root: &;
 
-	//Your code here
+  display: flex;
+  &__title {
+    font-size: 32px;
+    color: #002f6c;
+    margin-right: 81px;
+  }
+
+  &__input {
+    position: relative;
+    margin-bottom: 25px;
+    .badge {
+      position: absolute;
+      top: -20px;
+      left: 20px;
+      color: #909090;
+      font-size: 12px;
+    }
+
+    .my-input {
+      border: 1px solid #0041a0;
+      border-radius: 24px;
+      flex-grow: 2;
+      height: 48px;
+      width: 100%;
+      min-width: 200px;
+      padding: 0 20px;
+    }
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+
+    span {
+      color: #0041a0;
+      cursor: pointer;
+    }
+  }
+
+  &__form {
+    width: 50%;
+  }
+
+  &__error {
+    color: red;
+    margin-bottom: 14px;
+    height: 20px;
+  }
+
+  &__response {
+    display: flex;
+    align-items: center;
+
+    &-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      margin-right: 21px;
+      background-color: #fff;
+      border: 2px solid #dedede;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &-message {
+      font-weight: bold;
+    }
+  }
+
+  &__ok-icon {
+    max-width: 30px;
+    max-height: 30px;
+  }
+}
+
+.btn {
+  background: #0041a0;
+  width: 155px;
+  height: 48px;
+  color: #fff;
+  border-radius: 25px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  svg {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.my-checkbox {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  border: 1px solid #dedede;
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+  &:checked::before {
+    content: "\2611";
+    scale: 1.45;
+    border: none;
+  }
+}
+
+.blocked {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.hidden {
+  display: none;
 }
