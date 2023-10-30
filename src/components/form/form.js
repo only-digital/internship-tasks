@@ -24,6 +24,7 @@ class Form extends Component {
 
         const emailData = this.emailInput.value;
         const confirmed = this.checkboxInput.checked;
+        const responseText = this.getElement('response-text');
 
         if (this.emailInput.validity.valid && this.checkboxInput.checked) {
             this.form.classList.add('sent');
@@ -35,8 +36,16 @@ class Form extends Component {
                     confirm: confirmed
                 })
             })
-                .then(response => response.status)
-                .then(result => result);
+                .then(response => response)
+                .then(result => {
+                    if (result.status === 422) {
+                        responseText.style.color = 'red'
+                    } else if (result.status === 200) {
+                        responseText.style.color = 'green'
+                    }
+                    responseText.classList.add('show');
+                    responseText.textContent += result.statusText;
+                });
         } else {
             this.checkCheckboxValidity();
             this.checkEmailValidity();

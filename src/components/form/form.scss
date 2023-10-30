@@ -88,6 +88,14 @@
 		color: #EF1C1C;
 	}
 
+	&__response-text {
+		visibility: hidden;
+	}
+
+	&__response-text.show {
+		visibility: visible;
+	}
+
 	&__checkbox {
 		display: flex;
 		align-items: center;
