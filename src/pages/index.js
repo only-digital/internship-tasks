@@ -29,6 +29,19 @@ function Index(props) {
         alert(initData[0].isCompleted)
     }
 
+
+    function deleteTask(id) {
+        initData.map((task,index) => {
+            if (task.id === id) {
+                initData.splice(index,1);
+                changeTasks([...initData]);
+                return;
+            }
+        })
+        console.log(initData)
+    }
+
+
     return (
         <main className={styles.main}>
 
@@ -36,6 +49,7 @@ function Index(props) {
                 title={props.title}
                 tasks={initData}
                 changeTaskStatus={changeTaskStatus}
+                deleteTask={deleteTask}
             >
 
             </Todolist>
