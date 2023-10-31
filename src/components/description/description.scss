@@ -1,0 +1,11 @@
+.description {
+	$root: &;
+
+	& {
+		display: grid;
+		gap: 130px;
+		width: 988px;
+		box-sizing: content-box;
+		padding: 0 0 109px 80px;
+	}
+}

@@ -1,0 +1,9 @@
+mixin description-block(heading, items)
+	.description-block&attributes(attributes)(data-component='description-block')
+		h2= heading
+		ul.description-block__list
+			each item in items
+				li.description-block__item
+					span.description-block__marker
+						span.description-block__line
+					span.description-block__item-text= item

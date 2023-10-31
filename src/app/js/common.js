@@ -1,6 +1,8 @@
 import ExampleButton from "../../components/example-button/example-button";
 import Job from "../../components/job/job";
 import Form from "../../components/form/form";
+import Description from "../../components/description/description";
+import DescriptionBlock from "../../components/description-block/description-block";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -10,7 +12,9 @@ import Form from "../../components/form/form";
 const allComponents = {
     'example-button': ExampleButton,
     'job': Job,
-    'form': Form
+    'form': Form,
+    'description': Description,
+    'description-block': DescriptionBlock
 }
 
 /**
