@@ -1,3 +1,121 @@
-.Todolist {
-	//Your code here
+
+  .todolist {
+
+    &__header {
+      height: 80px;
+      background-color: #fff;
+
+    }
+
+    &__container {
+
+      width: 1920px;
+      height: 1080px;
+
+    }
+
+    &__open {
+      background-color: #E3EDF7;
+      border-radius: 10px;
+
+      width: 240px;
+      height: 52px;
+
+      margin: 0 auto;
+
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      padding-left: 18px;
+
+      span {
+        color: #007FFF;
+
+        font-size: 16px;
+      }
+    }
+
+    &__main {
+
+      height: 1000px;
+      width: 1630px;
+
+      padding-left: 40px;
+      padding-top: 48px;
+
+      h1 {
+        color: #213C57;
+        font-size: 32px;
+        font-weight: 600;
+
+        margin-bottom: 28px;
+      }
+    }
+
+    &__wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+
+      gap: 20px;
+    }
+    &__task {
+      padding: 24px 24px 31px 24px;
+      background-color: white;
+
+      border-radius: 10px;
+
+      position: relative;
+
+      ::after {
+
+        position: absolute;
+        content: "";
+
+        height: 2px;
+
+        left: 24px;
+
+        width: 1502px;
+
+        background-color: #E7EAEE;
+
+        top: 72px;
+      }
+    }
+
+    &__task-header {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__task-name {
+      font-size: 24px;
+    }
+
+    &__task-description {
+      margin-top: 28px;
+
+      font-size: 16px;
+      line-height: 175%;
+
+      max-width: 734px;
+    }
+  }
+
+
+aside {
+  background-color: #fff;
+  width: 290px;
+
+  height: 1080px;
+}
+
+.isCompleted {
+  color:rgba(22, 31, 62, 0.30);
 }

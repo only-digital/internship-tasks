@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .main {
     display: flex;
     flex-direction: column;
@@ -5,4 +7,6 @@
     align-items: center;
     padding: 6rem;
     min-height: 100vh;
+
+    font-family: "Roboto";
 }
