@@ -26,19 +26,22 @@
 			border-bottom: 1px solid #DEDEDE;
 			width: 836px;
 			height: 48px;
-			margin-bottom: 10px;
 			font-size: 16px;
 			letter-spacing: -0.32px;
 			line-height: 150%;
 		}
 
 		textarea {
-			overflow: hidden;
 			border: none;
 			font-family: arial;
 			resize: none;
-			padding-top: 14px;
+			padding-top: 12px;
 			outline: none;
+			scrollbar-width: none;
+		}
+
+		textarea::-webkit-scrollbar {
+			display: none;
 		}
 
 		textarea::placeholder {
@@ -53,8 +56,10 @@
 			$root: &;
 			display: flex;
 			flex-direction: column;
-			
-			span {
+			margin-bottom: 10px;
+			position: relative;
+
+			.feedback-form__email-input-header {
 				visibility: hidden;
 				font-size: 12px;
 				line-height: 150%;
@@ -63,8 +68,22 @@
 				margin-left: 20px;
 			}
 
-			.feedback-form__email-input {
-				transition: 300ms ease-in-out;
+			.feedback-form__email-input-error {
+				display: none;
+				color: #FF0000;
+				font-size: 12px;
+				line-height: 150%;
+				letter-spacing: -0.24px;
+				margin-left: 20px;
+			}
+
+			svg {
+				width: 18px;
+				height: 13px;
+				position: absolute;
+				left: 803px;
+				top: 35px;
+				display: none;
 			}
 
 			.feedback-form__email-input:hover {
@@ -72,10 +91,9 @@
 				border-radius: 24px;
 				border: none;
 				padding: 8px 20px 7px 20px;
-				transition: 300ms ease-in-out;
 			}
 			
-			&:has(.feedback-form__email-input:focus) > span {
+			&:has(.feedback-form__email-input:focus) > .feedback-form__email-input-header {
 				visibility: visible;
 			} 
 
@@ -96,12 +114,11 @@
 			$root: &;
 			display: flex;
 			flex-direction: column;
+			position: relative;
+			margin-bottom: 86px;
+			
 
-			.feedback-form__message-input {
-				transition: 300ms ease-in-out;
-			}
-
-			span {
+			.feedback-form__message-input-header {
 				visibility: hidden;
 				font-size: 12px;
 				line-height: 150%;
@@ -110,23 +127,41 @@
 				margin-left: 20px;
 			}
 
+			.feedback-form__message-input-error {
+				display: none;
+				color: #FF0000;
+				font-size: 12px;
+				line-height: 150%;
+				letter-spacing: -0.24px;
+				margin-left:30px;
+				width: 500px;
+			}
+
+			svg {
+				display: none;
+				width: 18px;
+				height: 13px;
+				position: absolute;
+				left: 803px;
+			}
+
 			.feedback-form__message-input:hover {
 				background: #F4F4F4;
 				border-radius: 24px;
 				border: none;
-				padding: 12px 20px 7px 20px;
-				height: 193px;
-				transition: 300ms ease-in-out;
+				padding: 12px 45px 10px 20px;
+				
 			}
 
 			.feedback-form__message-input:focus {
 				transition: none;
 				border: 1px solid #0041A0;
 				border-radius: 24px;
-				padding: 8px 20px 7px 20px;
+				padding: 8px 45px 10px 20px;
+				
 			}
 
-			&:has(.feedback-form__message-input:focus) > span {
+			&:has(.feedback-form__message-input:focus) > .feedback-form__message-input-header {
 				visibility: visible;
 			}
 
@@ -136,63 +171,93 @@
 			}
 		}
 
-		.feedback-form__file-input {
-			$root: &;
+		.feedback-form__file-input-wrapper {
+			display: flex;
+			margin: 30px 0 30px 0;
+			gap: 32px;
+			width: 836px;
+			.feedback-form__file-input-filename-wrapper  {
+				display: none;
+				height: 40px;
+				font-size: 16px;
+				padding: 10px 13px 10px 18px;
+				justify-content: center;
+				align-items: center;
+				gap: 4px;
+				background: #F4F4F4;
+				border-radius: 27px;
 
-			display: inline-flex;
-			gap: 16px;
-			height: 46px;
-			border: 1px solid #BCBCBC;
-			border-radius: 25px	;
-			padding: 14px 16px 16px 16px;
-			color: #021F45;
-			font-size: 16px;
-			letter-spacing: -0.32px;
-			line-height: 100%;
-			margin: 116px 0 30px 0;
-			transition: color background-color 300ms ease-in-out;
-			cursor: pointer;
+				.feedback-form__file-input-fileformat {
+					color: #909090;
+				}
 
-			svg {
-				width: 14px;
-				height: 14px;
-				fill: #002F6C;
-				transition: 300ms ease-in-out;
-			}
-
-			input {
-				width: 0;
-				height: 0;
-			}
-
-			&:hover {
-				background-color: #0041A0;
-				color: #FFFFFF;
-				transition: 300ms ease-in-out;
-
-				svg {
-					fill: #FFFFFF;
-					transition: 300ms ease-in-out;
+				.feedback-form__file-input-filename-svg {
+					width: 10px;
+					height: 10px;
+					cursor: pointer;
 				}
 			}
 
-			&:active {
-				background-color: #002F6C;
-			}
-
-			&:has(input:focus) {
-				border: 3px solid #99B3D8;
-			}
-
-			&:has(input:disabled) {
-				color: #909090;
-				pointer-events: none;
-
+			.feedback-form__file-input-label {
+				$root: &;
+	
+				display: inline-flex;
+				gap: 16px;
+				height: 46px;
+				border: 1px solid #BCBCBC;
+				border-radius: 25px	;
+				padding: 14px 16px 16px 16px;
+				color: #021F45;
+				font-size: 16px;
+				letter-spacing: -0.32px;
+				line-height: 100%;
+				
+				transition: color background-color 300ms ease-in-out;
+				cursor: pointer;
+	
 				svg {
-					fill: #909090;
+					width: 14px;
+					height: 14px;
+					fill: #002F6C;
+					transition: 300ms ease-in-out;
+				}
+	
+				input {
+					width: 0;
+					height: 0;
+				}
+	
+				&:hover {
+					background-color: #0041A0;
+					color: #FFFFFF;
+					transition: 300ms ease-in-out;
+	
+					svg {
+						fill: #FFFFFF;
+						transition: 300ms ease-in-out;
+					}
+				}
+	
+				&:active {
+					background-color: #002F6C;
+				}
+	
+				&:has(input:focus) {
+					border: 3px solid #99B3D8;
+				}
+	
+				&:has(input:disabled) {
+					color: #909090;
+					pointer-events: none;
+	
+					svg {
+						fill: #909090;
+					}
 				}
 			}
 		}
+
+		
 
 		.feedback-form__policy-check-wrapper {
 			display: flex;
@@ -331,7 +396,7 @@
 
 			&:disabled {
 				color: #909090;
-
+				pointer-events: none;
 				svg {
 					fill: #909090;
 				}

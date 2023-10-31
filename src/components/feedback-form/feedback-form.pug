@@ -5,20 +5,29 @@ mixin feedback-form(props)
 			div.feedback-form__email-input-wrapper
 				span.feedback-form__email-input-header E-mail
 				input(type='text' placeholder='E-mail' maxlength='255').feedback-form__email-input
+				span.feedback-form__email-input-error Неправильно заполненный e-mail
+				+svg('valid-input').feedback-form__email-input-svg
 			div.feedback-form__message-input-wrapper
 				span.feedback-form__message-input-header Ваше сообщение
-				textarea(placeholder='Ваше сообщение' maxlength='1000').feedback-form__message-input
-			label.feedback-form__file-input
-				span.feedback-form__file-input__file-span Прикрепить файл
-				+svg('plus').feedback-form__file-input__svg
-				input(type='file')
+				textarea(placeholder='Ваше сообщение').feedback-form__message-input
+				span.feedback-form__message-input-error 
+				+svg('valid-input').feedback-form__message-input-svg
+			div.feedback-form__file-input-wrapper
+				label.feedback-form__file-input-label
+					span.feedback-form__file-input__file-span Прикрепить файл
+					+svg('plus').feedback-form__file-input__svg
+					input(type='file' accept='.pdf, .doc, .docx').feedback-form__file-input
+				div.feedback-form__file-input-filename-wrapper
+					span.feedback-form__file-input-filename
+					span.feedback-form__file-input-fileformat
+					+svg('close_file_input').feedback-form__file-input-filename-svg
 			div.feedback-form__policy-check-wrapper
 				label.feedback-form__policy-checkbox-label
 					+svg('check')
 					input(type='checkbox').feedback-form__policy-checkbox
 				span.feedback-form__policy-agreement-gray Вы подтверждаете, что ознакомились
 				span.feedback-form__policy-agreement-blue с политикой обработки персональных данных
-			button.feedback-form__submit-btn 
+			button.feedback-form__submit-btn(disabled) 
 				span.feedback-form__btn-text Отправить
 				+svg('button-arrow')
 				
