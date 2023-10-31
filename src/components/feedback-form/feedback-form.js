@@ -59,6 +59,17 @@ class FeedbackForm extends Component {
     }
 
     onButtonClick = (event) => {
+        let data = new FormData();
+        data.append('email', this.emailInput.value);
+        data.append('files', this.fileInput.files[0]);
+        data.append('message', this.messageInput.value);
+        data.append('privacyConfirm', this.policyCheckbox.checked);
+        
+        fetch('./form', {
+            method: 'POST',
+            body: data,
+        })
+            
 
         event.preventDefault();
     }
