@@ -1,0 +1,80 @@
+.form {
+	$root: &;
+
+	& {
+		font-family: Arial, sans-serif;
+		font-weight: 400;
+		font-size: 16px;
+		display: flex;
+		gap: 50px;
+
+		h3 {
+			font-size: 32px;
+			font-weight: 700;
+			color: #002F6C;
+		}
+	}
+
+	%label {
+		font-size: 12px;
+		color: #909090;
+	}
+
+	&__email-label, &__message-label {
+		font-size: 12px;
+		color: #909090;
+	}
+
+	&__email, &__message {
+		display: grid;
+	}
+
+	#email-input, #message-input, &__email-label, &__message-label {
+		padding-left: 20px;
+	}
+
+	#email-input {
+		width: 836px;
+		height: 48px;
+		border: 1px solid #0041A0;
+		border-radius: 24px;
+	}
+
+	#message-input {
+		width: 836px;
+		height: 166px;
+		background-color: #F4F4F4;
+		border-radius: 24px;
+	}
+
+	&__checkbox {
+		display: flex;
+		align-items: center;
+		gap: 18px;
+		@extend %label;
+	}
+
+	#checkbox-input {
+		width: 16px;
+		height: 16px;
+		border: 1px solid #BCBCBC;
+	}
+
+	&__submit-button {
+		width: 155px;
+		height: 48px;
+		background-color: #0041A0;
+		border-radius: 25px;
+		color: #FFFFFF;
+		display: flex;
+		gap: 14px;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__button-arrow {
+		width: 32px;
+		height: 22px;
+		fill: #FFFFFF;
+	}
+}
