@@ -8,7 +8,8 @@ mixin form(props)
 					span.form__email-validity-message
 			div.form__checkbox
 				input(type='checkbox', id='checkbox-input', required).form__checkbox-input
-				label(for='checkbox-input') Вы подтверждаете, что ознакомились c политикой обработки персональных данных
+				label.form__checkbox-label(for='checkbox-input') Вы подтверждаете, что ознакомились&nbsp
+					span(style='color:#002F6C') c политикой обработки персональных данных
 				div.form__checkbox-validity-message
 			button(type='submit').form__submit-button
 				span Отправить
