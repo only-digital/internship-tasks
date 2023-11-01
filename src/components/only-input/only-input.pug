@@ -1,0 +1,8 @@
+mixin only-input(props)
+	.only-input(class=attributes.disabled?'only-input_disabled':'' tabindex='1')&attributes(attributes)(data-component='only-input')
+		.only-input__header(class='only-input_addictive-color')!= props.header 
+		.only-input__input-block 
+			input.only-input__field(class='only-input_main-color' placeholder=props.placeholder disabled=attributes.disabled reqired email)
+			.only-input__icon 
+				include ../../assets/icons/successfull.svg
+		.only-input__error(class='only-input_error-color')="test words"

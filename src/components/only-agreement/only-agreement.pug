@@ -1,0 +1,9 @@
+mixin only-agreement(props)
+	.only-agreement(class=attributes.disabled?'only-agreement_disabled':'')&attributes(attributes)(data-component='only-agreement')
+		.only-agreement__custom-check(tabindex='4')
+			input.only-agreement__checkbox(type="checkbox" disabled=attributes.disabled)
+			.only-agreement__icon
+				include ../../assets/icons/checked.svg
+		span.only-agreement__text(class='only-agreement_color-main')!=props.text
+		if props.href||props.linkText 
+			a.only-agreement__link(href=props.href class='only-agreement_color-addictive')!=`&nbsp${props.linkText}`

@@ -1,0 +1,24 @@
+@import "./variables.scss";
+
+@mixin fontSettings($letter_spacing, $font_size,$line_height,$font_weight:$font-weight){
+    
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-style: $font-style;
+    letter-spacing: $letter_spacing;
+    font-size: $font_size;
+    line-height: $line_height;
+
+}
+
+@mixin borderSettings(
+    $border_width,
+    $border_color,
+    $border_style:solid,
+    $border_radius:0px){
+
+        border-width: $border_width;
+        border-color: $border_color;
+        border-style: $border_style;
+        border-radius: $border_radius;
+}
