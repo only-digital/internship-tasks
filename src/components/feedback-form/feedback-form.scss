@@ -16,6 +16,10 @@ $main-red: #F00;
 	color: $main-red;
 	font-family: Arial;
 	padding-left: 20px;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 150%; /* 18px */
+	letter-spacing: -0.24px;	
 }
 
 .feedback-form {
@@ -40,5 +44,8 @@ $main-red: #F00;
 		flex-flow: column nowrap;
 		padding-top: 24px;
 		
+	}
+	&__server-response {
+		@include error();
 	}
 }

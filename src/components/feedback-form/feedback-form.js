@@ -15,6 +15,7 @@ class FeedbackForm extends Component {
     files;
     filesInput;
     filesLabel;
+    serverResponse;
 
     constructor(element) {
         super(element);
@@ -34,6 +35,7 @@ class FeedbackForm extends Component {
         this.filesLabel = document.querySelector('.files__label');
         this.button = document.querySelector('button');
         this.state = element.state;
+        this.serverResponse = this.getElement('server-response');
       
         this.root.addEventListener('submit', this.handleSubmit);
         this.root.addEventListener('input', this.handleInput);
@@ -78,6 +80,8 @@ class FeedbackForm extends Component {
       
         if (response.status === 200 ) {
             //handle success
+            this.serverResponse.innerText = 'Форма успешно отправлена';
+            this.serverResponse.style.color = 'green';
             this.confirmLink.classList.add('disabled');
             this.confirmLabel.classList.add('disabled');
             this.confirmInput.disabled = true;
@@ -90,11 +94,12 @@ class FeedbackForm extends Component {
             
         } else if (response.status === 422 ) {
             //handle decline
+            this.serverResponse.style.color = 'red';
         }
         return response.json();
         })
         .then( data => {
-        console.log(data.message);
+            this.serverResponse.innerText = data.message;
         })
         .catch(error => {
       // Handle errors here
