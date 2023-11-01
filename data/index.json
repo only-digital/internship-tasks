@@ -1,25 +1,35 @@
 {
-    "title": "Список задач",
-    "tasks": [
-        {
-            "title": "Задача 1",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus purus nec erat tempus, a luctus dolor ornare. Aenean convallis magna vel turpis imperdiet, non convallis nulla consequat.",
-            "isCompleted": false
-        },
-        {
-            "title": "Задача 2",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus purus nec erat tempus, a luctus dolor ornare. Aenean convallis magna vel turpis imperdiet, non convallis nulla consequat.",
-            "isCompleted": false
-        },
-        {
-            "title": "Задача 3",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus purus nec erat tempus, a luctus dolor ornare. Aenean convallis magna vel turpis imperdiet, non convallis nulla consequat.",
-            "isCompleted": true
-        },
-        {
-            "title": "Задача 4",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus purus nec erat tempus, a luctus dolor ornare. Aenean convallis magna vel turpis imperdiet, non convallis nulla consequat.",
-            "isCompleted": false
-        }
-    ]
+  "title": "Список задач",
+  "tasks": [
+    {
+      "title": "Задача 1",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus purus nec erat tempus, a luctus dolor ornare. Aenean convallis magna vel turpis imperdiet, non convallis nulla consequat.",
+      "isCompleted": false
+    },
+    {
+      "title": "Задача 2",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus purus nec erat tempus, a luctus dolor ornare. Aenean convallis magna vel turpis imperdiet, non convallis nulla consequat.",
+      "isCompleted": false
+    },
+    {
+      "title": "Задача 3",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus purus nec erat tempus, a luctus dolor ornare. Aenean convallis magna vel turpis imperdiet, non convallis nulla consequat.",
+      "isCompleted": true
+    },
+    {
+      "title": "Задача 4",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus purus nec erat tempus, a luctus dolor ornare. Aenean convallis magna vel turpis imperdiet, non convallis nulla consequat.",
+      "isCompleted": false
+    },
+    {
+      "title": "фактура",
+      "text": "Текстура и фактура связаны с нашим визуальным, и тактильным восприятием, и ощущениями. Визуальное восприятие — это то что мы видим. Тактильное восприятие — то что ощущаем при прикосновении. Есть еще смешанное визуально-тактильное восприятие — это то, что мы видим, не можем потрогать, но помним ощущения от прикосновения.",
+      "isCompleted": false
+    },
+    {
+      "title": "текстура",
+      "text": "Текстура и фактура.",
+      "isCompleted": false
+    }
+  ]
 }

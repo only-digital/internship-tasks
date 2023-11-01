@@ -6,7 +6,7 @@ import onlyLogo from '../../../public/images/Only.svg';
 const HeaderLogo = () => {
   return (
     <Link
-      href="#"
+      href="https://only.digital/"
       className={styled.HeaderLogo}
     >
       <Image

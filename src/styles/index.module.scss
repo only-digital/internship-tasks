@@ -1,7 +1,7 @@
 .main {
   display: grid;
   height: 100vh;
-  grid-template-columns: 290px 1fr;
+  grid-template-columns: minmax(170px, 290px) minmax(300px, 1fr);
   grid-template-rows: 80px 1fr;
 }
 .logoContainer {
