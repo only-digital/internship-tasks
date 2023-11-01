@@ -23,7 +23,7 @@
 		border-width: 1px;
 		border-color: transparent;
 		border-style: solid;
-		
+		transition: $background-color-fast-transition;
 
 		::placeholder{
 			color: $black_1;
@@ -51,7 +51,6 @@
 			padding-right: 20px;
 			visibility: hidden;
 		}
-
 	}
 
 	&__error{
@@ -61,7 +60,6 @@
 		@include fontSettings(-0.24px,$add-mini-s,150%);
 		visibility: hidden;
 	}
-
 
 	&_main-color{
 		color: $black_1;

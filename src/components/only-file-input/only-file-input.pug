@@ -1,6 +1,6 @@
 mixin only-file-input(props)
 	.only-file-input&attributes(attributes)(data-component='only-file-input')
-		button.only-file-input__select(disabled=attributes.disabled)
+		button.only-file-input__select(disabled=attributes.disabled tabindex='3')
 			input.only-file-input__hidden(type='file' multiple accept='.doc, .docx, .pdf')
 			span.only-file-input__text(class='only-file-input_main-color')!=props.text
 			.only-file-input__icon

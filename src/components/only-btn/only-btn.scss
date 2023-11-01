@@ -17,12 +17,11 @@
 	justify-content: center;
 	background-color: $white;
 	border-color: $light-grey;
-	//transition: $background-color-fast-transition;
+	transition: $background-color-fast-transition;
 	cursor: pointer;
 
 	&__text{
 		@include fontSettings(-0.32px,$add-mini-l,100%);
-		//transition: $color-fast-transition;
 	}
 
 	&__icon{
@@ -30,7 +29,6 @@
 		align-items: center;
 		svg{
 			fill:$blue;
-			//transition: $fill-fast-transition;
 		}
 	}
 
@@ -81,7 +79,6 @@
 		}
 	}	
 
-	
 	&:active{
 		background-color: $blue;
 			

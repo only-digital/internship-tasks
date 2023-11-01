@@ -5,6 +5,7 @@ class OnlyFileInput extends Component {
     select;
     error;
     notify;
+    fileCheckEvent;
 
     constructor(element) {
         super(element);
@@ -16,6 +17,8 @@ class OnlyFileInput extends Component {
 
         this.select.addEventListener('click',this.selectFiles);
         this.input.addEventListener('change',this.showFiles);
+
+        this.fileCheckEvent = new Event('fileCheck',{bubbles:true});
     }
 
     showError = (message)=>{
@@ -48,17 +51,20 @@ class OnlyFileInput extends Component {
             if(maxCount==0){
                 this.notify.textContent = 'Вы можете загрузить только 2 документа';
                 this.root.classList.add('only-file-input_show');
+                this.root.dispatchEvent(this.fileCheckEvent);
                 return;
             }
 
             if(!available.exec(f.name)){
                 this.showError('Incorrect file type');
                 this.input.value='';
+                this.root.dispatchEvent(this.fileCheckEvent);
                 return;
             }
 
             if(Math.floor(f.size/1024)>5000){
                 this.showError('The file must be less than 5 Mb');
+                this.root.dispatchEvent(this.fileCheckEvent);
                 return;
             }
 
@@ -103,6 +109,8 @@ class OnlyFileInput extends Component {
         if(this.root.childNodes.length>2){
             this.root.classList.add('only-file-input_validate');
         }
+
+        this.root.dispatchEvent(this.fileCheckEvent);
     }
 }
 

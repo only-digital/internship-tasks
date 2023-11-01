@@ -8,6 +8,7 @@
 	display: grid;
 	grid-template-columns: max-content auto;
 	grid-template-rows: 1fr 20px;
+
 	&__select{
 		grid-row: 1;
 		display: flex;
@@ -19,7 +20,8 @@
 		width: max-content;
 		box-sizing: border-box;
 		gap: 16px;
-		
+		transition: $background-color-fast-transition;
+
 		#{$root}__hidden{
 			display: none;
 		}

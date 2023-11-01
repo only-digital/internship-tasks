@@ -4,6 +4,7 @@
 	flex-wrap: nowrap;
 	align-items: center;
 	margin-bottom: 11px;
+	margin-top: 43px;
 
 	@media(max-width:1280px){
 		display: grid;
@@ -14,9 +15,44 @@
 		}
 	}
 
+	&__custom-check{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 16px;
+		height: 16px;
+		margin-right: 12px;
+		border-style: solid;
+		border-width: 1px;
+		border-color: $light-grey;
+		cursor: pointer;
+		
+		&:hover{
+			border-color: $light-blue;
+		}
+
+		input:checked{
+			~ #{$root}__icon{
+				visibility:hidden;
+			}
+		}
+
+		&:focus{
+			outline-color: $soft-blue;
+			outline-style: solid;
+			outline-width: 2px;
+		}
+	}
+
 	&__checkbox{
-		margin-right: 18px;
+		display:none;
 		appearance:auto;
+	}
+
+	&__icon{
+		visibility: visible;
+		width: 16px;
+		height: 16px;
 	}
 
 	&__text{
@@ -24,7 +60,6 @@
 	}
 
 	&__link{
-
 		@include fontSettings(0px,$add-mini-m,150%);
 
 		&:hover{
@@ -45,10 +80,20 @@
 	}
 
 	&_validate{
-		
+
 	}
 
 	&_invalidate{
 		
+	}
+
+	&_disabled{
+		opacity: 70%;
+		#{$root}_color-main{
+			color:$grey;
+		}
+		#{$root}_color-addictive{
+			color: $grey;
+		}
 	}
 }

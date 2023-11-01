@@ -3,6 +3,7 @@ import Component from '../../app/js/base/component';
 class OnlyInput extends Component {
     input; 
     error;
+    checkInput;
     
     constructor(element) {
         super(element);
@@ -11,6 +12,8 @@ class OnlyInput extends Component {
         this.root.addEventListener('click',this.focus);
         this.input.addEventListener('blur',this.blur);
         this.input.addEventListener('input',this.reset);
+
+        this.checkInput = new Event('checkInput',{bubbles:true});
     }
 
     focus=()=>{
@@ -19,7 +22,6 @@ class OnlyInput extends Component {
     }
 
     reset=()=>{
-        
         this.root.classList.remove('only-input_invalidate');
     }
 
@@ -35,16 +37,19 @@ class OnlyInput extends Component {
         
         if(!validation.test(this.input.value)){
             this.showError("Incorrect email!");
+            this.root.dispatchEvent(this.checkInput);
             return;
         }
         else if(this.input.value.length>255){
             this.showError("To long email!");
+            this.root.dispatchEvent(this.checkInput);
             return;
         }
         else{
             this.root.classList.add('only-input_validate');
             this.root.classList.remove('only-input_invalidate');
         }
+        this.root.dispatchEvent(this.checkInput);
     }
 }
 
