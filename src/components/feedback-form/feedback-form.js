@@ -16,6 +16,13 @@ class FeedbackForm extends Component {
     fileInputFilename;
     fileInputFileformat;
     fileInputFilenameSVG;
+    secondFileInputFilenameWrapper;
+    secondFileInputFilename;
+    secondFileInputFileformat;
+    fileSizeError;
+    maxFilesError;
+    deleteFirstFileSVG;
+    deleteSecondFileSVG;
     policyCheckbox;
 
 
@@ -23,24 +30,37 @@ class FeedbackForm extends Component {
     constructor(element) {
         super(element);
 
-        this.button = this.getElement('submit-btn')
-        
-        this.emailInput = this.getElement('email-input')
-        this.emailInputHeader = this.getElement('email-input-header')
-        this.emailInputError = this.getElement('email-input-error')
-        this.emailInputSvg = this.getElement('email-input-svg')
+        this.fileList = new FormData();
 
-        this.messageInput = this.getElement('message-input')
-        this.messageInputHeader = this.getElement('message-input-header')
-        this.messageInputError = this.getElement('message-input-error')
-        this.messageInputSvg = this.getElement('message-input-svg')
-        this.messageInputWrapper = this.getElement('message-input-wrapper')
+        this.button = this.getElement('submit-btn');
+        
+        this.emailInput = this.getElement('email-input');
+        this.emailInputHeader = this.getElement('email-input-header');
+        this.emailInputError = this.getElement('email-input-error');
+        this.emailInputSvg = this.getElement('email-input-svg');
+
+        this.messageInput = this.getElement('message-input');
+        this.messageInputHeader = this.getElement('message-input-header');
+        this.messageInputError = this.getElement('message-input-error');
+        this.messageInputSvg = this.getElement('message-input-svg');
+        this.messageInputWrapper = this.getElement('message-input-wrapper');
 
         this.fileInput = this.getElement('file-input');
+
         this.fileInputFilenameWrapper = this.getElement('file-input-filename-wrapper');
         this.fileInputFilename = this.getElement('file-input-filename');
         this.fileInputFileformat = this.getElement('file-input-fileformat');
         this.fileInputFilenameSVG = this.getElement('file-input-filename-svg');
+
+        this.secondFileInputFilenameWrapper = this.getElement('second-file-input-filename-wrapper');
+        this.secondFileInputFilename = this.getElement('second-file-input-filename');
+        this.secondFileInputFileformat = this.getElement('second-file-input-fileformat');
+
+        this.deleteFirstFileSVG = this.getElement('file-input-filename-svg');
+        this.deleteSecondFileSVG = this.getElement('second-file-input-filename-svg');
+
+        this.fileSizeError = this.getElement('file-input-size-error');
+        this.maxFilesError = this.getElement('max-files-input');
 
         this.policyCheckbox = this.getElement('policy-checkbox');
 
@@ -55,22 +75,22 @@ class FeedbackForm extends Component {
 
         this.fileInput.addEventListener('change', this.showFilenameFileformat);
 
+        this.deleteFirstFileSVG.addEventListener('click', this.deleteFirstFile);
+        this.deleteSecondFileSVG.addEventListener('click', this.deleteSecondFile);
+
         this.policyCheckbox.addEventListener('change', this.checkboxSubmitButtonActivation);
     }
 
     onButtonClick = (event) => {
-        let data = new FormData();
-        data.append('email', this.emailInput.value);
-        data.append('files', this.fileInput.files[0]);
-        data.append('message', this.messageInput.value);
-        data.append('privacyConfirm', this.policyCheckbox.checked);
+        this.fileList.append('email', this.emailInput.value);
+        this.fileList.append('message', this.messageInput.value);
+        this.fileList.append('privacyConfirm', this.policyCheckbox.checked);
         
         fetch('./form', {
             method: 'POST',
-            body: data,
+            body: this.fileList,
         })
-            
-
+        
         event.preventDefault();
     }
 
@@ -146,26 +166,131 @@ class FeedbackForm extends Component {
     }
 
     showFilenameFileformat = () => {
-        const fileList = this.fileInput.files;
-        const filesize = fileList[0].size
-        const sizesTypes = ["Bytes", "KB", "MB"];
-        const fileName = fileList[0].name.match(/[\s\S]+(?=\.)/);
-        const fileFormat = fileList[0].name.match(/[^|.]*$/);
+        this.fileSizeError.style.display = 'none';
 
+        if ((this.fileInput.files.length >= 2 && this.fileInputFilenameWrapper.style.display == 'flex') || this.fileInput.files.length > 2) {
+            this.fileInput.value = '';
+            this.maxFilesError.style.display = 'block';
+            setTimeout(() => {
+                this.maxFilesError.style.display = 'none';
+            }, 5000);
+        } else {
+            let filesArr = Array.from(this.fileInput.files)
+            this.fileSizeError.style.display = 'none';
+            for (let [index, file] of filesArr.entries()) {
+                if (file.size > 5242880) {
+                    delete filesArr[index]
+                    this.fileSizeError.style.display = 'block';
+                }
+            }
+
+            filesArr = filesArr.filter(function (el) {
+                return el !== undefined
+            })
+
+            if (!filesArr.length) {
+                return 0
+            }
+
+            if (filesArr.length == 2) {
+                this.fileList.append('secondFile', filesArr[1]);
+
+                const filesize = filesArr[1].size;
+                const fileName = filesArr[1].name.match(/[\s\S]+(?=\.)/);
+                const fileFormat = filesArr[1].name.match(/[^|.]*$/);
+
+                this.secondFileInputFilenameWrapper.style.display = 'flex';
+
+                this.fileNameLengthValidationSecondFile(fileName[0]);
+
+                this.secondFileInputFileformat.innerText = `${fileFormat} ${this.getFileSize(filesize)}`;
+
+                this.fileInput.disabled = true;
+            }
+
+            
+            if (this.fileList.has('firstFile')) {
+                this.fileList.append('secondFile', filesArr[0]);
+
+                const filesize = filesArr[0].size;
+                const fileName = filesArr[0].name.match(/[\s\S]+(?=\.)/);
+                const fileFormat = filesArr[0].name.match(/[^|.]*$/);
+
+                this.secondFileInputFilenameWrapper.style.display = 'flex';
+
+                this.fileNameLengthValidationSecondFile(fileName[0]);
+
+                this.secondFileInputFileformat.innerText = `${fileFormat} ${this.getFileSize(filesize)}`;
+
+                this.fileInput.disabled = true;
+            } else {
+                this.fileList.append('firstFile', filesArr[0]);
+
+                const filesize = filesArr[0].size;
+                const fileName = filesArr[0].name.match(/[\s\S]+(?=\.)/);
+                const fileFormat = filesArr[0].name.match(/[^|.]*$/);
+
+                this.fileInputFilenameWrapper.style.display = 'flex';
+
+                this.fileNameLengthValidationFirstFile(fileName[0]);
+
+                this.fileInputFileformat.innerText = `${fileFormat} ${this.getFileSize(filesize)}`;
+                
+            }
+        }
+        for (let i of this.fileList.entries()){
+            console.log(i[1], i[0]);
+        }
+        
+        this.submitButtonActivation();
+    }
+
+    getFileSize = (filesize) => {
+        const sizesTypes = ["Bytes", "KB", "MB"];
         let i = Math.floor(Math.log(filesize) / Math.log(1024));
         let size = parseFloat((filesize / Math.pow(1024, i)).toFixed(0)) + " " + sizesTypes[i];
+        return size
+    }
 
-        this.fileInputFilenameWrapper.style.display = 'flex';
-
-        if (fileName[0].length <= 20) {
-            this.fileInputFilename.innerText = fileName;
+    fileNameLengthValidationFirstFile = (name) => {
+        if (name.length <= 20) {
+            this.fileInputFilename.innerText = name;
         } else {
-            this.fileInputFilename.setAttribute('title', `${fileName}`);
-            this.fileInputFilename.innerText = `${fileName[0].slice(0, 17)}..`;
+            this.fileInputFilename.setAttribute('title', `${name}`);
+            this.fileInputFilename.innerText = `${name.slice(0, 17)}..`;
         }
+    }
 
-        this.fileInputFileformat.innerText = `${fileFormat} ${size}`;
+    fileNameLengthValidationSecondFile = (name) => {
+        if (name.length <= 20) {
+            this.secondFileInputFilename.innerText = name;
+        } else {
+            this.secondFileInputFilename.setAttribute('title', `${name}`);
+            this.secondFileInputFilename.innerText = `${name.slice(0, 17)}..`;
+        }
+    }
 
+    deleteFirstFile = () => {
+        this.fileList.delete('firstFile');
+        this.fileInputFilenameWrapper.style.display = 'none';
+        if (this.fileInput.disabled) {
+            this.fileInput.disabled = false;
+        }
+        if (!this.fileList.has('firstFile') && this.fileList.has('secondFile')) {
+            this.button.disabled = true;
+        }
+        this.submitButtonActivation();
+    }
+
+    deleteSecondFile = () => {
+        this.fileList.delete('secondFile');
+        this.secondFileInputFilenameWrapper.style.display = 'none';
+        if (this.fileInput.disabled) {
+            this.fileInput.disabled = false;
+        }
+        if (!this.fileList.has('firstFile') && this.fileList.has('secondFile')) {
+            this.button.disabled = true;
+        }
         this.submitButtonActivation();
     }
 
@@ -174,7 +299,7 @@ class FeedbackForm extends Component {
     }
 
     submitButtonActivation = () => {
-        if (this.emailInput.value && this.messageInput.value && this.fileInput.value && this.policyCheckbox.checked) {
+        if (this.emailInput.value && this.messageInput.value && (this.fileList.has('firstFile') || this.fileList.has('secondFile')) && this.policyCheckbox.checked) {
             this.button.disabled = false;
         } else {
             this.button.disabled = true;

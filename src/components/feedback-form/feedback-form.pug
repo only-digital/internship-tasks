@@ -16,11 +16,19 @@ mixin feedback-form(props)
 				label.feedback-form__file-input-label
 					span.feedback-form__file-input__file-span Прикрепить файл
 					+svg('plus').feedback-form__file-input__svg
-					input(type='file' accept='.pdf, .doc, .docx').feedback-form__file-input
+					input(type='file' accept='.pdf, .doc, .docx' multiple).feedback-form__file-input
 				div.feedback-form__file-input-filename-wrapper
 					span.feedback-form__file-input-filename
 					span.feedback-form__file-input-fileformat
 					+svg('close_file_input').feedback-form__file-input-filename-svg
+				div.feedback-form__second-file-input-filename-wrapper
+					span.feedback-form__second-file-input-filename
+					span.feedback-form__second-file-input-fileformat
+					+svg('close_file_input').feedback-form__second-file-input-filename-svg
+				div.feedback-form__max-files-input
+					+svg('tool_bubble').feedback-form__max-files-input-svg
+					span.feedback-form__max-files-input-message Вы можете загрузить только 2 документа
+			span.feedback-form__file-input-size-error Максимальный размер файла 5МБ
 			div.feedback-form__policy-check-wrapper
 				label.feedback-form__policy-checkbox-label
 					+svg('check')
