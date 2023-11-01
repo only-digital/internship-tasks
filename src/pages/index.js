@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styles from '../styles/index.module.scss'
 import {getIndexPage} from "../../lib/api";
 import Todolist from "../components/todolist/todolist";
@@ -7,17 +7,15 @@ import {v1} from "uuid";
 
 function Index(props) {
 
-    const [initData, changeTasks] = useState([...props.tasks]);
 
+    const [initData, changeTasks] = useState([...props.tasks]);
+    const [searchPerformed, setSearchPerformed] = useState(false);
 
     initData.map((task,index) => {
         task.id = index;
     })
 
     useState([...initData])
-
-
-    console.log("init",initData)
 
     function changeTaskStatus(id) {
         initData[id].isCompleted = !initData[id].isCompleted;
@@ -26,22 +24,25 @@ function Index(props) {
         alert(initData[0].isCompleted)
     }
 
-
     function deleteTask(id) {
         initData.splice(id,1);
         changeTasks([...initData]);
 
         const task = document.querySelectorAll('.todolist__task');
         task[id].classList.toggle('delete');
-
-        console.log(initData)
     }
 
-    const [filteredData,searchText] = useTaskSearch(initData);
+    const [filteredData, searchText] = useTaskSearch(initData);
+
+    useEffect(() => {
+        if (searchPerformed) {
+            console.log("Найденные значения", filteredData);
+        }
+    }, [filteredData, searchPerformed]);
 
     function taskSearch(e) {
-        console.log("filet", filteredData,e)
         searchText(e);
+        setSearchPerformed(true);
     }
 
     return (

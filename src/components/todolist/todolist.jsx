@@ -2,12 +2,13 @@ import useTaskSearch from "../../hooks/useTaskSearch";
 
 const Todolist = (props) => {
 
-console.log("data", props.tasks)
-
     const searchTasks = (e) => {
-        console.log(e)
         if (e.charCode === 13)
             props.taskSearch(e.currentTarget.value);
+    }
+
+    const showAll = () => {
+        props.showAll();
     }
     return (
         <div className={"todolist__container"}>
@@ -26,8 +27,14 @@ console.log("data", props.tasks)
                     </div>
                 </aside>
                 <div className="todolist__main">
-                    <h1>{props.title}</h1>
-                    <input className="todolist__search" onKeyPress={searchTasks}></input>
+                    <div className="todolist__main-header">
+                        <h1>{props.title}</h1>
+                        <input placeholder={'Поиск'} className="todolist__search" onKeyPress={searchTasks}></input>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <circle cx="11" cy="11" r="6.25" stroke="#007FFF" stroke-width="1.5"/>
+                            <path d="M15.9058 16.021L20.1944 19.697" stroke="#007FFF" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
                     <ul className="todolist__list">
                         {
                             props.tasks.map((t, index) => {
@@ -44,7 +51,7 @@ console.log("data", props.tasks)
 
                                 return (
                                 <li key={t.id} className={"todolist__task"}>
-                                    <div className={"todolist__task-header"}>
+                                    <div className={`todolist__task-header`}>
                                         <p onClick={taskHandler} className={`todolist__task-name ${t.isCompleted ? "isCompleted" : ""}`}>{t.title}</p>
                                         <svg onClick={deleteTask}  xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
                                             <path d="M20 6L6 20" stroke="#007FFF" stroke-width="2" stroke-linecap="round"/>
