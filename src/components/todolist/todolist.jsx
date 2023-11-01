@@ -1,11 +1,18 @@
+import useTaskSearch from "../../hooks/useTaskSearch";
 
 const Todolist = (props) => {
 
 console.log("data", props.tasks)
 
+    const searchTasks = (e) => {
+        console.log(e)
+        if (e.charCode === 13)
+            props.taskSearch(e.currentTarget.value);
+    }
     return (
         <div className={"todolist__container"}>
-            <header className="todolist__header"></header>
+            <header className="todolist__header">
+            </header>
             <div className="todolist__wrapper">
                 <aside>
                     <div className="todolist__logo">
@@ -20,6 +27,7 @@ console.log("data", props.tasks)
                 </aside>
                 <div className="todolist__main">
                     <h1>{props.title}</h1>
+                    <input className="todolist__search" onKeyPress={searchTasks}></input>
                     <ul className="todolist__list">
                         {
                             props.tasks.map((t, index) => {
@@ -29,7 +37,9 @@ console.log("data", props.tasks)
                                 }
 
                                 const deleteTask = () => {
-                                    props.deleteTask(t.id);
+                                    const task = document.querySelectorAll('.todolist__task');
+                                    task[t.id].classList.toggle('delete');
+                                    setTimeout(() => props.deleteTask(t.id), 501);
                                 }
 
                                 return (

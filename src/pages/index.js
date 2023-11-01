@@ -2,45 +2,47 @@ import React, {useState} from 'react';
 import styles from '../styles/index.module.scss'
 import {getIndexPage} from "../../lib/api";
 import Todolist from "../components/todolist/todolist";
+import { useTaskSearch } from "../hooks/useTaskSearch";
 import {v1} from "uuid";
 
 function Index(props) {
 
-    console.log("here",props)
-
     const [initData, changeTasks] = useState([...props.tasks]);
 
-    initData.map((task) => {
-        task.id = v1();
+
+    initData.map((task,index) => {
+        task.id = index;
     })
 
-    [initData, changeTasks] = useState();
+    useState([...initData])
+
 
     console.log("init",initData)
 
     function changeTaskStatus(id) {
-        initData.map((task) => {
-            if (task.id === id) {
-                task.isCompleted = !task.isCompleted;
-                changeTasks([...initData]);
-                return;
-            }
-        })
+        initData[id].isCompleted = !initData[id].isCompleted;
+        changeTasks([...initData]);
+
         alert(initData[0].isCompleted)
     }
 
 
     function deleteTask(id) {
-        initData.map((task,index) => {
-            if (task.id === id) {
-                initData.splice(index,1);
-                changeTasks([...initData]);
-                return;
-            }
-        })
+        initData.splice(id,1);
+        changeTasks([...initData]);
+
+        const task = document.querySelectorAll('.todolist__task');
+        task[id].classList.toggle('delete');
+
         console.log(initData)
     }
 
+    const [filteredData,searchText] = useTaskSearch(initData);
+
+    function taskSearch(e) {
+        console.log("filet", filteredData,e)
+        searchText(e);
+    }
 
     return (
         <main className={styles.main}>
@@ -50,6 +52,7 @@ function Index(props) {
                 tasks={initData}
                 changeTaskStatus={changeTaskStatus}
                 deleteTask={deleteTask}
+                taskSearch={taskSearch}
             >
 
             </Todolist>

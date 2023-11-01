@@ -64,6 +64,7 @@
 
       gap: 20px;
     }
+
     &__task {
       padding: 24px 24px 31px 24px;
       background-color: white;
@@ -71,6 +72,11 @@
       border-radius: 10px;
 
       position: relative;
+
+      cursor: pointer;
+
+      opacity: 1;
+      transition: opacity 0.5s;
 
       ::after {
 
@@ -96,6 +102,12 @@
 
     &__task-name {
       font-size: 24px;
+
+      transition: color 0.2s;
+
+      &:hover {
+        color: #007FFF;
+      }
     }
 
     &__task-description {
@@ -105,6 +117,10 @@
       line-height: 175%;
 
       max-width: 734px;
+    }
+
+    &__search {
+      background-color: red;
     }
   }
 
@@ -119,4 +135,8 @@ aside {
 .isCompleted {
   color:rgba(22, 31, 62, 0.30);
   text-decoration: line-through;
+}
+
+.delete {
+  opacity: 0;
 }
