@@ -1,0 +1,27 @@
+@mixin arial-16-400 {
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.32px;
+    transition: all 0.5s ease-in-out;
+}
+
+@mixin hoverStyle {
+    padding-left: 20px;
+    border-radius: 24px;
+    background-color: $Grey-3;
+    border: none;
+    cursor: pointer;
+}
+
+@mixin focusInpt {
+    border-radius: 24px;
+    border: 1px solid $extra-cobolt;
+    background-color: $white;
+    padding-left: 20px;
+    padding-right: 10%;
+}
+
+@mixin inputValid {
+
+}

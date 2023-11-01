@@ -1,0 +1,28 @@
+mixin feedback(props)
+	.feedback&attributes(attributes)(data-component='feedback')
+		h4.feedback__title Форма обратной связи
+		.feedback__block
+			form(action="submit", method="post").feedback__form
+				.feedback__inpt-block
+					+svg('input-done').feedback__first-svg
+					label(for="email").feedback__label E-mail
+					input(type="text", id="email", name="email", placeholder='E-mail', 
+					onfocus="document.querySelector('label[for=email]').style.opacity = '1';", 
+					onblur="document.querySelector('label[for=email]').style.opacity = '0';").feedback__inpt
+					span.feedback__span-error Поле E-mail обязательно
+				.feedback__inpt-block
+					+svg('input-done').feedback__second-svg
+					label(for="message").feedback__label Ваше сообщение
+					textarea(name="message", id='message',cols="30",wrap="hard",maxlength="1000", placeholder="Ваше сообщение",
+					onfocus="document.querySelector('label[for=message]').style.opacity = '1';", 
+					onblur="document.querySelector('label[for=message]').style.opacity = '0';").feedback__message
+					span.feedback__span-error
+				input(type="file", accept=".pdf,.doc,.docx", name="file", id="file", hidden).feedback__inpt-file 
+				.feedback__files-container 
+					label(for="file").feedback__label-upload <span class="upload-btn">Прикрепить файл</span><span class="popup-file">Вы можете загрузить только 2 документа</span>
+				span.feedback__span-error Поле E-mail обязательно
+				+check-button()
+				+button({text: 'Отправить'})
+			.feedback__form-done
+				+svg('form-done')
+				span Форма успешно отправлена

@@ -1,4 +1,6 @@
-import ExampleButton from "../../components/example-button/example-button";
+import Feedback from '../../components/feedback/feedback';
+import Button from '../../components/button/button';
+import CheckButton from '../../components/check-button/check-button';
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -6,9 +8,11 @@ import ExampleButton from "../../components/example-button/example-button";
  * Значение - JS-класс компонента (Импорт добавляется вручную)
  */
 const allComponents = {
-    'example-button': ExampleButton,
-}
-
+    'feedback': Feedback,
+    'button': Button,
+    'check-button': CheckButton
+};
+ 
 /**
  * Инициализация всех компонентов на странице
  */
@@ -28,3 +32,14 @@ try {
 } catch (e) {
     console.error(e);
 }
+
+document.addEventListener('DOMContentLoaded',()=>{
+    fetch('/stats')
+           .then(res => res.json())
+           .then(data =>{ 
+            localStorage.setItem('statData',JSON.stringify(data)),
+            localStorage.setItem('checkCount',JSON.stringify(1))
+        } )
+
+})
+

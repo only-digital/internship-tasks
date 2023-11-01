@@ -1,0 +1,4 @@
+mixin button(props)
+	button.button-feedback&attributes(attributes)(data-component='button')!= props.text
+		+svg('vector-btn').button-feedback__svg
+		

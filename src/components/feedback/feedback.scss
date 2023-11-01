@@ -1,0 +1,360 @@
+@import '../styles/roots.scss';
+@import '../styles/mixins.scss';
+
+.feedback {
+	$root: &;
+
+	& {
+		background-color: #fff;
+		display: flex;
+		padding: 23px 0 0 23px;
+	}
+
+	&__block {
+		width: 59%;
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 48px;
+
+	}
+
+	&__title {
+		width: 20%;
+		margin-right: 90px;
+		color: $main-blue;
+		font-family: Arial;
+		font-size: 32px;
+		font-weight: 400;
+		line-height: 120%;
+		letter-spacing: -0.64px;
+	}
+
+	&__form {
+		width: 100%;
+		padding-top: 20px;
+		display: flex;
+		flex-direction: column;
+	}
+
+
+	&__inpt-block {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+
+
+	}
+
+	&__first-svg {
+		//галочка в инпут done
+		opacity: 0;
+		position: absolute;
+		width: 35px;
+		height: 35px;
+		top: 10%;
+		right: 1%;
+	}
+
+	&__second-svg {
+		//галочка в инпут done
+		opacity: 0;
+		position: absolute;
+		width: 35px;
+		height: 35px;
+		bottom: 30px;
+		right: 1%;
+	}
+
+
+	&__label {
+		position: absolute;
+		top: -15px;
+		padding-left: 10px;
+		color: $steel;
+		font-family: Arial;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 150%;
+		letter-spacing: -0.24px;
+		opacity: 0;
+	}
+
+
+	&__message,
+	&__inpt {
+		border: none;
+		height: 48px;
+		margin-bottom: 10px;
+		@include arial-16-400();
+		border-bottom: 1px solid $extra-grey-2;
+		line-height: 100%;
+	}
+
+	&__message {
+
+		padding: 0;
+		padding: 12px 20px 12px 0;
+		resize: none;
+		line-height: 150%;
+	}
+
+	&__message::placeholder,
+	&__inpt::placeholder {
+		color: $black2;
+	}
+
+	&__message:hover,
+	&__inpt:hover {
+		@include hoverStyle();
+	}
+
+	&__message:focus-visible,
+	&__inpt:focus-visible {
+		@include focusInpt();
+		outline: none;
+	}
+
+	&__invalid {
+		box-shadow: 0 0 0 500px $white inset;
+		border: 1px solid red !important;
+		padding-left: 20px;
+		border-radius: 24px;
+	}
+
+	&__valid {
+		box-shadow: 0 0 0 500px $Grey-3 inset;
+		padding-left: 20px;
+		padding-right: 10%;
+		border-radius: 24px;
+		border: none;
+	}
+
+	&__input-focus {
+		box-shadow: 0 0 0 500px $white inset;
+	}
+
+
+	&__span-error {
+		padding-left: 20px;
+		color: $red;
+		font-family: Arial;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 150%;
+		letter-spacing: -0.24px;
+		opacity: 0;
+	}
+
+	&__opacity1 {
+		opacity: 1;
+	}
+
+	&__opacity0 {
+		opacity: 0;
+	}
+
+	&__input-block .feedback__second-svg {
+		opacity: 1;
+	}
+
+	&__form-done {
+		display: none;
+		align-items: center;
+		color: $black2;
+		@include arial-16-400();
+		line-height: 124%;
+		letter-spacing: -0.32px;
+
+		svg {
+			width: 48px;
+			height: 48px;
+			margin-right: 20px;
+		}
+	}
+
+
+	&__files-container {
+		display: flex;
+		align-items: center;
+	}
+
+	&__label-upload {
+		display: flex;
+		position: relative;
+	}
+
+	&__file-box {
+		position: relative;
+		display: flex;
+		align-items: center;
+		padding: 10px 13px 10px 18px;
+		margin-left: 20px;
+		color: $black2;
+		@include arial-16-400();
+		line-height: 124%;
+		letter-spacing: -0.32px;
+		border-radius: 27px;
+		background: $Grey-3;
+
+		span {
+			margin-left: 10px;
+			color: $steel;
+		}
+	}
+
+	&__file-del-btn {
+		display: none;
+		width: 17px;
+		height: 17px;
+	}
+
+	&__file-box:hover &__file-del-btn {
+		display: block;
+		transition: all .3s ease-in-out;
+
+
+		&::before {
+			position: absolute;
+			content: '';
+			width: 14px;
+			height: 1px;
+			top: 49%;
+			right: 7%;
+			background-color: $blue;
+			transform: rotate(135deg);
+		}
+
+		&::after {
+			position: absolute;
+			content: '';
+			width: 14px;
+			height: 1px;
+			top: 49%;
+			right: 7%;
+			background-color: $blue;
+			transform: rotate(45deg);
+		}
+	}
+
+}
+
+
+.upload-btn {
+	position: relative;
+	padding: 14px 46px 16px 16px;
+	color: $Midnight;
+	text-align: center;
+	@include arial-16-400();
+	line-height: 100%;
+	letter-spacing: -0.32px;
+	border-radius: 25px;
+	border: 1px solid $extra-grey-1;
+	cursor: pointer;
+
+	&::before {
+		position: absolute;
+		content: '';
+		width: 14px;
+		height: 1px;
+		top: 46%;
+		right: 11%;
+		background-color: $blue;
+	}
+
+	&::after {
+		position: absolute;
+		content: '';
+		width: 14px;
+		height: 1px;
+		top: 46%;
+		right: 11%;
+		background-color: $blue;
+		transform: rotate(90deg);
+	}
+
+	/*&:disabled {
+		opacity: 0.5;
+		pointer-events: none;
+		color: $grey;
+
+		svg {
+			fill: $grey;
+		}
+}*/
+
+	&:hover {
+		color: $main-white;
+		background-color: $extra-cobolt;
+		transition: background-color, color 0.3s opacity 0.3s;
+		border: 1px solid $extra-cobolt;
+	}
+
+	&:hover::after,
+	&:hover::before {
+		background-color: white;
+		transition: all 0.3s ease-in-out;
+	}
+
+	&:active {
+		background-color: $main-blue;
+		color: $main-white;
+		transition: background-color, color 0.3s opacity 0.3s;
+	}
+
+	&:active::after,
+	&:active::before {
+		background-color: white;
+	}
+
+	&:focus-visible {
+		color: $extra-cobolt;
+		border: 3px solid $extra-grey-1;
+		transition: border, color 0.3s opacity 0.3s;
+	}
+
+	&:focus-visible::after,
+	&:focus-visible::before {
+		background-color: $extra-cobolt;
+		transition: all 0.3s ease-in-out;
+	}
+}
+
+.upload-btn__disabled {
+	color: $extra-grey-1;
+	pointer-events: none;
+
+	&::before {
+		background-color: $grey;
+	}
+
+	&::after {
+		background-color: $grey;
+	}
+}
+
+.popup-file {
+	display: none;
+	position: absolute;
+	top: -100px;
+	left: -195px;
+	width: 240px;
+	padding: 16px 20px;
+	background-color: $white;
+	filter: drop-shadow(0px 4px 40px rgba(0, 0, 0, 0.10));
+	color: $main-blue;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 150%;
+
+	&::after {
+		content: '';
+		position: absolute;
+		left: 220px;
+		bottom: -18px;
+		border: 10px solid transparent;
+		border-top: 10px solid $white;
+		border-right: 10px solid $white;
+		filter: drop-shadow(0px 4px 40px rgba(0, 0, 0, 0.10));
+	}
+}

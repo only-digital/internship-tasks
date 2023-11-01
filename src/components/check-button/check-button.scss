@@ -1,0 +1,71 @@
+@import '../styles/roots.scss';
+
+.check-button {
+	$root: &;
+
+	&__label {
+		display: flex;
+		align-items: center;
+		margin-bottom: 30px;
+	}
+
+	&__inpt {
+		width: 20px;
+		height: 20px;
+		margin: 0;
+		position: relative;
+		border: 1px solid transparent;
+		margin-right: 18px;
+	}
+
+	&__inpt::after {
+		position: absolute;
+		content: '';
+		top: 0;
+		left: 0;
+		width: 16px;
+		height: 16px;
+		border: 1px solid $steel;
+	}
+
+	&__inpt:hover::after {
+		border: 1px solid $extra-cobolt;
+	}
+
+	&__inpt:focus-visible::after {
+		outline: 2px solid #99B3D8;
+	}
+
+	&__inpt::before {
+		position: absolute;
+		content: '';
+		top: 3px;
+		left: 5px;
+		width: 7px;
+		height: 5px;
+		border-right: 2px solid $white;
+		border-top: 2px solid $white;
+		transform: rotate(135deg);
+		z-index: 100;
+	}
+
+
+	&__inpt:checked::after {
+		background-color: $main-blue;
+		z-index: 0;
+	}
+
+	&__span {
+		color: $main-blue;
+		font-family: Arial;
+		font-size: 14px;
+		font-weight: 400;
+		line-height: 150%;
+
+		span {
+			color: $steel;
+		}
+	}
+
+
+}

@@ -1,0 +1,161 @@
+@import '../styles/roots.scss';
+@import '../styles/visibilityNone.scss';
+
+/*.button-feedback {
+	$root: &;
+
+	& {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 155px;
+		padding: 1% 0;
+		background-color: $extra-cobolt;
+		border-radius: 24px;
+		color: $white;
+
+		svg {
+			margin-left: 14px;
+			width: 32px;
+			height: 32px;
+			fill: $white;
+		}
+	}
+}*/
+
+.button-feedback {
+	$root: &;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 138px;
+	height: 48px;
+	padding: 7px 0 7px 17px;
+	border-radius: 25px;
+	border: 1px solid $extra-grey-1;
+	font-size: 16px;
+	font-family: 'Arial';
+	font-weight: 400;
+	line-height: 1;
+	letter-spacing: -0.32px;
+	color: $Black;
+
+
+	@media (max-width: 376px) {
+		padding-left: 30%;
+		padding-right: 29.55%;
+		margin: 0 auto;
+		margin-bottom: 50px;
+	}
+
+
+
+	@media (max-width: 1280px) and (min-width: 768px) {
+		font-size: 14px;
+		letter-spacing: -0.28px;
+	}
+
+	&:disabled {
+		opacity: 0.5;
+		pointer-events: none;
+		color: $grey;
+
+		svg {
+			fill: $grey;
+		}
+	}
+
+	svg {
+		width: 32px;
+		height: 32px;
+		margin: 0 14px;
+		fill: $main-blue;
+
+		@media (max-width: 1280px) and (min-width: 100px) {
+			width: 24px;
+			height: 24px;
+		}
+	}
+
+	&:hover {
+		color: $main-white;
+		background-color: $extra-cobolt;
+		transition: background-color,color 0.3s opacity 0.3s;
+		border: 1px solid $extra-cobolt;
+
+		svg {
+			fill: white;
+			transition: fill 0.3s;
+		}
+
+	}
+
+
+	&:active {
+		background-color: $main-blue;
+		color: $main-white;
+		transition: background-color,color 0.3s opacity 0.3s;
+
+		svg {
+			fill: white;
+		}
+	}
+
+	&:focus-visible {
+		color: $extra-cobolt;
+		border: 3px solid $extra-grey-1;
+		transition: border,color 0.3s opacity 0.3s;
+
+		svg {
+			fill: $extra-cobolt;
+			transition: fill 0.3s ease-in-out;
+		}
+	}
+
+	@include visibilityNone()
+}
+
+
+
+
+.vector-button_red {
+	border: 1px solid $main-red;
+	color: $main-white;
+	background-color: $main-red;
+
+	&:disabled {
+		background-color: $Grey-3;
+		border: 1px solid $Grey-3;
+	}
+
+	svg {
+		fill: white;
+	}
+
+	&:hover {
+		border: 1px solid $hover-red;
+		color: $main-white;
+		background-color: $hover-red;
+
+		svg {
+			fill: white;
+		}
+	}
+
+	&:active {
+		background-color: $active-red;
+		color: $main-white;
+		border: 1px solid $active-red;
+	}
+
+	&:focus-visible {
+		color: $main-white;
+		border: 3px solid $focus-border;
+
+		svg {
+			fill: white;
+		}
+	}
+	@include visibilityNone()
+}
