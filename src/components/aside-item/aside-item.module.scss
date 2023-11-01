@@ -1,0 +1,17 @@
+.AsideItem {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 16px 18px;
+  background-color: var(--light-grey);
+  border-radius: 10px;
+}
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+.title {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--custom-blue);
+}

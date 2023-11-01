@@ -1,0 +1,15 @@
+.HeaderLogo {
+  display: flex;
+  gap: 8px;
+}
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+.name {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 7px;
+  width: 49px;
+  line-height: 1.5;
+}

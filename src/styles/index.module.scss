@@ -1,8 +1,22 @@
 .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 6rem;
-    min-height: 100vh;
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 290px 1fr;
+  grid-template-rows: 80px 1fr;
+}
+.logoContainer {
+  border-right: 1px solid var(--dark-grey);
+  border-bottom: 1px solid var(--dark-grey);
+  padding-top: 29px;
+  padding-left: 45px;
+}
+.container {
+  border-bottom: 1px solid var(--dark-grey);
+}
+.aside {
+  border-right: 1px solid var(--dark-grey);
+  padding: 40px 25px;
+}
+.taskContainer {
+  background-color: var(--light-grey);
 }

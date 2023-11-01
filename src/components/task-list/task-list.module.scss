@@ -1,0 +1,15 @@
+.TaskList {
+  background-color: var(--light-grey);
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.title {
+  text-align: left;
+  color: var(--title-color);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.23;
+  letter-spacing: 0.25px;
+}
