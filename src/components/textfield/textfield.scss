@@ -117,6 +117,7 @@ $success: #27AE60;
 		}
 	
 	&__input:disabled {
+		cursor: not-allowed;
 		border: none;
 		border-radius: none;
 		border-bottom: 1px $extra-gray-2 solid;
@@ -127,6 +128,7 @@ $success: #27AE60;
 		}
 	}
 	&.disabled {
+		cursor: not-allowed;
 		.textfield__label {
 			opacity: 0;
 		}

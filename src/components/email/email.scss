@@ -115,6 +115,7 @@ input[type="email" i] {
 			border-bottom: 1px $extra-gray-2 solid;
 			color: $extra-gray-1;
 			background-color: $white;
+			cursor: not-allowed;
 			&::placeholder {
 				color: $extra-gray-1; 
 			}
@@ -126,6 +127,7 @@ input[type="email" i] {
 		border-bottom: 1px $extra-gray-2 solid;
 		color: $extra-gray-1;
 		background-color: $white;
+		cursor: not-allowed;
 		&::placeholder {
 			color: $extra-gray-1; 
 		}

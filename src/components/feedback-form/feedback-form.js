@@ -33,11 +33,9 @@ class FeedbackForm extends Component {
         this.filesInput = document.querySelector('.files__input');
         this.filesLabel = document.querySelector('.files__label');
         this.button = document.querySelector('button');
-        console.log(this.button);
       
         this.root.addEventListener('submit', this.handleSubmit);
         this.root.addEventListener('input', this.handleInput);
-        // Your code here
     }
     handleInput = () => {
         if (this.email.getAttribute('data-valid') && this.textfield.getAttribute('data-valid') && this.files.getAttribute('data-valid') && this.confirmInput.checked) {
