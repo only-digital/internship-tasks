@@ -33,6 +33,7 @@ class FeedbackForm extends Component {
         this.filesInput = document.querySelector('.files__input');
         this.filesLabel = document.querySelector('.files__label');
         this.button = document.querySelector('button');
+        this.state = element.state;
       
         this.root.addEventListener('submit', this.handleSubmit);
         this.root.addEventListener('input', this.handleInput);
@@ -60,6 +61,7 @@ class FeedbackForm extends Component {
         for (const [key, value] of this.formData.entries()) {
         this.formDataAsObject[key] = value;
         }
+        this.formDataAsObject.files = this.state.files
         console.log(this.formDataAsObject)
         
         // Perform the POST request using fetch()
@@ -76,6 +78,15 @@ class FeedbackForm extends Component {
       
         if (response.status === 200 ) {
             //handle success
+            this.confirmLink.classList.add('disabled');
+            this.confirmLabel.classList.add('disabled');
+            this.confirmInput.disabled = true;
+            this.emailInput.disabled = true;
+            this.textfield.classList.add('disabled');
+            this.textfieldInput.disabled = true;
+            this.filesLabel.classList.add('disabled');
+            this.filesInput.disabled = true;
+            this.button.disabled = true;
             
         } else if (response.status === 422 ) {
             //handle decline
@@ -91,15 +102,7 @@ class FeedbackForm extends Component {
         });
 
 
-        this.confirmLink.classList.add('disabled');
-        this.confirmLabel.classList.add('disabled');
-        this.confirmInput.disabled = true;
-        this.emailInput.disabled = true;
-        this.textfield.classList.add('disabled');
-        this.textfieldInput.disabled = true;
-        this.filesLabel.classList.add('disabled');
-        this.filesInput.disabled = true;
-        this.button.disabled = true;
+        
     }
     }
 

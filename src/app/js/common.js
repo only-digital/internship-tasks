@@ -5,6 +5,7 @@ import Email from '../../components/email/email';
 import Confirm from '../../components/confirm/confirm';
 import Textfield from '../../components/textfield/textfield';
 import Files from '../../components/files/files';
+import State from './base/state';
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -20,6 +21,7 @@ const allComponents = {
     'textfield': Textfield,
     'files': Files,
 }
+const state = new State();
 
 /**
  * Инициализация всех компонентов на странице
@@ -32,6 +34,7 @@ try {
             return new allComponents[component.dataset.component]({
                 name: component.dataset.component,
                 component: component,
+                state: state,
             });
         } catch (e) {
             console.error(`Ошибка во время инициализации компонента: ${component.dataset.component}\n\n${e}`);

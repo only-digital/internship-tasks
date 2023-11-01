@@ -82,7 +82,12 @@ $success: #27AE60;
 			align-items: center;
 			gap: 32px;
 			div {
-				width: 214px;
+				cursor: pointer;
+				display: flex;
+				flex-flow: row;
+				align-items: center;
+				gap: 4px;
+				width: fit-content;
 				height: 40px;
 				background-color: $extra-gray-3;
 				border-radius: 26px;
