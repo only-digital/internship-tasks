@@ -1,0 +1,19 @@
+.Search {
+  position: relative;
+  &__input {
+    width: 608px;
+    height: 56px;
+    padding: 16px 40px 16px 16px;
+    background-color: #fff;
+    border-radius: 10px;
+    &::placeholder {
+      color: #213c5766;
+    }
+  }
+
+  &__svg {
+    position: absolute;
+    top: 16px;
+    left: calc(100% - 35px);
+  }
+}

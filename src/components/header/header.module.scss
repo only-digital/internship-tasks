@@ -1,0 +1,27 @@
+.Header {
+  width: 100vw;
+  border-bottom: 1px solid #d9e1ec;
+
+  &__logo {
+    padding: 29px 15px 24px 45px;
+    position: relative;
+    width: 15%;
+    min-height: 80px;
+    border-right: 1px solid #d9e1ec;
+
+    &__text {
+      position: absolute;
+      top: 29px;
+      left: 126px;
+      font-size: 7px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%;
+      color: #213c57;
+      text-transform: uppercase;
+      width: 49px;
+      height: 16px;
+      user-select: none;
+    }
+  }
+}

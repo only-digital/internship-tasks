@@ -1,0 +1,21 @@
+.TasksList {
+  min-height: 100%;
+  width: 85%;
+  background-color: #f3f6f9;
+  padding: 0 40px;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin-top: 48px;
+    margin-bottom: 28px;
+    font-size: 32px;
+    color: #213c57;
+    font-weight: 600;
+    line-height: 123%;
+  }
+}

@@ -6,20 +6,54 @@
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus purus nec erat tempus, a luctus dolor ornare. Aenean convallis magna vel turpis imperdiet, non convallis nulla consequat.",
             "isCompleted": false
         },
+        
         {
             "title": "Задача 2",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus purus nec erat tempus, a luctus dolor ornare. Aenean convallis magna vel turpis imperdiet, non convallis nulla consequat.",
             "isCompleted": false
         },
+
         {
             "title": "Задача 3",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus purus nec erat tempus, a luctus dolor ornare. Aenean convallis magna vel turpis imperdiet, non convallis nulla consequat.",
             "isCompleted": true
         },
+
         {
             "title": "Задача 4",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus purus nec erat tempus, a luctus dolor ornare. Aenean convallis magna vel turpis imperdiet, non convallis nulla consequat.",
             "isCompleted": false
+        },
+
+        {
+            "title": "Задача 5",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus purus nec erat tempus, a luctus dolor ornare. Aenean convallis magna vel turpis imperdiet, non convallis nulla consequat.",
+            "isCompleted": false
+        },
+
+        {
+            "title": "Задача 6",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus purus nec erat tempus, a luctus dolor ornare. Aenean convallis magna vel turpis imperdiet, non convallis nulla consequat.",
+            "isCompleted": false
+        },
+
+        {
+            "title": "Задача 7",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus purus nec erat tempus, a luctus dolor ornare. Aenean convallis magna vel turpis imperdiet, non convallis nulla consequat.",
+            "isCompleted": false
+        },
+
+        {
+            "title": "Задача 8",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus purus nec erat tempus, a luctus dolor ornare. Aenean convallis magna vel turpis imperdiet, non convallis nulla consequat.",
+            "isCompleted": false
+        },
+
+        {
+            "title": "Задача 9",
+            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus purus nec erat tempus, a luctus dolor ornare. Aenean convallis magna vel turpis imperdiet, non convallis nulla consequat.",
+            "isCompleted": false
         }
+
     ]
 }
