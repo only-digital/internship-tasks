@@ -1,0 +1,20 @@
+.Logo {
+    display: flex;
+    flex-direction: row nowrap;
+    gap: 9px;
+    &__svg {
+        width: 72px;
+        height: 27px;
+    }
+    &__text {
+        width: 49px;
+        height: 27px;
+        color: #213C57;
+        font-family: 'Roboto';
+        font-size: 7px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 120%; /* 8.4px */
+        text-transform: uppercase;
+    }
+}

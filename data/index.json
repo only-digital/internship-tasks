@@ -1,4 +1,4 @@
-{
+{ 
     "title": "Список задач",
     "tasks": [
         {
@@ -21,5 +21,6 @@
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus purus nec erat tempus, a luctus dolor ornare. Aenean convallis magna vel turpis imperdiet, non convallis nulla consequat.",
             "isCompleted": false
         }
-    ]
+    ]   
 }
+
