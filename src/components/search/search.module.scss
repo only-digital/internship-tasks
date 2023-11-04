@@ -1,0 +1,21 @@
+.Search {
+	position: relative;	
+
+	input {
+		width: 608px;
+		padding: 16px;
+		background-color: #fff;
+		height: 56px;
+
+		&::placeholder {
+			color:#D9E1EC;
+			font-size: 16px;
+		}
+	}
+
+	img {
+		position: absolute;
+		top: 16px;
+		right: 16px;
+	}
+}

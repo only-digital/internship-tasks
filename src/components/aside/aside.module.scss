@@ -1,0 +1,23 @@
+.Aside {
+	padding: 40px 25px 0px 25px;
+	border-right: 1px solid #D9E1EC;
+	width: 290px;
+	height: 1000px;
+
+	&__button {
+		display: flex;
+    	align-items: center;
+    	column-gap: 16px;
+    	width: 240px;
+		height: 52px;
+    	padding-left: 18px;
+		padding-right: 83px;
+		font-size: 16px;
+		line-height: 160%;
+		color: #007FFF;
+		background-color: #E3EDF7;
+		border-radius: 20px;
+		letter-spacing: 1px;
+		
+	}
+}

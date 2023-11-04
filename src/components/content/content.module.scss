@@ -1,0 +1,20 @@
+.Content {
+	background-color: #F3F6F9;
+	width: 1630px;
+	padding: 48px 40px 144px 40px;
+
+	&__wrapper {
+		display: flex;
+      	align-items: center;
+      	justify-content: space-between;
+		margin-bottom: 20px;
+		// width: 1550px;
+
+		h1 {
+			font-size: 32px;
+			color: #213C57;
+			font-weight: bold;
+		}
+	}
+}
+

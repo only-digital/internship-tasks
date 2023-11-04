@@ -1,0 +1,58 @@
+.TaskList {
+	display: flex;
+	flex-direction: column;
+  	gap: 20px;
+
+	.Task__item {
+		padding: 24px 24px 31px 24px;
+		background-color: #fff;
+		border-radius: 15px;
+		cursor: pointer;
+	}
+
+	.Task__block {
+		display: flex;
+		justify-content: space-between;
+		align-content: center;
+		padding-bottom: 17px;
+		border-bottom: 1px solid #E7EAEE;
+
+		&.completed {
+			text-decoration: line-through;
+			cursor:auto;
+
+			&:hover {
+				.Task__title {
+					color: #161F3E;
+					opacity: 0.3;
+				}
+			}
+						
+			.Task__title {
+				color: #161F3E;
+				opacity: 0.3;
+			}
+		}
+
+		&:hover {
+
+			.Task__title {
+				color: #007FFF;
+			}
+		}
+	}
+
+	.Task__title {
+		font-size: 24px;
+		color: #161F3E;
+		
+	}
+
+	.Task__text {
+		font-size: 16px;
+		padding-top: 10px;
+		padding-bottom: 31px;
+	}
+
+
+}

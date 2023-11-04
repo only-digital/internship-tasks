@@ -1,0 +1,20 @@
+.Header {	
+	height: 80px;
+    border-bottom: solid 1px #D9E1EC;
+	display: flex;
+	
+
+	&__block {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		width: 290px;
+		border-right: solid 1px #D9E1EC;
+		padding-left: 45px;
+		padding-right: 108px;
+	}
+
+	&__text {
+
+	}
+}
