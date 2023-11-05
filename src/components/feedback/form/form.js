@@ -23,8 +23,8 @@ class form extends Component {
     formStates = {
         "conf-checkbox-ct": false,
         "input-file-ct": false,
-        "input-mail-ct": true,
-        "textarea-ct": true
+        "input-mail-ct": false,
+        "textarea-ct": false
     };
 
     constructor(element) {
