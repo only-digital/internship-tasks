@@ -65,12 +65,12 @@ class form extends Component {
 
     onMailUpdate = (value) => {
         this.formStates[childKeys.mail] = value;
-        const mailState = value;
+        this.MailAndMessageVerify();
     }
 
     onMesegeUpdate = (value) => {
         this.formStates[childKeys.message] = value;
-        this.MailMessageControle();
+        this.MailAndMessageVerify();
     }
 
     onFileUpdate = (value) => {
@@ -81,7 +81,7 @@ class form extends Component {
         this.formStates[childKeys.checkbox] = value;
     }
 
-    MailMessageControle = () => {
+    MailAndMessageVerify = () => {
         const mailState = this.formStates[childKeys.mail];
         const messageState = this.formStates[childKeys.message];
         if (mailState && messageState) {
