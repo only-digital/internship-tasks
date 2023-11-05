@@ -53,30 +53,38 @@ class inputFileCt extends Component {
         this.alert.classList.add("input-file-ct__alert_active");
     }
 
-    addFile = (file, size) => {
+    addFile = (file, fileSize) => {
         this.alert.classList.remove("input-file-ct__alert_active");
         this.files[file.name] = file;
-
         const fileProps = {
-            fileName: file.name,
-            fileType: file.type,
-            fileSize: size > 1000
-                ? `${(size / 1000).toFixed(1)} мБ`
-                : `${size.toFixed(1)} kb`,
-            fileId: file.name
+            fileType: file.type.slice(-4)
         }
+
+        const fileNameLength = file.name.length;
+
+        if (fileSize > 1000) {
+            fileProps.fileSize = `${(fileSize / 1000).toFixed(1)} мБ`
+        } else {
+            fileProps.fileSize = `${fileSize.toFixed(1)} kb`
+        }
+
+        if (fileNameLength > 20) {
+            fileProps.fileName = file.name.slice(0, 20) + "..."
+        } else {
+            fileProps.fileName = file.name
+        }
+
         this.createFileHTML(fileProps);
         this.sendDataToForm(Object.values(this.files));
     }
 
     createFileHTML = (fileProps) => {
-        const fileHTMLFoundation = document.createElement("span");
-        fileHTMLFoundation.id = fileProps.fileId;
-        fileHTMLFoundation.classList = "file";
-        this.fileCt.appendChild(fileHTMLFoundation);
-        const fileHTMLLink = document.getElementById(fileProps.fileId);
-        fileHTMLLink.innerHTML += generateFileCtHTML(fileProps);
-        return (new File({ name: "file", component: fileHTMLLink, delete: this.deleteFile, id: fileProps.fileId }))
+        const fileHTML = document.createElement("span");
+        fileHTML.id = fileProps.fileId;
+        fileHTML.classList = "file";
+        this.fileCt.appendChild(fileHTML);
+        fileHTML.innerHTML += generateFileCtHTML(fileProps);
+        return (new File({ name: "file", component: fileHTML, delete: this.deleteFile, id: fileProps.fileId }))
     }
 
     deleteFile = (FileKey) => {
@@ -97,7 +105,7 @@ function generateFileCtHTML(props) {
         </span>
         <svg class="file__icon", "focusable"="false">
             <use xlink:href="#plusIcon-svg""></use>
-        </svg>;     
+        </svg>     
   `;
 }
 

@@ -6,6 +6,7 @@ import confCheckboxCt from "./conf-checkbox-ct/conf-checkbox-ct"
 
 const childKeys = { button: "button", checkbox: "conf-checkbox-ct", file: "input-file-ct", mail: "input-mail-ct", message: "textarea-ct" };
 const formKeys = { button: "button", checkbox: "checkbox", file: "file", mail: "mail", message: "message" }
+//константы для избежания ошибок с отпечатком
 
 const childClass = {
     "conf-checkbox-ct": confCheckboxCt,
@@ -29,8 +30,8 @@ class form extends Component {
 
     constructor(element) {
         super(element);
+        this.formElements = this.root.elements;
         this.initRootElements();
-        this.initFormElements();
         this.updateEvents = {
             "conf-checkbox-ct": this.onCheckboxUpdate,
             "input-file-ct": this.onFileUpdate,
@@ -44,12 +45,13 @@ class form extends Component {
         this.root.addEventListener("submit", this.onSubmit);
     }
 
-    initFormElements = () => { this.formElements = this.root.elements };
     initRootElements = () => {
         Array.from(this.root.children).forEach((block) => {
-            this.childElementsLink[block.classList[0]] = block;
+            const blockName = block.classList[0];
+            this.childElementsLink[blockName] = block;
         })
     }
+
     initChildComponentsJs = () => {
         Object.values(childKeys).forEach((key) => {
             if (childClass[key] !== undefined)
@@ -63,6 +65,15 @@ class form extends Component {
         });
     };
 
+    onFileUpdate = (value) => {
+        this.formStates[childKeys.file] = value;
+    }
+
+    onCheckboxUpdate = (value) => {
+        this.formStates[childKeys.checkbox] = value;
+
+    }
+
     onMailUpdate = (value) => {
         this.formStates[childKeys.mail] = value;
         this.MailAndMessageVerify();
@@ -73,14 +84,6 @@ class form extends Component {
         this.MailAndMessageVerify();
     }
 
-    onFileUpdate = (value) => {
-        this.formStates[childKeys.file] = value;
-    }
-
-    onCheckboxUpdate = (value) => {
-        this.formStates[childKeys.checkbox] = value;
-    }
-
     MailAndMessageVerify = () => {
         const mailState = this.formStates[childKeys.mail];
         const messageState = this.formStates[childKeys.message];
@@ -89,7 +92,6 @@ class form extends Component {
             return
         }
         this.toggleFormDisabling("on")
-        return
     }
 
     toggleFormDisabling(action) {
@@ -110,30 +112,24 @@ class form extends Component {
         this.formElements[formKeys.checkbox].disabled = false;
 
         this.formElements[formKeys.button].disabled = false;
-
-        return
     }
 
     onSubmit = async (event) => {
         event.preventDefault();
         this.toogleLoader("add");
-        this.buttonChange("addUnvise");
         if (!this.formStates[childKeys.checkbox]) {
             this.allert.innerText = "Примите пользовательское соглошение";
             this.allert.classList.add("form__alert_active");
-            this.buttonChange("removeUnvise");
             return
         }
         if (!this.formStates[childKeys.mail]) {
             this.allert.innerText = "Поле почты должно быть заполнено";
             this.allert.classList.add("form__alert_active");
-            this.buttonChange("removeUnvise");
             return
         }
         if (!this.formStates[childKeys.message]) {
             this.allert.innerText = "Поле сообшение должно быть заполнено";
             this.allert.classList.add("form__alert_active");
-            this.buttonChange("removeUnvise");
             return
         }
         //Проверку message и mail можно было и не делать но считайте это подстроховкой 
@@ -141,8 +137,7 @@ class form extends Component {
         this.allert.classList.remove("form__alert_active");
 
         const reponse = await this.senData();
-        this.toogleLoader("remove");
-        this.buttonChange("removeButton");
+        this.removeButton("removeButton");
         this.createSuccsesMessage();
     }
 
@@ -154,35 +149,8 @@ class form extends Component {
         })
     }
 
-    toogleLoader = (action) => {
-        if (action === "add") {
-            const loaderHTML = document.createElement("span");
-            loaderHTML.classList = "loader form__loader";
-            this.root.appendChild(loaderHTML);
-            this.loader = this.getElement("loader");
-            this.loader.innerHTML += "<span class=loader-17></span>";
-            return
-        }
-        this.loader.remove()
-    }
-
-    buttonChange = (action) => {
-        if (action === "AddUnvise") {
-            this.childElementsLink[childKeys.button]
-                .classList.add("button_unvise")
-            return
-        }
-        if (action === "removeUnvise") {
-            this.childElementsLink[childKeys.button]
-                .classList.remove("button_unvise")
-            return
-        }
-        if (action === "removeButton") {
-            this.childElementsLink[childKeys.button].remove()
-            return
-        }
-        //можно было его намного короче написать при помоши toggleCLass но ради,
-        //читабельности кода написал вот так.
+    removeButton = (action) => {
+        this.childElementsLink[childKeys.button].remove()
     }
 
     createSuccsesMessage = () => {
@@ -190,11 +158,11 @@ class form extends Component {
         succsesHTML.classList = "succses-send form__succses-send";
         this.root.appendChild(succsesHTML);
         const succsesLink = this.getElement("succses-send");
-        succsesLink.innerHTML += genereteSucssesHTML();
+        succsesLink.innerHTML += genereteSucssesInnerHTML();
     }
 }
 
-function genereteSucssesHTML(props) {
+function genereteSucssesInnerHTML(props) {
     return `
         <svg class=succses-send_icon focusable=false>
             <use xlink:href="#input-confirm-svg""></use>
