@@ -119,9 +119,16 @@
             border-color: transparent transparent #DEDEDE transparent;
             border-radius: 0px;
             min-height: 45px;
+            color: #DEDEDE;
             &::placeholder {
                 color: #DEDEDE;
             }
+        }
+    }
+    
+    &_disabled{
+        .textarea-ct__icon{
+            stroke: #DEDEDE;
         }
     }
 }

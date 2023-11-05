@@ -105,9 +105,17 @@
             background-color: #fff;
             border-color: transparent transparent #DEDEDE transparent;
             border-radius: 0px;
+            color: #DEDEDE;
+
             &::placeholder {
                 color: #DEDEDE;
             }
+        }
+    }
+
+    &_disabled {
+        .input-mail-ct__icon {
+            stroke: #DEDEDE;
         }
     }
 }

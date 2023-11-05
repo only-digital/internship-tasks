@@ -55,12 +55,12 @@ class inputFileCt extends Component {
 
     addFile = (file, fileSize) => {
         this.alert.classList.remove("input-file-ct__alert_active");
+        
         this.files[file.name] = file;
+        const fileNameLength = file.name.length;
         const fileProps = {
             fileType: file.type.slice(-4)
         }
-
-        const fileNameLength = file.name.length;
 
         if (fileSize > 1000) {
             fileProps.fileSize = `${(fileSize / 1000).toFixed(1)} мБ`
@@ -80,7 +80,6 @@ class inputFileCt extends Component {
 
     createFileHTML = (fileProps) => {
         const fileHTML = document.createElement("span");
-        fileHTML.id = fileProps.fileId;
         fileHTML.classList = "file";
         this.fileCt.appendChild(fileHTML);
         fileHTML.innerHTML += generateFileCtHTML(fileProps);
@@ -89,6 +88,7 @@ class inputFileCt extends Component {
 
     deleteFile = (FileKey) => {
         delete this.files[FileKey];
+        
         this.input.disabled = false;
         this.sendBt.classList.remove("input-file-ct__send-bt_disabled");
         this.sendDataToForm(Object.values(this.files));

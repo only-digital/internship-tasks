@@ -4,9 +4,9 @@ import textareaCt from "./textarea-ct/textarea-ct";
 import inputFileCt from "./input-file-ct/input-file-ct";
 import confCheckboxCt from "./conf-checkbox-ct/conf-checkbox-ct"
 
-const childKeys = { button: "button", checkbox: "conf-checkbox-ct", file: "input-file-ct", mail: "input-mail-ct", message: "textarea-ct" };
+const childComponentKeys = { button: "button", checkbox: "conf-checkbox-ct", file: "input-file-ct", mail: "input-mail-ct", message: "textarea-ct" };
 const formKeys = { button: "button", checkbox: "checkbox", file: "file", mail: "mail", message: "message" }
-//константы для избежания ошибок с отпечатком
+//константы для избежания ошибок с отпечатками
 
 const childClass = {
     "conf-checkbox-ct": confCheckboxCt,
@@ -20,12 +20,11 @@ class form extends Component {
     formElements;
     updateEvents;
     allert;
-    loader;
     formStates = {
         "conf-checkbox-ct": false,
         "input-file-ct": false,
-        "input-mail-ct": false,
-        "textarea-ct": false
+        "input-mail-ct": true,
+        "textarea-ct": true
     };
 
     constructor(element) {
@@ -53,7 +52,7 @@ class form extends Component {
     }
 
     initChildComponentsJs = () => {
-        Object.values(childKeys).forEach((key) => {
+        Object.values(childComponentKeys).forEach((key) => {
             if (childClass[key] !== undefined)
                 return (
                     new childClass[key]({
@@ -66,27 +65,27 @@ class form extends Component {
     };
 
     onFileUpdate = (value) => {
-        this.formStates[childKeys.file] = value;
+        this.formStates[childComponentKeys.file] = value;
     }
 
     onCheckboxUpdate = (value) => {
-        this.formStates[childKeys.checkbox] = value;
+        this.formStates[childComponentKeys.checkbox] = value;
 
     }
 
     onMailUpdate = (value) => {
-        this.formStates[childKeys.mail] = value;
+        this.formStates[childComponentKeys.mail] = value;
         this.MailAndMessageVerify();
     }
 
     onMesegeUpdate = (value) => {
-        this.formStates[childKeys.message] = value;
+        this.formStates[childComponentKeys.message] = value;
         this.MailAndMessageVerify();
     }
 
     MailAndMessageVerify = () => {
-        const mailState = this.formStates[childKeys.mail];
-        const messageState = this.formStates[childKeys.message];
+        const mailState = this.formStates[childComponentKeys.mail];
+        const messageState = this.formStates[childComponentKeys.message];
         if (mailState && messageState) {
             this.toggleFormDisabling("off")
             return
@@ -96,19 +95,19 @@ class form extends Component {
 
     toggleFormDisabling(action) {
         if (action === "on") {
-            this.childElementsLink[childKeys.file].classList.add(`${childKeys.file}_disabled`);
+            this.childElementsLink[childComponentKeys.file].classList.add(`${childComponentKeys.file}_disabled`);
             this.formElements[formKeys.file].disabled = true;
 
-            this.childElementsLink[childKeys.checkbox].classList.add(`${childKeys.checkbox}_disabled`);
+            this.childElementsLink[childComponentKeys.checkbox].classList.add(`${childComponentKeys.checkbox}_disabled`);
             this.formElements[formKeys.checkbox].disabled = true;
 
             this.formElements[formKeys.button].disabled = true;
             return
         }
-        this.childElementsLink[childKeys.file].classList.remove(`${childKeys.file}_disabled`);
+        this.childElementsLink[childComponentKeys.file].classList.remove(`${childComponentKeys.file}_disabled`);
         this.formElements[formKeys.file].disabled = false;
 
-        this.childElementsLink[childKeys.checkbox].classList.remove(`${childKeys.checkbox}_disabled`);
+        this.childElementsLink[childComponentKeys.checkbox].classList.remove(`${childComponentKeys.checkbox}_disabled`);
         this.formElements[formKeys.checkbox].disabled = false;
 
         this.formElements[formKeys.button].disabled = false;
@@ -116,27 +115,26 @@ class form extends Component {
 
     onSubmit = async (event) => {
         event.preventDefault();
-        this.toogleLoader("add");
-        if (!this.formStates[childKeys.checkbox]) {
+        if (!this.formStates[childComponentKeys.checkbox]) {
             this.allert.innerText = "Примите пользовательское соглошение";
             this.allert.classList.add("form__alert_active");
             return
         }
-        if (!this.formStates[childKeys.mail]) {
+        if (!this.formStates[childComponentKeys.mail]) {
             this.allert.innerText = "Поле почты должно быть заполнено";
             this.allert.classList.add("form__alert_active");
             return
         }
-        if (!this.formStates[childKeys.message]) {
+        if (!this.formStates[childComponentKeys.message]) {
             this.allert.innerText = "Поле сообшение должно быть заполнено";
             this.allert.classList.add("form__alert_active");
             return
         }
-        //Проверку message и mail можно было и не делать но считайте это подстроховкой 
-        //на случай если кто то будет играться с inspect и обойдет ограничение кнопки
+        //Проверку message и mail можно было и не делать но пусть будут.
         this.allert.classList.remove("form__alert_active");
 
         const reponse = await this.senData();
+        this.disablingAllFormElements();
         this.removeButton("removeButton");
         this.createSuccsesMessage();
     }
@@ -150,15 +148,22 @@ class form extends Component {
     }
 
     removeButton = (action) => {
-        this.childElementsLink[childKeys.button].remove()
+        this.childElementsLink[childComponentKeys.button].remove()
     }
 
     createSuccsesMessage = () => {
         const succsesHTML = document.createElement("div");
         succsesHTML.classList = "succses-send form__succses-send";
         this.root.appendChild(succsesHTML);
-        const succsesLink = this.getElement("succses-send");
-        succsesLink.innerHTML += genereteSucssesInnerHTML();
+        succsesHTML.innerHTML += genereteSucssesInnerHTML();
+    }
+
+    disablingAllFormElements = () => {
+        for (const formElement of Object.values(formKeys)) {
+            const componentKey = childComponentKeys[formElement]
+            this.childElementsLink[componentKey].classList.add(`${componentKey}_disabled`);
+            this.formElements[formElement].disabled = true;
+        }
     }
 }
 
@@ -172,4 +177,5 @@ function genereteSucssesInnerHTML(props) {
         </span>         
     `
 }
+
 export default form
