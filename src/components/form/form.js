@@ -14,6 +14,7 @@ class Form extends Component {
     submit;
     checkboxInput;
     checkboxLabel;
+    form;
 
     constructor(element) {
         super(element);
@@ -31,6 +32,7 @@ class Form extends Component {
         this.submit = this.getElement('submit')
         this.checkboxInput = this.getElement('checkbox-hidden-input')
         this.checkboxLabel = this.getElement('checkbox-input')
+        this.form = document.forms.form
 
         this.inputs.forEach(input => {
             input.addEventListener('change', this.fieldChangeHandler)
@@ -39,12 +41,13 @@ class Form extends Component {
 
         this.messageInput.addEventListener('input', this.autoHeight)
         this.fileInput.addEventListener('change', this.fileChangeHandler)
-        this.submit.addEventListener('click', this.submitHandler)
+        this.submit.addEventListener('submit', this.submitHandler)
         this.checkboxLabel.addEventListener('click', this.checkCheckbox)
     }
 
-    submitHandler = () => {
-        this.checkFIelds()
+    submitHandler = (e) => {
+        e.preventDefault()
+        this.formSubmit()
     }
 
     fileChangeHandler = ({ target }) => {
@@ -286,6 +289,19 @@ class Form extends Component {
         }
 
         this.checkFIelds()
+    }   
+
+    formSubmit = () => {
+        const formData = new FormData(this.form)
+
+        this.sendData(formData)
+    }
+
+    sendData = async (data) => {
+        return await fetch('/form', {
+            method: 'POST',
+            body: data
+        })
     }
 }
 

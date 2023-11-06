@@ -2,6 +2,7 @@ mixin form(props)
 	form.form&attributes(attributes)(
 		data-component='form'
 		id='form'
+		name='form'
 	)
 		p.form__email-wrap
 			span.form__error-text
@@ -10,6 +11,7 @@ mixin form(props)
 				type='email'
 				data-reg='^([a-zA-Z\-0-9_]+|([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)+)|(".+"))@(([a-zA-Z\-0-9]+\.)+[a-zA-Z\-0-9]{2,})$'
 				isValid='0'
+				name='email'
 			).form__input.form__email-input.input
 			span.form__input-text E-mail
 			+svg('success-arrow').form__success-arrow
@@ -19,6 +21,7 @@ mixin form(props)
 			textarea(
 				isValid='0'
 				placeholder='Ваше сообщение'
+				name='message'
 			).input.form__input.form__message-input
 			span.form__input-text Ваше сообщение
 			+svg('success-arrow').form__success-arrow
@@ -30,6 +33,7 @@ mixin form(props)
 				accept='.pdf, .doc, .docx'
 				multiple
 				isValid='1'
+				name='files'
 			).form__file-hidden-input.visually-hidden
 			label(
 				for='fileInput'
@@ -44,6 +48,7 @@ mixin form(props)
 				id='formCheckbox'
 				tabindex='-1'
 				isValid='0'
+				name='checkbox'
 			).form__checkbox-hidden-input.visually-hidden
 			span(tabindex='0').form__checkbox-text Вы подтверждаете, что ознакомились 
 			span(
@@ -54,5 +59,5 @@ mixin form(props)
 				href='#'
 				target='__blank'
 			).form__checkbox-link  c политикой обработки персональных данных
-		button(type='button').form__submit.form__submit--disabled Отправить
+		button(type='submit').form__submit.form__submit--disabled Отправить
 			+svg('arrow').form__arrow
