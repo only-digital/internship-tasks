@@ -59,7 +59,8 @@ class inputFileCt extends Component {
         this.files[file.name] = file;
         const fileNameLength = file.name.length;
         const fileProps = {
-            fileType: file.type.slice(-4)
+            fileType: file.type.slice(-4),
+            fileId: file.name
         }
 
         if (fileSize > 1000) {
