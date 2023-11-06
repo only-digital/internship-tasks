@@ -11,6 +11,9 @@ class Form extends Component {
     tooltips;
     fileWrap;
     fileTextError;
+    submit;
+    checkboxInput;
+    checkboxLabel;
 
     constructor(element) {
         super(element);
@@ -25,6 +28,9 @@ class Form extends Component {
         this.fileSection = this.getElement('file-wrap')
         this.fileWrap = this.getElement('file-output')
         this.fileTextError = this.getElement('file-text-error')
+        this.submit = this.getElement('submit')
+        this.checkboxInput = this.getElement('checkbox-hidden-input')
+        this.checkboxLabel = this.getElement('checkbox-input')
 
         this.inputs.forEach(input => {
             input.addEventListener('change', this.fieldChangeHandler)
@@ -33,11 +39,19 @@ class Form extends Component {
 
         this.messageInput.addEventListener('input', this.autoHeight)
         this.fileInput.addEventListener('change', this.fileChangeHandler)
+        this.submit.addEventListener('click', this.submitHandler)
+        this.checkboxLabel.addEventListener('click', this.checkCheckbox)
+    }
+
+    submitHandler = () => {
+        this.checkFIelds()
     }
 
     fileChangeHandler = ({ target }) => {
         this.fileCheck()
         this.renderFiles(target)
+
+        this.checkFIelds()
     }
 
     fieldChangeHandler = ({ target }) => {
@@ -46,6 +60,8 @@ class Form extends Component {
         } else {
             this.messageCheck(target)
         }
+
+        this.checkFIelds()
     }
 
     fieldInputHandler = ( { target } ) => {
@@ -105,10 +121,12 @@ class Form extends Component {
         input.classList.remove('input--success')
 
         errorText.textContent = ''
+        input.setAttribute('isValid', '0')
     }
 
     showSuccess = (input) => {
         input.classList.add('input--success')
+        input.setAttribute('isValid', '1')
     }
 
     limitInput = (input, limit) => {
@@ -220,6 +238,7 @@ class Form extends Component {
             if (size > maxSize) {
                 this.fileTextError.textContent = 'Максимальный размер файла 5 MB'
                 this.fileInput.value = ''
+                this.fileInput.setAttribute('isValid', '0')
                 return
             }
         })
@@ -227,8 +246,47 @@ class Form extends Component {
         if (files.length > 2) {
             this.fileInput.value = ''
             this.fileTextError.textContent = 'Можно добавить до двух файлов'
+            this.fileInput.setAttribute('isValid', '0')
+            return
+        }
+
+        this.fileInput.setAttribute('isValid', '1')
+    }
+
+    checkFIelds = () => {
+        const inputsArr = []
+        const isAllValid = []
+
+        inputsArr.push(...this.inputs, this.fileInput, this.checkboxInput)
+
+        inputsArr.forEach((input) => {
+            isAllValid.push(+input.getAttribute('isValid'))
+        })
+
+        const isValid = isAllValid.reduce((acc, current) => {
+            return acc && current
+        })
+
+        if (!isValid) { 
+            this.submit.classList.add('form__submit--disabled')
+            this.submit.setAttribute('tabindex', '-1')
+            this.submit.removeEventListener('click', this.submitHandler)
+        } else {
+            this.submit.classList.remove('form__submit--disabled')
+            this.submit.setAttribute('tabindex', '0')
+            this.submit.addEventListener('click', this.submitHandler)
         }
     }
-}   
+
+    checkCheckbox = () => {
+        if (+this.checkboxInput.getAttribute('isValid')) {
+            this.checkboxInput.setAttribute('isValid', '0')
+        }   else {
+            this.checkboxInput.setAttribute('isValid', '1')
+        }
+
+        this.checkFIelds()
+    }
+}
 
 export default Form
