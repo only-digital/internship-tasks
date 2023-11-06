@@ -2,7 +2,7 @@ import Component from '../../../app/js/base/Component';
 import inputMailCt from "./input-mail-ct/input-mail-ct";
 import textareaCt from "./textarea-ct/textarea-ct";
 import inputFileCt from "./input-file-ct/input-file-ct";
-import confCheckboxCt from "./conf-checkbox-ct/conf-checkbox-ct"
+import confCheckboxCt from "./conf-checkbox-ct/conf-checkbox-ct";
 
 const childComponentKeys = { button: "button", checkbox: "conf-checkbox-ct", file: "input-file-ct", mail: "input-mail-ct", message: "textarea-ct" };
 const formKeys = { button: "button", checkbox: "checkbox", file: "file", mail: "mail", message: "message" }
@@ -23,8 +23,8 @@ class form extends Component {
     formStates = {
         "conf-checkbox-ct": false,
         "input-file-ct": false,
-        "input-mail-ct": true,
-        "textarea-ct": true
+        "input-mail-ct": false,
+        "textarea-ct": false
     };
 
     constructor(element) {
