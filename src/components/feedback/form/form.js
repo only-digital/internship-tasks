@@ -40,7 +40,7 @@ class form extends Component {
         this.initChildComponentsJs();
         this.allert = this.getElement("alert")
 
-        this.toggleFormDisabling("on");
+        // this.toggleFormDisabling("on");
         this.root.addEventListener("submit", this.onSubmit);
     }
 

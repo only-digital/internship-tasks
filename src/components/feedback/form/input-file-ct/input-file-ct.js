@@ -24,6 +24,7 @@ class inputFileCt extends Component {
     onFileSelect = () => {
         const file = this.input.files[0];
         const size = file?.size / 1000;
+        console.log(file);
 
         if (file === undefined) {
             this.sendAllert("Файл не выбран")
@@ -57,26 +58,41 @@ class inputFileCt extends Component {
         this.alert.classList.remove("input-file-ct__alert_active");
 
         this.files[file.name] = file;
-        const fileNameLength = file.name.length;
+        const fileName = file.name;
+        const typeStartPosInName = this.findFileTypeStartPos(fileName);
         const fileProps = {
-            fileType: file.type.slice(-4),
             fileId: file.name
+        }
+
+        const filteredFileName = fileName.slice(0, typeStartPosInName - 1);
+        const filteredFileNameLength = filteredFileName.length
+
+        if (filteredFileNameLength > 20) {
+            fileProps.fileName = filteredFileName.slice(0, 20) + "..."
+        } else {
+            fileProps.fileName = filteredFileName
         }
 
         if (fileSize > 1000) {
             fileProps.fileSize = `${(fileSize / 1000).toFixed(1)} мБ`
         } else {
-            fileProps.fileSize = `${fileSize.toFixed(1)} kb`
+            fileProps.fileSize = `${fileSize.toFixed(1)} kБ`
         }
 
-        if (fileNameLength > 20) {
-            fileProps.fileName = file.name.slice(0, 20) + "..."
-        } else {
-            fileProps.fileName = file.name.slice(0, fileNameLength - 4)
-        }
+        fileProps.fileType = "/" + fileName.slice(typeStartPosInName);
 
         this.createFileHTML(fileProps);
         this.sendDataToForm(Object.values(this.files));
+    }
+
+    findFileTypeStartPos = (fileName) => {
+        const fileNameLength = fileName.length
+        if (fileName[fileNameLength - 1] === "x"){
+            return -4
+            //docx length
+        }
+        return -3
+        //pdf and doc length
     }
 
     createFileHTML = (fileProps) => {
