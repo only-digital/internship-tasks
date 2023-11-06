@@ -114,12 +114,10 @@ button {
 
     box-sizing: border-box;
     height: 43px;
-    padding: 13px 0;
-    padding-right: 20px;
+    padding-bottom: 13px;
 
     font-family: Arial, sans-serif;
     font-size: 16px;
-    line-height: 100%;
     color: $black1;
 
     border: none;
@@ -131,7 +129,7 @@ button {
     border-radius: 0;
     cursor: pointer;
 
-    transition: padding .3s, border .3s, background .3s, border-radius .3s;
+    transition: padding-left .3s, border .3s, background .3s, border-radius .3s, height .3s;
 
     &::placeholder {
         font-family: Arial, sans-serif;
