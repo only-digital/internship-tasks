@@ -104,11 +104,33 @@
 		padding-bottom: 30px;
 	}
 
+	&__checkbox-label {
+		display: flex;
+		gap: 18px;
+		align-items: center;
+	}
+
 	&__checkbox-input {
+		display: none;
+	}
+
+	&__custom-checkbox {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		width: 16px;
 		height: 16px;
 		border: 1px solid #BCBCBC;
-		-webkit-appearance: checkbox;
 	}
 
+	&__checkmark {
+		width: 10px;
+		height: 8px;
+	}
+
+	&__checkbox-input:checked + &__checkbox-label {
+		.form__custom-checkbox {
+			background: #002F6C;
+		}
+	}
 }
