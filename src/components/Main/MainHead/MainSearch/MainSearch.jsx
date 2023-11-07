@@ -1,19 +1,18 @@
-import { useState } from "react";
-import Image from "next/image";
-import { useSearch } from "@/hooks/useSearch";
+import { useContext } from "react";
+import { TaskContext } from "@/contexts/TaksContext";
 import styled from "./MainSearch.module.scss"
+import Image from "next/image";
 
 const MainSearch = () => {
-    const [search, setSearch] = useState("");
-    console.log(useSearch(search));
+    const { mainHeadSearch, setMainHeadSearch } = useContext(TaskContext);
 
     return (
         <div className={styled.MainSearch}>
             <input
                 type="text" placeholder="Поиск"
                 className={styled.MainSearch__input}
-                onChange={(e) => setSearch(e.target.value)}
-                value={search}
+                onChange={(e) => setMainHeadSearch(e.target.value)}
+                value={mainHeadSearch}
             />
             <button className={styled.MainSearch__searchButton}>
                 <Image src={"/svg/search-svg.svg"}

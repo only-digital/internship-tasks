@@ -7,6 +7,8 @@ function TaskProvider(props) {
     const [AllTasksList, setAllTasksList] = useState();
     const [activeTasksListId, setActiveTasksListId] = useState(0);
     const [activeTaskList, setActiveTaskList] = useState();
+    const [filteredActiveTaskList, setFilteredActiveTaskList] = useState();
+    const [mainHeadSearch, setMainHeadSearch] = useState("");
 
     useEffect(() => {
         const getData = async () => {
@@ -22,6 +24,28 @@ function TaskProvider(props) {
                 AllTasksList.find(({ id: TaskListId }) => TaskListId === activeTasksListId)
             )
     }, [activeTasksListId, AllTasksList]);
+
+    useEffect(() => {
+        if (activeTaskList !== undefined) {
+            setFilteredActiveTaskList(() => {
+                const loweredSearch = mainHeadSearch.toLowerCase();
+                if (loweredSearch !== "")
+                    return {
+                        ...activeTaskList,
+                        tasks: activeTaskList.tasks
+                            .filter(task => {
+                                const loweredTaskTitle = task.title.toLowerCase();
+                                const loweredTaskText = task.text.toLowerCase();
+                                return (
+                                    loweredTaskTitle.includes(loweredSearch) ||
+                                    loweredTaskText.includes(loweredSearch)
+                                )
+                            })
+                    }
+                return activeTaskList
+            })
+        }
+    }, [mainHeadSearch, activeTaskList])
 
     const deleteTask = (id) => {
         setAllTasksList(
@@ -63,9 +87,12 @@ function TaskProvider(props) {
                     AllTasksList,
                     activeTasksListId,
                     setActiveTasksListId,
+                    filteredActiveTaskList,
+                    mainHeadSearch,
                     activeTaskList,
+                    setMainHeadSearch,
                     deleteTask,
-                    toggleTaskComplet
+                    toggleTaskComplet,
                 }
             }
         >
