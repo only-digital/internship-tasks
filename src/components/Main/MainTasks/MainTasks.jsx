@@ -5,7 +5,7 @@ const MainTasks = ({ tasks }) => {
     return (
         <div className={styled.MainTasks}>
             {
-                tasks.map((task, id) => <Task task={task} id={id} key={id}/>)
+                tasks.map((task, id) => <Task task={task} id={id} key={id} />)
             }
         </div>
     )

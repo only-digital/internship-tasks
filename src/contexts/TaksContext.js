@@ -4,61 +4,66 @@ import { getIndexPage } from "../../lib/api";
 export const TaskContext = createContext();
 
 function TaskProvider(props) {
-    const [taskData, setTaskData] = useState();
-    const [selectedTasksListId, setSelectedTasksListId] = useState(0);
-    const [selectedTaskList, setSelectedTaskList] = useState();
+    const [AllTasksList, setAllTasksList] = useState();
+    const [activeTasksListId, setActiveTasksListId] = useState(0);
+    const [activeTaskList, setActiveTaskList] = useState();
 
     useEffect(() => {
         const getData = async () => {
             const data = await getIndexPage();
-            setTaskData(getIndexPage)
+            setAllTasksList(data);
         }
         getData();
     }, []);
 
     useEffect(() => {
-        if (taskData !== undefined) {
-            setSelectedTaskList(taskData.find((data) => data.id === selectedTasksListId))
-        }
-    }, [selectedTasksListId, taskData]);
+        AllTasksList !== undefined &&
+            setActiveTaskList(
+                AllTasksList.find(({ id: TaskListId }) => TaskListId === activeTasksListId)
+            )
+    }, [activeTasksListId, AllTasksList]);
 
     const deleteTask = (id) => {
-        setTaskData(taskData.map((tasksList) =>
-            tasksList.id === selectedTasksListId ?
-                {
-                    ...tasksList,
-                    tasks: tasksList.tasks.filter((task, i) => i !== id)
-                }
-                : tasksList
-        ))
+        setAllTasksList(
+            AllTasksList.map((tasksList) =>
+                tasksList.id === activeTasksListId
+                    ? {
+                        ...tasksList,
+                        tasks: tasksList.tasks.filter((task, taskId) => taskId !== id)
+                    }
+                    : tasksList
+            )
+        )
     }
 
     const toggleTaskComplet = (id) => {
-        setTaskData(taskData.map((tasksList) =>
-            tasksList.id === selectedTasksListId ?
-                {
-                    ...tasksList,
-                    tasks: tasksList.tasks.map((task, i) =>
-                        i === id ?
-                            {
-                                ...task,
-                                isCompleted: !task.isCompleted
-                            }
-                            : task
-                    )
-                }
-                : tasksList
-        ))
+        setAllTasksList(
+            AllTasksList.map((tasksList) =>
+                tasksList.id === activeTasksListId
+                    ? {
+                        ...tasksList,
+                        tasks: tasksList.tasks.map((task, i) =>
+                            i === id
+                                ? {
+                                    ...task,
+                                    isCompleted: !task.isCompleted
+                                }
+                                : task
+                        )
+                    }
+                    : tasksList
+            )
+        )
     }
 
     return (
         <TaskContext.Provider
             value={
                 {
-                    taskData,
-                    selectedTasksListId,
-                    setSelectedTasksListId,
-                    selectedTaskList,
+                    AllTasksList,
+                    activeTasksListId,
+                    setActiveTasksListId,
+                    activeTaskList,
                     deleteTask,
                     toggleTaskComplet
                 }

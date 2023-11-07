@@ -1,19 +1,21 @@
 import { useContext } from 'react';
-import styled from './NavBar.module.scss';
 import { TaskContext } from '@/contexts/TaksContext';
+import styled from './NavBar.module.scss';
 import TaskNav from './TaskNav/TaskNav';
 
 const NavBar = () => {
-    const { taskData } = useContext(TaskContext);
+    const { AllTasksList } = useContext(TaskContext);
     return (
         <div className={styled.NavBar}>
             {
-                taskData !== undefined &&
-                taskData.map((task, key) =>
+                AllTasksList !== undefined &&
+                AllTasksList.map((tasksList, key) =>
                     <TaskNav
-                        title={task.title}
-                        id={task.id}
-                        key={key} />)
+                        TasksListTitle={tasksList.title}
+                        TasksListId={tasksList.id}
+                        key={key}
+                    />
+                )
             }
         </div>
     )
