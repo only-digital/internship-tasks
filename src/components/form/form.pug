@@ -42,19 +42,20 @@ mixin form(props)
 				span.form__plus
 			div.form__file-output
 			span.form__file-text-error
-		label.form__checkbox-wrap
-			input(
-				type='checkbox'
-				id='formCheckbox'
-				tabindex='-1'
-				isValid='0'
-				name='checkbox'
-			).form__checkbox-hidden-input.visually-hidden
-			span(tabindex='0').form__checkbox-text Вы подтверждаете, что ознакомились 
-			span(
-				tabindex='0'
-			).form__checkbox-input
-				+svg('checkbox').form__checkbox-icon
+		p.form__checkbox-wrap
+			label.form__checkbox-label
+				input(
+					type='checkbox'
+					id='formCheckbox'
+					tabindex='-1'
+					isValid='0'
+					name='checkbox'
+				).form__checkbox-hidden-input.visually-hidden
+				span(tabindex='0').form__checkbox-text Вы подтверждаете, что ознакомились 
+				span(
+					tabindex='0'
+				).form__checkbox-input
+					+svg('checkbox').form__checkbox-icon
 			a(
 				href='#'
 				target='__blank'

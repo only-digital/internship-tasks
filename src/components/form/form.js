@@ -31,7 +31,7 @@ class Form extends Component {
         this.fileTextError = this.getElement('file-text-error')
         this.submit = this.getElement('submit')
         this.checkboxInput = this.getElement('checkbox-hidden-input')
-        this.checkboxLabel = this.getElement('checkbox-input')
+        this.checkboxLabel = this.getElement('checkbox-label')
         this.form = document.forms.form
 
         this.inputs.forEach(input => {
@@ -43,6 +43,7 @@ class Form extends Component {
         this.fileInput.addEventListener('change', this.fileChangeHandler)
         this.submit.addEventListener('submit', this.submitHandler)
         this.checkboxLabel.addEventListener('click', this.checkCheckbox)
+        this.checkboxInput.addEventListener('click', this.stopEvent)
     }
 
     submitHandler = (e) => {
@@ -232,6 +233,7 @@ class Form extends Component {
 
     fileCheck = () => {
         this.fileTextError.textContent = ''
+        this.fileTextError.classList.remove('form__file-text-error--active')
 
         const files = Array.from(this.fileInput.files)
 
@@ -248,8 +250,9 @@ class Form extends Component {
 
         if (files.length > 2) {
             this.fileInput.value = ''
-            this.fileTextError.textContent = 'Можно добавить до двух файлов'
+            this.fileTextError.textContent = 'Вы можете загрузить только 2 документа'
             this.fileInput.setAttribute('isValid', '0')
+            this.fileTextError.classList.add('form__file-text-error--active')
             return
         }
 
@@ -282,6 +285,7 @@ class Form extends Component {
     }
 
     checkCheckbox = () => {
+        console.log('test')
         if (+this.checkboxInput.getAttribute('isValid')) {
             this.checkboxInput.setAttribute('isValid', '0')
         }   else {
@@ -302,6 +306,10 @@ class Form extends Component {
             method: 'POST',
             body: data
         })
+    }
+
+    stopEvent = (e) => {
+        e.stopPropagation()
     }
 }
 

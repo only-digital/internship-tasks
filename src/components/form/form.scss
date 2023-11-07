@@ -131,16 +131,55 @@
 		position: relative;
 
 		display: flex;
+		gap: 20px;
+		flex-wrap: wrap;
 		align-items: baseline;
 		margin-top: 116px;
 		margin-bottom: 30px;
 
 		#{$root}__file-text-error {
 			position: absolute;
-			bottom: -20px;
+			bottom: 75px;
+			left: -195px;
 
-			font-size: 12px;
-			color: $red;
+			display: none;
+			width: 240px;
+			padding: 16px 20px 18px 20px;
+
+			font-size: 14px;
+			color: $blue1;
+
+			filter: drop-shadow(0px 8px 16px $gray5);
+			background-color: $white;
+
+			@media (max-width: 975px) {
+				bottom: -20px;
+				left: 0;
+
+				width: auto;
+				padding: 0;
+
+				background-color: transparent;
+			}
+
+			&--active {
+				display: block;
+			}
+
+			&::before {
+				content: '';
+
+				position: absolute;
+				right: 0;
+				bottom: -16px;
+
+				width: 0;
+				height: 0;
+
+				border-top: 16px solid $white;
+				border-left: 16px solid transparent;
+				filter: drop-shadow(0px 8px 16px $gray5);
+			}
 		}
 	}
 
@@ -214,11 +253,12 @@
 
 	&__file-output {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 19px;
-		margin-left: 20px;
 
 		#{$root}__file-elem {
 			display: flex;
+			flex-shrink: 0;
 			align-items: center;
 			padding: 10px 13px 10px 18px;
 
@@ -226,6 +266,13 @@
 			border-radius: 27px;
 
 			cursor: pointer;
+
+			@media (max-width: 400px) {
+				width: 100%;
+				min-width: max-content;
+
+				font-size: 14px;
+			}
 
 			*	{
 				pointer-events: none;
@@ -236,7 +283,19 @@
 					#{$root}__file-button {
 						width: 14px;
 						margin-left: 10px;
+
+						@media (max-width: 400px) {
+
+						}
+
 					}
+				}
+			}
+
+			@media (hover: none) and (pointer: coarse) {
+				#{$root}__file-button {
+					width: 14px !important;
+					margin-left: 10px !important;
 				}
 			}
 
@@ -326,9 +385,13 @@
 
 	&__checkbox-wrap {
 		display: flex;
-		align-items: center;
-		width: max-content;
+		flex-wrap: wrap;
 		margin-bottom: 30px;
+	}
+
+	&__checkbox-label {
+		display: flex;
+		align-items: center;
 
 		&--disabled {
 			pointer-events: none;

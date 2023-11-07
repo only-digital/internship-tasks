@@ -91,6 +91,10 @@ button {
     margin: 0 auto;
     padding: 26px 130px 60px 30px;
 
+    @media (max-width: 1185px) {
+        gap: 40px;
+    }
+
     @media (max-width: 975px) {
         flex-direction: column;
         gap: 70px;
