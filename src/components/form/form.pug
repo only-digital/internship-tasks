@@ -10,8 +10,12 @@ mixin form(props)
 						+svg('union')
 				div.form__email-error
 			div.form__message
-				label(for='message-input').form__message-label Ваше сообщение
-				input(id='message-input')
+				label(for='message-input-id').form__message-label
+				div.form__message-input-wrapper
+					input(id='message-input-id', type='text', required, maxLength='1000', placeholder='Ваше сообщение').form__message-input
+					span.form__message-checkmark
+						+svg('union')
+				div.form__message-error
 			div.form__file
 				label(for='file-input').form__file-label
 				input(type='file', id='file-input')

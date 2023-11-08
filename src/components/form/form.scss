@@ -20,6 +20,11 @@
 		color: #909090;
 	}
 
+	%error {
+		font-size: 12px;
+		color: #FF0000;
+	}
+
 	&__email-label, &__message-label {
 		font-size: 12px;
 		height: 18px;
@@ -37,15 +42,14 @@
 	}
 
 	&__email-error {
-		font-size: 12px;
-		color: #FF0000;
+		@extend %error;
 	}
 
 	&__email-checkmark {
 		display: none;
 	}
 
-	&__email-input, #message-input, &__email-label, &__message-label, &__email-error {
+	&__email-input, &__email-label, &__message-label, &__email-error, &__message-error {
 		padding-left: 20px;
 	}
 
@@ -92,11 +96,70 @@
 		}
 	}
 
-	#message-input {
-		width: 836px;
+	&__message-input-wrapper {
+		height: 36px;
+		border-bottom: 1px solid #DEDEDE;
+	}
+
+	%message-input-big {
+		width: 536px;
 		height: 166px;
-		background-color: #F4F4F4;
 		border-radius: 24px;
+		padding: 12px 16px 16px 20px;
+	}
+
+	&__message-input::placeholder {
+		font-size: 16px;
+		color: #111111;
+	}
+
+	&__message-input-wrapper:hover {
+		@extend %message-input-big;
+		background-color: #F4F4F4;
+		cursor: pointer;
+	}
+
+	&__message-input-wrapper:focus-within {
+		@extend %message-input-big;
+		border: 1px solid #0041A0;
+		background-color: #FFFFFF;
+	}
+
+	&__message-input-wrapper.invalid {
+		@extend %message-input-big;
+		border: 1px solid #FF0000;
+	}
+
+	&__message-input-wrapper.filled {
+		@extend %message-input-big;
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		gap: 12px;
+		background-color: #F4F4F4;
+	}
+
+	&__message-input {
+		width: 486px;
+	}
+
+	&__message-checkmark{
+		display: none;
+	}
+
+	&__message-checkmark.shown {
+		display: block;
+		align-self: flex-end;
+		width: 18px;
+		height: 13px;
+		svg {
+			width: 18px;
+			height: 13px;
+		}
+	}
+
+	&__message-error {
+		@extend %error
 	}
 
 	&__checkbox {
