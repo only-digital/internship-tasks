@@ -3,17 +3,10 @@ import ExampleButton from "../components/example-button/example-button";
 import {getIndexPage} from "../../lib/api";
 import Navbar from '../components/navbar/navbar';
 import DeleteButton from '../components/delete-button/delete-button';
-import { useState } from 'react';
+
 
 
 function Index(props) {
-    console.log(props);
-    let arr = [];
-    const [isInitial, setIsInitial] = useState(Array.from({ length: props.tasks.length }, () => true))
-    console.log(isInitial);
-    console.log(props);
-
-    const [myProps, setMyProps] = useState(props);
 
     const onCardClick = (e) => {
         if (e.target.closest('.styles_TaskCard__uqRRn').classList.contains('styles_Completed__rzorv')) {
@@ -21,12 +14,7 @@ function Index(props) {
         } else {
             e.target.closest('.styles_TaskCard__uqRRn').classList.add('styles_Completed__rzorv');
         }
-        
-        // let cardId = e.target.closest('.styles_TaskCard__uqRRn').id;
-        // let myArr = isInitial;
-        // myArr[cardId] = !myArr[cardId];
-        // setIsInitial(myArr);
-        // console.log(isInitial);
+
     }
     
     return (

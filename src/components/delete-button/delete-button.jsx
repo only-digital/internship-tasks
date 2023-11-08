@@ -6,9 +6,9 @@ export default function DeleteButton(props) {
     const handleButtonClick = (e, props) => {
         //delete TaskCard 
         e.stopPropagation();
-       let index = e.target.closest('.styles_TaskCard__uqRRn').id;
-        props.tasks.splice(id, 1);
-        console.log(props);
+    //    let index = e.target.closest('.styles_TaskCard__uqRRn').id;
+    //     props.tasks.splice(index, 1);
+    //     console.log(props);
         e.target.closest('.styles_TaskCard__uqRRn').remove();
 
     }
