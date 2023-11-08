@@ -3,8 +3,12 @@ mixin form(props)
 		h3 Форма обратной связи
 		form.form__form
 			div.form__email
-				label(for='email-input').form__email-label E-mail
-				input(type='email', id='email-input')
+				label(for='email-input-id').form__email-label
+				div.form__email-input-wrapper
+					input(type='email', id='email-input-id', maxLength='255', placeholder='E-mail').form__email-input
+					span.form__email-checkmark
+						+svg('union')
+				div.form__email-error
 			div.form__message
 				label(for='message-input').form__message-label Ваше сообщение
 				input(id='message-input')
