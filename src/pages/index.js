@@ -3,29 +3,55 @@ import ExampleButton from "../components/example-button/example-button";
 import {getIndexPage} from "../../lib/api";
 import Navbar from '../components/navbar/navbar';
 import DeleteButton from '../components/delete-button/delete-button';
+import { useState } from 'react';
 
 
 
 function Index(props) {
 
-    const onCardClick = (e) => {
-        if (e.target.closest('.styles_TaskCard__uqRRn').classList.contains('styles_Completed__rzorv')) {
-            e.target.closest('.styles_TaskCard__uqRRn').classList.remove('styles_Completed__rzorv');
-        } else {
-            e.target.closest('.styles_TaskCard__uqRRn').classList.add('styles_Completed__rzorv');
-        }
+    const [data, setData] = useState(props);
 
+    const handleButtonClick = (e) => {
+        e.stopPropagation();
+        let taskIndex = e.target.closest('.styles_TaskCard__uqRRn').id;
+        // copy of the data object to avoid mutating the state directly
+        let newData = { ... data };
+        let newTasks = [... data.tasks];
+        // delete TaskCard
+        newTasks.splice(taskIndex, 1);
+        newData.tasks = [ ... newTasks];
+        // set data
+        setData(newData);
     }
+
+    const onCardClick = (e) => {
+        console.log(e.target);
+        e.stopPropagation();
+        
+        let taskIndex = e.target.closest('.styles_TaskCard__uqRRn').id;
+        // copy of the data object to avoid mutating the state directly
+        let newData = { ... data };
+        let newTasks = [... data.tasks];
+        // change isCompleted
+        newTasks[taskIndex] = {
+            ...newTasks[taskIndex], 
+            isCompleted: !newTasks[taskIndex].isCompleted, 
+          };
+        newData.tasks = [ ... newTasks];
+        // set data
+        setData(newData);
+    }
+    
     
     return (
         <div className={styles.Wrapper}>
-            <Navbar listName={props.title}/>
+            <Navbar listName={data.title}/>
             <div className={styles.TasksList}>
-                <h1>{props.title}</h1>
+                <h1>{data.title}</h1>
                 <ul>
-                {props.tasks.map((task, index) => (
+                {data.tasks.map((task, index) => (
                     <li key={index} id={index} className={styles.TaskCard + (task.isCompleted ? ' ' + styles.Completed : '')} onClick={onCardClick}>
-                    <h2>{task.title}</h2><DeleteButton props={props}/>
+                    <h2>{task.title}</h2><DeleteButton handleButtonClick={handleButtonClick}/>
                     <hr></hr>
                     <p>{task.text}</p>
                     </li>
@@ -35,11 +61,6 @@ function Index(props) {
 
         </div>
 
-    
-        
-        
-
-       
     )
 }
 
