@@ -22,7 +22,7 @@ mixin form(props)
 			div.form__checkbox
 				input(type='checkbox', id='checkbox-input')
 				label(for='checkbox-input').form__checkbox-label Вы подтверждаете, что ознакомились c политикой обработки персональных данных
-			button.form__submit-button
+			button(type='submit').form__submit-button
 				span.form__button-text Отправить
 				span
 					+svg('vector').form__button-arrow

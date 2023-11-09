@@ -8,7 +8,7 @@ import Form from "../../components/form/form";
  */
 const allComponents = {
     'example-button': ExampleButton,
-    'form': Form
+    'form': Form,
 }
 
 /**

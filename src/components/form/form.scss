@@ -1,195 +1,215 @@
 .form {
-	$root: &;
+  $root: &;
 
-	& {
-		font-family: Arial, sans-serif;
-		font-weight: 400;
-		font-size: 16px;
-		display: flex;
-		gap: 50px;
+  & {
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    display: flex;
+    gap: 50px;
 
-		h3 {
-			font-size: 32px;
-			font-weight: 700;
-			color: #002F6C;
-		}
-	}
+    h3 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #002F6C;
+    }
+  }
 
-	%label {
-		font-size: 12px;
-		color: #909090;
-	}
+  %label {
+    font-size: 12px;
+    color: #909090;
+  }
 
-	%error {
-		font-size: 12px;
-		color: #FF0000;
-	}
+  %error {
+    font-size: 12px;
+    color: #FF0000;
+  }
 
-	&__email-label, &__message-label {
-		font-size: 12px;
-		height: 18px;
-		color: #909090;
-	}
+  %label {
+    font-size: 12px;
+    height: 18px;
+    color: #909090;
+  }
 
-	&__email, &__message {
-		display: grid;
-	}
+  %checkmark {
+    width: 18px;
+    height: 13px;
+  }
 
-	&__email-input-wrapper {
-		position: relative;
-		width: 836px;
-		height: 48px;
-	}
+  &__email-label {
+    @extend %label;
+  }
 
-	&__email-error {
-		@extend %error;
-	}
+  &__email, &__message {
+    display: grid;
+  }
 
-	&__email-checkmark {
-		display: none;
-	}
+  &__email-input-wrapper {
+    width: 836px;
+    height: 48px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: 1px solid #DEDEDE;
+    background: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-	&__email-input, &__email-label, &__message-label, &__email-error, &__message-error {
-		padding-left: 20px;
-	}
+  &__email-error {
+    @extend %error;
+  }
 
-	&__email-input {
-		width: 100%;
-		height: 100%;
-		border-bottom: 1px solid #DEDEDE;
-		background: #FFFFFF;
-	}
+  &__email-checkmark {
+    display: none;
+  }
 
-	&__email-input::placeholder {
-		color: #111111;
-	}
+  &__email-label, &__message-label, &__email-error, &__message-error {
+    padding-left: 20px;
+  }
 
-	&__email-input:hover {
-		border-radius: 24px;
-		background: #F4F4F4;
-		cursor: pointer;
-	}
+  &__email-input {
+    background-color: inherit;
+  }
 
-	&__email-input:focus {
-		border: 1px solid #0041A0;
-		border-radius: 24px;
-	}
+  &__email-input::placeholder {
+    color: #111111;
+  }
 
-	&__email-input.invalid {
-		background: #FFFFFF;
-		border-color: #FF0000;
-	}
+  &__email-input-wrapper:hover {
+    border-radius: 24px;
+    background: #F4F4F4;
+    cursor: pointer;
+  }
 
-	&__email-input.filled {
-		background-color: #F4F4F4;
-		border-radius: 24px;
-	}
+  &__email-input-wrapper:focus-within {
+    border: 1px solid #0041A0;
+    border-radius: 24px;
+  }
 
-	&__email-input.filled + &__email-checkmark {
-		display: block;
-		position: absolute;
-		top: 17.5px;
-		right: 20px;
-		svg {
-			width: 18px;
-			height: 13px;
-		}
-	}
+  &__email-input-wrapper.invalid {
+    background: #FFFFFF;
+    border: 1px solid #FF0000;
+    border-radius: 24px;
+  }
 
-	&__message-input-wrapper {
-		height: 36px;
-		border-bottom: 1px solid #DEDEDE;
-	}
+  &__email-input-wrapper.filled {
+    background-color: #F4F4F4;
+    border-radius: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-	%message-input-big {
-		width: 536px;
-		height: 166px;
-		border-radius: 24px;
-		padding: 12px 16px 16px 20px;
-	}
+  &__email-input-wrapper.filled {
+    .form__email-checkmark {
+      display: block;
+      svg {
+        @extend %checkmark;
+      }
+    }
+  }
 
-	&__message-input::placeholder {
-		font-size: 16px;
-		color: #111111;
-	}
+  &__message-input-wrapper {
+    height: 36px;
+    border-bottom: 1px solid #DEDEDE;
+  }
 
-	&__message-input-wrapper:hover {
-		@extend %message-input-big;
-		background-color: #F4F4F4;
-		cursor: pointer;
-	}
+  %message-input-big {
+    width: 556px;
+    height: 166px;
+    border-radius: 24px;
+    padding: 12px 16px 16px 20px;
+  }
 
-	&__message-input-wrapper:focus-within {
-		@extend %message-input-big;
-		border: 1px solid #0041A0;
-		background-color: #FFFFFF;
-	}
+  &__message-input::placeholder {
+    font-size: 16px;
+    color: #111111;
+  }
 
-	&__message-input-wrapper.invalid {
-		@extend %message-input-big;
-		border: 1px solid #FF0000;
-	}
+  &__message-input-wrapper:hover {
+    @extend %message-input-big;
+    background-color: #F4F4F4;
+    cursor: pointer;
+  }
 
-	&__message-input-wrapper.filled {
-		@extend %message-input-big;
-		display: flex;
-		justify-content: flex-start;
-		align-items: flex-start;
-		gap: 12px;
-		background-color: #F4F4F4;
-	}
+  &__message-input-wrapper:focus-within {
+    @extend %message-input-big;
+    border: 1px solid #0041A0;
+    background-color: #FFFFFF;
+  }
 
-	&__message-input {
-		width: 486px;
-	}
+  &__message-input-wrapper.invalid {
+    @extend %message-input-big;
+    border: 1px solid #FF0000;
+  }
 
-	&__message-checkmark{
-		display: none;
-	}
+  &__message-input-wrapper.filled {
+    @extend %message-input-big;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 12px;
+    background-color: #F4F4F4;
+    .form__message-checkmark {
+      display: block;
+      align-self: flex-end;
 
-	&__message-checkmark.shown {
-		display: block;
-		align-self: flex-end;
-		width: 18px;
-		height: 13px;
-		svg {
-			width: 18px;
-			height: 13px;
-		}
-	}
+      svg {
+        @extend %checkmark;
+      }
+    }
+  }
 
-	&__message-error {
-		@extend %error
-	}
+  &__message-input {
+    width: 486px;
+    height: 100%;
+  }
 
-	&__checkbox {
-		display: flex;
-		align-items: center;
-		gap: 18px;
-		@extend %label;
-	}
+  &__message-input:hover {
+    cursor: pointer;
+  }
 
-	#checkbox-input {
-		width: 16px;
-		height: 16px;
-		border: 1px solid #BCBCBC;
-	}
+  &__message-label {
+    @extend %label;
+  }
 
-	&__submit-button {
-		width: 155px;
-		height: 48px;
-		background-color: #0041A0;
-		border-radius: 25px;
-		color: #FFFFFF;
-		display: flex;
-		gap: 14px;
-		align-items: center;
-		justify-content: center;
-	}
+  &__message-checkmark {
+    display: none;
+  }
 
-	&__button-arrow {
-		width: 32px;
-		height: 22px;
-		fill: #FFFFFF;
-	}
+  &__message-error {
+    @extend %error
+  }
+
+  &__checkbox {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    @extend %label;
+  }
+
+  #checkbox-input {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #BCBCBC;
+  }
+
+  &__submit-button {
+    width: 155px;
+    height: 48px;
+    background-color: #0041A0;
+    border-radius: 25px;
+    color: #FFFFFF;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__button-arrow {
+    width: 32px;
+    height: 22px;
+    fill: #FFFFFF;
+  }
 }
