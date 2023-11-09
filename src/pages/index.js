@@ -1,19 +1,12 @@
 import styles from '../styles/index.module.scss'
 import ExampleButton from "../components/example-button/example-button";
+import OnlyTasksKeeper from '../components/only-tasks-keeper/only-tasks-keeper';
 import {getIndexPage} from "../../lib/api";
 
 function Index(props) {
-
-    console.log(props)
-
     return (
         <main className={styles.main}>
-            <ExampleButton/>
-
-            <ExampleButton initialValue={10}/>
-
-            {/* Your code here */}
-
+            <OnlyTasksKeeper data={props}/>
         </main>
     )
 }

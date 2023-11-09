@@ -1,0 +1,19 @@
+@import "../../styles/mixins.scss";
+
+.OnlyBtnTask {
+	$root:&;
+	background-color: $soft-blue;
+	border-radius: 5px;
+	margin-inline: 25px;
+	padding: 13px 83px 13px 18px;
+
+	&__btn{
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		#{$root}__text{
+			@include fontSettings(0px,$m-size,160%,400);
+			color: $main-blue;
+		}
+	}
+}

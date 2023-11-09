@@ -1,0 +1,9 @@
+@import "../../styles/variables.scss";
+
+.OnlyHeader {
+	$root: &;
+	height: 80px;
+	border-bottom-color: $add-grey;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}

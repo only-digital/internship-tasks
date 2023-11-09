@@ -1,0 +1,45 @@
+//@import "../../styles/globals.scss";
+@import "../../styles/mixins.scss";
+
+.OnlyTask {
+	$root:&;
+	border-radius: 10px;
+	background-color: white;
+	padding: 24px 24px 31px 24px;
+	cursor: pointer;
+
+	&__header{
+		display: flex;
+		justify-content: space-between;
+		border-bottom-color: $add-grey;
+		border-bottom-width: 1px;
+		border-bottom-style: solid;
+		padding-bottom: 17px;
+	
+		#{$root}__text{
+			@include fontSettings(0,$l-size,130%,400);
+			font-feature-settings: 'clig' off, 'liga' off;
+			color:$add-dark-blue;
+		}
+	}
+
+	&__content{
+		@include fontSettings(0.15px,$m-size,175%,400);
+		color: $add_dark_blue;
+		padding-top: 10px;
+		padding-right: 792px;
+	}
+
+	&:hover{
+		#{$root}__text{
+			color:$main-blue;
+		}
+	}
+
+	&_completed,&_completed:hover{
+		#{$root}__text{
+			color:$grey;
+			text-decoration-line: line-through;
+		}	
+	}
+}

@@ -1,0 +1,30 @@
+@import "../../styles/variables.scss";
+
+.OnlyTasksKeeper {
+	$root:&;
+	display: grid;
+
+	grid-template-columns: max-content 1fr;
+	grid-template-rows: max-content 1fr;
+	
+
+	&__headercontainer{
+		grid-column: 2;
+		grid-row: 1;
+	}
+	
+	&__mainheadercontainer{
+		grid-column: 1;
+		grid-row: span 2;
+		border-right-color: $add-grey;
+		border-right-width: 1px;
+		border-right-style: solid;
+		
+	}
+
+	&__taskslistcontainer{
+		grid-column: 2;
+		grid-row: 2;
+	}
+
+}

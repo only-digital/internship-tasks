@@ -1,0 +1,12 @@
+@import "./variables.scss";
+
+@mixin fontSettings($letter_spacing, $font_size,$line_height,$font_weight){
+    
+    font-family: 'Roboto';
+    font-weight: $font-weight;
+    font-style: normal;
+    letter-spacing: $letter_spacing;
+    font-size: $font_size;
+    line-height: $line_height;
+
+}

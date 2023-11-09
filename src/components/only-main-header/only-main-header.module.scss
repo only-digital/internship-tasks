@@ -1,0 +1,26 @@
+@import "../../styles/mixins.scss";
+
+.OnlyMainHeader {
+	$root:&;
+	display: grid;
+	grid-template-columns: 1fr;
+	row-gap: 40px;
+	
+	&__faviconcontainer{
+		border-bottom-color: $add-grey;
+		border-bottom-width: 1px;
+		border-bottom-style: solid;
+		display: flex;
+		align-items: center;
+		height: 80px;
+		padding: 29px 115px 24px 45px;
+		gap: 9px;
+		#{$root}__addtext{
+			width: 49px;
+			height: 26px;
+			text-transform: uppercase;
+			@include fontSettings(0px,$xs-size,120%,500)
+			
+		}
+	}
+}

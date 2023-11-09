@@ -1,0 +1,16 @@
+@import "../../styles/mixins.scss";
+
+.OnlySearchInput {
+	$root:&;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-radius: 10px;
+	background-color: white;
+	padding: 15px 16px;
+	width: 608px;
+	&__input{
+		@include fontSettings(0.15px,$m-size,150%,400);
+		color:$main-blue;
+	}
+}

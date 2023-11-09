@@ -1,0 +1,25 @@
+@import "../../styles/mixins.scss";
+
+.OnlyTasksList {
+	$root:&;
+	background-color: $add_soft_blue;
+	padding: 40px 40px 144px 40px;
+	display: grid;
+	grid-template-columns: 1630px;
+	row-gap: 15px;
+	&__headercontainer{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		#{$root}__header{
+			@include fontSettings(0.25px,$xl-size,123%.5,600);
+			color:$dark-blue;
+		}
+	}
+
+	&__taskscontainer{
+		display: grid;
+		grid-template-columns: 1fr;
+		row-gap: 20px;
+	}
+}
