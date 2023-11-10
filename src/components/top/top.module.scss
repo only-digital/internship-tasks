@@ -3,6 +3,8 @@
 .Top {
 	$root: '.Top';
 	
+	grid-area: A;
+
 	border-bottom: 1px solid $light-blue1;
 
 	&__logo {
