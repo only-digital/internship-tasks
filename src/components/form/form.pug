@@ -29,9 +29,15 @@ mixin form(props)
 					button.form__remove-file-button
 						+svg('delete')
 			div.form__checkbox
-				input(type='checkbox', id='checkbox-input')
-				label(for='checkbox-input').form__checkbox-label Вы подтверждаете, что ознакомились c политикой обработки персональных данных
-			button(type='submit').form__submit-button
+				input(type='checkbox', id='checkbox-input-id', required).form__checkbox-input
+				label(for='checkbox-input-id').form__checkbox-label
+					span.form__custom-checkbox
+						+svg('checkmark').form__checkmark
+					div
+						span Вы подтверждаете, что ознакомились&nbsp
+						span(style='color:#002F6C') c политикой обработки персональных данных
+				span.form__checkbox-error Необходимо подтверждение
+			button(type='submit', disabled).form__submit-button
 				span.form__button-text Отправить
 				span
 					+svg('vector').form__button-arrow

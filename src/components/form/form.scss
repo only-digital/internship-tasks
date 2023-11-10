@@ -23,17 +23,24 @@
   %error {
     font-size: 12px;
     color: #FF0000;
+    padding-left: 20px;
   }
 
   %label {
     font-size: 12px;
     height: 18px;
     color: #909090;
+    padding-left: 20px;
   }
 
   %checkmark {
     width: 18px;
     height: 13px;
+  }
+
+  %button-focus {
+    border: 3px solid #99B3D8;
+    background-color: #FFFFFF;
   }
 
   &__email-label {
@@ -42,6 +49,10 @@
 
   &__email, &__message {
     display: grid;
+  }
+
+  &__email {
+    margin-bottom: 10px;
   }
 
   &__email-input-wrapper {
@@ -62,10 +73,6 @@
 
   &__email-checkmark {
     display: none;
-  }
-
-  &__email-label, &__message-label, &__email-error, &__message-error {
-    padding-left: 20px;
   }
 
   &__email-input {
@@ -104,10 +111,15 @@
   &__email-input-wrapper.filled {
     .form__email-checkmark {
       display: block;
+
       svg {
         @extend %checkmark;
       }
     }
+  }
+
+  &__message {
+    margin-bottom: 28px;
   }
 
   &__message-input-wrapper {
@@ -151,6 +163,7 @@
     align-items: flex-start;
     gap: 12px;
     background-color: #F4F4F4;
+
     .form__message-checkmark {
       display: block;
       align-self: flex-end;
@@ -182,6 +195,10 @@
     @extend %error
   }
 
+  &__file {
+    margin-bottom: 30px;
+  }
+
   &__file-input {
     display: none;
   }
@@ -202,7 +219,7 @@
   }
 
   &__file-button-image {
-    svg{
+    svg {
       width: 14px;
       height: 14px;
       fill: #002F6C;
@@ -213,9 +230,11 @@
     background-color: #0041A0;
     border-color: #0041A0;
     cursor: pointer;
+
     .form__file-caption {
       color: #FFFFFF;
     }
+
     .form__file-button-image {
       svg {
         fill: #FFFFFF;
@@ -228,11 +247,12 @@
   }
 
   &__file-input:focus + &__file-label {
-    background-color: #FFFFFF;
-    border: 3px solid #99B3D8;
+    @extend %button-focus;
+
     .form__file-caption {
       color: #021F45;
     }
+
     .form__file-button-image {
       svg {
         fill: #002F6C;
@@ -273,24 +293,69 @@
   }
 
   &__checkbox {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    @extend %label;
+    font-size: 14px;
+    color: #909090;
+    margin-bottom: 30px;
   }
 
-  #checkbox-input {
+  &__checkbox-input {
+    display: none;
+  }
+
+  &__checkbox-label {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+  }
+
+  &__custom-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 16px;
     height: 16px;
     border: 1px solid #BCBCBC;
   }
 
+  &__checkmark {
+    width: 10px;
+    height: 8px;
+  }
+
+  &__checkbox-input:hover + &__checkbox-label {
+    .form__custom-checkbox {
+      border-color: #0041A0;
+      cursor: pointer;
+    }
+  }
+
+  &__checkbox-input:checked + &__checkbox-label {
+    .form__custom-checkbox {
+      background: #002F6C;
+    }
+  }
+
+  &__checkbox-input:focus + &__checkbox-label {
+    .form__custom-checkbox {
+      background: #FFFFFF;
+      border-color: #BCBCBC;
+    }
+  }
+
+  &__checkbox-error {
+    display: none;
+  }
+
+  &__checkbox-error.shown {
+    display: block;
+    @extend %error;
+  }
+
   &__submit-button {
     width: 155px;
     height: 48px;
-    background-color: #0041A0;
     border-radius: 25px;
-    color: #FFFFFF;
+    border: 1px solid #BCBCBC;
     display: flex;
     gap: 14px;
     align-items: center;
@@ -300,6 +365,36 @@
   &__button-arrow {
     width: 32px;
     height: 22px;
-    fill: #FFFFFF;
+    fill: #0041A0;
   }
+
+  &__submit-button:disabled {
+    color: #909090;
+    pointer-events: none;
+    .form__button-arrow {
+      fill: #909090;
+    }
+  }
+
+  &__submit-button:hover {
+    background-color: #0041A0;
+    color: #FFFFFF;
+
+    .form__button-arrow {
+      fill: #FFFFFF;
+    }
+  }
+
+  &__submit-button:active {
+    background-color: #002F6C;
+  }
+
+  &__submit-button:focus {
+    @extend %button-focus;
+    color: #0041A0;
+    .form__button-arrow {
+      fill: #0041A0;
+    }
+  }
+
 }

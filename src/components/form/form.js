@@ -20,6 +20,12 @@ class Form extends Component {
     fileData
     removeFileButton
 
+    checkboxInput
+    checkboxError
+
+    submitButton
+    form
+
     constructor(element) {
         super(element);
 
@@ -37,6 +43,10 @@ class Form extends Component {
         this.fileName = this.getElement('file-name');
         this.fileData = this.getElement('file-data');
         this.removeFileButton = this.getElement('remove-file-button');
+        this.checkboxInput = this.getElement('checkbox-input');
+        this.checkboxError = this.getElement('checkbox-error');
+        this.submitButton = this.getElement('submit-button');
+        this.form = this.getElement('form');
 
         this.emailInput.addEventListener('input', () => this.checkEmail());
         this.emailInput.addEventListener('blur', () => this.showError(this.emailValid, 'Не валидный адрес email', this.emailInputWrapper, this.emailError));
@@ -48,6 +58,12 @@ class Form extends Component {
 
         this.fileInput.addEventListener('change', () => this.inputFile());
         this.removeFileButton.addEventListener('click', () => this.removeFile());
+
+        this.checkboxInput.addEventListener('change', () => this.checkConfirmation());
+
+        this.form.addEventListener('change', () => this.checkForm());
+
+        this.submitButton.addEventListener('click', (event) => this.submitForm(event));
     }
 
     checkEmail() {
@@ -110,6 +126,41 @@ class Form extends Component {
     removeFile() {
         this.fileInput.value = '';
         this.chosenFile.classList.remove('shown');
+    }
+
+    checkConfirmation() {
+        if (this.checkboxInput.checked) {
+            this.checkboxError.classList.remove('shown');
+        } else {
+            this.checkboxError.classList.add('shown');
+        }
+    }
+
+    checkForm() {
+        this.submitButton.disabled = !(this.emailValid && this.messageValid && this.checkboxInput.checked);
+    }
+
+    submitForm(event) {
+        event.preventDefault();
+
+        const emailData = this.emailInput.value;
+        const messageData = this.messageInput.value;
+        const fileData = JSON.stringify(this.fileInput.files[0]);
+        const conditionsConfirmed = this.checkboxInput.checked;
+
+        if (this.emailValid && this.messageValid && conditionsConfirmed) {
+            fetch('/form', {
+                method: 'POST',
+                body: JSON.stringify({
+                    email: emailData,
+                    message: messageData,
+                    file: fileData,
+                    confirm: conditionsConfirmed
+                })
+            })
+                .then(response => response)
+                .then(result => console.log(result))
+        }
     }
 }
 
