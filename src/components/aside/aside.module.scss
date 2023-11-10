@@ -1,3 +1,30 @@
+@import '../../styles/colors.scss';
+
 .Aside {
-	//Your code here
+	$root: '.Aside';
+
+	width: 100%;
+	max-width: 290px;
+	padding: 40px 25px;
+
+	border-right: 1px solid $light-blue1;
+
+	&__list {
+		#{$root}__item {
+			display: flex;
+			align-items: center;
+			gap: 17px;
+			padding: 13px 14px 13px 20px;
+
+			background-color: $light-blue2;
+			border-radius: 10px;
+
+			#{$root}__itemText {
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 160%;
+				color: $blue2;
+			}
+		}
+	}
 }
