@@ -1,22 +1,19 @@
-import styles from '../styles/index.module.scss'
-import ExampleButton from "../components/example-button/example-button";
 import {getIndexPage} from "../../lib/api";
+//styles
+import styles from '../styles/index.module.scss'
+//components
 import Navbar from '../components/navbar/navbar';
 import DeleteButton from '../components/delete-button/delete-button';
+//hooks
 import { useState } from 'react';
 import { useTasksSearch } from '../../src/hooks/useTasksSearch';
-import { v4 as uuidv4 } from 'uuid';
-
 
 
 function Index(props) {
 
     const [data, setData] = useState(props);
-    console.log(data);
     const [searchStr, setSearchStr] = useState(false);
-   
     const { filteredTasks } = useTasksSearch([...data.tasks], searchStr);
-    console.log(filteredTasks);
 
     const handleButtonClick = (e) => {
         e.stopPropagation();
@@ -84,9 +81,7 @@ function Index(props) {
                 ))}
                 </ul>
             </div>
-
         </div>
-
     )
 }
 

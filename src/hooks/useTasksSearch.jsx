@@ -16,8 +16,6 @@ export const useTasksSearch = (tasks, searchString) => {
     }
   }, [tasks, searchString]);
 
-  
-  // Return the memoized value directly
   return { filteredTasks };
 };
 
