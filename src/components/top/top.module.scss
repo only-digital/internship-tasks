@@ -1,6 +1,8 @@
 @import '../../styles/colors.scss';
 
 .Top {
+	$root: '.Top';
+	
 	border-bottom: 1px solid $light-blue1;
 
 	&__logo {
@@ -13,7 +15,7 @@
 
 		border-right: 1px solid $light-blue1;
 
-		#{'.Top'}__logoText {
+		#{$root}__logoText {
 			color: $blue1;
 		}
 	}
