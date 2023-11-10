@@ -1,0 +1,41 @@
+.description {
+  $root: &;
+
+  display: flex;
+  flex-direction: column;
+  gap: 130px;
+  padding: 0 80px 110px;
+  max-width: 988px;
+
+  &__title {
+    font-size: 46px;
+    line-height: 55px;
+    color: $blue;
+    margin-bottom: 35px;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__item {
+    font-size: 24px;
+    line-height: 34px;
+    letter-spacing: 0em;
+    color: $black;
+    margin-left: 28px;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 20px;
+      height: 1px;
+      background: $green;
+      position: absolute;
+      left: -28px;
+      top: 15px;
+    }
+  }
+}

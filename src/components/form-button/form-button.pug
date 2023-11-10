@@ -1,0 +1,5 @@
+mixin form-button(props)
+	button.form-button&attributes(attributes)(data-component='form-button')
+		span.form-button__text= props.text
+		if props.icon
+			+svg('button-arrow').form-button__icon

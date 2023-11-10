@@ -1,4 +1,13 @@
-@import '../src/components/example-button/example-button';
+@import "./variables.scss";
+@import "../src/components/title/title";
+@import "../src/components/description/description";
+@import "../src/components/feedback/feedback";
+@import "../src/components/input-checkbox/input-checkbox";
+@import "../src/components/input-text/input-text";
+@import "../src/components/form-button/form-button";
+@import "../src/components/form-response/form-response";
+@import '../src/components/loader/loader';
+@import "../src/components/example-button/example-button";
 
 html {
     font-weight: normal;
@@ -10,12 +19,15 @@ html {
 
 * {
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    padding: 0;
+    margin: 0;
 }
 
 body {
     position: relative;
-    padding: 0;
-    margin: 0;
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -24,8 +36,6 @@ h1, h2, h3, h4, h5, p, a {
     font-size: inherit;
     font-weight: inherit;
     text-decoration: inherit;
-    padding: 0;
-    margin: 0;
     word-break: break-word;
     word-wrap: break-word;
 }

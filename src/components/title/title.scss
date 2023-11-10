@@ -1,0 +1,30 @@
+.title {
+  $root: &;
+
+  padding: 115px 80px 144px;
+
+  &__date {
+    font-size: 20px;
+    line-height: 28px;
+    color: $steel;
+    margin-left: 9px;
+  }
+
+  &__name {
+    margin: 20px 0 45px;
+    font-size: 64px;
+    line-height: 64px;
+    color: $blue;
+  }
+
+  &__info {
+    display: flex;
+    gap: 36px;
+  }
+
+  &__info-item {
+    font-size: 16px;
+    line-height: 20.8px;
+    color: $steel;
+  }
+}

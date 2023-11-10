@@ -1,0 +1,21 @@
+.form-button {
+  $root: &;
+
+  height: 48px;
+  border-radius: 24px;
+  padding: 0px 14px 0px 18px;
+  gap: 14px;
+  background: $cobolt;
+  align-items: center;
+
+  &__text {
+    font-size: 16px;
+    line-height: 16px;
+    color: $white;
+  }
+
+  &__icon {
+    width: 32px;
+    height: 22px;
+  }
+}

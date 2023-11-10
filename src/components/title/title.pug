@@ -1,0 +1,9 @@
+mixin title(props)
+	section.title&attributes(attributes)(data-component='title')
+		.title__date= props.date
+		h1.title__name= props.name
+		.title__info
+			.title__info-item Просмотров:&nbsp;
+				span.title__view-count
+			.title__info-item Откликов:&nbsp;
+				span.title__response-count
