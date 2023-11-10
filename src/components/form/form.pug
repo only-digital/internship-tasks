@@ -17,8 +17,17 @@ mixin form(props)
 						+svg('union')
 				div.form__message-error
 			div.form__file
-				label(for='file-input').form__file-label
-				input(type='file', id='file-input')
+				input(type='file', id='file-input-id', accept='.pdf, .doc, .docx').form__file-input
+				label(for='file-input-id').form__file-label
+					span.form__file-caption Прикрепить файл
+					span.form__file-button-image
+						+svg('plus')
+				div.form__chosen-file
+					div
+						span.form__file-name
+						span.form__file-data
+					button.form__remove-file-button
+						+svg('delete')
 			div.form__checkbox
 				input(type='checkbox', id='checkbox-input')
 				label(for='checkbox-input').form__checkbox-label Вы подтверждаете, что ознакомились c политикой обработки персональных данных

@@ -14,6 +14,12 @@ class Form extends Component {
     messageLabel
     messageValid
 
+    fileInput
+    chosenFile
+    fileName
+    fileData
+    removeFileButton
+
     constructor(element) {
         super(element);
 
@@ -26,6 +32,11 @@ class Form extends Component {
         this.messageError = this.getElement('message-error');
         this.messageCheckmark = this.getElement('message-checkmark');
         this.messageLabel = this.getElement('message-label');
+        this.fileInput = this.getElement('file-input');
+        this.chosenFile = this.getElement('chosen-file');
+        this.fileName = this.getElement('file-name');
+        this.fileData = this.getElement('file-data');
+        this.removeFileButton = this.getElement('remove-file-button');
 
         this.emailInput.addEventListener('input', () => this.checkEmail());
         this.emailInput.addEventListener('blur', () => this.showError(this.emailValid, 'Не валидный адрес email', this.emailInputWrapper, this.emailError));
@@ -34,6 +45,9 @@ class Form extends Component {
         this.messageInput.addEventListener('input', () => this.checkMessage());
         this.messageInput.addEventListener('blur', () => this.showError(this.messageValid, 'Заполните это поле', this.messageInputWrapper, this.messageError));
         this.messageInput.addEventListener('focus', () => this.hideError(this.messageError, this.messageInputWrapper));
+
+        this.fileInput.addEventListener('change', () => this.inputFile());
+        this.removeFileButton.addEventListener('click', () => this.removeFile());
     }
 
     checkEmail() {
@@ -80,6 +94,22 @@ class Form extends Component {
     hideError(error, input) {
         error.textContent = '';
         input.classList.remove('invalid');
+    }
+
+    inputFile() {
+        let fileName = this.fileInput.files[0].name;
+        const fileExtension = fileName.split('.').pop().toUpperCase();
+        const fileData = ` ${fileExtension}, ${this.fileInput.files[0].size/1000} kB`;
+        fileName = fileName.replace(/\.(pdf|docx?)/i, '');
+
+        this.fileName.textContent = fileName;
+        this.fileData.textContent = fileData;
+        this.chosenFile.classList.add('shown');
+    }
+
+    removeFile() {
+        this.fileInput.value = '';
+        this.chosenFile.classList.remove('shown');
     }
 }
 

@@ -182,6 +182,96 @@
     @extend %error
   }
 
+  &__file-input {
+    display: none;
+  }
+
+  &__file-label {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 207px;
+    height: 46px;
+    border: 1px solid #BCBCBC;
+    border-radius: 25px;
+    padding: 14px 16px 16px;
+  }
+
+  &__file-caption {
+    color: #021F45;
+  }
+
+  &__file-button-image {
+    svg{
+      width: 14px;
+      height: 14px;
+      fill: #002F6C;
+    }
+  }
+
+  &__file-label:hover {
+    background-color: #0041A0;
+    border-color: #0041A0;
+    cursor: pointer;
+    .form__file-caption {
+      color: #FFFFFF;
+    }
+    .form__file-button-image {
+      svg {
+        fill: #FFFFFF;
+      }
+    }
+  }
+
+  &__file-label:active {
+    background-color: #002F6C;
+  }
+
+  &__file-input:focus + &__file-label {
+    background-color: #FFFFFF;
+    border: 3px solid #99B3D8;
+    .form__file-caption {
+      color: #021F45;
+    }
+    .form__file-button-image {
+      svg {
+        fill: #002F6C;
+      }
+    }
+  }
+
+  &__file {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  &__chosen-file {
+    display: none;
+  }
+
+  &__chosen-file.shown {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    width: auto;
+    height: 40px;
+    border-radius: 27px;
+    background-color: #F4F4F4;
+    padding: 10px 13px 10px 18px;
+  }
+
+  &__file-data {
+    color: #909090;
+  }
+
+  &__remove-file-button {
+    svg {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
   &__checkbox {
     display: flex;
     align-items: center;
