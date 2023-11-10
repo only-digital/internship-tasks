@@ -1,3 +1,26 @@
+@import '../../styles/colors.scss';
+
 .Top {
-	//Your code here
+	border-bottom: 1px solid $light-blue1;
+
+	&__logo {
+		display: flex;
+		align-items: flex-start;
+		gap: 9px;
+		padding: 29px 0 23px 45px;
+		max-width: 290px;
+		width: 100%;
+
+		border-right: 1px solid $light-blue1;
+
+		#{'.Top'}__logoText {
+			color: $blue1;
+		}
+	}
+
+	&__logoText {
+		font-size: 7px;
+		font-weight: 500;
+		text-transform: uppercase;
+	}
 }
