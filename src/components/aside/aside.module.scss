@@ -11,6 +11,10 @@
 
 	border-right: 1px solid $light-blue1;
 
+	@media (max-width: 700px) {
+		max-width: none;
+	}
+
 	&__list {
 		#{$root}__item {
 			display: flex;
