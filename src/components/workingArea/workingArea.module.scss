@@ -1,3 +1,10 @@
+@import '../../styles/colors.scss';
+
 .WorkingArea {
-	//Your code here
+	$root: '.WorkingArea';
+
+	grid-area: C;
+	padding: 48px 40px;
+
+	background-color: $light-blue3;
 }
