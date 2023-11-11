@@ -2,10 +2,18 @@
 
 .TodoList {
 	&__title {
+		margin-bottom: 28px;
+
 		color: $blue1;
 		font-size: 32px;
 		font-weight: 600;
 		line-height: 123.5%;
 		letter-spacing: 0.25px;
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 20px
 	}
 }

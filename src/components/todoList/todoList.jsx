@@ -1,4 +1,5 @@
 import styled from './todoList.module.scss';
+import TodoItem from '../todoItem/todoItem';
 
 const TodoList = () => {
     return (
@@ -7,7 +8,9 @@ const TodoList = () => {
                 Список задач
             </h2>
             <ul className={styled.TodoList__list}>
-                
+                <TodoItem />
+                <TodoItem />
+                <TodoItem />
             </ul>
         </section>
     )

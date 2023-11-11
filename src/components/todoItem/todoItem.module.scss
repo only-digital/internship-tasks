@@ -1,3 +1,75 @@
+@import '../../styles/colors.scss';
+
 .TodoItem {
-	//Your code here
+	$root: '.TodoItem';
+
+	position: relative;
+
+	padding: 24px;
+	padding-bottom: 31px;
+
+	background-color: $white;
+	cursor: pointer;
+
+	&:hover {
+		#{$root}__title {
+			color: $blue2;
+		}
+	}
+
+	&--completed {
+		#{$root}__title {
+			position: relative;
+
+			color: $light-gray2;
+
+			&::after {
+				content: '';
+
+				position: absolute;
+				left: 0;
+				top: 16px;
+
+				display: block;
+				height: 1px;
+				width: 100%;
+
+				background-color: $light-gray2;
+			}
+		}
+	}
+
+	&__title {
+		padding-bottom: 17px;
+
+		color: $blue3;
+		font-size: 24px;
+		font-weight: 400;
+		line-height: 130%;
+
+		border-bottom: 1px solid $light-gray1;
+
+		transition: color .3s;
+
+		&:hover {
+			color: $blue2;
+		}
+	}
+
+	&__text {
+		padding-top: 10px;
+		max-width: 734px;
+
+		color: $blue3;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 175%;
+		letter-spacing: 0.15px;
+	}
+
+	&__svg {
+		position: absolute;
+		right: 24px;
+		top: 27px;
+	}
 }
