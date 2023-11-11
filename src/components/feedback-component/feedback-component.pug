@@ -1,0 +1,34 @@
+mixin feedback-component(props)
+	.feedback-component&attributes(attributes)(data-component='feedback-component')
+		h2.feedback-component__title Форма обратной связи
+		form.feedback-component__form
+			label(for="email").feedback-component__label-email
+				input(type="email" name="email" id="email").feedback-component__input-email
+				span.feedback-component__email-text Email
+				span.feedback-component__valid-email
+					+svg('valid-svg')
+				span.feedback-component__invalid-email
+			label(for="message").feedback-component__label-message
+				textarea(name="message" maxlength='1000' minlength='1' required).feedback-component__textarea-message
+				span.feedback-component__message-text Ваше сообщение
+				span.feedback-component__invalid-message
+				span.feedback-component__valid-message
+					+svg('valid-svg')
+			.feedback-component__files-container
+				label.feedback-component__label-file
+					input(type="file" name="files").feedback-component__input-file
+					span Прикрепить файл
+						+svg('plus-svg')
+					p.feedback-component__invalid-file
+				div.feedback-component__files
+					p.feedback-component__files__text
+						span.feedback-component__files__text-additional
+					span.feedback-component__files-svg
+						+svg('close-svg')
+			label(for="checkbox").feedback-component__label-confirm
+					input(type='checkbox' name='checkbox' id='checkbox').feedback-component__checkbox-confirm
+					span.feedback-component__checkbox-img-container
+						+svg('checked-svg')
+					span.feedback-component__text-confirm Вы подтверждаете, что ознакомились <a href="#">с политикой обработки персональных данных</a>
+			button(type="submit" disabled).feedback-component__submit-btn Отправить
+				+svg('arrow-svg')

@@ -1,4 +1,6 @@
 import ExampleButton from "../../components/example-button/example-button";
+import FeedbackComponent from "../../components/feedback-component/feedback-component"
+import FormFeedback from "../../components/form-feedback/form-feedback";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -7,6 +9,8 @@ import ExampleButton from "../../components/example-button/example-button";
  */
 const allComponents = {
     'example-button': ExampleButton,
+    'feedback-component': FeedbackComponent,
+    'form-feedback': FormFeedback,
 }
 
 /**

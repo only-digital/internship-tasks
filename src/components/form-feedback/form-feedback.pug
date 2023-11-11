@@ -1,0 +1,23 @@
+mixin form-feedback(props)
+	.form-feedback&attributes(attributes)(data-component='form-feedback')
+		h2.form-feedback__title Форма обратной связи
+		form.form-feedback__form
+			label(for="email").form-feedback__form__label-email E-mail
+			input(type='email' required placeholder="E-mail" maxlength="255" name="email")#email.form-feedback__form__email
+			p.form-feedback__form__error-email
+			label.form-feedback__form__message__label Ваше сообщение
+			textarea(placeholder="Ваше сообщение" name="message").form-feedback__form__message__textarea
+			p.form-feedback__form__error-message
+			div.form-feedback__wrapper-files
+				label.form-feedback__form__file
+					input(type="file" accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" multiple name="files").form-feedback__form__file-input
+					span Прикрепить файл
+						+svg('plus')
+					p.form-feedback__form__error-file
+				div.form-feedback__files
+			div.wrapper
+				input#approval.form-feedback__form__checkbox(type='checkbox' required name="checkbox")
+				label(for='approval').form-feedback__form__security-policy Вы подтверждаете, что ознакомились
+					a(href='#') c политикой обработки персональных данных
+			button(type='submit' disabled).form-feedback__form__button Отправить
+				+svg('arrow')
