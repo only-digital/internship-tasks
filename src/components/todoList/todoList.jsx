@@ -2,9 +2,11 @@ import styled from './todoList.module.scss';
 
 const TodoList = () => {
     return (
-        <div className={styled.TodoList}>
-            {/* Your code here */}
-        </div>
+        <section className={styled.TodoList}>
+            <h2 className={styled.TodoList__title}>
+                Список задач
+            </h2>
+        </section>
     )
 }
 

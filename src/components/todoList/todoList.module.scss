@@ -1,3 +1,11 @@
+@import '../../styles/colors.scss';
+
 .TodoList {
-	//Your code here
+	&__title {
+		color: $blue1;
+		font-size: 32px;
+		font-weight: 600;
+		line-height: 123.5%;
+		letter-spacing: 0.25px;
+	}
 }
