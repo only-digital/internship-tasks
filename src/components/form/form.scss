@@ -13,11 +13,6 @@
     color: #002F6C;
   }
 
-  %label {
-    font-size: 12px;
-    color: #909090;
-  }
-
   %error {
     font-size: 12px;
     color: #FF0000;
@@ -36,9 +31,47 @@
     height: 13px;
   }
 
-  %button-focus {
+  %button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #BCBCBC;
+  }
+
+  %button:hover {
+    background-color: #0041A0;
+    border-color: #0041A0;
+    cursor: pointer;
+    color: #FFFFFF;
+    :last-child {
+      fill: #FFFFFF;
+    }
+  }
+
+  %button:focus {
     border: 3px solid #99B3D8;
     background-color: #FFFFFF;
+    color: #0041A0;
+    :last-child {
+      color: #021F45;
+    }
+  }
+
+  %button:active {
+    background-color: #002F6C;
+    color: #FFFFFF;
+    :last-child {
+      fill: #FFFFFF;
+    }
+  }
+
+  %button:disabled {
+    pointer-events: none;
+    color: #909090;
+
+    :last-child {
+      fill: #909090;
+    }
   }
 
   &__email-label {
@@ -201,17 +234,12 @@
   }
 
   &__file-label {
-    display: flex;
-    align-items: center;
+    @extend %button;
     gap: 16px;
     width: 207px;
     height: 46px;
-    border: 1px solid #BCBCBC;
     border-radius: 25px;
     padding: 14px 16px 16px;
-  }
-
-  &__file-caption {
     color: #021F45;
   }
 
@@ -219,36 +247,6 @@
     width: 14px;
     height: 14px;
     fill: #002F6C;
-  }
-
-  &__file-label:hover {
-    background-color: #0041A0;
-    border-color: #0041A0;
-    cursor: pointer;
-
-    .form__file-caption {
-      color: #FFFFFF;
-    }
-
-    .form__file-button-image {
-      fill: #FFFFFF;
-    }
-  }
-
-  &__file-label:active {
-    background-color: #002F6C;
-  }
-
-  &__file-input:focus + &__file-label {
-    @extend %button-focus;
-
-    .form__file-caption {
-      color: #021F45;
-    }
-
-    .form__file-button-image {
-      fill: #002F6C;
-    }
   }
 
   &__file {
@@ -341,14 +339,11 @@
   }
 
   &__submit-button {
+    @extend %button;
     width: 155px;
     height: 48px;
     border-radius: 25px;
-    border: 1px solid #BCBCBC;
-    display: flex;
     gap: 14px;
-    align-items: center;
-    justify-content: center;
   }
 
   &__button-arrow {
@@ -356,36 +351,4 @@
     height: 22px;
     fill: #0041A0;
   }
-
-  &__submit-button:disabled {
-    color: #909090;
-    pointer-events: none;
-
-    .form__button-arrow {
-      fill: #909090;
-    }
-  }
-
-  &__submit-button:hover {
-    background-color: #0041A0;
-    color: #FFFFFF;
-
-    .form__button-arrow {
-      fill: #FFFFFF;
-    }
-  }
-
-  &__submit-button:active {
-    background-color: #002F6C;
-  }
-
-  &__submit-button:focus {
-    @extend %button-focus;
-    color: #0041A0;
-
-    .form__button-arrow {
-      fill: #0041A0;
-    }
-  }
-
 }

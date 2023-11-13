@@ -33,18 +33,22 @@ class Form extends Component {
         this.emailLabel = this.getElement('email-label');
         this.emailInputWrapper = this.getElement('email-input-wrapper');
         this.emailError = this.getElement('email-error');
+
         this.messageInput = this.getElement('message-input');
         this.messageInputWrapper = this.getElement('message-input-wrapper');
         this.messageError = this.getElement('message-error');
         this.messageCheckmark = this.getElement('message-checkmark');
         this.messageLabel = this.getElement('message-label');
+
         this.fileInput = this.getElement('file-input');
         this.chosenFile = this.getElement('chosen-file');
         this.fileName = this.getElement('file-name');
         this.fileData = this.getElement('file-data');
         this.removeFileButton = this.getElement('remove-file-button');
+
         this.checkboxInput = this.getElement('checkbox-input');
         this.checkboxError = this.getElement('checkbox-error');
+
         this.submitButton = this.getElement('submit-button');
         this.form = this.getElement('form');
 
