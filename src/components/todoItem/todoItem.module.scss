@@ -18,9 +18,11 @@
 		}
 	}
 
-	&--completed {
+	&_completed {
 		#{$root}__title {
 			position: relative;
+
+			width: max-content;
 
 			color: $light-gray2;
 
