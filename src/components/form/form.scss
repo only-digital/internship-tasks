@@ -137,6 +137,10 @@
   &__message-input {
     width: 486px;
     height: 100%;
+    resize: none;
+    border: none;
+    background-color: inherit;
+    outline: none;
   }
 
   &__message-input:hover {

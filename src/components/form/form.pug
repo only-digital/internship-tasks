@@ -11,7 +11,7 @@ mixin form(props)
 			div.form__message
 				label(for='message-input-id').form__message-label
 				div.form__message-input-wrapper
-					input(id='message-input-id', type='text', required, maxLength='1000', placeholder='Ваше сообщение').form__message-input
+					textarea(id='message-input-id', type='text', required, maxLength='1000', placeholder='Ваше сообщение').form__message-input
 					+svg('union').form__message-checkmark
 				div.form__message-error
 			div.form__file
