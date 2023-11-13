@@ -159,7 +159,7 @@ class Form extends Component {
                 })
             })
                 .then(response => response)
-                .then(result => console.log(result))
+                .then(result => result)
         }
     }
 }

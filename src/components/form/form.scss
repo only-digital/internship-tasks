@@ -1,18 +1,16 @@
 .form {
   $root: &;
 
-  & {
-    font-family: Arial, sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    display: flex;
-    gap: 50px;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  display: flex;
+  gap: 50px;
 
-    h3 {
-      font-size: 32px;
-      font-weight: 700;
-      color: #002F6C;
-    }
+  h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #002F6C;
   }
 
   %label {
@@ -111,10 +109,7 @@
   &__email-input-wrapper.filled {
     .form__email-checkmark {
       display: block;
-
-      svg {
-        @extend %checkmark;
-      }
+      @extend %checkmark;
     }
   }
 
@@ -124,6 +119,7 @@
 
   &__message-input-wrapper {
     height: 36px;
+    padding-left: 20px;
     border-bottom: 1px solid #DEDEDE;
   }
 
@@ -132,6 +128,27 @@
     height: 166px;
     border-radius: 24px;
     padding: 12px 16px 16px 20px;
+  }
+
+  &__message-checkmark {
+    display: none;
+  }
+
+  &__message-input {
+    width: 486px;
+    height: 100%;
+  }
+
+  &__message-input:hover {
+    cursor: pointer;
+  }
+
+  &__message-label {
+    @extend %label;
+  }
+
+  &__message-error {
+    @extend %error
   }
 
   &__message-input::placeholder {
@@ -167,32 +184,8 @@
     .form__message-checkmark {
       display: block;
       align-self: flex-end;
-
-      svg {
-        @extend %checkmark;
-      }
+      @extend %checkmark;
     }
-  }
-
-  &__message-input {
-    width: 486px;
-    height: 100%;
-  }
-
-  &__message-input:hover {
-    cursor: pointer;
-  }
-
-  &__message-label {
-    @extend %label;
-  }
-
-  &__message-checkmark {
-    display: none;
-  }
-
-  &__message-error {
-    @extend %error
   }
 
   &__file {
@@ -219,11 +212,9 @@
   }
 
   &__file-button-image {
-    svg {
-      width: 14px;
-      height: 14px;
-      fill: #002F6C;
-    }
+    width: 14px;
+    height: 14px;
+    fill: #002F6C;
   }
 
   &__file-label:hover {
@@ -236,9 +227,7 @@
     }
 
     .form__file-button-image {
-      svg {
-        fill: #FFFFFF;
-      }
+      fill: #FFFFFF;
     }
   }
 
@@ -254,9 +243,7 @@
     }
 
     .form__file-button-image {
-      svg {
-        fill: #002F6C;
-      }
+      fill: #002F6C;
     }
   }
 
@@ -285,11 +272,9 @@
     color: #909090;
   }
 
-  &__remove-file-button {
-    svg {
-      width: 10px;
-      height: 10px;
-    }
+  &__remove-file-image {
+    width: 10px;
+    height: 10px;
   }
 
   &__checkbox {
@@ -371,6 +356,7 @@
   &__submit-button:disabled {
     color: #909090;
     pointer-events: none;
+
     .form__button-arrow {
       fill: #909090;
     }
@@ -392,6 +378,7 @@
   &__submit-button:focus {
     @extend %button-focus;
     color: #0041A0;
+
     .form__button-arrow {
       fill: #0041A0;
     }

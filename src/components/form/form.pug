@@ -6,28 +6,25 @@ mixin form(props)
 				label(for='email-input-id').form__email-label
 				div.form__email-input-wrapper
 					input(type='email', id='email-input-id', maxLength='255', placeholder='E-mail').form__email-input
-					span.form__email-checkmark
-						+svg('union')
+					+svg('union').form__email-checkmark
 				div.form__email-error
 			div.form__message
 				label(for='message-input-id').form__message-label
 				div.form__message-input-wrapper
 					input(id='message-input-id', type='text', required, maxLength='1000', placeholder='Ваше сообщение').form__message-input
-					span.form__message-checkmark
-						+svg('union')
+					+svg('union').form__message-checkmark
 				div.form__message-error
 			div.form__file
 				input(type='file', id='file-input-id', accept='.pdf, .doc, .docx').form__file-input
 				label(for='file-input-id').form__file-label
 					span.form__file-caption Прикрепить файл
-					span.form__file-button-image
-						+svg('plus')
+					+svg('plus').form__file-button-image
 				div.form__chosen-file
 					div
 						span.form__file-name
 						span.form__file-data
 					button.form__remove-file-button
-						+svg('delete')
+						+svg('delete').form__remove-file-image
 			div.form__checkbox
 				input(type='checkbox', id='checkbox-input-id', required).form__checkbox-input
 				label(for='checkbox-input-id').form__checkbox-label
@@ -39,6 +36,5 @@ mixin form(props)
 				span.form__checkbox-error Необходимо подтверждение
 			button(type='submit', disabled).form__submit-button
 				span.form__button-text Отправить
-				span
-					+svg('vector').form__button-arrow
+				+svg('vector').form__button-arrow
 
