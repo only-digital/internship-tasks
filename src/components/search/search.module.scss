@@ -1,0 +1,39 @@
+@import '../../styles/colors.scss';
+
+.Search {
+	position: relative;
+
+	max-width: 608px;
+	width: 100%;
+
+	&__input {
+		width: 100%;
+		padding: 16px;
+		padding-right: 56px;
+
+		color: $light-gray3;
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 150%;
+		letter-spacing: 0.15px;
+
+		background-color: $white;
+		border-radius: 10px;
+
+		&::placeholder {
+			color: $light-gray3;
+			font-size: 16px;
+			font-weight: 400;
+			line-height: 150%;
+			letter-spacing: 0.15px;
+		}
+	}
+
+	&__svg {
+		position: absolute;
+		right: 16px;
+		top: calc(50% - 12px);
+
+		pointer-events: none;
+	}
+}

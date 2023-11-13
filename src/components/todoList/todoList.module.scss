@@ -1,14 +1,27 @@
 @import '../../styles/colors.scss';
 
 .TodoList {
-	&__title {
-		margin-bottom: 28px;
+	$root: '.TodoList';
 
-		color: $blue1;
-		font-size: 32px;
-		font-weight: 600;
-		line-height: 123.5%;
-		letter-spacing: 0.25px;
+	&__upContent {
+		display: flex;
+		justify-content: space-between;
+		gap: 30px;
+		align-items: center;
+		margin-bottom: 20px;
+
+		@media (max-width: 1350px) {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		#{$root}__title {
+			color: $blue1;
+			font-size: 32px;
+			font-weight: 600;
+			line-height: 123.5%;
+			letter-spacing: 0.25px;
+		}
 	}
 
 	&__list {
