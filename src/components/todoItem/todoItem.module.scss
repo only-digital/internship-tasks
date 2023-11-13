@@ -20,29 +20,24 @@
 
 	&_completed {
 		#{$root}__title {
-			position: relative;
-
-			width: max-content;
-
 			color: $light-gray2;
 
 			&::after {
-				content: '';
-
-				position: absolute;
-				left: 0;
-				top: 16px;
-
-				display: block;
-				height: 1px;
-				width: 100%;
-
 				background-color: $light-gray2;
+			}
+		}
+
+		&:hover {
+			#{$root}__title {
+				color: $light-gray2;
 			}
 		}
 	}
 
 	&__title {
+		position: relative;
+
+		width: max-content;
 		padding-bottom: 17px;
 
 		color: $blue3;
@@ -52,7 +47,23 @@
 
 		border-bottom: 1px solid $light-gray1;
 
-		transition: color .3s;
+		transition: color .6s;
+
+		&::after {
+			content: '';
+
+			position: absolute;
+			left: 0;
+			top: 18px;
+
+			display: block;
+			height: 1px;
+			width: 100%;
+
+			background-color: transparent;
+
+			transition: background-color .3s;
+		}
 
 		&:hover {
 			color: $blue2;

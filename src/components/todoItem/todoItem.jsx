@@ -2,7 +2,10 @@ import styled from './todoItem.module.scss';
 
 const TodoItem = (props) => {
     return (
-        <li className={`${styled.TodoItem} ${((props.isCompleted) ? styled.TodoItem_completed : '')}`}>
+        <li 
+            className={`${styled.TodoItem} ${((props.isCompleted) ? styled.TodoItem_completed : '')}`}
+            onClick={props.onClick}
+        >
             <h3 className={styled.TodoItem__title}>
                 {props.title}
             </h3>
