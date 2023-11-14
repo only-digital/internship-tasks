@@ -1,4 +1,7 @@
 import styled from './sidebar.module.scss';
+import Image from 'next/image';
+import logo from './../../assets/icons/logo.svg'
+import bookIcon from './../../assets/icons/bookIcon.svg'
 
 const Sidebar = (props) => {
     const tasksTitle = props.taskData.title;
@@ -7,7 +10,7 @@ const Sidebar = (props) => {
         <div className={styled.Sidebar}>
             <div className={styled.Sidebar__logoWrapper}>
                 <div className={styled.Sidebar__logo}>
-                    <img src="" alt=""/>
+                    <Image src={logo} alt="Logo"/>
                     <p className={styled.Sidebar__logoText}>
                         Creative Digital Production
                     </p>
@@ -15,7 +18,7 @@ const Sidebar = (props) => {
             </div>
             <div className={styled.Sidebar__sidebar}>
                 <div className={styled.Sidebar__frame}>
-                    <div></div>
+                    <Image src={bookIcon} alt="BookIcon"/>
                     <p className={styled.Sidebar__sidebarText}>{tasksTitle}</p>
                 </div>
             </div>

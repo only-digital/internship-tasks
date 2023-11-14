@@ -1,4 +1,6 @@
 import styled from './tasks.module.scss';
+import Image from 'next/image';
+import cross from './../../assets/icons/cross.svg';
 
 const Tasks = (props) => {
     let tasksData = props.tasksData;
@@ -17,7 +19,10 @@ const Tasks = (props) => {
                                 <div className={styled.Tasks__titleWrapper}>
                                     <h4 className={styled.Tasks__task}>{task.title}</h4>
                                     <button className={styled.Tasks__deleteButton}>
-                                        Delete
+                                        <Image
+                                            src={cross}
+                                            alt="Delete task"
+                                        />
                                     </button>
                                 </div>
                                 <p className={styled.Tasks__taskText}>{task.text}</p>

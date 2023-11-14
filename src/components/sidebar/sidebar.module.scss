@@ -7,6 +7,7 @@
   &__logoWrapper {
     height: 80px;
     border-bottom: 1px solid #D9E1EC;
+    padding: 29px 115px 24px 45px;
   }
 
   &__logo {
@@ -32,6 +33,8 @@
   &__frame {
     display: flex;
     align-items: center;
+    gap: 16px;
+    padding-left: 18px;
     width: 240px;
     height: 52px;
     border-radius: 10px;
