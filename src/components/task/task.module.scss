@@ -7,6 +7,13 @@
   border-radius: 10px;
   background: #FFFFFF;
 
+  &:hover {
+    cursor: default;
+    .Task__taskTitle {
+      color: #007FFF;
+    }
+  }
+
   &__titleWrapper {
     display: flex;
     justify-content: space-between;

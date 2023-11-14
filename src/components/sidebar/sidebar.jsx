@@ -18,7 +18,7 @@ const Sidebar = (props) => {
             </div>
             <div className={styled.Sidebar__sidebar}>
                 <div className={styled.Sidebar__frame}>
-                    <Image src={bookIcon} alt="BookIcon"/>
+                    <Image src={bookIcon} alt="Book icon"/>
                     <p className={styled.Sidebar__sidebarText}>{tasksTitle}</p>
                 </div>
             </div>
