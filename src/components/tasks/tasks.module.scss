@@ -21,41 +21,9 @@
     font-weight: 600;
   }
 
-  &__taskWrapper {
-    display: grid;
-    gap: 10px;
-    width: 1550px;
-    height: 170px;
-    padding: 24px 24px 31px;
-    border-radius: 10px;
-    background: #FFFFFF;
-  }
-
-  &__titleWrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 17px;
-    border-bottom: 1px solid #E7EAEE;
-  }
-
   &__tasksList {
     display: grid;
     gap: 20px;
-  }
-
-  &__task {
-    font-size: 24px;
-  }
-
-  &__taskText {
-    width: 734px;
-    height: 56px;
-  }
-
-  &__deleteButton {
-    width: 14px;
-    height: 14px;
   }
 
 }
