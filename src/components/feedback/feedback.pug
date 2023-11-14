@@ -6,9 +6,9 @@ mixin feedback(props)
 		form.feedback__form(method='POST')
 			.feedback__email
 				label(for='email') E-mail
-				input(id='email' type='email' name='email')
+				input(id='email' type='email' name='email' required=true)
 			.feedback__policy
-				input(type='checkbox' id='policy' name='confirm').feedback__policy-input
+				input(type='checkbox' id='policy' name='confirm' required=true).feedback__policy-input
 				label(for='policy').feedback__policy-label Вы подтверждаете, что ознакомились <a href='#'>c политикой обработки персональных данных</a> 
 			.feedback__btn
 				+button({text: 'Отправить'})(type='submit')
