@@ -1,0 +1,106 @@
+$blue: #04306A;
+$gray: #909090;
+$red: #EF1C1C;
+.form {
+	$root: &;
+
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 2.75rem 8.56rem 2.75rem 0;
+	display: flex;
+	align-items: flex-start;
+	gap: 5.06rem;
+	&__content{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		gap: 1.87rem;
+		flex-grow: 1;
+	}
+	&__title{
+		color: $blue;
+		font-size: 2rem;
+		font-weight: 400;
+		line-height: 2.4rem;
+		letter-spacing: -0.04rem;
+	}
+	&__label{
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		color: $gray;
+		font-size: 0.875rem;
+		line-height: 150%;
+		padding-top: 1.5rem;
+		flex-wrap: wrap;
+		p{
+			padding-left: 1.12rem;
+		}
+	}
+	&__input{
+		&-text{
+			border: 1px $blue solid;
+			padding: 0.75rem 1.25rem;
+			border-radius: 1.5rem;
+			width: 100%;
+			font-size: 1rem;
+			&:disabled{
+				background: #000;
+			}
+		}
+		&-checkbox{
+			width: 1rem;
+			height: 1rem;
+			border: 1px #BCBCBC solid;
+			cursor: pointer;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			&:checked{
+				background: $blue;
+			}
+			&:checked:after{
+				content: '✔';
+				color: white;
+				font-size: 0.7rem;
+			}
+			&:disabled{
+				opacity: 0.3;
+			}
+		}
+	}
+	&__error{
+		color: $red;
+		font-size: 0.875rem;
+		font-style: normal;
+		font-weight: 400;
+		line-height: 1.3125rem;
+	}
+	&__success{
+		display: none;
+	}
+	&__disabled{
+		#{$root}__label{
+			opacity: 0.3;
+			color: $gray;
+		}
+		.state-buttons{
+			display: none;
+		}
+		#{$root}__success{
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			gap: 1.31rem;
+			color: #111;
+			font-size: 1rem;
+			font-weight: 400;
+			line-height: 1.24rem;
+			letter-spacing: -0.02rem;
+			&-svg{
+				width: 3rem;
+			}
+		}
+	}
+
+}

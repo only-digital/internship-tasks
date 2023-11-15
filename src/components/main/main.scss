@@ -1,0 +1,52 @@
+$blue: #04306A;
+$black: #012B34;
+.main {
+	$root: &;
+	font-family: Arial;
+	max-width: 1440px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: 8.12rem;
+	padding-bottom: 6.81rem;
+	&__requirements{
+		max-width: 988px;
+		display: flex;
+		flex-direction: column;
+		gap: 2.19rem;
+
+		&-title{
+			color:$blue;
+			font-size: 2.875rem;
+			font-weight: 400;
+			line-height: 3.45rem;
+			letter-spacing: -0.0575rem;
+		}
+		&-list {
+			display: flex;
+			flex-direction: column;
+			gap: 0.75rem;
+		}
+		&-item{
+			display: flex;
+			align-items: flex-start;
+			gap: 0.5rem;
+			&__svg{
+				padding: 0.625rem 0;
+				height: 2rem;
+				flex-basis: 20px;
+				flex-shrink: 0;
+			}
+			&__text{
+				color: $black;
+				font-feature-settings: 'ss08' on;
+				font-size: 1.5rem;
+				font-style: normal;
+				font-weight: 400;
+				line-height: 140%;
+
+			}
+		}
+
+	}
+}

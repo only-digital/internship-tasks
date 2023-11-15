@@ -1,0 +1,75 @@
+$lite:  #263238;
+$steel: #8F8F8F;
+$blue: #04306A;
+$size: 48px;
+*, *:after, *:before {
+	box-sizing: border-box;
+	font-family: Arial;
+}
+.header {
+	$root: &;
+
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 7rem 0 9rem;
+	&__date{
+		color: $steel;
+		font-feature-settings: 'ss08' on;
+		font-size: 1.25rem;
+		line-height: 1.75rem;
+		letter-spacing: -0.025rem;
+		margin-bottom: 1.25rem;
+	}
+
+	&__title{
+		color: $blue;
+		font-feature-settings: 'ss08' on;
+		font-size: 4rem;
+		font-weight: 400;
+		line-height: 4rem;
+		letter-spacing: -0.08rem;
+		margin-bottom: 2.81rem;
+	}
+	&__info{
+		display: flex;
+		gap: 2.25rem;
+		&-text{
+			color: $steel;
+			font-size: 1rem;
+			line-height: 1.3rem;
+			letter-spacing: -0.02rem;
+		}
+	}
+
+
+
+	.loader {
+		width: 50%;
+		height: calc($size / 10);
+		display: inline-block;
+		position: relative;
+		overflow: hidden;
+		&::after {
+			content: '';
+			width: $size * 2;
+			height: calc($size / 10);
+			background: $blue;
+			position: absolute;
+			top: 0;
+			left: 0;
+			animation: hitZak 0.6s ease-in-out infinite alternate;
+
+		}
+	}
+	.hidden {
+		display: none;
+	}
+
+	@keyframes hitZak {
+		0% { left:0 ;  transform: translateX(-1%)}
+		100% { left:100% ;  transform: translateX(-99%)}
+	}
+
+
+
+}

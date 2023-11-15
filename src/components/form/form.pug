@@ -1,0 +1,16 @@
+mixin form(props)
+	form.form&attributes(attributes)(data-component='form')
+		h2.form__title Форма обратной связи
+		.form__content
+			label.form__label
+				p E-mail
+				input.form__input-text(type='email' name='email')
+			p.form__error
+			label.form__label
+				input.form__input-checkbox(type='checkbox')
+				p
+					| Вы подтверждаете, что ознакомились&nbsp;
+					+link({text: 'c политикой обработки персональных данных'})(href='#')
+			+state-buttons({text: 'Отправить'})(value='true' name='confirm')
+			.form__success
+				+svg('success').form__success-svg

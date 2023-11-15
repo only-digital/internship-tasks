@@ -1,0 +1,4 @@
+mixin state-buttons(props)
+	button.state-buttons&attributes(attributes)(data-component='state-buttons')
+		span.state-buttons__text!= props.text
+			+svg('state-buttons').state-buttons__svg
