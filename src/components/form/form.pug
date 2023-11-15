@@ -15,7 +15,7 @@ mixin form(props)
 					+svg('union').form__message-checkmark
 				div.form__message-error
 			div.form__file
-				input(type='file', id='file-input-id', accept='.pdf, .doc, .docx').form__file-input
+				input(type='file', id='file-input-id', accept='.pdf, .doc, .docx', disabled).form__file-input
 				label(for='file-input-id').form__file-label
 					span.form__file-caption Прикрепить файл
 					+svg('plus').form__file-button-image

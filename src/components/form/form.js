@@ -142,6 +142,7 @@ class Form extends Component {
 
     checkForm() {
         this.submitButton.disabled = !(this.emailValid && this.messageValid && this.checkboxInput.checked);
+        this.fileInput.disabled = !(this.emailValid && this.messageValid);
     }
 
     submitForm(event) {

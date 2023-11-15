@@ -38,6 +38,24 @@
     border: 1px solid #BCBCBC;
   }
 
+  %button-focus {
+    border: 3px solid #99B3D8;
+    background-color: #FFFFFF;
+    color: #0041A0;
+    :last-child {
+      color: #021F45;
+    }
+  }
+
+  %button-disabled {
+    pointer-events: none;
+    color: #909090;
+
+    :last-child {
+      fill: #909090;
+    }
+  }
+
   %button:hover {
     background-color: #0041A0;
     border-color: #0041A0;
@@ -45,15 +63,6 @@
     color: #FFFFFF;
     :last-child {
       fill: #FFFFFF;
-    }
-  }
-
-  %button:focus {
-    border: 3px solid #99B3D8;
-    background-color: #FFFFFF;
-    color: #0041A0;
-    :last-child {
-      color: #021F45;
     }
   }
 
@@ -65,13 +74,12 @@
     }
   }
 
-  %button:disabled {
-    pointer-events: none;
-    color: #909090;
+  %button:focus {
+    @extend %button-focus
+  }
 
-    :last-child {
-      fill: #909090;
-    }
+  %button:disabled {
+    @extend %button-disabled
   }
 
   &__email-label {
@@ -144,10 +152,6 @@
       display: block;
       @extend %checkmark;
     }
-  }
-
-  &__message {
-    margin-bottom: 28px;
   }
 
   &__message-input-wrapper {
@@ -232,26 +236,42 @@
 
   &__file {
     margin-bottom: 30px;
+    margin-top: 28px;
   }
 
   &__file-input {
-    display: none;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
   }
 
   &__file-label {
     @extend %button;
+    z-index: 2;
     gap: 16px;
     width: 207px;
     height: 46px;
     border-radius: 25px;
     padding: 14px 16px 16px;
-    color: #021F45;
+    color: inherit;
+    background: inherit;
   }
 
   &__file-button-image {
     width: 14px;
     height: 14px;
     fill: #002F6C;
+  }
+
+  &__file-input:focus + &__file-label {
+    @extend %button-focus;
+  }
+
+  &__file-input:disabled + &__file-label {
+    @extend %button-disabled;
   }
 
   &__file {
