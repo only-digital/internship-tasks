@@ -22,6 +22,7 @@ class Form extends Component {
 
     checkboxInput
     checkboxError
+    checkboxLabel
 
     submitButton
     form
@@ -48,6 +49,7 @@ class Form extends Component {
 
         this.checkboxInput = this.getElement('checkbox-input');
         this.checkboxError = this.getElement('checkbox-error');
+        this.checkboxLabel = this.getElement('checkbox-label');
 
         this.submitButton = this.getElement('submit-button');
         this.form = this.getElement('form');
@@ -145,6 +147,13 @@ class Form extends Component {
         this.fileInput.disabled = !(this.emailValid && this.messageValid);
     }
 
+    makeInputInactive(inputWrapper, input, label) {
+        inputWrapper.classList.add('inactive');
+        inputWrapper.classList.remove('filled');
+        input.value = label.textContent;
+        label.textContent = ''
+    }
+
     submitForm(event) {
         event.preventDefault();
 
@@ -164,7 +173,13 @@ class Form extends Component {
                 })
             })
                 .then(response => response)
-                .then(result => result)
+                .then(result => {
+                    this.makeInputInactive(this.emailInputWrapper, this.emailInput, this.emailLabel);
+                    this.makeInputInactive(this.messageInputWrapper, this.messageInput, this.messageLabel);
+                    this.checkboxLabel.classList.add('inactive');
+                    this.fileInput.disabled = true;
+                    this.submitButton.disabled = true;
+                })
         }
     }
 }
