@@ -26,6 +26,11 @@
     font-size: 24px;
   }
 
+  &__taskTitle.completed {
+    opacity: 0.3;
+    text-decoration: line-through;
+  }
+
   &__taskText {
     width: 734px;
     height: 56px;

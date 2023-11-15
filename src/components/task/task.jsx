@@ -6,11 +6,7 @@ import {useState} from "react";
 const Task = (props) => {
     const task = props.task;
     const [isCompleted, setIsCompleted] = useState(false);
-    const taskStyle = {
-        color: isCompleted ? '#161F3E' : '',
-        opacity: isCompleted ? '0.3' : 'inherit',
-        textDecoration: isCompleted ? 'line-through' : 'inherit'
-    }
+    const classIsCompleted = isCompleted ? styled.completed : '';
 
     function handleTaskState() {
         setIsCompleted(!isCompleted);
@@ -18,12 +14,10 @@ const Task = (props) => {
 
     return (
         <div className={styled.Task}
-             onClick={handleTaskState}
-        >
+             onClick={handleTaskState}>
             <div className={styled.Task__titleWrapper}>
                 <h4
-                    className={styled.Task__taskTitle}
-                    style={taskStyle}>
+                    className={`${styled.Task__taskTitle} ${classIsCompleted}`}>
                     {task.title}
                 </h4>
                 <button
