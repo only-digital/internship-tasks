@@ -87,4 +87,32 @@
   &__policy-label a {
     color: #002f6c;
   }
+
+  &__success {
+    display: none;
+    gap: 21px;
+    align-items: center;
+  }
+
+  &__success svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  &__error {
+    display: none;
+    color: #ef1c1c;
+  }
+
+  &__btn--sent button {
+    display: none;
+  }
+
+  &__btn--sent .feedback__success {
+    display: flex;
+  }
+
+  &__btn--error .feedback__error {
+    display: block;
+  }
 }

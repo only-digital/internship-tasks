@@ -5,8 +5,19 @@ class Feedback extends Component {
     super(element);
 
     this.form = this.getElement('form');
+    this.button = this.getElement('btn');
 
     this.root.addEventListener('submit', this.handleFormSubmit);
+  }
+
+  disabledForm = (form) => {
+    const { elements } = form;
+    Array.from(elements)
+    .forEach((element) => {
+      element.disabled = true;
+      element.style.opacity = '30%';
+      element.value = '';
+    })
   }
 
   serialaizeForm = (formNode) => {
@@ -33,8 +44,17 @@ class Feedback extends Component {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: { email: data.get('email'), confirm: !!data.get('confirm') },
+      body: JSON.stringify({ email: data.get('email'), confirm: !!data.get('confirm')}),
     });
+
+    const { status, statusText } = await response;
+
+    if (status === 200) {
+      this.button.classList.add('feedback__btn--sent');
+      this.disabledForm(this.form);
+    } else {
+      this.button.classList.add('feedback__btn--error');
+    }
   };
 }
 
