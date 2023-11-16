@@ -1,10 +1,18 @@
 import styled from './tasks.module.scss';
 import Task from "@/components/task/task";
+import {useState} from "react";
 
 const Tasks = (props) => {
     let tasksData = props.tasksData;
     const tasksTitle = tasksData.title;
-    const tasksList = tasksData.tasks;
+    const [tasksList, setTasksList] = useState(tasksData.tasks);
+
+    function deleteTask(taskIndex) {
+        const updatedTasksList = tasksList.filter((_, index) => {
+            return index !== taskIndex
+        })
+        setTasksList(updatedTasksList);
+    }
 
     return (
         <div className={styled.Tasks}>
@@ -14,7 +22,8 @@ const Tasks = (props) => {
                 <ul className={styled.Tasks__tasksList}>
                     {tasksList.map((task, index) => (
                         <li key={index}>
-                            <Task task={task}/>
+                            <Task task={task} index={index}
+                            onDelete={() => deleteTask(index)}/>
                         </li>
                     ))}
                 </ul>

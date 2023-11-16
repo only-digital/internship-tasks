@@ -5,6 +5,10 @@ import {useState} from "react";
 
 const Task = (props) => {
     const task = props.task;
+    const index = props.index;
+    const onDelete = (event) => {
+        event.stopPropagation();
+        props.onDelete(index)};
     const [isCompleted, setIsCompleted] = useState(false);
     const classIsCompleted = isCompleted ? styled.completed : '';
 
@@ -17,11 +21,13 @@ const Task = (props) => {
              onClick={handleTaskState}>
             <div className={styled.Task__titleWrapper}>
                 <h4
-                    className={`${styled.Task__taskTitle} ${classIsCompleted}`}>
+                    className={`${styled.Task__taskTitle} ${classIsCompleted}`}
+                    >
                     {task.title}
                 </h4>
                 <button
-                    className={styled.Task__deleteButton}>
+                    className={styled.Task__deleteButton}
+                    onClick={onDelete}>
                     <Image
                         src={cross}
                         alt="Delete task"
