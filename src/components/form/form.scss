@@ -1,0 +1,402 @@
+.form {
+  $root: &;
+
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  display: flex;
+  gap: 50px;
+
+  h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #002F6C;
+  }
+
+  %error {
+    font-size: 12px;
+    color: #FF0000;
+    padding-left: 20px;
+  }
+
+  %label {
+    font-size: 12px;
+    height: 18px;
+    color: #909090;
+    padding-left: 20px;
+  }
+
+  %checkmark {
+    width: 18px;
+    height: 13px;
+  }
+
+  %button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #BCBCBC;
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  %button-focus {
+    border: 3px solid #99B3D8;
+    background-color: #FFFFFF;
+    color: #0041A0;
+
+    :last-child {
+      color: #021F45;
+    }
+  }
+
+  %button-disabled {
+    pointer-events: none;
+    color: #909090;
+
+    :last-child {
+      fill: #909090;
+    }
+  }
+
+  %button:hover {
+    background-color: #0041A0;
+    border-color: #0041A0;
+    cursor: pointer;
+    color: #FFFFFF;
+
+    :last-child {
+      fill: #FFFFFF;
+    }
+  }
+
+  %button:active {
+    background-color: #002F6C;
+    color: #FFFFFF;
+
+    :last-child {
+      fill: #FFFFFF;
+    }
+  }
+
+  %button:focus {
+    @extend %button-focus
+  }
+
+  %button:disabled {
+    @extend %button-disabled
+  }
+
+  %inactive {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &__email-label {
+    @extend %label;
+  }
+
+  &__email, &__message {
+    display: grid;
+  }
+
+  &__email {
+    margin-bottom: 10px;
+  }
+
+  &__email-input-wrapper {
+    width: 836px;
+    height: 48px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: 1px solid #DEDEDE;
+    background: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__email-input-wrapper.inactive {
+    @extend %inactive;
+  }
+
+  &__email-error {
+    @extend %error;
+  }
+
+  &__email-checkmark {
+    display: none;
+  }
+
+  &__email-input {
+    background-color: inherit;
+  }
+
+  &__email-input::placeholder {
+    color: #111111;
+  }
+
+  &__email-input-wrapper:hover {
+    border-radius: 24px;
+    background: #F4F4F4;
+    cursor: pointer;
+  }
+
+  &__email-input-wrapper:focus-within {
+    border: 1px solid #0041A0;
+    border-radius: 24px;
+  }
+
+  &__email-input-wrapper.invalid {
+    background: #FFFFFF;
+    border: 1px solid #FF0000;
+    border-radius: 24px;
+  }
+
+  &__email-input-wrapper.filled {
+    background-color: #F4F4F4;
+    border-radius: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__email-input-wrapper.filled {
+    .form__email-checkmark {
+      display: block;
+      @extend %checkmark;
+    }
+  }
+
+  &__message-input-wrapper {
+    width: 556px;
+    height: 166px;
+  }
+
+  &__message-input-wrapper.inactive {
+    @extend %inactive;
+  }
+
+  &__message-input {
+    width: 486px;
+    height: 36px;
+    resize: none;
+    border: none;
+    background-color: inherit;
+    outline: none;
+    border-bottom: 1px solid #DEDEDE;
+    padding-left: 20px;
+    font-family: inherit;
+  }
+
+  &__message-input:hover {
+    cursor: pointer;
+  }
+
+  %message-input-big {
+    border-radius: 24px;
+    padding: 12px 16px 16px 0;
+
+    .form__message-input {
+      height: 100%;
+      border-bottom: none;
+      border-radius: 24px;
+    }
+  }
+
+  &__message-checkmark {
+    display: none;
+  }
+
+  &__message-label {
+    @extend %label;
+  }
+
+  &__message-error {
+    @extend %error
+  }
+
+  &__message-input::placeholder {
+    font-size: 16px;
+    color: #111111;
+  }
+
+  &__message-input-wrapper:hover {
+    @extend %message-input-big;
+    background-color: #F4F4F4;
+    cursor: pointer;
+  }
+
+  &__message-input-wrapper:focus-within {
+    @extend %message-input-big;
+    border: 1px solid #0041A0;
+    background-color: #FFFFFF;
+  }
+
+  &__message-input-wrapper.invalid {
+    @extend %message-input-big;
+    border: 1px solid #FF0000;
+  }
+
+  &__message-input-wrapper.filled {
+    @extend %message-input-big;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 12px;
+    background-color: #F4F4F4;
+
+    .form__message-checkmark {
+      display: block;
+      align-self: flex-end;
+      @extend %checkmark;
+    }
+  }
+
+  &__file {
+    margin-bottom: 30px;
+    margin-top: 28px;
+  }
+
+  &__file-input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__file-label {
+    @extend %button;
+    z-index: 2;
+    gap: 16px;
+    width: 207px;
+    height: 46px;
+    border-radius: 25px;
+    padding: 14px 16px 16px;
+    color: inherit;
+    background: inherit;
+  }
+
+  &__file-button-image {
+    width: 14px;
+    height: 14px;
+    fill: #002F6C;
+  }
+
+  &__file-input:focus + &__file-label {
+    @extend %button-focus;
+  }
+
+  &__file-input:disabled + &__file-label {
+    @extend %button-disabled;
+  }
+
+  &__file {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  &__chosen-file {
+    display: none;
+  }
+
+  &__chosen-file.shown {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    width: auto;
+    height: 40px;
+    border-radius: 27px;
+    background-color: #F4F4F4;
+    padding: 10px 13px 10px 18px;
+  }
+
+  &__file-data {
+    color: #909090;
+  }
+
+  &__remove-file-image {
+    width: 10px;
+    height: 10px;
+  }
+
+  &__checkbox {
+    font-size: 14px;
+    color: #909090;
+    margin-bottom: 30px;
+  }
+
+  &__checkbox-input {
+    display: none;
+  }
+
+  &__checkbox-label {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+  }
+
+  &__checkbox-label.inactive {
+    @extend %inactive;
+  }
+
+  &__custom-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #BCBCBC;
+  }
+
+  &__checkmark {
+    width: 10px;
+    height: 8px;
+  }
+
+  &__checkbox-input:hover + &__checkbox-label {
+    .form__custom-checkbox {
+      border-color: #0041A0;
+      cursor: pointer;
+    }
+  }
+
+  &__checkbox-input:checked + &__checkbox-label {
+    .form__custom-checkbox {
+      background: #002F6C;
+    }
+  }
+
+  &__checkbox-input:focus + &__checkbox-label {
+    .form__custom-checkbox {
+      background: #FFFFFF;
+      border-color: #BCBCBC;
+    }
+  }
+
+  &__checkbox-error {
+    display: none;
+  }
+
+  &__checkbox-error.shown {
+    display: block;
+    @extend %error;
+  }
+
+  &__submit-button {
+    @extend %button;
+    width: 155px;
+    height: 48px;
+    border-radius: 25px;
+    gap: 14px;
+  }
+
+  &__button-arrow {
+    width: 32px;
+    height: 22px;
+    fill: #0041A0;
+  }
+}
