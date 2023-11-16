@@ -6,8 +6,13 @@ class Feedback extends Component {
 
     this.form = this.getElement('form');
     this.button = this.getElement('btn');
+    this.loader =document.querySelector('.loader');
 
     this.root.addEventListener('submit', this.handleFormSubmit);
+  }
+
+  toggleLoader = () => {
+    this.loader.classList.toggle('loader--hidden');
   }
 
   disabledForm = (form) => {
@@ -39,6 +44,7 @@ class Feedback extends Component {
     evt.preventDefault();
     const data = this.serialaizeForm(this.form);
 
+    this.toggleLoader()
     const response = await fetch('/form', {
       method: 'POST',
       headers: {
@@ -48,6 +54,7 @@ class Feedback extends Component {
     });
 
     const { status, statusText } = await response;
+    this.toggleLoader();
 
     if (status === 200) {
       this.button.classList.add('feedback__btn--sent');

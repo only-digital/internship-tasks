@@ -3,6 +3,7 @@ import Feedback from '../../components/feedback/feedback';
 import Header from '../../components/header/header';
 import Conditions from '../../components/conditions/conditions';
 import Button from '../../components/button/button';
+import Loader from '../../components/loader/loader';
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -14,7 +15,8 @@ const allComponents = {
   'header': Header,
   'feedback': Feedback,
   'conditions': Conditions,
-  'button': Button
+  'button': Button,
+  'loader': Loader,
 };
 
 /**
