@@ -1,0 +1,146 @@
+.accordion {
+  $root: &;
+  //Your code here
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    color: #012b34;
+    font-size: 64px;
+    font-weight: 400;
+    width: 1600px;
+  }
+
+  &__line {
+    height: 1px;
+    width: 1600px;
+    background-color: #e6e6e6;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  &__header {
+    width: 1600px;
+    color: #012b34;
+    font-size: 36px;
+    font-weight: 400;
+    transition: 0.5s;
+  }
+
+  &__header:hover {
+    color: #114c9a;
+    cursor: pointer;
+  }
+
+  &__cross {
+    width: 20px;
+    height: 20px;
+    transition: 0.5s;
+  }
+
+  &__content {
+    width: 100%;
+    color: #000402;
+    font-size: 20px;
+    font-weight: 400;
+    width: 1600px;
+    transition: height 0.5s;
+    overflow: hidden;
+  }
+
+  @media (max-width: 1440px) {
+    &__title {
+      font-size: 48px;
+      width: 1200px;
+    }
+
+    &__line {
+      width: 1200px;
+    }
+
+    &__header {
+      width: 1200px;
+      font-size: 27px;
+    }
+
+    &__cross {
+      width: 15px;
+      height: 15px;
+    }
+
+    &__content {
+      font-size: 15px;
+      width: 1200px;
+    }
+  }
+
+  @media (max-width: 1280px) {
+    &__title {
+      font-size: 42px;
+      width: 1066px;
+    }
+
+    &__line {
+      width: 1066px;
+    }
+
+    &__header {
+      width: 1066px;
+      font-size: 24px;
+    }
+
+    &__content {
+      font-size: 14px;
+      width: 1066px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__title {
+      width: 688px;
+    }
+
+    &__line {
+      width: 688px;
+    }
+
+    &__header {
+      font-size: 27px;
+      width: 688px;
+    }
+
+    &__content {
+      font-size: 15px;
+      width: 688px;
+    }
+  }
+
+  @media (max-width: 375px) {
+    &__title {
+      font-size: 30px;
+      width: 327px;
+    }
+
+    &__line {
+      width: 327px;
+    }
+
+    &__header {
+      font-size: 24px;
+      width: 327px;
+    }
+
+    &__content {
+      width: 327px;
+    }
+  }
+}

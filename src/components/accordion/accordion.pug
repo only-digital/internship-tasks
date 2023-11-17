@@ -1,0 +1,7 @@
+mixin accordion({opend = false, header = '', content = ''})
+	.accordion&attributes(attributes)(class=!opend ? 'accordion__hidden' : '', data-component='accordion')
+		//Your code here
+		.accordion__block
+			.accordion__header=header
+			+svg('cross').accordion__cross
+		.accordion__content=content 
