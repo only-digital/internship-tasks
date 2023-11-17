@@ -28,6 +28,7 @@ const Tasks = (props) => {
             return index !== taskIndex
         })
         setTasksList(updatedTasksList);
+        setDisplayedTasks(updatedTasksList);
     }
 
     return (
