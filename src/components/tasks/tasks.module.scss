@@ -2,6 +2,12 @@
   width: 1630px;
   color: #161F3E;
 
+  %wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   &__tasksContainer {
     display: grid;
     gap: 28px;
@@ -15,16 +21,27 @@
     border-bottom: 1px solid #D9E1EC;
   }
 
+  &__titleWrapper {
+    @extend %wrapper;
+  }
+
   &__title {
     font-size: 32px;
     color: #213C57;
     font-weight: 600;
   }
 
+  &__searchWrapper {
+    @extend %wrapper;
+    width: 608px;
+    background: #FFFFFF;
+    padding: 15px 16px 15px;
+    border-radius: 10px;
+  }
+
   &__tasksList {
     display: grid;
     gap: 20px;
   }
-
 }
 
