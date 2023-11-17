@@ -1,0 +1,25 @@
+.header {
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid #D9E1EC;
+	height: 80px;
+
+	&__inner {
+		display: flex;
+		gap: 9px;
+		align-items: center;
+		padding-left: 45px;
+		flex: 0 1 290px;
+		border-right: 1px solid #D9E1EC;
+		height: 100%;
+	}
+
+	&__logo {
+		display: block;
+		max-width: 49px;
+		font-size: 7px;
+		font-weight: 500;
+		line-height: 8px;
+		cursor: default;
+	}
+}

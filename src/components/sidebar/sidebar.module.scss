@@ -1,0 +1,26 @@
+.sidebar {
+	flex: 0 0 290px;
+	border-right: 1px solid #D9E1EC;
+}
+
+.body {
+	padding: 40px 25px;
+	height: 100vh;
+
+	&__item {
+		padding: 17px 20px;
+		background-color: #E3EDF7;
+		border-radius: 10px;
+		display: flex;
+		align-items: center;
+		gap: 16px;
+	}
+
+	&__title {
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 26px;
+		color: #007FFF;
+		cursor: default;
+	}
+}

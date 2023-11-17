@@ -1,0 +1,59 @@
+.task {
+	padding: 24px 30px 30px 24px;
+	background-color: #fff;
+	border-radius: 10px;
+	cursor: default;
+
+	&:hover {
+		.task__title {
+			color: #007FFF;
+		}
+	}
+
+	&__top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-bottom: 17px;
+		border-bottom: 1px solid #E7EAEE;
+	
+		img {
+			width: 14px;
+			height: 14px;
+			cursor: pointer;
+			transition: transform 0.5s ease, opacity 0.4s ease;
+	
+			&:hover {
+				transform: scale(1.1);
+			}
+	
+			&:active {
+				opacity: 0.7;
+			}
+		}
+	}
+
+	&__title {
+		font-size: 24px;
+		font-weight: 400;
+		line-height: 31px;
+		color: rgba(22, 31, 62, 0.9);
+		transition: color 0.5s ease;
+	}
+
+	&__completed {
+		font-size: 24px;
+		font-weight: 400;
+		line-height: 31px;
+		text-decoration: line-through;
+		color: rgba(22, 31, 62, 0.3);
+	}
+
+	&__text {
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 28px;
+		max-width: 710px;
+		margin-top: 10px;
+	}
+}
