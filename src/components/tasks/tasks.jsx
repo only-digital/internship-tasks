@@ -39,6 +39,7 @@ const Tasks = (props) => {
                     <h2 className={styled.Tasks__title}>{tasksTitle}</h2>
                     <div className={styled.Tasks__searchWrapper}>
                         <input
+                            className={styled.Tasks__searchInput}
                             type="text"
                             placeholder="Поиск"
                             onChange={(event) => useFilterTasks(event.target.value)}/>
