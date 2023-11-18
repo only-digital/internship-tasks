@@ -39,6 +39,7 @@ const TodoList = () => {
                 {
                     filteredTasks.map((item) => (
                         <TodoItem 
+                            key={item.id}
                             title={item.title} 
                             text={item.text}
                             isCompleted={item.isCompleted}
