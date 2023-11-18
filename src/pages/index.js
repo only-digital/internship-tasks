@@ -6,9 +6,6 @@ import WorkingArea from "../components/workingArea/workingArea";
 import {getIndexPage} from "../../lib/api";
 
 function Index(props) {
-
-    console.log(props)
-
     return (
         <main className={styles.main}>
             <Top/>

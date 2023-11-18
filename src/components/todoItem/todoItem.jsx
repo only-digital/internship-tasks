@@ -4,7 +4,8 @@ const TodoItem = (props) => {
     return (
         <li 
             className={`${styled.TodoItem} ${((props.isCompleted) ? styled.TodoItem_completed : '')}`}
-            onClick={props.onClick}
+            id={props.id}
+            onClick={props.onItemClick}
         >
             <h3 className={styled.TodoItem__title}>
                 {props.title}
@@ -12,9 +13,12 @@ const TodoItem = (props) => {
             <p className={styled.TodoItem__text}>
                 {props.text}
             </p>
-            <svg className={styled.TodoItem__svg} xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
-                <path d="M20 6L6 20" stroke="#007FFF" stroke-width="2" stroke-linecap="round"/>
-                <path d="M6 6L20 20" stroke="#007FFF" stroke-width="2" stroke-linecap="round"/>
+            <svg
+                className={styled.TodoItem__svg}
+                onClick={props.onButtonClick}
+                    xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
+                    <path d="M20 6L6 20" stroke="#007FFF" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M6 6L20 20" stroke="#007FFF" stroke-width="2" stroke-linecap="round"/>
             </svg>
         </li>
     )

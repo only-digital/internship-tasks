@@ -1,33 +1,67 @@
 import styled from './todoList.module.scss';
 import TodoItem from '../todoItem/todoItem';
 import Search from '../Search/Search';
+import useSearch from '@/hooks/useSearch';
 
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 import data from '../../../data/index.json';
 
 const TodoList = () => {
-    const [tasks, setTasks] = useState(data.tasks)
-    console.log(tasks)
+    const modifiedTasks = data.tasks
+
+    modifiedTasks.forEach((task, i) => {
+        task.id = i
+    })
+
+    const [tasks, setTasks] = useState(modifiedTasks)
+
+    const [todoSearch, setTodoSearch] = useState('')
+
+    const changeSearchValue = (e) => {
+        setTodoSearch(e.target.value)
+    }
+    
+    const filteredTasks = useSearch(tasks, todoSearch);
+
     return (
         <section className={styled.TodoList}>
             <div className={styled.TodoList__upContent}>
                 <h2 className={styled.TodoList__title}>
                     {data.title}
                 </h2>
-                <Search />
+                <Search
+                    value={todoSearch}
+                    onChange={changeSearchValue}
+                />
             </div>
             <ul className={styled.TodoList__list}>
                 {
-                    tasks.map((item, i) => {
-                        console.log(tasks[i].isCompleted)
-                        return <TodoItem 
+                    filteredTasks.map((item) => (
+                        <TodoItem 
                             title={item.title} 
                             text={item.text}
                             isCompleted={item.isCompleted}
-                            onClick={() => setTasks([...tasks.slice(0, i), { ...tasks[i], isCompleted: !tasks[i].isCompleted }, ...tasks.slice(i + 1)])}
+                            id={item.id}
+                            onItemClick={(e) => {
+                                const id = +e.target.id
+                                setTasks([...tasks.slice(0, id), { ...tasks[id], isCompleted: !tasks[id].isCompleted }, ...tasks.slice(id + 1)])
+                            }}
+                            onButtonClick={(e) => {
+                                e.stopPropagation()
+                                const newFilteredTasks = tasks.filter((task) => task.id !== +e.target.parentNode.id)
+                                setTasks(
+                                    newFilteredTasks.map((task, i) => {
+                                        return {
+                                            ...task,
+                                            id: i,
+                                        }
+                                    })
+                                )
+                            }}
+                            
                         />
-                    })
+                    ))
                 }
             </ul>
         </section>

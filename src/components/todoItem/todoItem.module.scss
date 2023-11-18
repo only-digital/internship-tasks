@@ -12,6 +12,11 @@
 	border-radius: 10px;
 	cursor: pointer;
 
+	&__title,
+	&__text {
+		pointer-events: none;
+	}
+
 	&:hover {
 		#{$root}__title {
 			color: $blue2;
@@ -83,7 +88,12 @@
 
 	&__svg {
 		position: absolute;
+		z-index: 4;
 		right: 24px;
 		top: 27px;
+
+		* {
+			pointer-events: none;
+		}
 	}
 }
