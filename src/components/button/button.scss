@@ -1,0 +1,48 @@
+.button {
+  $root: &;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  height: 48px;
+  padding: 0 14px 0 18px;
+  border-radius: 25px;
+  border: none;
+  background-color: #0041a0;
+  transition: outline 0.3s, background-color 0.3s;
+
+  font-family: Arial;
+  color: #fff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+
+  &__svg-arrow {
+    width: 32px;
+    height: 32px;
+    fill: #fff;
+  }
+
+  &:disabled {
+    color: #909090;
+    pointer-events: none;
+    background-color: #f4f4f4;
+
+    .button__svg-arrow {
+      fill: #909090;
+    }
+  }
+
+  &:focus-visible {
+    outline: 3px solid #99b3d8;
+  }
+
+  &:hover {
+    background-color: #154387;
+  }
+
+  &:active {
+    background-color: #0e3260;
+  }
+}

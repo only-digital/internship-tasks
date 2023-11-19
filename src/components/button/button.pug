@@ -1,0 +1,3 @@
+mixin button(props)
+	button.button&attributes(attributes)(data-component='button')!=props.text
+		+svg('arrow').button__svg-arrow
