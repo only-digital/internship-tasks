@@ -17,5 +17,7 @@
         'A A'
         'B B'
         'C C';
+
+        grid-template-rows: auto max-content 1fr;
     }
 }
