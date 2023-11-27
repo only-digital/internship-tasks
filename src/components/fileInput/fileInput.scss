@@ -1,0 +1,174 @@
+@import "../../const/colors.scss";
+
+.fileInput {
+  $root: &;
+
+  position: relative;
+  margin-bottom: 15px;
+
+  &__label {
+    display: flex;
+    margin-bottom: 7px;
+
+    input[type="file"]:focus + #{$root}__btn {
+      border: 3px solid $colorLightBlue;
+    }
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 46px;
+    color: $colorMidnight;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -0.32px;
+    padding: 0 16px;
+    margin-right: 20px;
+    border-radius: 25px;
+    border: 1px solid $colorExtraGray;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $colorExtraCobolt;
+      color: $colorWhite;
+
+      svg {
+        fill: $colorWhite;
+      }
+    }
+
+    &:active {
+      background-color: $colorMainBlue;
+    }
+  }
+  &__svg {
+    width: 14px;
+    height: 14px;
+    fill: $colorMainBlue;
+  }
+  &__input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    z-index: -1;
+  }
+  &__files {
+    &-list {
+      font-size: 16px;
+      line-height: 124%;
+      letter-spacing: -0.32px;
+      display: flex;
+      align-items: center;
+      gap: 19px;
+    }
+    &-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 40px;
+      padding: 10px 13px 10px 18px;
+      border-radius: 27px;
+      background: $colorExtraGrey3;
+      color: $colorBlack2;
+      transition: padding-right 0.3s;
+
+      &_color {
+        color: $colorMainSteel;
+      }
+
+      &:after {
+        position: absolute;
+        content: "";
+        opacity: 0;
+        transition: opacity 0.3s;
+      }
+
+      &:hover {
+        padding-right: 37px;
+        transition: padding-right 0.3s;
+
+        &:after {
+          cursor: pointer;
+          position: absolute;
+          content: "";
+          background-image: url('data:image/svg+xml,<svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg"><path d="M0 6.53333V7.46667H14V6.53333H0Z"/><path d="M7.46667 4.07974e-08L6.53333 0L6.53333 14H7.46667L7.46667 4.07974e-08Z"/></svg>');
+          height: 14px;
+          width: 14px;
+          right: 15px;
+          top: 12px;
+          rotate: 45deg;
+          opacity: 1;
+          transition: opacity 0.3s;
+        }
+      }
+    }
+  }
+
+  &__msg {
+    color: $colorMainRed;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -0.24px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  &__popMsg {
+    position: absolute;
+    width: 240px;
+    height: 92px;
+    top: -102px;
+    left: -196px;
+    filter: drop-shadow(0px 4px 40px rgba(0, 0, 0, 0.1));
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    &-text {
+      color: $colorMainBlue;
+      background-color: #fff;
+      padding: 16px 20px 18px;
+      font-size: 14px;
+      line-height: 150%;
+    }
+    &-tri {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-top: 16px solid #fff;
+      border-left: 16px solid transparent;
+    }
+  }
+
+  &__error {
+    &-size {
+      #{$root}__msg {
+        opacity: 1;
+      }
+    }
+
+    &-count {
+      #{$root}__popMsg {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+
+    #{$root}__btn {
+      color: $colorMainSteel;
+      border: 1px solid $colorExtraGray;
+    }
+
+    svg {
+      fill: $colorMainSteel;
+    }
+  }
+}

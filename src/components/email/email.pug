@@ -1,0 +1,6 @@
+mixin email(props)
+	.email&attributes(attributes)(data-component='email')
+		input(type="email" id="email").email__input
+		label(for="email").email__label E-mail
+		+svg('ok-input').email__svg
+		.email__msg Поле обязательно к заполнению

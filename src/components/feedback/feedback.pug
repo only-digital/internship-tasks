@@ -1,0 +1,9 @@
+mixin feedback(props)
+	.feedback&attributes(attributes)(data-component='feedback')
+		h3.feedback__title Форма обратной связи
+		form.feedback__form
+			+email()
+			+textArea()
+			+fileInput()
+			+checkBox()
+			+button()

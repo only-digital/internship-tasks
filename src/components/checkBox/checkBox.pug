@@ -1,0 +1,7 @@
+mixin checkBox(props)
+	.checkBox&attributes(attributes)(data-component='checkBox')
+		label(for="form__checkbox").checkBox__label
+			input(id="form__checkbox" type="checkbox").checkBox__input
+			+svg('cb').checkBox__svg
+		span.checkBox__info Вы подтверждаете, что ознакомились #[a(href="/politics").checkBox__info.checkBox__info_color c политикой обработки персональных данных]
+		

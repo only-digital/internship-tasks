@@ -1,0 +1,12 @@
+mixin fileInput(props)
+	.fileInput&attributes(attributes)(data-component='fileInput')
+		label.fileInput__label(for="fileInput")
+			input(type="file" id="fileInput" accept=".doc,.docx,.pdf" multiple).fileInput__input
+			span.fileInput__btn Прикрепить файл
+				+svg('plus').fileInput__svg
+			.fileInput__files-list
+		.fileInput__msg Максимальный размер файла 5Mb
+		.fileInput__popMsg
+			.fileInput__popMsg-text Вы можете загрузить только 2 документа
+			.fileInput__popMsg-tri
+			

@@ -1,4 +1,9 @@
-import ExampleButton from "../../components/example-button/example-button";
+import Feedback from "../../components/feedback/feedback";
+import Email from "../../components/email/email";
+import TextArea from "../../components/textArea/textArea";
+import FileInput from "../../components/fileInput/fileInput";
+import CheckBox from "../../components/checkBox/checkBox";
+import Button from "../../components/button/button";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -6,7 +11,12 @@ import ExampleButton from "../../components/example-button/example-button";
  * Значение - JS-класс компонента (Импорт добавляется вручную)
  */
 const allComponents = {
-    'example-button': ExampleButton,
+    'feedback': Feedback,
+    'email': Email,
+    'textArea': TextArea,
+    'fileInput': FileInput,
+    'checkBox': CheckBox,
+    'button': Button,
 }
 
 /**

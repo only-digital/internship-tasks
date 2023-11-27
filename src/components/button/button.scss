@@ -1,0 +1,75 @@
+@import "../../const/colors.scss";
+
+.btn {
+  $root: &;
+
+  display: flex;
+  height: 48px;
+  align-items: center;
+  gap: 14px;
+  padding: 0 14px 0 18px;
+  width: fit-content;
+  border-radius: 25px;
+  border: 1px solid $colorExtraGray;
+  background-color: $colorWhite;
+  color: $colorBlack2;
+  transition: background-color 0.3s, border 0.3s, color 0.3s;
+
+  &:hover {
+    color: $colorWhite;
+    background-color: $colorExtraCobolt;
+    border: 1px solid $colorExtraCobolt;
+    transition: background-color 0.3s, border 0.3s, color 0.3s;
+
+    svg {
+      fill: $colorWhite;
+      transition: fill 0.3s;
+    }
+  }
+
+  &:active {
+    background-color: $colorMainBlue;
+    border: 1px solid $colorMainBlue;
+  }
+
+  &:focus {
+    color: $colorExtraCobolt;
+    border: 3px solid $colorLightBlue;
+
+    &:hover {
+      color: $colorWhite;
+
+      svg {
+        fill: $colorWhite;
+        transition: fill 0.3s;
+      }
+    }
+
+    svg {
+      fill: $colorExtraCobolt;
+    }
+  }
+
+  &:disabled,
+  &.disabled {
+    border: 1px solid $colorExtraGray;
+    color: $colorMainSteel;
+    pointer-events: none;
+
+    svg {
+      fill: $colorMainSteel;
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: -0.32px;
+  }
+  &__svg {
+    width: 32px;
+    height: 32px;
+    fill: $colorMainBlue;
+    transition: fill 0.3s;
+  }
+}

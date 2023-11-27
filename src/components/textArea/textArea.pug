@@ -1,0 +1,6 @@
+mixin textArea(props)
+	.textArea&attributes(attributes)(data-component='textArea')
+		textarea(id='textArea' name='textArea').textArea__item
+		label(for='textArea').textArea__label Ваше сообщение
+		+svg('ok-input').textArea__svg
+		.textArea__msg Поле обязательно к заполнению

@@ -1,0 +1,28 @@
+@import "../../const/colors.scss";
+
+.feedback {
+  $root: &;
+
+  font-family: Arial;
+  font-style: normal;
+  padding: 26px 130px 55px 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 171px;
+
+  &__title {
+    color: $colorMainBlue;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -0.64px;
+    width: 273px;
+  }
+  &__form {
+    position: relative;
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+}
