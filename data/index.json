@@ -3,7 +3,7 @@
     "tasks": [
         {
             "title": "Задача 1",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus purus nec erat tempus, a luctus dolor ornare. Aenean convallis magna vel turpis imperdiet, non convallis nulla consequat.",
+            "text": "text of the first task",
             "isCompleted": false
         },
         {

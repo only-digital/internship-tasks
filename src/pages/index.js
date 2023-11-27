@@ -1,19 +1,18 @@
 import styles from '../styles/index.module.scss'
 import ExampleButton from "../components/example-button/example-button";
 import {getIndexPage} from "../../lib/api";
+import Tasks from "@/components/tasks/tasks";
+import Sidebar from "@/components/sidebar/sidebar";
 
 function Index(props) {
-
-    console.log(props)
+    const tasksData = props;
 
     return (
         <main className={styles.main}>
-            <ExampleButton/>
-
-            <ExampleButton initialValue={10}/>
-
-            {/* Your code here */}
-
+            <section className={styles.main__content}>
+                <Sidebar taskData={tasksData}/>
+                <Tasks tasksData={tasksData}/>
+            </section>
         </main>
     )
 }

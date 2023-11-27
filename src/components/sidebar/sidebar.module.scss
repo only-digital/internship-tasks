@@ -1,0 +1,48 @@
+.Sidebar {
+  width: 290px;
+  height: 100%;
+  background: #FFFFFF;
+  border-right: 1px solid #D9E1EC;
+
+  &__logoWrapper {
+    height: 80px;
+    border-bottom: 1px solid #D9E1EC;
+    padding: 29px 115px 24px 45px;
+  }
+
+  &__logo {
+    display: flex;
+    gap: 9px;
+  }
+
+  &__logoText {
+    color: #213C57;
+    font-size: 7px;
+    font-weight: 500;
+    text-transform: uppercase;
+    width: 49px;
+    height: 26px;
+  }
+
+  &__sidebar {
+    display: grid;
+    justify-content: center;
+    padding-top: 40px;
+  }
+
+  &__frame {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-left: 18px;
+    width: 240px;
+    height: 52px;
+    border-radius: 10px;
+    background: #E3EDF7;
+  }
+
+  &__sidebarText {
+    font-size: 13px;
+    color: #007FFF;
+  }
+}

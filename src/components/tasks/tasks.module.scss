@@ -1,0 +1,53 @@
+.Tasks {
+  width: 1630px;
+  color: #161F3E;
+
+  %wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__tasksContainer {
+    display: grid;
+    align-content: start;
+    height: 100%;
+    gap: 28px;
+    background: #F3F6F9;
+    padding: 48px 40px 144px;
+  }
+
+  &__bar {
+    height: 80px;
+    width: 100%;
+    border-bottom: 1px solid #D9E1EC;
+  }
+
+  &__titleWrapper {
+    @extend %wrapper;
+  }
+
+  &__title {
+    font-size: 32px;
+    color: #213C57;
+    font-weight: 600;
+  }
+
+  &__searchWrapper {
+    @extend %wrapper;
+    width: 608px;
+    background: #FFFFFF;
+    padding: 15px 16px 15px;
+    border-radius: 10px;
+  }
+
+  &__searchInput {
+    width: 100%;
+  }
+
+  &__tasksList {
+    display: grid;
+    gap: 20px;
+  }
+}
+
