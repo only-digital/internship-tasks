@@ -1,0 +1,5 @@
+mixin submit-button(props)
+	button(type="submit").submit-button&attributes(attributes)(data-component='submit-button')
+		span.submit-button__text= props.text
+		if props.hasIcon
+			+svg('arrow-icon').submit-button__icon

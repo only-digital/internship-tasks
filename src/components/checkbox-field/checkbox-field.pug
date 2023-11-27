@@ -1,0 +1,5 @@
+mixin checkbox-field(props)
+	.checkbox-field&attributes(attributes)(data-component='checkbox-field')
+		input(type="checkbox" id=props.id).checkbox-field__input
+		label(for=props.id).checkbox-field__label= props.labelBasic
+			span= " "+props.labelHighlight

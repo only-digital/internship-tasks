@@ -1,0 +1,144 @@
+@import '../../pages/index.scss';
+
+.textarea-field {
+	$root: &;
+  
+	padding: 18px 0 0 0;
+	position: relative;
+	margin-bottom: 28px;
+  
+	&__check-mark {
+	  display: none;
+	  position: absolute;
+	  bottom: 16px;
+	  right: 20px;
+	  width: 18px;
+	  height: 13px;
+	}
+  
+	&__error-message {
+	  font-size: 12px;
+	  line-height: 18px;
+	  padding: 0 0 0 20px;
+	  color: $red;
+	  display: none;
+	}
+  
+	&__label {
+	  position: absolute;
+	  top: 18px;
+	  height: 48px;
+	  line-height: 48px;
+	  color: $black;
+	  transition: left 0.3s, top 0.3s, color 0.3s;
+	}
+  
+	&__textarea {
+	  display: block;
+	  width: 100%;
+	  font-size: 16px;
+	  line-height: 16px;
+	  min-height: 48px;
+	  max-height: 48px;
+	  padding: 12px 50px 16px 20px;
+	  border-color: $grey-2;
+	  border-width: 0 0 1px 0;
+	  border-style: solid;
+	  border-radius: 0;
+	  background: none;
+	  color: $black;
+	  resize: none;
+	  transition: border-color 0.3s, border-radius 0.3s, background 0.3s,
+		min-height 0.3s, max-height 0.3s;
+  
+	  &::-webkit-scrollbar {
+		width: 0px;
+		height: 0px;
+	  }
+  
+	  &:hover {
+		border-color: $grey-3;
+		background: $grey-3;
+		border-radius: 24px;
+		cursor: pointer;
+  
+		+ #{$root}__label {
+		  left: 20px;
+		}
+	  }
+  
+	  &:focus {
+		border-width: 1px;
+		border-color: $cobolt;
+		border-radius: 24px;
+		background: none;
+		outline: none;
+  
+		+ #{$root}__label {
+		  height: 18px;
+		  font-size: 12px;
+		  line-height: 18px;
+		  top: 0;
+		  left: 20px;
+		  color: $steel;
+		}
+	  }
+  
+	  &:disabled {
+		border-color: $grey-2;
+		min-height: 48px;
+		max-height: 48px;
+		background: none;
+		border-radius: 0;
+		cursor: auto;
+  
+		+ #{$root}__label {
+		  left: 0;
+		  color: $grey-1;
+		}
+	  }
+	}
+  
+	&.fill {
+	  #{$root}__textarea {
+		border-color: $grey-3;
+		background: $grey-3;
+		border-radius: 24px;
+	  }
+  
+	  #{$root}__label {
+		height: 18px;
+		font-size: 12px;
+		line-height: 18px;
+		top: 0;
+		left: 20px;
+		color: $steel;
+	  }
+  
+	  #{$root}__check-mark {
+		display: block;
+	  }
+	}
+  
+	&.error {
+	  #{$root}__textarea {
+		border-width: 1px;
+		border-color: $red;
+		border-radius: 24px;
+		background: none;
+	  }
+  
+	  #{$root}__label {
+		height: 18px;
+		font-size: 12px;
+		line-height: 18px;
+		top: 0;
+		left: 20px;
+		color: $steel;
+	  }
+  
+	  #{$root}__error-message {
+		display: block;
+	  }
+	}
+  }

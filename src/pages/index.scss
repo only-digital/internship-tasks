@@ -1,0 +1,32 @@
+$blue: #002f6c;
+$grey-1: #bcbcbc;
+$grey-2: #dedede;
+$grey-3: #f4f4f4;
+$cobolt: #0041a0;
+$black: #111111;
+$steel: #909090;
+$red: #ff0000;
+$midnight: #021f45;
+$white: #ffffff;
+$blue-light: #99b3d8;
+
+.feedback {
+    padding: 26px 130px 60px 30px;
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    display: flex;
+    gap: 160px;
+  
+    &__title {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 38px;
+      color: $blue;
+      flex-shrink: 0;
+    }
+  
+    &__form {
+      flex: 1 1 0;
+    }
+  }
