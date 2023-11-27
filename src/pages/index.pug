@@ -1,7 +1,11 @@
 extends ../../build_modules/common
 
-
 block body
-    +example-button()
-    +example-button()
-    //Your code here
+    .feedback
+        h1.feedback__title Форма обратной связи
+        form(enctype="multipart/form-data" method="post" id="feedback").feedback__form
+            +email-field({label: "E-mail", id: "email"})
+            +textarea-field({label: "Ваше сообщение", id: "message"})
+            +file-field({accept: ".pdf,.doc,.docx", id: "textfiles"})
+            +checkbox-field({labelBasic: "Вы подтверждаете, что ознакомились", labelHighlight: "c политикой обработки персональных данных", id: "confirm"})
+            +submit-button({text: "Отправить", hasIcon: true})
