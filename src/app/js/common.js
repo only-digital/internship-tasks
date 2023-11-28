@@ -13,6 +13,7 @@ const allComponents = {
     'form-feedback': FormFeedback,
 }
 
+
 /**
  * Инициализация всех компонентов на странице
  */
