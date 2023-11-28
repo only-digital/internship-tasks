@@ -1,0 +1,56 @@
+$white: #fff;
+$light: #e7eaee;
+$blue: #007fff;
+$title-color: rgba(22, 31, 62, 0.9);
+$completed-title: rgba(22, 31, 62, 0.3);
+
+.Task {
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+
+	padding: 24px 24px 31px;
+
+	color: $title-color;
+
+	font-weight: 400;
+
+	border-radius: 10px;
+
+	background: $white;
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+
+		padding-bottom: 17px;
+
+		font-size: 24px;
+		line-height: 130%;
+
+		border-bottom: 1px solid $light;
+
+		&:hover {
+			color: $blue;
+		}
+
+		&_completed {
+			color: $completed-title;
+			text-decoration: line-through;
+
+			&:hover {
+				color: $completed-title;
+			}
+		}
+	}
+
+	&__content {
+		width: 48%;
+		padding-top: 10px;
+
+		font-size: 16px;
+		line-height: 175%;
+		letter-spacing: 0.15px;
+	}
+}

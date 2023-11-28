@@ -1,18 +1,20 @@
 import styles from '../styles/index.module.scss'
-import ExampleButton from "../components/example-button/example-button";
-import {getIndexPage} from "../../lib/api";
+import { getIndexPage } from "../../lib/api";
+import { HeaderBar, TasksList, AsideMenu } from '@/components';
+// import ExampleButton from "../components/example-button/example-button";
+import tasksData from "../../data/index.json"
 
 function Index(props) {
 
-    console.log(props)
+    // console.log(props)
 
     return (
         <main className={styles.main}>
-            <ExampleButton/>
-
-            <ExampleButton initialValue={10}/>
-
-            {/* Your code here */}
+            <HeaderBar />
+            <div className={styles.main__content}>
+                <AsideMenu tabTitle={tasksData.title} />
+                <TasksList data={tasksData} />
+            </div>
 
         </main>
     )
@@ -26,5 +28,4 @@ export const getStaticProps = async () => {
         revalidate: 1
     };
 };
-
 export default Index;

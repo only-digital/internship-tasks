@@ -1,0 +1,96 @@
+$white: #fff;
+$grayish-blue: #f3f6f9;
+$placeholder-color: rgba(33, 60, 87, 0.4);
+$dark-blue: #213c57;
+
+.TasksList {
+	width: calc(100vw - 290px);
+	display: flex;
+	flex-direction: column;
+
+	padding: 40px 40px 144px;
+
+	background: $grayish-blue;
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		margin-bottom: 20px;
+
+		h2 {
+			color: $dark-blue;
+
+			font-size: 32px;
+
+			font-weight: 600;
+			line-height: 123.5%;
+			letter-spacing: 0.25px;
+		}
+
+		input {
+			position: relative;
+			display: flex;
+			width: 608px;
+			height: 56px;
+			padding: 15px 16px;
+			justify-content: space-between;
+			align-items: center;
+
+			border-radius: 10px;
+			background: $white url("/search-icon.png") 568px no-repeat;
+
+			&::-webkit-input-placeholder {
+				color: $placeholder-color;
+
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 150%;
+				letter-spacing: 0.15px;
+			}
+
+			&::-moz-placeholder {
+				color: $placeholder-color;
+
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 150%;
+				letter-spacing: 0.15px;
+			}
+
+			&:-ms-input-placeholder {
+				color: $placeholder-color;
+
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 150%;
+				letter-spacing: 0.15px;
+			}
+
+			&::-ms-input-placeholder {
+				color: $placeholder-color;
+
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 150%;
+				letter-spacing: 0.15px;
+			}
+
+			&::placeholder {
+				color: $placeholder-color;
+
+				font-size: 16px;
+				font-weight: 400;
+				line-height: 150%;
+				letter-spacing: 0.15px;
+			}
+		}
+	}
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+}

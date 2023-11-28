@@ -1,7 +1,7 @@
 import styled from './example-button.module.scss';
 import {useState} from "react";
 
-const ExampleButton = (props) => {
+export const ExampleButton = (props) => {
     const [count, setCount] = useState(props.initialValue || 0);
 
     const handleClick = () => {
@@ -17,5 +17,3 @@ const ExampleButton = (props) => {
         </button>
     )
 }
-
-export default ExampleButton;
