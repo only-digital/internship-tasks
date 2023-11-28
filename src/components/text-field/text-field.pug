@@ -1,0 +1,7 @@
+mixin text-field({inputType, label, type })
+	.text-field&attributes(attributes)(data-component='text-field')
+			if type === 'textarea'
+				textarea.text-field__input.my-textarea(minlength="1" maxlength="255" required type='text')
+			else 
+				input.text-field__input(type=inputType)
+			p.floating-label!=label

@@ -1,0 +1,20 @@
+mixin my-form({title})
+	.my-form&attributes(attributes)(data-component='my-form')
+		//Your code here
+		.my-form__title!=title 
+
+		form.my-form__form.form()
+			.my-form__inputs
+				.grid
+					+text-field({inputType: 'email' , label: 'E-mail'})
+					+text-field({inputType: 'text' , label: 'Ваше сообщение', type: 'textarea'})
+			button.button.my-form__btn.btn-attachment 
+				| Прикрепить файл
+				+svg('plus').button__plus
+			.my-form__checkbox 					
+				input(type='checkbox' name='agreement' id='agreement'  class='my-checkbox')
+				+svg('check').check
+				label(for='agreement') Вы подтверждаете, что ознакомились c #[span политикой обработки персональных данных]
+			button.my-form__submit-btn.button
+				| Отправить
+				+svg('arrow').arrow

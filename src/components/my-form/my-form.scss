@@ -1,0 +1,127 @@
+.my-form {
+  $root: &;
+  display: flex;
+  font-family: sans-serif;
+  padding: 26px 130px 60px 30px;
+
+  &__title {
+    font-size: 32px;
+    color: #002f6c;
+    font-weight: 700;
+  }
+  &__checkbox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-top: 73px;
+    label {
+      cursor: pointer;
+    }
+    span {
+      color: #002f6c;
+    }
+  }
+  &__submit-btn {
+    margin-top: 30px;
+    width: 155px;
+    height: 48px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 18px 0 14px;
+    border-radius: 24px;
+    border: 1px solid #bcbcbc;
+    cursor: pointer;
+    svg {
+      width: 32px;
+      height: 22px;
+      fill: #002f6c;
+    }
+  }
+  &__btn {
+    margin-top: 30px;
+    svg {
+      width: 14px;
+      height: 14px;
+      fill: #002f6c;
+      margin-left: 16px;
+    }
+  }
+}
+
+.grid {
+  display: grid;
+  row-gap: 20px;
+  align-items: center;
+}
+
+.button {
+  height: 46px;
+  display: flex;
+  font-size: 16px;
+  align-items: center;
+  border: 1px solid #bcbcbc;
+  border-radius: 24px;
+  color: #021f45;
+  padding: 14px 16px 16px;
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    svg {
+      fill: #909090;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: #0041a0;
+      color: #fff;
+      svg {
+        fill: white;
+      }
+    }
+    &:active {
+      color: white;
+      background-color: #002f6c;
+      border-color: #002f6c;
+      svg {
+        fill: white;
+      }
+    }
+    &:focus {
+      background-color: unset;
+      color: #021f45;
+      border: 2px solid #99b3d8;
+      svg {
+        fill: #002f6c;
+      }
+    }
+  }
+}
+
+.my-checkbox {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #bcbcbc;
+  cursor: pointer;
+  &:checked {
+    ~ {
+      .check {
+        display: block;
+      }
+    }
+  }
+}
+
+.check {
+  display: none;
+  pointer-events: none;
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  left: 5.3px;
+  top: 4px;
+}
