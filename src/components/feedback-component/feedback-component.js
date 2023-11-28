@@ -34,7 +34,6 @@ class FeedbackComponent extends Component {
     this.filesInfoText = this.getElement("files__text");
     this.submitBtn = this.getElement("submit-btn");
     this.form = this.getElement("form");
-
     this.checkboxConfirm.addEventListener("change", this.handleCheckboxConfirm);
     this.fileEl.addEventListener("change", this.handleChangeFile);
     this.inputEmail.addEventListener("blur", this.validateEmail);

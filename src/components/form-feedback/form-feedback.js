@@ -54,7 +54,6 @@ class FormFeedback extends Component {
         this.inputFile.addEventListener('change', this.onChangeFileHandler)
         this.checkbox.addEventListener('click', this.onCheckedHandler)
         this.form.addEventListener('submit', this.onSubmitHandler)
-
     }
 
     onBlurEmailHandler = (e) => {

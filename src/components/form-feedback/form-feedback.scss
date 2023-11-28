@@ -4,21 +4,20 @@
 	grid-template-columns: 285px auto;
 	gap: 159px;
 
-	&__title{
+	&__title {
 		color: #002F6C;
 		font-size: 32px;
 		font-weight: 700;
 		line-height: 120%;
 	}
 
-	&__form{
+	&__form {
 		display: flex;
 		margin-top: 33px;
 		flex-direction: column;
 
 		&__label-email,
-		&__message__label
-		{
+		&__message__label {
 			display: none;
 			width: 836px;
 			color: #909090;
@@ -26,7 +25,7 @@
 			line-height: 150%;
 
 			&.invalid,
-			&.valid{
+			&.valid {
 				display: block;
 				padding-left: 20px;
 			}
@@ -34,66 +33,71 @@
 
 		&__error-message,
 		&__error-email,
-		&__error-file{
+		&__error-file {
 			display: block;
 			color: #F00;
 			font-size: 12px;
 			line-height: 150%;
 			padding-bottom: 10px;
 		}
-		&__error-file{
+
+		&__error-file {
 			padding-bottom: 30px;
 		}
 
-		&__email{
-				padding-bottom: 18px;
-				border-bottom: 1px solid #DEDEDE;
-				max-width: 836px;
+		&__email {
+			padding-bottom: 18px;
+			border-bottom: 1px solid #DEDEDE;
+			max-width: 836px;
 
-				&.valid{
-					border-radius: 24px;
-					// background: #F4F4F4 url("/../src/assets/icons/Union.png") 98% 50%/18px 13px no-repeat ;
-					padding: 8px 20px 14px 20px;
-				}
+			&.valid {
+				border-radius: 24px;
+				// background: #F4F4F4 url("/../src/assets/icons/Union.png") 98% 50%/18px 13px no-repeat ;
+				padding: 8px 20px 14px 20px;
+			}
 
-				&.invalid{
-					border: 1px solid #F00;
-					border-radius: 24px;
-					padding: 13px 20px 19px 20px;
+			&.invalid {
+				border: 1px solid #F00;
+				border-radius: 24px;
+				padding: 13px 20px 19px 20px;
 
-					+ .form-feedback__form__error-email{
-						padding-left: 20px;
-						padding-top: 2px;
-					}
-				}
-
-				&:disabled{
-					pointer-events: none;
-					&::placeholder{
-						color: #BCBCBC;
-
-					}
-				}
-				&::placeholder{
-					color: #111;
-					font-size: 16px;
-				}
-				&:hover{
-					cursor: pointer;
-					border-radius: 24px;
-					background: #F4F4F4;
-					padding: 8px 20px 14px 20px;
-				}
-				&:focus{
-					border-radius: 24px;
-					background: white;
-					border: 1px solid #0041A0;
-					padding: 8px 20px 14px 20px;
+				+.form-feedback__form__error-email {
+					padding-left: 20px;
+					padding-top: 2px;
 				}
 			}
 
-		&__message__textarea{
-			outline:none;
+			&:disabled {
+				pointer-events: none;
+
+				&::placeholder {
+					color: #BCBCBC;
+
+				}
+			}
+
+			&::placeholder {
+				color: #111;
+				font-size: 16px;
+			}
+
+			&:hover {
+				cursor: pointer;
+				border-radius: 24px;
+				background: #F4F4F4;
+				padding: 8px 20px 14px 20px;
+			}
+
+			&:focus {
+				border-radius: 24px;
+				background: white;
+				border: 1px solid #0041A0;
+				padding: 8px 20px 14px 20px;
+			}
+		}
+
+		&__message__textarea {
+			outline: none;
 			border-bottom: 1px solid #DEDEDE;
 			border-top: none;
 			border-left: none;
@@ -102,7 +106,7 @@
 			resize: none;
 			margin-bottom: 116px;
 
-			&.valid{
+			&.valid {
 				border-radius: 24px;
 				height: 172px;
 				// background: #F4F4F4 url("/../src/assets/icons/valid-svg.svg") 97% 92%/18px 13px no-repeat ;
@@ -110,40 +114,43 @@
 				margin-bottom: 18px;
 			}
 
-			&.invalid{
+			&.invalid {
 				border: 1px solid #F00;
 				border-radius: 24px;
 				height: 172px;
 				padding: 13px 20px 19px 20px;
 				margin-bottom: 0;
 
-				+ .form-feedback__form__error-message{
+				+.form-feedback__form__error-message {
 					padding-left: 20px;
 					padding-top: 2px;
 				}
 			}
 
-			&:disabled{
+			&:disabled {
 				pointer-events: none;
 				background: white;
-				&::placeholder{
+
+				&::placeholder {
 					color: #BCBCBC;
 
 				}
 			}
 
-			&::placeholder{
+			&::placeholder {
 				color: #111;
 				font-family: Arial;
 				font-size: 16px;
 			}
-			&:hover{
+
+			&:hover {
 				border-radius: 24px;
 				background: #F4F4F4;
 				height: 193px;
 				padding: 12px 20px 14px 20px;
 			}
-			&:focus{
+
+			&:focus {
 				border-radius: 24px;
 				border: 1px solid #0041A0;
 				padding: 12px 20px 16px 20px;
@@ -151,11 +158,11 @@
 			}
 		}
 
-		&__file{
+		&__file {
 			position: relative;
 			display: inline-block;
 
-			& span{
+			& span {
 				position: relative;
 				display: flex;
 				justify-content: center;
@@ -179,13 +186,14 @@
 				font-size: 16px;
 				margin: 0;
 
-				& svg{
+				& svg {
 					width: 14px;
 					height: 14px;
 					fill: #002F6C;
 				}
 			}
-			&-input{
+
+			&-input {
 				position: absolute;
 				z-index: -1;
 				opacity: 0;
@@ -194,69 +202,78 @@
 				height: 0;
 
 			}
-			&.invalid{
 
-				> .form-feedback__form__error-file{
+			&.invalid {
+
+				>.form-feedback__form__error-file {
 					display: block;
 					padding-left: 20px;
 					padding-top: 2px;
 				}
 			}
 
-			&:hover{
-				& span{
+			&:hover {
+				& span {
 					background: #0041A0;
 					color: white;
-					& svg{
+
+					& svg {
 						fill: white;
 					}
 				}
 			}
-			&:active{
-				& span{
+
+			&:active {
+				& span {
 					background: #002F6C;
 					color: white;
-					& svg{
+
+					& svg {
 						fill: white;
 					}
 				}
 			}
-			&{
-				& input:focus + span {
+
+			& {
+				& input:focus+span {
 					background: white;
 					color: #021F45;
 					border: 3px solid #99B3D8;
-					& svg{
+
+					& svg {
 						fill: #021F45;
 					}
 				}
 			}
-			&{
-				& input:disabled + span {
+
+			& {
+				& input:disabled+span {
 					background: white;
 					color: #909090;
 					border: 1px solid #BCBCBC;
 					cursor: none;
-					& svg{
+
+					& svg {
 						fill: #909090;
 					}
 				}
 			}
 		}
 
-		.wrapper{
+		.wrapper {
 			display: flex;
 			align-items: center;
 			gap: 12px;
 			color: #909090;
 			font-size: 14px;
 			margin-bottom: 30px;
+
 			.form-feedback__form__security-policy a {
 				color: #002F6C;
 			}
 		}
 
-		&__checkbox{
+		&__checkbox {
 			position: relative;
 			width: 16px;
 			height: 16px;
@@ -278,40 +295,48 @@
 				opacity: 0;
 			}
 
-			&:hover{
+			&:hover {
 				border: 1px solid #0041A0;
 			}
-			&:checked{
+
+			&:checked {
 				background: #0041A0;
+
 				&::before {
 					opacity: 1;
 				}
-				&:disabled{
+
+				&:disabled {
 					opacity: 0.3;
-					+ label{
+
+					+label {
 						color: #BCBCBC;
 					}
 				}
 			}
-			&:focus{
+
+			&:focus {
 				border: 3px solid #0041A0;
 				opacity: 0.3;
+
 				&::before {
 					top: 0;
 					left: 2px;
 				}
 			}
-			&:disabled{
+
+			&:disabled {
 				border: 1px solid #BCBCBC;
 				opacity: 0.3;
-				+ label{
+
+				+label {
 					color: #BCBCBC;
 				}
 			}
 
 		}
 
-		&__button{
+		&__button {
 			width: 155px;
 			display: flex;
 			height: 48px;
@@ -324,61 +349,69 @@
 			border-radius: 25px;
 			border: 1px solid #BCBCBC;
 
-				svg{
-					width: 32px;
-					height: 32px;
-					fill: #002F6C;
-				}
-			&:hover{
+			svg {
+				width: 32px;
+				height: 32px;
+				fill: #002F6C;
+			}
+
+			&:hover {
 				color: white;
 				background: #0041A0;
-				svg{
+
+				svg {
 					fill: white;
 				}
 			}
-			&:active{
+
+			&:active {
 				color: white;
 				background: #002F6C;
-				svg{
+
+				svg {
 					fill: white;
 				}
 			}
-			&:focus{
+
+			&:focus {
 				color: #0041A0;
 				background: white;
 				border: 3px solid #99B3D8;
-				svg{
+
+				svg {
 					fill: #0041A0;
 				}
 			}
-			&:disabled{
+
+			&:disabled {
 				color: #909090;
 				background: white;
 				border: 1px solid #909090;
 				pointer-events: none;
-				svg{
+
+				svg {
 					fill: #909090;
 				}
 			}
 		}
 	}
 
-	&__wrapper-files{
+	&__wrapper-files {
 		display: flex;
 		gap: 20px;
 
-		.form-feedback__files{
+		.form-feedback__files {
 			display: flex;
 			padding-top: 5px;
 			gap: 20px;
 
-			&__item{
+			&__item {
 				border-radius: 27px;
 				background: #F4F4F4;
 				padding: 10px 13px 10px 18px;
 				height: 40px;
 
-				&:hover{
+				&:hover {
 					cursor: pointer;
 					// background: #F4F4F4 url("/../src/assets/icons/close.png") 97% 50%/20px 20px no-repeat;
 					padding: 10px 33px 10px 18px;
