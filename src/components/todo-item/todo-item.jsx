@@ -1,6 +1,4 @@
-import { useState } from 'react';
 import styled from './todo-item.module.scss';
-import { useEffect } from 'react';
 
 const TodoItem  = ({item,titleName}) => {
   
@@ -12,9 +10,9 @@ const TodoItem  = ({item,titleName}) => {
              titleName(e.currentTarget.parentNode.firstChild.textContent)
     }
 
-    const displayNone = {
+    /*const displayNone = {
         display: 'none'
-    } 
+    } */
 
     return (
         <div className={styled.TodoItem} onClick={complited}>

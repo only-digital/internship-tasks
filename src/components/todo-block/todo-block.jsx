@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import Aside from '../aside/aside';
 import TodoItem from '../todo-item/todo-item';
 import styled from './todo-block.module.scss';
-
+import { useSearch } from '@/hooks/useSearch';
 
 const TodoBlock = (props) => {
 
@@ -19,7 +19,7 @@ const TodoBlock = (props) => {
         localStorage.setItem("dataMajor", JSON.stringify(props.data.tasks));
     }, [])
 
-   
+
     useEffect(() => {
         let dataArr;
         dataArr = JSON.parse(localStorage.getItem("dataMajor"));
@@ -38,15 +38,10 @@ const TodoBlock = (props) => {
         }
 
         if (searchValue.trim().length > 0) {
-            dataArr.forEach(el => {
-                let { text, title } = el;
-                if (text.indexOf(searchValue.trim()) != -1 || title.indexOf(searchValue.trim()) != -1) {
-                    setListItems(<li className="todo-list-li" key={Math.random()}>
-                        <TodoItem item={el} titleName={handleTitleName} />
-                    </li>);
-                };
-
-            });
+            const searchFunc = useSearch(dataArr, searchValue);
+            setListItems(searchFunc.map((el) => <li className="todo-list-li" key={Math.random()}>
+                <TodoItem item={el} titleName={handleTitleName} />
+            </li>));
         } else {
             setListItems(dataArr.map((el) => <li className="todo-list-li" key={Math.random()}>
                 <TodoItem item={el} titleName={handleTitleName} />
@@ -54,17 +49,18 @@ const TodoBlock = (props) => {
         }
     }, [delItem, searchValue])
 
-
-
     let interv = useRef();
-    clearInterval(interv.current);
-
     const search = (e) => {
+
+        clearInterval(interv.current);
+
+
         clearInterval(interv.current)
         interv.current = setInterval(() => {
             setSearchValue(e.target.value)
         }, 1000)
     }
+
 
 
     return (
