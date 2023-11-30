@@ -1,7 +1,11 @@
 mixin text-field({inputType, label, type })
 	.text-field&attributes(attributes)(data-component='text-field')
 			if type === 'textarea'
-				textarea.text-field__input.my-textarea(minlength="1" maxlength="255" required type='text')
+				textarea.text-field__input.my-textarea(minlength="1" maxlength="1000" required type='text')
+				+svg('ok').text-field__textarea-ok-icon
+				span.text__field-textarea-error
 			else 
-				input.text-field__input(type=inputType)
+				input.text-field__input.my-email(type=inputType required maxlength="255")
+				+svg('ok').text-field__email-ok-icon
+				span.text__field-email-error
 			p.floating-label!=label

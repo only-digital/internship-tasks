@@ -17,6 +17,7 @@
     margin-top: 73px;
     label {
       cursor: pointer;
+      margin-left: 18px;
     }
     span {
       color: #002f6c;
@@ -40,20 +41,16 @@
       fill: #002f6c;
     }
   }
-  &__btn {
+  &__btn-input {
     margin-top: 30px;
-    svg {
-      width: 14px;
-      height: 14px;
-      fill: #002f6c;
-      margin-left: 16px;
-    }
+    width: 0px;
+    height: 0px;
   }
 }
 
 .grid {
   display: grid;
-  row-gap: 20px;
+  row-gap: 36px;
   align-items: center;
 }
 
@@ -124,4 +121,16 @@
   position: absolute;
   left: 5.3px;
   top: 4px;
+}
+
+.btn-attachment__label {
+  width: 207px;
+  height: 46px;
+  cursor: pointer;
+  svg {
+    width: 14px;
+    height: 14px;
+    fill: #002f6c;
+    margin-left: 16px;
+  }
 }

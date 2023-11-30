@@ -8,8 +8,9 @@ mixin my-form({title})
 				.grid
 					+text-field({inputType: 'email' , label: 'E-mail'})
 					+text-field({inputType: 'text' , label: 'Ваше сообщение', type: 'textarea'})
-			button.button.my-form__btn.btn-attachment 
-				| Прикрепить файл
+			input(type='file' accept='.pdf, .doc, .docx' id='file-input' name='file-input').my-form__btn-input.btn-attachment 
+			label(for='file-input').button.btn-attachment__label
+				span Прикрепить файл
 				+svg('plus').button__plus
 			.my-form__checkbox 					
 				input(type='checkbox' name='agreement' id='agreement'  class='my-checkbox')

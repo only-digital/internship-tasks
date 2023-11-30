@@ -12,7 +12,7 @@ class TextField extends Component {
   autoGrow = (element) => {
     element.style.height = "5px";
     element.style.height = element.scrollHeight + 14 + "px";
-    element.parentNode.style.marginBottom = element.scrollHeight + 14 + "px";
+    element.parentNode.style.marginBottom = element.scrollHeight + 0 + "px";
   };
 }
 
