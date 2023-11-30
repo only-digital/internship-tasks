@@ -46,6 +46,37 @@
     width: 0px;
     height: 0px;
   }
+  &__remove-icon {
+    width: 10px;
+    height: 10px;
+    fill: #002f6c;
+    transform: rotate(45deg);
+  }
+
+  &__file-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 28px;
+  }
+
+  &__files {
+    display: none;
+  }
+
+  &__files.active {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    height: 40px;
+    border-radius: 27px;
+    background-color: #f4f4f4;
+    padding: 10px 13px;
+  }
+
+  &__file-size {
+    color: #909090;
+  }
 }
 
 .grid {
@@ -109,6 +140,16 @@
       .check {
         display: block;
       }
+    }
+  }
+  @media (hover: hover) {
+    &:hover {
+      border-color: #0041a0;
+    }
+    &:focus {
+      background-color: unset;
+      color: #021f45;
+      border: 2px solid #99b3d8;
     }
   }
 }

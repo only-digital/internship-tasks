@@ -8,14 +8,21 @@ mixin my-form({title})
 				.grid
 					+text-field({inputType: 'email' , label: 'E-mail'})
 					+text-field({inputType: 'text' , label: 'Ваше сообщение', type: 'textarea'})
-			input(type='file' accept='.pdf, .doc, .docx' id='file-input' name='file-input').my-form__btn-input.btn-attachment 
-			label(for='file-input').button.btn-attachment__label
-				span Прикрепить файл
-				+svg('plus').button__plus
+			div.my-form__file-wrapper
+				input(type='file' accept='.pdf, .doc, .docx' id='file-input' name='file-input').my-form__btn-input.btn-attachment 
+				label(for='file-input').button.btn-attachment__label
+					span Прикрепить файл
+					+svg('plus').button__plus
+				div.my-form__files
+						div.my-form__file-add-wrapper
+							span.my-form__file-name
+							span.my-form__file-size
+						button(type='button').my-form__remove-file-btn
+							+svg('plus').my-form__remove-icon
 			.my-form__checkbox 					
-				input(type='checkbox' name='agreement' id='agreement'  class='my-checkbox')
+				input(type='checkbox' required name='agreement' id='agreement'  class='my-checkbox')
 				+svg('check').check
 				label(for='agreement') Вы подтверждаете, что ознакомились c #[span политикой обработки персональных данных]
-			button.my-form__submit-btn.button
+			button(disabled).my-form__submit-btn.button
 				| Отправить
 				+svg('arrow').arrow

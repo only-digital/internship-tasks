@@ -15,9 +15,16 @@ class MyForm extends Component {
   textValid;
   textError;
   textIcon;
+  files;
 
   checkboxInput;
+
   fileInput;
+  fileName;
+  fileSize;
+  filesAdded;
+  fileRemoveIcon;
+
   constructor(element) {
     super(element);
     this.baseURL = "http://localhost:3000";
@@ -34,7 +41,17 @@ class MyForm extends Component {
     this.textIcon = document.querySelector(".text-field__textarea-ok-icon");
 
     this.checkboxInput = document.querySelector(".my-checkbox");
+
     this.fileInput = this.getElement("btn-input");
+    this.fileName = this.getElement("file-name");
+    this.fileSize = this.getElement("file-size");
+    this.filesAdded = this.getElement("files");
+    this.fileRemoveIcon = this.getElement("remove-icon");
+
+    this.root.addEventListener("change", () => this.checkForm());
+
+    this.fileInput.addEventListener("change", () => this.addFile());
+    this.fileRemoveIcon.addEventListener("click", () => this.removeFile());
 
     this.emailInput.addEventListener("input", () => this.checkEmail());
     this.emailInput.addEventListener("blur", () =>
@@ -77,8 +94,6 @@ class MyForm extends Component {
     );
 
     this.buttonElement.addEventListener("click", this.onClick);
-
-    console.log(this.wrapper[0].childNodes[3]);
   }
 
   checkEmail = () => {
@@ -117,6 +132,31 @@ class MyForm extends Component {
     }
   };
 
+  addFile = () => {
+    let fileName = this.fileInput.files[0].name;
+    const fileExt = fileName.split(".").pop().toUpperCase();
+    const fileSize = ` ${fileExt}, ${Math.round(
+      this.fileInput.files[0].size / 1000
+    )} kB`;
+    fileName = fileName.replace(/\.(pdf|docx?)/i, "");
+    this.fileName.textContent = fileName;
+    this.fileSize.textContent = fileSize;
+    this.filesAdded.classList.add("active");
+  };
+
+  removeFile() {
+    this.fileInput.value = "";
+    this.filesAdded.classList.remove("active");
+  }
+
+  checkForm() {
+    this.buttonElement.disabled = !(
+      this.emailValid &&
+      this.textValid &&
+      this.checkboxInput.checked
+    );
+  }
+
   onClick = async (e) => {
     e.preventDefault();
 
@@ -124,9 +164,10 @@ class MyForm extends Component {
       email: this.emailInput.value,
       text: this.textInput.value,
       confirm: this.checkboxInput.checked,
+      file: JSON.stringify(this.fileInput.files[0]),
     };
-    console.log(data);
-    // await this.sendData(data);
+
+    await this.sendData(data);
   };
 
   sendData = async (data) => {

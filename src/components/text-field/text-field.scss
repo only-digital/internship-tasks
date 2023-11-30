@@ -39,33 +39,6 @@
           fill: white;
         }
       }
-
-      // &:focus {
-      //   border: 1px solid #0041a0;
-      //   border-radius: 24px;
-
-      //   .floating-label {
-      //     top: 0;
-      //     transform: translateY(-50%);
-      //     bottom: 10px;
-      //     font-size: 12px;
-      //     opacity: 1;
-      //     left: 25px;
-      //   }
-      // }
-
-      // &:valid {
-      //   ~ {
-      //     .floating-label {
-      //       top: 50%;
-      //       transform: translateY(-50%);
-      //       bottom: 10px;
-      //       font-size: 20px;
-      //       opacity: 1;
-      //       left: 25px;
-      //     }
-      //   }
-      // }
     }
   }
   .my-textarea {
@@ -74,19 +47,7 @@
     resize: none;
     overflow: hidden;
     outline: none;
-
-    // &:valid {
-    //   ~ {
-    // .floating-label {
-    //   top: 50%;
-    //   transform: translateY(-50%);
-    //   bottom: 10px;
-    //   font-size: 20px;
-    //   opacity: 1;
-    //   left: 25px;
-    // }
-    //   }
-    // }
+    padding-right: 10%;
   }
   .invalid {
     border: 1px solid #ff0000;
