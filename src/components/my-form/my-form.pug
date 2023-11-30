@@ -9,7 +9,7 @@ mixin my-form({title})
 					+text-field({inputType: 'email' , label: 'E-mail'})
 					+text-field({inputType: 'text' , label: 'Ваше сообщение', type: 'textarea'})
 			div.my-form__file-wrapper
-				input(type='file' accept='.pdf, .doc, .docx' id='file-input' name='file-input').my-form__btn-input.btn-attachment 
+				input(type='file' accept='.pdf, .doc, .docx' id='file-input' required name='file-input').my-form__btn-input.btn-attachment 
 				label(for='file-input').button.btn-attachment__label
 					span Прикрепить файл
 					+svg('plus').button__plus

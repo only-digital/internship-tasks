@@ -153,7 +153,8 @@ class MyForm extends Component {
     this.buttonElement.disabled = !(
       this.emailValid &&
       this.textValid &&
-      this.checkboxInput.checked
+      this.checkboxInput.checked &&
+      this.fileInput.files.length
     );
   }
 
@@ -164,7 +165,7 @@ class MyForm extends Component {
       email: this.emailInput.value,
       text: this.textInput.value,
       confirm: this.checkboxInput.checked,
-      file: JSON.stringify(this.fileInput.files[0]),
+      file: URL.createObjectURL(this.fileInput.files[0]),
     };
 
     await this.sendData(data);
@@ -179,10 +180,6 @@ class MyForm extends Component {
           "Content-Type": "application/json",
         },
       });
-      const json = await res.json();
-      const statusCode = res.status;
-      this.serverRes = { ...json, code: statusCode };
-      console.log(json, statusCode);
     } catch (error) {
       console.error("Ошибка:", error);
     }
