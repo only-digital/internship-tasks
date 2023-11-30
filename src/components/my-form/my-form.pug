@@ -1,0 +1,28 @@
+mixin my-form({title})
+	.my-form&attributes(attributes)(data-component='my-form')
+		//Your code here
+		.my-form__title!=title 
+
+		form.my-form__form.form()
+			.my-form__inputs
+				.grid
+					+text-field({inputType: 'email' , label: 'E-mail'})
+					+text-field({inputType: 'text' , label: 'Ваше сообщение', type: 'textarea'})
+			div.my-form__file-wrapper
+				input(type='file' accept='.pdf, .doc, .docx' id='file-input' required name='file-input').my-form__btn-input.btn-attachment 
+				label(for='file-input').button.btn-attachment__label
+					span Прикрепить файл
+					+svg('plus').button__plus
+				div.my-form__files
+						div.my-form__file-add-wrapper
+							span.my-form__file-name
+							span.my-form__file-size
+						button(type='button').my-form__remove-file-btn
+							+svg('plus').my-form__remove-icon
+			.my-form__checkbox 					
+				input(type='checkbox' required name='agreement' id='agreement'  class='my-checkbox')
+				+svg('check').check
+				label(for='agreement') Вы подтверждаете, что ознакомились c #[span политикой обработки персональных данных]
+			button(disabled).my-form__submit-btn.button
+				| Отправить
+				+svg('arrow').arrow
