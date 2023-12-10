@@ -1,0 +1,26 @@
+.points {
+	$root: &;
+
+	//Your code here
+	&__container{
+		display: flex;
+		flex-direction: column;
+		max-width: 1200px;
+		margin: 70px auto;
+		&__header{
+			font-family: Arial, Helvetica, sans-serif;
+			font-weight: 400;
+			font-size: 46px;
+			color: #04306A;
+			margin-bottom: 20px;
+		}
+
+		&__content{
+			font-family: Arial, Helvetica, sans-serif;
+			font-weight: 400;
+			font-size: 24px;
+			color: #012B34;
+			margin-top: 15px;
+		}
+	}
+}

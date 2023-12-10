@@ -1,0 +1,61 @@
+.form {
+  $root: &;
+
+  //Your code here
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  &__header {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    color: #002f6c;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+
+    &__label {
+      margin-left: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      color: #909090;
+    }
+
+    &__input {
+      border: solid 1px #0041a0;
+      border-radius: 24px;
+      width: 800px;
+      height: 48px;
+    }
+
+    &__button {
+      width: 155px;
+      height: 48px;
+      border: none;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #0041a0;
+
+      &__text {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        color: #FFFFFF;
+      }
+
+      &__arrow {
+        width: 32px;
+        height: 22px;
+        margin-left: 5px;
+        color: #FFFFFF;
+      }
+    }
+  }
+}
