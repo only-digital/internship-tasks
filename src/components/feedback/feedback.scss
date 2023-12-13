@@ -1,5 +1,98 @@
 .feedback {
-	$root: &;
+  $root: &;
 
-	//Your code here
+  display: flex;
+  margin: 100px auto;
+  gap: 159px;
+  font-family: Arial;
+  font-style: normal;
+  font-weight: 400;
+  width: 1280px;
+
+  &__title {
+    color: #002f6c;
+    font-size: 32px;
+  }
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 116px;
+  }
+
+  &__upload {
+    margin-bottom: 42px;
+  }
+
+  &__upload-file {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
+  &__label-upload {
+    padding: 13px 16px 12px;
+    border: 1px solid #bcbcbc;
+    border-radius: 25px;
+    font-size: 16px;
+    color: #909090;
+    cursor: pointer;
+  }
+
+  &__upload-svg {
+    width: 14px;
+    height: 14px;
+    margin-left: 16px;
+    margin-top: 1px;
+  }
+
+  &__policy {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 30px;
+  }
+
+  &__policy-input {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #bcbcbc;
+  }
+
+  &__policy-input:checked {
+    background-color: #0041a0;
+  }
+
+  &__policy-input::after {
+    content: '';
+    position: absolute;
+    display: none;
+  }
+
+  &__policy-input:checked::after {
+    display: block;
+  }
+
+  &__policy-input:checked::after {
+    left: 4px;
+    top: 0;
+    width: 3px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  &__policy-label a {
+    color: #002f6c;
+  }
 }

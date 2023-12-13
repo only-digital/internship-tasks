@@ -1,17 +1,16 @@
 include ../button/button
+include ../input/input
 
 mixin feedback(props)
 	.feedback&attributes(attributes)(data-component='feedback')
 		h2.feedback__title!=props.title
 		form.feedback__form(method='POST')
-			.feedback__email
-				label(for='email') E-mail
-				input.feedback__input-email(id='email' type='email' name='email' required=true)
-			.feedback__message
-				label(for='message') Ваше сообщение
-				input.feedback__input-message(id='message' type='text' name='message' required=true)
+			.feedback__inputs
+				+input({name: 'email', label: 'E-mail'})(id='email' type='email' name='email' required=true)
+				+input({name: 'message', label: 'Ваше сообщение'})(id='message' type='text' name='message' required=true)
 			.feedback__upload
-				label(for='upload-file') Прикрепить файл
+				label.feedback__label-upload(for='upload-file') Прикрепить файл
+					+svg('cross').feedback__upload-svg
 				input.feedback__upload-file(id='upload-file' type='file' name='document' accept='.pdf, .doc, .doc')
 			.feedback__policy
 				input.feedback__input-policy(type='checkbox' id='policy' name='confirm' required=true).feedback__policy-input
