@@ -2,3 +2,4 @@ mixin input(props)
 	.input-wrapper
 		label.label(for=props.name)!=props.label
 		input.input&attributes(attributes)(data-component='input')
+		+svg('success').input-valid-icon
