@@ -1,32 +1,23 @@
-$light-blue: #d9e1ec;
-$dark-blue: #213c57;
 
 .HeaderBar {
 	display: flex;
 	width: 100vw;
 	height: 80px;
-
-	border-bottom: 1px solid $light-blue;
+	border-bottom: 1px solid var(--light-blue);
 
 	&__logo {
 		display: flex;
 		gap: 9px;
-
 		width: 290px;
-
 		padding: 29px 0 24px 45px;
-
-		border-right: 1px solid $light-blue;
+		border-right: 1px solid var(--light-blue);
 
 		span {
 			width: 49px;
-
-			color: $dark-blue;
-
+			color: var(--dark-blue);
 			font-size: 7px;
 			font-weight: 500;
 			line-height: 120%;
-
 			text-transform: uppercase;
 		}
 	}

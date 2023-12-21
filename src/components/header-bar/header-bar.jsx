@@ -1,7 +1,7 @@
 import styled from './header-bar.module.scss';
 import Image from 'next/image';
 
-export const HeaderBar = () => {
+export const Header = () => {
     return (
         <div className={styled.HeaderBar}>
             <div className={styled.HeaderBar__logo}>

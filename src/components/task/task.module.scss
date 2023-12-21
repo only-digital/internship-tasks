@@ -1,8 +1,4 @@
-$white: #fff;
-$light: #e7eaee;
-$blue: #007fff;
-$title-color: rgba(22, 31, 62, 0.9);
-$completed-title: rgba(22, 31, 62, 0.3);
+
 
 .Task {
 	width: 100%;
@@ -12,15 +8,16 @@ $completed-title: rgba(22, 31, 62, 0.3);
 
 	padding: 24px 24px 31px;
 
-	color: $title-color;
+	color: var(--title-color);
 
 	font-weight: 400;
 
 	border-radius: 10px;
 
-	background: $white;
-
-	&__header {
+	background: var(--white);
+	
+	&__header, &__header__completed {
+		cursor: pointer;
 		display: flex;
 		justify-content: space-between;
 
@@ -29,18 +26,18 @@ $completed-title: rgba(22, 31, 62, 0.3);
 		font-size: 24px;
 		line-height: 130%;
 
-		border-bottom: 1px solid $light;
+		border-bottom: 1px solid var(--light);
 
 		&:hover {
-			color: $blue;
+			color: var(--blue);
 		}
 
-		&_completed {
-			color: $completed-title;
+		&.Task__header__completed {
+			color: var(--completed-title);
 			text-decoration: line-through;
 
 			&:hover {
-				color: $completed-title;
+				color: var(--completed-title);
 			}
 		}
 	}

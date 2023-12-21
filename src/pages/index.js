@@ -1,21 +1,17 @@
-import styles from '../styles/index.module.scss'
-import { getIndexPage } from "../../lib/api";
-import { HeaderBar, TasksList, AsideMenu } from '@/components';
-// import ExampleButton from "../components/example-button/example-button";
-import tasksData from "../../data/index.json"
+import styles from '@/styles/home.module.scss'
+import { Header, TasksList, AsideMenu } from '@/components';
+import { getIndexPage } from "@/lib";
+import tasksData from "@/data";
 
-function Index(props) {
-
-    // console.log(props)
+function HomaPage(props) {
 
     return (
         <main className={styles.main}>
-            <HeaderBar />
+            <Header/>
             <div className={styles.main__content}>
                 <AsideMenu tabTitle={tasksData.title} />
                 <TasksList data={tasksData} />
             </div>
-
         </main>
     )
 }
@@ -28,4 +24,5 @@ export const getStaticProps = async () => {
         revalidate: 1
     };
 };
-export default Index;
+
+export default  HomaPage

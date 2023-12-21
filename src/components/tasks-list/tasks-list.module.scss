@@ -1,16 +1,10 @@
-$white: #fff;
-$grayish-blue: #f3f6f9;
-$placeholder-color: rgba(33, 60, 87, 0.4);
-$dark-blue: #213c57;
 
 .TasksList {
 	width: calc(100vw - 290px);
 	display: flex;
 	flex-direction: column;
-
 	padding: 40px 40px 144px;
-
-	background: $grayish-blue;
+	background: var(--grayish-blue);
 
 	&__header {
 		display: flex;
@@ -20,10 +14,8 @@ $dark-blue: #213c57;
 		margin-bottom: 20px;
 
 		h2 {
-			color: $dark-blue;
-
+			color: var(--dark-blue);
 			font-size: 32px;
-
 			font-weight: 600;
 			line-height: 123.5%;
 			letter-spacing: 0.25px;
@@ -39,10 +31,10 @@ $dark-blue: #213c57;
 			align-items: center;
 
 			border-radius: 10px;
-			background: $white url("/search-icon.png") 568px no-repeat;
+			background: var(--white) url("/search-icon.png") 568px no-repeat;
 
 			&::-webkit-input-placeholder {
-				color: $placeholder-color;
+				color: var(--placeholder-color);
 
 				font-size: 16px;
 				font-weight: 400;
@@ -51,7 +43,7 @@ $dark-blue: #213c57;
 			}
 
 			&::-moz-placeholder {
-				color: $placeholder-color;
+				color: var(--placeholder-color);
 
 				font-size: 16px;
 				font-weight: 400;
@@ -60,7 +52,7 @@ $dark-blue: #213c57;
 			}
 
 			&:-ms-input-placeholder {
-				color: $placeholder-color;
+				color: var(--placeholder-color);
 
 				font-size: 16px;
 				font-weight: 400;
@@ -69,7 +61,7 @@ $dark-blue: #213c57;
 			}
 
 			&::-ms-input-placeholder {
-				color: $placeholder-color;
+				color: var(--placeholder-color);
 
 				font-size: 16px;
 				font-weight: 400;
@@ -78,7 +70,7 @@ $dark-blue: #213c57;
 			}
 
 			&::placeholder {
-				color: $placeholder-color;
+				color: var(--placeholder-color);
 
 				font-size: 16px;
 				font-weight: 400;

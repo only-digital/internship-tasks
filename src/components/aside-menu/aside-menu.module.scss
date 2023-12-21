@@ -1,22 +1,14 @@
-$light-blue: #d9e1ec;
-$blue: #007fff;
-$light: #e3edf7;
-
-.AsideMenu {
+.sidebar {
 	width: 290px;
 	height: 100vh;
-
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-
 	padding-top: 40px;
-
-	border-right: 1px solid $light-blue;
+	border-right: 1px solid var(--light-blue);
 
 	&__tab {
 		width: 240px;
-
 		display: flex;
 		align-items: center;
 		gap: 16px;
@@ -24,10 +16,10 @@ $light: #e3edf7;
 		padding: 13px 18px;
 		border-radius: 10px;
 
-		background: $light;
+		background: var(--light);
 
 		span {
-			color: $blue;
+			color: var(--blue);
 			font-size: 16px;
 			font-weight: 400;
 			line-height: 160%;
