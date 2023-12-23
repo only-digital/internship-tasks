@@ -1,5 +1,6 @@
 include ../button/button
 include ../input/input
+include ../textarea/textarea
 
 mixin feedback(props)
 	.feedback&attributes(attributes)(data-component='feedback')
@@ -7,7 +8,7 @@ mixin feedback(props)
 		form.feedback__form(method='POST')
 			.feedback__inputs
 				+input({name: 'email', label: 'E-mail'})(id='email' type='email' name='email' required=true)
-				+input({name: 'message', label: 'Ваше сообщение'})(id='message' type='text' name='message' required=true)
+				+textarea({name: 'message', label: 'Ваше сообщение'})(id='message' name='message' required=true maxlength='1000')
 			.feedback__upload
 				label.feedback__label-upload(for='upload-file') Прикрепить файл
 					+svg('cross').feedback__upload-svg

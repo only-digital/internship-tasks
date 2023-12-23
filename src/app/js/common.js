@@ -2,6 +2,7 @@ import ExampleButton from "../../components/example-button/example-button";
 import Feedback from "../../components/feedback/feedback";
 import Button from "../../components/button/button";
 import Input from "../../components/input/input";
+import Textarea from "../../components/textarea/textarea";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -13,6 +14,7 @@ const allComponents = {
     'feedback': Feedback,
     'button': Button,
     'input': Input,
+    'textarea': Textarea
 }
 
 /**
