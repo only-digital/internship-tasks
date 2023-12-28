@@ -1,15 +1,11 @@
-import { useEffect, useState } from 'react';
-
 export const useSearch = ({ query, tasks }) => {
-    const [results, setResults] = useState([]);
+    const q = query.trim().toLowerCase();
 
-    useEffect(() => {
-        const q = query.trim().toLowerCase();
-        const includes = (text) => text.toLowerCase().includes(q);
-        const updatedTasks = tasks.filter(({ title, text }) => includes(title) || includes(text));
-        setResults(updatedTasks);
+    const includes = (text) => text.toLowerCase().includes(q);
 
-    }, [query, tasks]);
+    const results = tasks.filter(({ title, text }) => includes(title) || includes(text));
 
-    return { results };
+    return {
+        results
+    };
 }

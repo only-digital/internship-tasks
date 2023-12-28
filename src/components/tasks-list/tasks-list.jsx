@@ -12,16 +12,15 @@ type Task = {
     }
 */
 
-export const TasksList = ({ data }) => {
-
-    const [tasks, setTasks] = useState(data.tasks);
+export const TasksList = (props) => {
+    const [tasks, setTasks] = useState(props.tasks);
     const [query, setQuery] = useState('');
     const { results } = useSearch({ query, tasks });
-    
+
     return (
         <div className={styled.TasksList}>
             <div className={styled.TasksList__header}>
-                <h2>{data.title}</h2>
+                <h2>Список задач</h2>
                 <input
                     value={query}
                     type="text"
@@ -33,11 +32,8 @@ export const TasksList = ({ data }) => {
                 {results.map(task => (
                     <Task
                         key={task.id}
-                        {...{
-                            task,
-                            tasks,
-                            setTasks
-                        }}
+                        task={task}
+                        setTasks={setTasks}
                     />
                 ))}
             </div>
