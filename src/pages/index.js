@@ -1,19 +1,17 @@
-import styles from '../styles/index.module.scss'
-import ExampleButton from "../components/example-button/example-button";
-import {getIndexPage} from "../../lib/api";
+import styles from '@/styles/home.module.scss'
+import { Header, TasksList, AsideMenu } from '@/components';
+import { getIndexPage } from "@/lib";
 
-function Index(props) {
 
-    console.log(props)
+function HomaPage(props) {
 
     return (
         <main className={styles.main}>
-            <ExampleButton/>
-
-            <ExampleButton initialValue={10}/>
-
-            {/* Your code here */}
-
+            <Header />
+            <div className={styles.main__content}>
+                <AsideMenu />
+                <TasksList tasks={props.tasks} />
+            </div>
         </main>
     )
 }
@@ -27,4 +25,4 @@ export const getStaticProps = async () => {
     };
 };
 
-export default Index;
+export default HomaPage

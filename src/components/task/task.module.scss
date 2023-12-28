@@ -1,0 +1,53 @@
+
+
+.Task {
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+
+	padding: 24px 24px 31px;
+
+	color: var(--title-color);
+
+	font-weight: 400;
+
+	border-radius: 10px;
+
+	background: var(--white);
+	
+	&__header, &__header__completed {
+		cursor: pointer;
+		display: flex;
+		justify-content: space-between;
+
+		padding-bottom: 17px;
+
+		font-size: 24px;
+		line-height: 130%;
+
+		border-bottom: 1px solid var(--light);
+
+		&:hover {
+			color: var(--blue);
+		}
+
+		&.Task__header__completed {
+			color: var(--completed-title);
+			text-decoration: line-through;
+
+			&:hover {
+				color: var(--completed-title);
+			}
+		}
+	}
+
+	&__content {
+		width: 48%;
+		padding-top: 10px;
+
+		font-size: 16px;
+		line-height: 175%;
+		letter-spacing: 0.15px;
+	}
+}
