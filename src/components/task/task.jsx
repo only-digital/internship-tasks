@@ -13,8 +13,8 @@ export const Task = ({ task, setTasks }) => {
         }
 
         setTasks(prevState => prevState.map(item => item.id === task.id ? updated_task : item));
-
     }
+    
     return (
         <div className={styled.Task} onClick={completedToggle}>
             <div className={task.isCompleted ? styled.Task__header__completed : styled.Task__header}>
