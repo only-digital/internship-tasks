@@ -18,7 +18,27 @@
         },
         {
             "title": "Задача 4",
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus purus nec erat tempus, a luctus dolor ornare. Aenean convallis magna vel turpis imperdiet, non convallis nulla consequat.",
+            "text": "Enim ut tellus elementum sagittis. Amet mattis vulputate enim nulla aliquet.",
+            "isCompleted": false
+        },
+        {
+            "title": "Задача 5",
+            "text": "Nec ullamcorper sit amet risus nullam eget felis eget. Enim nulla aliquet porttitor lacus luctus accumsan tortor.",
+            "isCompleted": false
+        },
+        {
+            "title": "Задача 6",
+            "text": "Magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies. Libero justo laoreet sit amet cursus sit amet dictum sit.",
+            "isCompleted": false
+        },
+        {
+            "title": "Задача 7",
+            "text": "Tempor commodo ullamcorper a lacus vestibulum sed arcu non. Elementum nisi quis eleifend quam.",
+            "isCompleted": true
+        },
+        {
+            "title": "Задача 8",
+            "text": "Ut ornare lectus sit amet est placerat. Eu mi bibendum neque egestas congue quisque.",
             "isCompleted": false
         }
     ]
