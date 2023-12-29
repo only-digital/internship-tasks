@@ -1,0 +1,9 @@
+.List {
+  padding: 0 40px 20px;
+
+  &__ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

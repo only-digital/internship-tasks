@@ -1,0 +1,55 @@
+.TaskItem {
+  border-radius: 10px;
+  background: #fff;
+  padding: 24px 24px 31px;
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e7eaee;
+  }
+
+  &__title {
+    width: 100%;
+    color: rgba(22, 31, 62, 0.9);
+    font-feature-settings: "clig" off, "liga" off;
+    font-family: Roboto;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    padding-bottom: 17px;
+
+    &:hover {
+      color: #007fff;
+    }
+
+    &_completed {
+      color: rgba(22, 31, 62, 0.3);
+      text-decoration-line: line-through;
+
+      &:hover {
+        color: rgba(22, 31, 62, 0.3);
+      }
+    }
+  }
+
+  &__button {
+    cursor: pointer;
+    width: 26px;
+    height: 26px;
+  }
+
+  &__text {
+    width: 734px;
+    color: rgba(22, 31, 62, 0.9);
+    font-feature-settings: "clig" off, "liga" off;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 175%;
+    letter-spacing: 0.15px;
+    padding-top: 10px;
+  }
+}

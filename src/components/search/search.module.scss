@@ -1,0 +1,29 @@
+.Search {
+  position: relative;
+
+  &__input {
+    width: 608px;
+    height: 56px;
+    padding: 15px 40px 15px 16px;
+    border-radius: 10px;
+    background: #fff;
+    color: rgba(33, 60, 87, 0.4);
+    font-feature-settings: "clig" off, "liga" off;
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0.15px;
+
+    &::placeholder {
+      color: rgba(33, 60, 87, 0.4);
+    }
+  }
+
+  &__svg {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+  }
+}
