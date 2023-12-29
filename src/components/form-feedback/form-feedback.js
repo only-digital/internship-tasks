@@ -3,7 +3,6 @@ import Component from '../../app/js/base/component';
 class FormFeedback extends Component {
     formFieldsState;
     maxSize;
-
     form;
     labelEmail;
     inputEmail;
@@ -22,8 +21,8 @@ class FormFeedback extends Component {
     constructor(element) {
         super(element);
 
-        this.maxSize = (1024 * 1024)*5
-        this.formFieldsState ={
+        this.maxSize = (1024 * 1024) * 5
+        this.formFieldsState = {
             email: false,
             message: false,
             files: true,
@@ -31,7 +30,6 @@ class FormFeedback extends Component {
         }
 
         this.form = this.getElement('form')
-
         this.labelEmail = this.getElement('form__label-email')
         this.inputEmail = this.getElement('form__email')
         this.pEmailError = this.getElement('form__error-email')
@@ -53,13 +51,13 @@ class FormFeedback extends Component {
 
         this.inputFile.addEventListener('change', this.onChangeFileHandler)
         this.checkbox.addEventListener('click', this.onCheckedHandler)
-        this.form.addEventListener('submit', this.onSubmitHandler)
+        this.form.addEventListener('submit', this.onSubmitHandler);
     }
 
     onBlurEmailHandler = (e) => {
         const email = e.target.value
         const isValidEmail = this.regExpEmail.test(email)
-        if(!isValidEmail){
+        if (!isValidEmail) {
             this.labelEmail.classList.add('invalid')
             this.inputEmail.classList.add('invalid')
             this.labelEmail.classList.remove('valid')
@@ -68,7 +66,7 @@ class FormFeedback extends Component {
             this.formFieldsState.email = false
             this.formValidation()
 
-        }else{
+        } else {
             this.labelEmail.classList.remove('invalid')
             this.inputEmail.classList.remove('invalid')
             this.labelEmail.classList.add('valid')
@@ -85,7 +83,7 @@ class FormFeedback extends Component {
     onBlurMessageHandler = (e) => {
         const message = e.target.value.trim()
 
-        if(message === ''){
+        if (message === '') {
 
             this.labelMessage.classList.add('invalid')
             this.inputMessage.classList.add('invalid')
@@ -95,7 +93,7 @@ class FormFeedback extends Component {
             this.formFieldsState.message = false
             this.formValidation()
 
-        }else if (message.length >= 1000){
+        } else if (message.length >= 1000) {
 
             this.labelMessage.classList.add('invalid')
             this.inputMessage.classList.add('invalid')
@@ -105,7 +103,7 @@ class FormFeedback extends Component {
             this.formFieldsState.message = false
             this.formValidation()
 
-        }else {
+        } else {
             this.labelMessage.classList.remove('invalid')
             this.inputMessage.classList.remove('invalid')
             this.labelMessage.classList.add('valid')
@@ -115,43 +113,43 @@ class FormFeedback extends Component {
         }
     }
 
-    onFocusMessageHandler = () =>{
+    onFocusMessageHandler = () => {
         this.pMessageError.textContent = ''
     }
 
-    onChangeFileHandler = (e) =>{
+    onChangeFileHandler = (e) => {
         const files = [...e.target.files]
         this.labelFile.classList.remove('invalid')
         this.wrapperFiles.innerHTML = ''
 
-        if(files.length > 2){
+        if (files.length > 2) {
             this.labelFile.classList.add('invalid')
             this.pFileError.textContent = 'Нельзя выбрать больше 2-х файлов'
             this.formFieldsState.files = false
             this.formValidation()
-        }else if(files.length <= 2){
+        } else if (files.length <= 2) {
             this.labelFile.classList.remove('invalid')
             this.pFileError.textContent = ''
             this.buildElement(files)
         }
     }
 
-    onCheckedHandler =(e) => {
+    onCheckedHandler = (e) => {
         this.formFieldsState.checkbox = e.target.checked
         this.formValidation()
     }
 
-    buildElement(elements){
-        elements.forEach(el=>{
-            if(el.size >= this.maxSize){
+    buildElement(elements) {
+        elements.forEach(el => {
+            if (el.size >= this.maxSize) {
                 this.pFileError.textContent = 'Максимальный размер файла 5 MB'
                 this.labelFile.classList.add('invalid')
                 this.formFieldsState.files = false
 
-            }else{
+            } else {
                 const item = document.createElement('div')
                 item.classList.add('form-feedback__files__item')
-                item.textContent = `${el.name}, ${Math.ceil(el.size/1024)} kB`
+                item.textContent = `${el.name}, ${Math.ceil(el.size / 1024)} kB`
                 this.wrapperFiles.appendChild(item)
                 this.formFieldsState.files = true
             }
@@ -162,7 +160,7 @@ class FormFeedback extends Component {
     onSubmitHandler = (e) => {
         e.preventDefault()
         this.formValidation()
-        if(!this.submitBtn.disabled){
+        if (!this.submitBtn.disabled) {
             fetch('/form', {
                 method: 'POST',
                 body: JSON.stringify({
@@ -179,12 +177,12 @@ class FormFeedback extends Component {
         }
     }
 
-    formValidation(){
-        for(let key in this.formFieldsState){
-            if (!this.formFieldsState[key]){
+    formValidation() {
+        for (let key in this.formFieldsState) {
+            if (!this.formFieldsState[key]) {
                 this.submitBtn.disabled = true
                 break
-            }else{
+            } else {
                 this.submitBtn.disabled = false
             }
         }

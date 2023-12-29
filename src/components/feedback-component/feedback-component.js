@@ -6,6 +6,7 @@ class FeedbackComponent extends Component {
   invalidEmailText;
   textareaEl;
   fileEl;
+  filesClearIcon;
   filesContainer;
   filesInfoText;
   invalidFileText;
@@ -21,8 +22,8 @@ class FeedbackComponent extends Component {
 
   constructor(element) {
     super(element);
-
     this.url = "/form";
+    this.filesClearIcon = this.getElement("files_clear_icon_id");
     this.invalidEmailText = this.getElement("invalid-email");
     this.invalidTextareaText = this.getElement("invalid-message");
     this.inputEmail = this.getElement("input-email");
@@ -41,6 +42,7 @@ class FeedbackComponent extends Component {
     this.inputEmail.addEventListener("input", this.removeInvalidEmailText);
     this.textareaEl.addEventListener("input", this.removeInvalidTextareaText);
     this.form.addEventListener("submit", this.handleSubmit);
+    this.filesClearIcon.addEventListener("click", this.clearFiles);
   }
 
   handleCheckboxConfirm = () => {
@@ -49,19 +51,20 @@ class FeedbackComponent extends Component {
 
   validateEmail = (e) => {
     const emailValue = e.target.value;
-    const isValidEmail = this.regexEmail.test(emailValue);
-    if (
-      isValidEmail &&
-      emailValue.length > 0 &&
-      emailValue.length < this.maxEmailLength
-    ) {
+    if (emailValue.length === 0 || emailValue.length > this.maxEmailLength) {
+      this.invalidEmailText.textContent = `Электронная почта обязательна и количество символов не должно превышать ${this.maxEmailLength}`;
+      this.inputEmail.classList.remove("valid");
+      this.inputEmail.classList.add("invalid");
+    }
+    else if (!this.regexEmail.test(emailValue)) {
+      this.invalidEmailText.textContent = "Email не является допустимым";
+      this.inputEmail.classList.remove("valid");
+      this.inputEmail.classList.add("invalid");
+    }
+    else {
       this.invalidEmailText.textContent = "";
       this.inputEmail.classList.remove("invalid");
       this.inputEmail.classList.add("valid");
-    } else {
-      this.invalidEmailText.textContent = "Сообщение ошибки";
-      this.inputEmail.classList.remove("valid");
-      this.inputEmail.classList.add("invalid");
     }
     this.validateForm();
   };
@@ -98,6 +101,13 @@ class FeedbackComponent extends Component {
       ? `${Math.round(size / 1024)} kB`
       : `${Math.round(size)} b`;
 
+  clearFiles = () => {
+    this.filesInfoText.innerHTML = '';
+    this.filesContainer.classList.remove("show");
+    this.invalidFileText.textContent = "";
+    this.fileEl.type = 'input';
+    this.fileEl.type = 'file'
+  }
   handleChangeFile = (e) => {
     const [{ name = "", size = "" }] = [...e.target.files];
     const [filename, format] = name.split(".");
@@ -135,7 +145,7 @@ class FeedbackComponent extends Component {
   sendData = async (data) => {
     const response = await fetch(this.url, {
       method: "POST",
-      body: data,
+      body: JSON.stringify(data),
       headers: { "Content-Type": "application/json" },
     });
     console.log(response);
