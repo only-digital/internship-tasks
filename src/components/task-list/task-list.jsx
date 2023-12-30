@@ -7,10 +7,10 @@ const TaskList = ({ tasks, onClickTask, onDeleteTask }) => {
         <ul className={styled.TaskList}>
             {tasks.map( (task, idx) => (
 
-                <li key={idx} className={styled.Task__item} onClick={() => onClickTask(task)}>
+                <li key={idx} className={styled.Task__item} onClick={() => onClickTask(idx)}>
                     <div className={`${styled.Task__block} ${task.isCompleted && styled.completed}`}>
                         <h2 className={styled.Task__title}>{task.title}</h2>
-                        <button className={styled.Task__deleteButton} onClick={() => onDeleteTask(task)}>
+                        <button className={styled.Task__deleteButton} onClick={() => onDeleteTask(idx)}>
                             <img src="close.svg" />
                         </button>       
                     </div>

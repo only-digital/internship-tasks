@@ -7,41 +7,38 @@ import TaskList from '../task-list/task-list';
 const Content = ({ props }) => {
     const { title, tasks } = props;
 
-    const [taskList, setTaskList] = useState(tasks);
+    const [taskList, setTaskList] = useState(tasks); // состояние с пришедшими тасками
     const [query, setSearchQuery] = useState("");
 
-    useEffect(() => {       
-        const filteredTasks = useSearch(tasks, query);
-        console.log('Filtered tasks:', filteredTasks);
-        setTaskList(filteredTasks);
-    }, [query, tasks]); 
+    
+    const filteredTasks = useSearch(taskList, query);  // прокидываем состояние в хук
+    console.log('Filtered tasks:', filteredTasks);
 
-    const onChangeSearchHandler = (value) => {
-        console.log('Search query:', value);
-        setSearchQuery(value);        
+    const onToggleTaskStatus = (index) => {
+        setTaskList((prev) =>
+          prev.map((currentTask, taskIndex) =>
+            taskIndex === index
+              ? { ...currentTask, isCompleted: !currentTask.isCompleted }
+              : currentTask
+          )
+        );
+    };
+
+
+    const onDeleteTask = (index) => {       
+        setTaskList((prev) => prev.filter((__, taskIndex) => taskIndex !== index));
     }
 
-    const onToggleTaskStatus = (task) => {
-        setTaskList((prev) => prev.map((currentTask) =>
-            currentTask === task
-                ? { ...currentTask, isCompleted: !currentTask.isCompleted }
-                : currentTask
-        ));
-    }
-
-    const onDeleteTask = (deletedTask) => {       
-        setTaskList((prev) => prev.filter((task) => task !== deletedTask));
-    }
 
     return (
         <>
             <div className={styled.Content}>
                 <div className={styled.Content__wrapper}>
                     <h1>{title}</h1>
-                    <Search value={query} onChangeSearch={onChangeSearchHandler} />
+                    <Search value={query} onChangeSearch={setSearchQuery} /> 
                 </div>
                 <TaskList
-                    tasks={taskList}
+                    tasks={filteredTasks}
                     onClickTask={onToggleTaskStatus}
                     onDeleteTask={onDeleteTask}
                 />
