@@ -18,6 +18,7 @@
   width: 100%;
   padding: 10px;
   position: absolute;
+  display: none;
   top: 0;
   left: 0;
   right: 0;
@@ -60,4 +61,8 @@
       transform: rotate(360deg);
     }
   }
+}
+
+.show {
+  display: flex;
 }
