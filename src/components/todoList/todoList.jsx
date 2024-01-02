@@ -5,10 +5,8 @@ import useSearch from '@/hooks/useSearch';
 
 import React, { useState } from 'react';
 
-import data from '../../../data/index.json';
-
-const TodoList = () => {
-    const modifiedTasks = data.tasks
+const TodoList = (props) => {
+    const modifiedTasks = props.tasks
 
     modifiedTasks.forEach((task, i) => {
         task.id = i
@@ -21,14 +19,14 @@ const TodoList = () => {
     const changeSearchValue = (e) => {
         setTodoSearch(e.target.value)
     }
-    
+
     const filteredTasks = useSearch(tasks, todoSearch);
 
     return (
         <section className={styled.TodoList}>
             <div className={styled.TodoList__upContent}>
                 <h2 className={styled.TodoList__title}>
-                    {data.title}
+                    Список задач
                 </h2>
                 <Search
                     value={todoSearch}

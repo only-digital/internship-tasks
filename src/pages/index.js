@@ -12,7 +12,7 @@ function Index(props) {
 
             <Aside/>
             
-            <WorkingArea/>
+            <WorkingArea tasks={props.tasks}/>
         </main>
     )
 }

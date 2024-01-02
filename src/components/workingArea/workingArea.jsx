@@ -1,10 +1,11 @@
 import styled from './workingArea.module.scss';
 import TodoList from '../todoList/todoList';
 
-const WorkingArea = () => {
+
+const WorkingArea = (props) => {
     return (
         <div className={styled.WorkingArea}>
-            <TodoList />
+            <TodoList tasks={props.tasks} />
         </div>
     )
 }
