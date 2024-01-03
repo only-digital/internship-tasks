@@ -18,6 +18,24 @@ const TodoList = (props) => {
 
     const filteredTasks = useSearch(tasks, todoSearch);
 
+    const todoItemHandler = (e) => {
+        const id = +e.target.id
+        setTasks([...tasks.slice(0, id), { ...tasks[id], isCompleted: !tasks[id].isCompleted }, ...tasks.slice(id + 1)])
+    }
+
+    const todoItemButtonHandler = (e) => {
+        e.stopPropagation()
+        const newFilteredTasks = tasks.filter((task) => task.id !== +e.target.parentNode.id)
+        setTasks(
+            newFilteredTasks.map((task, i) => {
+                return {
+                    ...task,
+                    id: i,
+                }
+            })
+        )
+    }
+
     return (
         <section className={styled.TodoList}>
             <div className={styled.TodoList__upContent}>
@@ -38,23 +56,8 @@ const TodoList = (props) => {
                             text={item.text}
                             isCompleted={item.isCompleted}
                             id={item.id}
-                            onItemClick={(e) => {
-                                const id = +e.target.id
-                                setTasks([...tasks.slice(0, id), { ...tasks[id], isCompleted: !tasks[id].isCompleted }, ...tasks.slice(id + 1)])
-                            }}
-                            onButtonClick={(e) => {
-                                e.stopPropagation()
-                                const newFilteredTasks = tasks.filter((task) => task.id !== +e.target.parentNode.id)
-                                setTasks(
-                                    newFilteredTasks.map((task, i) => {
-                                        return {
-                                            ...task,
-                                            id: i,
-                                        }
-                                    })
-                                )
-                            }}
-                            
+                            onItemClick={todoItemHandler}
+                            onButtonClick={todoItemButtonHandler}
                         />
                     ))
                 }
