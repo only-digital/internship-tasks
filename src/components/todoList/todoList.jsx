@@ -6,13 +6,9 @@ import useSearch from '@/hooks/useSearch';
 import React, { useState } from 'react';
 
 const TodoList = (props) => {
-    const modifiedTasks = props.tasks
+    const taskWithId = props.tasks.map((task, index) => ({...task, id: index}))
 
-    modifiedTasks.forEach((task, i) => {
-        task.id = i
-    })
-
-    const [tasks, setTasks] = useState(modifiedTasks)
+    const [tasks, setTasks] = useState(taskWithId)
 
     const [todoSearch, setTodoSearch] = useState('')
 
