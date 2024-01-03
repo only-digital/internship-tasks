@@ -1,6 +1,7 @@
 include ../button/button
 include ../input/input
 include ../textarea/textarea
+include ../upload_btn/upload_btn
 
 mixin feedback(props)
 	.feedback&attributes(attributes)(data-component='feedback')
@@ -10,9 +11,7 @@ mixin feedback(props)
 				+input({name: 'email', label: 'E-mail'})(id='email' type='email' name='email' required=true)
 				+textarea({name: 'message', label: 'Ваше сообщение'})(id='message' name='message' required=true maxlength='1000')
 			.feedback__upload
-				label.feedback__label-upload(for='upload-file') Прикрепить файл
-					+svg('cross').feedback__upload-svg
-				input.feedback__upload-file(id='upload-file' type='file' name='document' accept='.pdf, .doc, .doc')
+				+upload_btn({name: 'upload-file', label: 'Прикрепить файл'})(id='upload-file' type='file' name='document' accept='.pdf, .doc, .doc')
 			.feedback__policy
 				input.feedback__input-policy(type='checkbox' id='policy' name='confirm' required=true).feedback__policy-input
 				label(for='policy').feedback__policy-label Вы подтверждаете, что ознакомились <a href='#'>c политикой обработки персональных данных</a> 

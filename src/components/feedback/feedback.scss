@@ -26,35 +26,6 @@
     margin-bottom: 42px;
   }
 
-  &__upload-file {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
-  }
-
-  &__label-upload {
-    padding: 13px 16px 12px;
-    border: 1px solid #bcbcbc;
-    border-radius: 25px;
-    font-size: 16px;
-    color: #909090;
-    cursor: pointer;
-  }
-
-  &__upload-svg {
-    width: 14px;
-    height: 14px;
-    margin-left: 16px;
-    margin-top: 1px;
-  }
-
   &__policy {
     display: flex;
     align-items: center;

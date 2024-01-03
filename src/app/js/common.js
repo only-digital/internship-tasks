@@ -3,6 +3,7 @@ import Feedback from "../../components/feedback/feedback";
 import Button from "../../components/button/button";
 import Input from "../../components/input/input";
 import Textarea from "../../components/textarea/textarea";
+import Upload_btn from "../../components/upload_btn/upload_btn";
 
 /**
  * Объект со всеми компонентами, для которых будет применяться автоматическая инициализация
@@ -14,7 +15,8 @@ const allComponents = {
     'feedback': Feedback,
     'button': Button,
     'input': Input,
-    'textarea': Textarea
+    'textarea': Textarea,
+    'upload_btn': Upload_btn,
 }
 
 /**

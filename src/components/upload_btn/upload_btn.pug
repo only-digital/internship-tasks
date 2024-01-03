@@ -1,0 +1,4 @@
+mixin upload_btn(props)
+	label.upload_btn__label.disabled(for=props.name tabindex="0" disabled)!=props.label
+		+svg('cross').upload_btn__svg
+	input.upload_btn__upload-file&attributes(attributes)(data-component='upload_btn' disabled)
