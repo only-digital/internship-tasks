@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 
 function useSearch(tasks, searchText) {
   const [filteredTasks, setFilteredTasks] = useState(tasks)
@@ -8,9 +8,10 @@ function useSearch(tasks, searchText) {
       setFilteredTasks(tasks)
       return
     }
-
+    
     const filteredItems = tasks.filter(task =>
-      task.title.toLowerCase().includes(searchText.toLowerCase())
+      task.title.toLowerCase().includes(searchText.toLowerCase()) ||
+      task.text.toLowerCase().includes(searchText.toLowerCase())
     )
 
     setFilteredTasks(filteredItems)
