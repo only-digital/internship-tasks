@@ -1,7 +1,9 @@
 export const useSearch = (searchValue, data) => {
+	const value = searchValue.toLowerCase();
+
 	if (!searchValue) {
 		return data;
 	} else {
-		return data.filter(({ title, text }) => title.toLowerCase().includes(searchValue.toLowerCase()) || text.toLowerCase().includes(searchValue.toLowerCase()));
+		return data.filter(({ title, text }) => title.toLowerCase().includes(value) || text.toLowerCase().includes(value));
 	}
 };

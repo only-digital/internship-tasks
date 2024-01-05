@@ -19,6 +19,20 @@ const Content = (props) => {
 		}
 	}
 
+	const handleToggleTask = (index) => {
+		const newTasksList = tasks.map((task, idx) => {
+			if (idx === index) {
+				task.isCompleted = !task.isCompleted;
+				
+				return task;
+			} else {
+				return task;
+			}
+		});
+
+		setTasksList(newTasksList);
+	}
+
     return (
 		<section className={styled.content}>
 			<div className={styled.header}>
@@ -45,13 +59,14 @@ const Content = (props) => {
 				{
 					filteredTasksList &&
 					filteredTasksList.map((task, index) => (
-						<Task 
+						<Task
 							key={task.title}
 							title={task.title}
 							text={task.text}
 							isCompleted={task.isCompleted}
 							index={index}
-							onSetIndex={handleRemoveTask}
+							onRemoveTask={handleRemoveTask}
+							onToggleTask={handleToggleTask}
 						/>
 					))
 				}

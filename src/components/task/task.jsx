@@ -1,33 +1,31 @@
 import styled from './task.module.scss';
-import { useState } from 'react';
 
 import remove from '../../assets/remove.svg';
 
 const Task = (props) => {
-	const { title, text, isCompleted, index, onSetIndex } = props;
-	const [taskStatus, setTaskStatus] = useState(isCompleted);
+	const { title, text, isCompleted, index, onRemoveTask, onToggleTask } = props;
 
-	const toggleTaskStatus = () => {	
-		setTaskStatus(!taskStatus);
+	const handleRemoveTask = (index) => {
+		onRemoveTask(index);
 	}
 
-	const handleSetIndex = (index) => {
-		onSetIndex(index);
+	const handleToggleTask = (index) => {
+		onToggleTask(index);
 	}
 
     return (
 		<li className={styled.task}>
 			<div className={styled.task__top}>
-				<h2 
-					className={taskStatus ? styled.task__completed : styled.task__title} 
-					onClick={() => toggleTaskStatus()}
+				<h2  
+					className={isCompleted ? styled.task__completed : styled.task__title} 
+					onClick={() => handleToggleTask(index)}
 				>
 					{title}
 				</h2>	
 				<img 
 					src={remove.src} 
 					alt='Remove icon' 
-					onClick={() => handleSetIndex(index)} 
+					onClick={() => handleRemoveTask(index)} 
 				/>
 			</div>
 
