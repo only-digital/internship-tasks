@@ -1,0 +1,47 @@
+@import '../../styles/roots.scss';
+
+.TodoBlock {
+	width: 100%;
+	display: flex;
+
+	&__listContainer {
+		width: 100%;
+		padding: 48px 40px 116px 40px;
+		background-color: $list-bg;
+	}
+
+	&__searchContainer{
+       display: flex;
+	   justify-content: space-between;
+	   align-items: center;
+	   margin-bottom: 20px;
+	}
+	&__listTitle {
+		color: $dark-blue;
+		font-size: 32px;
+		font-weight: 600;
+		line-height: 123.5%;
+		letter-spacing: 0.25px;
+	}
+	&__listInpt{
+		width: 46%;
+		padding: 18px 16px ;
+		border-radius: 10px;
+		background-color: $whiteFF;
+		background-image: url(../../../public/search.svg);
+		background-repeat: no-repeat;
+		background-position: 97% 45%;
+	}
+	&__listInpt::placeholder{
+		color: $placeh-blue;
+		@include fontStyle();
+		line-height: 150%; 
+		letter-spacing: 0.15px;
+	}
+}
+
+.TodoList {
+	width: 100%;
+
+
+}

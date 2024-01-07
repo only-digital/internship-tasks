@@ -1,0 +1,32 @@
+{
+    "name": "task-6",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build && next start",
+        "component:create": "node build_modules/scripts/componentCreate.js",
+        "component:remove": "node build_modules/scripts/componentRemove.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/VitoBravis/internship-tasks.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/VitoBravis/internship-tasks/issues"
+    },
+    "homepage": "https://github.com/VitoBravis/internship-tasks#readme",
+    "dependencies": {
+        "next": "13.4.19",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
+    },
+    "devDependencies": {
+        "sass": "^1.67.0",
+        "colors": "^1.4.0",
+        "rimraf": "^3.0.2",
+        "eslint": "^8.47.0"
+    }
+}
