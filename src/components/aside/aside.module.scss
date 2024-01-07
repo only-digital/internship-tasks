@@ -1,0 +1,22 @@
+@import '../../styles/roots.scss';
+
+.Aside {
+	padding: 40px 25px 0 25px;
+	min-width: 290px;
+	height: 100%;
+	border-right: 1px solid $light-grey;
+
+	&__btn {
+		padding: 13px 0 13px 60px;
+		width: 100%;
+		background-color: $silver-blue;
+		border-radius: 10px;
+		background-image: url(../../../public/docImg.svg);
+		background-repeat: no-repeat;
+		background-position: 10% 45%;
+		color: $light-blue;
+		@include fontStyle();
+		line-height: 160%;
+		text-align: left;
+	}
+}

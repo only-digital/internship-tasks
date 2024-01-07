@@ -1,0 +1,14 @@
+$list-bg: #F3F6F9;
+$whiteFF: #FFFFFF;
+$dark-blue: #213C57;
+$placeh-blue: rgba(33, 60, 87, 0.40);
+$text-blue: rgba(22, 31, 62, 0.90);
+$grey: #E7EAEE;
+$light-grey: #D9E1EC;
+$light-blue: #007FFF;
+$silver-blue: #E3EDF7;
+
+@mixin fontStyle {
+    font-size: 16px;
+    font-weight: 400;
+}
