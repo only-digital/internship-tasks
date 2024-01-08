@@ -64,6 +64,18 @@
     transform: rotate(45deg);
   }
 
+  &__policy-input:hover {
+    border-color: #0041a0;
+  }
+
+  &__policy-input:focus {
+    outline: 2px solid #99b3d8;
+  }
+
+  &__policy-input:disabled {
+    pointer-events: none;
+  }
+
   &__policy-label a {
     color: #002f6c;
   }
