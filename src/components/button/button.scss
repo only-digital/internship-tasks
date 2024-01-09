@@ -8,12 +8,12 @@
   height: 48px;
   padding: 0 14px 0 18px;
   border-radius: 25px;
-  border: none;
-  background-color: #0041a0;
+  border: 1px solid #bcbcbc;
+  background-color: transparent;
   transition: outline 0.3s, background-color 0.3s;
 
   font-family: Arial;
-  color: #fff;
+  color: #111;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -21,7 +21,7 @@
   &__svg-arrow {
     width: 32px;
     height: 32px;
-    fill: #fff;
+    fill: #002f6c;
   }
 
   &:disabled {
@@ -39,10 +39,16 @@
   }
 
   &:hover {
-    background-color: #154387;
+    background-color: #0041a0;
+    color: #fff;
+    border: none;
+
+    #{$root}__svg-arrow {
+      fill: #fff;
+    }
   }
 
   &:active {
-    background-color: #0e3260;
+    background-color: #002f6c;
   }
 }

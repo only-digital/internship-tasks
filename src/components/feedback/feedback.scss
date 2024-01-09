@@ -68,8 +68,8 @@
     border-color: #0041a0;
   }
 
-  &__policy-input:focus {
-    outline: 2px solid #99b3d8;
+  &__policy-input:focus-visible {
+    border: 2px solid #99b3d8;
   }
 
   &__policy-input:disabled {
