@@ -8,24 +8,26 @@ class Feedback extends Component {
     confirmBoollian;
     regular;
     formDone;
+    checkBox;
+    checkState=false;
     constructor(element) {
         super(element);
         this.inptFile = this.getElement('inpt-file');
         this.inptFile.addEventListener('input', this.handleFiles, false);
         this.inptBlock = this.getElements('inpt-block');
 
-        this.inptMail = document.getElementById('email');
-        this.inptMail.addEventListener('blur', this.inptMailValid);
-        this.inptMail.addEventListener('click', this.inptMailFocus);
+        this.inptMail = this.getElement('inpt');
+        this.inptMail.addEventListener('blur', this.inptMailValid.bind(this));
+        this.inptMail.addEventListener('click', this.inptMailFocus.bind(this));
 
-        this.inptMessage = document.getElementById('message');
+        this.inptMessage = this.getElement('message');
         this.inptMessage.style.cssText = `height: ${this.inptMessage.scrollHeight}px; overflow-y: hidden`;
-        this.inptMessage.addEventListener('input', this.inptMessageAutoHeight);
-        this.inptMessage.addEventListener('click', this.inptMessageFocus);
-        this.inptMessage.addEventListener('blur', this.inptMessageValid);
+        this.inptMessage.addEventListener('input', this.inptMessageAutoHeight.bind(this));
+        this.inptMessage.addEventListener('click', this.inptMessageFocus.bind(this));
+        this.inptMessage.addEventListener('blur', this.inptMessageValid.bind(this));
 
         this.form = this.getElement('form');
-        this.form.addEventListener('submit', this.onSubmit);
+        this.form.addEventListener('submit', this.onSubmit.bind(this));
 
         this.spanError = document.querySelectorAll('.feedback__span-error');
         this.regular = /^([a-zA-Z\-0-9_]+|([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)+)|(".+"))@(([a-zA-Z\-0-9]+\.)+[a-zA-Z\-0-9]{2,})$/;
@@ -34,70 +36,81 @@ class Feedback extends Component {
         this.filesContainer = this.getElement('files-container');
         this.popup = document.querySelector('.popup-file');
         this.uploadBtn = document.querySelector('.upload-btn');
+
+        this.checkBox = document.querySelector('.check-button__inpt');
+        this.checkBox.addEventListener('change', this.handleCheckboxChange.bind(this));
+       
     }
-   
+
+    handleCheckboxChange(e) {
+        this.checkState = e.target.checked;
+    }
+
+
     inptMailFocus = () => {
         this.inptMail.classList.add('feedback__input-focus');
-        this.inptBlock[0].firstChild.style.opacity = '0';
+        this.inptBlock[0].firstChild.classList.remove('visibility-true');
     }
- 
-     inptMailValid = () => {
+
+    inptMailValid = () => {
 
         if (!this.regular.test(this.inptMail.value)) {
-            this.inptBlock[0].firstChild.style.opacity = '0';//прячем svg
+
+            this.inptBlock[0].firstChild.classList.remove('visibility-true');//прячем 
             this.spanError[0].textContent = "Некорректный формат email";
-            this.spanError[0].style.opacity = '1';
+            this.spanError[0].classList.add('visibility-true');
             this.inptMail.classList.remove('feedback__input-focus');
             this.inptMail.classList.remove('feedback__valid');
             this.inptMail.classList.add('feedback__invalid');
         } else {
-            this.inptBlock[0].firstChild.style.opacity = '1';//рисуем svg
-            this.spanError[0].style.opacity = '0';
+
+            this.inptBlock[0].firstChild.classList.add('visibility-true');//рисуем 
+            this.spanError[0].classList.remove('visibility-true');
             this.inptMail.classList.remove('feedback__input-focus');
             this.inptMail.classList.add('feedback__valid');
             this.inptMail.classList.remove('feedback__invalid');
         }
-      
+
     }
 
     inptMessageFocus = () => {
-        this.spanError[0].style.opacity = '0';
+        this.spanError[0].classList.remove('visibility-true');
         this.inptMessage.classList.add('feedback__input-focus');
     }
 
     inptMessageAutoHeight = () => {
-        
+
         this.inptMessage.style.height = 'auto';
         this.inptMessage.style.height = `${this.inptMessage.scrollHeight}px`;
     }
 
     inptMessageValid = () => {
-        if (this.inptMessage.value.length > 20 ) {
-            this.inptBlock[1].firstChild.style.opacity = '1';
+        if (this.inptMessage.value.length > 20) {
+            this.inptBlock[1].firstChild.classList.add('visibility-true');
             this.inptMessage.classList.remove('feedback__input-focus');
             this.inptMessage.classList.remove('feedback__invalid');
             this.inptMessage.classList.add('feedback__valid');
-            this.spanError[1].style.opacity = '0';
-        }else{
-            this.inptBlock[1].firstChild.style.opacity = '0';
+            this.spanError[1].classList.remove('visibility-true');
+        } else {
+            this.inptBlock[1].firstChild.classList.remove('visibility-true');
             this.inptMessage.classList.remove('feedback__input-focus');
             this.inptMessage.classList.remove('feedback__valid');
             this.inptMessage.classList.add('feedback__invalid');
             this.spanError[1].textContent = 'минимальное количество символов 20';
-            this.spanError[1].style.opacity = '1';
+            this.spanError[1].classList.add('visibility-true');
         }
-        
+
     }
 
 
     handleFiles = () => {
-        if (this.filesContainer.childNodes.length >= 4 ) { //проверяем на кол-во файлов
-            this.popup.style.display = 'block';
+        if (this.filesContainer.childNodes.length >= 4) { //проверяем на кол-во файлов
+            this.popup.classList.add('display-block') ;
             this.uploadBtn.classList.toggle('upload-btn__disabled');
-            this.labelUpload.style.pointerEvents = 'none';
-            setTimeout(() => { this.popup.style.display = 'none'; }, 4000)
+            this.labelUpload.classList.add('pointer-ev-none');
+            setTimeout(() => { this.popup.classList.remove('display-block'); }, 4000)
         } else {
-            this.spanError[2].style.opacity = '0';
+            this.spanError[2].classList.remove('visibility-true');
 
             if (this.inptFile.files[0]) { //если файл выбран то =>
                 const file = this.inptFile.files[0];
@@ -115,7 +128,7 @@ class Feedback extends Component {
                     fileSize = fileSize / 1024;
                     if (fileSize > 5) {
                         this.spanError[2].textContent = 'Максимальный размер файла 5 MB';
-                        this.spanError[2].style.opacity = '1';
+                        this.spanError[2].classList.add('visibility-true');
                         return;
                     } else {
                         fileSize = fileSize.toString().slice(0, 4) + 'MB';
@@ -127,66 +140,83 @@ class Feedback extends Component {
 
                 fileDataBox.append(fileData, fileDeleteBtn);
                 this.filesContainer.append(fileDataBox);
-                console.log(this.filesContainer.childNodes)
-                console.log()
+
                 fileDataBox.childNodes[2].addEventListener('click', (e) => {
                     fileDataBox.remove();
-                    this.popup.style.display = 'none';
+                    this.popup.classList.remove('display-block');
                     this.uploadBtn.classList.remove('upload-btn__disabled');
-                    this.labelUpload.style.pointerEvents = 'auto';
+                    this.labelUpload.classList.remove('pointer-ev-none');
                 }, true)
             }
         }
     }
 
-
-    onSubmit = (e) => {
+   
+    onSubmit = async (e) => {
         e.preventDefault();
-
+    
         this.confirmBoollian = false;
-
-        if (JSON.parse(localStorage.getItem('checkCount')) % 2 === 0) {//проверка на чекед
+    
+        if (this.checkState) {
             this.confirmBoollian = true;
         }
-        console.log(this.inptMessage.value)
-        if( this.inptMessage.value === null){//проверка textarea 
+    
+        if (this.inptMessage.value === null) {
             this.inptMessage.style.border = '1px solid red';
-            this.spanError[1].textContent = 'минимальное каличество символов 20';
-            this.spanError[1].style.opacity = '1';
+            this.spanError[1].textContent = 'минимальное количество символов 20';
+            this.spanError[1].classList.add('visibility-true');
         }
+    
+        const formData = new FormData();
+    
+        formData.append('email', this.inptMail.value);
+        formData.append('confirm', this.confirmBoollian);
+        formData.append('message', this.inptMessage.value );
+        
+        for (const fileInput of this.inptFile.files) {
+            formData.append('files', fileInput);
+        }
+        
+     
+       
         if (this.inptMail.value !== '') {
-            fetch('/form', {
-                method: 'POST',
-                body: JSON.stringify({
-                    email: `${this.inptMail.value}`,
-                    confirm: this.confirmBoollian
-                }),
-                headers: {
-                    'Content-Type': 'application/json'
+            try {
+                const response = await fetch('/form', {
+                  method: 'POST',
+                  
+                   body: formData,
+                   headers:{
+                    "Content-Type":'multipart/form-data'
                 }
-            }).then(res => {
-
-
-
-                if (this.regular.test(this.inptMail.value) === true && JSON.parse(localStorage.getItem('checkCount')) % 2 !== 0) {
-                    console.log(JSON.parse(localStorage.getItem('checkCount')))
-                    this.spanError[2].textContent = "Подтвердите обработку данных",
-                        this.spanError[2].style.opacity = '1';
+            });
+      
+                 console.log('server', response)
+                if (!response.ok) {
+                    
+                    throw new Error('Server error');
                 }
-
-                if (res.ok) {
-                   
-                    this.form.style.opacity = '0.3';
-                    this.form.style.pointerEvents = 'none';
-                    this.spanError.forEach(el=>{
-                        el.textContent = '';
-                    })
-                    this.form.lastChild.style.display = 'none';
-                    this.formDone.style.display = 'flex'
+    
+                if (this.regular.test(this.inptMail.value) && !this.checkState) {
+                    this.spanError[2].textContent = 'Подтвердите обработку данных';
+                    this.spanError[2].classList.add('visibility-true');
+                } else {
+                    this.spanError[2].classList.remove('visibility-true');
                 }
+    
+                this.form.style.opacity = '0.3';
+                this.form.classList.add('pointer-ev-none');
+                this.spanError.forEach(el => {
+                    el.textContent = '';
+                });
+                this.form.lastChild.classList.add('display-none') ;
+                this.formDone.classList.add('display-flex');
+            } catch (error) {
+                console.error('Error:', error);
+               
             }
-            )
-        } else { this.spanError[0].style.opacity = '1'; }
+        } else {
+            this.spanError[0].classList.add('visibility-true');
+        }
     }
 
 }
