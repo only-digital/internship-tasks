@@ -8,19 +8,12 @@ const TodoBlock = (props) => {
     const [searchValue, setSearchValue] = useState('');
     const [listItems, setListItems] = useState(props.data.tasks);
    
-    const handleDeleteItem = (title) => {
-        setListItems((prevList) => prevList.filter((item) => item.title !== title));
+    const handleDeleteItem = (indexID) => {
+        setListItems((prevList) => prevList.filter((item, index) => index !== indexID));
     };
 
-    const filteredList = useMemo(() => {
-        if (searchValue.trim().length > 0) {
-            const searchFunc = useSearch(listItems, searchValue);
-            return searchFunc;
-        } else {
-            return listItems;
-        }
-    }, [listItems, searchValue]);
-
+    const filteredList =  useSearch(listItems, searchValue);
+    
     let interv = useRef();
     const search = (e) => {
         clearInterval(interv.current);
@@ -40,9 +33,9 @@ const TodoBlock = (props) => {
                     <input type="text" placeholder='Поиск' className={styled.TodoBlock__listInpt} onChange={search} />
                 </div>
                 <ul className={styled.TodoList}>
-                    {filteredList.map((el) => (
-                        <li className="todo-list-li" key={el.title}>
-                            <TodoItem item={el} titleName={handleDeleteItem} />
+                    {filteredList.map((el, index) => (
+                        <li className="todo-list-li" key={Math.random()}>
+                            <TodoItem item={el} onRemoveItem={handleDeleteItem} keyID={index}/>
                         </li>
                     ))}
                 </ul>

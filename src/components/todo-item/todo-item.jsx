@@ -1,27 +1,29 @@
+import { useState } from 'react';
 import styled from './todo-item.module.scss';
 
-const TodoItem = ({ item, titleName }) => {
+const TodoItem = ({ item, onRemoveItem, keyID }) => {
+    
+    const [itemCompleted, setItemCompleted] = useState(item.isCompleted)
 
-    const complited = (e) => {
-        let title = e.currentTarget.firstChild.firstChild;
-        title.classList.toggle('todo-item_itemOpacity__FHir0')
+    const completed = (e) => {
+        if(!itemCompleted){
+            setItemCompleted(true);
+        }else{
+            setItemCompleted(false);
+        }
     }
-    const closedButton = (e) => {
-
-        titleName(e.currentTarget.parentNode.firstChild.textContent)
+    const onClosedButton = () => {
+        console.log(keyID)
+        onRemoveItem(keyID);
     }
-
-    /*const displayNone = {
-        display: 'none'
-    } */
 
     return (
-        <div className={styled.TodoItem} onClick={complited}>
-            <div className={styled.TodoItem__block}>
-                <h3 className={!item.isComplited ? styled.TodoItem__title : `${styled.TodoItem__title} ${styled.itemOpacity}`} >
+        <div className={styled.TodoItem} >
+            <div className={styled.TodoItem__block} >
+                <h3 className={!itemCompleted ? styled.TodoItem__title : `${styled.TodoItem__title} ${styled.itemOpacity}` } onClick={completed} >
                     {item.title}
                 </h3>
-                <span className={styled.TodoItem__closedBtn} onClick={closedButton}></span>
+                <span className={styled.TodoItem__closedBtn} onClick={onClosedButton}></span>
             </div>
             <p className={styled.TodoItem__text}>{item.text}</p>
         </div>
