@@ -1,5 +1,6 @@
 mixin textarea(props)
-	.input-wrapper
+	.textarea__wrapper
 		label.label(for=props.name)!=props.label
 		textarea.textarea&attributes(attributes)(data-component='textarea')
+		span.textarea-error-message
 		+svg('success').textarea-valid-icon

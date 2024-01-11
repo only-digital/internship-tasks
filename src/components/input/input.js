@@ -35,9 +35,8 @@ class Input extends Component {
   };
 
   clearError = () => {
-    console.log(this.invalidEmail)
     if (this.invalidEmail) {
-      this.inputWrapper.classList.remove('input__wrapper--valid');
+      this.inputWrapper.classList.remove('input__wrapper--invalid');
       this.errorMessage.textContent = '';
     }
   }

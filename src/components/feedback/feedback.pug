@@ -9,7 +9,7 @@ mixin feedback(props)
 		form.feedback__form(method='POST')
 			.feedback__inputs
 				+input({name: 'email', label: 'E-mail'})(id='email' type='email' name='email' required=true)
-				+textarea({name: 'message', label: 'Ваше сообщение'})(id='message' name='message' required=true maxlength='1000')
+				+textarea({name: 'message', label: 'Ваше сообщение'})(id='message' name='message' required=true)
 			.feedback__upload
 				+upload_btn({name: 'upload-file', label: 'Прикрепить файл'})(id='upload-file' type='file' name='document' accept='.pdf, .doc, .doc')
 			.feedback__policy

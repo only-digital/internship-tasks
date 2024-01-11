@@ -22,9 +22,17 @@
     width: 18px;
     height: 13px;
   }
+
+  &-error-message {
+    color: #ff0000;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 20px;
+  }
 }
 
-.input-wrapper:hover {
+.textarea__wrapper:hover {
   position: relative;
   .textarea {
     padding: 12px 20px 17px;
@@ -41,8 +49,8 @@
   }
 }
 
-.input-wrapper:focus-within,
-.input-wrapper:active {
+.textarea__wrapper:focus-within,
+.textarea__wrapper:active {
   .textarea {
     padding: 12px 20px 17px;
     border-radius: 24px;
@@ -60,7 +68,7 @@
   }
 }
 
-.input-wrapper:has(textarea[disabled]) {
+.textarea__wrapper:has(textarea[disabled]) {
   pointer-events: none;
 
   .label {
@@ -68,13 +76,14 @@
   }
 }
 
-.input-wrapper--valid {
+.textarea__wrapper--valid {
   position: relative;
   .textarea {
     padding: 12px 20px 17px;
     border-radius: 24px;
     background-color: #f4f4f4;
     border-bottom: none;
+    height: 144px;
   }
 
   .label {
@@ -88,16 +97,28 @@
   }
 }
 
-.input-wrapper--invalid {
+.textarea__wrapper--invalid {
   .textarea {
     padding: 12px 20px 17px;
     border-radius: 24px;
     border: 1px solid #ff0000;
+    height: 144px;
   }
 
   .label {
     margin-left: 20px;
     font-size: 12px;
     color: #909090;
+  }
+}
+
+.textarea__wrapper--invalid:hover {
+  .textarea {
+    background-color: transparent;
+    border: 1px solid #ff0000;
+  }
+
+  .label {
+    position: static;
   }
 }
