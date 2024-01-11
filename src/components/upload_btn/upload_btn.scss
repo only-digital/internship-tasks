@@ -21,6 +21,7 @@
     font-size: 16px;
     color: #021f45;
     cursor: pointer;
+    transition: outline 0.3s, background-color 0.3s;
   }
 
   &__svg {

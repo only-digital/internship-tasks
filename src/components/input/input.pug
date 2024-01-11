@@ -1,5 +1,7 @@
 mixin input(props)
-	.input-wrapper
+	.input__wrapper
 		label.label(for=props.name)!=props.label
-		input.input&attributes(attributes)(data-component='input')
-		+svg('success').input-valid-icon
+		input.input__email&attributes(attributes)(data-component='input')
+		span.input__email-error-message
+		+svg('success').input__email-valid-icon
+		

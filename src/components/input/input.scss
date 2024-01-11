@@ -1,4 +1,4 @@
-.input {
+.input__email {
   $root: &;
 
   border-bottom: 1px #dedede solid;
@@ -18,11 +18,19 @@
     width: 18px;
     height: 13px;
   }
+
+  &-error-message {
+    color: #ff0000;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 20px;
+  }
 }
 
-.input-wrapper:hover {
+.input__wrapper:hover {
   position: relative;
-  .input {
+  .input__email {
     padding: 12px 20px 17px;
     border-radius: 24px;
     background-color: #f4f4f4;
@@ -36,9 +44,9 @@
   }
 }
 
-.input-wrapper:focus-within,
-.input-wrapper:active {
-  .input {
+.input__wrapper:focus-within,
+.input__wrapper:active {
+  .input__email {
     padding: 12px 20px 17px;
     border-radius: 24px;
     background-color: transparent;
@@ -53,17 +61,17 @@
   }
 }
 
-.input-wrapper:has(input[disabled]) {
+.input__wrapper:has(input[disabled]) {
   pointer-events: none;
-  
+
   .label {
     color: #bcbcbc;
   }
 }
 
-.input-wrapper--valid {
+.input__wrapper--valid {
   position: relative;
-  .input {
+  .input__email {
     padding: 12px 20px 17px;
     border-radius: 24px;
     background-color: #f4f4f4;
@@ -76,13 +84,13 @@
     color: #909090;
   }
 
-  .input-valid-icon {
+  .input__email-valid-icon {
     display: block;
   }
 }
 
-.input-wrapper--invalid {
-  .input {
+.input__wrapper--invalid {
+  .input__email {
     padding: 12px 20px 17px;
     border-radius: 24px;
     border: 1px solid #ff0000;
@@ -92,5 +100,16 @@
     margin-left: 20px;
     font-size: 12px;
     color: #909090;
+  }
+}
+
+.input__wrapper--invalid:hover {
+  .input__email {
+    background-color: transparent;
+    border: 1px solid #ff0000;
+  }
+
+  .label {
+    position: static;
   }
 }
