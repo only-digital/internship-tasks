@@ -97,6 +97,12 @@
   }
 }
 
+.textarea__wrapper--valid:hover {
+  .label {
+    position: static;
+  }
+}
+
 .textarea__wrapper--invalid {
   .textarea {
     padding: 12px 20px 17px;

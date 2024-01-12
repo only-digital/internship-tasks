@@ -63,4 +63,25 @@
       fill: #909090;
     }
   }
+
+  &__file-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: #909090;
+    border-radius: 27px;
+    background-color: #f4f4f4;
+    padding: 10px 13px 10px 18px;
+    min-width: 214px;
+  }
+
+  &__cancel {
+    width: 20px;
+    height: 20px;
+  }
+
+  &__file-container--active {
+    display: flex;
+  }
 }

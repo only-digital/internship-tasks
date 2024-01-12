@@ -2,3 +2,6 @@ mixin upload_btn(props)
 	label.upload_btn__label(for=props.name tabindex="0")!=props.label
 		+svg('cross').upload_btn__svg
 	input.upload_btn__upload-file&attributes(attributes)(data-component='upload_btn')
+	.upload_btn__file-container
+		span.upload_btn__fileName
+		+svg('cancel').upload_btn__cancel

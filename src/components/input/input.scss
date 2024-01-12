@@ -89,6 +89,12 @@
   }
 }
 
+.input__wrapper--valid:hover {
+  .label {
+    position: static;
+  }
+} 
+
 .input__wrapper--invalid {
   .input__email {
     padding: 12px 20px 17px;

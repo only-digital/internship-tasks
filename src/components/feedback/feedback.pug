@@ -11,7 +11,7 @@ mixin feedback(props)
 				+input({name: 'email', label: 'E-mail'})(id='email' type='email' name='email' required=true)
 				+textarea({name: 'message', label: 'Ваше сообщение'})(id='message' name='message' required=true)
 			.feedback__upload
-				+upload_btn({name: 'upload-file', label: 'Прикрепить файл'})(id='upload-file' type='file' name='document' accept='.pdf, .doc, .doc')
+				+upload_btn({name: 'upload-file', label: 'Прикрепить файл'})(id='upload-file' type='file' name='document' accept='.pdf, .doc, .docx')
 			.feedback__policy
 				input.feedback__input-policy(type='checkbox' id='policy' name='confirm' required=true).feedback__policy-input
 				label(for='policy').feedback__policy-label Вы подтверждаете, что ознакомились <a class="feedback__policy-link" href='#'>c политикой обработки персональных данных</a>
