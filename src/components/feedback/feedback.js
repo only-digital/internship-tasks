@@ -14,6 +14,8 @@ class Feedback extends Component {
     
     this.policyCheckbox.addEventListener('change', this.updateLabel);
     this.form.addEventListener('change', this.checkInputsValidity);
+
+    this.root.addEventListener('submit', this.handleFormSubmit);
     
   }
 
@@ -32,6 +34,27 @@ class Feedback extends Component {
       this.submitBtn.disabled = false;
     } else {
       this.submitBtn.disabled = true;
+    }
+  }
+
+  handleFormSubmit = async (evt) => {
+    evt.preventDefault();
+    const data = new FormData(this.form);
+
+    const response = await fetch('/form', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+      body: data,
+    });
+
+    const { status, statusText } = await response;
+    if (status === 200) {
+      this.form.reset();
+      this.submitBtn.disabled = true;
+    } else {
+      console.error(statusText);
     }
   }
 }
