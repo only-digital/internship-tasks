@@ -16,4 +16,4 @@ mixin feedback(props)
 				input.feedback__input-policy(type='checkbox' id='policy' name='confirm' required=true).feedback__policy-input
 				label(for='policy').feedback__policy-label Вы подтверждаете, что ознакомились <a class="feedback__policy-link" href='#'>c политикой обработки персональных данных</a>
 			.feedback__btn
-				+button({text: 'Отправить'})(type='submit')
+				+button({text: 'Отправить'})(type='submit' disabled=true)
