@@ -48,12 +48,12 @@ class MyForm extends Component {
     this.filesAdded = this.getElement("files");
     this.fileRemoveIcon = this.getElement("remove-icon");
 
-    this.root.addEventListener("change", () => this.checkForm());
+    this.root.addEventListener("change", this.checkForm);
 
-    this.fileInput.addEventListener("change", () => this.addFile());
-    this.fileRemoveIcon.addEventListener("click", () => this.removeFile());
+    this.fileInput.addEventListener("change", this.addFile);
+    this.fileRemoveIcon.addEventListener("click", this.removeFile);
 
-    this.emailInput.addEventListener("input", () => this.checkEmail());
+    this.emailInput.addEventListener("input", this.checkEmail);
     this.emailInput.addEventListener("blur", () =>
       this.showError(
         this.emailValid,
@@ -72,7 +72,7 @@ class MyForm extends Component {
       )
     );
 
-    this.textInput.addEventListener("input", () => this.checkTextArea());
+    this.textInput.addEventListener("input", this.checkTextArea);
 
     this.textInput.addEventListener("blur", () =>
       this.showError(
@@ -144,38 +144,37 @@ class MyForm extends Component {
     this.filesAdded.classList.add("active");
   };
 
-  removeFile() {
+  removeFile = () => {
     this.fileInput.value = "";
     this.filesAdded.classList.remove("active");
-  }
+  };
 
-  checkForm() {
+  checkForm = () => {
     this.buttonElement.disabled = !(
       this.emailValid &&
       this.textValid &&
       this.checkboxInput.checked &&
       this.fileInput.files.length
     );
-  }
+  };
 
   onClick = async (e) => {
     e.preventDefault();
 
-    const data = {
-      email: this.emailInput.value,
-      text: this.textInput.value,
-      confirm: this.checkboxInput.checked,
-      file: URL.createObjectURL(this.fileInput.files[0]),
-    };
+    const formData = new FormData();
+    formData.append("email", this.emailInput.value);
+    formData.append("text", this.textInput.value);
+    formData.append("confirm", this.checkboxInput.checked);
+    formData.append("file", this.fileInput.files[0]);
 
-    await this.sendData(data);
+    await this.sendData(formData);
   };
 
   sendData = async (data) => {
     try {
       const res = await fetch(`${this.baseURL}/form`, {
         method: "POST",
-        body: JSON.stringify(data),
+        body: data,
         headers: {
           "Content-Type": "application/json",
         },
@@ -183,6 +182,8 @@ class MyForm extends Component {
     } catch (error) {
       console.error("Ошибка:", error);
     }
+    this.buttonElement.disabled = true;
+    this.buttonElement.textContent = "Форма отправлена";
   };
 }
 
