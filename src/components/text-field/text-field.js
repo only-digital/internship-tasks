@@ -6,9 +6,9 @@ class TextField extends Component {
   textAreaOkIcon;
   constructor(element) {
     super(element);
-    this.textAreaElement = document.querySelector(".my-textarea");
+    this.textAreaElement = this.root.querySelector(".my-textarea");
 
-    this.textAreaOkIcon = document.querySelector(
+    this.textAreaOkIcon = this.root.querySelector(
       ".text-field__textarea-ok-icon"
     );
     this.textAreaElement.addEventListener("input", () =>
