@@ -1,30 +1,26 @@
-import styles from '../styles/index.module.scss'
-import ExampleButton from "../components/example-button/example-button";
-import {getIndexPage} from "../../lib/api";
+import { Fragment } from 'react';
+import styles from '../styles/index.module.scss';
+import Header from '../components/header/header';
+import { getIndexPage } from '../../lib/api';
 
 function Index(props) {
+  console.log(props);
 
-    console.log(props)
-
-    return (
-        <main className={styles.main}>
-            <ExampleButton/>
-
-            <ExampleButton initialValue={10}/>
-
-            {/* Your code here */}
-
-        </main>
-    )
+  return (
+    <Fragment>
+      <Header />
+      <main className={styles.main}></main>
+    </Fragment>
+  );
 }
 
 export const getStaticProps = async () => {
-    const indexPage = await getIndexPage();
+  const indexPage = await getIndexPage();
 
-    return {
-        props: indexPage,
-        revalidate: 1
-    };
+  return {
+    props: indexPage,
+    revalidate: 1,
+  };
 };
 
 export default Index;

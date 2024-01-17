@@ -6,6 +6,10 @@ const nextConfig = {
     sassOptions: {
         includePaths: [path.join(__dirname, 'styles')],
     },
+    images: {
+        dangerouslyAllowSVG: true,
+        contentDispositionType: 'attachment',
+      },
 }
 
 module.exports = nextConfig
