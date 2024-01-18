@@ -1,14 +1,19 @@
 import { Fragment } from 'react';
 import styles from '../styles/index.module.scss';
-import Header from '../components/header/header';
 import { getIndexPage } from '../../lib/api';
+import Header from '../components/header/header';
+import Sidebar from '@/components/sidebar/sidebar';
 
 function Index(props) {
-  console.log(props);
+  const sideItems = [{
+    id: 1,
+    text: 'Список задач',
+  }]
 
   return (
     <Fragment>
       <Header />
+      <Sidebar items={sideItems} />
       <main className={styles.main}></main>
     </Fragment>
   );
