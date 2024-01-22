@@ -5,15 +5,16 @@ class Feedback extends Component {
     super(element);
 
     this.form = this.getElement('form');
-    this.emailInput = document.querySelector('.input__email');
-    this.messageInput = document.querySelector('.textarea');
+    this.emailInput = this.getElement('input-email');
+    this.messageInput = this.getElement('textarea');
     this.policyCheckbox = this.getElement('input-policy');
     this.labelElement = this.getElement('policy-label');
     this.linkElement = this.getElement('policy-link');
-    this.submitBtn = document.querySelector('button[type="submit"]');
+    this.submitBtn = this.getElement('button-submit');
     this.inputWrapper = document.querySelector('.input__wrapper');
     this.textWrapper = document.querySelector('.textarea__wrapper');
-    
+    console.log(this.emailInput);
+
     this.policyCheckbox.addEventListener('change', this.updateLabel);
     this.form.addEventListener('change', this.checkInputsValidity);
 
