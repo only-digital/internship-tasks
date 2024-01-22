@@ -82,4 +82,12 @@
   &__policy-label a {
     color: #002f6c;
   }
+
+  &__policy-label--disabled {
+    color: #bcbcbc;
+  }
+
+  &__policy-label--disabled a {
+    color: #bcbcbc;
+  }
 }

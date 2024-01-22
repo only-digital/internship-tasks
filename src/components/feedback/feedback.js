@@ -9,11 +9,9 @@ class Feedback extends Component {
     this.messageInput = this.getElement('textarea');
     this.policyCheckbox = this.getElement('input-policy');
     this.labelElement = this.getElement('policy-label');
-    this.linkElement = this.getElement('policy-link');
     this.submitBtn = this.getElement('button-submit');
     this.inputWrapper = document.querySelector('.input__wrapper');
     this.textWrapper = document.querySelector('.textarea__wrapper');
-    console.log(this.emailInput);
 
     this.policyCheckbox.addEventListener('change', this.updateLabel);
     this.form.addEventListener('change', this.checkInputsValidity);
@@ -24,11 +22,9 @@ class Feedback extends Component {
 
   updateLabel = () => {
     if (this.policyCheckbox.disabled) {
-      this.labelElement.style.color = '#bcbcbc';
-      this.linkElement.style.color = '#bcbcbc';
+      this.labelElement.classList.add('feedback__policy-label--disabled');
     } else {
-      this.labelElement.style.color = '';
-      this.linkElement.style.color = '';
+      this.labelElement.classList.remove('feedback__policy-label--disabled');
     }
   }
 

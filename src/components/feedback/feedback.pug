@@ -13,7 +13,7 @@ mixin feedback(props)
 			.feedback__upload
 				+upload_btn({name: 'upload-file', label: 'Прикрепить файл'})(id='upload-file' type='file' name='document' accept='.pdf, .doc, .docx')
 			.feedback__policy
-				input.feedback__input-policy(type='checkbox' id='policy' name='confirm' required=true).feedback__policy-input
+				input.feedback__input-policy(type='checkbox' id='policy' name='confirm' required=true disabled="disabled").feedback__policy-input
 				label(for='policy').feedback__policy-label Вы подтверждаете, что ознакомились <a class="feedback__policy-link" href='#'>c политикой обработки персональных данных</a>
 			.feedback__btn
 				+button({text: 'Отправить'})(type='submit' disabled=true).feedback__button-submit
