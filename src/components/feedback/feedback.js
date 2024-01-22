@@ -11,6 +11,8 @@ class Feedback extends Component {
     this.labelElement = this.getElement('policy-label');
     this.linkElement = this.getElement('policy-link');
     this.submitBtn = document.querySelector('button[type="submit"]');
+    this.inputWrapper = document.querySelector('.input__wrapper');
+    this.textWrapper = document.querySelector('.textarea__wrapper');
     
     this.policyCheckbox.addEventListener('change', this.updateLabel);
     this.form.addEventListener('change', this.checkInputsValidity);
@@ -50,6 +52,8 @@ class Feedback extends Component {
     if (status === 200) {
       this.form.reset();
       this.submitBtn.disabled = true;
+      this.inputWrapper.classList.remove('input__wrapper--valid');
+      this.textWrapper.classList.remove('textarea__wrapper--valid');
     } else {
       console.error(statusText);
     }
