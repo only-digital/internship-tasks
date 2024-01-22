@@ -43,9 +43,6 @@ class Feedback extends Component {
 
     const response = await fetch('/form', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
       body: data,
     });
 
