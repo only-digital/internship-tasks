@@ -15,19 +15,10 @@ class Feedback extends Component {
     this.inputWrapper = document.querySelector('.input__wrapper');
     this.textWrapper = document.querySelector('.textarea__wrapper');
 
-    this.policyCheckbox.addEventListener('change', this.updateLabel);
     this.form.addEventListener('change', this.checkInputsValidity);
 
     this.root.addEventListener('submit', this.handleFormSubmit);
     
-  }
-
-  updateLabel = () => {
-    if (this.policyCheckbox.disabled) {
-      this.labelElement.classList.add('feedback__policy-label--disabled');
-    } else {
-      this.labelElement.classList.remove('feedback__policy-label--disabled');
-    }
   }
 
   checkInputsValidity = () => {
