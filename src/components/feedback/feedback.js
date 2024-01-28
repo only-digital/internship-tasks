@@ -10,6 +10,8 @@ class Feedback extends Component {
     this.policyCheckbox = this.getElement('input-policy');
     this.labelElement = this.getElement('policy-label');
     this.submitBtn = this.getElement('button-submit');
+    this.uploadElement = this.getElement('upload');
+    this.uploadFileContainer = this.uploadElement.querySelector('.upload_btn__file-container');
     this.inputWrapper = document.querySelector('.input__wrapper');
     this.textWrapper = document.querySelector('.textarea__wrapper');
 
@@ -51,6 +53,7 @@ class Feedback extends Component {
       this.submitBtn.disabled = true;
       this.inputWrapper.classList.remove('input__wrapper--valid');
       this.textWrapper.classList.remove('textarea__wrapper--valid');
+      this.uploadFileContainer.classList.remove('upload_btn__file-container--active');
     } else {
       console.error(statusText);
     }

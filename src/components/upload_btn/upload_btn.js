@@ -18,7 +18,8 @@ class Upload_btn extends Component {
 
   onUploadFile = () => {
     const file = this.inputUploadFile.files[0];
-    const fileExtension = file.type.split('/')[1].toUpperCase();
+    console.log(file.type);
+    const fileExtension = file.type.split('/')[1].toUpperCase().slice(0, 3);
     const fileSize = Math.round(file.size / 1024);
     this.fileContainer.classList.add('upload_btn__file-container--active');
     this.fileInfo.textContent = `Документ ${fileExtension}, ${fileSize} kB`;
