@@ -1,18 +1,18 @@
 import styles from "../styles/index.module.scss";
 import ExampleButton from "../components/example-button/example-button";
 import { getIndexPage } from "../../lib/api";
+import Header from "@/components/Header/Header";
+import TaskList from "@/components/TaskList/TaskList";
 
 function Index(props) {
-  console.log(props);
-
   return (
-    <main className={styles.main}>
-      {/* <ExampleButton/>
-
-            <ExampleButton initialValue={10}/> */}
-
-      {/* Your code here */}
-    </main>
+    <>
+      <Header />
+      <main className={styles.main}>
+        <TaskList tasks={props} title={"Список задач"} />
+      </main>
+      {/* <Footer/> */}
+    </>
   );
 }
 

@@ -1,0 +1,19 @@
+.Header {
+  display: flex;
+  align-items: center;
+  min-height: 80px;
+  &__icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 290px;
+    padding: 29px 115px 25px 45px;
+    border-bottom: 1px solid#D9E1EC;
+    border-right: 1px solid#D9E1EC;
+    img {
+      &:first-child {
+        margin-right: 9px;
+      }
+    }
+  }
+}
