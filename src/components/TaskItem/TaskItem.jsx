@@ -4,8 +4,8 @@ const TaskItem = ({ tasks }) => {
   return (
     <>
       {tasks.map((task) => (
-        <div className={styled.TaskItem}>
-          <div key={task.title.split(" ")[1]} className={styled.TaskItem__card}>
+        <div key={task.title.split(" ")[1]} className={styled.TaskItem}>
+          <div className={styled.TaskItem__card}>
             <div className={styled.TaskItem__header}>
               {task.title}
               <button>
