@@ -1,11 +1,17 @@
+import { useState } from "react";
 import styled from "./TaskList.module.scss";
+import TaskItem from "../TaskItem/TaskItem";
 
 const TaskList = ({ tasks, title }) => {
-  console.log(tasks);
+  const [data, setData] = useState(tasks);
+  console.log(data);
   return (
-    <div className={styled.TaskList}>
-      <h3>{title}</h3>
-    </div>
+    <>
+      <h3 className={styled.TaskList__title}>{title}</h3>
+      <div className={styled.TaskList__items}>
+        <TaskItem tasks={data} />
+      </div>
+    </>
   );
 };
 

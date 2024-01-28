@@ -1,0 +1,19 @@
+.NavElement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 83px 13px 18px;
+  color: #007fff;
+  background-color: #e3edf7;
+  border-radius: 10px;
+  margin-bottom: 15px;
+
+  img {
+    margin-right: 16px;
+  }
+  cursor: pointer;
+
+  &:last-child {
+    margin-bottom: unset;
+  }
+}

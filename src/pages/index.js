@@ -3,14 +3,18 @@ import ExampleButton from "../components/example-button/example-button";
 import { getIndexPage } from "../../lib/api";
 import Header from "@/components/Header/Header";
 import TaskList from "@/components/TaskList/TaskList";
+import Navigation from "@/components/Navigation/Navigation";
 
 function Index(props) {
   return (
     <>
       <Header />
-      <main className={styles.main}>
-        <TaskList tasks={props} title={"Список задач"} />
-      </main>
+      <section className={styles.section}>
+        <Navigation />
+        <main className={styles.main}>
+          <TaskList tasks={props.tasks} title={props.title} />
+        </main>
+      </section>
       {/* <Footer/> */}
     </>
   );
