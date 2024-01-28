@@ -7,14 +7,16 @@ import Sidebar from '@/components/sidebar/sidebar';
 function Index(props) {
   const sideItems = [{
     id: 1,
-    text: 'Список задач',
+    text: props.title,
   }]
 
   return (
     <Fragment>
       <Header />
       <Sidebar items={sideItems} />
-      <main className={styles.main}></main>
+      <main className={styles.main}>
+
+      </main>
     </Fragment>
   );
 }

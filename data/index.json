@@ -2,21 +2,25 @@
     "title": "Список задач",
     "tasks": [
         {
+            "id": 0,
             "title": "Задача 1",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus purus nec erat tempus, a luctus dolor ornare. Aenean convallis magna vel turpis imperdiet, non convallis nulla consequat.",
             "isCompleted": false
         },
         {
+            "id": 1,
             "title": "Задача 2",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus purus nec erat tempus, a luctus dolor ornare. Aenean convallis magna vel turpis imperdiet, non convallis nulla consequat.",
             "isCompleted": false
         },
         {
+            "id": 2,
             "title": "Задача 3",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus purus nec erat tempus, a luctus dolor ornare. Aenean convallis magna vel turpis imperdiet, non convallis nulla consequat.",
             "isCompleted": true
         },
         {
+            "id": 3,
             "title": "Задача 4",
             "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec finibus purus nec erat tempus, a luctus dolor ornare. Aenean convallis magna vel turpis imperdiet, non convallis nulla consequat.",
             "isCompleted": false
