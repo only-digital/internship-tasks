@@ -5,8 +5,11 @@ mixin form(props)
 		form.form__content(action="")
 			label.form__content__label E-mail
 			input.form__content__input(type="email")
-			input.form__checkbox(type="checkbox", name="agree") 
-			| Я согласен с условиями
+			div.form__content__contaier
+				input.form__content__contaier__input(type="checkbox" checked)
+				p.form__content__contaier__text Вы подтверждаете, что ознакомились
+				a.form__content__contaier__href с политикой обработки персональных данных
+			span.message #{message} 
 			button.form__content__button
 				span.form__content__button__text Кнопка
 				+svg('Vector').form__content__button__arrow
