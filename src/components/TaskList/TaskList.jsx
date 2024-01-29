@@ -1,30 +1,40 @@
 import { useState } from "react";
 import styled from "./TaskList.module.scss";
 import TaskItem from "../TaskItem/TaskItem";
+import SearchInput from "../SearchInput/SearchInput";
+import useSearch from "../useSearch/useSearch";
 
 const TaskList = ({ tasks, title }) => {
   const [data, setData] = useState(tasks);
 
-  console.log(data);
+  const [search, setSearch] = useState("");
 
-  const handleDelete = (id) => {
-    setData((prev) => prev.filter((task) => task.id !== id));
+  const filteredData = useSearch(search, data);
+
+  const handleDelete = (task) => {
+    setData((prev) => prev.filter((item) => item.title !== task.title));
   };
 
   const handleChangeStatus = (id) => {
-    const index = data.findIndex((task) => task.id === id);
     const newArr = [...data];
-    newArr[index].isCompleted = !newArr[index].isCompleted;
+    newArr[id].isCompleted = !newArr[id].isCompleted;
     setData(newArr);
+  };
+
+  const handleSearchChange = ({ target }) => {
+    setSearch(target.value);
   };
 
   return (
     <>
-      <h3 className={styled.TaskList__title}>{title}</h3>
+      <div className={styled.TaskList__header}>
+        <h3 className={styled.TaskList__title}>{title}</h3>
+        <SearchInput onChange={handleSearchChange} value={search} />
+      </div>
       <div className={styled.TaskList__items}>
-        {data.length ? (
+        {filteredData.length ? (
           <TaskItem
-            tasks={data}
+            tasks={filteredData}
             onChange={handleChangeStatus}
             onDelete={handleDelete}
           />

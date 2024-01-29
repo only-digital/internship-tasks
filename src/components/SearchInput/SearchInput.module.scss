@@ -1,0 +1,14 @@
+.SearchInput {
+  width: 600px;
+  height: 56px;
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 10px;
+  font-size: 16px;
+  &::placeholder {
+    color: rgba(33, 60, 87, 0.4);
+  }
+  background-image: url("/searchIcon.svg");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 16px);
+}

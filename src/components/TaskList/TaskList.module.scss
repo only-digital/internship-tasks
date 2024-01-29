@@ -4,6 +4,12 @@
     row-gap: 20px;
   }
 
+  &__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
   &__title {
     font-size: 32px;
     color: #213c57;

@@ -3,8 +3,8 @@ import styled from "./TaskItem.module.scss";
 const TaskItem = ({ tasks, onChange, onDelete }) => {
   return (
     <>
-      {tasks.map((task) => (
-        <div key={task.title.split(" ")[1]} className={styled.TaskItem}>
+      {tasks.map((task, index) => (
+        <div key={index} className={styled.TaskItem}>
           <div className={styled.TaskItem__card}>
             <div
               className={`${styled.TaskItem__header}  ${
@@ -12,12 +12,12 @@ const TaskItem = ({ tasks, onChange, onDelete }) => {
               }`}
             >
               <button
-                onClick={() => onChange(task.id)}
+                onClick={() => onChange(index)}
                 title="Нажмите чтобы изменить статус задачи"
               >
                 {task.title}
               </button>
-              <button onClick={() => onDelete(task.id)}>
+              <button onClick={() => onDelete(task)}>
                 <img src="cross.svg" alt="close" title="удалить" />
               </button>
             </div>
