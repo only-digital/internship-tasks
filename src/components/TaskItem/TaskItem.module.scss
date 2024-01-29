@@ -2,7 +2,9 @@
   $root: &;
   &:hover {
     #{$root}__header {
-      color: #007fff;
+      button {
+        color: #007fff;
+      }
     }
   }
   &__card {
@@ -18,9 +20,13 @@
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #d9e1ec;
-    font-size: 24px;
+
     padding-bottom: 17px;
     margin-bottom: 10px;
+    button {
+      font-size: 24px;
+      color: #161f3e;
+    }
   }
 
   &__descr {
@@ -28,4 +34,9 @@
     line-height: 175%;
     letter-spacing: 0.15px;
   }
+}
+
+.done {
+  text-decoration: line-through;
+  opacity: 0.3;
 }
