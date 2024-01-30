@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled from "./TaskList.module.scss";
 import TaskItem from "../TaskItem/TaskItem";
 import SearchInput from "../SearchInput/SearchInput";
-import useSearch from "../useSearch/useSearch";
+import useSearch from "../../hooks/useSearch/useSearch";
 
 const TaskList = ({ tasks, title }) => {
   const [data, setData] = useState(tasks);
