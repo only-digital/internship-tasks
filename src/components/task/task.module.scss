@@ -33,5 +33,14 @@
 		.Task__title {
       color: #007fff;
     }
+
+		.Task__completed {
+			color: rgba(22, 31, 62, 0.30);
+		}
   }
+
+	&__completed {
+		text-decoration: line-through;
+		color: rgba(22, 31, 62, 0.30);
+	}
 }

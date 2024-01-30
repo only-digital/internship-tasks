@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import styles from '../styles/index.module.scss';
 import { getIndexPage } from '../../lib/api';
 import Header from '../components/header/header';
@@ -13,13 +13,22 @@ function Index(props) {
     },
   ];
 
+  const [tasks, setTasks] = useState(props.tasks);
+
+  const doneTaskHandler = (taskId) => {
+    const newTasks = tasks.map((task) =>
+      task.id === taskId ? { ...task, isCompleted: !task.isCompleted } : task
+    );
+    setTasks(newTasks);
+  };
+
   return (
     <Fragment>
       <Header />
       <div className={styles.wrapper}>
         <Sidebar items={sideItems} />
         <main className={styles.main}>
-          <TaskList tasks={props.tasks} title={props.title}/>
+          <TaskList tasks={tasks} title={props.title} onDoneTask={doneTaskHandler}/>
         </main>
       </div>
     </Fragment>

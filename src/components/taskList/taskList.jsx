@@ -14,6 +14,7 @@ const TaskList = (props) => {
               id={task.id}
               task={task}
               onDelete={props.onDeleteTask}
+              onDone={props.onDoneTask}
             />
           );
         })}
