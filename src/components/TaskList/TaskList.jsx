@@ -11,14 +11,23 @@ const TaskList = ({ tasks, title }) => {
 
   const filteredData = useSearch(search, data);
 
-  const handleDelete = (task) => {
-    setData((prev) => prev.filter((item) => item.title !== task.title));
+  const handleDelete = (id) => {
+    setData((prev) => prev.filter((_, index) => index !== id));
   };
 
   const handleChangeStatus = (id) => {
-    const newArr = [...data];
-    newArr[id].isCompleted = !newArr[id].isCompleted;
-    setData(newArr);
+    setData((prev) =>
+      prev.map((task, index) => {
+        if (index === id) {
+          return {
+            ...task,
+            isCompleted: !task.isCompleted,
+          };
+        }
+
+        return task;
+      })
+    );
   };
 
   const handleSearchChange = ({ target }) => {

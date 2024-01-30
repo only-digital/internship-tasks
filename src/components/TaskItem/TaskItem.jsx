@@ -17,7 +17,7 @@ const TaskItem = ({ tasks, onChange, onDelete }) => {
               >
                 {task.title}
               </button>
-              <button onClick={() => onDelete(task)}>
+              <button onClick={() => onDelete(index)}>
                 <img src="cross.svg" alt="close" title="удалить" />
               </button>
             </div>

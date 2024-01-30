@@ -1,11 +1,10 @@
 const useSearch = (text, items) => {
-  const filteredData = items.filter((item) => {
-    if (
-      (item.title + item.text).toLowerCase().includes(text.toLowerCase().trim())
-    )
-      return true;
+  return items.filter((item) => {
+    return (
+      item.title.toLowerCase().includes(text.toLowerCase().trim()) ||
+      item.text.toLowerCase().includes(text.toLowerCase().trim())
+    );
   });
-  return filteredData;
 };
 
 export default useSearch;
