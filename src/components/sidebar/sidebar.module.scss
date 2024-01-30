@@ -1,8 +1,17 @@
 .Sidebar {
+	position: relative;
 	width: 290px;
-	height: 100vh;
-	border-right: 1px solid #d9e1ec;
 	padding-left: 25px;
 	padding-right: 25px;
 	padding-top: 40px;
+
+	&::after {
+		content: '';
+		position: absolute;
+		right: 0;
+		top: 0;
+		//height: 100vh;
+		width: 1px;
+		background-color: #d9e1ec;
+	}
 }

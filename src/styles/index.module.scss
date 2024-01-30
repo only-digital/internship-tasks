@@ -1,8 +1,13 @@
 .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 6rem;
-    min-height: 100vh;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 48px;
+  padding-bottom: 144px;
+  min-height: 100vh;
+  background-color: #f3f6f9;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 290px 1fr;
 }

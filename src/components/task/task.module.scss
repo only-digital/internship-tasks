@@ -1,3 +1,37 @@
 .Task {
-	//Your code here
+  position: relative;
+  background-color: #fff;
+  padding-top: 24px;
+  padding-left: 24px;
+  padding-bottom: 31px;
+
+  color: rgba(22, 31, 62, 0.9);
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+	
+
+  &__title {
+    margin-bottom: 28px;
+		transition: color 0.3s;
+  }
+
+  &__text {
+    font-size: 16px;
+    width: 42%;
+    line-height: 175%;
+  }
+
+  &__button {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+  }
+
+  &:hover {
+		.Task__title {
+      color: #007fff;
+    }
+  }
 }

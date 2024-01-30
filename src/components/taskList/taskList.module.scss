@@ -1,3 +1,14 @@
 .TaskList {
-	//Your code here
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__title {
+    color: #213c57;
+    font-family: Roboto;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    margin-bottom: 28px;
+  }
 }
