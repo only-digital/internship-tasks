@@ -22,13 +22,25 @@ function Index(props) {
     setTasks(newTasks);
   };
 
+  const deleteTaskHandler = (taskId) => {
+    setTasks((prevTasks) => {
+      const newTasks = prevTasks.filter((task) => task.id !== taskId);
+      return newTasks;
+    })
+  }
+
   return (
     <Fragment>
       <Header />
       <div className={styles.wrapper}>
         <Sidebar items={sideItems} />
         <main className={styles.main}>
-          <TaskList tasks={tasks} title={props.title} onDoneTask={doneTaskHandler}/>
+          <TaskList
+            tasks={tasks}
+            title={props.title}
+            onDoneTask={doneTaskHandler}
+            onDeleteTask={deleteTaskHandler}
+          />
         </main>
       </div>
     </Fragment>

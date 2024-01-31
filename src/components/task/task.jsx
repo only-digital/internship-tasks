@@ -2,12 +2,13 @@ import styled from './task.module.scss';
 import Image from 'next/image';
 
 const Task = (props) => {
-  const deleteHandler = () => {
-    props.onDelete(props.id);
-  };
-
   const doneHandler = () => {
     props.onDone(props.id);
+  };
+
+  const deleteHandler = (evt) => {
+    evt.stopPropagation();
+    props.onDelete(props.id);
   };
 
   const doneClass = props.task.isCompleted
