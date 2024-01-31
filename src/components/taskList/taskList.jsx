@@ -1,11 +1,15 @@
 import { Fragment } from 'react';
 import styled from './taskList.module.scss';
 import Task from '../task/task';
+import InputSearch from '../inputSearch/inputSearch';
 
 const TaskList = (props) => {
   return (
     <Fragment>
-      <h2 className={styled.TaskList__title}>{props.title}</h2>
+      <div className={styled.TaskList__wrapper}>
+        <h2 className={styled.TaskList__title}>{props.title}</h2>
+        <InputSearch />
+      </div>
       <ul className={styled.TaskList}>
         {props.tasks.map((task) => {
           return (
@@ -19,7 +23,7 @@ const TaskList = (props) => {
           );
         })}
       </ul>
-    </Fragment>  
+    </Fragment>
   );
 };
 

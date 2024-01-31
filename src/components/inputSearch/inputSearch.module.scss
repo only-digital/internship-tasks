@@ -1,0 +1,22 @@
+.InputSearch {
+	width: 100%;
+  padding: 15px 16px;
+  background-color: #fff;
+	border-radius: 10px;
+
+  &__icon {
+    position: absolute;
+		top: 10px;
+		right: 16px;
+  }
+
+	&__iconHidden {
+		display: none;
+	}
+
+	&__label {
+		position: relative;
+		justify-self: end;
+		width: 79%;
+	}
+}

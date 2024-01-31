@@ -11,4 +11,10 @@
     font-weight: 600;
     margin-bottom: 28px;
   }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
 }
