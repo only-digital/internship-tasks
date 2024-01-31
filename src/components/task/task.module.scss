@@ -10,11 +10,20 @@
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
-	
 
   &__title {
     margin-bottom: 28px;
-		transition: color 0.3s;
+    transition: color 0.3s;
+  }
+
+  &__title::after {
+    content: "";
+    position: absolute;
+    left: 26px;
+    top: 66px;
+    width: 94%;
+    height: 1px;
+    background: #e7eaee;
   }
 
   &__text {
@@ -30,17 +39,17 @@
   }
 
   &:hover {
-		.Task__title {
+    .Task__title {
       color: #007fff;
     }
 
-		.Task__completed {
-			color: rgba(22, 31, 62, 0.30);
-		}
+    .Task__completed {
+      color: rgba(22, 31, 62, 0.3);
+    }
   }
 
-	&__completed {
-		text-decoration: line-through;
-		color: rgba(22, 31, 62, 0.30);
-	}
+  &__completed {
+    text-decoration: line-through;
+    color: rgba(22, 31, 62, 0.3);
+  }
 }
