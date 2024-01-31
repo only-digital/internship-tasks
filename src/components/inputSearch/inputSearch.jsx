@@ -2,15 +2,18 @@ import { Fragment, useState } from 'react';
 import Image from 'next/image';
 import styled from './inputSearch.module.scss';
 
-const InputSearch = () => {
+const InputSearch = ({ onSearch }) => {
   const [isFilled, setIsFilled] = useState(false);
+  const [inputValue, setInputValue] = useState('');
 
   const inputHandler = (evt) => {
+    setInputValue(evt.target.value);
     if (evt.target.value.length > 0) {
       setIsFilled(true);
     } else {
       setIsFilled(false);
     }
+    onSearch(evt.target.value);
   };
 
   const iconStyle = isFilled
@@ -25,6 +28,7 @@ const InputSearch = () => {
           type="search"
           placeholder="Поиск"
           onChange={inputHandler}
+          value={inputValue}
         />
         <Image
           className={iconStyle}
