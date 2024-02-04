@@ -5,36 +5,36 @@ class Form extends Component {
         super(element);
 
         // Your code here
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementsByClassName('form__content__button').addEventListener('click', async () => {
-                const email = document.getElementsByClassName('form__content__input').value;
-                const confirm = document.getElementsByClassName('form__content__contaier__input').checked;
-                const data = { 
-                    email: email,
-                    confirm: confirm,
-                };
-                try {
-                    const response = await fetch('/form.json', {
-                        method: 'POST',
-                        headers: {
-                          'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(data)
-                    });
-                    if (response.ok) {
-                        document.getElementsByClassName('message').textContent = 'Отправлено';
-                        document.getElementsByClassName('message').style.color = 'green';
-                    } else {
-                        document.getElementsByClassName('message').textContent = 'Ошибка';
-                        document.getElementsByClassName('message').style.color = 'red';
-                    }
-                } catch (error) {
-                    console.error('Ощибка получения данных(form)', error);
-                }
+        const button = this.getElement('.form__content__button');
+        button.addEventListener('click', async () => {
+          const email = this.getElement('.form__content__input').value;
+          const confirm = this.getElement('.form__content__contaier__input').checked;
+          const data = { 
+            email: email,
+            confirm: confirm,
+          };
+    
+          try {
+            const response = await fetch('/form.json', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(data)
             });
+    
+            if (response.ok) {
+              this.getElement('.message').textContent = 'Отправлено';
+              this.getElement('.message').style.color = 'green';
+            } else {
+              this.getElement('.message').textContent = 'Ошибка';
+              this.getElement('.message').style.color = 'red'; 
+            }
+          } catch (error) {
+            console.error('Ошибка получения данных(form)', error);
+          }
         });
-  
-          
+    
 
 
         

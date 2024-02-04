@@ -7,23 +7,27 @@ class Title extends Component {
     super(element);
 
     // Your code here
-    try {
-      const response = fetch('/stats.json');
-      if (response.ok){
-        const responseData = response.text()
-        document.getElementsByClassName('views').textContent =  responseData.views;
-        document.getElementsByClassName('responses').textContent =  responseData.responses;
-      } else {
-        console.log('Нет ответа');
-      }
-    } catch (error) {
-      console.error('Ощибка получения данных(title)', error);
-    }
-
-
   }
 
   // Your code here
+  getStats = async () => {
+    try {
+      const response = await fetch("/stats");
+
+      if (!response.ok) {
+        throw new Error("Произошла ошибка при получении данных");
+      }
+
+      const json = await response.json();
+
+      console.log("Полученные данные:" + json);
+
+      document.querySelector(".views").textContent = json.views;
+      document.querySelector(".responses").textContent = json.responses;
+    } catch (e) {
+      console.log(e);
+    }
+  };
 }
 
 export default Title;
