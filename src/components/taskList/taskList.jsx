@@ -21,11 +21,11 @@ const TaskList = (props) => {
         <InputSearch onSearch={handleSearch}/>
       </div>
       <ul className={styled.TaskList}>
-        {tasks.map((task) => {
+        {tasks.map((task, index) => {
           return (
             <Task
-              key={task.id}
-              id={task.id}
+              key={index}
+              id={index}
               task={task}
               onDelete={props.onDeleteTask}
               onDone={props.onDoneTask}
