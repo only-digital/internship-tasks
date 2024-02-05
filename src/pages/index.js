@@ -25,10 +25,7 @@ function Index(props) {
   };
 
   const deleteTaskHandler = (taskIndex) => {
-    setTasks((prevTasks) => {
-      const newTasks = prevTasks.filter((task, index) => index !== taskIndex);
-      return newTasks;
-    })
+    setTasks((prevTasks) => prevTasks.filter((task, index) => index !== taskIndex));
   }
 
   return (
