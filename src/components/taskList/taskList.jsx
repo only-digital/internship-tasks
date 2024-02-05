@@ -18,7 +18,7 @@ const TaskList = (props) => {
     <Fragment>
       <div className={styled.TaskList__wrapper}>
         <h2 className={styled.TaskList__title}>{props.title}</h2>
-        <InputSearch onSearch={handleSearch}/>
+        <InputSearch value={searchValue} onSearch={handleSearch}/>
       </div>
       <ul className={styled.TaskList}>
         {tasks.map((task, index) => {
