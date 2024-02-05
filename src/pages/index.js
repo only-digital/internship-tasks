@@ -16,10 +16,12 @@ function Index(props) {
   const [tasks, setTasks] = useState(props.tasks);
 
   const doneTaskHandler = (taskIndex) => {
-    const newTasks = tasks.map((task, index) =>
-      index === taskIndex ? { ...task, isCompleted: !task.isCompleted } : task
-    );
-    setTasks(newTasks);
+    setTasks((task, index) => {
+      if (index === taskIndex) {
+        return { ...task, isCompleted: !task.isCompleted };
+      }
+      return task;
+    })
   };
 
   const deleteTaskHandler = (taskIndex) => {
