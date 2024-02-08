@@ -43,6 +43,7 @@
       align-items: center;
       justify-content: center;
       background-color: #0041a0;
+      margin-top: 10px;
 
       &:hover {
         background-color: #00327e;
@@ -76,6 +77,7 @@
         border: solid black;
         width: 16px;
         height: 16px;
+        display: block;
       }
       &__text {
         color: #909090;
@@ -94,6 +96,12 @@
           color: #00327e;
           cursor: pointer;
         }
+      }
+
+      &__message{
+        font-family: Arial;
+        font-size: 24px;
+        font-weight: 400;
       }
     }
   }

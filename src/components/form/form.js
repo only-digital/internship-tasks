@@ -5,30 +5,32 @@ class Form extends Component {
         super(element);
 
         // Your code here
-        const button = this.getElement('.form__content__button');
-        button.addEventListener('click', async () => {
-          const email = this.getElement('.form__content__input').value;
-          const confirm = this.getElement('.form__content__contaier__input').checked;
+        const button = document.querySelector('.form__content__button');
+        button.addEventListener('click', async (event) => {
+          event.preventDefault();
+          const email = document.querySelector('.form__content__input').value;
+          const confirm = document.querySelector('.form__content__contaier__input').checked;
           const data = { 
             email: email,
             confirm: confirm,
           };
-    
+          console.log(data);
+      
           try {
-            const response = await fetch('/form.json', {
+            const response = await fetch('/form', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
               },
               body: JSON.stringify(data)
             });
-    
+
             if (response.ok) {
-              this.getElement('.message').textContent = 'Отправлено';
-              this.getElement('.message').style.color = 'green';
+              document.querySelector('.form__content__contaier__message').textContent = 'Отправлено';
+              document.querySelector('.form__content__contaier__message').style.color = 'green';
             } else {
-              this.getElement('.message').textContent = 'Ошибка';
-              this.getElement('.message').style.color = 'red'; 
+              document.querySelector('.form__content__contaier__message').textContent = 'Ошибка';
+              document.querySelector('.form__content__contaier__message').style.color = 'red'; 
             }
           } catch (error) {
             console.error('Ошибка получения данных(form)', error);
@@ -37,10 +39,12 @@ class Form extends Component {
     
 
 
-        
+     
     }
 
     // Your code here
+
+    
 }
 
 export default Form

@@ -7,10 +7,14 @@ class Title extends Component {
     super(element);
 
     // Your code here
+    this.methodTitle();
   }
 
   // Your code here
-  getStats = async () => {
+  async methodTitle() {
+    const views = document.querySelector(".title__container__text__views");
+    const responses = document.querySelector(".title__container__text__responses ");
+
     try {
       const response = await fetch("/stats");
 
@@ -20,14 +24,15 @@ class Title extends Component {
 
       const json = await response.json();
 
-      console.log("Полученные данные:" + json);
+      console.log("Полученные данные:", json);
 
-      document.querySelector(".views").textContent = json.views;
-      document.querySelector(".responses").textContent = json.responses;
+      views.textContent = json.views;
+      responses.textContent = json.responses;
     } catch (e) {
       console.log(e);
     }
-  };
+  }
+
 }
 
 export default Title;
