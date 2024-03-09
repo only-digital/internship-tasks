@@ -12,8 +12,8 @@ class Title extends Component {
 
   // Your code here
   async methodTitle() {
-    const views = document.querySelector(".title__container__text__views");
-    const responses = document.querySelector(".title__container__text__responses ");
+    const views = this.getElement("container__text__views");
+    const responses = this.getElement("container__text__responses");
 
     try {
       const response = await fetch("/stats");
@@ -32,7 +32,6 @@ class Title extends Component {
       console.log(e);
     }
   }
-
 }
 
 export default Title;
