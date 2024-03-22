@@ -4,9 +4,9 @@ mixin form(props)
 		h1.form__header Форма обратной связи
 		form.form__content(action="")
 			label.form__content__label E-mail
-			input.form__content__input(type="email")
+			input.form__content__input(type="email" name='email')
 			div.form__content__container
-				input.form__content__container__input(type="checkbox")
+				input.form__content__container__input(type="checkbox" name='confirm')
 				p.form__content__container__text Вы подтверждаете, что ознакомились
 				a.form__content__container__href с политикой обработки персональных данных
 			span.form__content__container__message
